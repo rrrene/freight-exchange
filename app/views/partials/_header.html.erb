@@ -1,0 +1,32 @@
+<div class="container prepend-top">
+  <div id="header" class="span-24 last">
+    <h1 id="book_haven">Administration</h1>
+  </div>
+
+  <div class="container" id="main-navigation">
+    <ul class="navigation navigation-left">
+      <% %w(root users something).each do |c| %>
+      <li><%= link_to_unless(controller?(c), c, c) %></li>
+      <% end %>
+    </ul>
+    <ul class="navigation navigation-right">
+      <% if current_user.full? %>
+        <li><span>Welcome <%= current_user.login %>!</span></li>
+        <li><%= link_to_unless_current "My Profile", my_profile_url %></li>
+        <li><%= link_to_unless_current "Logout", logout_url %></li>
+      <% else %>
+        <li><%= link_to_unless_current "Login", login_url %></li>
+      <% end %>
+    </ul>
+  </div>
+
+  <hr class="prepend-top" />
+
+  <!--
+  <div id="subheader" class="span-24 last">
+    <h3 class="alt">Get opinions on your latest novel, and read what other people are writing about.</h3>
+  </div>
+
+  <hr />
+  -->
+</div>

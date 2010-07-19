@@ -1,0 +1,22 @@
+<div id="sidebar" class="span-6">
+  <div id="navigation">
+    <h3>Navigation</h3>
+    <div class="box">
+        <% %w(root users something).each do |c| %>
+        <%= link_to_unless(controller?(c), c, c) %>
+        <% end %>
+    </div>
+  </div>
+  <div id="my_profile">
+    <h3>My Profile</h3>
+    <div class="box">
+        <% if current_user.full? %>
+          <span>Welcome <%= current_user.login %>!</span>
+          <%= link_to_unless_current "My Profile", my_profile_url %>
+          <%= link_to_unless_current "Logout", logout_url %>
+        <% else %>
+          <%= link_to_unless_current "Login", login_url %>
+        <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,4 @@
+test: ignore
+name: Rails3Base
+domain: localhost
+language: en

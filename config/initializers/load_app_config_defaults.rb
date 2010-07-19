@@ -1,0 +1,1 @@
+APP_CONFIG_DEFAULTS = YAML::load(File.open(File.join(Rails.root, 'config', 'app_config.defaults.yml')))

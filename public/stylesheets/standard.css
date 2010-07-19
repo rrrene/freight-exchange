@@ -1,0 +1,137 @@
+/*
+ * standard. css. 
+ * contains all standard paddings, colors and sizes.
+ */
+ 
+ 
+
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  font-family: Lucida Grande, Verdana, Helvetica, sans-serif;
+  font-size: 13px;
+  color: #333;
+}
+
+#header, 
+#frame,
+#footer {
+  width: 900px;
+  margin: 0 auto 0 auto;
+  padding: 0;
+  text-align: left;
+  position: relative;
+  border: 3px solid #eee;
+}
+
+#content {
+}
+
+ul.navigation {
+  padding: 0;
+  margin: 0;
+}
+
+ul.navigation li {
+  border: 1px solid red;
+  display: block;
+  float: left;
+}
+
+ul.navigation li span,
+ul.navigation li a {
+  display: block;
+  padding: 4px;
+}
+
+select * {
+  padding-right: 12px;
+}
+
+input.text, input.password, input.submit, input.button, textarea {
+  padding: 2px;
+}
+
+input.submit {
+  font-weight: bold;
+}
+
+img {
+  border: 0px;
+  vertical-align: bottom;
+}
+
+/* div#content hiervor */
+h1, h2, h3, p, ul, ol {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+table tr th,
+table tr td {
+  padding: 4px;
+}
+
+small {
+  color: #999;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+a, a:visited, a:hover {
+  color: blue;
+}
+
+.bad,
+.severe,
+a.severe:visited,
+a.cancel,
+a.cancel:hover,
+a.cancel:visited,
+a.delete,
+a.delete:hover,
+a.delete:visited,
+a.edit,
+a.edit:hover,
+a.edit:visited {
+    /*color: #bd1d01!important;*/
+    color: #f00;
+    text-decoration: underline;
+}
+
+a.create,
+a.create:hover,
+a.create:visited {
+    /*color: #bd1d01!important;*/
+    color: #a00;
+    text-decoration: underline;
+}
+
+strong.highlight {
+  background-color: #ffa;
+  color: #000;
+}
+.highlight {
+  background-color: #ffa;
+}
+
+
+span.label {
+  padding: 1px 3px 1px 3px;
+  strong.highlight {
+    margin: -1px -3px -1px -3px;
+  }
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}

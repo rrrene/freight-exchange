@@ -1,0 +1,26 @@
+div#main-navigation {
+}
+
+div#main-navigation ul.navigation {
+  padding: 0;
+  margin: 0;
+}
+
+div#main-navigation ul.navigation li {
+  display: block;
+  float: left;
+}
+
+div#main-navigation ul.navigation li span,
+div#main-navigation ul.navigation li a {
+  display: block;
+  padding: 4px;
+}
+
+div#main-navigation ul.navigation-left {
+  float: left;
+}
+
+div#main-navigation ul.navigation-right {
+  float: right;
+}
