@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  filter_parameter_logging :password, :password_confirmation
+  before_filter :record_user_in_recordings
   helper_method :current_user
   layout 'application'
 
@@ -12,6 +12,10 @@ class ApplicationController < ActionController::Base
   
   def self.login_required(opts = {})
     before_filter :require_user, opts
+  end
+  
+  def record_user_in_recordings
+    #Recorder.always_save(:user_id, current_user.id)
   end
   
   def require_user
