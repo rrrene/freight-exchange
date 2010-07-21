@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
   end
   
   def record_user_in_recordings
-    #Recorder.always_save(:user_id, current_user.id)
+    #Recorder.always_save(:user_id, current_user.id) if current_user
   end
   
   def require_user

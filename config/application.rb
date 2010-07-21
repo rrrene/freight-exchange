@@ -2,6 +2,8 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 require File.expand_path('../../lib/basics', __FILE__)
+require File.expand_path('../../lib/recorder_observer', __FILE__)
+require File.expand_path('../../lib/recorder_recording', __FILE__)
 
 # If you have a Gemfile, require the gems listed there, including any gems
 # you've limited to :test, :development, or :production.
@@ -21,7 +23,7 @@ module Outline
     # config.plugins = [ :exception_notification, :ssl_requirement, :all ]
 
     # Activate observers that should always be running
-    config.active_record.observers = :recorder
+    config.active_record.observers = :user_observer
 
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
