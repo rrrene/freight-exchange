@@ -2,8 +2,6 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 require File.expand_path('../../lib/basics', __FILE__)
-require File.expand_path('../../lib/recorder_observer', __FILE__)
-require File.expand_path('../../lib/recorder_recording', __FILE__)
 
 # If you have a Gemfile, require the gems listed there, including any gems
 # you've limited to :test, :development, or :production.

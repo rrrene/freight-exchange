@@ -1,4 +1,10 @@
+# Recorder
 module Recorder
+  class Recording < ActiveRecord::Base
+    serialize :diff
+    belongs_to :item, :polymorphic => true
+  end
+  
   class Observer < ActiveRecord::Observer
     @@ignored_attributes = {}
 
