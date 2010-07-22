@@ -16,6 +16,7 @@ class ApplicationController < ActionController::Base
   
   def record_user_in_recordings
     #Recorder.always_save(:user_id, current_user.id) if current_user
+    #Recorder.always_save(:record_updated_at, Proc.new { |ar| ar.updated_at })
   end
   
   def require_user
