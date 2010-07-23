@@ -9,7 +9,7 @@ module Recorder
   # made.
   # 
   #   class UserObserver < Recorder::Observer
-  #     ignore :updated_at, :create_at, :password, :password_confirmation
+  #     ignore :updated_at, :created_at, :password, :password_confirmation
   #   end
   class Observer < ActiveRecord::Observer
     @@ignored_attributes = {}
@@ -32,9 +32,7 @@ module Recorder
         Thread.current[:recorder_attributes] ||= {}
       end
 
-      # Specify an attribute that is always saved along with the standard columns
-      # 
-      # Always save a specific information of the tracked record:
+      # Specifies an attribute that is always saved when changes are made.
       #   ProductObserver.always_save(:price, Proc.new { |item| item.price })
       #   ProductObserver.always_save(:price) { |item| item.price }
       #   ProductObserver.always_save(:price, &:price)
@@ -42,18 +40,27 @@ module Recorder
       # Or use it to share information between your controller and your model:
       #   UberObserver.always_save(:user_id, current_user.id)
       #   UberObserver.always_save(:admin_change, current_user.is_admin?)
+      #
+      # NOTE: You have to add the column for storing _attribute_ yourself using migrations!
       def always_save(attribute, value_or_proc = nil, &block)
         additional_attributes[attribute] = block_given? ? block : value_or_proc
       end
 
-      # Specify attributes that are not included in the 'diff'
+      # Specifies attributes that are not included in the _diff_ column.
+      # 
+      #   class SomeObserver < Recorder::Observer
+      #     ignore :updated_at, :created_at
+      #   end
       def ignore_attributes(*attributes)
         @@ignored_attributes[name] = attributes.flatten.map(&:to_s)
       end
       alias ignore ignore_attributes
       
-      # Specify the class_name of the generated recordings
-      def recording_class(class_name)
+      # Specifies the class_name of the generated recordings, defaults to 'Recording'.
+      #   class EmployeeObserver <  Recorder::Observer
+      #     recording_class 'PersonnelRecord'
+      #   end
+      def recording_class(class_name = 'Recording')
         @@recording_classes[name] = class_name.constantize
       end
     end
