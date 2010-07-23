@@ -1,4 +1,3 @@
-# Recorder
 module Recorder # :nodoc:
   # The Recording class provides the base for storing the changes detected by 
   # an Observer object.
