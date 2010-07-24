@@ -1,37 +1,41 @@
-= Recorder
+= Welcome 
 
-The recorder plugin provides a way to track changes to your models.
+*Recorder* is a rails plugin designed to provide a way to track the changes 
+made to your models.
 
+== How to use it
 
-== Example for tracking profile changes
+=== Tracking profile changes
 
 This example assumes you already have a User model in your application.
 
-Create a model UserRecords and add the following required fields:
+Create a model Recording and add the following required fields:
 
   t.string    :item_type, :limit => 30
   t.integer   :item_id
   t.string    :action, :limit => 10 #create, update, destroy
   t.text      :diff
 
-The UserRecord model has to inherit from the Recording class:
+The model has to inherit from the Recorder::Recording class:
 
-  class UserRecord < Recorder::Recording
+  class Recording < Recorder::Recording
   end
 
-Now create an observer called UserObserver and provide the following code:
+Now create an observer called UserObserver. It has to inherit from the 
+Recorder::Observer class:
 
   class UserObserver < Recorder::Observer
-    ignore :updated_at, :created_at, :password, :password_confirmation
-    recording_class 'UserRecord'
   end
   
 Finally, add the observer to your application configuration:
 
   config.active_record.observers = :user_observer
 
-That's it.
+That's it! Enjoy.
 
+=== What's next?
 
+You can add your own bells and whistels via inheritance. Just take a look at 
+the Recorder::Observer class.
 
 Copyright (c) 2010 René Föhring, released under the MIT license

@@ -54,7 +54,7 @@ module Recorder # :nodoc:
       end
 
       # Specifies attributes that are not included in the _diff_ column.
-      # 
+      # This method is aliased as 'ignore':
       #   class SomeObserver < Recorder::Observer
       #     ignore :updated_at, :created_at
       #   end
