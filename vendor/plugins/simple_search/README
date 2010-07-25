@@ -1,0 +1,34 @@
+SimpleSearch
+============
+
+Introduction goes here.
+
+
+Example
+=======
+
+  class User < ActiveRecord::Base
+    simple_search :fields => %w(email login)
+  end
+
+
+The needed migration:
+
+  class CreateSimpleSearches < ActiveRecord::Migration
+    def self.up
+      create_table :simple_searches do |t|
+        t.string  :item_type
+        t.integer :item_id
+        t.text    :text
+        t.timestamps
+      end
+    end
+
+    def self.down
+      drop_table :simple_searches
+    end
+  end
+
+
+
+Copyright (c) 2010 [name of plugin creator], released under the MIT license
