@@ -1,13 +1,25 @@
 
 class ActiveRecord::Base
   class << self
+    # Adds a model to the search index.
+    #
+    #   class User < ActiveRecord::Base
+    #     simple_search
+    #   end
+    # 
+    # Omit the attributes option and all attributes are automatically indexed, but
+    # sometimes you might not want that (especially in case of users):
+    # 
+    #   class User < ActiveRecord::Base
+    #     simple_search :attributes => %w(email login)
+    #   end
     def simple_search(options = {})
-      options.reverse_merge!(:fields => nil, :simplify => true)
+      options.reverse_merge!(:attributes => nil, :simplify => true)
       simplify = options[:simplify]
-      attribs = if options[:fields].blank?
+      attribs = if options[:attributes].blank?
         self.new.attributes.keys - %w(updated_at created_at)
       else
-        options[:fields]
+        options[:attributes]
       end
       define_method(:to_search) do
         str = attribs.map { |a| self[a] }.join(' ')
