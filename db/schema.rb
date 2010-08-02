@@ -9,11 +9,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100612201342) do
+ActiveRecord::Schema.define(:version => 20100719232221) do
 
   create_table "app_configs", :force => true do |t|
     t.string   "name"
     t.text     "value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "recordings", :force => true do |t|
+    t.string   "item_type",  :limit => 30
+    t.integer  "item_id"
+    t.string   "action",     :limit => 10
+    t.text     "diff"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

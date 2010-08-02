@@ -1,2 +1,7 @@
 <h3>Root#index</h3>
 <p>Find me in app/views/root/index.html.erb</p>
+
+<% Recording.order('created_at DESC').each do |record| %>
+  <%= record.id %>
+  <%= debug record.diff %>
+<% end %>
