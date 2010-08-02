@@ -1,4 +1,4 @@
-Outline::Application.routes.draw do |map|
+BlackBoard::Application.routes.draw do |map|
   resources :users
 
   get "root/index"
