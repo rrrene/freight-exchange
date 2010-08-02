@@ -7,6 +7,8 @@ gem 'rails', '3.0.0.beta4'
 
 gem 'sqlite3-ruby', :require => 'sqlite3'
 
+gem 'hirb'
+
 gem 'formtastic', :git => 'git://github.com/justinfrench/formtastic.git', :branch => 'rails3'
 gem 'authlogic', :git => 'git://github.com/odorcicd/authlogic.git', :branch => 'rails3'
 

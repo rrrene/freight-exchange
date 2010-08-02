@@ -1,0 +1,66 @@
+= Simple Search
+
+Sometimes you want search capabilities for your little rails app, but using 
+something Solr, Ferret, Hyper Estraier etc. would be total overkill. 
+Introducing SimpleSearch, primitive searching for the rest of us.
+
+== What this is
+
+An easy-to-use, fast, simple search implementation with nearly no bells 
+and whistles for simple projects, e.g. internal wikis, intranet solutions and 
+the like.
+
+== What this is not
+
+A full fledged search solution for the next "1 billion pageviews"-monster-site.
+
+== Installation & Setup
+
+=== Migration
+
+The needed migration:
+
+  class CreateSimpleSearches < ActiveRecord::Migration
+    def self.up
+      create_table :simple_searches do |t|
+        t.string  :item_type
+        t.integer :item_id
+        t.text    :text
+        t.timestamps
+      end
+    end
+
+    def self.down
+      drop_table :simple_searches
+    end
+  end
+
+=== Setting up
+  
+==== Adding models to the index
+
+  class User < ActiveRecord::Base
+    simple_search
+  end
+
+Omit the attributes option and all attributes are automatically indexed, but
+sometimes you might not want that (especially in case of users):
+
+  class User < ActiveRecord::Base
+    simple_search :attributes => %w(email login)
+  end
+
+==== Simple searching:
+
+  SimpleSearch.search "some query"
+  SimpleSearch / "some other query"
+
+Of course, the index is updated automatically.
+
+==== To manually update the search index:
+  
+  SimpleSearch << User.first  # update the index for a specific user
+  SimpleSearch << User        # update the index of all users
+  
+
+Copyright (c) 2010 René Föhring, released under the MIT license
