@@ -26,6 +26,23 @@ Woraus besteht ein Inserat?
 
 ### Tabellen:
   
+  postings
+    t.string :type
+    t.datetime :origin_date
+    t.datetime :destination_date
+    t.integer :origin_station_id
+    t.integer :destination_station_id
+    
+    t.string :goods_type
+    t.string :wagon_type
+    
+    t.integer :loading_meter
+    t.integer :weight
+    
+    t.string :contractor
+    t.text :misc
+
+
   stations
     t.string :name
     t.integer :region_id    # optional
