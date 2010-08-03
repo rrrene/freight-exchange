@@ -5,3 +5,17 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
+
+
+# Create a basis of participating countries
+[
+  {:iso => 'de', :name => 'Germany'},
+  {:iso => 'ch', :name => 'Switzerland'},
+  {:iso => 'fr', :name => 'France'},
+  {:iso => 'it', :name => 'Italy'},
+  {:iso => 'nl', :name => 'Netherlands'},
+].each do |opts|
+  Country.create(opts)
+end
+
+puts "#{Country.count} Countries: #{Country.all.map(&:iso).inspect}"

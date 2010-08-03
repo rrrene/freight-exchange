@@ -9,11 +9,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100612201342) do
+ActiveRecord::Schema.define(:version => 20100803092600) do
 
   create_table "app_configs", :force => true do |t|
     t.string   "name"
     t.text     "value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "countries", :force => true do |t|
+    t.string   "name"
+    t.string   "iso",        :limit => 2
     t.datetime "created_at"
     t.datetime "updated_at"
   end
