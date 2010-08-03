@@ -1,30 +1,16 @@
+require File.join(File.dirname(__FILE__), 'seed_data') 
 
 # Create a basis of participating countries
-[
-  {:iso => 'de', :name => 'Germany'},
-  {:iso => 'ch', :name => 'Switzerland'},
-  {:iso => 'fr', :name => 'France'},
-  {:iso => 'it', :name => 'Italy'},
-  {:iso => 'nl', :name => 'Netherlands'},
-].each do |opts|
+Seed::COUNTRIES.each do |opts|
   Country.create(opts)
 end
 
-puts "#{Country.count} Countries: #{Country.all.map(&:iso).inspect}"
+puts "#{Country.count} Countries"
 
-
+#
+#
 # Create some sample regions
-{
-  :de => [
-    {:name => 'Rhein-Neckar'},
-    {:name => 'Rhein-Main'},
-    {:name => 'Ruhr'},
-    {:name => 'Westfalen'},
-  ],
-  :nl => [
-    {:name => 'Utrecht'},
-  ]
-}.each do |iso, opts_arr|
+Seed::REGIONS.each do |iso, opts_arr|
   country = Country[iso]
   opts_arr.each do |opts|
     country.regions.create(opts)
@@ -33,15 +19,10 @@ end
 
 puts "#{Region.count} Regions"
 
-
+#
+#
 # Create some stations
-{
-  :de => [
-    {:name => 'Bochum Hbf', :regions => ['Ruhr', 'Westfalen']},
-    {:name => 'Dortmund Hbf', :regions => ['Ruhr', 'Westfalen']},
-    {:name => 'Essen Hbf', :regions => ['Ruhr', 'Westfalen']},
-  ]
-}.each do |iso, opts_arr|
+Seed::STATIONS.each do |iso, opts_arr|
   country = Country[iso]
   opts_arr.each do |opts|
     regions = opts.delete(:regions)
