@@ -12,15 +12,17 @@ To-Dos
 Woraus besteht ein Inserat?
 ---------------------------
 
-Ladezeitpunkt, Ladeort [1] [1], Region, Land [2] [2]
-Zielzeitpunkt, Zielort, Region, Land 
-Güterart, Fahrzegutyp [3] [3]
-Lademeter, Gewicht
-Dienstleister, Sonstiges
+* Ladezeitpunkt, Ladeort (1), Region, Land (2)
+* Zielzeitpunkt, Zielort, Region, Land 
+* Güterart, Fahrzegutyp (3)
+* Lademeter, Gewicht
+* Dienstleister, Sonstiges
 
-[1]:  Bahnhöfe sind nicht frei eintragbar.
-[2]:  Regionen und Länder müssen mit den Bahnhöfen verdrahtet werden und ebenfalls nicht frei eintragbar sein.
-[3]:  Fraglich ist, ob bspw. Güterart und Fahrzeugtyp wirklich Objekte in anderen Tabellen sind oder nicht doch Freitext-Felder, da es unzählige Güterarten in der Transport-Statistik gibt und diese wahrscheinlich auf von Land zu Land andere Identifikationsnummern etc. haben.
+(1)  Bahnhöfe sind nicht frei eintragbar.
+
+(2)  Regionen und Länder müssen mit den Bahnhöfen verdrahtet werden und ebenfalls nicht frei eintragbar sein.
+
+(3)  Fraglich ist, ob bspw. Güterart und Fahrzeugtyp wirklich Objekte in anderen Tabellen sind oder nicht doch Freitext-Felder, da es unzählige Güterarten in der Transport-Statistik gibt und diese wahrscheinlich auf von Land zu Land andere Identifikationsnummern etc. haben.
 
 ### Tabellen:
   
@@ -33,7 +35,7 @@ Dienstleister, Sonstiges
     t.string :name
     t.integer :country_id
     
-  country
+  countries
     t.string :name
     t.string :iso
     
