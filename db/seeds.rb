@@ -1,11 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
-#   Mayor.create(:name => 'Daley', :city => cities.first)
-
 
 # Create a basis of participating countries
 [
@@ -20,21 +12,44 @@ end
 
 puts "#{Country.count} Countries: #{Country.all.map(&:iso).inspect}"
 
+
 # Create some sample regions
 {
   :de => [
     {:name => 'Rhein-Neckar'},
     {:name => 'Rhein-Main'},
     {:name => 'Ruhr'},
+    {:name => 'Westfalen'},
   ],
   :nl => [
     {:name => 'Utrecht'},
   ]
 }.each do |iso, opts_arr|
-  country = Country.where(:iso => iso.to_s).first
+  country = Country[iso]
   opts_arr.each do |opts|
     country.regions.create(opts)
   end
 end
 
 puts "#{Region.count} Regions"
+
+
+# Create some stations
+{
+  :de => [
+    {:name => 'Bochum Hbf', :regions => ['Ruhr', 'Westfalen']},
+    {:name => 'Dortmund Hbf', :regions => ['Ruhr', 'Westfalen']},
+    {:name => 'Essen Hbf', :regions => ['Ruhr', 'Westfalen']},
+  ]
+}.each do |iso, opts_arr|
+  country = Country[iso]
+  opts_arr.each do |opts|
+    regions = opts.delete(:regions)
+    station = country.stations.create(opts)
+    regions.each do |name|
+      station.regions << Region[name]
+    end
+  end
+end
+
+puts "#{Station.count} Stations"
