@@ -42,6 +42,15 @@ ActiveRecord::Schema.define(:version => 20100803205348) do
     t.datetime "updated_at"
   end
 
+  create_table "recordings", :force => true do |t|
+    t.string   "item_type",  :limit => 30
+    t.integer  "item_id"
+    t.string   "action",     :limit => 10
+    t.text     "diff"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "regions", :force => true do |t|
     t.string   "name"
     t.integer  "country_id"
@@ -52,6 +61,14 @@ ActiveRecord::Schema.define(:version => 20100803205348) do
   create_table "regions_stations", :id => false, :force => true do |t|
     t.integer "region_id"
     t.integer "station_id"
+  end
+
+  create_table "simple_searches", :force => true do |t|
+    t.string   "item_type"
+    t.integer  "item_id"
+    t.text     "text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "stations", :force => true do |t|
