@@ -1,4 +1,17 @@
 module Seed
+  USERS = [
+    {
+      :login => 'freight_supplier',
+      :email => 'freight_supplier@example.org',
+      :password => 'asdf', :password_confirmation => 'asdf',
+    },
+    {
+      :login => 'loading_space_supplier',
+      :email => 'loading_space_supplier@example.org',
+      :password => 'asdf', :password_confirmation => 'asdf',
+    },
+  ]
+  
   COUNTRIES = [
     {:iso => 'de', :name => 'Germany'},
     {:iso => 'ch', :name => 'Switzerland'},

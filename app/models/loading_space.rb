@@ -1,0 +1,2 @@
+class LoadingSpace < Posting
+end
