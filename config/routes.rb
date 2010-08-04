@@ -1,4 +1,6 @@
 BlackBoard::Application.routes.draw do |map|
+  resources :postings
+
   resources :users
 
   get "root/index"
