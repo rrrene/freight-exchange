@@ -1,16 +1,16 @@
 <div id="sidebar" class="span-6">
   <%= yield(:sidebar) %>
   <div id="navigation">
-    <h3>Navigation</h3>
     <div class="box">
+      <h3>Navigation</h3>
         <% %w(root users something).each do |c| %>
         <%= link_to_unless(controller?(c), c, c) %>
         <% end %>
     </div>
   </div>
   <div id="my_profile">
-    <h3>My Profile</h3>
     <div class="box">
+      <h3>My Profile</h3>
         <% if current_user.full? %>
           <span>Welcome <%= current_user.login %>!</span>
           <%= link_to_unless_current "My Profile", my_profile_url %>

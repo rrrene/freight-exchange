@@ -1,7 +1,30 @@
-<h3>Root#index</h3>
-<p>Find me in app/views/root/index.html.erb</p>
-
-<% Recording.order('created_at DESC').each do |record| %>
-  <%= record.id %>
-  <%= debug record.diff %>
-<% end %>
+<div class="box">
+  <h3>Root#index</h3>
+  <p>Find me in app/views/root/index.html.erb</p>
+  
+  
+  <% 
+    model = Station 
+    attributes = model.new.attributes.keys
+  %>
+  <table>
+    <thead>
+      <tr>
+        <th>id</th>
+        <% attributes.each do |attr| %>
+          <th><%= attr.humanize %></th>
+        <% end %>
+      </tr>
+    </thead>
+    <tbody>
+      <% model.all.each do |ar| %>
+        <tr>
+          <td><%= link_to "Edit", ar.id.to_s %></th>
+          <% attributes.each do |attr| %>
+          <td><%= ar[attr] %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>  
+</div>
