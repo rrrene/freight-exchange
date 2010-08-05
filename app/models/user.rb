@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   acts_as_authentic
-  #simple_search
+  simple_search
 
   class << self
     def [](login)

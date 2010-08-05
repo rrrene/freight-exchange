@@ -4,16 +4,18 @@ class String
   #   str.simplify => string
   #
   # Replaces european accents and umlauts with their simple counterparts
+  # and downcases the result.
   # ä -> a, ç -> c, etc.
-  #   "René Föhring".simplify #=> "Rene Fohring"
+  #   "René Föhring".simplify #=> "rene fohring"
   def simplify
-    gsub(/[àáâãäåæ]/i, 'a').
+    gsub(/[àáâãäåæâ]/i, 'a').
     gsub(/[ç]/i, 'c').
-    gsub(/[èéêë]/i, 'e').
-    gsub(/[ìíîï]/i, 'i').
+    gsub(/[èéêëeê]/i, 'e').
+    gsub(/[ìíîïî]/i, 'i').
     gsub(/[ñ]/i, 'n').
-    gsub(/[òóôõöø]/i, 'o').
-    gsub(/[ùúûü]/i, 'u').
-    gsub(/[ýÿ]/i, 'y')
+    gsub(/[òóôõöøô]/i, 'o').
+    gsub(/[ùúûüû]/i, 'u').
+    gsub(/[ýÿ]/i, 'y').
+    downcase
   end
 end

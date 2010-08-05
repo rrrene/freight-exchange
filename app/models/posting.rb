@@ -3,6 +3,18 @@ class Posting < ActiveRecord::Base
   belongs_to :origin_station, :class_name => 'Station'
   belongs_to :destination_station, :class_name => 'Station'
   
+  def to_search
+    "
+    [#{type}]
+      #{origin_station.to_search} -> #{destination_station.to_search}
+      #{origin_date.to_s} -> #{destination_date.to_s}
+    [#{goods_type}]
+      #{wagon_type}
+      #{loading_meter}
+      #{weight}
+    ".simplify
+  end
+  
   def validate
     if origin_station_id == destination_station_id
       errors.add :destination_station_id, 'Stations must be different'

@@ -52,7 +52,7 @@ class SimpleSearch < ActiveRecord::Base
     end
     
     def text_for(item) # :nodoc:
-      item.respond_to?(:to_search) ? item.to_search : item.to_s
+      item.respond_to?(:to_search) ? item.to_search : item.to_search_simple
     end
     
     #:call-seq:

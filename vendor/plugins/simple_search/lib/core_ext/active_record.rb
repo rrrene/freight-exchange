@@ -17,11 +17,13 @@ class ActiveRecord::Base
       options.reverse_merge!(:attributes => nil, :simplify => true)
       simplify = options[:simplify]
       attribs = if options[:attributes].blank?
-        self.new.attributes.keys - %w(updated_at created_at)
+        unless self.inspect =~ /Table doesn't exist/
+          self.new.attributes.keys - %w(updated_at created_at)
+        end
       else
         options[:attributes]
       end
-      define_method(:to_search) do
+      define_method(:to_search_simple) do
         str = attribs.map { |a| self[a] }.join(' ')
         simplify && str.respond_to?(:simplify) ? str.simplify : str
       end
