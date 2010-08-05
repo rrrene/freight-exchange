@@ -1,35 +1,29 @@
-<div class="container" id="header">
-  <div class="span-24 last" id="first-header">
-    <%= link_to image_tag('home_logo.gif'), root_url %>
-    <ul class="navigation navigation-right">
-      <li><%= link_to("About", '#') %></li>
-      <li><%= link_to("Analysis", '#') %></li>
-      <li><%= link_to("Contact", '#') %></li>
-    </ul>
-  </div>
+<div class="header">
+  <div class="container" id="header">
+    <div class="span-24 last" id="first-header">
+      <%= link_to image_tag('home_logo.gif'), root_url %>
+      <ul class="navigation navigation-right">
+        <li><%= link_to("About", '#') %></li>
+        <li><%= link_to("Analysis", '#') %></li>
+        <li><%= link_to("Contact", '#') %></li>
+      </ul>
+    </div>
 
-  <div class="container" id="second-header">
-    <ul class="navigation navigation-left">
-      <li><span>
-        <b><%= Station.count %></b> stations and <b><%= Posting.count %></b> postings and stuff...
-      </span></li>
-    </ul>
-    <ul class="navigation navigation-right">
-      <% if current_user.full? %>
-        <li><span>Welcome <%= current_user.login %>!</span></li>
-        <li><%= link_to_unless_current "My Profile", my_profile_url %></li>
-        <li><%= link_to_unless_current "Logout", logout_url %></li>
-      <% else %>
-        <li><%= link_to_unless_current "Login", login_url %></li>
-      <% end %>
-    </ul>
+    <div class="container" id="second-header">
+      <ul class="navigation navigation-left">
+        <li><span>
+          <b><%= Station.count %></b> stations and <b><%= Posting.count %></b> postings and stuff...
+        </span></li>
+      </ul>
+      <ul class="navigation navigation-right">
+        <% if current_user.full? %>
+          <li><span>Welcome <%= current_user.login %>!</span></li>
+          <li><%= link_to_unless_current "My Profile", my_profile_url %></li>
+          <li><%= link_to_unless_current "Logout", logout_url %></li>
+        <% else %>
+          <li><%= link_to_unless_current "Login", login_url %></li>
+        <% end %>
+      </ul>
+    </div>
   </div>
-
-  <!--
-  <div id="subheader" class="span-24 last">
-    <h3 class="alt">Get opinions on your latest novel, and read what other people are writing about.</h3>
-  </div>
-
-  <hr />
-  -->
 </div>

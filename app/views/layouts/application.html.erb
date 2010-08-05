@@ -10,16 +10,18 @@
 </head>
 <body>
   <div id="<%= controller.controller_name %>" class="<%= controller.action_name %>">
-      <div class="container" id="wrap">
-        <%= render '/partials/header' %>
-        <% if false && demo_mode? %>
+      <div id="wrap">
+        <% if demo_mode? %>
           <div id="demo_mode">
-            &nbps;
+            &nbsp;
           </div>
         <% end %>
-        <div class="container">
-          <div id="content" class="span-16 colborder last"><%= yield %></div>
-          <%= render '/partials/sidebar' %>
+        <%= render '/partials/header' %>
+        <div class="frame">
+          <div class="container" id="frame">
+            <div id="content" class="span-16 colborder last"><%= yield %></div>
+            <%= render '/partials/sidebar' %>
+          </div>
         </div>
         <%= render '/partials/footer' %>
       </div> <%# wrap %>
