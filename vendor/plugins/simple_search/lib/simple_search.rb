@@ -62,8 +62,9 @@ class SimpleSearch < ActiveRecord::Base
     # Returns the matching records from the database.
     #  SimpleSearch.search "some query"
     #  SimpleSearch / "some other query"
-    def search(query)
+    def search(query, simplify = true)
       words = query.to_s.split(' ')
+      words = words.map(&:simplify) if simplify
       words.inject(self) { |chain, word| 
         chain.where(['text LIKE ?', '%' << word << '%'])  
       }.all.map(&:item)

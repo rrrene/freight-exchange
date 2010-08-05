@@ -8,14 +8,14 @@ class String
   # ä -> a, ç -> c, etc.
   #   "René Föhring".simplify #=> "rene fohring"
   def simplify
-    gsub(/[àáâãäåæâ]/i, 'a').
-    gsub(/[ç]/i, 'c').
-    gsub(/[èéêëeê]/i, 'e').
-    gsub(/[ìíîïî]/i, 'i').
-    gsub(/[ñ]/i, 'n').
-    gsub(/[òóôõöøô]/i, 'o').
-    gsub(/[ùúûüû]/i, 'u').
-    gsub(/[ýÿ]/i, 'y').
-    downcase
+    downcase.
+    gsub(/(à|À|á|Á|â|Â|ã|ä|Ä|å|æ)/, 'a').
+    gsub(/(ç)/, 'c').
+    gsub(/(è|È|é|É|ê|Ê|ë)/, 'e').
+    gsub(/(ì|Ì|í|Í|î|Î|ï)/, 'i').
+    gsub(/(ñ)/, 'n').
+    gsub(/(ò|Ò|ó|Ó|õ|ö|Ö|ø|ô|Ô)/, 'o').
+    gsub(/(ù|Ù|ú|Ú|û|Û|ü|Ü)/, 'u').
+    gsub(/(ý|Ý|ÿ)/, 'y')
   end
 end
