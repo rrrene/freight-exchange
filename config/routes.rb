@@ -6,7 +6,11 @@ BlackBoard::Application.routes.draw do |map|
   get "root/index"
   
   resources :users
-  resources :user_sessions
+  resources :user_sessions do
+    collection do
+      get :demo_login
+    end
+  end
   
   match "welcome" => 'root#index', :as => :after_login
   match "my_profile" => 'users#edit', :as => :my_profile

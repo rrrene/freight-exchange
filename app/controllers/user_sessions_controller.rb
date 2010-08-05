@@ -2,6 +2,18 @@ class UserSessionsController < ApplicationController
   before_filter :require_no_user, :only => [:new, :create]
   before_filter :require_user, :only => :destroy
   
+  def demo_login
+    if demo_mode?
+      @user_session = UserSession.new(User.find(params[:id]))
+      if @user_session.save
+        flash[:notice] = "Login successful!"
+        redirect_back_or_default after_login_url
+      else
+        render :action => :new
+      end
+    end
+  end
+  
   def new
     @user_session = UserSession.new
   end

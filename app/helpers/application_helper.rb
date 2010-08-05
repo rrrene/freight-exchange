@@ -1,4 +1,11 @@
 module ApplicationHelper
+  
+  def box(title = nil, &block)
+    inner = capture(&block)
+    head = title.full? { |t| content_tag :h3, t }.to_s
+    content_tag(:div, head << inner, :class => 'box')
+  end
+  
   def clear_both
     '<div style="clear:both"></div>'.html_safe
   end

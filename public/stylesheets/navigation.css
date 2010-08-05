@@ -1,26 +1,64 @@
-div#main-navigation {
+#demo_mode {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 12px;
+  background: url(/images/demo_mode.gif);
 }
 
-div#main-navigation ul.navigation {
+body {
+  background: url(body_bg.gif) repeat-x #F3F3F3;
+}
+#header {
+  height: 80px;
+  margin-bottom: 20px;
+}
+#first-header * {
+  color: #fff;
+}
+#first-header a {
+  text-decoration: none;
+}
+#first-header a img {
+  float: left;
+}
+#first-header ul.navigation a {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 6px;
+}
+#first-header ul.navigation a:hover {
+  text-decoration: underline;
+}
+#second-header ul.navigation-left span {
+  font-size: 1.5em;
+}
+
+div#second-header {
+  color: #525252;
+}
+
+ul.navigation {
   padding: 0;
   margin: 0;
 }
 
-div#main-navigation ul.navigation li {
+ul.navigation li {
   display: block;
   float: left;
 }
 
-div#main-navigation ul.navigation li span,
-div#main-navigation ul.navigation li a {
+ul.navigation li span,
+ul.navigation li a {
   display: block;
   padding: 4px;
 }
 
-div#main-navigation ul.navigation-left {
+ul.navigation-left {
   float: left;
 }
 
-div#main-navigation ul.navigation-right {
+ul.navigation-right {
   float: right;
 }

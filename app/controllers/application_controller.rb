@@ -1,13 +1,17 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :record_user_in_recordings
-  helper_method :current_user
+  helper_method :current_user, :demo_mode?
   layout 'application'
 
   private
 
   def current_user
     @current_user ||= UserSession.find.full?(&:user)
+  end
+  
+  def demo_mode?
+    AppConfig[:demo_mode].full?
   end
   
   def self.login_required(opts = {})

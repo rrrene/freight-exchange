@@ -1,13 +1,18 @@
-<div class="container prepend-top">
-  <div id="header" class="span-24 last">
-    <h1 id="book_haven">Administration</h1>
+<div class="container" id="header">
+  <div class="span-24 last" id="first-header">
+    <%= link_to image_tag('home_logo.gif'), root_url %>
+    <ul class="navigation navigation-right">
+      <li><%= link_to("About", '#') %></li>
+      <li><%= link_to("Analysis", '#') %></li>
+      <li><%= link_to("Contact", '#') %></li>
+    </ul>
   </div>
 
-  <div class="container" id="main-navigation">
+  <div class="container" id="second-header">
     <ul class="navigation navigation-left">
-      <% %w(root users something).each do |c| %>
-      <li><%= link_to_unless(controller?(c), c, c) %></li>
-      <% end %>
+      <li><span>
+        <b><%= Station.count %></b> stations and <b><%= Posting.count %></b> postings and stuff...
+      </span></li>
     </ul>
     <ul class="navigation navigation-right">
       <% if current_user.full? %>
@@ -19,8 +24,6 @@
       <% end %>
     </ul>
   </div>
-
-  <hr class="prepend-top" />
 
   <!--
   <div id="subheader" class="span-24 last">

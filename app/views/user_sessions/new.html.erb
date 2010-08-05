@@ -1,3 +1,15 @@
 <h1>Login</h1>
 
+<% if demo_mode? %>
+  <% content_for(:sidebar) do %>
+    <% box "Quick Login" do %>
+      <ul>
+      <% User.all.each do |user| %>
+        <li><%= link_to user.login, :action => 'demo_login', :id => user %></li>
+      <% end %>
+      </ul>
+    <% end %>
+  <% end %>
+<% end %>
+
 <%= render 'form' %>
