@@ -33,7 +33,7 @@ class SimpleSearch < ActiveRecord::Base
       if record = self.where(['item_type = ? AND item_id = ?', item.class.to_s, item.id]).first
         record.update_attribute(:text, text_for(item))
       else
-        record = self.create(:item => item, :text => text_for(item))
+        record = self.create(:item_type => item.class.to_s, :item_id => item.id, :text => text_for(item))
       end
     end
     
@@ -62,10 +62,12 @@ class SimpleSearch < ActiveRecord::Base
     # Returns the matching records from the database.
     #  SimpleSearch.search "some query"
     #  SimpleSearch / "some other query"
-    def search(query, simplify = true)
+    def search(query, opts = {})
+      opts.reverse_merge!(:model => nil, :simplify => true)
       words = query.to_s.split(' ')
-      words = words.map(&:simplify) if simplify
-      words.inject(self) { |chain, word| 
+      words = words.map(&:simplify) if opts[:simplify]
+      origin = opts[:model] ? where(:item_type => opts[:model].to_s) : self
+      words.inject(origin) { |chain, word| 
         chain.where(['text LIKE ?', '%' << word << '%'])  
       }.all.map(&:item)
     end

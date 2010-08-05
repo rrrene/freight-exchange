@@ -59,3 +59,4 @@ if Rails.env == 'development'
     puts "#{model.count} #{model.to_s.pluralize}"
   end
 end
+puts "SimpleSearch.where(:item_type => 'Freight').count = " << SimpleSearch.where(:item_type => 'Freight').count.to_s
