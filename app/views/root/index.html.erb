@@ -19,7 +19,7 @@
     <tbody>
       <% model.all.each do |ar| %>
         <tr>
-          <td><%= link_to "Edit", ar.id.to_s %></th>
+          <td><%= ar.id %></th>
           <% attributes.each do |attr| %>
           <td><%= ar[attr] %></td>
           <% end %>

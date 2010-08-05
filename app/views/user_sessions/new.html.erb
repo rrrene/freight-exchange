@@ -1,4 +1,7 @@
-<h1>Login</h1>
+<div class="box">
+  <h3>Login</h3>
+  <%= render 'form' %>
+</div>
 
 <% if demo_mode? %>
   <% content_for(:sidebar) do %>
@@ -11,5 +14,3 @@
     <% end %>
   <% end %>
 <% end %>
-
-<%= render 'form' %>
