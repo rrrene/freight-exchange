@@ -135,6 +135,9 @@ div.corridor_map div#search_form .input-wrapper input#q {
   font-size: 20px;
   padding: 3px;
 }
+div.corridor_map div#search_form .input-wrapper input#q:focus {
+  outline: none;
+}
 
 div.corridor_map div#search_form .input-wrapper input[type=submit] {
   border: 0;
@@ -196,4 +199,8 @@ span.label {
 span.label.freight {
   background-color: #0c0;
   border-color: #0a0;
+}
+span.label.loading_space {
+  background-color: #00c;
+  border-color: #00a;
 }

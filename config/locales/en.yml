@@ -10,6 +10,11 @@ en:
     sidebar:
       station_results:
         header: "Stations found:"
+  activerecord:
+    models:
+      station: "Station"
+      freight: "Freight"
+      loading_space: "Loading Space"
   formtastic:
     titles:
       credentials: "Login credentials"
@@ -22,9 +27,11 @@ en:
         password_confirmation: "Password (again)"
         
     hints:
-      post:
-        title: "Choose a good title for you post."
-        body: "Write something inspiring here."
+      user:
+        login: "Choose a username to log in to the service"
+        email: "Enter your e-mail address here"
+        password: "Choose your password carefully"
+        password_confirmation: "Please repeat your password"
     actions:
       create: "Create User"
       update: "Save changes"

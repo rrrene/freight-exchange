@@ -3,8 +3,8 @@
     <ul>
     <% @results.each do |result| %>
       <li>
+        <span class="label <%= result.class.to_s.underscore %>"><%= result.class.human_name %></span>
         <% if result.is_a?(Posting) %>
-          <span class="label <%= result.type.underscore %>"><%= result.type %></span>
           <%= result.origin_station.name %> - <%= result.destination_station.name %>
         <% else %>
           <%= result.name %>
