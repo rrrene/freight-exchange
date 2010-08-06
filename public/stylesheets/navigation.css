@@ -204,3 +204,10 @@ span.label.loading_space {
   background-color: #00c;
   border-color: #00a;
 }
+
+table tr th h2 {
+  margin: 0;
+}
+#content table thead tr th {
+  padding-top: 40px;
+}

@@ -1,6 +1,8 @@
 BlackBoard::Application.routes.draw do |map|
+  resources :stations
   resources :postings
-  
+  resources :freights, :controller => :postings
+  resources :loading_spaces, :controller => :postings
   resources :users
 
   get "root/index"

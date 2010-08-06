@@ -1,0 +1,26 @@
+en:
+  activerecord:
+    models:
+      station: "Station"
+      freight: "Freight"
+      loading_space: "Loading Space"
+  formtastic:
+    titles:
+      credentials: "Login credentials"
+      change_password: "Change password (optional)"
+    labels:
+      user:
+        login: "Username"
+        email: "E-Mail"
+        password: "Password"
+        password_confirmation: "Password (again)"
+      
+    hints:
+      user:
+        login: "Choose a username to log in to the service"
+        email: "Enter your e-mail address here"
+        password: "Choose your password carefully"
+        password_confirmation: "Please repeat your password"
+    actions:
+      create: "Create User"
+      update: "Save changes"

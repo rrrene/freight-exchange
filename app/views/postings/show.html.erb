@@ -1,0 +1,47 @@
+<div class="box">
+  <h3><%= @posting.class.human_name %> #<%= @posting.id %></h3>
+  
+  <table>
+    <thead>
+      <tr>
+        <th colspan="2"><h2><%= @posting.origin_station.name %></h2></th>
+        <th colspan="2"><h2><%= @posting.destination_station.name %></h2></th>
+      </tr>
+    </thead>
+    <tr>
+      <td colspan="2"><%= l @posting.origin_date, :format => :long %></td>
+      <td colspan="2"><%= l @posting.destination_date, :format => :long %></td>
+    </tr>
+    <thead>
+    <tr>
+      <th><%= t "postings.posting.loading_meter" %></th>
+      <th><%= t "postings.posting.weight" %></th>
+      <th><%= t "postings.posting.goods_type" %></th>
+      <th><%= t "postings.posting.wagon_type" %></th>
+    </tr>
+    </thead>
+    <tr>
+      <td><%= @posting.loading_meter %></td>
+      <td><%= @posting.weight %></td>
+      <td><%= @posting.goods_type %></td>
+      <td><%= @posting.wagon_type %></td>
+    </tr>
+    <% if @posting.misc.full? %>
+    <thead>
+      <tr>
+        <th colspan="4"><%= t "postings.posting.misc" %></th>
+      </tr>
+    </thead>
+    <tr>
+      <td colspan="4"><%= @posting.misc %></td>
+    </tr>
+    <% end %>
+  </table>
+  
+  <% content_for(:sidebar) do %>
+    <div class="box">
+      <h3><%= t "postings.contact_information" %></h3>
+      TODO: <%= @posting.user.email %>
+    </div>
+  <% end %>
+</div>

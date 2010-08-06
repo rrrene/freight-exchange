@@ -2,6 +2,14 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  postings:
+    contact_information: "Contact information"
+    posting:
+      loading_meter: "Loading metre:"
+      weight: "Weight (kg):"
+      goods_type: "Type of goods:"
+      wagon_type: "Type of wagon:"
+      misc: "Additional information:"
   search:
     button: "Search"
     subtext_results:
@@ -10,28 +18,3 @@ en:
     sidebar:
       station_results:
         header: "Stations found:"
-  activerecord:
-    models:
-      station: "Station"
-      freight: "Freight"
-      loading_space: "Loading Space"
-  formtastic:
-    titles:
-      credentials: "Login credentials"
-      change_password: "Change password (optional)"
-    labels:
-      user:
-        login: "Username"
-        email: "E-Mail"
-        password: "Password"
-        password_confirmation: "Password (again)"
-        
-    hints:
-      user:
-        login: "Choose a username to log in to the service"
-        email: "Enter your e-mail address here"
-        password: "Choose your password carefully"
-        password_confirmation: "Please repeat your password"
-    actions:
-      create: "Create User"
-      update: "Save changes"

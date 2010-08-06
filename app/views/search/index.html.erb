@@ -5,9 +5,9 @@
       <li>
         <span class="label <%= result.class.to_s.underscore %>"><%= result.class.human_name %></span>
         <% if result.is_a?(Posting) %>
-          <%= result.origin_station.name %> - <%= result.destination_station.name %>
+          <%= link_to "#{result.origin_station.name} - #{result.destination_station.name}", result %>
         <% else %>
-          <%= result.name %>
+          <%= link_to result.name, result %>
         <% end %>
       </li>
     <% end %>
@@ -22,7 +22,7 @@
           <h3><%= t "search.sidebar.station_results.header" %></h3>
           <ul>
             <% @station_results.each do |station| %>
-            <li><%= station.name %></li>
+            <li><%= link_to station.name, station %></li>
             <% end %>
           </ul>
         </div>
