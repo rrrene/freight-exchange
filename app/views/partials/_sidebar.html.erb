@@ -1,13 +1,5 @@
-<div id="sidebar" class="span-7 last">
+<div id="sidebar" class="span-8 last">
   <%= yield(:sidebar) %>
-  <div id="navigation">
-    <div class="box">
-      <h3>Navigation</h3>
-        <% %w(root users something).each do |c| %>
-        <%= link_to_unless(controller?(c), c, c) %>
-        <% end %>
-    </div>
-  </div>
   <div id="my_profile">
     <div class="box">
       <h3>My Profile</h3>

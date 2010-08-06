@@ -35,8 +35,8 @@ module Seed
   STATIONS = {
     :de => [
       {:name => 'Bochum Hbf', :regions => ['Ruhr', 'Westfalen']},
-      {:name => 'Dortmund Hbf', :regions => ['Ruhr', 'Westfalen']},
       {:name => 'Essen Hbf', :regions => ['Ruhr', 'Westfalen']},
+      {:name => 'Dortmund Hbf', :regions => ['Ruhr', 'Westfalen']},
     ],
     :nl => [
       {:name => 'Utrecht Centraal', :regions => ['Utrecht']},
