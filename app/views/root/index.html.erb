@@ -3,28 +3,5 @@
   <p>Find me in app/views/root/index.html.erb</p>
   
   
-  <% 
-    model = Station 
-    attributes = model.new.attributes.keys
-  %>
-  <table>
-    <thead>
-      <tr>
-        <th>id</th>
-        <% attributes.each do |attr| %>
-          <th><%= attr.humanize %></th>
-        <% end %>
-      </tr>
-    </thead>
-    <tbody>
-      <% model.all.each do |ar| %>
-        <tr>
-          <td><%= ar.id %></th>
-          <% attributes.each do |attr| %>
-          <td><%= ar[attr] %></td>
-          <% end %>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>  
+  <%= render_table Station.all %>
 </div>

@@ -19,4 +19,7 @@ module ApplicationHelper
     condition ? content_tag(:span, name, html_options) : link_to(name, options, html_options, &block)
   end
   
+  def render_table(arel)
+    render :partial => '/partials/table', :locals => {:model => arel.first.class, :arel => arel}
+  end
 end

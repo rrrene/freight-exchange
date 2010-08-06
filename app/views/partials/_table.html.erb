@@ -1,0 +1,22 @@
+<% model.new.attributes.keys.full? do |attributes| %>
+<table>
+  <thead>
+    <tr>
+      <th>id</th>
+      <% attributes.each do |attr| %>
+        <th><%= attr.humanize %></th>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <% arel.each do |ar| %>
+      <tr>
+        <td><%= ar.id %></th>
+        <% attributes.each do |attr| %>
+        <td><%= ar[attr] %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% end %>
