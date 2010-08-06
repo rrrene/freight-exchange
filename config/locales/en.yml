@@ -2,9 +2,14 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  general:
-    search_button: "Search"
-    
+  search:
+    button: "Search"
+    subtext_results:
+      one: "1 result <small>for your query</small>"
+      other: "{{count}} results <small>for your query</small>"
+    sidebar:
+      station_results:
+        header: "Stations found:"
   formtastic:
     titles:
       credentials: "Login credentials"

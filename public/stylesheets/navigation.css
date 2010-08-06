@@ -178,3 +178,22 @@ thead th {
   color: #666;
   border-bottom: 1px solid #E0E0E0;
 }
+
+#sidebar .box ul {
+  padding-left: 20px;
+}
+
+span.label {
+  color: #fff;
+  background-color: #000;
+  border: 1px solid #ccc;
+  padding: 2px;
+  font-size: 0.8em;
+  -moz-border-radius: 3px; 
+  -webkit-border-radius: 3px;
+  text-shadow:0 1px 3px #222222;
+}
+span.label.freight {
+  background-color: #0c0;
+  border-color: #0a0;
+}

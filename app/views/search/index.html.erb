@@ -1,0 +1,31 @@
+<div class="box">
+  <h3>Search results</h3>
+    <ul>
+    <% @results.each do |result| %>
+      <li>
+        <% if result.is_a?(Posting) %>
+          <span class="label <%= result.type.underscore %>"><%= result.type %></span>
+          <%= result.origin_station.name %> - <%= result.destination_station.name %>
+        <% else %>
+          <%= result.name %>
+        <% end %>
+      </li>
+    <% end %>
+    </ul>
+    
+    <% content_for(:subtext) do %>
+      <%= t('search.subtext_results', :count => @results.count).html_safe %>
+    <% end %>
+    <% content_for(:sidebar) do %>
+      <% if @station_results.full? %>
+        <div class="box">
+          <h3><%= t "search.sidebar.station_results.header" %></h3>
+          <ul>
+            <% @station_results.each do |station| %>
+            <li><%= station.name %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+    <% end %>
+</div>

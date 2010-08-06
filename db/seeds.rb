@@ -28,6 +28,7 @@ Seed::STATIONS.each do |iso, opts_arr|
     regions.each do |name|
       station.regions << Region[name]
     end
+    SimpleSearch << station
   end
 end
 puts "#{Station.count} Stations"

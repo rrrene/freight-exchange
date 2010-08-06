@@ -24,12 +24,12 @@
             <h2><%= t('hello') %></h2>
             <%= clear_both %>
             <div id="search_form">
-            <% form_tag do %>
-              <div class="input-wrapper"><%= text_field_tag :q, "" %><%= submit_tag t('general.search_button') %></div>
+            <% form_tag search_url, :method => :get do %>
+              <div class="input-wrapper"><%= text_field_tag :q, h(params[:q]) %><%= submit_tag t('search.button'), :name => nil %></div>
             <% end %>
             </div>
             <div class="subtext">
-              35 Ergebnisse <small>zu Ihrer Anfrage</small>
+              <%= yield(:subtext) %>
             </div>
           </div>
         </div>

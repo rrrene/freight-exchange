@@ -1,6 +1,6 @@
 BlackBoard::Application.routes.draw do |map|
   resources :postings
-
+  
   resources :users
 
   get "root/index"
@@ -16,6 +16,7 @@ BlackBoard::Application.routes.draw do |map|
   match "my_profile" => 'users#edit', :as => :my_profile
   match "login" => 'user_sessions#new', :as => :login
   match "logout" => 'user_sessions#destroy', :as => :logout
+  match "search" => 'search#index', :as => :search
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
