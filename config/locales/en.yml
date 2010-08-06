@@ -7,7 +7,8 @@ en:
     
   formtastic:
     titles:
-      post_details: "Post details"
+      credentials: "Login credentials"
+      change_password: "Change password (optional)"
     labels:
       user:
         login: "Username"
