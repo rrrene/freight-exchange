@@ -1,4 +1,4 @@
-<% model.new.attributes.keys.full? do |attributes| %>
+<% model.new.attributes.keys.tap do |attributes| %>
 <table>
   <thead>
     <tr>

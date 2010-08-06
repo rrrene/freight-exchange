@@ -82,6 +82,7 @@ div.box {
   background-color: #fff;
   -moz-border-radius: 5px; 
   -webkit-border-radius: 5px;
+  -moz-box-shadow:0 1px 3px #BBBBBB;
   -webkit-box-shadow: #BBB 0px 1px 3px;
 }
 
