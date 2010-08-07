@@ -14,6 +14,10 @@ module ApplicationHelper
     controller.controller_name == c
   end
   
+  def link_back(text = t("common.link_back"))
+    link_to_function text, "self.history.back();", :class => 'back'
+  end
+  
   # TODO: lookup rails3 implementation
   def link_to_unless(condition, name, options = {}, html_options = {}, &block)
     condition ? content_tag(:span, name, html_options) : link_to(name, options, html_options, &block)
