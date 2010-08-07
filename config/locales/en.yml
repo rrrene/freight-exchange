@@ -3,13 +3,18 @@
 
 en:
   postings:
-    contact_information: "Contact information"
+    sidebar:
+      contact_information: 
+        header: "Contact information"
+        edit: "Edit info"
     posting:
       loading_meter: "Loading metre:"
       weight: "Weight (kg):"
       goods_type: "Type of goods:"
       wagon_type: "Type of wagon:"
       misc: "Additional information:"
+      edit: "Edit this posting"
+      
   search:
     button: "Search"
     subtext_results:

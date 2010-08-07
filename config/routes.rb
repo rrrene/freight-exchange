@@ -1,4 +1,6 @@
 BlackBoard::Application.routes.draw do |map|
+  resources :companies
+
   resources :stations
   resources :postings
   resources :freights, :controller => :postings

@@ -1,4 +1,4 @@
-test: ignore
+demo_mode: true
 name: Rails3Base
 domain: localhost
 language: en

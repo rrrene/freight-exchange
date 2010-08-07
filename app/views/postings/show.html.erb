@@ -1,5 +1,10 @@
 <div class="box">
-  <h3><%= @posting.class.human_name %> #<%= @posting.id %></h3>
+  <h3>
+    <%= @posting.class.human_name %> #<%= @posting.id %>
+    <% if @posting.user == current_user %>
+      <%= link_to t("postings.posting.edit"), "#", :class => 'edit' %>
+    <% end %>
+  </h3>
   
   <table>
     <thead>
@@ -33,15 +38,37 @@
       </tr>
     </thead>
     <tr>
-      <td colspan="4"><%= @posting.misc %></td>
+      <td colspan="4"><%= simple_format( auto_link(@posting.misc) ) %></td>
     </tr>
     <% end %>
   </table>
   
   <% content_for(:sidebar) do %>
-    <div class="box">
-      <h3><%= t "postings.contact_information" %></h3>
-      TODO: <%= @posting.user.email %>
-    </div>
+    <% if company = @posting.user.company.full? %>
+      <div class="box">
+        <h3>
+          <%= t "postings.sidebar.contact_information.header" %>
+          <% if company == current_user.company %>
+            <%= link_to t("postings.sidebar.contact_information.edit"), "#", :class => 'edit' %>
+          <% end %>
+        </h3>
+      
+        <table>
+          <thead>
+            <tr>
+              <th colspan="2"><b><%= company.name %></b></th>
+            </tr>
+          </thead>
+          <% %w(address address2 zip city country email website phone fax).each do |attr| %>
+            <% if company[attr].full? %>
+              <tr>
+                <th><%= Company.human_attribute_name(attr) %></th>
+                <td><%= auto_link company[attr] %></td>
+              </tr>
+            <% end %>
+          <% end %>
+        </table>
+      </div>
+    <% end %>
   <% end %>
 </div>

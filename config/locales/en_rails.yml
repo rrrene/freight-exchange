@@ -4,6 +4,19 @@ en:
       station: "Station"
       freight: "Freight"
       loading_space: "Loading Space"
+    attributes:
+      company:
+        name: "Name"
+        address: "Address"
+        address2: ""
+        zip: "ZIP"
+        city: "City"
+        country: "Country"
+        phone: "Phone"
+        fax: "Fax"
+        email: "E-Mail"
+        website: "Web"
+        misc: "Additional information"
   formtastic:
     titles:
       credentials: "Login credentials"

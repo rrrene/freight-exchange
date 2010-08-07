@@ -186,6 +186,10 @@ thead th {
   padding-left: 20px;
 }
 
+#sidebar input.create_new_posting {
+  width: 100%;
+}
+
 span.label {
   color: #fff;
   background-color: #000;
@@ -208,6 +212,30 @@ span.label.loading_space {
 table tr th h2 {
   margin: 0;
 }
+h3 .edit {
+  float: right;
+  text-transform: none;
+}
+table tr th b {
+  color: #000;
+  text-transform: none;
+}
 #content table thead tr th {
   padding-top: 40px;
+}
+
+.bad,
+.severe,
+a.severe:visited,
+a.cancel,
+a.cancel:hover,
+a.cancel:visited,
+a.delete,
+a.delete:hover,
+a.delete:visited,
+a.edit,
+a.edit:hover,
+a.edit:visited {
+  color: #f00;
+  text-decoration: underline;
 }

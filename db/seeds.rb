@@ -36,7 +36,9 @@ puts "#{Station.count} Stations"
 if Rails.env == 'development'
   # Create some users to fill the db
   Seed::USERS.each do |opts|
-    User.create(opts)
+    company_opts = opts.delete(:company)
+    user = User.create(opts)
+    company = Company.create(company_opts.merge(:user => user))
   end
   puts "#{User.count} Users"
   

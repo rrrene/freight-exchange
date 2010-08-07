@@ -9,11 +9,29 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100803205348) do
+ActiveRecord::Schema.define(:version => 20100806185522) do
 
   create_table "app_configs", :force => true do |t|
     t.string   "name"
     t.text     "value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "companies", :force => true do |t|
+    t.string   "name"
+    t.string   "contact_person"
+    t.string   "phone"
+    t.string   "fax"
+    t.string   "mobile"
+    t.string   "email"
+    t.string   "website"
+    t.string   "address"
+    t.string   "address2"
+    t.string   "zip"
+    t.string   "city"
+    t.string   "country"
+    t.text     "misc"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -95,6 +113,7 @@ ActiveRecord::Schema.define(:version => 20100803205348) do
     t.string   "last_login_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "company_id"
   end
 
 end

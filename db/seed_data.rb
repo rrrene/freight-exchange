@@ -4,11 +4,23 @@ module Seed
       :login => 'freight_supplier',
       :email => 'freight_supplier@example.org',
       :password => 'asdf', :password_confirmation => 'asdf',
+      :company => {
+        :name => 'Essener Geldschrankfabrik AG',
+        :phone => '+49 201 555 1001',
+        :email => 'some@example.org',
+        :website => 'example.org',
+      }
     },
     {
       :login => 'loading_space_supplier',
       :email => 'loading_space_supplier@example.org',
       :password => 'asdf', :password_confirmation => 'asdf',
+      :company => {
+        :name => 'DB Schenker Logistics',
+        :phone => '+49 231 555 1001',
+        :email => 'db-logistics@example.org',
+        :website => 'example.org',
+      }
     },
   ]
   

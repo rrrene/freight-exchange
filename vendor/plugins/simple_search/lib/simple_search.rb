@@ -69,7 +69,7 @@ class SimpleSearch < ActiveRecord::Base
       origin = opts[:model] ? where(:item_type => opts[:model].to_s) : self
       words.inject(origin) { |chain, word| 
         chain.where(['text LIKE ?', '%' << word << '%'])  
-      }.all.map(&:item)
+      }.all.map(&:item).compact
     end
     alias / search
   end
