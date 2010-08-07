@@ -139,6 +139,7 @@ div.corridor_map div#search_form .input-wrapper input#q:focus {
   outline: none;
 }
 
+#sidebar .create_new_posting,
 div.corridor_map div#search_form .input-wrapper input[type=submit] {
   border: 0;
   border-left: 1px solid #CCCCCC;
@@ -146,6 +147,23 @@ div.corridor_map div#search_form .input-wrapper input[type=submit] {
   height: 32px;
   cursor:pointer;
   font:15px arial,sans-serif;
+}
+
+#sidebar .create_new_posting {
+  display: block;
+  text-align: center;
+  line-height: 30px;
+  width: 100%;
+  background-color: #fff;
+  border-color:#CCCCCC #CCCCCC #999999;
+  border-style:solid;
+  border-width:1px;
+  color: #88cc33;
+  font-weight: bold;
+  -moz-border-radius: 5px; 
+  -webkit-border-radius: 5px;
+  -moz-box-shadow:0 1px 3px #BBBBBB;
+  -webkit-box-shadow: #BBB 0px 1px 3px;
 }
 
 div.box {
@@ -165,15 +183,15 @@ div.box h3 {
   text-transform: uppercase;
 }
 
-div.box a {
+div.frame a {
   color: #4E96B2;
   font-weight: bold;
   text-decoration: none;
 }
-div.box a:hover {
-  color: #4E96B2;
+div.frame a:hover {
   text-decoration: underline;
 }
+
 thead th {
   background-color: transparent;
   text-transform: uppercase;
@@ -182,12 +200,13 @@ thead th {
   border-bottom: 1px solid #E0E0E0;
 }
 
-#sidebar .box ul {
-  padding-left: 20px;
+legend span {
+  color: #666;
+  font-size: 1em;
 }
 
-#sidebar input.create_new_posting {
-  width: 100%;
+#sidebar .box ul {
+  padding-left: 20px;
 }
 
 span.label {

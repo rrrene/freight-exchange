@@ -5,6 +5,11 @@ en:
       freight: "Freight"
       loading_space: "Loading Space"
     attributes:
+      user:
+        login: "Username"
+        email: "E-Mail"
+        password: "Password"
+        password_confirmation: "Password (again)"
       company:
         name: "Name"
         address: "Address"
@@ -21,13 +26,12 @@ en:
     titles:
       credentials: "Login credentials"
       change_password: "Change password (optional)"
+      company_name: "Name"
+      company_address: "Postal information"
+      company_contact: "Contact information"
     labels:
       user:
-        login: "Username"
-        email: "E-Mail"
-        password: "Password"
-        password_confirmation: "Password (again)"
-      
+        #
     hints:
       user:
         login: "Choose a username to log in to the service"

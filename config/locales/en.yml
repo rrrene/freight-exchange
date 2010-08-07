@@ -2,6 +2,14 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  common:
+    website_title: "Freight Exchange 2010"
+    create_new_posting: "Create a new Posting"
+    link_back: "« Back"
+  companies:
+    edit:
+      header: "Edit company information"
+      
   postings:
     sidebar:
       contact_information: 

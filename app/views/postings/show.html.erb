@@ -1,3 +1,7 @@
+<p>
+  <%= link_to_function t("common.link_back"), "self.history.back();", :class => 'back' %>
+</p>
+
 <div class="box">
   <h3>
     <%= @posting.class.human_name %> #<%= @posting.id %>
@@ -49,7 +53,7 @@
         <h3>
           <%= t "postings.sidebar.contact_information.header" %>
           <% if company == current_user.company %>
-            <%= link_to t("postings.sidebar.contact_information.edit"), "#", :class => 'edit' %>
+            <%= link_to t("postings.sidebar.contact_information.edit"), edit_company_path(company), :class => 'edit' %>
           <% end %>
         </h3>
       

@@ -1,0 +1,19 @@
+<% semantic_form_for(@company) do |f| %>
+  <% f.inputs :company_name do %>
+    <%= f.input :name %>
+  <% end %>
+  <% f.inputs :company_address do %>
+    <%= f.input :address %>
+    <%= f.input :address2 %>
+    <%= f.input :zip %>
+    <%= f.input :city %>
+    <%= f.input :country, :as => :string %>
+  <% end %>
+  <% f.inputs :company_contact do %>
+    <%= f.input :phone %>
+    <%= f.input :fax %>
+    <%= f.input :email %>
+    <%= f.input :website %>
+  <% end %>
+  <%= f.buttons %>
+<% end %>
