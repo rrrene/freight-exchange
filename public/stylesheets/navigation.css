@@ -154,11 +154,11 @@ div.corridor_map div#search_form .input-wrapper input[type=submit] {
   text-align: center;
   line-height: 30px;
   width: 100%;
-  background-color: #fff;
-  border-color:#CCCCCC #CCCCCC #999999;
+  background-color: #88cc33;
+  border-color:#66aa11 #66aa11 #448800;
   border-style:solid;
   border-width:1px;
-  color: #88cc33;
+  color: #fff;
   font-weight: bold;
   -moz-border-radius: 5px; 
   -webkit-border-radius: 5px;
