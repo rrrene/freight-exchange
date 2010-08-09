@@ -21,7 +21,7 @@
         <%= render '/partials/header' %>
         <div class="corridor_map">
           <div class="container" id="corridor_map">
-            <h2><%= t('hello') %></h2>
+            <h2><%= page[:title] || t('hello') %></h2>
             <%= clear_both %>
             <div id="search_form">
             <% form_tag search_url, :method => :get do %>

@@ -83,6 +83,12 @@ div#corridor_map {
   position: relative;
   height: 260px;
 }
+#root.about div#corridor_map {
+  height: 68px;
+}
+#root.about div#corridor_map div#search_form {
+  display: none;
+}
 
 div.corridor_map h2 {
   background:url("/images/black50.png") repeat scroll 0 0 transparent;

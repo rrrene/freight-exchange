@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :record_user_in_recordings
-  helper_method :current_user, :demo_mode?
+  helper_method :current_user, :demo_mode?, :page
   layout 'application'
   
   private
@@ -63,4 +63,9 @@ class ApplicationController < ActionController::Base
     redirect_to(session[:return_to] || default)
     session[:return_to] = nil
   end
+  
+  def page
+    @page ||= {}
+  end
+  
 end

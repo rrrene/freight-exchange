@@ -9,7 +9,11 @@ en:
   companies:
     edit:
       header: "Edit company information"
-      
+  
+  root:
+    about:
+      page_title: "About"
+  
   postings:
     sidebar:
       contact_information: 

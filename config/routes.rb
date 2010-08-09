@@ -8,6 +8,7 @@ BlackBoard::Application.routes.draw do |map|
   resources :users
 
   get "root/index"
+  match "about" => "root#about", :as => :about
   
   resources :users
   resources :user_sessions do
