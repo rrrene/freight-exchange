@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
-  acts_as_authentic
-  simple_search
   belongs_to :company
+  acts_as_authentic
+  searchable
 
   def name
     login

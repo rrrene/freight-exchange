@@ -5,7 +5,7 @@ class SimpleSearch < ActiveRecord::Base
   
   class << self
     #:call-seq:
-    #   SimpleSearch.create_or_update?(model_or_record)
+    #   SimpleSearch.create_or_update(model_or_record)
     #   SimpleSearch << model_or_record
     # 
     # Adds a record or a model to the search index.
@@ -63,10 +63,10 @@ class SimpleSearch < ActiveRecord::Base
     #  SimpleSearch.search "some query"
     #  SimpleSearch / "some other query"
     def search(query, opts = {})
-      opts.reverse_merge!(:model => nil, :simplify => true)
+      opts.reverse_merge!(:models => nil, :simplify => true)
       words = query.to_s.split(' ')
       words = words.map(&:simplify) if opts[:simplify]
-      origin = opts[:model] ? where(:item_type => opts[:model].to_s) : self
+      origin = opts[:models] ? where(:item_type => opts[:models].map(&:to_s)) : self
       words.inject(origin) { |chain, word| 
         chain.where(['text LIKE ?', '%' << word << '%'])  
       }.all.map(&:item).compact

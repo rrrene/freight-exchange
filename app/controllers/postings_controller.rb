@@ -1,7 +1,4 @@
-class PostingsController < ApplicationController
+class PostingsController < InheritedResources::Base
   login_required
-  
-  def show
-    @posting = Posting.find(params[:id])
-  end
+  ensure_resource_belongs_to_user :only => %w(edit update)
 end

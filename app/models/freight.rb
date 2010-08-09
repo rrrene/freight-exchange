@@ -1,3 +1,3 @@
 class Freight < Posting
-  simple_search
+  searchable
 end

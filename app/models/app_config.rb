@@ -1,5 +1,5 @@
 class AppConfig < ActiveRecord::Base
-  simple_search
+  searchable
   
   class << self
     attr_accessor :defaults

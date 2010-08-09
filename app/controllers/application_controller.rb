@@ -22,9 +22,7 @@ class ApplicationController < ActionController::Base
   end
   
   # Use this in a controller to restrict access to owners.
-  # Invokes login_required
   def self.ensure_resource_belongs_to_user(opts = {})
-    login_required
     before_filter :require_owner, opts
   end
   
@@ -33,7 +31,7 @@ class ApplicationController < ActionController::Base
     #Recorder.always_save(:record_updated_at, Proc.new { |ar| ar.updated_at })
   end
   
-  def require_owner
+  def require_owner # :nodoc:
     if resource && current_user
       resource.user == current_user 
     end

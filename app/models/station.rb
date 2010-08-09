@@ -1,7 +1,7 @@
 class Station < ActiveRecord::Base
   has_and_belongs_to_many :regions, :uniq => true
   belongs_to :country
-  simple_search
+  searchable
   
   def to_search
     "

@@ -1,3 +1,3 @@
 class LoadingSpace < Posting
-  simple_search
+  searchable
 end
