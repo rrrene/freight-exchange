@@ -7,8 +7,7 @@
     <div class="box">
       <h3>My Profile</h3>
         <% if current_user.full? %>
-          <span>Welcome <%= current_user.login %>!</span>
-          <%= link_to_unless_current "My Profile", my_profile_url %>
+          Welcome <%= link_to_unless_current current_user.login, my_profile_url %>!</span><br>
           <%= link_to_unless_current "Logout", logout_url %>
         <% else %>
           <%= link_to_unless_current "Login", login_url %>
