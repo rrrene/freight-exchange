@@ -14,7 +14,7 @@
     </ul>
     
     <% content_for(:subtext) do %>
-      <%= t('search.subtext_results', :count => @results.count).html_safe %>
+      <%= t('search.subtext_results', :count => @results[:main].count).html_safe %>
     <% end %>
     
     <% content_for(:sidebar) do %>
