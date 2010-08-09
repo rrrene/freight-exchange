@@ -28,6 +28,10 @@ en:
     subtext_results:
       one: "1 result <small>for your query</small>"
       other: "{{count}} results <small>for your query</small>"
+    results:
+      header: "Search results"
     sidebar:
+      company_results:
+        header: "Companies found:"
       station_results:
         header: "Stations found:"

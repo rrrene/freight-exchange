@@ -1,7 +1,7 @@
 <div class="box">
-  <h3>Search results</h3>
+  <h3><%= t "search.results.header" %></h3>
     <ul>
-    <% @results.each do |result| %>
+    <% @results[:main].each do |result| %>
       <li>
         <span class="label <%= result.class.to_s.underscore %>"><%= result.class.human_name %></span>
         <% if result.is_a?(Posting) %>
@@ -16,16 +16,19 @@
     <% content_for(:subtext) do %>
       <%= t('search.subtext_results', :count => @results.count).html_safe %>
     <% end %>
+    
     <% content_for(:sidebar) do %>
-      <% if @station_results.full? %>
-        <div class="box">
-          <h3><%= t "search.sidebar.station_results.header" %></h3>
-          <ul>
-            <% @station_results.each do |station| %>
-            <li><%= link_to station.name, station %></li>
-            <% end %>
-          </ul>
-        </div>
+      <% @sidebar_result_models.each do |klass| %>
+        <% if results = @results[klass].full? %>
+          <div class="box">
+            <h3><%= t "search.sidebar.#{klass}_results.header" %></h3>
+            <ul>
+              <% results.each do |result| %>
+              <li><%= link_to result.name, result %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
       <% end %>
     <% end %>
 </div>
