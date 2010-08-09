@@ -1,13 +1,5 @@
-class CompaniesController < ApplicationController
-  login_required
-  
-  def edit
-    set_standard_record
-  end
-  
-  def update
-    perform_standard_update
-  end
+class CompaniesController < InheritedResources::Base
+  ensure_resource_belongs_to_user :only => %w(edit update)
   
   def show
     redirect_to root_url # TODO: what to do here?

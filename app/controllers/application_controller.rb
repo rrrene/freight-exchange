@@ -5,28 +5,6 @@ class ApplicationController < ActionController::Base
   layout 'application'
   
   private
-
-  def perform_standard_update
-    record = set_standard_record
-    if record.belongs_to?(current_user)
-      record.update_attributes(params[:company])
-      if record.save
-        redirect_to record
-      else
-        render :action => 'edit'
-      end
-    end
-  end
-  
-  # Sets an instance variable named after the current controller
-  # and finds the corresponding record for params[:id]
-  #
-  # In CompaniesController this means @company will be assigned:
-  #   @company = Company.find(params[:id])
-  def set_standard_record
-    model = controller_name.classify.constantize
-    instance_variable_set("@#{controller_name.singularize}", model.find(params[:id]))
-  end
   
   # Returns the currently logged in user.
   def current_user
@@ -43,9 +21,22 @@ class ApplicationController < ActionController::Base
     before_filter :require_user, opts
   end
   
+  # Use this in a controller to restrict access to owners.
+  # Invokes login_required
+  def self.ensure_resource_belongs_to_user(opts = {})
+    login_required
+    before_filter :require_owner, opts
+  end
+  
   def record_user_in_recordings
     #Recorder.always_save(:user_id, current_user.id) if current_user
     #Recorder.always_save(:record_updated_at, Proc.new { |ar| ar.updated_at })
+  end
+  
+  def require_owner
+    if resource && current_user
+      resource.user == current_user 
+    end
   end
   
   def require_user # :nodoc:
