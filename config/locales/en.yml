@@ -6,36 +6,48 @@ en:
     website_title: "Freight Exchange 2010"
     create_new_posting: "Create a new Posting"
     link_back: "« Back"
+  # CompaniesController
   companies:
     edit:
       header: "Edit company information"
-  
+
+  # RootController
   root:
     about:
       page_title: "About"
+    index:
+      page_title: "Welcome"
   
+  # PostingsController
   postings:
-    sidebar:
-      contact_information: 
-        header: "Contact information"
-        edit: "Edit info"
-    posting:
-      loading_meter: "Loading metre:"
-      weight: "Weight (kg):"
-      goods_type: "Type of goods:"
-      wagon_type: "Type of wagon:"
-      misc: "Additional information:"
-      edit: "Edit this posting"
-      
+    common:
+      sidebar:
+        contact_information: 
+          header: "Contact information"
+          edit: "Edit info"
+      posting:
+        loading_meter: "Loading metre:"
+        weight: "Weight (kg):"
+        goods_type: "Type of goods:"
+        wagon_type: "Type of wagon:"
+        misc: "Additional information:"
+        edit: "Edit this posting"
+    show:
+      page_title: "Posting details"
+  
+  # SearchController
   search:
-    button: "Search"
-    subtext_results:
-      one: "1 result <small>for your query</small>"
-      other: "{{count}} results <small>for your query</small>"
-    results:
-      header: "Search results"
-    sidebar:
-      company_results:
-        header: "Companies found:"
-      station_results:
-        header: "Stations found:"
+    common:
+      button: "Search"
+      subtext_results:
+        one: "1 result <small>for your query</small>"
+        other: "{{count}} results <small>for your query</small>"
+      results:
+        header: "Search results"
+      sidebar:
+        company_results:
+          header: "Companies found:"
+        station_results:
+          header: "Stations found:"
+    index:
+      page_title: "Search"

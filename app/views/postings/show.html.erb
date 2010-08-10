@@ -6,7 +6,7 @@
   <h3>
     <%= @posting.class.human_name %> #<%= @posting.id %>
     <% if @posting.user == current_user %>
-      <%= link_to t("postings.posting.edit"), "#", :class => 'edit' %>
+      <%= link_to t("postings.common.posting.edit"), "#", :class => 'edit' %>
     <% end %>
   </h3>
   
@@ -23,10 +23,10 @@
     </tr>
     <thead>
     <tr>
-      <th><%= t "postings.posting.loading_meter" %></th>
-      <th><%= t "postings.posting.weight" %></th>
-      <th><%= t "postings.posting.goods_type" %></th>
-      <th><%= t "postings.posting.wagon_type" %></th>
+      <th><%= t "postings.common.posting.loading_meter" %></th>
+      <th><%= t "postings.common.posting.weight" %></th>
+      <th><%= t "postings.common.posting.goods_type" %></th>
+      <th><%= t "postings.common.posting.wagon_type" %></th>
     </tr>
     </thead>
     <tr>
@@ -51,9 +51,9 @@
     <% if company = @posting.user.company.full? %>
       <div class="box">
         <h3>
-          <%= t "postings.sidebar.contact_information.header" %>
+          <%= t "postings.common.sidebar.contact_information.header" %>
           <% if company == current_user.company %>
-            <%= link_to t("postings.sidebar.contact_information.edit"), edit_company_path(company), :class => 'edit' %>
+            <%= link_to t("postings.common.sidebar.contact_information.edit"), edit_company_path(company), :class => 'edit' %>
           <% end %>
         </h3>
       

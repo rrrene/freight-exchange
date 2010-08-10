@@ -25,7 +25,7 @@
             <%= clear_both %>
             <div id="search_form">
             <% form_tag search_url, :method => :get do %>
-              <div class="input-wrapper"><%= text_field_tag :q, h(params[:q]) %><%= submit_tag t('search.button'), :name => nil %></div>
+              <div class="input-wrapper"><%= text_field_tag :q, h(params[:q]) %><%= submit_tag t('search.common.button'), :name => nil %></div>
             <% end %>
             </div>
             <div class="subtext">

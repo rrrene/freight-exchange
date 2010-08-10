@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :record_user_in_recordings
+  before_filter :set_default_page_title
   helper_method :current_user, :demo_mode?, :page
   layout 'application'
   
@@ -53,6 +54,10 @@ class ApplicationController < ActionController::Base
       redirect_to root_url
       return false
     end
+  end
+  
+  def set_default_page_title
+    page[:title] = t("#{controller_name}.#{action_name}.page_title")
   end
   
   def store_location # :nodoc:
