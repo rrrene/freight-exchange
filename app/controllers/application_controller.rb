@@ -23,8 +23,37 @@ class ApplicationController < ActionController::Base
   end
   
   # Use this in a controller to restrict access to owners.
-  def self.ensure_resource_belongs_to_user(opts = {})
+  def self.ownership_required(opts = {})
     before_filter :require_owner, opts
+  end
+  
+  # Use this in a controller to restrict access to either 
+  # users of certain roles (e.g. admins) or the rightful owner
+  # of an object.
+  #
+  #   class PostingController < ApplicationController
+  #     role_or_ownership_required [:company_admin, :administrator]
+  #   end
+  #
+  def self.role_or_ownership_required(roles, opts = {})
+    allowed_roles = [roles].flatten.map { |r| UserRole[r] }
+    before_filter(opts) do |controller|
+      require_role(allowed_roles) or require_owner
+    end
+  end
+  
+  # Use this in a controller to restrict access to either 
+  # users of certain roles (e.g. admins).
+  #
+  #   class Admin::BaseController < ApplicationController
+  #     role_required :administrator
+  #   end
+  #
+  def self.role_required(roles, opts = {})
+    allowed_roles = [roles].flatten.map { |r| UserRole[r] }
+    before_filter(opts) do |controller|
+      require_role(allowed_roles)
+    end
   end
   
   def record_user_in_recordings
@@ -36,6 +65,10 @@ class ApplicationController < ActionController::Base
     if resource && current_user
       resource.user == current_user 
     end
+  end
+  
+  def require_role(allowed_roles = []) # :nodoc:
+    current_user && (current_user.roles & allowed_roles).any?
   end
   
   def require_user # :nodoc:
@@ -56,7 +89,7 @@ class ApplicationController < ActionController::Base
     end
   end
   
-  def set_default_page_title
+  def set_default_page_title # :nodoc:
     page[:title] = t("#{controller_name}.#{action_name}.page_title")
   end
   

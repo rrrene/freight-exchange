@@ -17,7 +17,7 @@ class ActiveRecord::Base
     def brackets_find_by(attribute_name)
       self.instance_eval "
         def [](val)
-          where(:#{attribute_name} => val.to_s)
+          where(:#{attribute_name} => val.to_s).first
         end
       "
     end
