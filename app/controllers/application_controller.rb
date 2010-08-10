@@ -56,6 +56,10 @@ class ApplicationController < ActionController::Base
     end
   end
   
+  def self.same_company_required(opts = {})
+    before_filter :require_same_company, opts
+  end
+  
   def record_user_in_recordings
     #Recorder.always_save(:user_id, current_user.id) if current_user
     #Recorder.always_save(:record_updated_at, Proc.new { |ar| ar.updated_at })
@@ -69,6 +73,20 @@ class ApplicationController < ActionController::Base
   
   def require_role(allowed_roles = []) # :nodoc:
     current_user && (current_user.roles & allowed_roles).any?
+  end
+  
+  def require_same_company # :nodoc:
+    if resource && current_user
+      if resource.respond_to?(:company)
+        current_user.company == resource.company
+      elsif resource.respond_to?(:user)
+        current_user.company == resource.user.company
+      elsif resource.is_a?(Company)
+        current_user.company == resource
+      else
+        false
+      end
+    end
   end
   
   def require_user # :nodoc:

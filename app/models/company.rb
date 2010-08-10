@@ -1,6 +1,6 @@
 class Company < ActiveRecord::Base
   searchable
-  has_one :user
+  has_many :users
   
   validates_presence_of :name
 end
