@@ -9,6 +9,8 @@ en:
   
   # CompaniesController
   companies:
+    dashboard:
+      page_title: "Dashboard"
     new:
       page_title: "Create company account"
       header: "Create your company account"

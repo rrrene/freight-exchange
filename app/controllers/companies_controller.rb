@@ -1,7 +1,11 @@
 class CompaniesController < InheritedResources::Base
   login_required :except => [:new, :create]
-  same_company_required :except => [:new, :create, :show]
-  role_required :company_admin, :except => [:new, :create, :show]
+  same_company_required :except => [:dashboard, :new, :create, :show]
+  role_required :company_admin, :except => [:dashboard, :new, :create, :show]
+  
+  def dashboard
+    @company = current_company
+  end
   
   # The Companies#new action is actually the "Create a new Account"-screen
   # a user sees when he signs up for the freight exchange.
