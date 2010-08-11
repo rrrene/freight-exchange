@@ -32,13 +32,13 @@ class ApplicationController < ActionController::Base
   # of an object.
   #
   #   class PostingController < ApplicationController
-  #     role_or_ownership_required [:company_admin, :administrator]
+  #     role_or_ownership_required [:posting_admin, :administrator]
   #   end
   #
   def self.role_or_ownership_required(roles, opts = {})
-    allowed_roles = [roles].flatten.map { |r| UserRole[r] }
+    allowed_role_names = [roles].flatten.map(&:to_s)
     before_filter(opts) do |controller|
-      require_role(allowed_roles) or require_owner
+      require_role(allowed_role_names) or require_owner
     end
   end
   
@@ -50,9 +50,9 @@ class ApplicationController < ActionController::Base
   #   end
   #
   def self.role_required(roles, opts = {})
-    allowed_roles = [roles].flatten.map { |r| UserRole[r] }
+    allowed_role_names = [roles].flatten.map(&:to_s)
     before_filter(opts) do |controller|
-      require_role(allowed_roles)
+      require_role(allowed_role_names)
     end
   end
   
@@ -71,8 +71,8 @@ class ApplicationController < ActionController::Base
     end
   end
   
-  def require_role(allowed_roles = []) # :nodoc:
-    current_user && (current_user.roles & allowed_roles).any?
+  def require_role(allowed_role_names = []) # :nodoc:
+    current_user && (current_user.roles.map(&:name) & allowed_role_names).any?
   end
   
   def require_same_company # :nodoc:
