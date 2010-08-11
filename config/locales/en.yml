@@ -10,7 +10,7 @@ en:
   # CompaniesController
   companies:
     new:
-      page_title: "Create your company"
+      page_title: "Create company account"
       header: "Company information"
     create:
       page_title: "Create your company"
