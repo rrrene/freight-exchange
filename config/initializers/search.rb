@@ -1,4 +1,4 @@
-# Search.rb
+# search.rb
 # 
 # The Search module acts as a wrapper to whatever search engine is running 
 # in the background.
