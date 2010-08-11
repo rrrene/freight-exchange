@@ -13,7 +13,7 @@ class Company < ActiveRecord::Base
   def ensure_admin
     unless users.any? { |u| u.is?(:company_admin) }
       if (u = users.first) && (admin_role = UserRole[:company_admin])
-        u.roles << admin_role
+        u.user_roles << admin_role
       end
     end
   end

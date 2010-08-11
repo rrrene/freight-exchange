@@ -1,7 +1,7 @@
 Hirb.enable
 
 fields = {
-  User => %w(id company_id login email),
+  "User" => %w(id company_id login email),
 }
 
 output = {}
