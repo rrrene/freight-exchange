@@ -1,6 +1,7 @@
 class ActiveRecord::Base
+  # Returns if the record belongs to a certain user.
   def belongs_to?(user = current_user)
-    self.user == user
+    self.user == user if self.respond_to?(:user)
   end
   alias mine? belongs_to?
   
