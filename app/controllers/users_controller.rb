@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   #before_filter :require_no_user, :only => [:new, :create]
   login_required :only => [:show, :edit, :update]
+  same_company_required :only => [:show, :edit, :update]
+  role_or_ownership_required :company_admin, :only => [:show, :edit, :update]
   
   def index
     redirect_to root_url
