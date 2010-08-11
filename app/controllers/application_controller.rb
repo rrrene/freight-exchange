@@ -71,8 +71,8 @@ class ApplicationController < ActionController::Base
     end
   end
   
-  def require_role(allowed_role_names = []) # :nodoc:
-    current_user && (current_user.roles.map(&:name) & allowed_role_names).any?
+  def require_role(allowed_roles = []) # :nodoc:
+    current_user && (current_user.roles & allowed_roles).any?
   end
   
   def require_same_company # :nodoc:
