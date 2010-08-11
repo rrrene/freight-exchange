@@ -83,8 +83,9 @@ module Recorder # :nodoc:
     end
     
     def create_recording(ar, action)
-      diff = ar.changes.delete_if { |k, v| 
-        @@ignored_attributes[self.class.name].include?(k.to_s) 
+      ignored = @@ignored_attributes[self.class.name]
+      diff = ar.changes.delete_if { |k, (before, after)| 
+        ignored.include?(k.to_s) or (before.blank? && after.blank?)
       }
       unless diff.empty?
         opts = {

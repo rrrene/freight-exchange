@@ -1,0 +1,27 @@
+
+<% content_for(:sidebar) do %>
+  <div class="box">
+    <h3>
+      <%= t "postings.common.sidebar.contact_information.header" %>
+      <% if company == current_company %>
+        <%= link_to t("postings.common.sidebar.contact_information.edit"), edit_company_path(company), :class => 'edit' %>
+      <% end %>
+    </h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th colspan="2"><b><%= company.name %></b></th>
+        </tr>
+      </thead>
+      <% %w(address address2 zip city country email website phone fax).each do |attr| %>
+        <% if company[attr].full? %>
+          <tr>
+            <th><%= Company.human_attribute_name(attr) %></th>
+            <td><%= auto_link company[attr] %></td>
+          </tr>
+        <% end %>
+      <% end %>
+    </table>
+  </div>
+<% end %>

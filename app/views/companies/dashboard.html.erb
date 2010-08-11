@@ -1,3 +1,19 @@
+
 <div class="box">
+  <h3><%= t("companies.dashboard.recordings.header") %></h3>
   
+  <ul>
+  <% @recordings.each do |recording| %>
+    <li>
+    <span class="label"><%= recording.user.full?(&:name) %></span>
+    <small><%= l recording.created_at, :format => :short %></small><br>
+    <% recording.diff.each do |attr, (before, after)| %>
+      <%= recording.item_type.constantize.human_attribute_name(attr) %>:
+      <%= before.inspect %> -> <%= after.inspect %><br>
+    <% end %>
+    </li>
+  <% end %>
+  </ul>
 </div>
+
+<%= render :partial => "/partials/sidebar_company_info", :locals => {:company => @company} %>

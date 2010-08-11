@@ -5,6 +5,7 @@ class CompaniesController < InheritedResources::Base
   
   def dashboard
     @company = current_company
+    @recordings = current_company.recordings.limit(50)
   end
   
   # The Companies#new action is actually the "Create a new Account"-screen

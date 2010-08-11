@@ -1,6 +1,7 @@
 class Company < ActiveRecord::Base
   searchable
   has_many :users
+  has_many :recordings, :order => 'created_at DESC'
   
   # For permission handling
   def company # :nodoc:

@@ -11,6 +11,8 @@ en:
   companies:
     dashboard:
       page_title: "Dashboard"
+      recordings:
+        header: "Actions"
     new:
       page_title: "Create company account"
       header: "Create your company account"
