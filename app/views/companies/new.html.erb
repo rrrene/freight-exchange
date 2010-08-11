@@ -11,4 +11,17 @@
     <%= render :partial => "/users/form_content", :locals => {:f => f} %>
     <%= f.buttons %>
   <% end %>
+  <%= javascript_tag <<-JS
+    var user_login_already_had_focus = false;
+    jQuery(function($) {
+      jQuery('#user_login').focus(function() { user_login_already_had_focus = true; });
+      jQuery('#company_name').keyup(function() {
+        if( !user_login_already_had_focus ) {
+          var login = login_from_name(this.value);
+          jQuery('#user_login').val(login);
+        }
+      }).change();
+    });
+  JS
+  %>
 </div>
