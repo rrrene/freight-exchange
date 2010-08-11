@@ -25,7 +25,13 @@ Woraus besteht ein Inserat?
 (3)  Fraglich ist, ob bspw. Güterart und Fahrzeugtyp wirklich Objekte in anderen Tabellen sind oder nicht doch Freitext-Felder, da es unzählige Güterarten in der Transport-Statistik gibt und diese wahrscheinlich auf von Land zu Land andere Identifikationsnummern etc. haben.
 
 ### Tabellen:
-
+  
+  search_recordings
+    t.integer :user_id
+    t.integer :company_id
+    t.integer :results
+    t.string :query
+  
   user_role
     name: string # e.g. "company_admin"
     
