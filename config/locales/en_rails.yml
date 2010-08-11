@@ -24,6 +24,7 @@ en:
         misc: "Additional information"
   formtastic:
     titles:
+      for_company: "Company information"
       credentials: "Login credentials"
       change_password: "Change password (optional)"
       company_name: "Name"
@@ -39,5 +40,5 @@ en:
         password: "Choose your password carefully"
         password_confirmation: "Please repeat your password"
     actions:
-      create: "Create User"
+      create: "Create {{model}}"
       update: "Save changes"

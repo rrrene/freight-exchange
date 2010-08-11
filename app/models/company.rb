@@ -1,7 +1,7 @@
 class Company < ActiveRecord::Base
   searchable
   has_many :users
-  after_create :ensure_admin
+  accepts_nested_attributes_for :users
   
   # Ensure there is atleast one :company_admin left
   # If no admin can be found, the first user of the company is 
@@ -15,4 +15,5 @@ class Company < ActiveRecord::Base
   end
   
   validates_presence_of :name
+  validates_uniqueness_of :name
 end

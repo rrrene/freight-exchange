@@ -1,5 +1,6 @@
 <div class="box">
   <h3><%= t "search.common.results.header" %></h3>
+  <% if @results[:main].full? %>
     <ul>
     <% @results[:main].each do |result| %>
       <li>
@@ -16,19 +17,23 @@
     <% content_for(:subtext) do %>
       <%= t('search.common.subtext_results', :count => @results[:main].count).html_safe %>
     <% end %>
-    
-    <% content_for(:sidebar) do %>
-      <% @sidebar_result_models.each do |klass| %>
-        <% if results = @results[klass].full? %>
-          <div class="box">
-            <h3><%= t "search.common.sidebar.#{klass}_results.header" %></h3>
-            <ul>
-              <% results.each do |result| %>
-              <li><%= link_to result.name, result %></li>
-              <% end %>
-            </ul>
-          </div>
-        <% end %>
+  <% else %>
+    <%= t("search.index.no_#{@q.full? ? :results : :query}") %>
+  <% end %>
+  
+  
+  <% content_for(:sidebar) do %>
+    <% @sidebar_result_models.each do |klass| %>
+      <% if results = @results[klass].full? %>
+        <div class="box">
+          <h3><%= t "search.common.sidebar.#{klass}_results.header" %></h3>
+          <ul>
+            <% results.each do |result| %>
+            <li><%= link_to result.name, result %></li>
+            <% end %>
+          </ul>
+        </div>
       <% end %>
     <% end %>
+  <% end %>
 </div>

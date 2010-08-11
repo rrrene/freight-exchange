@@ -17,10 +17,14 @@ BlackBoard::Application.routes.draw do |map|
     end
   end
   
-  match "welcome" => 'root#index', :as => :after_login
+  match "welcome" => 'root#welcome', :as => :after_login
+  match "first_steps" => 'root#welcome', :as => :after_company_creation
+  
   match "my_profile" => 'users#edit', :as => :my_profile
+  match "register" => 'companies#new', :as => :register
   match "login" => 'user_sessions#new', :as => :login
   match "logout" => 'user_sessions#destroy', :as => :logout
+  
   match "search" => 'search#index', :as => :search
   
   # The priority is based upon order of creation:

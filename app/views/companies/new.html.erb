@@ -1,0 +1,14 @@
+<div class="box">
+  <h3><%= t("companies.new.header") %></h3>
+  
+  <% semantic_form_for(:user, @user, :url => companies_url) do |f| %>
+    <fieldset class="inputs">
+      <legend><span><%= t("formtastic.titles.for_company") %></span></legend>
+      <ol>
+        <li class="string optional"><%= label :company, :name %> <%= text_field :company, :name, :size => 50, :maxlength => 255 %></li>
+      </ol>
+    </fieldset>
+    <%= render :partial => "/users/form_content", :locals => {:f => f} %>
+    <%= f.buttons %>
+  <% end %>
+</div>

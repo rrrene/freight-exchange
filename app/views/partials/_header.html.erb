@@ -18,10 +18,12 @@
       <ul class="navigation navigation-right">
         <% if current_user.full? %>
           <li><span>Welcome <%= current_user.login %>!</span></li>
+          <li><%= link_to_unless_current("My Company", edit_company_url(current_user.company)) if current_user.company %></li>
           <li><%= link_to_unless_current "My Profile", my_profile_url %></li>
           <li><%= link_to_unless_current "Logout", logout_url %></li>
         <% else %>
           <li><%= link_to_unless_current "Login", login_url %></li>
+          <li><%= link_to_unless_current "Register", register_url %></li>
         <% end %>
       </ul>
     </div>

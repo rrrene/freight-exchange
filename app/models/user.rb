@@ -1,8 +1,9 @@
 class User < ActiveRecord::Base
-  brackets_find_by :login
+  belongs_to :company
+  accepts_nested_attributes_for :company
   has_and_belongs_to_many :roles, :class_name => 'UserRole', :uniq => true
   after_destroy { |user| user.company.ensure_admin }
-  belongs_to :company
+  brackets_find_by :login
   acts_as_authentic
   searchable
 

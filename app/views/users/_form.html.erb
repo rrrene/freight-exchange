@@ -1,11 +1,4 @@
 <% semantic_form_for(@user) do |f| %>
-  <% f.inputs :credentials do %>
-    <%= f.input :login %>
-    <%= f.input :email %>
-  <% end %>
-  <% f.inputs :change_password do %>
-    <%= f.input :password %>
-    <%= f.input :password_confirmation %>
-  <% end %>
+  <%= render "form_content", :locals => {:f => f} %>
   <%= f.buttons %>
 <% end %>

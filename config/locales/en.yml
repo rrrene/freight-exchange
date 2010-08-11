@@ -6,11 +6,20 @@ en:
     website_title: "Freight Exchange 2010"
     create_new_posting: "Create a new Posting"
     link_back: "« Back"
+  
   # CompaniesController
   companies:
+    new:
+      page_title: "Create your company"
+      header: "Company information"
+    create:
+      page_title: "Create your company"
     edit:
-      header: "Edit company information"
-
+      page_title: "Edit company"
+      header: "Company information"
+    update:
+      page_title: "Edit company"
+  
   # RootController
   root:
     about:
@@ -51,3 +60,15 @@ en:
           header: "Stations found:"
     index:
       page_title: "Search"
+      no_results: "There are no results."
+      no_query: "Please type in a search query above."
+  
+  # UsersController
+  users:
+    new:
+      page_title: "Register"
+      
+  # UserSessionsController
+  user_sessions:
+    new:
+      page_title: "Login"
