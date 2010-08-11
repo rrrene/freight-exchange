@@ -1,3 +1,2 @@
-class Freight < Posting
-  searchable
+class Freight < ActiveRecord::Base
 end

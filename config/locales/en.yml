@@ -25,6 +25,10 @@ en:
     update:
       page_title: "Edit company"
   
+  freights:
+    new:
+      page_title: "New freight posting"
+  
   # RootController
   root:
     about:

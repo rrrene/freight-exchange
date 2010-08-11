@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100811220238) do
+ActiveRecord::Schema.define(:version => 20100811231404) do
 
   create_table "app_configs", :force => true do |t|
     t.string   "name"
@@ -43,19 +43,46 @@ ActiveRecord::Schema.define(:version => 20100811220238) do
     t.datetime "updated_at"
   end
 
+  create_table "freights", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "company_id"
+    t.integer  "origin_site_info_id"
+    t.integer  "destination_site_info_id"
+    t.integer  "weight"
+    t.integer  "loading_meter"
+    t.boolean  "hazmat"
+    t.string   "transport_type"
+    t.string   "wagons_provided_by"
+    t.string   "desired_proposal_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "localized_infos", :force => true do |t|
+    t.string   "item_type"
+    t.integer  "item_id"
+    t.string   "name"
+    t.string   "lang"
+    t.text     "text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "postings", :force => true do |t|
     t.string   "type"
     t.integer  "user_id"
+    t.string   "origin_contractor"
+    t.string   "destination_contractor"
     t.integer  "origin_station_id"
     t.integer  "destination_station_id"
     t.datetime "origin_date"
     t.datetime "destination_date"
-    t.string   "goods_type"
+    t.text     "goods_type"
     t.string   "wagon_type"
+    t.text     "wagon_text"
     t.integer  "loading_meter"
     t.integer  "weight"
-    t.string   "contractor"
-    t.text     "misc"
+    t.text     "misc_text"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -91,11 +118,30 @@ ActiveRecord::Schema.define(:version => 20100811220238) do
     t.datetime "updated_at"
   end
 
+  create_table "site_infos", :force => true do |t|
+    t.string   "contractor"
+    t.datetime "date"
+    t.string   "name"
+    t.string   "address"
+    t.string   "address2"
+    t.string   "zip"
+    t.string   "city"
+    t.string   "country"
+    t.boolean  "side_track_avaiable"
+    t.string   "track_number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "stations", :force => true do |t|
     t.string   "name"
     t.integer  "country_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "address"
+    t.string   "address2"
+    t.string   "zip"
+    t.string   "city"
   end
 
   create_table "user_roles", :force => true do |t|

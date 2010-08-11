@@ -37,8 +37,10 @@ if Rails.env == 'development'
   # Create some users to fill the db
   Seed::USERS.each do |opts|
     company_opts = opts.delete(:company)
-    user = User.create(opts)
-    company = Company.create(company_opts.merge(:user => user))
+    company = Company.create(company_opts)
+    user = User.new(opts)
+    user.company = company
+    user.save
   end
   puts "#{User.count} Users"
   

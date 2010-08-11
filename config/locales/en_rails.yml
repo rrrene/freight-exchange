@@ -30,6 +30,7 @@ en:
       company_name: "Name"
       company_address: "Postal information"
       company_contact: "Contact information"
+      transport_period: "Period of transport"
     labels:
       user:
         #
