@@ -6,8 +6,7 @@ class UserSessionsController < ApplicationController
     if demo_mode?
       @user = User.find(params[:id])
       if UserSession.login(@user)
-        flash[:notice] = "Login successful!"
-        redirect_back_or_default after_login_url
+        redirect_to after_login_url
       else
         render :action => :new
       end

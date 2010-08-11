@@ -13,7 +13,7 @@
       <tr>
         <td><%= ar.id %></th>
         <% attributes.each do |attr| %>
-        <td><%= ar[attr] %></td>
+        <td><%= ar[attr].is_a?(Hash) ? debug(ar[attr]) : ar[attr] %></td>
         <% end %>
       </tr>
     <% end %>
