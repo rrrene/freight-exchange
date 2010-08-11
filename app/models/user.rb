@@ -22,4 +22,9 @@ class User < ActiveRecord::Base
     login
   end
   
+  # For permission handling
+  def user # :nodoc:
+    self
+  end
+  
 end

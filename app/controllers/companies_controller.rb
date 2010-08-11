@@ -3,6 +3,8 @@ class CompaniesController < InheritedResources::Base
   same_company_required :except => [:new, :create, :show]
   role_required :company_admin, :except => [:new, :create, :show]
   
+  # The Companies#new action is actually the "Create a new Account"-screen
+  # a user sees when he signs up for the freight exchange.
   def new
     @company = Company.new
     @user = User.new

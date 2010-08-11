@@ -238,7 +238,8 @@ span.label.loading_space {
 table tr th h2 {
   margin: 0;
 }
-h3 .edit {
+h3 a.new,
+h3 a.edit {
   float: right;
   text-transform: none;
 }

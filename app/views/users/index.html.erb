@@ -1,0 +1,30 @@
+<div class="box">
+  <h3>
+    <%= t('users.index.header') %>
+    <%= link_to t("users.common.new_link"), new_user_path, :class => 'new' %>
+  </h3>
+  <p>
+    <%= t('users.index.intro') %>
+  </p>
+  
+  <table>
+    <thead>
+      <tr>
+        <th><%= User.human_attribute_name(:login) %></th>
+        <th><%= User.human_attribute_name(:email) %></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |ar| %>
+        <tr>
+          <td><%= ar[:login] %></td>
+          <td><%= ar[:email] %></td>
+          <td>
+            <%= link_to t("users.common.edit_link"), edit_user_path(ar), :class => 'edit' %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

@@ -7,6 +7,10 @@ class ApplicationController < ActionController::Base
   
   private
   
+  def current_company
+    current_user.full?(&:company)
+  end
+  
   # Returns the currently logged in user.
   def current_user
     @current_user ||= UserSession.find.full?(&:user)
@@ -68,7 +72,7 @@ class ApplicationController < ActionController::Base
   
   def require_owner # :nodoc:
     if resource && current_user
-      resource.user == current_user 
+      resource.user == current_user
     end
   end
   
@@ -82,8 +86,6 @@ class ApplicationController < ActionController::Base
         current_user.company == resource.company
       elsif resource.respond_to?(:user)
         current_user.company == resource.user.company
-      elsif resource.is_a?(Company)
-        current_user.company == resource
       else
         false
       end

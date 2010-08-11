@@ -26,6 +26,7 @@ BlackBoard::Application.routes.draw do |map|
   match "logout" => 'user_sessions#destroy', :as => :logout
   
   match "search" => 'search#index', :as => :search
+  match "dashboard" => 'companies#dashboard', :as => :company_dashboard
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,38 +1,30 @@
-class UsersController < ApplicationController
-  #before_filter :require_no_user, :only => [:new, :create]
-  login_required :only => [:show, :edit, :update]
-  same_company_required :only => [:show, :edit, :update]
+class UsersController < InheritedResources::Base
+  login_required
+  same_company_required :only => [:edit, :update]
   role_or_ownership_required :company_admin, :only => [:edit, :update]
+  role_required :company_admin, :only => [:index, :new, :create]
   
-  def new
-    @company = Company.new
-    @user = User.new
+  # Lists all users in the current company.
+  def index
+    @users = current_company.users
   end
   
+  # This creates a new user inside the current company.
+  # For the original sign up screen, see Companies#new.
   def create
     @user = User.new(params[:user])
+    @user.company = current_company
     if @user.save
-      redirect_to after_login_url
+      redirect_to :action => :index
     else
       render :action => :new
     end
   end
   
   def show
-    @user = current_user
+    show! {
+      page[:title] = @user.name
+    }
   end
-
-  def edit
-    @user = current_user
-  end
-
-  def update
-    @user = current_user
-    if @user.update_attributes(params[:user])
-      flash[:notice] = "Account updated!"
-      redirect_to users_url
-    else
-      render :action => :edit
-    end
-  end
+  
 end

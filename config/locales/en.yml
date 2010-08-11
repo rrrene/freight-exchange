@@ -66,6 +66,13 @@ en:
   
   # UsersController
   users:
+    common:
+      edit_link: "Edit"
+      new_link: "Create another User"
+    index:
+      page_title: "Overview: Users"
+      header: "All Users"
+      intro: "Here you can see all the registered user accounts of your company."
     new:
       page_title: "Register"
       
