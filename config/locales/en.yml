@@ -11,7 +11,8 @@ en:
   companies:
     new:
       page_title: "Create company account"
-      header: "Company information"
+      header: "Create your company account"
+      intro: "You are just 60 seconds away from your own account!"
     create:
       page_title: "Create your company"
     edit:

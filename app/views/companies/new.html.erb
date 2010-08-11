@@ -1,22 +1,28 @@
 <div class="box">
   <h3><%= t("companies.new.header") %></h3>
-  
+  <p>
+    <%= t("companies.new.intro") %>
+  </p>
   <% semantic_form_for(:user, @user, :url => companies_url) do |f| %>
     <fieldset class="inputs">
       <legend><span><%= t("formtastic.titles.for_company") %></span></legend>
       <ol>
-        <li class="string optional"><%= label :company, :name %> <%= text_field :company, :name, :size => 50, :maxlength => 255 %></li>
+        <li class="string optional<%= ' error' if @company.errors.full? %>">
+          <%= label :company, :name %> <%= text_field :company, :name, :size => 50, :maxlength => 255 %>
+          <%= @company.errors.on(:name) %>
+        </li>
       </ol>
     </fieldset>
     <%= render :partial => "/users/form_content", :locals => {:f => f} %>
     <%= f.buttons %>
   <% end %>
   <%= javascript_tag <<-JS
-    var user_login_already_had_focus = false;
+    var user_login = jQuery('#user_login').value;
+    var dont_auto_fill_user_login = !(user_login == '' || user_login == undefined);
     jQuery(function($) {
-      jQuery('#user_login').focus(function() { user_login_already_had_focus = true; });
+      jQuery('#user_login').focus(function() { dont_auto_fill_user_login = true; });
       jQuery('#company_name').keyup(function() {
-        if( !user_login_already_had_focus ) {
+        if( !dont_auto_fill_user_login ) {
           var login = login_from_name(this.value);
           jQuery('#user_login').val(login);
         }

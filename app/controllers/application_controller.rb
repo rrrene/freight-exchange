@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :record_user_in_recordings
   before_filter :set_default_page_title
-  helper_method :current_user, :demo_mode?, :page
+  helper_method :current_user, :logged_in?, :demo_mode?, :page
   layout 'application'
   
   private
@@ -11,6 +11,7 @@ class ApplicationController < ActionController::Base
   def current_user
     @current_user ||= UserSession.find.full?(&:user)
   end
+  alias logged_in? current_user
   
   # Returns whether or not the application is running in demo mode.
   def demo_mode?

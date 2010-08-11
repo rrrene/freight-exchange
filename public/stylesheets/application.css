@@ -265,3 +265,13 @@ a.edit:visited {
   color: #f00;
   text-decoration: underline;
 }
+
+fieldset ol li.error {
+  background: transparent;
+  border: 0;
+}
+fieldset ol li.error input {
+  background:#FBE3E4;
+  color:#8a1f11;
+  border: 2px solid #FBC2C4;
+}

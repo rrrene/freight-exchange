@@ -11,6 +11,7 @@ class CompaniesController < InheritedResources::Base
   def create
     @company = Company.new(params[:company])
     @user = User.new(params[:user])
+    @company.valid? # to fill @company.errors
     if @user.valid? && @company.valid?
       @company.save!
       @user.company = @company
