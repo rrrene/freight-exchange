@@ -6,6 +6,8 @@ en:
     website_title: "Freight Exchange 2010"
     create_new_posting: "Create a new Posting"
     link_back: "« Back"
+    _yes: "Yes"
+    _no: "No"
   
   # CompaniesController
   companies:
@@ -25,9 +27,23 @@ en:
     update:
       page_title: "Edit company"
   
+  # FreightsController
   freights:
+    common:
+      edit_link: "Edit this posting"
     new:
       page_title: "New freight posting"
+    edit:
+      page_title: "Edit freight posting"
+      header: "Edit freight posting"
+    show:
+      page_title: "Freight posting"
+      header: "Freight posting"
+      transport_description: "Transport description"
+      origin:
+        header: "Loading site"
+      destination:
+        header: "Unloading site"
   
   # RootController
   root:

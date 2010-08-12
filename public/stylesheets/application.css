@@ -247,9 +247,6 @@ table tr th b {
   color: #000;
   text-transform: none;
 }
-#content table thead tr th {
-  padding-top: 40px;
-}
 
 .bad,
 .severe,

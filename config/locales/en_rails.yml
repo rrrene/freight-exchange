@@ -25,7 +25,9 @@ en:
       freight:
         weight: "Weight (in t)"
         hazmat: "Harzardous material"
-        
+#        localized_infos:
+#          type_of_goods: "Type of goods"
+#          transport_text: "Which wagons should be used?"
   formtastic:
     titles:
       for_company: "Company information"

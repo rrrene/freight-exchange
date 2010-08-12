@@ -14,6 +14,10 @@ module ApplicationHelper
     controller.controller_name == c
   end
   
+  def format_multiline_input(text)
+    text
+  end
+  
   def link_back(text = t("common.link_back"))
     link_to_function text, "self.history.back();", :class => 'back'
   end
@@ -23,7 +27,23 @@ module ApplicationHelper
     condition ? content_tag(:span, name, html_options) : link_to(name, options, html_options, &block)
   end
   
+  def localized_info(obj, name, lang = I18n.default_locale)
+    format_multiline_input obj.localized_info(name, lang).text
+  end
+  
+  #  TODO: localized_info_field f, :type_of_goods, :en
+  # BETTA: f.localized_info_field :type_of_goods, :en
+  def localized_info_field(f, name, lang)
+    render({:partial => '/partials/localized_info_form_content',
+              :locals => {:f => f, :name => name, :lang => lang}})
+  end
+  
   def render_table(arel)
     render :partial => '/partials/table', :locals => {:model => arel.first.class, :arel => arel}
   end
+  
+  def yes_no(condition)
+    condition ? t("common._yes") : t("common._no")
+  end
+  
 end

@@ -4,19 +4,14 @@
   <% end %>
   
   <%= f.inputs :freight_description do %>
-    <%= f.input :hazmat, :collection => [true, false], :as => :radio %>
+    <%= f.input :hazmat, :collection => [["yes", true], ["no", false]], :as => :radio %>
     
-    
-    <%= f.semantic_fields_for "localized_infos", LocalizedInfo.new do |f_site| %>
-      <%= f_site.inputs do %>
-        <%= f_site.input :name, :as => :hidden, :input_html => {:value => 'type_of_goods'} %>
-        <%= f_site.input :lang, :as => :hidden, :input_html => {:value => 'en'} %>
-        <%= f_site.input :text, :as => :text %>
-      <% end %>
-    <% end %>
-    
+    <%= localized_info_field f, :goods_text, :en %>
+        
     <%= f.input :weight, :as => :string %>
     <%= f.input :transport_type, :collection => [:single_wagon, :train_set, :block_train] %>
+    <%= localized_info_field f, :transport_text, :en %>
+    
     <%= f.input :wagons_provided_by, :collection => %w(client railway), :as => :radio %>
   <% end %>
   
