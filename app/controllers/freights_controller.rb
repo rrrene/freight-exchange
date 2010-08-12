@@ -20,12 +20,7 @@ class FreightsController < InheritedResources::Base
   def create
     @freight = Freight.new(params[:freight])
     @freight.user, @freight.company = current_user, current_company
-    if @freight.valid?
-      @freight.save!
-      redirect_to @freight
-    else
-      render :action => :new
-    end
+    create!
   end
   
   def update
