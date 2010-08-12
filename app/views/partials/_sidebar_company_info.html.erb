@@ -14,7 +14,7 @@
           <th colspan="2"><b><%= company.name %></b></th>
         </tr>
       </thead>
-      <% %w(address address2 zip city country email website phone fax).each do |attr| %>
+      <% %w(address address2 zip city country phone fax email website).each do |attr| %>
         <% if company[attr].full? %>
           <tr>
             <th><%= Company.human_attribute_name(attr) %></th>
