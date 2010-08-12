@@ -1,4 +1,16 @@
 class ActiveRecord::Base
+
+  def attributes_filled
+    attr = attributes.keys.select { |k| 
+      t = column_for_attribute(k).type
+      [:string, :text].include?(t) && !(t =~ /(_at|_token)$/)
+    }
+    filled = attr.inject(0) { |sum, item|
+      sum = sum + (self[item].full? ? 1 : 0)
+    }
+    filled / attr.size.to_f
+  end
+  
   # Returns if the record belongs to a certain user.
   def belongs_to?(user = current_user)
     self.user == user if self.respond_to?(:user)

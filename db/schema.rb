@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100811231404) do
+ActiveRecord::Schema.define(:version => 20100812192923) do
 
   create_table "app_configs", :force => true do |t|
     t.string   "name"
@@ -68,19 +68,35 @@ ActiveRecord::Schema.define(:version => 20100811231404) do
     t.datetime "updated_at"
   end
 
+  create_table "people", :force => true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "gender"
+    t.string   "job_description"
+    t.string   "phone"
+    t.string   "fax"
+    t.string   "mobile"
+    t.string   "email"
+    t.string   "website"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "postings", :force => true do |t|
     t.string   "type"
     t.integer  "user_id"
+    t.string   "origin_contractor"
+    t.string   "destination_contractor"
     t.integer  "origin_station_id"
     t.integer  "destination_station_id"
     t.datetime "origin_date"
     t.datetime "destination_date"
-    t.string   "goods_type"
+    t.text     "goods_type"
     t.string   "wagon_type"
+    t.text     "wagon_text"
     t.integer  "loading_meter"
     t.integer  "weight"
-    t.string   "contractor"
-    t.text     "misc"
+    t.text     "misc_text"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -171,6 +187,7 @@ ActiveRecord::Schema.define(:version => 20100811231404) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "company_id"
+    t.integer  "person_id"
   end
 
 end

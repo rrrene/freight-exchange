@@ -1,0 +1,15 @@
+<% semantic_form_for(@person) do |f| %>
+  <% f.inputs :person_name do %>
+    <%= f.input :gender, :collection => collection_choices(Person, :gender), :as => :radio %>
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
+  <% end %>
+  <% f.inputs :person_contact do %>
+    <%= f.input :phone %>
+    <%= f.input :fax %>
+    <%= f.input :email %>
+    <%= f.input :website %>
+  <% end %>
+  
+  <%= f.buttons %>
+<% end %>

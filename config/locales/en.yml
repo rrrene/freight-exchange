@@ -6,8 +6,8 @@ en:
     website_title: "Freight Exchange 2010"
     create_new_posting: "Create a new Posting"
     link_back: "« Back"
-    _yes: "Yes"
-    _no: "No"
+    choice_yes: "Yes"
+    choice_no: "No"
   
   # CompaniesController
   companies:
@@ -58,6 +58,9 @@ en:
       sidebar:
         contact_information: 
           header: "Contact information"
+          edit: "Edit info"
+        person_information: 
+          header: "Personal information"
           edit: "Edit info"
       posting:
         loading_meter: "Loading metre:"

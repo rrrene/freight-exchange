@@ -16,4 +16,33 @@
   </ul>
 </div>
 
+<% content_for(:sidebar) do %>
+<% person = current_person %>
+  <div class="box">
+    <h3>
+      <%= t "postings.common.sidebar.person_information.header" %>
+      <% if person == current_person %>
+        <%= link_to t("postings.common.sidebar.person_information.edit"), person.save ? edit_person_path(person) : new_person_path, :class => 'edit' %>
+      <% end %>
+    </h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th colspan="2"><b><%= person.name %></b></th>
+        </tr>
+      </thead>
+      <% %w(phone fax email website).each do |attr| %>
+        <% if person[attr].full? %>
+          <tr>
+            <th><%= Person.human_attribute_name(attr) %></th>
+            <td><%= auto_link person[attr] %></td>
+          </tr>
+        <% end %>
+      <% end %>
+    </table>
+    <%= person.attributes_filled %>
+  </div>
+<% end %>
+
 <%= render_company_info @company %>

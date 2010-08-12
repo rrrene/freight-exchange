@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   belongs_to :company
+  belongs_to :person
   accepts_nested_attributes_for :company
+  accepts_nested_attributes_for :person
   has_and_belongs_to_many :user_roles, :uniq => true
   after_save { |user| user.company.ensure_admin }
   after_destroy { |user| user.company.ensure_admin }

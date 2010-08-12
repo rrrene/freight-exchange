@@ -2,13 +2,19 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :record_user_in_recordings
   before_filter :set_default_page_title
-  helper_method :current_user, :logged_in?, :current_company, :demo_mode?, :page
+  helper_method :current_user, :current_person, :current_company, :logged_in?, :demo_mode?, :page
   layout 'application'
   
   private
   
   def current_company
     current_user.full?(&:company)
+  end
+  
+  def current_person
+    if current_user
+      current_user.person || current_user.build_person
+    end
   end
   
   # Returns the currently logged in user.

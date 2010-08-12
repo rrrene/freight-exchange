@@ -1,4 +1,6 @@
 BlackBoard::Application.routes.draw do |map|
+  resources :people
+
   resources :freights
   resources :companies
 

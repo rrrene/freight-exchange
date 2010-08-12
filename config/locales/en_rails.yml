@@ -5,11 +5,6 @@ en:
       freight: "Freight"
       loading_space: "Loading Space"
     attributes:
-      user:
-        login: "Username"
-        email: "E-Mail"
-        password: "Password"
-        password_confirmation: "Password (again)"
       company:
         name: "Name"
         address: "Address"
@@ -25,6 +20,18 @@ en:
       freight:
         weight: "Weight (in t)"
         hazmat: "Harzardous material"
+      person:
+        first_name: "Forename"
+        last_name: "Surname"
+        phone: "Phone"
+        fax: "Fax"
+        email: "E-Mail"
+        website: "Web"
+      user:
+        login: "Username"
+        email: "E-Mail"
+        password: "Password"
+        password_confirmation: "Password (again)"
     human_attribute_values:
       freight:
         wagons_provided_by:
@@ -37,6 +44,10 @@ en:
           single_wagon: "Single wagon"
           train_set: "Train set"
           block_train: "Block train"
+      person:
+        gender:
+          male: "Male"
+          female: "Female"
           
 #        localized_infos:
 #          type_of_goods: "Type of goods"

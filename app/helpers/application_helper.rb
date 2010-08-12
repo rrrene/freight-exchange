@@ -54,7 +54,7 @@ module ApplicationHelper
   end
   
   def yes_no(condition)
-    condition ? t("common._yes") : t("common._no")
+    condition ? t("common.choice_yes") : t("common.choice_no")
   end
   
 end
