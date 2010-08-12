@@ -1,8 +1,28 @@
-<% form_for(@freight, :html => {:class => 'formtastic'}) do |f| %>
+<%= semantic_form_for(@freight) do |f| %>
   <% %w(origin destination).each do |site| %>
-    <fieldset class="inputs">
-      <legend><%= site %></legend>
-      <%= render :partial => 'site_info_form_content', :locals => {:f => f, :site => site} %>
-    </fieldset>
+    <%= render :partial => 'site_info_form_content', :locals => {:f => f, :site => site} %>
   <% end %>
+  
+  <%= f.inputs :freight_description do %>
+    <%= f.input :hazmat, :collection => [true, false], :as => :radio %>
+    
+    
+    <%= f.semantic_fields_for "localized_infos", LocalizedInfo.new do |f_site| %>
+      <%= f_site.inputs do %>
+        <%= f_site.input :name, :as => :hidden, :input_html => {:value => 'type_of_goods'} %>
+        <%= f_site.input :lang, :as => :hidden, :input_html => {:value => 'en'} %>
+        <%= f_site.input :text, :as => :text %>
+      <% end %>
+    <% end %>
+    
+    <%= f.input :weight, :as => :string %>
+    <%= f.input :transport_type, :collection => [:single_wagon, :train_set, :block_train] %>
+    <%= f.input :wagons_provided_by, :collection => %w(client railway), :as => :radio %>
+  <% end %>
+  
+  <%= f.buttons %>
+<% end %>
+
+<% content_for(:sidebar) do %>
+  <%= debug @freight %>
 <% end %>

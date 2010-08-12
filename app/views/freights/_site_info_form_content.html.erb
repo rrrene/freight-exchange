@@ -1,19 +1,12 @@
-<ol>
-  <% %w(contractor name address address2 zip city country).each do |field| %>
-    <li class="string">
-      <%= label site, field %>
-      <%= text_field site, field %>
-    </li>
+
+<%= f.semantic_fields_for "#{site}_site_info", @freight.__send__("#{site}_site_info") do |f_site| %>
+  <%= f_site.inputs :"#{site}_site_info" do %>
+    <%= f_site.input :contractor %>
+    <%= f_site.input :date %>
+    <% %w(name address address2 zip city country).each do |field| %>
+      <%= f_site.input field, :as => :string %>
+    <% end %>
+    <%= f_site.input :side_track_avaiable %>
+    <%= f_site.input :track_number %>
   <% end %>
-  <li>
-    <%= label site, :side_track_avaiable %>
-    <%= radio_button site, :side_track_avaiable, true %>
-      <%= label site, :side_track_avaiable_true, "Yes" %>
-    <%= radio_button site, :side_track_avaiable, false %>
-        <%= label site, :side_track_avaiable_false, "No" %>
-  </li>
-  <li class="string">
-    <%= label site, :track_number %>
-    <%= text_field site, :track_number %>
-  </li>
-</ol>
+<% end %>

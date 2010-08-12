@@ -22,6 +22,10 @@ en:
         email: "E-Mail"
         website: "Web"
         misc: "Additional information"
+      freight:
+        weight: "Weight (in t)"
+        hazmat: "Harzardous material"
+        
   formtastic:
     titles:
       for_company: "Company information"
@@ -30,7 +34,9 @@ en:
       company_name: "Name"
       company_address: "Postal information"
       company_contact: "Contact information"
-      transport_period: "Period of transport"
+      origin_site_info: "Loading site"
+      destination_site_info: "Unloading site"
+      freight_description: "Freight description"
     labels:
       user:
         #

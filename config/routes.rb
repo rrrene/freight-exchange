@@ -1,13 +1,9 @@
 BlackBoard::Application.routes.draw do |map|
-  get "freights/new"
-
-  get "freights/edit"
-
+  resources :freights
   resources :companies
 
   resources :stations
   resources :postings
-  resources :freights, :controller => :postings
   resources :loading_spaces, :controller => :postings
   resources :users
 
