@@ -20,7 +20,6 @@ class CreateSiteInfos < ActiveRecord::Migration
   end
 
   def self.down
-    remove_column :stations, :country
     remove_column :stations, :city
     remove_column :stations, :zip
     remove_column :stations, :address2

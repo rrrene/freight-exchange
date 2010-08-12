@@ -1,7 +1,7 @@
 class FreightsController < InheritedResources::Base
   login_required
   same_company_required :only => %w(edit update)
-  ownership_required :only => %w(edit update)
+  role_required [:company_admin, :company_employee], :only => [:new, :create, :edit, :update]
   
   def new
     @freight = Freight.new(:hazmat => true, :weight => 1000)
@@ -18,17 +18,10 @@ class FreightsController < InheritedResources::Base
   end
   
   def create
-    localized_info_params = params[:freight].delete(:localized_infos)
     @freight = Freight.new(params[:freight])
     @freight.user, @freight.company = current_user, current_company
-    localized_info_params.each do |opts|
-      if text = opts[:text].full?
-        @freight.localized_info(opts[:name], opts[:lang]).text = text
-      end
-    end
     if @freight.valid?
       @freight.save!
-      @freight.localized_infos.each(&:save)
       redirect_to @freight
     else
       render :action => :new
@@ -36,26 +29,16 @@ class FreightsController < InheritedResources::Base
   end
   
   def update
-    localized_info_params = params[:freight].delete(:localized_infos)
     @freight = Freight.find(params[:id])
+    @freight.localized_infos = params[:freight].delete(:localized_infos)
     @freight.update_attributes(params[:freight])
-    localized_info_params.each do |opts|
-      if text = opts[:text].full?
-        @freight.localized_info(opts[:name], opts[:lang]).text = text
-      end
-    end
     if @freight.valid?
       @freight.save!
-      @freight.localized_infos.each(&:save)
+      @freight.update_localized_infos
       redirect_to @freight
     else
       render :action => :edit
     end
-  end
-  
-  private
-  
-  def set_localized_infos_from_params
   end
   
 end
