@@ -46,9 +46,21 @@ module Seed
   
   STATIONS = {
     :de => [
-      {:name => 'Bochum Hbf', :regions => ['Ruhr', 'Westfalen']},
-      {:name => 'Essen Hbf', :regions => ['Ruhr', 'Westfalen']},
-      {:name => 'Dortmund Hbf', :regions => ['Ruhr', 'Westfalen']},
+      {:name => 'Bochum Hbf', :regions => ['Ruhr', 'Westfalen'],
+        :address => "Kurt-Schumacher-Platz",
+        :zip => "44787",
+        :city => "Bochum",
+      },
+      {:name => 'Essen Hbf', :regions => ['Ruhr', 'Westfalen'],
+        :address => "Am Hauptbahnhof",
+        :zip => "45128",
+        :city => "Essen",
+      },
+      {:name => 'Dortmund Hbf', :regions => ['Ruhr', 'Westfalen'],
+        :address => "Bahnhofstr.",
+        :zip => "44137",
+        :city => "Dortmund",
+      },
     ],
     :nl => [
       {:name => 'Utrecht Centraal', :regions => ['Utrecht']},
