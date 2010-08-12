@@ -33,6 +33,12 @@ Seed::STATIONS.each do |iso, opts_arr|
 end
 puts "#{Station.count} Stations"
 
+# Create basic user roles
+Seed::USER_ROLES.each do |opts|
+  UserRole.create(opts)
+end
+puts "#{UserRole.count} UserRoles"
+
 if Rails.env == 'development'
   # Create some users to fill the db
   Seed::USERS.each do |opts|

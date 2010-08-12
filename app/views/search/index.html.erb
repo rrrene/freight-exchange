@@ -27,7 +27,6 @@
     <%= t("search.index.no_#{@q.full? ? :results : :query}") %>
   <% end %>
   
-  
   <% content_for(:sidebar) do %>
     <% @sidebar_result_models.each do |klass| %>
       <% if results = @results[klass].full? %>
