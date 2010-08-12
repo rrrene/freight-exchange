@@ -23,8 +23,6 @@ class Freight < ActiveRecord::Base
     localized_infos.each(&:update_or_destroy!)
   end
   
-#  accepts_nested_attributes_for :localized_infos
-  
   validates_presence_of :user_id
   validates_presence_of :company_id
   validates_presence_of :weight
