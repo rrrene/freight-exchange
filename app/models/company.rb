@@ -19,6 +19,17 @@ class Company < ActiveRecord::Base
     end
   end
   
+  def attributes_filled
+    attr = attributes.keys.select { |k| 
+      t = column_for_attribute(k).type
+      [:string, :text].include?(t) && !(t =~ /(_at|_token)$/)
+    }
+    filled = attr.inject(0) { |sum, item|
+      sum = sum + (self[item].full? ? 1 : 0)
+    }
+    filled / attr.size.to_f
+  end
+  
   validates_presence_of :name
   validates_uniqueness_of :name
 end

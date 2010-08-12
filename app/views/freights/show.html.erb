@@ -79,7 +79,7 @@
   </table>
   
   <% content_for(:sidebar) do %>
-    <%= debug @freight %>
+    <%= render_company_info @freight.company %>
   <% end %>
   
 </div>

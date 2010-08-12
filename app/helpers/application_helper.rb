@@ -45,6 +45,10 @@ module ApplicationHelper
               :locals => {:f => f, :name => name, :lang => lang}})
   end
   
+  def render_company_info(company)
+    render :partial => "/partials/sidebar_company_info", :locals => {:company => company}
+  end
+  
   def render_table(arel)
     render :partial => '/partials/table', :locals => {:model => arel.first.class, :arel => arel}
   end

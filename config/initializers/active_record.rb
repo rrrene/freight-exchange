@@ -5,14 +5,14 @@ class ActiveRecord::Base
   end
   alias mine? belongs_to?
   
-  def human_attribute_value(attribute_name)
-    self.class.human_attribute_value(attribute_name, self[attribute_name])
+  def human_attribute_value(attribute_name, i18n_opts = {})
+    self.class.human_attribute_value(attribute_name, self[attribute_name], i18n_opts)
   end
   
-  def self.human_attribute_value(attribute_name, value)
+  def self.human_attribute_value(attribute_name, value, i18n_opts = {})
     arr = [:activerecord, :human_attribute_values, 
             self.to_s.underscore, attribute_name, value]
-    I18n.t(arr * '.')
+    I18n.t(arr * '.', i18n_opts)
   end
   
   class << self
