@@ -41,7 +41,7 @@
   <table>
     <tr>
       <th><%= Freight.human_attribute_name(:weight) %></th>
-      <td><%= @freight.weight %> t</td>
+      <td><%= @freight.weight %></td>
     </tr>
     <tr>
       <th><%= Freight.human_attribute_name(:goods_text) %></th>
@@ -51,6 +51,11 @@
       <th><%= Freight.human_attribute_name(:hazmat) %></th>
       <td><%= yes_no @freight.hazmat %></td>
     </tr>
+    
+    <tr>
+      <th><%= Freight.human_attribute_name(:transport_type) %></th>
+      <td><%= @freight.human_attribute_value(:transport_type) %></td>
+    </tr>
     <tr>
       <th><%= Freight.human_attribute_name(:transport_text) %></th>
       <td><%= localized_info(@freight, :transport_text) %></td>
@@ -58,12 +63,12 @@
   
     <tr>
       <th><%= Freight.human_attribute_name(:wagons_provided_by) %></th>
-      <td><%= @freight.wagons_provided_by %></td>
+      <td><%= @freight.human_attribute_value(:wagons_provided_by) %></td>
     </tr>
   
     <tr>
       <th><%= Freight.human_attribute_name(:desired_proposal_type) %></th>
-      <td><%= @freight.desired_proposal_type %></td>
+      <td><%= @freight.human_attribute_value(:desired_proposal_type) %></td>
     </tr>
   
     <tr>

@@ -5,6 +5,16 @@ class ActiveRecord::Base
   end
   alias mine? belongs_to?
   
+  def human_attribute_value(attribute_name)
+    self.class.human_attribute_value(attribute_name, self[attribute_name])
+  end
+  
+  def self.human_attribute_value(attribute_name, value)
+    arr = [:activerecord, :human_attribute_values, 
+            self.to_s.underscore, attribute_name, value]
+    I18n.t(arr * '.')
+  end
+  
   class << self
     # Adds a convenient [] find_by to the model utilizing the given attribute
     # and returning the first record matching the condition. Therefore this

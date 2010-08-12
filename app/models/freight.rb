@@ -1,4 +1,7 @@
 class Freight < ActiveRecord::Base
+  TRANSPORT_TYPE_CHOICES = [:single_wagon, :train_set, :block_train]
+  DESIRED_PROPOSAL_TYPE_CHOICES = [:ton_price, :package_price]
+  WAGONS_PROVIDED_BY_CHOICES = [:client, :railway]
   belongs_to :user
   belongs_to :company
   belongs_to :origin_site_info, :class_name => 'SiteInfo', :dependent => :destroy
@@ -27,4 +30,7 @@ class Freight < ActiveRecord::Base
   validates_presence_of :company_id
   validates_presence_of :weight
   validates_inclusion_of :hazmat, :in => [true, false]
+  validates_inclusion_of :transport_type, :in => TRANSPORT_TYPE_CHOICES
+  validates_inclusion_of :wagons_provided_by, :in => WAGONS_PROVIDED_BY_CHOICES
+  validates_inclusion_of :desired_proposal_type, :in => DESIRED_PROPOSAL_TYPE_CHOICES
 end

@@ -4,15 +4,17 @@
   <% end %>
   
   <%= f.inputs :freight_description do %>
-    <%= f.input :hazmat, :collection => [["yes", true], ["no", false]], :as => :radio %>
+    <%= f.input :hazmat, :collection => [["yes", true], ["no", false]] %>
     
     <%= localized_info_field f, :goods_text, :en %>
         
     <%= f.input :weight, :as => :string %>
-    <%= f.input :transport_type, :collection => [:single_wagon, :train_set, :block_train] %>
+    <%= f.input :transport_type, :collection => collection_choices(Freight, :transport_type), :include_blank => false %>
+     
     <%= localized_info_field f, :transport_text, :en %>
     
-    <%= f.input :wagons_provided_by, :collection => %w(client railway), :as => :radio %>
+    <%= f.input :wagons_provided_by, :collection => collection_choices(Freight, :wagons_provided_by), :as => :radio %>
+    <%= f.input :desired_proposal_type, :collection => collection_choices(Freight, :desired_proposal_type), :as => :radio %>
   <% end %>
   
   <%= f.buttons %>

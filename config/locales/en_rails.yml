@@ -25,9 +25,23 @@ en:
       freight:
         weight: "Weight (in t)"
         hazmat: "Harzardous material"
+    human_attribute_values:
+      freight:
+        wagons_provided_by:
+          client: "Client"
+          railway: "Railway"
+        desired_proposal_type:
+          ton_price: "Price per ton"
+          package_price: "Package price"
+        transport_type:
+          single_wagon: "Single wagon"
+          train_set: "Train set"
+          block_train: "Block train"
+          
 #        localized_infos:
 #          type_of_goods: "Type of goods"
 #          transport_text: "Which wagons should be used?"
+
   formtastic:
     titles:
       for_company: "Company information"

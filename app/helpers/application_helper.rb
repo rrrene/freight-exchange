@@ -10,6 +10,13 @@ module ApplicationHelper
     '<div style="clear:both"></div>'.html_safe
   end
   
+  def collection_choices(model, attribute_name, const = nil)
+    const ||= "#{model}::#{attribute_name.to_s.upcase}_CHOICES".constantize
+    const.map { |value| 
+      [model.human_attribute_value(attribute_name, value), value] 
+    }
+  end
+  
   def controller?(c)
     controller.controller_name == c
   end
