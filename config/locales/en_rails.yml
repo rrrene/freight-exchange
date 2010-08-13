@@ -46,8 +46,8 @@ en:
           block_train: "Block train"
       person:
         gender:
-          male: "Male"
-          female: "Female"
+          male: "Mr."
+          female: "Mrs."
           
 #        localized_infos:
 #          type_of_goods: "Type of goods"
@@ -64,6 +64,7 @@ en:
       origin_site_info: "Loading site"
       destination_site_info: "Unloading site"
       freight_description: "Freight description"
+      person_name: "Personal information"
     labels:
       user:
         #

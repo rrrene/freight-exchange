@@ -13,7 +13,16 @@
         </li>
       </ol>
     </fieldset>
-    <%= render :partial => "/users/form_content", :locals => {:f => f} %>
+    
+    <%= f.semantic_fields_for :person do |f_person| %>
+      <%= f_person.inputs :person_name do %>
+        <%= f_person.input :gender, :collection => collection_choices(Person, :gender), :as => :select, :include_blank => false %>
+        <%= f_person.input :first_name %>
+        <%= f_person.input :last_name %>
+      <% end %>
+    <% end %>
+
+      <%= render :partial => "/users/form_content", :locals => {:f => f} %>
     <%= f.buttons %>
   <% end %>
   <%= javascript_tag <<-JS

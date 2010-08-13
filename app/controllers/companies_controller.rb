@@ -13,6 +13,7 @@ class CompaniesController < InheritedResources::Base
   def new
     @company = Company.new
     @user = User.new
+    @user.build_person
   end
   
   def create
