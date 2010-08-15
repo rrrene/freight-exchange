@@ -21,7 +21,7 @@
     </ul>
     
     <% content_for(:subtext) do %>
-      <%= t('search.common.subtext_results', :count => @results[:main].count).html_safe %>
+      <%= t('search.common.subtext_results', :count => @results[:count]).html_safe %>
     <% end %>
   <% else %>
     <%= t("search.index.no_#{@q.full? ? :results : :query}") %>

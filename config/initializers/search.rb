@@ -19,6 +19,15 @@ module Search
     end
     
     #:call-seq:
+    #   Search.count(query) => int
+    # 
+    # Returns the total number of results.
+    #   Search.count "some query"
+    def count(q, models = nil)
+      SimpleSearch.count(q, :models => models)
+    end
+    
+    #:call-seq:
     #   Search.find(query) => array
     #   Search / query => array
     # 
