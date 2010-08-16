@@ -60,17 +60,32 @@ class SimpleSearch < ActiveRecord::Base
     #   SimpleSearch / query => array
     # 
     # Returns the matching records from the database.
-    #  SimpleSearch.search "some query"
-    #  SimpleSearch / "some other query"
+    #   SimpleSearch.search "some query"
+    #   SimpleSearch / "some other query"
     def search(query, opts = {})
+      arel_for(query, opts).all.map(&:item).compact
+    end
+    alias / search
+    
+    #:call-seq:
+    #   SimpleSearch.count(query) => int
+    # 
+    # Returns the total number of results.
+    #   SimpleSearch.count "some query"
+    def count(query, opts = {})
+      arel_for(query, opts).count
+    end
+    
+    private 
+    
+    def arel_for(query, opts = {})
       opts.reverse_merge!(:models => nil, :simplify => true)
       words = query.to_s.split(' ')
       words = words.map(&:simplify) if opts[:simplify]
       origin = opts[:models] ? where(:item_type => opts[:models].map(&:to_s)) : self
       words.inject(origin) { |chain, word| 
         chain.where(['text LIKE ?', '%' << word << '%'])  
-      }.all.map(&:item).compact
+      }
     end
-    alias / search
   end
 end
