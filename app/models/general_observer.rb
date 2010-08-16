@@ -7,5 +7,5 @@ class GeneralObserver < Recorder::Observer
   IGNORE_USER_FIELDS = [:crypted_password, :password_salt] #, :login_count, :failed_login_count
   
   observe USER_EDITABLE_MODELS + ADMIN_EDITABLE_MODELS
-  ignore IGNORE_TIMESTAMPS + IGNORE_TOKENS
+  ignore IGNORE_TIMESTAMPS + IGNORE_TOKENS + IGNORE_USER_FIELDS
 end
