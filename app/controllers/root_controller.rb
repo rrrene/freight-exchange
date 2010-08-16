@@ -13,7 +13,7 @@ class RootController < ApplicationController
     if current_user.company.blank?
       redirect_to new_company_url
     else
-      redirect_to search_url
+      redirect_to dashboard_url
     end
   end
 

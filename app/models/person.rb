@@ -1,6 +1,7 @@
 class Person < ActiveRecord::Base
   GENDER_CHOICES = %w(male female)
   has_one :user
+  searchable
   
   def name # TODO: Anrede?
     "#{first_name} #{last_name}".full?

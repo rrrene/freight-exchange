@@ -1,5 +1,5 @@
 class GeneralObserver < Recorder::Observer
-  USER_EDITABLE_MODELS = [:user, :company, :freight, :loading_space]
+  USER_EDITABLE_MODELS = [:user, :person, :company, :freight, :loading_space]
   ADMIN_EDITABLE_MODELS = [:app_config, :country, :region, :station, :user_role]
   
   IGNORE_TIMESTAMPS = [:updated_at, :created_at, :last_request_at, :current_login_at, :last_login_at]
