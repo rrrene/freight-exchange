@@ -32,8 +32,9 @@ module Search
     #   Search / query => array
     # 
     # Returns the matching records from the database.
-    #  Search.find "some query"
-    #  Search / "some other query"
+    #   Search.find "some query"
+    #   Search.find "Berlin", [User, Company])
+    #   Search / "some other query"
     def find(q, models = nil)
       SimpleSearch.search(q, :models => models)
     end
