@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
   alias is? has_role?
   
   def name
-    login
+    person.name
   end
   
   # For permission handling

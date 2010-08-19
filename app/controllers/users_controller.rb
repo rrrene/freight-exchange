@@ -21,7 +21,7 @@ class UsersController < InheritedResources::Base
     end
   end
   
-  def show
+  def show # :nodoc:
     show! {
       page[:title] = @user.name
     }

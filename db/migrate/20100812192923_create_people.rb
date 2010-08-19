@@ -10,6 +10,7 @@ class CreatePeople < ActiveRecord::Migration
       t.string :mobile
       t.string :email
       t.string :website
+      t.string :locale, :default => 'en'
       t.timestamps
     end
     add_column :users, :person_id, :integer

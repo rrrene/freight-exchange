@@ -27,6 +27,7 @@ en:
         fax: "Fax"
         email: "E-Mail"
         website: "Web"
+        locale: "Interface Language"
       user:
         login: "Username"
         email: "E-Mail"
@@ -48,6 +49,9 @@ en:
         gender:
           male: "Mr."
           female: "Mrs."
+        locale:
+          en: "English"
+          de: "German"
           
 #        localized_infos:
 #          type_of_goods: "Type of goods"

@@ -5,6 +5,7 @@
     <%= f.input :last_name %>
   <% end %>
   <% f.inputs :person_contact do %>
+    <%= f.input :locale, :collection => collection_choices(Person, :locale), :as => :select, :include_blank => false %>
     <%= f.input :phone %>
     <%= f.input :fax %>
     <%= f.input :email %>

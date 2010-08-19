@@ -52,6 +52,15 @@ en:
     index:
       page_title: "Welcome"
   
+  # PeopleController
+  people:
+    edit:
+      page_title: "Edit person"
+      header: "Personal information"
+    update:
+      page_title: "Edit person"
+      header: "Personal information"
+  
   # PostingsController
   postings:
     common:
