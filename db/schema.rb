@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100812192923) do
+ActiveRecord::Schema.define(:version => 20100820130725) do
 
   create_table "app_configs", :force => true do |t|
     t.string   "name"
@@ -54,6 +54,19 @@ ActiveRecord::Schema.define(:version => 20100812192923) do
     t.string   "transport_type"
     t.string   "wagons_provided_by"
     t.string   "desired_proposal_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "loading_spaces", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "company_id"
+    t.integer  "origin_site_info_id"
+    t.integer  "destination_site_info_id"
+    t.integer  "weight"
+    t.integer  "loading_meter"
+    t.boolean  "hazmat"
+    t.string   "transport_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -145,7 +145,8 @@ div.corridor_map div#search_form .input-wrapper input#q:focus {
   outline: none;
 }
 
-#sidebar .create_new_posting,
+#sidebar .create_new_freight,
+#sidebar .create_new_loading_space,
 div.corridor_map div#search_form .input-wrapper input[type=submit] {
   border: 0;
   border-left: 1px solid #CCCCCC;
@@ -155,7 +156,8 @@ div.corridor_map div#search_form .input-wrapper input[type=submit] {
   font:15px arial,sans-serif;
 }
 
-#sidebar .create_new_posting {
+#sidebar .create_new_freight,
+#sidebar .create_new_loading_space {
   display: block;
   text-align: center;
   line-height: 30px;

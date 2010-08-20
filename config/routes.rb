@@ -1,4 +1,6 @@
 BlackBoard::Application.routes.draw do |map|
+  resources :loading_spaces
+
   resources :people
 
   resources :freights

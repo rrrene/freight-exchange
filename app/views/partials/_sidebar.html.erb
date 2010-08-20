@@ -1,7 +1,10 @@
 <div id="sidebar" class="span-8 last">
   <% if logged_in? && current_user.is?(:company_admin) %>
     <p>
-      <%= link_to t("common.create_new_posting"), new_freight_url, :class => 'create_new_posting' %>
+      <%= link_to t("common.create_new_freight"), new_freight_url, :class => 'create_new_freight' %>
+    </p>
+    <p>
+      <%= link_to t("common.create_new_loading_space"), new_loading_space_url, :class => 'create_new_loading_space' %>
     </p>
   <% end %>
   <%= yield(:sidebar) %>

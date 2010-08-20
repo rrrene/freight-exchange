@@ -1,0 +1,75 @@
+<div class="box">
+  <h3>
+    <%= t('loading_spaces.show.header') %>
+    <%= link_to t("loading_spaces.common.edit_link"), edit_loading_space_path(@loading_space), :class => 'edit' %>
+  </h3>
+  <% %w(origin destination).each do |site| %>
+    <div style="width: 48%; margin-right: 10px; float: left;">
+      <h3><%= t("loading_spaces.show.#{site}.header") %></h3>
+      <% @loading_space.__send__("#{site}_site_info").tap do |site_info| %>
+        <strong><%= site_info.contractor %></strong><br>
+        <span><%= l site_info.date, :format => :long %></span>
+        <table>
+          <thead>
+            <tr>
+              <th colspan="2"><b><%= site_info.name %></b></th>
+            </tr>
+          </thead>
+          <% %w(address address2 zip city country).each do |attr| %>
+            <% if site_info[attr].full? %>
+              <tr>
+                <th><%= SiteInfo.human_attribute_name(attr) %></th>
+                <td><%= site_info[attr] %></td>
+              </tr>
+            <% end %>
+          <% end %>
+          <tr>
+            <th><%= SiteInfo.human_attribute_name(:side_track_avaiable) %></th>
+            <td><%= yes_no site_info.side_track_avaiable %></td>
+          </tr>
+          <tr>
+            <th><%= SiteInfo.human_attribute_name(:tracknumber) %></th>
+            <td><%= site_info.track_number %></td>
+          </tr>
+        </table>
+      <% end %>
+    </div>
+  <% end %>
+  <%= clear_both %>
+  
+  <h3><%= t("loading_spaces.show.transport_description") %></h3>
+  <table>
+    <tr>
+      <th><%= resource_class.human_attribute_name(:weight) %></th>
+      <td><%= @loading_space.weight %></td>
+    </tr>
+    <tr>
+      <th><%= resource_class.human_attribute_name(:goods_text) %></th>
+      <td><%= localized_info(@loading_space, :goods_text) %></td>
+    </tr>
+    <tr>
+      <th><%= resource_class.human_attribute_name(:hazmat) %></th>
+      <td><%= yes_no @loading_space.hazmat %></td>
+    </tr>
+    
+    <tr>
+      <th><%= resource_class.human_attribute_name(:transport_type) %></th>
+      <td><%= @loading_space.human_attribute_value(:transport_type) %></td>
+    </tr>
+    <tr>
+      <th><%= resource_class.human_attribute_name(:transport_text) %></th>
+      <td><%= localized_info(@loading_space, :transport_text) %></td>
+    </tr>
+    
+    <tr>
+      <th><%= resource_class.human_attribute_name(:misc_text) %></th>
+      <td><%= localized_info(@loading_space, :misc_text) %></td>
+    </tr>
+
+  </table>
+  
+  <% content_for(:sidebar) do %>
+    <%= render_company_info @loading_space.company %>
+  <% end %>
+  
+</div>

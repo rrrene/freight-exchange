@@ -23,6 +23,9 @@ en:
         localized_infos:
           goods_text: "Type of Goods:"
           transport_text: "Which kind of wagons are required?"
+      loading_space:
+        weight: "Weight (in t)"
+        hazmat: "Harzardous material"
       person:
         first_name: "Forename"
         last_name: "Surname"
@@ -44,6 +47,11 @@ en:
         desired_proposal_type:
           ton_price: "Price per ton"
           package_price: "Package price"
+        transport_type:
+          single_wagon: "Single wagon"
+          train_set: "Train set"
+          block_train: "Block train"
+      loading_space:
         transport_type:
           single_wagon: "Single wagon"
           train_set: "Train set"

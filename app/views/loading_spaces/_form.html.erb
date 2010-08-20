@@ -1,0 +1,18 @@
+<%= semantic_form_for(resource) do |f| %>
+  <% %w(origin destination).each do |site| %>
+    <%= render :partial => 'site_info_form_content', :locals => {:f => f, :site => site} %>
+  <% end %>
+  
+  <%= f.inputs :freight_description do %>
+    <%= f.input :hazmat, :collection => [["yes", true], ["no", false]] %>
+    
+    <%= f.input :weight, :as => :string %>
+    <%= f.input :transport_type, :collection => collection_choices(resource_class, :transport_type), :include_blank => false %>
+  <% end %>
+  
+  <%= f.buttons %>
+<% end %>
+
+<% content_for(:sidebar) do %>
+  <%= debug resource %>
+<% end %>

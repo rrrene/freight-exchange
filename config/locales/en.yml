@@ -13,7 +13,8 @@ en:
         edit: "Edit info"
         please_edit_notice: "Please add more information to your profile."
     website_title: "Freight Exchange 2010"
-    create_new_posting: "Create a new Posting"
+    create_new_freight: "Post freight Ad"
+    create_new_loading_space: "Post loading space Ad"
     link_back: "« Back"
     choice_yes: "Yes"
     choice_no: "No"
@@ -48,6 +49,24 @@ en:
     show:
       page_title: "Freight posting"
       header: "Freight posting"
+      transport_description: "Transport description"
+      origin:
+        header: "Loading site"
+      destination:
+        header: "Unloading site"
+  
+  # LoadingSpacesController
+  loading_spaces:
+    common:
+      edit_link: "Edit this posting"
+    new:
+      page_title: "New loading space posting"
+    edit:
+      page_title: "Edit loading space posting"
+      header: "Edit loading space posting"
+    show:
+      page_title: "Loading space posting"
+      header: "Loading space posting"
       transport_description: "Transport description"
       origin:
         header: "Loading site"
