@@ -2,9 +2,9 @@
 <% content_for(:sidebar) do %>
   <div class="box">
     <h3>
-      <%= t "postings.common.sidebar.contact_information.header" %>
+      <%= t "common.sidebar.company_information.header" %>
       <% if company == current_company %>
-        <%= link_to t("postings.common.sidebar.contact_information.edit"), edit_company_path(company), :class => 'edit' %>
+        <%= link_to t("common.sidebar.company_information.edit"), edit_company_path(company), :class => 'edit' %>
       <% end %>
     </h3>
 
@@ -23,6 +23,8 @@
         <% end %>
       <% end %>
     </table>
-    <%= company.attributes_filled %>
+    <% if company == current_company %>
+      <%= content_tag(:div, t("common.sidebar.company_information.please_edit_notice"), {:class => 'notice'}) if only_some_attributes_filled?(company) %>
+    <% end %>
   </div>
 <% end %>

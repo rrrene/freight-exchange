@@ -20,9 +20,9 @@
 <% person = current_person %>
   <div class="box">
     <h3>
-      <%= t "postings.common.sidebar.person_information.header" %>
+      <%= t "common.sidebar.person_information.header" %>
       <% if person == current_person %>
-        <%= link_to t("postings.common.sidebar.person_information.edit"), person.save ? edit_person_path(person) : new_person_path, :class => 'edit' %>
+        <%= link_to t("common.sidebar.person_information.edit"), person.save ? edit_person_path(person) : new_person_path, :class => 'edit' %>
       <% end %>
     </h3>
 
@@ -41,7 +41,10 @@
         <% end %>
       <% end %>
     </table>
-    <%= person.attributes_filled %>
+    
+    <% if person == current_person %>
+      <%= content_tag(:div, t("common.sidebar.person_information.please_edit_notice"), {:class => 'notice'}) if only_some_attributes_filled?(person) %>
+    <% end %>
   </div>
 <% end %>
 

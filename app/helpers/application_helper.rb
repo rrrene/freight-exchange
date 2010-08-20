@@ -45,6 +45,10 @@ module ApplicationHelper
               :locals => {:f => f, :name => name, :lang => lang}})
   end
   
+  def only_some_attributes_filled?(ar)
+    ar.attributes_filled < 0.5
+  end
+  
   def render_company_info(company)
     render :partial => "/partials/sidebar_company_info", :locals => {:company => company}
   end

@@ -3,6 +3,15 @@
 
 en:
   common:
+    sidebar:
+      company_information: 
+        header: "Contact information"
+        edit: "Edit info"
+        please_edit_notice: "Please add more information to your company's profile."
+      person_information: 
+        header: "Personal information"
+        edit: "Edit info"
+        please_edit_notice: "Please add more information to your profile."
     website_title: "Freight Exchange 2010"
     create_new_posting: "Create a new Posting"
     link_back: "« Back"
@@ -64,13 +73,6 @@ en:
   # PostingsController
   postings:
     common:
-      sidebar:
-        contact_information: 
-          header: "Contact information"
-          edit: "Edit info"
-        person_information: 
-          header: "Personal information"
-          edit: "Edit info"
       posting:
         loading_meter: "Loading metre:"
         weight: "Weight (kg):"
