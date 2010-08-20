@@ -16,36 +16,6 @@
   </ul>
 </div>
 
-<% content_for(:sidebar) do %>
-<% person = current_person %>
-  <div class="box">
-    <h3>
-      <%= t "common.sidebar.person_information.header" %>
-      <% if person == current_person %>
-        <%= link_to t("common.sidebar.person_information.edit"), person.save ? edit_person_path(person) : new_person_path, :class => 'edit' %>
-      <% end %>
-    </h3>
-
-    <table>
-      <thead>
-        <tr>
-          <th colspan="2"><b><%= person.name %></b></th>
-        </tr>
-      </thead>
-      <% %w(phone fax email website).each do |attr| %>
-        <% if person[attr].full? %>
-          <tr>
-            <th><%= Person.human_attribute_name(attr) %></th>
-            <td><%= auto_link person[attr] %></td>
-          </tr>
-        <% end %>
-      <% end %>
-    </table>
-    
-    <% if person == current_person %>
-      <%= content_tag(:div, t("common.sidebar.person_information.please_edit_notice"), {:class => 'notice'}) if only_some_attributes_filled?(person) %>
-    <% end %>
-  </div>
-<% end %>
+<%= render_person_info current_person %>
 
 <%= render_company_info @company %>

@@ -20,6 +20,9 @@ en:
       freight:
         weight: "Weight (in t)"
         hazmat: "Harzardous material"
+        localized_infos:
+          goods_text: "Type of Goods:"
+          transport_text: "Which kind of wagons are required?"
       person:
         first_name: "Forename"
         last_name: "Surname"

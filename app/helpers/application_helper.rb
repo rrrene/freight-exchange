@@ -22,7 +22,7 @@ module ApplicationHelper
   end
   
   def format_multiline_input(text)
-    text
+    simple_format(h(text)).html_safe
   end
   
   def link_back(text = t("common.link_back"))
@@ -51,6 +51,10 @@ module ApplicationHelper
   
   def render_company_info(company)
     render :partial => "/partials/sidebar_company_info", :locals => {:company => company}
+  end
+  
+  def render_person_info(person)
+    render :partial => "/partials/sidebar_person_info", :locals => {:person => person}
   end
   
   def render_table(arel)
