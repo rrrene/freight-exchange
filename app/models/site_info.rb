@@ -19,5 +19,5 @@ class SiteInfo < ActiveRecord::Base
     ].map(&:full?).compact.join("\n").simplify
   end
 
-  validates_inclusion_of :side_track_avaiable, :in => [true, false]
+  validates_inclusion_of :side_track_available, :in => [true, false]
 end

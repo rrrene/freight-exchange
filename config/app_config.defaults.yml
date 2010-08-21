@@ -1,4 +1,5 @@
 demo_mode: true
-name: Rails3Base
+just_set_up: true
+name: Freight Exchange
 domain: localhost
 language: en

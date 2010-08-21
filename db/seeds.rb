@@ -42,13 +42,13 @@ puts "#{UserRole.count} UserRoles"
 if Rails.env == 'development'
   # Create some users to fill the db
   Seed::USERS.each do |opts|
-    company_opts = opts.delete(:company)
-    company = Company.create(company_opts)
-    person_opts = opts.delete(:person)
-    person = Person.create(person_opts)
+#    company_opts = opts.delete(:company)
+#    company = Company.create(company_opts)
+#    person_opts = opts.delete(:person)
+#    person = Person.create(person_opts)
     user = User.new(opts)
-    user.company = company
-    user.person = person
+#    user.company = company
+#    user.person = person
     user.save
   end
   puts "#{User.count} Users"

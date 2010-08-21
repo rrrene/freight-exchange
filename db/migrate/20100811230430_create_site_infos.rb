@@ -9,7 +9,7 @@ class CreateSiteInfos < ActiveRecord::Migration
       t.string :zip
       t.string :city
       t.string :country
-      t.boolean :side_track_avaiable
+      t.boolean :side_track_available
       t.string :track_number
       t.timestamps
     end
