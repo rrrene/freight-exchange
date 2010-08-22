@@ -12,6 +12,9 @@ class RootController < ApplicationController
         # db is seeded properly, now we need to create an admin account
         # => SetupController
         #     Login & Passwort ändern
+        admin = create_admin!
+        UserSession.login(admin)
+        redirect_to edit_user_url(admin)
       else
         # db has to be seeded to proceed
         render :text => 'Run `rake db:seed` and restart your server!', :layout => true        
@@ -30,14 +33,6 @@ class RootController < ApplicationController
   
   private
   
-  def just_set_up?
-    AppConfig[:just_set_up]
-  end
-  
-  def just_set_up_but_not_seeded?
-    Country.count == 0
-  end
-  
   def admin_user_attributes
     {
       :login => 'admin',
@@ -53,6 +48,20 @@ class RootController < ApplicationController
         :name => 'Freight Exchange',
       }
     }
+  end
+  
+  def create_admin!
+    admin = User.create!(admin_user_attributes)
+    admin.user_roles << UserRole[:administrator]
+    admin
+  end
+  
+  def just_set_up?
+    AppConfig[:just_set_up]
+  end
+  
+  def just_set_up_but_not_seeded?
+    Country.count == 0
   end
   
 end
