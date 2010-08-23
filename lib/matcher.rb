@@ -10,7 +10,7 @@ module Matcher
       self.loading_space = _loading_space
     end
     
-    def comparing_attributes
+    def attributes_to_compare
       private_methods.select { |m| 
         m =~ /^compare_/ 
       }.map { |m| 
@@ -18,20 +18,20 @@ module Matcher
       }
     end
     
-    def comparing_hash
-      comparing_attributes.inject({}) { |hsh, attr|
+    def individual_results
+      attributes_to_compare.inject({}) { |hsh, attr|
         m = method("compare_#{attr}")
         hsh[attr] = m.call(f.__send__(attr), l.__send__(attr)).to_f
         hsh
       }
     end
     
-    def percentage
-      hsh = comparing_hash
+    def result
+      hsh = individual_results
       sum = hsh.inject(0.0) { |sum, (attr, p)| sum + p }
       sum / hsh.keys.size
     end
-    alias to_f percentage
+    alias to_f result
     
     def without_ids(attributes)
       attributes.delete_if { |k, v| k =~ /(\A|_)id$/ }
@@ -68,24 +68,24 @@ module Matcher
         self.b = _b
       end
 
-      def percentage
+      def result
         a == b ? 1.0 : 0.0
       end
       
       def to_f
-        percentage
+        result
       end
     end
       
     class Fixnum < Base
-      def percentage
+      def result
         ab = [a.to_f, b.to_f]
         ab.min / ab.max
       end
     end
     
     class Hash < Base
-      def percentage
+      def result
         sum = a.inject(0.0) { |sum, (key, value)|
           comparer = eval("Matcher::Compare::#{value.class}")
           # puts key + ': ' + a[key].inspect + ' == ' + b[key].inspect
@@ -115,14 +115,14 @@ module Matcher
         end
       end
       
-      def percentage
+      def result
         diff = Levenshtein.distance(a, b)
         1 - (diff / [a.length, b.length].max.to_f)
       end
     end
     
     class Time < Fixnum
-      def percentage
+      def result
         ab = [a.to_f, b.to_f]
         ab.min / ab.max
       end
