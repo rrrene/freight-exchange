@@ -1,3 +1,4 @@
+# Companies are organising Users.
 class Company < ActiveRecord::Base
   searchable
   has_many :users
@@ -8,7 +9,7 @@ class Company < ActiveRecord::Base
     self
   end
   
-  # Ensure there is atleast one :company_admin left
+  # Ensure there is atleast one :company_admin left.
   # If no admin can be found, the first user of the company is 
   # assigned the admin role.
   def ensure_admin
