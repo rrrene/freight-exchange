@@ -1,61 +1,15 @@
-module Matcher
-  class Match
-    attr_accessor :freight
-    alias f freight
-    attr_accessor :loading_space
-    alias l loading_space
-    
-    def initialize(_freight, _loading_space)
-      self.freight = _freight
-      self.loading_space = _loading_space
+module Match
+  class << self
+    #:call-seq:
+    #   Match.compare_freight_loading_space(freight, loading_space) # => Float
+    #   Match.fls freight, loading_space # => Float
+    #
+    # Returns the likeness of a Freight and a LoadingSpace object.
+    #   Match.fls Freight.first, LoadingSpace.first # => 0.977920227850516
+    def compare_freight_loading_space(f, l)
+      Compare::FreightToLoadingSpace.new(f, l).result
     end
-    
-    def attributes_to_compare
-      private_methods.select { |m| 
-        m =~ /^compare_/ 
-      }.map { |m| 
-        m.gsub(/^(compare_)(.+)/, '\2') 
-      }
-    end
-    
-    def individual_results
-      attributes_to_compare.inject({}) { |hsh, attr|
-        m = method("compare_#{attr}")
-        hsh[attr] = m.call(f.__send__(attr), l.__send__(attr)).to_f
-        hsh
-      }
-    end
-    
-    def result
-      hsh = individual_results
-      sum = hsh.inject(0.0) { |sum, (attr, p)| sum + p }
-      sum / hsh.keys.size
-    end
-    alias to_f result
-    
-    def without_ids(attributes)
-      attributes.delete_if { |k, v| k =~ /(\A|_)id$/ }
-    end
-    
-    private
-    
-    def __compare_site_info__(a, b)
-      aa, bb = without_ids(a.attributes), without_ids(b.attributes)
-      Compare::Hash.new(aa, bb).to_f
-    end
-    
-    def compare_origin_site_info(a, b)
-      __compare_site_info__(a, b)
-    end
-    
-    def compare_destination_site_info(a, b)
-      __compare_site_info__(a, b)
-    end
-    
-    def compare_attributes(a, b)
-      bb = without_ids(b)
-      Compare::Hash.new(bb, a).to_f
-    end
+    alias fls compare_freight_loading_space
   end
   
   module Compare
@@ -76,7 +30,7 @@ module Matcher
         result
       end
     end
-      
+    
     class Fixnum < Base
       def result
         ab = [a.to_f, b.to_f]
@@ -128,5 +82,58 @@ module Matcher
       end
     end
     
+    class FreightToLoadingSpace < Base
+      def attributes_to_compare
+        private_methods.select { |m| 
+          m =~ /^compare_/ 
+        }.map { |m| 
+          m.gsub(/^(compare_)(.+)/, '\2') 
+        }
+      end
+      
+      def individual_results
+        attributes_to_compare.inject({}) { |hsh, attr|
+          m = method("compare_#{attr}")
+          hsh[attr] = m.call(a.__send__(attr), b.__send__(attr)).to_f
+          hsh
+        }
+      end
+      
+      # Calculates the results for the individual attributes and returns
+      # the weighted average of all results.
+      def result
+        hsh = individual_results
+        sum = hsh.inject(0.0) { |sum, (attr, p)| sum + p }
+        sum / hsh.keys.size
+      end
+      
+      # Removes all primary and foreign key associations from a hash and 
+      # returns a copy of it.
+      #   hsh = {:id => 1, :login => 'test', :person_id => 5, :company_id => 3}
+      #   withouts_ids(hsh) # => {:login => 'test'}
+      def without_ids(attributes)
+        attributes.delete_if { |k, v| k.to_s =~ /(\A|_)id$/ }
+      end
+      
+      private
+      
+      def __compare_site_info__(a, b)
+        aa, bb = without_ids(a.attributes), without_ids(b.attributes)
+        Compare::Hash.new(aa, bb).result
+      end
+      
+      def compare_origin_site_info(a, b)
+        __compare_site_info__(a, b)
+      end
+      
+      def compare_destination_site_info(a, b)
+        __compare_site_info__(a, b)
+      end
+      
+      def compare_attributes(a, b)
+        bb = without_ids(b)
+        Compare::Hash.new(bb, a).result
+      end
+    end
   end
 end
