@@ -10,18 +10,27 @@ class User < ActiveRecord::Base
   acts_as_authentic
   searchable
   
-  def roles
-    @roles ||= user_roles.map(&:name)
-  end
-  
-  # Returns if a user has a certain role.
+  #:call-seq:
+  #   user.has_role?(role_name) # => boolean
+  #
+  # Returns true if a user has a certain role.
+  #   user.has_role?(:administrator) # => true
   def has_role?(name)
     roles.include?(name.to_s)
   end
   alias is? has_role?
   
-  def name
+  def name # :nodoc:
     person.name
+  end
+  
+  #:call-seq:
+  #   user.roles # => array
+  #
+  # Returns an array of role names.
+  #   user.roles # => ["administrator", "company_admin"]
+  def roles
+    @roles ||= user_roles.map(&:name)
   end
   
   # For permission handling
