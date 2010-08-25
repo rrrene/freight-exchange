@@ -21,23 +21,21 @@ module Match
         x, y = a.__send__(attr), b.__send__(attr)
         comparer = comparer_for(opts[:as] || x.class)
         result = comparer.new(x, y).result
-        if in_threshold(x, y, result, opts[:threshold])
-          result
-        else
-          false
-        end
+        result = false unless in_threshold(x, y, result, opts[:threshold])
+        result = opts[:block].call(x, y, result) if opts[:block]
+        result
       end
       
       def compare_attributes_and_calc_result
         all = compared_attributes.inject({}) do |hsh, (attr, opts)|
-          hsh[attr] = compare_attribute(attr, opts)
+          if result = compare_attribute(attr, opts)
+            hsh[attr] = result
+          else
+            return 0.0
+          end
           hsh
         end
-        if all.values.include?(false)
-          0.0
-        else
-          calc_result(all)
-        end
+        calc_result(all)
       end
       
       def compared_attributes
@@ -92,9 +90,10 @@ module Match
       end
       
       class << self
-        def compare(*args)
+        def compare(*args, &block)
           @@compared_attributes[name] ||= {}
           opts = args.last.is_a?(::Hash) ? args.pop : {}
+          opts[:block] = block if block_given?
           attribs = args
           attribs.each do |attr|
             @@compared_attributes[name][attr] = opts

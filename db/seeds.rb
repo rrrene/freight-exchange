@@ -85,7 +85,6 @@ if Rails.env == 'development'
   
   puts "#{Freight.count} Freights"
   
-  
   f = LoadingSpace.create({
     :origin_site_info_attributes => {
       :contractor => 'Frachtunternehmen',
