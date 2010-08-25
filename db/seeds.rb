@@ -89,6 +89,7 @@ if Rails.env == 'development'
   f = LoadingSpace.create({
     :origin_site_info_attributes => {
       :contractor => 'Frachtunternehmen',
+      :name => "Bochum Hbf",
       :address => "Kurt-Schumacher-Platz",
       :zip => "44787",
       :city => "Bochum",
@@ -98,6 +99,7 @@ if Rails.env == 'development'
     },
     :destination_site_info_attributes => {
       :contractor => 'Frachtunternehmen',
+      :name => "Dortmund Hbf",
       :address => "Bahnhofstr.",
       :zip => "44137",
       :city => "Dortmund",
