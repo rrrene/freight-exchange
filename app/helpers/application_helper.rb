@@ -1,15 +1,19 @@
 module ApplicationHelper
   
-  def box(title = nil, &block)
-    inner = capture(&block)
-    head = title.full? { |t| content_tag :h3, t }.to_s
-    content_tag(:div, head << inner, :class => 'box')
-  end
+#  def box(title = nil, &block)
+#    inner = capture(&block)
+#    head = title.full? { |t| content_tag :h3, t }.to_s
+#    content_tag(:div, head << inner, :class => 'box')
+#  end
   
+  # Returns a DIV tag that clears floating.
   def clear_both
     '<div style="clear:both"></div>'.html_safe
   end
   
+  # Returns the collection of localized choices for a given attribute,
+  # e.g. for Person and attribute <tt>:gender</tt>, it will look up 
+  # <tt>Person::GENDER_CHOICES</tt> and return the keys and localized values.
   def collection_choices(model, attribute_name, const = nil)
     const ||= "#{model}::#{attribute_name.to_s.upcase}_CHOICES".constantize
     const.map { |value| 
@@ -17,14 +21,23 @@ module ApplicationHelper
     }
   end
   
-  def controller?(c)
-    controller.controller_name == c
+  #:call-seq:
+  #   controller?(name) # => boolean
+  #
+  # Returns if c is the current controller.
+  # Example:
+  #   <%= controller?(:root) %>
+  #   # => true
+  def controller?(name)
+    controller.controller_name == name
   end
   
+  # Returns a HTML formatted version of <tt>text</tt>.
   def format_multiline_input(text)
     simple_format(h(text)).html_safe
   end
   
+  # Returns a link back to the last visited page with a localized caption.
   def link_back(text = t("common.link_back"))
     link_to_function text, "self.history.back();", :class => 'back'
   end
@@ -34,6 +47,7 @@ module ApplicationHelper
     condition ? content_tag(:span, name, html_options) : link_to(name, options, html_options, &block)
   end
   
+  # Returns a formatted string for the associated LocalizedInfo object.
   def localized_info(obj, name, lang = I18n.default_locale)
     format_multiline_input obj.localized_info(name, lang).text
   end
@@ -49,14 +63,23 @@ module ApplicationHelper
     ar.attributes_filled < 0.5
   end
   
+  # Renders a partial with the contact information for the given company.
+  # Example:
+  #   <%= render_person_info current_company %>
   def render_company_info(company)
     render :partial => "/partials/sidebar_company_info", :locals => {:company => company}
   end
   
+  # Renders a partial with the contact information for the given person.
+  # Example:
+  #   <%= render_person_info current_person %>
   def render_person_info(person)
     render :partial => "/partials/sidebar_person_info", :locals => {:person => person}
   end
   
+  # Renders a table for the given ActiveRelation.
+  # Example:
+  #   <%= render_table User.all %>
   def render_table(arel)
     render :partial => '/partials/table', :locals => {:model => arel.first.class, :arel => arel}
   end

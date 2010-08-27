@@ -1,10 +1,13 @@
+# Person objects contain personal information about a User.
+# 
 class Person < ActiveRecord::Base
   GENDER_CHOICES = %w(male female)
   LOCALE_CHOICES = I18n.available_locales.map(&:to_s)
   has_one :user
   searchable
   
-  def name # TODO: Anrede?
+  # TODO: Anrede?
+  def name
     "#{first_name} #{last_name}"
   end
   

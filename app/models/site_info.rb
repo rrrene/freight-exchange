@@ -1,3 +1,6 @@
+# SiteInfo objects contain information about loading and unloading sites, 
+# such as name of the site, address of the site, name of the contractor etc.
+#
 class SiteInfo < ActiveRecord::Base
   validates_presence_of :contractor
 #  validates_presence_of :address
@@ -5,7 +8,7 @@ class SiteInfo < ActiveRecord::Base
 #  validates_presence_of :city
 #  validates_presence_of :country
 
-  def to_search
+  def to_search # :nodoc:
     [
       contractor,
       I18n.available_locales.map { |lang| 

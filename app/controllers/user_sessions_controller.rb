@@ -1,7 +1,11 @@
+# The UserSessionsController handles all requests regarding logging in and out.
+#
 class UserSessionsController < ApplicationController
   before_filter :require_no_user, :only => [:new, :create]
   before_filter :require_user, :only => :destroy
   
+  # This action is only available if the application is running in demo mode.
+  # It creates a UserSession for a given user without any authentication.
   def demo_login
     if demo_mode?
       @user = User.find(params[:id])
@@ -17,6 +21,7 @@ class UserSessionsController < ApplicationController
     @user_session = UserSession.new
   end
   
+  # Authenticates a User by creating and saving a UserSession.
   def create
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
@@ -27,6 +32,7 @@ class UserSessionsController < ApplicationController
     end
   end
   
+  # Logs a user out.
   def destroy
     UserSession.find.destroy
     flash[:notice] = "Logout successful!"

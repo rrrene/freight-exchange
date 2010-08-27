@@ -1,3 +1,9 @@
+# User objects respresent a user of the system and are used to authenticate 
+# users upon login (using acts_as_authentic plugin) and handle 
+# permission handling via assigned UserRole objects. 
+#
+# Data concerning the actual, human user (like company, gender, language etc.)
+# is stored in associated Person and Company objects.
 class User < ActiveRecord::Base
   belongs_to :company
   belongs_to :person
@@ -13,7 +19,7 @@ class User < ActiveRecord::Base
   #:call-seq:
   #   user.has_role?(role_name) # => boolean
   #
-  # Returns true if a user has a certain role.
+  # Returns true if a user has a UserRole with the given <tt>name</tt>.
   #   user.has_role?(:administrator) # => true
   def has_role?(name)
     roles.include?(name.to_s)

@@ -1,6 +1,25 @@
-# UserRoles grant Users access to certain parts of the application.
+# UserRoles grant a logged in User access to certain parts of the application.
 #
-# To access the backend e.g. a user have administrator priviligues:
+# == Creation
+#
+# UserRoles are created and identified via their <tt>:name</tt> attribute.
+#
+#   UserRole.create(:name => 'employee_of_the_month')
+#
+# == Find by name
+#
+# UserRoles can be found via their <tt>:name</tt> attribute using the 
+# <tt>[]</tt> accessor.
+#
+#   UserRole[:employee_of_the_month]
+# 
+# == Assigning
+#
+# Finally, UserRoles can be eassigned to a User with the <tt><<</tt> operator.
+#
+#   user.user_roles << UserRole[:employee_of_the_month]
+# 
+# To access the backend e.g. a user must have administrator priviligues:
 #
 #   user.user_roles << UserRole[:administrator]
 # 

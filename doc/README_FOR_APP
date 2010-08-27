@@ -1,0 +1,3 @@
+= Rails Application Documentation
+
+Build the documentation with either rake doc:* for standard rails doc output, or with the rake doc:ajax task to get nicer doc layout using breakpointer's ajax-rdoc (http://github.com/breakpointer/ajax-rdoc).
