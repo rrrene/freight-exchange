@@ -1,6 +1,6 @@
-require 'match'
+require 'matching'
 
-module Match
+module Matching
   class << self
     #:call-seq:
     #   Match.compare_freight_and_loading_space(freight, loading_space) # => Float
@@ -25,5 +25,10 @@ module Match
       compare :date, :as => :Time, :threshold => 1.hour
       compare :name, :address, :address2, :zip, :city, :country
     end
+    
+    #class Test < Base
+    #  compare :weight, :in => (50..100)
+    #  compare :login, :match => /.{4,8}/
+    #end
   end
 end

@@ -1,10 +1,19 @@
 # AppConfig objects store system specific configuration values for the 
 # application.
-# 
-# Use [] and []= to create and store any information.
+#
+# == Reading
+#
+# Read any value from the database (or the default config yaml, if it is not yet in the db) by using the [] accessor.
+#
 #   AppConfig[:language]  # => "en"
+#
+# == Storing
+#
+# Store any value in the database by using the []= accessor.
+#
 #   AppConfig[:language] = 'de'  # => "de"
 #   AppConfig[:some_option] = 'some value' # => "some value"
+#
 class AppConfig < ActiveRecord::Base
   searchable
   
