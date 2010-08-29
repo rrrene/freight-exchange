@@ -1,3 +1,27 @@
 = Rails Application Documentation
 
-Build the documentation with either rake doc:* for standard rails doc output, or with the rake doc:ajax task to get nicer doc layout using breakpointer's ajax-rdoc (http://github.com/breakpointer/ajax-rdoc).
+Build this documentation with either rake doc:* for standard rails doc output, or with the rake doc:ajax task to get nicer doc layout using breakpointer's ajax-rdoc (which is available at http://github.com/breakpointer/ajax-rdoc and has to installed separately).
+
+== Installation
+
+The first step is to run these rake tasks: 
+
+  rake db:migrate
+  rake db:seed
+
+Now the database is fully migrated and seeded. Start the webserver with
+
+  rails server
+
+A setup screen will be ready at http://localhost:3000
+
+== Starting points for further reading
+
+=== Search API
+
+For any information on the search functionality of the app, take a look at the Search module.
+
+=== Matching API
+
+For any information on the matching of Freight and LoadingSpace objects, take a look at the Matching module.
+

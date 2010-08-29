@@ -1,35 +1,50 @@
-# matching.rb
-#
+# The Matching module provides a set of classes and methods to match
+# objects. On top of this, it provides an extendable generic API for matching 
+# Freight and LoadingSpace objects (see compare_freight_and_loading_space 
+# method).
 module Matching
+  # The Compare module provides a set of classes and methods to match
+  # objects like Strings, Numbers and Dates.
   module Compare
     # Compare objects compare two objects A and B based on their type/class.
     # 
     # == Creation
     # 
-    # Compare objects accept two constructor parameters for the A and the B object.
+    # Compare objects accept two constructor parameters for the A and the B 
+    # object.
     #
     #   compare = Compare::String.new('one string', 'another string')
     #   compare.result # => 0.6428...
     # 
     # == Conditions
     #
-    # By default, a compare object compares copies of the entire objects it is passed.
-    # It is also possible to only compare certain attributes of an object.
+    # By default, a compare object compares copies of the entire objects it is 
+    # passed. It is also possible to only compare certain attributes of an 
+    # object.
     #
     #   class UserComparer < Matching::Compare::Base
     #     compare :gender, :weight
     #   end
     #
-    # Thresholds can be used to ensure that only objects who meet certain criteria are considered alike.
+    # Thresholds can be used to ensure that only objects who meet certain 
+    # criteria are considered alike.
     # 
     #   class UserComparer < Matching::Compare::Base
-    #     compare :weight, :threshold => 10   # User A can be 10 kilos heavier or lighter than user B
-    #     compare :weight, :threshold => 0.05 # User A can be 5% heavier or lighter than user B
-    #     compare :weight, :threshold => {:up => 0, :down => 0.1} # User A can be 10% lighter than user B, but not any heavier.
-    #     compare :weight, :threshold => :perfect # User A and B have to have the same weight
+    #     compare :weight, :threshold => 10   
+    #     # => User A can be 10 kilos heavier or lighter than user B
+    #
+    #     compare :weight, :threshold => 0.05 
+    #     # => User A can be 5% heavier or lighter than user B
+    #
+    #     compare :weight, :threshold => {:up => 0, :down => 0.1} 
+    #     # => User A can be 10% lighter than user B, but not any heavier.
+    #
+    #     compare :weight, :threshold => :perfect 
+    #     # => User A and B have to have the same weight
     #   end
     #
-    # All object-pairs not meeting the threshold criteria are automatically assigned a result of 0.0 (not alike at all).
+    # All object-pairs not meeting the threshold criteria are automatically 
+    # assigned a result of 0.0 (not matching at all).
     #
     # == Overwriting defaults
     # 
@@ -86,17 +101,22 @@ module Matching
         #:call-seq:
         #  compare(*attributes, options = {}, &block)
         #
-        # Specifies one or more attribute(s) that will be compared using the defined options and the block, if given.
+        # Specifies one or more attribute(s) that will be compared using the 
+        # defined options and the block, if given.
         #
         # ==== Options
         # 
-        # * <tt>:as</tt> - A Symbol identifying the Comparer class to be used (e.g. <tt>:String</tt>, <tt>:Time</tt> etc.)
+        # * <tt>:as</tt> - A Symbol identifying the Comparer class to be used 
+        # (e.g. <tt>:String</tt>, <tt>:Time</tt> etc.)
         # 
         #     class UserComparer < Matching::Compare::Base
         #       compare :created_at, :as => :Time
         #     end
         #
-        # * <tt>:threshold</tt> - If the attribute of the B object differs more than the given threshold the comparison fails, resulting in a 0.0 match. <tt>:up</tt> and <tt>:down</tt> options are available as well. Floats are interpreted as relative, Fixnums as absolute thresholds.
+        # * <tt>:threshold</tt> - If the attribute of the B object differs more
+        # than the given threshold the comparison fails, resulting in a 0.0
+        # match. <tt>:up</tt> and <tt>:down</tt> options are available as well. 
+        # Floats are interpreted as relative, Fixnums as absolute thresholds.
         # 
         #     class UserComparer < Matching::Compare::Base
         #       compare :weight, :threshold => 10   
@@ -106,7 +126,7 @@ module Matching
         #       # =>  User A can be 5% heavier or lighter than user B
         #
         #       compare :weight, :threshold => {:up => 0, :down => 0.1} 
-        #       # =>  User A can be 10% lighter than user B, but not any heavier.
+        #       # =>  User A can be 10% lighter than user B, but not any heavier
         #
         #       compare :weight, :threshold => :perfect 
         #       # =>  User A and B have to have the same weight
@@ -114,7 +134,9 @@ module Matching
         #
         # ==== Block evaluation
         # 
-        # If a block is given, the compared attributes are passed and the result of the block is the final result for the comparison (with <tt>true</tt> being interpreted as 1.0).
+        # If a block is given, the compared attributes are passed and the result
+        # of the block is the final result for the comparison 
+        # (with <tt>true</tt> being interpreted as 1.0).
         #
         #   class UserComparer < Matching::Compare::Base
         #     compare :email do |a, b|

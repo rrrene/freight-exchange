@@ -15,6 +15,8 @@ module Matching
   end
   
   module Compare
+    # FreightToLoadingSpace objects compare Freight with LoadingSpace objects
+    # and return a result how good they match.
     class FreightToLoadingSpace < Base
       compare :origin_site_info, :destination_site_info
       compare :weight, :threshold => {:up => 0}

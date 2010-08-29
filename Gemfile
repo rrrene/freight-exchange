@@ -13,6 +13,8 @@ gem 'formtastic', :git => 'git://github.com/justinfrench/formtastic.git', :branc
 gem 'authlogic', :git => 'git://github.com/odorcicd/authlogic.git', :branch => 'rails3'
 gem 'inherited_resources', '1.1.2'
 
+#gem 'nokogiri'
+
 gem 'levenshtein'
 
 # Use unicorn as the web server

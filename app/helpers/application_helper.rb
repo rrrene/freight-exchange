@@ -11,9 +11,12 @@ module ApplicationHelper
     '<div style="clear:both"></div>'.html_safe
   end
   
-  # Returns the collection of localized choices for a given attribute,
-  # e.g. for Person and attribute <tt>:gender</tt>, it will look up 
-  # <tt>Person::GENDER_CHOICES</tt> and return the keys and localized values.
+  # Returns the collection of localized choices for a given attribute.
+  # Example:
+  #   collection_choices(Person, :gender)
+  #
+  # This will look up <tt>Person::GENDER_CHOICES</tt> and return the keys and
+  # localized values.
   def collection_choices(model, attribute_name, const = nil)
     const ||= "#{model}::#{attribute_name.to_s.upcase}_CHOICES".constantize
     const.map { |value| 
@@ -33,6 +36,9 @@ module ApplicationHelper
   end
   
   # Returns a HTML formatted version of <tt>text</tt>.
+  # Example:
+  #   <%= format_multiline_input("First line.\nSecond Line.") %>
+  #   # => "First line.<br>Second line."
   def format_multiline_input(text)
     simple_format(h(text)).html_safe
   end
