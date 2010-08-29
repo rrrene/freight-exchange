@@ -10,6 +10,5 @@ namespace :doc do
     rdoc.rdoc_files.include('doc/README_FOR_APP')
     rdoc.rdoc_files.include('app/**/*.rb')
     rdoc.rdoc_files.include('lib/**/*.rb')
-    puts rdoc.option_string
   }
 end
