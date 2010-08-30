@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby -wKU
 
 require 'nokogiri'
-require 'rdoc2latex'
+require File.join(File.dirname(__FILE__), 'rdoc_html2latex')
 
 doc_path = File.join(File.dirname(__FILE__), '..', 'doc')
 
@@ -12,12 +12,14 @@ tex_path = File.join(doc_path, 'tex', 'classes')
 
 html_files = Dir[File.join(html_path, '**', '*.html')]
 
+puts html_files.join("\n")
+
 tex_includes = []
 
 html_files.each do |html_file|
   rel_path = html_file.gsub(/^#{html_path}/, '')[1..-1]
   tex_file = rel_path.gsub(/(\.html)$/, '.tex').gsub('/', '-')
-  tex = RDoc2LaTex.new(html_file)
+  tex = RDocHTML2LaTex.new(html_file)
 #  unless tex.empty?
     tex_includes << tex_file.gsub('.tex', '')
     tex.write_file( File.join(tex_path, tex_file) )
@@ -26,30 +28,9 @@ end
 
 all_include_commands = tex_includes.map { |t| "\\include{classes/#{t}}" }.join("\n")
 
-puts all_include_commands
+master_file = File.join(doc_path, 'tex', 'document.tex')
+master_content = File.read(master_file)
 
-#f = File.join(File.dirname(__FILE__), '..', 'doc', 'app', 'classes', 'Matching', 'Compare', 'Base.html')
-
-#puts RDoc2LaTex.new(f)
-
-#doc = Nokogiri::HTML(open(f))
-
-#body = doc.css('body').first.to_s
-#desc = doc.css("div#description")
-
-#desc.css("a").each do |a|
-#  unless a['href'] =~ /^http/
-#    a.name = 'span'
-#    a.delete('href')
-#  end
-#end
-
-#desc.css("a").each do |a|
-#  unless a['href'] =~ /^http/
-#    a.name = 'span'
-#    a.delete('href')
-#  end
-#end
-
-#puts desc.to_s
+master_content.gsub!(/(\%\%\%begin_includes\%\%\%)(.+?)(\%\%\%end_includes\%\%\%)/m, "\\1\n#{all_include_commands}\n\\3")
+File.open(master_file, 'w') {|f| f.write(master_content) }
 

@@ -9,6 +9,7 @@ class ::Object
   # If a block is given and the obj is full?, the obj is yielded to that block.
   # 
   #   salary = nil
+  #   salary.full? # => nil
   #   salary.full? { |s| "#{s} $" } # => nil
   #   salary = 100
   #   salary.full? { |s| "#{s} $" } # => "100 $"

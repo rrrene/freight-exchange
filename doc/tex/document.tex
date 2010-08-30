@@ -1,0 +1,130 @@
+
+%Achtung: Wenn eps Grafiken im Dokument enthalten sind von pdftex auf tex und ghostsript umstellen (Im Menü Setzen von TeXShop)
+%In dieser Datei sind die Graphiken auskommentiert.
+
+%Hier steht die Präambel
+\documentclass[a4paper,parskip=half*,12pt]{scrartcl} 
+%definiert Papiergröße und Dokumentklasse (KOMA Script)
+
+%Die folgenden Zeilen sind der Übersichtlichkeit halber so gestaltet
+%Alternativ lassen sich auch mehrere Pakte zusammenfassen:
+%\usepackage{jurabib,hyperref,graphicx,setspace}
+
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+%Erlaubt die direkte Eingabe von z.B. Umlauten, zur Aktivierung das %-Zeichen entfernen
+
+\usepackage[paper=a4paper,left=40mm,right=10mm,top=25mm,bottom=10mm]{geometry} 
+
+\usepackage[T1]{fontenc}
+
+\usepackage{hyperref}
+%Ein paar weitere Pakete für dies und das ;-)
+
+\usepackage{graphicx} 
+%Wenn Bilder eingefügt werden sollen muss da drinstehen
+
+\usepackage{setspace}
+%Wird für den Zeilenabstand benötigt
+
+%einzelne, herrenlose Zeilen (Hurenkinder und Schusterjungen) vermeiden
+\clubpenalty = 10000
+\widowpenalty = 10000
+\displaywidowpenalty = 10000
+
+%wie weit sollen paragraphen eingerückt werden
+\setlength{\parindent}{0em}
+
+%Auf die Einrückung der Fußnoten wird verzichtet
+\deffootnote{1em}{1em}{%
+\textsuperscript{\thefootnotemark\ }}
+
+%Bis zu welcher Gliederungsebene soll nummeriert werden 
+\setcounter{secnumdepth}{3}
+
+\setcounter{tocdepth}{3}
+
+
+%Kopf- und Fußzeile
+\usepackage{fancyhdr}
+\pagestyle{fancy} 
+\fancyhf{} 
+\fancyhead[L]{\nouppercase{\leftmark}}%Kopfzeile links, zentriert: [C] 
+\fancyhead[R]{\thepage} %Kopfzeile rechts, links:
+
+\usepackage{color}
+\newcommand{\bad}[1]{\textcolor{red}{#1}}
+
+% Akürzungen und Acronyme kennzeichnen
+\newcommand{\aav}[2]{#1}
+\newcommand{\quelle}[1]{\textsc{#1}}
+%\aav{vgl.}{vergleiche}
+%\aav{S.}{Seite}
+%\aav{et al.}{et alii}
+%\aav{f.}{folgende}
+%\aav{ff.}{fortfolgende}
+%\aa%v{o.S.}{ohne Seitenangabe}
+%\aa%v{o.V.}{ohne Verfasserangabe}
+%\aav{}{}
+%
+
+%Jetzt beginnt das eigentliche Dokument
+\begin{document}
+
+%ab jetzt sollen die Seitenzahlen beginnen, mit 1 für die erste Seite, usw.
+\setcounter{page}{1}
+\pagenumbering{arabic}
+
+%ab jetzt anderthalbfacher Zeilenabstand
+\onehalfspacing
+
+%%%begin_includes%%%
+\include{classes/AppConfig}
+\include{classes/ApplicationController}
+\include{classes/ApplicationHelper}
+\include{classes/CompaniesController}
+\include{classes/CompaniesHelper}
+\include{classes/Company}
+\include{classes/Country}
+\include{classes/Freight}
+\include{classes/FreightsController}
+\include{classes/FreightsHelper}
+\include{classes/GeneralObserver}
+\include{classes/LoadingSpace}
+\include{classes/LoadingSpacesController}
+\include{classes/LoadingSpacesHelper}
+\include{classes/LocalizedInfo}
+\include{classes/Matching-Compare-Base}
+\include{classes/Matching-Compare-Fixnum}
+\include{classes/Matching-Compare-Hash}
+\include{classes/Matching-Compare-String}
+\include{classes/Matching-Compare-Time}
+\include{classes/Matching-Compare}
+\include{classes/Matching}
+\include{classes/Object}
+\include{classes/PeopleController}
+\include{classes/PeopleHelper}
+\include{classes/Person}
+\include{classes/Posting}
+\include{classes/PostingsController}
+\include{classes/PostingsHelper}
+\include{classes/Recording}
+\include{classes/Region}
+\include{classes/RootController}
+\include{classes/RootHelper}
+\include{classes/SearchController}
+\include{classes/SearchHelper}
+\include{classes/SiteInfo}
+\include{classes/Station}
+\include{classes/StationsController}
+\include{classes/StationsHelper}
+\include{classes/User}
+\include{classes/UserRole}
+\include{classes/UsersController}
+\include{classes/UserSession}
+\include{classes/UserSessionsController}
+\include{classes/UserSessionsHelper}
+\include{classes/UsersHelper}
+%%%end_includes%%%
+
+\end{document}

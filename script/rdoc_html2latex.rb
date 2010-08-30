@@ -3,16 +3,32 @@
 class String
   
   def escape_special_tex_chars(chars = %w($ % _ { } & #))
-    chars.inject(self) do |str, char|
-      c = "\\#{char}"
-      str = str.gsub(/([^\\])(#{c})/) do |s|
-        $1 + "\\" + $2
+    #chars.inject(self) do |str, char|
+    #  c = "\\#{char}"
+    #  str = str.gsub(/([^\\])(#{c})/) do |s|
+    #    $1 + "\\" + $2
+    #  end
+    #end
+    str = ""
+    env = nil
+    self.each do |line|
+      if line =~ /<pre>/
+        env = :pre
+      elsif line =~ /<\/pre>/
+        env = nil
       end
+      unless env == :pre
+        line = line.gsub(/([\$\%\_\{\}\&\#])/) do |s|
+          "\\" + $1
+        end
+      end
+      str << line << "\n"
     end
+    str
   end
   
   def replace_html_tag_with_tex_command(html, tex)
-    gsub(/<#{html}[^>]*>(.+?)<\/#{html}>/, "\\#{tex}{\\1}")
+    gsub(/<#{html}[^>]*>(.+?)<\/#{html}>/m, "\\#{tex}{\\1}")
   end
   
   def replace_html_block_with_tex_environment(html, tex)
@@ -36,7 +52,7 @@ class String
   
 end
 
-class RDoc2LaTex
+class RDocHTML2LaTex
   attr_accessor :uri
   attr_accessor :doc
   
@@ -72,7 +88,7 @@ class RDoc2LaTex
   
   def modify_method_names!
     doc.css("span.method-name").each do |node|
-      node.content = "<methodname>#{node.content}</methodname>" #.split(/\n/).map { |line| line.gsub('<br>', '').strip }.join('<br>')
+      node.content = "<hr>\n<methodname>#{node.content}</methodname>"
     end
     doc.css("span.method-args").each do |node|
       node.content = "<methodargs>#{node.content}</methodargs>" #.split(/\n/).map { |line| line.gsub('<br>', '').strip }.join('<br>')
@@ -91,6 +107,7 @@ class RDoc2LaTex
     replace_html_tag_with_tex_command(:h3, :subsubsection).
     replace_html_tag_with_tex_command(:h4, :paragraph).
     replace_html_tag_with_tex_command(:tt, :texttt).
+    replace_opening_html_tag_with(:hr, '\\vspace{0.5cm}').
     replace_html_tag_with_tex_command(:methodname, :textbf).
     replace_html_tag_with_tex_command(:methodargs, :textit).
     replace_opening_html_tag_with(:li, '\\item ').
@@ -99,7 +116,6 @@ class RDoc2LaTex
     replace_html_block_with_tex_environment(:ul, :itemize).
     replace_html_block_with_tex_environment(:pre, :verbatim).
     remove_html_tags(:p, :span, :div).
-    split(/\n/).map { |line| line.strip }.join("\n").
     gsub(/\n\n/, "\n").
     to_s
   end
