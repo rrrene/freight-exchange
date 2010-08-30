@@ -1,0 +1,12 @@
+ajax
+app
+tex/classes
+tex/*.aux
+tex/*.bbl
+tex/*.blg
+tex/*.glo
+tex/*.out
+tex/*.lof
+tex/*.log
+tex/*.gz
+tex/*.toc
