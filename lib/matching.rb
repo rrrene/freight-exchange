@@ -2,6 +2,7 @@
 # objects. On top of this, it provides an extendable generic API for matching 
 # Freight and LoadingSpace objects (see compare_freight_and_loading_space 
 # method).
+
 module Matching
   # The Compare module provides a set of classes and methods to match
   # objects like Strings, Numbers and Dates.

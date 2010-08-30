@@ -62,6 +62,7 @@ class ActiveRecord::Base
     #     searchable
     #   end
     def searchable(opts = {})
+      # TODO: Search.add(self, opts)
       simple_search(opts)
     end
   end

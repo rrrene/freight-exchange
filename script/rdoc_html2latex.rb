@@ -63,8 +63,10 @@ class RDocHTML2LaTex
   end
   
   def clean_up!
+    doc.css("head title").remove if readme?
     remove_source_code!
     remove_all_relative_links!
+    modify_method_sections!
     modify_method_names!
   end
   
@@ -86,9 +88,15 @@ class RDocHTML2LaTex
     end
   end
   
+  def modify_method_sections!
+    doc.css("h3.section-bar").each do |node|
+      node.name = 'h2'
+    end
+  end
+  
   def modify_method_names!
     doc.css("span.method-name").each do |node|
-      node.content = "<hr>\n<methodname>#{node.content}</methodname>"
+      node.content = "<vspace>\n<methodname>#{node.content}</methodname>"
     end
     doc.css("span.method-args").each do |node|
       node.content = "<methodargs>#{node.content}</methodargs>" #.split(/\n/).map { |line| line.gsub('<br>', '').strip }.join('<br>')
@@ -103,11 +111,12 @@ class RDocHTML2LaTex
     gsub('&amp;', '&').gsub('&gt;', '>').gsub('&lt;', '<').
     escape_special_tex_chars.
     replace_html_tag_with_tex_command(:title, :section).
+    replace_html_tag_with_tex_command(:h1, :section).
     replace_html_tag_with_tex_command(:h2, :subsection).
     replace_html_tag_with_tex_command(:h3, :subsubsection).
     replace_html_tag_with_tex_command(:h4, :paragraph).
     replace_html_tag_with_tex_command(:tt, :texttt).
-    replace_opening_html_tag_with(:hr, '\\vspace{0.5cm}').
+    replace_opening_html_tag_with(:vspace, '\\vspace{0.5cm}').
     replace_html_tag_with_tex_command(:methodname, :textbf).
     replace_html_tag_with_tex_command(:methodargs, :textit).
     replace_opening_html_tag_with(:li, '\\item ').
@@ -118,6 +127,10 @@ class RDocHTML2LaTex
     remove_html_tags(:p, :span, :div).
     gsub(/\n\n/, "\n").
     to_s
+  end
+  
+  def readme?
+    uri =~ /README_FOR_APP/
   end
   
   def title

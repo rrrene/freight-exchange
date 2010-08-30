@@ -6,15 +6,16 @@ require File.join(File.dirname(__FILE__), 'rdoc_html2latex')
 doc_path = File.join(File.dirname(__FILE__), '..', 'doc')
 
 html_path = File.join(doc_path, 'app', 'classes')
-tex_path = File.join(doc_path, 'tex', 'classes')
-
-# `mkdir -p #{tex_path}`
-
-html_files = Dir[File.join(html_path, '**', '*.html')]
-
-puts html_files.join("\n")
+readme_file = File.join(doc_path, 'app', 'files', 'doc', 'README_FOR_APP.html')
+html_files = [readme_file] + Dir[File.join(html_path, '**', '*.html')]
 
 tex_includes = []
+tex_path = File.join(doc_path, 'tex', 'classes')
+master_file = File.join(doc_path, 'tex', 'doc.tex')
+
+# `mkdir -p #{tex_path}`
+puts html_files.join("\n")
+
 
 html_files.each do |html_file|
   rel_path = html_file.gsub(/^#{html_path}/, '')[1..-1]
@@ -28,7 +29,6 @@ end
 
 all_include_commands = tex_includes.map { |t| "\\include{classes/#{t}}" }.join("\n")
 
-master_file = File.join(doc_path, 'tex', 'document.tex')
 master_content = File.read(master_file)
 
 master_content.gsub!(/(\%\%\%begin_includes\%\%\%)(.+?)(\%\%\%end_includes\%\%\%)/m, "\\1\n#{all_include_commands}\n\\3")
