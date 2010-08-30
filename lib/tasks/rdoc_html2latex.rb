@@ -1,14 +1,13 @@
 #!/usr/bin/env ruby -wKU
 
-class String
-  
+#
+# Used by Thor.
+#
+
+require 'nokogiri'
+
+class ::String
   def escape_special_tex_chars(chars = %w($ % _ { } & #))
-    #chars.inject(self) do |str, char|
-    #  c = "\\#{char}"
-    #  str = str.gsub(/([^\\])(#{c})/) do |s|
-    #    $1 + "\\" + $2
-    #  end
-    #end
     str = ""
     env = nil
     self.each do |line|
@@ -112,8 +111,8 @@ class RDocHTML2LaTex
     escape_special_tex_chars.
     replace_html_tag_with_tex_command(:title, :section).
     replace_html_tag_with_tex_command(:h1, :section).
-    replace_html_tag_with_tex_command(:h2, :subsection).
-    replace_html_tag_with_tex_command(:h3, :subsubsection).
+    replace_html_tag_with_tex_command(:h2, :"subsection*").
+    replace_html_tag_with_tex_command(:h3, :"subsubsection*").
     replace_html_tag_with_tex_command(:h4, :paragraph).
     replace_html_tag_with_tex_command(:tt, :texttt).
     replace_opening_html_tag_with(:vspace, '\\vspace{0.5cm}').

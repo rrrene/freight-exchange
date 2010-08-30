@@ -9,34 +9,37 @@ module Search
     # 
     # Removes the search index for the given record.
     #
-    #   user = User.create(:name => 'Bob')  #=> #<User id: 1, name: "Bob">
-    #   Search.find 'bob'           #=> [#<User id: 1, name: "Bob">]
+    #   user = User.create(:name # => 'Bob')  # => #<User id: 1, name: "Bob">
+    #   Search.find 'bob'           # => [#<User id: 1, name: "Bob">]
     #
     #   Search.clear_index_for(user)
-    #   Search.find 'bob'           #=> []
+    #   Search.find 'bob'           # => []
     def clear_index_for(record)
       SimpleSearch.clear_item(record)
     end
     
     #:call-seq:
-    #   Search.count(query) => int
+    #   Search.count(query) # => int
+    #   Search.count(query, models) # => int
     # 
     # Returns the total number of results.
     #   Search.count "some query"
+    #   Search.count "Berlin", [User, Company])
     def count(q, models = nil)
-      SimpleSearch.count(q, :models => models)
+      SimpleSearch.count(q, :models # => models)
     end
     
     #:call-seq:
-    #   Search.find(query) => array
-    #   Search / query => array
+    #   Search.find(query) # => array
+    #   Search.find(query, models) # => array
+    #   Search / query # => array
     # 
     # Returns the matching records from the database.
     #   Search.find "some query"
     #   Search.find "Berlin", [User, Company])
     #   Search / "some other query"
     def find(q, models = nil)
-      SimpleSearch.search(q, :models => models)
+      SimpleSearch.search(q, :models # => models)
     end
     alias / find
     
