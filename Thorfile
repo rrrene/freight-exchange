@@ -9,7 +9,7 @@ class Doc < Thor
     tex_includes = []
     
     # `mkdir -p #{tex_path}`
-    puts html_files.join("\n")
+    #puts html_files.join("\n")
     
     
     html_files.each do |html_file|
@@ -20,10 +20,12 @@ class Doc < Thor
       end
       tex_file = rel_path.gsub(/(\.html)$/, '.tex').gsub('/', '-')
       tex = RDocHTML2LaTex.new(html_file)
-    #  unless tex.empty?
+      tex.write_file( File.join(tex_path, tex_file) )
+      unless tex.empty?
         tex_includes << tex_file.gsub('.tex', '')
-        tex.write_file( File.join(tex_path, tex_file) )
-    #  end
+      else
+        warn "[excluded] #{tex_file}"
+      end
     end
     
     all_include_commands = tex_includes.map { |t| "\\include{classes/#{t}}" }.join("\n")

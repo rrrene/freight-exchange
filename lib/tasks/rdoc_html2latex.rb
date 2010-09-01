@@ -145,7 +145,6 @@ class RDocHTML2LaTex
   end
   
   def write_file(f)
-    warn "[empty?] #{uri}" if empty?
     File.open(f, 'w') {|f| f.write(to_s) }
   end
 end
