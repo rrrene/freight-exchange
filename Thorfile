@@ -1,16 +1,31 @@
 #!/usr/bin/env ruby -wKU
 
+require 'fileutils'
+
 require File.join(File.dirname(__FILE__), 'lib', 'tasks', 'rdoc_html2latex')
 
+thesis_file = File.join(File.dirname(__FILE__), '..', 'diplom.expose', 'tasks', 'thesis')
+require thesis_file
+
 class Doc < Thor
+  include Thesis
+
+  desc "app", "Generates the RDOC HTML files for the app"
+  def app
+    # TODO: Vielleicht von Hand per rdoc, um andere Sachen mit reinzunehmen...
+    `rake doc:app`
+    success "doc generated"
+  end
+  
   desc "parse", "Parses the generated documentation for the application into *.tex files."
   def parse
     html_files = [readme_file] + Dir[File.join(html_path, '**', '*.html')]
     tex_includes = []
     
+    FileUtils.mkdir_p(tex_path)
+    
     # `mkdir -p #{tex_path}`
     #puts html_files.join("\n")
-    
     
     html_files.each do |html_file|
       rel_path = if html_file =~ /README_FOR_APP/
@@ -24,7 +39,7 @@ class Doc < Thor
       unless tex.empty?
         tex_includes << tex_file.gsub('.tex', '')
       else
-        warn "[excluded] #{tex_file}"
+        alert "excluded: #{tex_file}"
       end
     end
     
@@ -34,6 +49,7 @@ class Doc < Thor
     
     master_content.gsub!(/(\%\%\%begin_includes\%\%\%)(.+?)(\%\%\%end_includes\%\%\%)/m, "\\1\n#{all_include_commands}\n\\3")
     File.open(master_file, 'w') {|f| f.write(master_content) }
+    success "doc parsed"
   end
   
   private

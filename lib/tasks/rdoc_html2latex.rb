@@ -6,7 +6,7 @@
 
 require 'nokogiri'
 
-class ::String
+class ::String # :nodoc:
   def escape_special_tex_chars(chars = %w($ % _ { } & #))
     str = ""
     env = nil
@@ -51,7 +51,7 @@ class ::String
   
 end
 
-class RDocHTML2LaTex
+class RDocHTML2LaTex # :nodoc:
   attr_accessor :uri
   attr_accessor :doc
   
