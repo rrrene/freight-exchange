@@ -109,8 +109,8 @@ class RDocHTML2LaTex # :nodoc:
     doc.css(selector).to_s.
     gsub('&amp;', '&').gsub('&gt;', '>').gsub('&lt;', '<').
     escape_special_tex_chars.
-    replace_html_tag_with_tex_command(:title, :section).
-    replace_html_tag_with_tex_command(:h1, :section).
+    replace_html_tag_with_tex_command(:title, :"section*").
+    replace_html_tag_with_tex_command(:h1, :"section*").
     replace_html_tag_with_tex_command(:h2, :"subsection*").
     replace_html_tag_with_tex_command(:h3, :"subsubsection*").
     replace_html_tag_with_tex_command(:h4, :paragraph).
@@ -136,9 +136,15 @@ class RDocHTML2LaTex # :nodoc:
     @title ||= texify("head title")
   end
   
+  def title_label
+    label = doc.css("head title").inner_html.match(/\S+$/).to_s.downcase.gsub('::', ':')
+    label = "\\label{doc:#{label}}"
+  end
+  
   def to_s
     @content ||= [
       title,
+      title_label,
       texify("div#bodyContent div#description"),
       texify("div#section div#methods"),
     ].join("\n")
