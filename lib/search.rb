@@ -26,7 +26,7 @@ module Search
     #   Search.count "some query"
     #   Search.count "Berlin", [User, Company])
     def count(q, models = nil)
-      SimpleSearch.count(q, :models # => models)
+      SimpleSearch.count(q, :models => models)
     end
     
     #:call-seq:
@@ -39,7 +39,7 @@ module Search
     #   Search.find "Berlin", [User, Company])
     #   Search / "some other query"
     def find(q, models = nil)
-      SimpleSearch.search(q, :models # => models)
+      SimpleSearch.search(q, :models => models)
     end
     alias / find
     
