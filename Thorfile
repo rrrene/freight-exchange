@@ -20,8 +20,13 @@ class Doc < Thor
   desc "parse", "Parses the generated documentation for the application into *.tex files."
   def parse
     html_files = [readme_file] + Dir[File.join(html_path, '**', '*.html')]
+    if html_files.size < 2
+      failure "no doc in doc/app"
+      exit
+    end
     tex_includes = []
     
+    FileUtils.rm_rf(tex_path)
     FileUtils.mkdir_p(tex_path)
     
     # `mkdir -p #{tex_path}`

@@ -70,7 +70,7 @@ class RDocHTML2LaTex # :nodoc:
   end
   
   def empty?
-    to_s.strip == title.strip
+    to_s.strip == [title, title_label].join("\n").strip
   end
   
   def remove_source_code!
