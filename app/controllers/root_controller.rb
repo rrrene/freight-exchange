@@ -51,7 +51,8 @@ class RootController < ApplicationController
   end
   
   def create_admin!
-    admin = User.create!(admin_user_attributes)
+    admin = User.new(admin_user_attributes)
+    admin = admin.save ? admin : User.where(:login => admin_user_attributes[:login]).first
     admin.user_roles << UserRole[:administrator]
     admin
   end
