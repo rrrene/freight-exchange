@@ -155,7 +155,7 @@ ActiveRecord::Schema.define(:version => 20100820130725) do
     t.string   "zip"
     t.string   "city"
     t.string   "country"
-    t.boolean  "side_track_available"
+    t.boolean  "side_track_avaiable"
     t.string   "track_number"
     t.datetime "created_at"
     t.datetime "updated_at"
