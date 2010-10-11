@@ -14,6 +14,7 @@ class RootController < ApplicationController
         #     Login & Passwort ändern
         admin = create_admin!
         UserSession.login(admin)
+        AppConfig[:just_set_up] = false
         redirect_to edit_user_url(admin)
       else
         # db has to be seeded to proceed
@@ -58,7 +59,7 @@ class RootController < ApplicationController
   end
   
   def just_set_up?
-    AppConfig[:just_set_up]
+    AppConfig[:just_set_up] == true
   end
   
   def just_set_up_but_not_seeded?

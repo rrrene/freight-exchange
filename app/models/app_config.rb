@@ -16,12 +16,13 @@
 #
 class AppConfig < ActiveRecord::Base
   searchable
+  serialize :value
   
   class << self
     #attr_accessor :defaults
     
     def by_name(name) # :nodoc:
-      where(:name => name.to_s).limit(1).first
+      where(:name => name.to_s).first
     end
     
     #:call-seq:
@@ -40,7 +41,9 @@ class AppConfig < ActiveRecord::Base
     #   AppConfig[:language] = 'de'  # => "de"
     def []=(name, value)
       if existing = by_name(name).full?
-        existing.update_attribute(:value, value)
+        #existing.update_attribute(:value, value)
+        existing.value = value
+        existing.save
       else
         create(:name => name.to_s, :value => value)
       end

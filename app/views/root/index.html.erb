@@ -2,5 +2,5 @@
   <h3>Root#index</h3>
   <p>Find me in app/views/root/index.html.erb</p>
   
-  <%= render :partial => '/partials/table', :locals => {:model => Recording.all.first.class, :arel => Recording.all} %>
+  <%= render_table  Recording.all %>
 </div>

@@ -87,6 +87,7 @@ module ApplicationHelper
   # Example:
   #   <%= render_table User.all %>
   def render_table(arel)
+    return if arel.first.nil?
     render :partial => '/partials/table', :locals => {:model => arel.first.class, :arel => arel}
   end
   
