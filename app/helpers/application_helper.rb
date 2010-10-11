@@ -1,10 +1,10 @@
 module ApplicationHelper
   
-#  def box(title = nil, &block)
-#    inner = capture(&block)
-#    head = title.full? { |t| content_tag :h3, t }.to_s
-#    content_tag(:div, head << inner, :class => 'box')
-#  end
+  def box(title = nil, &block)
+    inner = capture(&block)
+    head = title.full? { |t| content_tag :h3, t }.to_s
+    content_tag(:div, head << inner, :class => 'box')
+  end
   
   # Returns a DIV tag that clears floating.
   def clear_both

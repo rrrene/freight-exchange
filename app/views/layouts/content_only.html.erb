@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title><%= "FX [#{controller.controller_name}##{controller.action_name}]" %></title>
+	<link rel="shortcut icon" href="/favicon.gif" type="image/x-icon">
+  <link rel="icon" href="/favicon.gif" type="image/x-icon">
+  <%= stylesheet_link_tag 'formtastic', 'formtastic_changes' %>
+  <%= stylesheet_link_tag 'blueprint/screen', 'application' %>
+  <%= javascript_include_tag 'jquery-1.4.2.min', 'rails', 'application' %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+  <div id="<%= controller.controller_name %>" class="<%= controller.action_name %>">
+      <div id="wrap">
+        <div class="frame">
+          <div class="container" id="frame">
+            <h2 class="prepend-7"><%= page[:title] || t('hello') %></h2>
+            <div id="content" class="prepend-7 span-10"><%= yield %></div>
+            <%- if _sidebar_content = yield(:sidebar) -%>
+            <div class="prepend-7 span-10"><%= _sidebar_content %></div>
+            <%- end -%>
+          </div>
+        </div>
+      </div> <%# wrap %>
+  </div> <%# div#controller.action %>
+</body>
+</html>
