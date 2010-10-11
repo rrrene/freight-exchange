@@ -15,6 +15,7 @@
         <% attributes.each do |attr| %>
         <td><%= ar[attr].is_a?(Hash) ? debug(ar[attr]) : ar[attr] %></td>
         <% end %>
+        <td><%= link_to "Edit", {:action => 'edit', :id => ar}, :class => 'edit' %></td>
       </tr>
     <% end %>
   </tbody>

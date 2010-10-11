@@ -1,5 +1,9 @@
 module ApplicationHelper
   
+  def admin?
+    controller.is_a?(Admin::BaseController)
+  end
+  
   def box(title = nil, &block)
     inner = capture(&block)
     head = title.full? { |t| content_tag :h3, t }.to_s
@@ -73,22 +77,19 @@ module ApplicationHelper
   # Example:
   #   <%= render_person_info current_company %>
   def render_company_info(company)
-    render :partial => "/partials/sidebar_company_info", :locals => {:company => company}
+    render_partial :sidebar_company_info, :locals => {:company => company}
+  end
+  
+  def render_partial(partial, options = {})
+    partial = "admin/#{partial}" if admin?
+    render options.merge(:partial => "/partials/#{partial}")
   end
   
   # Renders a partial with the contact information for the given person.
   # Example:
   #   <%= render_person_info current_person %>
   def render_person_info(person)
-    render :partial => "/partials/sidebar_person_info", :locals => {:person => person}
-  end
-  
-  # Renders a table for the given ActiveRelation.
-  # Example:
-  #   <%= render_table User.all %>
-  def render_table(arel)
-    return if arel.first.nil?
-    render :partial => '/partials/table', :locals => {:model => arel.first.class, :arel => arel}
+    render_partial :sidebar_person_info, :locals => {:person => person}
   end
   
   def yes_no(condition)

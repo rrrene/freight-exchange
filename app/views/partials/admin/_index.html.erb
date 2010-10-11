@@ -1,0 +1,11 @@
+<div class="box">
+  <h3>
+    <%= t("#{controller_catalog}.index.header") %>
+    <%= link_new %>
+  </h3>
+  <p>
+    <%= t("#{controller_catalog}.index.intro") %>
+  </p>
+  
+  <%= render_table collection %>
+</div>

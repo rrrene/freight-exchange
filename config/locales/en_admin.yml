@@ -1,0 +1,54 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  admin:
+    common:
+      new_link: "Create a new one"
+      
+    # AppConfigsController
+    app_configs:
+      new:
+        page_title: "Create new setting"
+      create:
+        page_title: "Create new setting"
+      edit:
+        page_title: "Edit setting"
+      update:
+        page_title: "Edit setting"
+      index:
+        header: "All Settings"
+        intro: "Here you see all system specific settings."
+
+    # StationsController
+    stations:
+      new:
+        page_title: "Create new station"
+      create:
+        page_title: "Create new station"
+      edit:
+        page_title: "Edit station"
+      update:
+        page_title: "Edit station"
+      index:
+        header: "All Stations"
+        intro: "Here you see all the stations that can be used as an adress template."
+
+    # CompaniesController
+    companies:
+      dashboard:
+        page_title: "Dashboard"
+        recordings:
+          header: "Actions"
+      new:
+        page_title: "Create company account"
+        header: "Create your company account"
+        intro: "You are just 60 seconds away from your own account!"
+      create:
+        page_title: "Create your company"
+      edit:
+        page_title: "Edit company"
+        header: "Company information"
+      update:
+        page_title: "Edit company"
+    
