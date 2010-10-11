@@ -92,7 +92,11 @@ class ApplicationController < ActionController::Base
   end
   
   def require_role(allowed_roles = [])
-    current_user && (current_user.roles & allowed_roles).any?
+    unless current_user && (current_user.roles & allowed_roles).any?
+      page[:title] = "Permission denied."
+      render :text => "You tried to access a restricted area or function.", :layout => 'content_only'
+      return false
+    end
   end
   
   def require_same_company

@@ -33,6 +33,12 @@ BlackBoard::Application.routes.draw do |map|
   
   root :to => "root#index"
 
+  namespace :admin do
+    resources :stations
+    root :to => "base#index"
+  end
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
