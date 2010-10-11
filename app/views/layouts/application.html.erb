@@ -18,7 +18,7 @@
             &nbsp;
           </div>
         <% end %>
-        <%= render '/partials/header' %>
+        <%= render "/partials/header" %>
         <div class="corridor_map">
           <div class="container" id="corridor_map">
             <h2><%= page[:title] || t('hello') %></h2>
@@ -36,10 +36,10 @@
         <div class="frame">
           <div class="container" id="frame">
             <div id="content" class="span-16"><%= yield %></div>
-            <%= render '/partials/sidebar' %>
+            <%= render "/partials/sidebar" %>
           </div>
         </div>
-        <%= render '/partials/footer' %>
+        <%= render "/partials/footer" %>
       </div> <%# wrap %>
   </div> <%# div#controller.action %>
 </body>

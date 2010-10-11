@@ -1,7 +1,3 @@
-class Admin::BaseController < ApplicationController
+class Admin::BaseController < InheritedResources::Base
   role_required :administrator
-  
-  def index
-    redirect_to :controller => 'stations'
-  end
 end

@@ -35,7 +35,7 @@ BlackBoard::Application.routes.draw do |map|
 
   namespace :admin do
     resources :stations
-    root :to => "base#index"
+    root :to => "stations#index"
   end
 
 

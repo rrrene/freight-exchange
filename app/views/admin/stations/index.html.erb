@@ -1,2 +1,11 @@
-<h1>Admin::Stations#index</h1>
-<p>Find me in app/views/admin/stations/index.html.erb</p>
+<div class="box">
+  <h3>
+    <%= t('admin.stations.index.header') %>
+    <%= link_to t("admin.stations.common.new_link"), new_admin_station_path, :class => 'new' %>
+  </h3>
+  <p>
+    <%= t('admin.stations.index.intro') %>
+  </p>
+  
+  <%= render_table collection %>
+</div>
