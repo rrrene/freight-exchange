@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.0.beta4'
+gem 'rails', '3.0.0'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -9,8 +9,8 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 
 gem 'hirb'
 
-gem 'formtastic', :git => 'git://github.com/justinfrench/formtastic.git', :branch => 'rails3'
-gem 'authlogic', :git => 'git://github.com/odorcicd/authlogic.git', :branch => 'rails3'
+gem 'formtastic', '~> 1.1.0'
+gem 'authlogic', '~> 2.1.6'
 gem 'inherited_resources', '1.1.2'
 
 #gem 'nokogiri'
