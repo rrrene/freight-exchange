@@ -1,3 +1,7 @@
+# The UsersController provides functionality for creating and editing 
+# users in companies.
+#
+# 
 class UsersController < InheritedResources::Base
   login_required
   same_company_required :only => [:edit, :update]

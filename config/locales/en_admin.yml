@@ -7,6 +7,7 @@ en:
       navi:
         home: "Dashboard"
         stations: "Stations"
+        user_roles: "User Roles"
         app_configs: "Settings"
         back_to_app: "Back to Frontend"
       new_link: "Create a new one"
@@ -40,6 +41,21 @@ en:
         page_title: "All Stations"
         header: "All Stations"
         intro: "Here you see all the stations that can be used as an adress template."
+
+    # UserRolesController
+    user_roles:
+      new:
+        page_title: "Create new Role"
+      create:
+        page_title: "Create new Role"
+      edit:
+        page_title: "Edit Role"
+      update:
+        page_title: "Edit Role"
+      index:
+        page_title: "All Roles"
+        header: "All Roles"
+        intro: "Here you see all user roles."
 
     # CompaniesController
     companies:

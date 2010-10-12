@@ -32,10 +32,11 @@ BlackBoard::Application.routes.draw do |map|
   match "dashboard" => 'companies#dashboard', :as => :company_dashboard
   
   root :to => "root#index"
-
+  
   namespace :admin do
     resources :app_configs
     resources :stations
+    resources :user_roles
     root :to => "stations#index"
   end
 
