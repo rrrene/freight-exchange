@@ -1,3 +1,4 @@
+# The ApplicationHelper provides basic helper methods for all views.
 module ApplicationHelper
   
   def admin?

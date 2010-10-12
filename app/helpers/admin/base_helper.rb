@@ -1,9 +1,12 @@
+# The BaseHelper provides basic helper methods all backend views.
 module Admin::BaseHelper
-  def link_new
-    link_to t("admin.common.new_link"), new_resource_url, :class => 'new'
+  # Renders a link to the new action of the current resource.
+  def link_new(text = t("admin.common.new_link"), url = new_resource_url)
+    link_to text, url, :class => 'new'
   end
   
-  # Renders a table for the given ActiveRelation.
+  # Renders a table for a given ActiveRelation.
+  # 
   # Example:
   #   <%= render_table User.all %>
   def render_table(arel)

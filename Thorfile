@@ -8,6 +8,8 @@ thesis_file = File.join(File.dirname(__FILE__), '..', 'diplom.expose', 'tasks', 
 require thesis_file
 
 class Doc < Thor
+  include Thor::Actions
+  source_root '.'
   include Thesis
 
   desc "app", "Generates the RDOC HTML files for the app"
@@ -15,6 +17,16 @@ class Doc < Thor
     # TODO: Vielleicht von Hand per rdoc, um andere Sachen mit reinzunehmen...
     `rake doc:app`
     success "doc generated"
+  end
+  
+  desc "pdf", "Generates a pdf from the generated tex files"
+  def pdf
+    inside File.dirname(master_file) do
+      output = `pdflatex #{File.basename(master_file)}`
+      puts output.scan(/^(Output written on .+)$/)
+    end
+    #puts `cd #{}; pdflatex #{File.basename(master_file)}`
+    success "pdf generated"
   end
   
   desc "parse", "Parses the generated documentation for the application into *.tex files."
