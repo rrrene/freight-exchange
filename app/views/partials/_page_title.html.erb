@@ -1,0 +1,14 @@
+<div class="page_title">
+  <div class="container" id="page_title">
+    <h2><%= page[:title] || t('hello') %></h2>
+    <%= clear_both %>
+    <div id="search_form">
+    <%= form_tag search_url, :method => :get do %>
+      <div class="input-wrapper"><%= text_field_tag :q, h(params[:q]) %><%= submit_tag t('search.common.button'), :name => nil %></div>
+    <% end %>
+    </div>
+    <div class="subtext">
+      <%= yield(:subtext) %>
+    </div>
+  </div>
+</div>

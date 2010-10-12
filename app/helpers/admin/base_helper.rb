@@ -1,8 +1,4 @@
 module Admin::BaseHelper
-  def controller_catalog
-    controller.controller_path.gsub('/', '.')
-  end
-  
   def link_new
     link_to t("admin.common.new_link"), new_resource_url, :class => 'new'
   end

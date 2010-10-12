@@ -76,21 +76,21 @@ ul.navigation-right {
   float: right;
 }
 
-div.corridor_map {
+div.page_title {
   background: #fff url(/images/corridor_map.jpg) top center;
 }
-div#corridor_map {
+div#page_title {
   position: relative;
   height: 260px;
 }
-#root.about div#corridor_map {
+#root.about div#page_title {
   height: 68px;
 }
-#root.about div#corridor_map div#search_form {
+#root.about div#page_title div#search_form {
   display: none;
 }
 
-div.corridor_map h2 {
+div.page_title h2 {
   background:url("/images/black50.png") repeat scroll 0 0 transparent;
   border:medium none;
   color:#FFFFFF;
@@ -108,7 +108,7 @@ div.corridor_map h2 {
   -webkit-border-radius: 5px;
 }
 
-div.corridor_map div.subtext {
+div.page_title div.subtext {
   color:#222222;
   font-size:32px;
   font-weight:bold;
@@ -121,10 +121,10 @@ div.corridor_map div.subtext {
   bottom: 10px;
 }
 
-div.corridor_map div#search_form {
+div.page_title div#search_form {
   margin: 20px 0;
 }
-div.corridor_map div#search_form .input-wrapper {
+div.page_title div#search_form .input-wrapper {
   padding: 0;
   margin: 0;
   display: inline-block;
@@ -133,7 +133,7 @@ div.corridor_map div#search_form .input-wrapper {
   border-style:solid;
   border-width:1px;
 }
-div.corridor_map div#search_form .input-wrapper input#q {
+div.page_title div#search_form .input-wrapper input#q {
   border: 0;
   margin: 0;
   background: transparent;
@@ -141,13 +141,13 @@ div.corridor_map div#search_form .input-wrapper input#q {
   font-size: 20px;
   padding: 3px;
 }
-div.corridor_map div#search_form .input-wrapper input#q:focus {
+div.page_title div#search_form .input-wrapper input#q:focus {
   outline: none;
 }
 
 #sidebar .create_new_freight,
 #sidebar .create_new_loading_space,
-div.corridor_map div#search_form .input-wrapper input[type=submit] {
+div.page_title div#search_form .input-wrapper input[type=submit] {
   border: 0;
   border-left: 1px solid #CCCCCC;
   background-color: #eee;

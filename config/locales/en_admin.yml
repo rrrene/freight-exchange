@@ -4,6 +4,11 @@
 en:
   admin:
     common:
+      navi:
+        home: "Dashboard"
+        stations: "Stations"
+        app_configs: "Settings"
+        back_to_app: "Back to Frontend"
       new_link: "Create a new one"
       
     # AppConfigsController
@@ -17,6 +22,7 @@ en:
       update:
         page_title: "Edit setting"
       index:
+        page_title: "All Settings"
         header: "All Settings"
         intro: "Here you see all system specific settings."
 
@@ -31,6 +37,7 @@ en:
       update:
         page_title: "Edit station"
       index:
+        page_title: "All Stations"
         header: "All Stations"
         intro: "Here you see all the stations that can be used as an adress template."
 

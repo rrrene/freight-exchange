@@ -2,10 +2,28 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :record_user_in_recordings
   before_filter :set_default_page_title
-  helper_method :current_user, :current_person, :current_company, :logged_in?, :demo_mode?, :page
+  helper_method :current_user, :controller_catalog, :current_person, :current_company, :logged_in?, :demo_mode?, :page
   layout 'application'
   
   private
+  
+  # Returns the i18n catalog path for the current controller.
+  # 
+  #   class UsersController < ApplicationController
+  #     def index
+  #       controller_catalog # => 'users'
+  #     end
+  #   end
+  #
+  #   class Admin::UsersController < Admin::BaseController
+  #     def index
+  #       controller_catalog # => 'admin.users'
+  #     end
+  #   end
+  #
+  def controller_catalog
+    controller_path.gsub('/', '.')
+  end
   
   # Returns the Company object of the currently logged in user or <tt>nil</tt> if no user is logged in.
   def current_company() # :doc:
@@ -130,7 +148,7 @@ class ApplicationController < ActionController::Base
   end
   
   def set_default_page_title
-    page[:title] = t("#{controller_name}.#{action_name}.page_title")
+    page[:title] = t("#{controller_catalog}.#{action_name}.page_title")
   end
   
   def store_location
