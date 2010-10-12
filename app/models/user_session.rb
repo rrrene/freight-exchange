@@ -8,4 +8,9 @@ class UserSession < Authlogic::Session::Base
   def self.login(user)
     self.new(user).save
   end
+  
+  # Needed for `record_key_for_dom_id` (actionpack)
+  def to_key # :nodoc:
+    id
+  end
 end
