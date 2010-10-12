@@ -1,9 +1,6 @@
 #!/usr/bin/env ruby -wKU
 
-#require File.join(File.dirname(__FILE__), 'thesis')
-
 class Git < Thor
-#  include Thesis
   include Thor::Actions
   source_root '.'
   
