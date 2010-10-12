@@ -1,3 +1,5 @@
+# The PeopleController provides basic functionality for editing People objects,
+# i.e. personal information of a User object.
 class PeopleController < InheritedResources::Base
   login_required
   same_company_required :only => [:edit, :update]

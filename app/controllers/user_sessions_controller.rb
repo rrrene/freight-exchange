@@ -1,5 +1,6 @@
-# The UserSessionsController handles all requests regarding logging in and out.
+# The UserSessionsController provides basic session-management functionality.
 #
+# Basically that means logging users in and out.
 class UserSessionsController < ApplicationController
   before_filter :require_no_user, :only => [:new, :create]
   before_filter :require_user, :only => :destroy

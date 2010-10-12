@@ -30,6 +30,7 @@ class Doc < Thor
   end
   
   desc "parse", "Parses the generated documentation for the application into *.tex files."
+  method_options %w(all -a) => false
   def parse
     html_files = [readme_file] + Dir[File.join(html_path, '**', '*.html')]
     if html_files.size < 2
@@ -53,7 +54,7 @@ class Doc < Thor
       tex_file = rel_path.gsub(/(\.html)$/, '.tex').gsub('/', '-')
       tex = RDocHTML2LaTex.new(html_file)
       tex.write_file( File.join(tex_path, tex_file) )
-      unless tex.empty?
+      unless tex.empty? && !options[:all]
         tex_includes << tex_file.gsub('.tex', '')
       else
         alert "excluded: #{tex_file}"

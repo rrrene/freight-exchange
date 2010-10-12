@@ -1,4 +1,4 @@
-# User objects respresent a user of the system and are used to authenticate 
+# User objects respresent a user of the app and are used to authenticate 
 # users upon login (using acts_as_authentic plugin) and handle 
 # permission handling via assigned UserRole objects. 
 #

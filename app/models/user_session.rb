@@ -1,3 +1,4 @@
+# UserSession objects are used to handle session management using AuthLogic.
 class UserSession < Authlogic::Session::Base
   #:call-seq:
   #   UserSession.login(user) # => boolean

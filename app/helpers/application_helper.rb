@@ -1,6 +1,6 @@
 # The ApplicationHelper provides basic helper methods for all views.
 module ApplicationHelper
-  
+  # Returns <tt>true</tt> if the current controller is an Admin::BaseController
   def admin?
     controller.is_a?(Admin::BaseController)
   end

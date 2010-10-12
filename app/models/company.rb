@@ -1,4 +1,6 @@
-# Companies are organising Users.
+# Company objects represent the organisation of a User.
+# 
+# Each Company has different types of users, e.g. admins.
 class Company < ActiveRecord::Base
   searchable
   has_many :users
@@ -9,7 +11,8 @@ class Company < ActiveRecord::Base
     self
   end
   
-  # Ensures there is atleast one :company_admin left.
+  # Ensures there is at least one <tt>:company_admin</tt> left in this 
+  # company.
   # If no admin can be found, the first user of the company is 
   # assigned the admin role.
   def ensure_admin

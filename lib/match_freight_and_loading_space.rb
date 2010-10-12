@@ -15,14 +15,14 @@ module Matching
   end
   
   module Compare
-    # FreightToLoadingSpace objects compare Freight with LoadingSpace objects
-    # and return a result how good they match.
+    # Compares a Freight with a LoadingSpace object by comparing their attributes.
     class FreightToLoadingSpace < Base
       compare :origin_site_info, :destination_site_info
       compare :weight, :threshold => {:up => 0}
       compare :hazmat?, :threshold => :perfect
     end
     
+    # Compares two SiteInfo objects by comparing their attributes.
     class SiteInfo < Base
       compare :date, :as => :Time, :threshold => 1.hour
       compare :name, :address, :address2, :zip, :city, :country
