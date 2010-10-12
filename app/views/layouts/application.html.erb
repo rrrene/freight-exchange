@@ -10,7 +10,7 @@
   <%= javascript_include_tag 'jquery-1.4.2.min', 'rails', 'application' %>
   <%= csrf_meta_tag %>
 </head>
-<body>
+<body<%= admin? ? ' class="admin"'.html_safe : '' %>>
   <div id="<%= controller.controller_name %>" class="<%= controller.action_name %>">
       <div id="wrap">
         <% if demo_mode? %>
@@ -27,7 +27,7 @@
           </div>
         </div>
         <%= render_partial :footer %>
-      </div> <%# wrap %>
-  </div> <%# div#controller.action %>
+      </div> <!-- div#wrap -->
+  </div> <!-- div#controller.action -->
 </body>
 </html>

@@ -83,9 +83,11 @@ div#page_title {
   position: relative;
   height: 260px;
 }
+.admin div#page_title,
 #root.about div#page_title {
   height: 68px;
 }
+.admin div#page_title div#search_form,
 #root.about div#page_title div#search_form {
   display: none;
 }

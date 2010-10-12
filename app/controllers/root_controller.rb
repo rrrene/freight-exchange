@@ -1,11 +1,13 @@
+# The RootController is the starting point of the application.
+# On first start, it creates an admin user and guides him to the setup process.
+# On login, it redirects users to their designated location.
+# Additionally, the RootController also holds information about the app 
+# (e.g. the about action).
 class RootController < ApplicationController
   login_required :only => [:welcome]
   
-  def about
-    page[:title] = t("root.about.page_title")
-  end
-  
-  # 
+  # The index action decides where the current_user is redirected
+  # based on whether or not the app is already set up.
   def index
     if just_set_up?
       unless just_set_up_but_not_seeded?
@@ -23,7 +25,7 @@ class RootController < ApplicationController
     end
   end
   
-  # This action decides what to do with a freshly logged in user.
+  # The welcome action decides what to do with a freshly logged in user.
   def welcome
     if current_user.company.blank?
       redirect_to new_company_url
