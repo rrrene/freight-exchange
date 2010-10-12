@@ -88,7 +88,7 @@ class ApplicationController < ActionController::Base
     end
   end
   
-  # Use this in a controller to restrict access to either 
+  # Use this in a controller to restrict access to  
   # users of certain roles (e.g. admins).
   #
   #   class Admin::BaseController < ApplicationController
