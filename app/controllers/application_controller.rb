@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
+  before_filter :login_by_api_key
   before_filter :record_user_in_recordings
   before_filter :set_default_page_title
   helper_method :current_user, :controller_catalog, :current_person, :current_company, :logged_in?, :demo_mode?, :page
@@ -46,6 +47,15 @@ class ApplicationController < ActionController::Base
   # Returns <tt>true</tt> if the application is running in demo mode.
   def demo_mode?() # :doc:
     AppConfig[:demo_mode].full?
+  end
+  
+  # Logs the user in for this very request if an API key is provided in the params.
+  def login_by_api_key
+    if api_key = params[:api_key]
+      if u = User.where(:api_key => api_key).first
+        @current_user = u # login for this request only
+      end
+    end
   end
   
   # Use this in a controller to restrict access.
