@@ -34,7 +34,7 @@ class Git < Thor
       end
     end
     if nothing_to_commit_or_push
-      success "Nothing to commit or push"
+      #success "Nothing to commit or push"
     end
   end
   
