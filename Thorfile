@@ -1,5 +1,9 @@
 #!/usr/bin/env ruby -wKU
 
+load File.join(File.dirname(__FILE__), 'lib', 'tasks', 'git.thor')
+
+
+
 require 'fileutils'
 
 require File.join(File.dirname(__FILE__), 'lib', 'tasks', 'rdoc_html2latex')
