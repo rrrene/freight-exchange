@@ -1,6 +1,8 @@
 # The RootController is the starting point of the application.
+#
 # On first start, it creates an admin user and guides him to the setup process.
 # On login, it redirects users to their designated location.
+#
 # Additionally, the RootController also holds information about the app 
 # (e.g. the about action).
 class RootController < ApplicationController

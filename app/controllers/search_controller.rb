@@ -1,3 +1,4 @@
+# The SearchController provides all search functionality for the app.
 class SearchController < ApplicationController
   login_required
   
