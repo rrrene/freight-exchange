@@ -143,9 +143,18 @@ class ApplicationController < ActionController::Base
     unless current_user
       store_location
       flash[:notice] = "You must be logged in to access this page"
-      redirect_to login_url
+      respond_to do |format|
+        format.html { redirect_to login_url }
+        format.xml { render_errors(flash[:notice]) }
+        format.json { render_errors(flash[:notice]) }
+      end
       return false
     end
+  end
+  
+  # Renders an array of error messages in the request format.
+  def render_errors(*error_messages)
+    render params[:format].intern => ErrorMessages.new(error_messages)
   end
 
   def require_no_user
