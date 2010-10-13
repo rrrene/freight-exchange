@@ -7,12 +7,16 @@ class InheritedResources::Base
     #     api_enabled :only => :show
     #   end
     #
-    # To restrict API access to actual users, simply use login_required. 
-    # This way, requests have to provide an API key in the params.
+    # To restrict API access to actual users, simply use 
+    # <tt>login_required</tt>. This way, requests have to provide an API key 
+    # in the params.
+    # Of course you can also use <tt>role_required</tt> and the like
+    # for finer access management.
     #
     #   class PeopleController < InheritedResources::Base
-    #     login_required
     #     api_enabled
+    #     login_required
+    #     role_or_ownership_required :company_admin, :only => [:edit, :update]
     #   end
     #
     #
