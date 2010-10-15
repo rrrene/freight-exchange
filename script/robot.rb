@@ -3,44 +3,22 @@
 require 'rubygems'
 require 'active_resource'
 
-class Array
-  def random
-    sort_by { rand * 2 - 1 }.first
-  end
-end
-
 module Robot
   SITE = "http://localhost:3000/"
 end
 
-require File.join(File.dirname(__FILE__), 'robot', 'users')
-require File.join(File.dirname(__FILE__), 'robot', 'places')
-require File.join(File.dirname(__FILE__), 'robot', 'freight')
-require File.join(File.dirname(__FILE__), 'robot', 'active_resource_ext')
+%w(array_ext users places freight actions active_resource_ext).each do |rb|
+  require File.join(File.dirname(__FILE__), 'robot', rb)
+end
 
 module Robot
-  module Actions
-    def create_freight
-      Robot::Freight.create
-    end
-    
-    def create_loading_space
-    end
-    
-    def create_memo
-    end
-    
-    def approve_memo
-    end
-  end
-  
   class Bot
     def initialize
       CurrentUser.random!
     end
     
     def go
-      puts "create_#{CurrentUser.creates}"
+      puts actions
       print Time.new.strftime("%Y-%m-%d %H:%M:%S") + "  "
       print CurrentUser.login.to_s.ljust(30)
       print actions.random
@@ -48,9 +26,9 @@ module Robot
     end
     
     def actions
-      %w(create_freight create_loading_space delete_something 
+      %w(create_user edit_user delete_user
         approve_memo create_memo
-          ) - ["create_#{CurrentUser.creates}"]
+          ) + ["create_#{CurrentUser.creates}", "delete_#{CurrentUser.creates}"]
     end
     
     private

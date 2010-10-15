@@ -1,8 +1,5 @@
 #!/usr/bin/env ruby -wKU
 
-require 'rubygems'
-require 'active_resource'
-
 module Robot
   class Places
     @@places = [
