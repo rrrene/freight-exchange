@@ -1,7 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :login_by_api_key
-  before_filter :authenticate_by_http_digest
   before_filter :record_user_in_recordings
   before_filter :set_default_page_title
   helper_method :current_user, :controller_catalog, :current_person, :current_company, :logged_in?, :demo_mode?, :page
@@ -41,7 +40,13 @@ class ApplicationController < ActionController::Base
   
   # Returns the User object of the currently logged in user or <tt>nil</tt> if no user is logged in.
   def current_user() # :doc:
-    @current_user ||= UserSession.find.full?(&:user)
+    @current_user ||= begin
+      if api_request?
+         authenticate_by_api_key_in_params || authenticate_by_api_key_in_http_auth
+      else
+        UserSession.find.full?(&:user)
+      end
+    end
   end
   alias logged_in? current_user
   
@@ -54,20 +59,17 @@ class ApplicationController < ActionController::Base
     [Mime::XML, Mime::JSON].include?(request.format)
   end
   
-  def authenticate_by_http_digest
-    return if logged_in? || !api_request?
+  # Logs the user in for this very request if an API key is provided via http_auth.
+  def authenticate_by_api_key_in_http_auth
     authenticate_or_request_with_http_basic do |api_key, _|
-      @current_user = User.where(:api_key => api_key).first
-      !@current_user.nil?
+      return User.where(:api_key => api_key).first
     end
   end
   
   # Logs the user in for this very request if an API key is provided in the params.
-  def login_by_api_key
+  def authenticate_by_api_key_in_params
     if api_key = params[:api_key]
-      if u = User.where(:api_key => api_key).first
-        @current_user = u # login for this request only
-      end
+      User.where(:api_key => api_key).first
     end
   end
   
