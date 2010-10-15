@@ -38,7 +38,9 @@ module Robot
     def initialize
       CurrentUser.random!
     end
+    
     def go
+      puts "create_#{CurrentUser.creates}"
       print Time.new.strftime("%Y-%m-%d %H:%M:%S") + "  "
       print CurrentUser.login.to_s.ljust(30)
       print actions.random
