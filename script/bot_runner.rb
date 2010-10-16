@@ -16,6 +16,10 @@ if User.robots.count < User::ROBOT_ARMY_SIZE
 end
 
 loop do
-  Robot::Bot.new.go
-  sleep 2
+  begin
+    Robot::Bot.new.go
+    sleep 2
+rescue REXML::ParseException => e
+    nil
+  end
 end

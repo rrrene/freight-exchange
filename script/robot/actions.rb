@@ -17,6 +17,8 @@ module Robot
     end
     
     def create_review
+      Robot::Review.create
+      puts "# #{Robot::Review.all.size} Reviews"
     end
     
     def create_user

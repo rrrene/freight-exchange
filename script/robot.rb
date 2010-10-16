@@ -11,7 +11,7 @@ module Robot
   SITE = "http://localhost:3000/"
 end
 
-%w(actions active_resource_ext array_ext bot users places freight loading_space user).each do |rb|
+%w(actions active_resource_ext array_ext bot users places freight loading_space user review).each do |rb|
   require File.join(File.dirname(__FILE__), 'robot', rb)
 end
 

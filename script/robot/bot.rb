@@ -12,6 +12,7 @@ module Robot
     
     def perform_action
       @action = actions.random
+      @action = "create_freight"
       method(@action).call
     end
     
