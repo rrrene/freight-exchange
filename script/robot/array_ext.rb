@@ -2,6 +2,10 @@
 
 class Array
   def random
-    sort_by { rand * 2 - 1 }.first
+    if methods.include?("rand")
+      rand
+    else
+      sort_by { rand * 2 - 1 }.first
+    end
   end
 end
