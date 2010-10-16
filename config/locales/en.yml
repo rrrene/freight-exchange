@@ -121,6 +121,12 @@ en:
       no_results: "There are no results."
       no_query: "Please type in a search query above."
   
+  # ReviewsController
+  reviews:
+    new:
+      page_title: "Review Company"
+      header: "Write a review about '{{company_name}}'"
+
   # UsersController
   users:
     common:

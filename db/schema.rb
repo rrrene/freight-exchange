@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101012180759) do
+ActiveRecord::Schema.define(:version => 20101016191850) do
 
   create_table "app_configs", :force => true do |t|
     t.string   "name"
@@ -137,6 +137,16 @@ ActiveRecord::Schema.define(:version => 20101012180759) do
   create_table "regions_stations", :id => false, :force => true do |t|
     t.integer "region_id"
     t.integer "station_id"
+  end
+
+  create_table "reviews", :force => true do |t|
+    t.integer  "author_user_id"
+    t.integer  "author_company_id"
+    t.integer  "approved_by_id"
+    t.integer  "company_id"
+    t.text     "text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "simple_searches", :force => true do |t|

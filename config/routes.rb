@@ -1,4 +1,6 @@
 BlackBoard::Application.routes.draw do |map|
+  resources :reviews
+
   resources :loading_spaces
 
   resources :people
