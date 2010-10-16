@@ -12,6 +12,7 @@ module Robot
     
     def perform_action
       @action = actions.random
+      method(@action).call
     end
     
     def report(&block)

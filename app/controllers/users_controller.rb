@@ -3,6 +3,7 @@
 #
 # 
 class UsersController < InheritedResources::Base
+  api_enabled
   login_required
   same_company_required :only => [:edit, :update]
   role_or_ownership_required :company_admin, :only => [:edit, :update]
