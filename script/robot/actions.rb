@@ -10,7 +10,10 @@ module Robot
     def create_loading_space
     end
     
-    def create_memo
+    def create_review
+    end
+    
+    def approve_review
     end
     
     def create_user
@@ -20,9 +23,6 @@ module Robot
     end
     
     def edit_user
-    end
-    
-    def approve_memo
     end
   end
 end

@@ -4,6 +4,7 @@ module Robot
   class Places
     @@places = [
       {
+        :contractor => 'Frachtunternehmen',
         :address => "Kurt-Schumacher-Platz",
         :zip => "44787",
         :city => "Bochum",
@@ -12,6 +13,7 @@ module Robot
         :side_track_available => true,
       },
       {
+        :contractor => 'Frachtunternehmen',
         :address => "Bahnhofstr.",
         :zip => "44137",
         :city => "Dortmund",

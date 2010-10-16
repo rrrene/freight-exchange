@@ -17,6 +17,8 @@ gem 'inherited_resources', '1.1.2'
 
 gem 'levenshtein'
 
+gem 'factory_girl'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
