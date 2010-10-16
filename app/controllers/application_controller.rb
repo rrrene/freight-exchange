@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  before_filter :login_by_api_key
   before_filter :record_user_in_recordings
   before_filter :set_default_page_title
   helper_method :current_user, :controller_catalog, :current_person, :current_company, :logged_in?, :demo_mode?, :page
