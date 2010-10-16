@@ -12,6 +12,7 @@ class UsersController < InheritedResources::Base
   # Lists all users in the current company.
   def index
     @users = current_company.users
+    index!
   end
   
   # This creates a new user inside the current company.
@@ -19,11 +20,12 @@ class UsersController < InheritedResources::Base
   def create
     @user = User.new(params[:user])
     @user.company = current_company
-    if @user.save
-      redirect_to :action => :index
-    else
-      render :action => :new
-    end
+    create!
+#    if @user.save
+#      redirect_to :action => :index
+#    else
+#      render :action => :new
+#    end
   end
   
   def show # :nodoc:

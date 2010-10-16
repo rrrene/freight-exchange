@@ -2,6 +2,10 @@
 
 module Robot
   module Actions
+    
+    def approve_review
+    end
+    
     def create_freight
       Robot::Freight.create
       puts "# #{Robot::Freight.all.size} Freights"
@@ -15,10 +19,15 @@ module Robot
     def create_review
     end
     
-    def approve_review
+    def create_user
+      Robot::User.create
+      puts "# #{Robot::User.all.size} Users"
     end
     
-    def create_user
+    def delete_freight
+    end
+    
+    def delete_loading_space
     end
     
     def delete_user
