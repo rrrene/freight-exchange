@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101019182300) do
+ActiveRecord::Schema.define(:version => 20101019191723) do
 
   create_table "app_configs", :force => true do |t|
     t.string   "name"
@@ -78,6 +78,16 @@ ActiveRecord::Schema.define(:version => 20101019182300) do
     t.string   "name"
     t.string   "lang"
     t.text     "text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "matching_recordings", :force => true do |t|
+    t.string   "a_type",     :limit => 30
+    t.integer  "a_id"
+    t.string   "b_type",     :limit => 30
+    t.integer  "b_id"
+    t.float    "result"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
