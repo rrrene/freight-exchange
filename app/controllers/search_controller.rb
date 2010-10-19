@@ -6,12 +6,20 @@ class SearchController < ApplicationController
     @sidebar_result_models = %w(company station)
     @results = {}
     if @q = params[:q].full?
-      @results[:main] = Search.find(@q, ['LoadingSpace', 'Freight'])
-      @results[:count] = Search.count(@q, ['LoadingSpace', 'Freight'])
+      @results = search_for(@q)
       @sidebar_result_models.each do |klass|
         @results[klass] = Search.find(@q, [klass.classify])
       end
     end
+  end
+  
+  def search_for(q)
+    count = Search.count(q, ['LoadingSpace', 'Freight'])
+    @search_recording = current_user.search_recordings.create({:query => q, :results => count})
+    {
+      :main => Search.find(q, ['LoadingSpace', 'Freight']),
+      :count => count
+    }
   end
   
 end

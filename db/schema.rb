@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101016191850) do
+ActiveRecord::Schema.define(:version => 20101019182300) do
 
   create_table "app_configs", :force => true do |t|
     t.string   "name"
@@ -145,6 +145,17 @@ ActiveRecord::Schema.define(:version => 20101016191850) do
     t.integer  "approved_by_id"
     t.integer  "company_id"
     t.text     "text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "search_recordings", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "query"
+    t.integer  "results"
+    t.integer  "parent_id"
+    t.string   "result_type", :limit => 30
+    t.integer  "result_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

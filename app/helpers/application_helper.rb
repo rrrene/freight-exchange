@@ -53,6 +53,12 @@ module ApplicationHelper
     link_to_function text, "self.history.back();", :class => 'back'
   end
   
+  def link_to_result(t, result)
+    url_method = method(result.class.to_s.underscore << '_path')
+    url = url_method.call(:id => result, :search_recording_id => @search_recording.full?(&:id))
+    link_to(t, url)
+  end
+  
   # TODO: lookup rails3 implementation
   def link_to_unless(condition, name, options = {}, html_options = {}, &block)
     condition ? content_tag(:span, name, html_options) : link_to(name, options, html_options, &block)

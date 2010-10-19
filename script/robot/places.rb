@@ -5,6 +5,7 @@ module Robot
     @@places = [
       {
         :contractor => 'Frachtunternehmen',
+        :name => 'Bochum Hbf',
         :address => "Kurt-Schumacher-Platz",
         :zip => "44787",
         :city => "Bochum",
@@ -14,9 +15,20 @@ module Robot
       },
       {
         :contractor => 'Frachtunternehmen',
+        :name => 'Dortmund Hbf',
         :address => "Bahnhofstr.",
         :zip => "44137",
         :city => "Dortmund",
+        :country => "Germany",
+        :date => Time.new + 87600,
+        :side_track_available => true,
+      },
+      {
+        :contractor => 'Frachtunternehmen',
+        :name => 'Essen Hbf',
+        :address => "Am Hauptbahnhof",
+        :zip => "45128",
+        :city => "Essen",
         :country => "Germany",
         :date => Time.new + 87600,
         :side_track_available => true,
