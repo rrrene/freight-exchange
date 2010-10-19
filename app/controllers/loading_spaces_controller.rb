@@ -1,6 +1,4 @@
-class LoadingSpacesController < InheritedResources::Base
-  api_enabled
-  login_required
+class LoadingSpacesController < RemoteController
   same_company_required :only => %w(edit update)
   role_required [:company_admin, :company_employee], :only => [:new, :create, :edit, :update]
   

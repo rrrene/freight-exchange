@@ -4,7 +4,7 @@ class InheritedResources::Base
     # certain actions (defaults to all actions) via xml and json.
     #
     #   class StationsController < InheritedResources::Base
-    #     api_enabled :only => :show
+    #     remote_enabled :only => :show
     #   end
     #
     # To restrict API access to actual users, simply use 
@@ -14,13 +14,13 @@ class InheritedResources::Base
     # for finer access management.
     #
     #   class PeopleController < InheritedResources::Base
-    #     api_enabled
+    #     remote_enabled
     #     login_required
     #     role_or_ownership_required :company_admin, :only => [:edit, :update]
     #   end
     #
     #
-    def api_enabled(opts = {})
+    def remote_enabled(opts = {})
       respond_to :html, :xml, :json, opts
     end
   end

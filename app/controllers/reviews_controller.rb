@@ -1,7 +1,4 @@
-class ReviewsController < InheritedResources::Base
-  api_enabled
-  login_required
-  
+class ReviewsController < RemoteController
   def new
     @review = Review.new(params[:review])
     @review.company_id = params[:company_id]

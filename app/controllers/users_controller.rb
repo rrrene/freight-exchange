@@ -2,9 +2,7 @@
 # users in companies.
 #
 # 
-class UsersController < InheritedResources::Base
-  api_enabled
-  login_required
+class UsersController < RemoteController
   same_company_required :only => [:edit, :update]
   role_or_ownership_required :company_admin, :only => [:edit, :update]
   role_required :company_admin, :only => [:index, :new, :create]

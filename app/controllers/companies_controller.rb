@@ -1,6 +1,6 @@
 # The CompaniesController provides functionality for managing a user's company
 # as well as the actual 'Create a new Account'-screen.
-class CompaniesController < InheritedResources::Base
+class CompaniesController < RemoteController
   login_required :except => [:new, :create]
   same_company_required :except => [:dashboard, :new, :create, :show]
   role_required :company_admin, :except => [:dashboard, :new, :create, :show]
