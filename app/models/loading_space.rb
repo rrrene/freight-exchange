@@ -7,6 +7,7 @@ class LoadingSpace < ActiveRecord::Base
   accepts_nested_attributes_for :origin_site_info
   accepts_nested_attributes_for :destination_site_info
   has_many :localized_infos, :as => :item
+  has_many :matching_recordings, :as => 'b', :order => 'result DESC'
   searchable
   
   def localized_infos=(array_of_options)
@@ -19,6 +20,10 @@ class LoadingSpace < ActiveRecord::Base
     localized_infos.select { |obj| 
       (obj.name == name.to_s) && (obj.lang == lang.to_s) 
     }.first.full? || localized_infos.build(:name => name.to_s, :lang => lang.to_s)
+  end
+  
+  def matching_freights(limit = 3)
+    matching_recordings.limit(limit).map(&:a)
   end
   
   def update_localized_infos
