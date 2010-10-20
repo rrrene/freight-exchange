@@ -256,8 +256,8 @@ module Matching
     # Compares two strings using Levenshtein distance.
     class String < Base
       def result
-        diff = Levenshtein.distance(a, b)
-        1 - (diff / [a.length, b.length].max.to_f)
+        diff = Levenshtein.distance(a.to_s, b.to_s)
+        1 - (diff / [a.to_s.length, b.to_s.length].max.to_f)
       end
     end
     

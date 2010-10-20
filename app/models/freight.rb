@@ -10,8 +10,19 @@ class Freight < ActiveRecord::Base
   accepts_nested_attributes_for :destination_site_info
   has_many :localized_infos, :as => :item
   has_many :matching_recordings, :as => 'a'
-  after_save :calc_matchings
+  after_save :calc_matchings!
   searchable
+  
+  def calc_matchings!
+    LoadingSpace.all.each do |record|
+      result = Matching.fls(self, record)
+      if matching = matching_recordings.where(:b_type => record.class.to_s, :b_id => record.id).first
+        matching.update_attribute(:result, result)
+      else
+        matching_recordings.create(:b => record, :result => result)
+      end
+    end
+  end
   
   def localized_infos=(array_of_options)
     array_of_options.each do |opts|
@@ -47,17 +58,6 @@ class Freight < ActiveRecord::Base
   end
   
   private
-  
-  def calc_matchings
-    LoadingSpace.all.each do |record|
-      result = Matching.fls(self, record)
-      if matching = matching_recordings.where(:b => record).first
-        self.matching_recordings.create(:b => record, :result => result)
-      else
-        matching.update_attribute(:result, result)
-      end
-    end
-  end
   
   def human_attribute_values_in(lang, *values)
     values.flatten.map { |attr| 
