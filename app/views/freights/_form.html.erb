@@ -3,6 +3,28 @@
     <%= render :partial => 'site_info_form_content', :locals => {:f => f, :site => site} %>
   <% end %>
   
+  <script type="text/javascript">
+    function fillSiteInfo(site, station_id) {
+      var station = all_stations[station_id];
+      var prefix = "freight";
+      for(var i in station) {
+        var ele = jQuery("#"+prefix+'_'+site+'_site_info_attributes_'+i);
+        if( ele ) {
+          ele.val(station[i]);
+        }
+      }
+    }
+    var all_stations = {};
+    <% Station.all.each do |station| %>
+      all_stations['<%= station.id %>'] = {
+        <%- %w(name address address2 zip city country).each do |field| -%>
+          '<%= field %>': "<%= station[field] %>",
+        <%- end -%>
+        'country': "<%= station.country.name %>"
+      };
+    <% end %>
+  </script>
+  
   <%= f.inputs :freight_description do %>
     <%= f.input :hazmat, :collection => [["yes", true], ["no", false]] %>
     

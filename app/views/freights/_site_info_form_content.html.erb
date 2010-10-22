@@ -3,6 +3,13 @@
   <%= f_site.inputs :"#{site}_site_info" do %>
     <%= f_site.input :contractor %>
     <%= f_site.input :date %>
+    <li>
+      <label>template:</label>
+      <select onChange="fillSiteInfo('<%= site %>', this.value); return false;">
+        <option selected="selected">--</option>
+        <%= options_for_select(Station.all.map { |station| [station.name, station.id] }) %>
+      </select>
+    </li>
     <% %w(name address address2 zip city country).each do |field| %>
       <%= f_site.input field, :as => :string %>
     <% end %>
