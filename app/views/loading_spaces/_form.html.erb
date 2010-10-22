@@ -1,7 +1,8 @@
 <%= semantic_form_for(resource) do |f| %>
   <% %w(origin destination).each do |site| %>
-    <%= render :partial => 'site_info_form_content', :locals => {:f => f, :site => site} %>
+    <%= render_partial :site_info_form_content, :locals => {:f => f, :site => site} %>
   <% end %>
+  <%= render_partial :site_info_stations %>
   
   <%= f.inputs :freight_description do %>
     <%= f.input :hazmat, :collection => [["yes", true], ["no", false]] %>

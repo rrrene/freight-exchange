@@ -16,3 +16,15 @@ function login_from_name(name) {
   login = login.replace(/[^A-Za-z0-9]+/g, '_');
   return login;
 }
+
+var site_info_prefix = "";
+
+function fillSiteInfo(site, station_id) {
+  var station = all_stations[station_id];
+  for(var i in station) {
+    var ele = jQuery("#"+site_info_prefix+'_'+site+'_site_info_attributes_'+i);
+    if( ele ) {
+      ele.val(station[i]);
+    }
+  }
+}

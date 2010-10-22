@@ -1,0 +1,11 @@
+<script type="text/javascript">
+  site_info_prefix = "<%= resource.class.to_s.underscore %>";
+  var all_stations = {
+    <% Station.all.each do |station| %>
+    '<%= station.id %>': { <%= Station::SITE_ATTRIBUTES.map { |field|
+        %Q('#{field}': "#{station.__send__(field).to_s}")
+      }.join(', ').html_safe %> },
+    <% end %>
+    '0': {}
+  };
+</script>
