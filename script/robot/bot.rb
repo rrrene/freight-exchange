@@ -11,8 +11,7 @@ module Robot
     end
     
     def perform_action
-      @action = actions.random
-      @action = "create_loading_space"
+      @action = (actions_from_argv || actions).random
       method(@action).call
     end
     
@@ -20,6 +19,10 @@ module Robot
       yield
       puts [Time.new.strftime("%Y-%m-%d %H:%M:%S"), 
               CurrentUser.login.to_s.ljust(30), @action].join(' ')
+    end
+    
+    def actions_from_argv
+      ARGV unless ARGV.empty?
     end
     
     def actions
