@@ -3,7 +3,7 @@
 class CompaniesController < RemoteController
   login_required :except => [:new, :create]
   same_company_required :except => [:dashboard, :new, :create, :show]
-  role_required :company_admin, :except => [:dashboard, :new, :create, :show]
+  role_required :company_admin, :except => [:dashboard, :new, :create, :edit, :update, :show]
   
   # The dashboard action provides a general overview of the company's 
   # activities.

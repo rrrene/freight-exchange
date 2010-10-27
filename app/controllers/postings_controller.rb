@@ -26,6 +26,10 @@ class PostingsController < RemoteController
     create!
   end
   
+  def index
+    self.collection = resource_class.where(:company_id => current_company.id)
+  end
+  
   def update
     self.resource = resource_class.find(params[:id])
     resource.localized_infos = params[resource_key].delete(:localized_infos)
@@ -40,6 +44,14 @@ class PostingsController < RemoteController
   end
   
   private
+  
+  def collection=(val)
+    instance_variable_set("@#{collection_name}", val)
+  end
+  
+  def collection_name
+    instance_name.pluralize
+  end
   
   def instance_name
     controller_name.classify.underscore

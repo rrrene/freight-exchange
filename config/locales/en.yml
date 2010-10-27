@@ -41,11 +41,26 @@ en:
   freights:
     common:
       edit_link: "Edit this posting"
+      new_link: "Create another posting"
     new:
       page_title: "New freight posting"
     edit:
       page_title: "Edit freight posting"
       header: "Edit freight posting"
+    index:
+      page_title: "All freight postings"
+      header: "All freight postings"
+      intro: "Here you can see all the freight postings of your company."
+      table:
+        headers:
+          date: "Date"
+          origin: "Origin"
+          destination: "Destination"
+          options: "Options"
+        options:
+          edit: "Edit"
+          delete: "Delete"
+          template: "Use as template"
     show:
       page_title: "Freight posting"
       header: "Freight posting"

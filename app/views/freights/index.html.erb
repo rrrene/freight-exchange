@@ -1,0 +1,35 @@
+<div class="box">
+  <h3>
+    <%= t("freights.index.header") %>
+    <%= link_to t("freights.common.new_link"), new_freight_path, :class => 'new' %>
+  </h3>
+  <p>
+    <%= t('freights.index.intro') %>
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th><%= t('freights.index.table.headers.date') %></th>
+        <th><%= t('freights.index.table.headers.origin') %></th>
+        <th><%= t('freights.index.table.headers.destination') %></th>
+        <th><%= t('freights.index.table.headers.options') %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% collection.each do |ar| %>
+        <tr>
+          <td><%= link_to ar.origin_site_info.date, ar %></td>
+          <td><%= ar.origin_site_info.name %></td>
+          <td><%= ar.destination_site_info.name %></td>
+          <td>
+            <%= link_to t('freights.index.table.options.edit'), {:action => 'edit', :id => ar}, :class => 'edit' %> 
+            |
+            <%#= link_to t('freights.index.table.options.delete'), {:action => 'destroy', :id => ar}, :class => 'destroy' %>
+            <%= link_to t('freights.index.table.options.template'), new_resource_url(:parent_id => ar.id), :class => 'edit' %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
