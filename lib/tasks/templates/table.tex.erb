@@ -1,0 +1,12 @@
+<%= generated_header %>
+
+\begin{table}[h]
+\caption{Felder der "`<%= @table.gsub('_', '\_') %>"'-Tabelle}
+\begin{tabular*}{}{|l|l|p{7cm}|l|} \hline
+  \textbf{Name} & \textbf{Typ}  & \textbf{Beschreibung}  & \textbf{Beispiel} \tabularnewline \hline
+<%- @fields.each do |field| -%>
+  <%= field[:name] %> & <%= field[:type].capitalize %> & <%= field[:description] %> & <%= field[:example] %> \tabularnewline \hline
+<%- end -%>
+\end{tabular*}
+\label{tab:schema_<%= @table %>}
+\end{table}
