@@ -4,6 +4,15 @@ require 'factory_girl'
 
 module Robot
   class User < ActiveResource::Base
+    class << self
+      def edit
+        resource = self.find(CurrentUser.id)
+        resource.login = "robot_#{Faker::Internet.user_name}"
+        resource.api_key = Robot::CurrentUser.api_key
+        resource.save
+        resource
+      end
+    end
   end
   
   Factory.define "Robot::User" do |u|

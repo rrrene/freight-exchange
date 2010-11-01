@@ -28,6 +28,7 @@ class PostingsController < RemoteController
   
   def index
     self.collection = resource_class.where(:company_id => current_company.id)
+    index!
   end
   
   def update

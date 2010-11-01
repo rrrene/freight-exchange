@@ -35,6 +35,7 @@ Factory.define "AdminRobot", :class => "User" do |u|
   u.email { Random.email }
   u.password 'asdf'
   u.password_confirmation { |o| o.password }
+  u.posting_type { User.last.posting_type == 'Freight' ? 'LoadingSpace' : 'Freight' }
 end
 
 def create_robot_army!(size = 10)

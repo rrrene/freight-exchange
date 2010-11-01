@@ -36,6 +36,7 @@ module Robot
     end
     
     def edit_user
+      Robot::User.edit
     end
   end
 end

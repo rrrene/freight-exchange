@@ -68,6 +68,7 @@ class Freight < ActiveRecord::Base
   validates_presence_of :user_id
   validates_presence_of :company_id
   validates_presence_of :weight
+  validates_presence_of :loading_meter
   validates_inclusion_of :hazmat, :in => [true, false]
   validates_inclusion_of :transport_type, :in => TRANSPORT_TYPE_CHOICES
   validates_inclusion_of :wagons_provided_by, :in => WAGONS_PROVIDED_BY_CHOICES

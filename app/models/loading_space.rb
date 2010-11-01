@@ -53,6 +53,7 @@ class LoadingSpace < ActiveRecord::Base
   validates_presence_of :user_id
   validates_presence_of :company_id
   validates_presence_of :weight
+  validates_presence_of :loading_meter
   validates_inclusion_of :hazmat, :in => [true, false]
   validates_inclusion_of :transport_type, :in => TRANSPORT_TYPE_CHOICES
 end

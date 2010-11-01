@@ -5,6 +5,11 @@ module Robot
     @@users = ::User.robots.all
     class << self
       attr_accessor :user
+      
+      def id
+        user.id
+      end
+      
       def method_missing(m)
         random! if user.nil?
         user[m]
@@ -15,7 +20,7 @@ module Robot
       end
       
       def creates
-        user.person.gender == 'female' ? :freight : :loading_space
+        user.posting_type.underscore
       end
     end
   end
