@@ -2,32 +2,39 @@
   <div class="container" id="header">
     <div class="span-24 last" id="first-header">
       <%#= link_to image_tag('home_logo.gif'), root_url %>
+      <h2 style="float: left; font-weight: bolder;"><%= link_to t("admin.common.navi.home"), admin_root_path, :style => "text-decoration: none; color: #666;" %></h2>
       
-      <ul class="navigation navigation-left">
-        <li><%= link_to t("admin.common.navi.home"), admin_root_path %></li>
-        <li><%= link_to t("admin.common.navi.stations"), admin_stations_path %></li>
-      </ul>
-      <ul class="navigation navigation-right">
-        <li><%= link_to t("admin.common.navi.user_roles"), admin_user_roles_path %></li>
-        <li><%= link_to t("admin.common.navi.app_configs"), admin_app_configs_path %></li>
-        <li><%= link_to t("admin.common.navi.back_to_app"), root_path %></li>
-      </ul>
+      <div class="navibox">
+        <ul class="navigation navigation-right">
+          <ul class="navigation navigation-left">
+            <li><%= link_to t("admin.common.navi.stations"), admin_stations_path %></li>
+            <li><%= link_to t("admin.common.navi.user_roles"), admin_user_roles_path %></li>
+            <li><%= link_to t("admin.common.navi.app_configs"), admin_app_configs_path %></li>
+            <li><%= link_to t("admin.common.navi.back_to_app"), root_path, :class => 'frontend' %></li>
+          </ul>
+        </ul>
+      </div>
     </div>
 
     <div class="container" id="second-header">
       <ul class="navigation navigation-left">
+        <!--
         <li><span>
-          <b>[</b>ADMIN<b>]</b>
+          <b><%= Station.count %></b> stations and <b><%= User.count %></b> users and stuff...
         </span></li>
+        -->
       </ul>
       <ul class="navigation navigation-right">
-        <% if current_user.full? %>
+        
+        <% if false && current_user.full? %>
           <li><span>Welcome <%= current_user.login %>!</span></li>
-          <li><%= link_to_unless_current("My Company", company_dashboard_path) %></li>
-          <li><%= link_to_unless_current "Logout", logout_path %></li>
-        <% else %>
-          <li><%= link_to_unless_current "Login", login_path %></li>
-          <li><%= link_to_unless_current "Register", register_path %></li>
+          <li>
+            <div id="search_form">
+            <%= form_tag search_url, :method => :get do %>
+              <div class="input-wrapper"><%= text_field_tag :q, h(params[:q]) %><%= submit_tag t('search.common.button'), :name => nil %></div>
+            <% end %>
+            </div>
+          </li>
         <% end %>
       </ul>
     </div>

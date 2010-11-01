@@ -5,7 +5,7 @@ en:
   admin:
     common:
       navi:
-        home: "Dashboard"
+        home: "FX Admin"
         stations: "Stations"
         user_roles: "User Roles"
         app_configs: "Settings"

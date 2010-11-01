@@ -46,6 +46,11 @@ ul.navigation li a {
   padding: 4px;
 }
 
+ul.navigation li a.frontend,
+ul.navigation li a.backend {
+  color: #333;
+}
+
 ul.navigation-left {
   float: left;
 }
