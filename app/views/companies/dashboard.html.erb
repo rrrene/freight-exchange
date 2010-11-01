@@ -6,7 +6,7 @@
   <% @recordings.each do |recording| %>
     <li>
       <small><%= l recording.created_at, :format => :short %></small>
-      <%= humanize_recording(recording) %>
+      <%= humanize_recording(recording).html_safe %>
     </li>
   <% end %>
   </ul>

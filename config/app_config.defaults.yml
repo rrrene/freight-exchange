@@ -3,3 +3,4 @@ just_set_up: true
 name: Freight Exchange
 domain: localhost
 language: en
+contact_info.complete_percentage: 0.5

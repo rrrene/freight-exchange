@@ -52,9 +52,17 @@ module ApplicationHelper
     opts = {
       :user => rec.user.full?(&:name),
       :object_class => rec.item.full?(&:class),
-      :object_link => rec.item.full? { |o| o.respond_to?(:name) ? o.name : o.to_s },
+      :object_link => link_to_item(rec.item),
     }
     t("recordings.#{rec.action}", opts)
+  end
+  
+  def link_to_item(item)
+    return t("common.deleted_object") if item.blank?
+    text = item.respond_to?(:name) ? item.name : item.to_s
+    link_to(text, item)
+  rescue
+    text
   end
   
   # Returns a link back to the last visited page with a localized caption.
@@ -86,7 +94,7 @@ module ApplicationHelper
   end
   
   def only_some_attributes_filled?(ar)
-    ar.attributes_filled < 0.5
+    ar.attributes_filled < AppConfig['contact_info.complete_percentage'].to_f
   end
   
   # Renders a partial with the contact information for the given company.
