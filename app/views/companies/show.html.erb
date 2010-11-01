@@ -1,3 +1,10 @@
+  <% if misc_text = localized_info(@company, :misc_text) %>
+    <h2><%= t("companies.show.header_misc_text") %></h2>
+    <div class="box">
+      <%= misc_text %>
+    </div>
+  <% end %>
+
   <h2><%= t("companies.show.header_people") %></h2>
   <% @company.people.each do |person| %>
     <div class="box">
@@ -30,24 +37,26 @@
     </div>
   <% end %>
   
-  <h2><%= t("companies.show.header_reviews") %></h2>
-  <% @company.approved_reviews.each do |review| %>
-    <div class="box">
-      <table>
-        <tr>
-          <th><%= Review.human_attribute_name(:author_company) %></th>
-          <td><%= link_to_item review.author_company %></td>
-        </tr>
-        <tr>
-          <th><%= Review.human_attribute_name(:author_user) %></th>
-          <td><%= link_to_item review.author_user %></td>
-        </tr>
-        <tr>
-          <th><%= Review.human_attribute_name(:text) %></th>
-          <td><%= review.text %></td>
-        </tr>
-      </table>
-    </div>
+  <% if reviews = @company.approved_reviews %>
+    <h2><%= t("companies.show.header_reviews") %></h2>
+    <% reviews.each do |review| %>
+      <div class="box">
+        <table>
+          <tr>
+            <th><%= Review.human_attribute_name(:author_company) %></th>
+            <td><%= link_to_item review.author_company %></td>
+          </tr>
+          <tr>
+            <th><%= Review.human_attribute_name(:author_user) %></th>
+            <td><%= link_to_item review.author_user %></td>
+          </tr>
+          <tr>
+            <th><%= Review.human_attribute_name(:text) %></th>
+            <td><%= review.text %></td>
+          </tr>
+        </table>
+      </div>
+    <% end %>
   <% end %>
 
 <% content_for(:sidebar) do %>

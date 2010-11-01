@@ -2,6 +2,7 @@ module ActiveRecord
   module HasLocalizedInfos
     def self.included(base)
       base.__send__(:has_many, :localized_infos, :as => :item)
+      base.__send__(:after_save, :update_localized_infos)
       base.__send__(:include, InstanceMethods)
     end
     

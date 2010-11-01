@@ -36,7 +36,6 @@ class PostingsController < RemoteController
     resource.update_attributes(params[resource_key])
     if resource.valid?
       resource.save!
-      resource.update_localized_infos
       redirect_to resource
     else
       render :action => :edit

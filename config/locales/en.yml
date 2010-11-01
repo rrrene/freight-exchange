@@ -46,8 +46,9 @@ en:
       page_title: "Edit company"
     show:
       page_title: "{{name}}"
+      header_misc_text: "About us:"
       header_people: "Who works here?"
-      header_reviews: "What are otheres saying?"
+      header_reviews: "What are others saying?"
   
   # FreightsController
   freights:
