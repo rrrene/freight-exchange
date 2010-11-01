@@ -1,4 +1,4 @@
-<% 3.times do %>
+  <h2><%= t("companies.show.header_people") %></h2>
   <% @company.people.each do |person| %>
     <div class="box">
       <h3>
@@ -29,6 +29,31 @@
       </table>
     </div>
   <% end %>
+  
+  <h2><%= t("companies.show.header_reviews") %></h2>
+  <% @company.approved_reviews.each do |review| %>
+    <div class="box">
+      <table>
+        <tr>
+          <th><%= Review.human_attribute_name(:author_company) %></th>
+          <td><%= link_to_item review.author_company %></td>
+        </tr>
+        <tr>
+          <th><%= Review.human_attribute_name(:author_user) %></th>
+          <td><%= link_to_item review.author_user %></td>
+        </tr>
+        <tr>
+          <th><%= Review.human_attribute_name(:text) %></th>
+          <td><%= review.text %></td>
+        </tr>
+      </table>
+    </div>
+  <% end %>
+
+<% content_for(:sidebar) do %>
+  <p>
+    <%= link_to t("common.create_new_review"), new_review_url(:company_id => @company.id), :class => 'create_new_freight' %>
+  </p>
 <% end %>
 
 <%= render_person_info(@company.contact_person) if @company.contact_person %>

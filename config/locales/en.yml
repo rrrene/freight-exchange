@@ -16,6 +16,7 @@ en:
     choice_yes: "Yes"
     choice_no: "No"
     create_new_freight: "Post freight Ad"
+    create_new_review: "Write a review!"
     create_new_loading_space: "Post loading space Ad"
     deleted_object: "-- deleted object --"
     link_back: "« Back"
@@ -45,6 +46,8 @@ en:
       page_title: "Edit company"
     show:
       page_title: "{{name}}"
+      header_people: "Who works here?"
+      header_reviews: "What are otheres saying?"
   
   # FreightsController
   freights:
@@ -145,6 +148,26 @@ en:
     show:
       page_title: "Posting details"
   
+  # ReviewsController
+  reviews:
+    new:
+      page_title: "Review Company"
+      header: "Write a review about '{{company_name}}'"
+    index:
+      page_title: "All reviews"
+      header: "All reviews"
+      intro: "Here you can see all the reviews for your company."
+      table:
+        headers:
+          name: "Name"
+          options: "Options"
+        options:
+          approve: "Approve"
+          delete: "Delete"
+    show:
+      is_approved: "This review is published!"
+      approve_link: "Approve"
+      
   # SearchController
   search:
     common:
@@ -164,11 +187,6 @@ en:
       no_results: "There are no results."
       no_query: "Please type in a search query above."
   
-  # ReviewsController
-  reviews:
-    new:
-      page_title: "Review Company"
-      header: "Write a review about '{{company_name}}'"
 
   # UsersController
   users:

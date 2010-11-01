@@ -1,4 +1,4 @@
 <div class="box">
-  <h2><%= t("reviews.new.header", :company_name => @review.company.name) %></h2>
+  <h2><%= t("reviews.new.header", :company_name => link_to(@review.company.name, @review.company)).html_safe %></h2>
   <%= render 'form' %>
 </div>

@@ -1,0 +1,29 @@
+<div class="box">
+  <h3>
+    <%= t("reviews.index.header") %>
+  </h3>
+  <p>
+    <%= t('reviews.index.intro') %>
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th><%= t('reviews.index.table.headers.name') %></th>
+        <th><%= t('reviews.index.table.headers.options') %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% collection.each do |ar| %>
+        <tr>
+          <td><%= link_to ar.name, ar %></td>
+          <td>
+            <%= link_to t('reviews.index.table.options.approve'), {:action => 'approve', :id => ar}, :class => 'approve' %> 
+            |
+            <%#= link_to t('reviews.index.table.options.delete'), {:action => 'destroy', :id => ar}, :class => 'destroy' %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

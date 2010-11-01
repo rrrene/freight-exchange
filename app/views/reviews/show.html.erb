@@ -1,3 +1,23 @@
 <div class="box">
-  <%= debug resource %>
+  
+  <%= content_tag :h3, t("reviews.show.is_approved") if @review.approved? %>
+  
+  <table>
+    <tr>
+      <th><%= Review.human_attribute_name(:author_company) %></th>
+      <td><%= link_to_item @review.author_company %></td>
+    </tr>
+    <tr>
+      <th><%= Review.human_attribute_name(:author_user) %></th>
+      <td><%= link_to_item @review.author_user %></td>
+    </tr>
+    <tr>
+      <th><%= Review.human_attribute_name(:text) %></th>
+      <td><%= @review.text %></td>
+    </tr>
+  </table>
+  
+  <% form_tag(:action => :approve) do %>
+    <%= submit_tag t("reviews.show.approve_link") %>
+  <% end %>
 </div>
