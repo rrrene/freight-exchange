@@ -11,8 +11,9 @@ en:
         show: "View profile"
       person_information: 
         header: "Personal information"
-        edit: "Edit info"
         please_edit_notice: "Please add more information to your profile."
+        edit: "Edit info"
+        show: "View profile"
     choice_yes: "Yes"
     choice_no: "No"
     create_new_freight: "Post freight Ad"

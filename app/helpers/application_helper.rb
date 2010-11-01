@@ -57,6 +57,15 @@ module ApplicationHelper
     t("recordings.#{rec.action}", opts)
   end
   
+  def link_btn(text, path, opts = {})
+    if icon = opts.delete(:icon)
+      text = content_tag(:span, "", :class => 'icon') << text
+    end
+    text = content_tag(:span, text)
+    opts[:class] = [:minibutton, opts[:class].full?, icon.full? { |i| "btn-#{i}" }].join(' ')
+    link_to text, path, opts
+  end
+  
   def link_to_item(item)
     return t("common.deleted_object") if item.blank?
     text = item.respond_to?(:name) ? item.name : item.to_s

@@ -248,7 +248,7 @@ table tr th h2 {
   margin: 0;
 }
 h3 a.new,
-h3 a.edit,
+h3 align,
 h3 a.show {
   float: right;
   margin-left: 4px;
@@ -267,10 +267,7 @@ a.cancel:hover,
 a.cancel:visited,
 a.delete,
 a.delete:hover,
-a.delete:visited,
-a.edit,
-a.edit:hover,
-a.edit:visited {
+a.delete:visited {
   color: #f00;
   text-decoration: underline;
 }
@@ -284,3 +281,65 @@ fieldset ol li.error input {
   color:#8a1f11;
   border: 2px solid #FBC2C4;
 }
+
+
+/* button basics */ 
+div.frame a.minibutton {
+    display:inline-block;
+    height:23px;
+    padding:0 0 0 3px;
+    font-size:11px;
+    font-weight:bold;
+    color:#333;
+    text-shadow:1px 1px 0 #fff; 
+    background:url(minibutton_matrix.png) 0 0 no-repeat;
+    white-space:nowrap;
+    border:none;
+    overflow:visible;
+    cursor:pointer;
+    text-decoration:none;
+  }
+div.frame a.minibutton>span {
+    display:block;
+    height:23px;
+    padding:0 10px 0 8px;
+    line-height:23px;
+    background:url(minibutton_matrix.png) 100% 0 no-repeat;
+  }
+div.frame a.minibutton:hover, a.minibutton:focus {
+    color:#fff;
+    text-decoration:none;
+    text-shadow:-1px -1px 0 rgba(0,0,0,0.3);
+    background-position:0 -30px;
+  }
+div.frame a.minibutton:hover>span, a.minibutton:focus>span {background-position:100% -30px;}
+div.frame a.minibutton.mousedown{background-position:0 -60px; }
+div.frame a.minibutton.mousedown>span{background-position:100% -60px; }
+  /* with icon */ 
+div.frame a.minibutton .icon {
+    float:left;
+    margin-left:-4px;
+    width:18px;
+    height:22px;
+    background:url(minibutton_icons.png) 0 0 no-repeat;
+  }
+div.frame a.btn-edit .icon {background-position:0 0;}
+div.frame a.btn-edit:hover .icon, a.btn-download:focus .icon {background-position:0 -25px;}
+div.frame a.btn-show .icon {background-position:-20px 0;}
+div.frame a.btn-show:hover .icon, a.btn-download:focus .icon {background-position:-20px -25px;}
+div.frame a.btn-download .icon {background-position:-40px 0;}
+div.frame a.btn-download:hover .icon, a.btn-download:focus .icon {background-position:-40px -25px;}
+div.frame a.btn-upload .icon {background-position:-60px 0;}
+div.frame a.btn-upload:hover .icon, a.btn-download:focus .icon {background-position:-60px -25px;}
+div.frame a.btn-fork .icon {background-position:-80px 0;}
+div.frame a.btn-fork:hover .icon, a.btn-download:focus .icon {background-position:-80px -25px;}
+div.frame a.btn-compare .icon {background-position:-100px 0;}
+div.frame a.btn-compare:hover .icon, a.btn-download:focus .icon {background-position:-100px -25px;}
+div.frame a.btn-leave .icon {background-position:-120px 0;}
+div.frame a.btn-leave:hover .icon, a.btn-download:focus .icon {background-position:-120px -25px;}
+div.frame a.btn-reply .icon {background-position:-140px 0;}
+div.frame a.btn-reply:hover .icon, a.btn-download:focus .icon {background-position:-140px -25px;}
+div.frame a.btn-prev .icon {background-position:-160px 0;}
+div.frame a.btn-prev:hover .icon, a.btn-download:focus .icon {background-position:-160px -25px;}
+div.frame a.btn-next .icon {background-position:-180px 0;}
+div.frame a.btn-next:hover .icon, a.btn-download:focus .icon {background-position:-180px -25px;}

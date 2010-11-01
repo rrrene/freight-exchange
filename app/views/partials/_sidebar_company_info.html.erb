@@ -3,7 +3,7 @@
   <div class="box">
     <h3>
       <%= t "common.sidebar.company_information.header" %>
-      <%= link_to t("common.sidebar.company_information.show"), company_path(company), :class => 'show' %>
+      <%= link_btn t("common.sidebar.company_information.show"), company_path(company), :class => 'show', :icon => :show %>
     </h3>
 
     <table>
@@ -24,8 +24,9 @@
     <% if company == current_company %>
       <%= content_tag(:div, t("common.sidebar.company_information.please_edit_notice"), {:class => 'notice'}) if only_some_attributes_filled?(company) %>
     <% end %>
+    
     <% if company == current_company %>
-      <%= link_to t("common.sidebar.company_information.edit"), edit_company_path(company), :class => 'edit' %>
+      <%= link_btn t("common.sidebar.company_information.edit"), edit_company_path(company), :class => 'edit', :icon => :edit %>
     <% end %>
   </div>
 <% end %>
