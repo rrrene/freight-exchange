@@ -1,7 +1,7 @@
 <div class="box">
   <h3>
     <%= t("#{controller_catalog}.index.header") %>
-    <%= link_new %>
+    <%= link_new unless controller_name =~ /recording/ %>
   </h3>
   <p>
     <%= t("#{controller_catalog}.index.intro") %>

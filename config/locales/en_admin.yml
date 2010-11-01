@@ -29,6 +29,13 @@ en:
         header: "All Settings"
         intro: "Here you see all system specific settings."
 
+    # SearchRecordingsController
+    search_recordings:
+      index:
+        page_title: "All Searches"
+        header: "All Searches"
+        intro: "Here you see all the searches by users."
+
     # StationsController
     stations:
       new:
