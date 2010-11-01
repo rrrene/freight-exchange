@@ -1,1 +1,8 @@
-<%= link_to_result "#{result.origin_site_info.name} - #{result.destination_site_info.name}", result %>
+<div class="image"><%= image_tag "rails.png" %></div>
+<div class="text">
+  <%= link_to result.company.name, result %><br>
+  <b><%= result.origin_site_info.name %></b> <%= l(result.origin_site_info.date, :format => :short) %>
+  -
+  <b><%= result.destination_site_info.name %></b> <%= l(result.destination_site_info.date, :format => :short) %>
+</div>
+<%= clear_both %>

@@ -115,8 +115,8 @@ div.corridor_map div.subtext {
 div.page_title div#search_form {
   margin: 20px 0;
 }
-div.page_title div#search_form input[type=submit] {
-  display: none;
+div.page_title div#search_form input[type=image] {
+  vertical-align: bottom;;
 }
 div.page_title div#search_form .input-wrapper {
   padding: 0;
@@ -150,7 +150,7 @@ div.page_title div#search_form .input-wrapper input#q {
   border: 0;
   margin: 0;
   background: transparent;
-  width: 250px;
+  width: 239px;
   font-size: 20px;
   padding: 3px;
 }
@@ -432,4 +432,18 @@ ul.action_list div.image img {
 }
 ul.action_list div.text strong {
   background-color: #ffa;
+}
+ul.action_list div.avatar {
+  background-color: white;
+  border: 1px solid #D0D0D0;
+  float: left;
+  margin-right: 0.7em;
+  padding: 2px;
+  width: 30px;
+  height: 30px;
+  display: none;
+}
+ul.action_list div.avatar img {
+  width: 30px;
+  height: 30px;
 }

@@ -1,11 +1,12 @@
 <div class="box">
   <h3><%= t "search.common.results.header" %></h3>
   <% if @results[:main].full? %>
-    <ul>
+    <ul class="action_list">
     <% @results[:main].each do |result| %>
       <li>
+        <!--
         <span class="label <%= result.class.to_s.underscore %>"><%= result.class.human_name %></span>
-
+        -->
           <% if template_exists?("/#{result.class.to_s.tableize}/_search_result")%>
             <%= render :partial => "/#{result.class.to_s.tableize}/search_result", :locals => {:result => result} %>
           <% else %>
