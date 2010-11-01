@@ -92,7 +92,8 @@ module ApplicationHelper
   
   # Returns a formatted string for the associated LocalizedInfo object.
   def localized_info(obj, name, lang = I18n.default_locale)
-    format_multiline_input obj.localized_info(name, lang).text
+    text = obj.localized_info(name, lang).text
+    format_multiline_input(text) if text.full?
   end
   
   #  TODO: localized_info_field f, :type_of_goods, :en
