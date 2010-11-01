@@ -88,7 +88,7 @@ module ApplicationHelper
   
   #  TODO: localized_info_field f, :type_of_goods, :en
   # BETTA: f.localized_info_field :type_of_goods, :en
-  def localized_info_field(f, name, lang)
+  def localized_info_field(f, name, lang = current_person.locale)
     render({:partial => '/partials/localized_info_form_content',
               :locals => {:f => f, :name => name, :lang => lang}})
   end

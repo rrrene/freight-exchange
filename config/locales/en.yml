@@ -44,7 +44,7 @@ en:
     update:
       page_title: "Edit company"
     show:
-      page_title: "Company: {{name}}"
+      page_title: "{{name}}"
   
   # FreightsController
   freights:
@@ -112,6 +112,8 @@ en:
     update:
       page_title: "Edit person"
       header: "Personal information"
+    show:
+      page_title: "{{name}}"
   
   # PostingsController
   postings:

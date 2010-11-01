@@ -18,6 +18,9 @@
   <% f.inputs :company_contact_person do %>
     <%= f.input :contact_person, :collection => current_company.people %>
   <% end %>
+  <% f.inputs :company_contact_person do %>
+    <%= localized_info_field f, :misc_text %>
+  <% end %>
   
   <%= f.buttons %>
 <% end %>

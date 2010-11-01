@@ -6,6 +6,11 @@ class Person < ActiveRecord::Base
   has_one :user
   searchable
   
+  include ActiveRecord::HasLocalizedInfos
+  def localized_infos=(array_of_hashes)
+    localized_infos!(array_of_hashes)
+  end
+  
   # TODO: Anrede?
   def name
     "#{first_name} #{last_name}"

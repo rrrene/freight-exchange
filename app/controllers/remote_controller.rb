@@ -28,4 +28,10 @@ class RemoteController < ApplicationController
   inherit_resources
   remote_enabled
   login_required
+  
+  def show
+    show! {
+      page[:title] = t("#{controller_catalog}.show.page_title", {:name => resource.name})
+    }
+  end
 end

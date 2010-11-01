@@ -8,6 +8,11 @@ class Company < ActiveRecord::Base
   belongs_to :contact_person, :class_name => 'Person'
   has_many :recordings, :order => 'created_at DESC'
   
+  include ActiveRecord::HasLocalizedInfos
+  def localized_infos=(array_of_hashes)
+    localized_infos!(array_of_hashes)
+  end
+  
   # For permission handling
   def company # :nodoc:
     self

@@ -16,7 +16,8 @@ en:
         fax: "Fax"
         email: "E-Mail"
         website: "Web"
-        misc: "Additional information"
+        localized_infos:
+          misc_text: "Additional information:"
       freight:
         weight: "Weight (in t)"
         hazmat: "Harzardous material"
@@ -34,6 +35,8 @@ en:
         email: "E-Mail"
         website: "Web"
         locale: "Interface Language"
+        localized_infos:
+          misc_text: "Additional information:"
       user:
         login: "Username"
         email: "E-Mail"

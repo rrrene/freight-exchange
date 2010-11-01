@@ -34,10 +34,4 @@ class CompaniesController < RemoteController
     end
   end
   
-  def show
-    show! {
-      page[:title] = t("#{controller_catalog}.show.page_title", {:name => @company.name})
-    }
-  end
-  
 end

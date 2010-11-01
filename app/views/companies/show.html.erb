@@ -22,10 +22,14 @@
             </tr>
           <% end %>
         <% end %>
+        <tr>
+          <th><%= t("activerecord.attributes.person.localized_infos.misc_text") %></th>
+          <td><%= localized_info(person, :misc_text) %></td>
+        </tr>
       </table>
     </div>
   <% end %>
 <% end %>
 
-<%= render_company_info(@company.contact_person) if @company.contact_person %>
+<%= render_person_info(@company.contact_person) if @company.contact_person %>
 <%= render_company_info(@company) %>

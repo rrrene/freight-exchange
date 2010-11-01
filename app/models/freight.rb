@@ -1,3 +1,4 @@
+
 class Freight < ActiveRecord::Base
   TRANSPORT_TYPE_CHOICES = %w(single_wagon train_set block_train)
   DESIRED_PROPOSAL_TYPE_CHOICES = %w(ton_price package_price)
@@ -8,11 +9,15 @@ class Freight < ActiveRecord::Base
   belongs_to :destination_site_info, :class_name => 'SiteInfo', :dependent => :destroy
   accepts_nested_attributes_for :origin_site_info
   accepts_nested_attributes_for :destination_site_info
-  has_many :localized_infos, :as => :item
   has_many :matching_recordings, :as => 'a', :order => 'result DESC'
   belongs_to :contact_person, :class_name => 'Person'
   after_save :calc_matchings!
   searchable
+  
+  include ActiveRecord::HasLocalizedInfos
+  def localized_infos=(array_of_hashes)
+    localized_infos!(array_of_hashes)
+  end
   
   def calc_matchings!
     LoadingSpace.all.each do |record|
@@ -24,29 +29,11 @@ class Freight < ActiveRecord::Base
       end
     end
   end
-  
-  def localized_infos=(array_of_options)
-    array_of_options.each do |opts|
-      if text = opts[:text].full?
-        self.localized_info(opts[:name], opts[:lang]).text = text
-      end
-    end
-  end
-  
-  def localized_info(name, lang = I18n.default_locale)
-    localized_infos.select { |obj| 
-      (obj.name == name.to_s) && (obj.lang == lang.to_s) 
-    }.first.full? || localized_infos.build(:name => name.to_s, :lang => lang.to_s)
-  end
-  
+
   def matching_loading_spaces(limit = 3)
     matching_recordings.limit(limit).map(&:b)
   end
   alias matching_objects matching_loading_spaces
-  
-  def update_localized_infos
-    localized_infos.each(&:update_or_destroy!)
-  end
   
   def to_search
     search_str = [
