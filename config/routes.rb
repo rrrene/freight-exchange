@@ -41,6 +41,7 @@ BlackBoard::Application.routes.draw do |map|
   
   namespace :admin do
     resources :app_configs
+    resources :recordings
     resources :stations
     resources :search_recordings
     resources :user_roles

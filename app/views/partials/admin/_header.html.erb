@@ -7,6 +7,8 @@
       <div class="navibox">
         <ul class="navigation navigation-right">
           <ul class="navigation navigation-left">
+            <li><%= link_to t("admin.common.navi.recordings"), admin_recordings_path %></li>
+            <li><%= link_to t("admin.common.navi.search_recordings"), admin_search_recordings_path %></li>
             <li><%= link_to t("admin.common.navi.stations"), admin_stations_path %></li>
             <li><%= link_to t("admin.common.navi.user_roles"), admin_user_roles_path %></li>
             <li><%= link_to t("admin.common.navi.app_configs"), admin_app_configs_path %></li>

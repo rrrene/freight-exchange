@@ -6,7 +6,9 @@ en:
     common:
       navi:
         home: "FX Admin"
+        recordings: "Actions"
         stations: "Stations"
+        search_recordings: "Searches"
         user_roles: "User Roles"
         app_configs: "Settings"
         back_to_app: "Back to Frontend"
@@ -29,12 +31,19 @@ en:
         header: "All Settings"
         intro: "Here you see all system specific settings."
 
+    # RecordingsController
+    recordings:
+      index:
+        page_title: "All Actions"
+        header: "All Actions"
+        intro: "Here you see all the actions performed by users."
+
     # SearchRecordingsController
     search_recordings:
       index:
         page_title: "All Searches"
         header: "All Searches"
-        intro: "Here you see all the searches by users."
+        intro: "Here you see all the searches performed by users."
 
     # StationsController
     stations:

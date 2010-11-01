@@ -119,7 +119,7 @@ module ApplicationHelper
   end
   
   def render_partial(partial, options = {})
-    partial = "admin/#{partial}" if admin?
+    partial = "admin/#{partial}" if admin? && template_exists?("/partials/admin/_#{partial}")
     render options.merge(:partial => "/partials/#{partial}")
   end
   

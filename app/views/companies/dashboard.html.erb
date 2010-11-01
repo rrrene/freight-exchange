@@ -2,19 +2,7 @@
 <div class="box">
   <h3><%= t("companies.dashboard.recordings.header") %></h3>
   
-  <ul class="action_list">
-  <% @recordings.each do |recording| %>
-    <li>
-      <div class="image"><%= image_tag "rails.png" %></div>
-      <div class="text">
-        <b><%= l(recording.created_at, :format => :short) %></b><br>
-        <div class="avatar"><%= image_tag "gravatar.png" %></div>
-        <%= humanize_recording(recording).html_safe %>
-      </div>
-      <%= clear_both %>
-    </li>
-  <% end %>
-  </ul>
+  <%= render_partial :recordings, :locals => {:recordings => @recordings} %>
 </div>
 
 <%= render_person_info current_person %>
