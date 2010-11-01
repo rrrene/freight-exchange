@@ -24,9 +24,9 @@ en:
     website_title: "Freight Exchange 2010"
   
   recordings:
-    create: "{{user}} has just created a {{object_class}}: {{object_link}}"
-    update: "{{user}} has just updated a {{object_class}}: {{object_link}}"
-    destroy: "{{user}} has just deleted a {{object_class}}: {{object_link}}"
+    create: "{{user}} <strong>created</strong> a {{object_class}}: {{object_link}}"
+    update: "{{user}} <strong>updated</strong> a {{object_class}}: {{object_link}}"
+    destroy: "{{user}} <strong>deleted</strong> a {{object_class}}: {{object_link}}"
       
   # CompaniesController
   companies:

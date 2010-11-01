@@ -2,11 +2,14 @@
 <div class="box">
   <h3><%= t("companies.dashboard.recordings.header") %></h3>
   
-  <ul>
+  <ul class="action_list">
   <% @recordings.each do |recording| %>
     <li>
-      <small><%= l recording.created_at, :format => :short %></small>
-      <%= humanize_recording(recording).html_safe %>
+      <div class="image"><%= image_tag "rails.png" %></div>
+      <div class="text">
+        <b><%= l(recording.created_at, :format => :short) %></b><br>
+        <%= humanize_recording(recording).html_safe %>
+      </div>
     </li>
   <% end %>
   </ul>

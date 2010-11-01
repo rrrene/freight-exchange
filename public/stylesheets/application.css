@@ -407,3 +407,29 @@ div.frame a.btn-next:hover .icon, a.btn-download:focus .icon {background-positio
   text-decoration: none;
   text-shadow: #2E63A5 0px -1px 0px;
 }
+
+/* Action lists */
+
+ul.action_list,
+ul.action_list li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+ul.action_list li {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+ul.action_list div.image {
+  width: 24px;
+  float: left;
+}
+ul.action_list div.image img {
+  width: 16px;
+  height: 16px;
+}
+ul.action_list div.text strong {
+  background-color: #ffa;
+}
