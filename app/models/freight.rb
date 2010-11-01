@@ -10,6 +10,7 @@ class Freight < ActiveRecord::Base
   accepts_nested_attributes_for :destination_site_info
   has_many :localized_infos, :as => :item
   has_many :matching_recordings, :as => 'a', :order => 'result DESC'
+  belongs_to :contact_person, :class_name => 'Person'
   after_save :calc_matchings!
   searchable
   
@@ -26,7 +27,9 @@ class Freight < ActiveRecord::Base
   
   def localized_infos=(array_of_options)
     array_of_options.each do |opts|
-      self.localized_info(opts[:name], opts[:lang]).text = opts[:text].full?
+      if text = opts[:text].full?
+        self.localized_info(opts[:name], opts[:lang]).text = text
+      end
     end
   end
   
@@ -39,6 +42,7 @@ class Freight < ActiveRecord::Base
   def matching_loading_spaces(limit = 3)
     matching_recordings.limit(limit).map(&:b)
   end
+  alias matching_objects matching_loading_spaces
   
   def update_localized_infos
     localized_infos.each(&:update_or_destroy!)

@@ -104,5 +104,6 @@
 </div>
 
 <% content_for(:sidebar) do %>
-  <%= render_company_info @freight.company %>
+  <%= render_person_info(@freight.contact_person) if @freight.contact_person %>
+  <%= render_company_info(@freight.company) %>
 <% end %>

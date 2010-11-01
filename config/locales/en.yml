@@ -6,8 +6,9 @@ en:
     sidebar:
       company_information: 
         header: "Contact information"
-        edit: "Edit info"
         please_edit_notice: "Please add more information to your company's profile."
+        edit: "Edit info"
+        show: "View profile"
       person_information: 
         header: "Personal information"
         edit: "Edit info"
@@ -42,6 +43,8 @@ en:
       header: "Company information"
     update:
       page_title: "Edit company"
+    show:
+      page_title: "Company: {{name}}"
   
   # FreightsController
   freights:

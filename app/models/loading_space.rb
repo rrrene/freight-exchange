@@ -7,6 +7,7 @@ class LoadingSpace < ActiveRecord::Base
   accepts_nested_attributes_for :origin_site_info
   accepts_nested_attributes_for :destination_site_info
   has_many :localized_infos, :as => :item
+  belongs_to :contact_person, :class_name => 'Person'
   has_many :matching_recordings, :as => 'b', :order => 'result DESC'
   searchable
   
@@ -25,6 +26,7 @@ class LoadingSpace < ActiveRecord::Base
   def matching_freights(limit = 3)
     matching_recordings.limit(limit).map(&:a)
   end
+  alias matching_objects matching_freights
   
   def update_localized_infos
     localized_infos.each(&:update_or_destroy!)

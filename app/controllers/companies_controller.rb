@@ -3,7 +3,7 @@
 class CompaniesController < RemoteController
   login_required :except => [:new, :create]
   same_company_required :except => [:dashboard, :new, :create, :show]
-  role_required :company_admin, :except => [:dashboard, :new, :create, :edit, :update, :show]
+  role_required :company_admin, :except => [:dashboard, :new, :create, :show]
   
   # The dashboard action provides a general overview of the company's 
   # activities.
@@ -35,7 +35,9 @@ class CompaniesController < RemoteController
   end
   
   def show
-    redirect_to root_url # TODO: what to do here?
+    show! {
+      page[:title] = t("#{controller_catalog}.show.page_title", {:name => @company.name})
+    }
   end
   
 end

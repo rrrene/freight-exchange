@@ -120,6 +120,12 @@ class ApplicationController < ActionController::Base
     before_filter :require_same_company, opts
   end
   
+  def permission_denied!
+    page[:title] = "Permission denied."
+    render :text => "You tried to access a restricted area or function.", :layout => 'content_only'
+    return false
+  end
+  
   def record_user_in_recordings
     if logged_in?
       GeneralObserver.always_save(:user_id, current_user.id)
@@ -135,14 +141,12 @@ class ApplicationController < ActionController::Base
   
   def require_role(allowed_roles = [])
     unless current_user && (current_user.roles & allowed_roles).any?
-      page[:title] = "Permission denied."
-      render :text => "You tried to access a restricted area or function.", :layout => 'content_only'
-      return false
+      permission_denied!
     end
   end
   
   def require_same_company
-    if resource && current_user
+    granted = if resource && current_user
       if resource.respond_to?(:company)
         current_user.company == resource.company
       elsif resource.respond_to?(:user)
@@ -150,7 +154,10 @@ class ApplicationController < ActionController::Base
       else
         false
       end
+    else
+      false
     end
+    return permission_denied! unless granted
   end
   
   def require_user

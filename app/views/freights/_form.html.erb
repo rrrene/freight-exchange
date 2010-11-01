@@ -16,6 +16,8 @@
     
     <%= f.input :wagons_provided_by, :collection => collection_choices(Freight, :wagons_provided_by), :as => :radio %>
     <%= f.input :desired_proposal_type, :collection => collection_choices(Freight, :desired_proposal_type), :as => :radio %>
+    
+    <%= f.input :contact_person, :collection => current_company.people %>
   <% end %>
   
   <%= f.buttons %>

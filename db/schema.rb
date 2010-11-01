@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101019191723) do
+ActiveRecord::Schema.define(:version => 20101101115516) do
 
   create_table "app_configs", :force => true do |t|
     t.string   "name"
@@ -21,7 +21,6 @@ ActiveRecord::Schema.define(:version => 20101019191723) do
 
   create_table "companies", :force => true do |t|
     t.string   "name"
-    t.string   "contact_person"
     t.string   "phone"
     t.string   "fax"
     t.string   "mobile"
@@ -35,6 +34,7 @@ ActiveRecord::Schema.define(:version => 20101019191723) do
     t.text     "misc"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "contact_person_id"
   end
 
   create_table "countries", :force => true do |t|
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(:version => 20101019191723) do
     t.string   "desired_proposal_type"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "contact_person_id"
   end
 
   create_table "loading_spaces", :force => true do |t|
@@ -70,6 +71,7 @@ ActiveRecord::Schema.define(:version => 20101019191723) do
     t.string   "transport_type"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "contact_person_id"
   end
 
   create_table "localized_infos", :force => true do |t|

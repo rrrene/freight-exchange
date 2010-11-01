@@ -4,6 +4,8 @@
 class Company < ActiveRecord::Base
   searchable
   has_many :users
+  has_many :people, :through => :users
+  belongs_to :contact_person, :class_name => 'Person'
   has_many :recordings, :order => 'created_at DESC'
   
   # For permission handling
