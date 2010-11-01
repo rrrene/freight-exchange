@@ -195,6 +195,5 @@ class ApplicationController < ActionController::Base
   
   def page
     @page ||= {}
-  end
-  
+  end  
 end

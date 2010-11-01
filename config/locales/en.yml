@@ -19,6 +19,11 @@ en:
     choice_yes: "Yes"
     choice_no: "No"
   
+  recordings:
+    create: "{{user}} has just created a {{object_class}}: {{object_link}}"
+    update: "{{user}} has just updated a {{object_class}}: {{object_link}}"
+    destroy: "{{user}} has just deleted a {{object_class}}: {{object_link}}"
+      
   # CompaniesController
   companies:
     dashboard:

@@ -5,12 +5,8 @@
   <ul>
   <% @recordings.each do |recording| %>
     <li>
-    <span class="label"><%= recording.user.full?(&:name) %></span>
-    <small><%= l recording.created_at, :format => :short %></small><br>
-    <% recording.diff.each do |attr, (before, after)| %>
-      <%= recording.item_type.constantize.human_attribute_name(attr) %>:
-      <%= before.inspect %> -> <%= after.inspect %><br>
-    <% end %>
+      <small><%= l recording.created_at, :format => :short %></small>
+      <%= humanize_recording(recording) %>
     </li>
   <% end %>
   </ul>

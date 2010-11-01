@@ -48,6 +48,15 @@ module ApplicationHelper
     simple_format(h(text)).html_safe
   end
   
+  def humanize_recording(rec)
+    opts = {
+      :user => rec.user.full?(&:name),
+      :object_class => rec.item.full?(&:class),
+      :object_link => rec.item.full? { |o| o.respond_to?(:name) ? o.name : o.to_s },
+    }
+    t("recordings.#{rec.action}", opts)
+  end
+  
   # Returns a link back to the last visited page with a localized caption.
   def link_back(text = t("common.link_back"))
     link_to_function text, "self.history.back();", :class => 'back'
