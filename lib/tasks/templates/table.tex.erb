@@ -1,12 +1,14 @@
 <%= generated_header %>
 
 \begin{table}[h]
-\caption{Aufbau der "`<%= @table.gsub('_', '\_') %>"'-Datenbanktabelle}
-\begin{tabular*}{\textwidth}{|l|l|p{7cm}|l|} \hline
-  \textbf{Name} & \textbf{Typ}  & \textbf{Beschreibung}  & \textbf{Beispiel} \tabularnewline \hline
-<%- @fields.each do |field| -%>
-  <%= field[:name] %> & <%= field[:type].capitalize %> & <%= field[:description] %> & <%= field[:example] %> \tabularnewline \hline
-<%- end -%>
-\end{tabular*}
-\label{tab:schema_<%= @table %>}
+  \begin{center}
+    \caption{Struktur der "`<%= @table.gsub('_', '\_') %>"'-Datenbanktabelle}
+    \begin{tabular}{|l|l|l|l|} \hline
+      \textbf{Name} & \textbf{Typ}  & \textbf{Beschreibung}  & \textbf{Beispiel} \tabularnewline \hline
+    <%- @fields.each do |field| -%>
+      <%= field[:name] %> & <%= field[:type].capitalize %> & <%= field[:description] %> & <%= field[:example].is_a?(String) ? %Q("`#{field[:example]}"') : field[:example] %> \tabularnewline \hline
+    <%- end -%>
+    \end{tabular}
+    \label{tab:schema_<%= @table %>}
+  \end{center}
 \end{table}

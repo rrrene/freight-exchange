@@ -83,9 +83,19 @@ class Doc < Thor
       @table, @fields = table, fields
       @fields.each_with_index do |field_hash, i|
         name = field_hash[:name]
-        field_hash = field_hash.merge(schema_hash[@table][name.intern])
+        desc_table = schema_hash[@table]
+        if desc_table
+          desc_hash = desc_table[name.intern]
+          if desc_hash
+            field_hash = field_hash.merge(desc_hash)
+          else
+            warn "#{table}: no desc_hash for #{name}"
+          end  
+        else
+          warn "#{table}: no desc_table for #{table}"
+        end
         field_hash.each do |key, value|
-          field_hash[key] = escape_for_template(value)
+          field_hash[key] = escape_for_template(value) if value.is_a?(String)
         end
         @fields[i] = field_hash
       end
@@ -225,11 +235,11 @@ class Doc < Thor
         :company_id => {:description => "Verweis auf die Firma, zu der das Objekt gehört.", :example => 1},
       },
       "matching_recordings" => {
-        :a_type => {:description => "", :example => ""},
-        :a_id => {:description => "", :example => ""},
-        :b_type => {:description => "", :example => ""},
-        :b_id => {:description => "", :example => ""},
-        :result => {:description => "", :example => ""},
+        :a_type => {:description => "Verweist auf den Typ des A-Objekts", :example => "Freight"},
+        :a_id => {:description => "Verweist auf die ID des A-Objekts", :example => 182},
+        :b_type => {:description => "Verweist auf den Typ des B-Objekts", :example => "LoadingSpace"},
+        :b_id => {:description => "Verweist auf die ID des B-Objekts", :example => 98},
+        :result => {:description => "Das Resultat des Vergleichs", :example => 0.765},
       },
       "reviews" => {
         :author_user_id => {:description => "", :example => ""},
