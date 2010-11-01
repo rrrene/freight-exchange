@@ -63,6 +63,7 @@
   <p>
     <%= link_to t("common.create_new_review"), new_review_url(:company_id => @company.id), :class => 'create_new_freight' %>
   </p>
+  <%= clear_both %>
 <% end %>
 
 <%= render_person_info(@company.contact_person) if @company.contact_person %>

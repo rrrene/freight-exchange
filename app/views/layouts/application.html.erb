@@ -19,9 +19,9 @@
           </div>
         <% end %>
         <%= render_partial :header %>
-        <%= render_partial :page_title %>
         <div class="frame">
           <div class="container" id="frame">
+            <%= render_partial :page_title %>
             <div id="content" class="span-16"><%= yield %></div>
             <%= render_partial :sidebar %>
           </div>

@@ -2,46 +2,52 @@
   <div class="container" id="header">
     <div class="span-24 last" id="first-header">
       <%= link_to image_tag('home_logo.gif'), root_url %>
-      <ul class="navigation navigation-right">
+      <div class="navibox">
+        <ul class="navigation navigation-right">
         
-        <%- if current_user.full? { |u| u.is?(:administrator) } -%>
-          <li><%= link_to("Backend", admin_root_path) %></li>
-        <%- end -%>
+          <%- if current_user.full? { |u| u.is?(:administrator) } -%>
+            <li><%= link_to("Backend", admin_root_path) %></li>
+          <%- end -%>
         
-        <% if current_user.full? %>
-          <li><%= link_to_unless_current("My Company", company_dashboard_path) %></li>
-          <li><%= link_to_unless_current "Logout", logout_path %></li>
-        <% else %>
-            <li><%= link_to("About", about_url) %></li>
-          <li><%= link_to_unless_current "Login", login_path %></li>
-          <li><%= link_to_unless_current "Register", register_path %></li>
-        <% end %>
-      </ul>
+          <% if current_user.full? %>
+            <li><%= link_to_unless_current("Dashboard", company_dashboard_path) %></li>
+            <li>
+              <% if posting_freights? %>
+                <%= link_to_unless_current("Freights", freights_path) %>
+              <% else %>
+                <%= link_to_unless_current("Loading Spaces", loading_spaces_path) %>
+              <% end %>
+            </li>
+            <li><%= link_to_unless_current("People", people_path) %></li>
+            <li><%= link_to_unless_current("Reviews", reviews_path) %></li>
+            <li><%= link_to_unless_current "Logout", logout_path %></li>
+          <% else %>
+            <li><%= link_to_unless_current "Login", login_path %></li>
+            <li><%= link_to_unless_current "Register", register_path %></li>
+          <% end %>
+        </ul>
+      </div>
     </div>
 
     <div class="container" id="second-header">
       <ul class="navigation navigation-left">
+        <!--
         <li><span>
           <b><%= Station.count %></b> stations and <b><%= User.count %></b> users and stuff...
         </span></li>
+        -->
       </ul>
       <ul class="navigation navigation-right">
-        <% if current_user.full? %>
+        
+        <% if false && current_user.full? %>
           <li><span>Welcome <%= current_user.login %>!</span></li>
-          <li><%= link_to_unless_current("Dashboard", company_dashboard_path) %></li>
           <li>
-            <% if posting_freights? %>
-              <%= link_to_unless_current("Freights", freights_path) %>
-            <% else %>
-              <%= link_to_unless_current("Loading Spaces", loading_spaces_path) %>
+            <div id="search_form">
+            <%= form_tag search_url, :method => :get do %>
+              <div class="input-wrapper"><%= text_field_tag :q, h(params[:q]) %><%= submit_tag t('search.common.button'), :name => nil %></div>
             <% end %>
+            </div>
           </li>
-          <li><%= link_to_unless_current("People", people_path) %></li>
-          <li><%= link_to_unless_current("Reviews", reviews_path) %></li>
-          <li><%= link_to_unless_current "Logout", logout_path %></li>
-        <% else %>
-          <li><%= link_to_unless_current "Login", login_path %></li>
-          <li><%= link_to_unless_current "Register", register_path %></li>
         <% end %>
       </ul>
     </div>
