@@ -20,6 +20,10 @@ class LoadingSpace < ActiveRecord::Base
   end
   alias matching_objects matching_freights
   
+  def name
+    "#{origin_site_info.name} - #{destination_site_info.name}"
+  end
+  
   def to_search
     search_str = [
       origin_site_info.to_search,

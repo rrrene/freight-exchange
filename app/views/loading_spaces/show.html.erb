@@ -1,7 +1,10 @@
 <div class="box">
   <h3>
     <%= t('loading_spaces.show.header') %>
-    <%= link_to t("loading_spaces.common.edit_link"), edit_loading_space_path(@loading_space), :class => 'edit' %>
+    <% if resource.company == current_company %>
+      <%= link_to t("loading_spaces.common.edit_link"), edit_loading_space_path(@loading_space), :class => 'edit' %>
+      <%= link_to t('loading_spaces.common.template_link'), new_resource_url(:parent_id => resource.id), :class => 'edit' %>
+    <% end %>
   </h3>
   <% %w(origin destination).each do |site| %>
     <div style="width: 48%; margin-right: 10px; float: left;">
