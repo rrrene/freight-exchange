@@ -47,10 +47,6 @@
       <td><%= @loading_space.weight %></td>
     </tr>
     <tr>
-      <th><%= resource_class.human_attribute_name(:goods_text) %></th>
-      <td><%= localized_info(@loading_space, :goods_text) %></td>
-    </tr>
-    <tr>
       <th><%= resource_class.human_attribute_name(:hazmat) %></th>
       <td><%= yes_no @loading_space.hazmat %></td>
     </tr>
@@ -63,12 +59,10 @@
       <th><%= resource_class.human_attribute_name(:transport_text) %></th>
       <td><%= localized_info(@loading_space, :transport_text) %></td>
     </tr>
-    
     <tr>
       <th><%= resource_class.human_attribute_name(:misc_text) %></th>
       <td><%= localized_info(@loading_space, :misc_text) %></td>
     </tr>
-
   </table>
   
 </div>
@@ -80,17 +74,11 @@
     <% matching_results.each do |result| %>
       <li>
         <span class="label <%= result.class.to_s.underscore %>"><%= result.class.human_name %></span>
-
-          <% if template_exists?("/#{result.class.to_s.tableize}/_search_result")%>
-            <%= render :partial => "/#{result.class.to_s.tableize}/search_result", :locals => {:result => result} %>
-          <% else %>
-            <% if result.is_a?(Posting) %>
-              <%= link_to "#{result.origin_station.name} - #{result.destination_station.name}", result %>
-            <% else %>
-              <%= link_to result.name, result %>
-            <% end %>
-          <% end %>
-
+        <% if template_exists?("/#{result.class.to_s.tableize}/_search_result")%>
+          <%= render :partial => "/#{result.class.to_s.tableize}/search_result", :locals => {:result => result} %>
+        <% else %>
+          <%= link_to result.name, result %>
+        <% end %>
       </li>
     <% end %>
     </ul>
@@ -98,5 +86,6 @@
 </div>
 
 <% content_for(:sidebar) do %>
-  <%= render_company_info @loading_space.company %>
+  <%= render_person_info(resource.contact_person) if resource.contact_person %>
+  <%= render_company_info(resource.company) %>
 <% end %>

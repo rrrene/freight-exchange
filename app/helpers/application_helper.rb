@@ -97,6 +97,10 @@ module ApplicationHelper
     ar.attributes_filled < AppConfig['contact_info.complete_percentage'].to_f
   end
   
+  def posting_freights?
+    current_user.full?(&:posting_type) == 'Freight'
+  end
+  
   # Renders a partial with the contact information for the given company.
   # Example:
   #   <%= render_person_info current_company %>

@@ -17,16 +17,19 @@ en:
         email: "E-Mail"
         website: "Web"
         localized_infos:
-          misc_text: "Additional information:"
+          misc_text: "Additional information"
       freight:
         weight: "Weight (in t)"
         hazmat: "Harzardous material"
         localized_infos:
-          goods_text: "Type of Goods:"
+          goods_text: "Type of Goods"
           transport_text: "Which kind of wagons are required?"
       loading_space:
         weight: "Weight (in t)"
         hazmat: "Harzardous material"
+        localized_infos:
+          misc_text: "Additional information"
+          transport_text: "Which kind of wagons are required?"
       person:
         first_name: "Forename"
         last_name: "Surname"
@@ -36,7 +39,7 @@ en:
         website: "Web"
         locale: "Interface Language"
         localized_infos:
-          misc_text: "Additional information:"
+          misc_text: "Additional information"
       user:
         login: "Username"
         email: "E-Mail"

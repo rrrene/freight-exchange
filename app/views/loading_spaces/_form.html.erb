@@ -8,7 +8,14 @@
     <%= f.input :hazmat, :collection => [["yes", true], ["no", false]] %>
     
     <%= f.input :weight, :as => :string %>
+
     <%= f.input :transport_type, :collection => collection_choices(Freight, :transport_type), :include_blank => false %>
+    <%= localized_info_field f, :transport_text %>
+
+    <%= localized_info_field f, :misc_text %>
+  <% end %>
+  <%= f.inputs :posting_contact do %>
+    <%= f.input :contact_person, :collection => current_company.people %>
   <% end %>
   
   <%= f.buttons %>

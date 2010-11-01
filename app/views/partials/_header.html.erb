@@ -30,7 +30,13 @@
           <li><span>Welcome <%= current_user.login %>!</span></li>
           <li><%= link_to_unless_current("Dashboard", company_dashboard_path) %></li>
           <li><%= link_to_unless_current("Users", users_path) %></li>
-          <li><%= link_to_unless_current("Freights", freights_path) %></li>
+          <li>
+            <% if posting_freights? %>
+              <%= link_to_unless_current("Freights", freights_path) %>
+            <% else %>
+              <%= link_to_unless_current("Loading Spaces", loading_spaces_path) %>
+            <% end %>
+          </li>
           <li><%= link_to_unless_current "Logout", logout_path %></li>
         <% else %>
           <li><%= link_to_unless_current "Login", login_path %></li>

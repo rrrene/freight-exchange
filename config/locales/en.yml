@@ -86,6 +86,20 @@ en:
       edit_link: "Edit this posting"
       new_link: "Create another posting"
       template_link: "Use as template"
+    index:
+      page_title: "All loading space postings"
+      header: "All loading space postings"
+      intro: "Here you can see all the loading space postings of your company."
+      table:
+        headers:
+          date: "Date"
+          origin: "Origin"
+          destination: "Destination"
+          options: "Options"
+        options:
+          edit: "Edit"
+          delete: "Delete"
+          template: "Use as template"
     new:
       page_title: "New loading space posting"
     edit:

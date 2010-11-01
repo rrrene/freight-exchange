@@ -8,3 +8,7 @@
     <%= f.input :password %>
     <%= f.input :password_confirmation %>
   <% end %>
+  
+  <% f.inputs :posting do %>
+    <%= f.input :posting_type, :collection => %w(Freight LoadingSpace), :include_blank => false %>
+  <% end %>

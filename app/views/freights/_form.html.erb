@@ -10,13 +10,14 @@
     <%= localized_info_field f, :goods_text %>
         
     <%= f.input :weight, :as => :string %>
+    
     <%= f.input :transport_type, :collection => collection_choices(Freight, :transport_type), :include_blank => false %>
-     
     <%= localized_info_field f, :transport_text %>
     
     <%= f.input :wagons_provided_by, :collection => collection_choices(Freight, :wagons_provided_by), :as => :radio %>
     <%= f.input :desired_proposal_type, :collection => collection_choices(Freight, :desired_proposal_type), :as => :radio %>
-    
+  <% end %>
+  <%= f.inputs :posting_contact do %>
     <%= f.input :contact_person, :collection => current_company.people %>
   <% end %>
   
