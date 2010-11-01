@@ -24,6 +24,8 @@ class RootController < ApplicationController
         # db has to be seeded to proceed
         render :text => 'Run `rake db:seed` and restart your server!', :layout => true        
       end
+    else
+      redirect_to company_dashboard_url
     end
   end
   
