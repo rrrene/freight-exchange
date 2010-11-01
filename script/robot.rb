@@ -27,7 +27,7 @@ Factory.define "AdminRobot", :class => "User" do |u|
   u.person_attributes {
     person = {}
     person[:gender] = Random.boolean ? 'female' : 'male'
-    person[:first_name] = Random.method("firstname_#{person[:gender]}")
+    person[:first_name] = Random.method("firstname_#{person[:gender]}").call
     person[:last_name] = Random.lastname
     person
   }
