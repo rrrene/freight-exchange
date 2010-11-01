@@ -251,6 +251,7 @@ h3 a.new,
 h3 align,
 h3 a.show {
   float: right;
+  margin-top: -6px;
   margin-left: 4px;
   text-transform: none;
 }
