@@ -5,12 +5,12 @@ en:
   common:
     sidebar:
       company_information: 
-        header: "Contact information"
+        header: "Company information"
         please_edit_notice: "Please add more information to your company's profile."
         edit: "Edit info"
         show: "View profile"
       person_information: 
-        header: "Personal information"
+        header: "Contact information"
         please_edit_notice: "Please add more information to your profile."
         edit: "Edit info"
         show: "View profile"

@@ -1,3 +1,19 @@
 <div class="box">
-  <%= debug resource %>
+    <table>
+      <% %w(phone fax email website).each do |attr| %>
+        <% if @person[attr].full? %>
+          <tr>
+            <th><%= Person.human_attribute_name(attr) %></th>
+            <td><%= auto_link @person[attr] %></td>
+          </tr>
+        <% end %>
+      <% end %>
+        <tr>
+          <th><%= t("activerecord.attributes.person.localized_infos.misc_text") %></th>
+          <td><%= localized_info(@person, :misc_text) %></td>
+        </tr>
+    </table>
+    
 </div>
+
+<%= render_company_info(@person.company) %>

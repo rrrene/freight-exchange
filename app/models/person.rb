@@ -4,6 +4,7 @@ class Person < ActiveRecord::Base
   GENDER_CHOICES = %w(male female)
   LOCALE_CHOICES = I18n.available_locales.map(&:to_s)
   has_one :user
+  has_one :company, :through => :user
   searchable
   
   include ActiveRecord::HasLocalizedInfos
