@@ -109,25 +109,6 @@ ActiveRecord::Schema.define(:version => 20101101133919) do
     t.datetime "updated_at"
   end
 
-  create_table "postings", :force => true do |t|
-    t.string   "type"
-    t.integer  "user_id"
-    t.string   "origin_contractor"
-    t.string   "destination_contractor"
-    t.integer  "origin_station_id"
-    t.integer  "destination_station_id"
-    t.datetime "origin_date"
-    t.datetime "destination_date"
-    t.text     "goods_type"
-    t.string   "wagon_type"
-    t.text     "wagon_text"
-    t.integer  "loading_meter"
-    t.integer  "weight"
-    t.text     "misc_text"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "recordings", :force => true do |t|
     t.string   "item_type",  :limit => 30
     t.integer  "item_id"

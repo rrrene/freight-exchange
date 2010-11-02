@@ -189,6 +189,13 @@ en:
       no_results: "There are no results."
       no_query: "Please type in a search query above."
   
+  #SetupController
+  setup:
+    index:
+      page_title: "Welcome"
+      header: "Setup"
+      intro: "The software just created your admin account. You can customize this account by clicking the button above:"
+      edit_admin_link: "Edit your admin user"
 
   # UsersController
   users:

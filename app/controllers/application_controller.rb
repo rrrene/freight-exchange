@@ -54,6 +54,16 @@ class ApplicationController < ActionController::Base
     AppConfig[:demo_mode].full?
   end
   
+  # Returns <tt>true</tt> if the application was just set up.
+  def just_set_up?
+    AppConfig[:just_set_up] == true
+  end
+  
+  # Saves an AppConfig, that the application was just set up.
+  def just_set_up!
+    AppConfig[:just_set_up] = false
+  end
+  
   def api_request?
     [Mime::XML, Mime::JSON].include?(request.format)
   end

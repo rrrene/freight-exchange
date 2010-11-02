@@ -62,7 +62,11 @@ module ApplicationHelper
       text = content_tag(:span, "", :class => 'icon') << text
     end
     text = content_tag(:span, text)
-    opts[:class] = [:minibutton, opts[:class].full?, icon.full? { |i| "btn-#{i}" }].join(' ')
+    opts[:class] = [
+        :minibutton, 
+        opts[:class].full? ? opts[:class] : icon.full?, 
+        icon.full? { |i| "btn-#{i}" }
+      ].compact.join(' ')
     link_to text, path, opts
   end
   
