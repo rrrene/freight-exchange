@@ -9,9 +9,7 @@ module Matching
     # Returns the likeness of a Freight and a LoadingSpace object.
     #   Match.fls Freight.first, LoadingSpace.first # => 0.977920227850516
     def compare_freight_and_loading_space(f = Freight.first, l = LoadingSpace.first)
-      o = Compare::FreightToLoadingSpace.new(f, l)
-      raise o.inspect
-      o.result
+      Compare::FreightToLoadingSpace.new(f, l).result
     end
     alias fls compare_freight_and_loading_space
   end

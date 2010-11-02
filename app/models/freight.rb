@@ -9,7 +9,7 @@ class Freight < ActiveRecord::Base
   belongs_to :destination_site_info, :class_name => 'SiteInfo', :dependent => :destroy
   accepts_nested_attributes_for :origin_site_info
   accepts_nested_attributes_for :destination_site_info
-  has_many :matching_recordings, :as => 'a', :order => 'result DESC'
+  has_many :matching_recordings, :as => 'a', :order => 'result DESC', :dependent => :destroy
   belongs_to :contact_person, :class_name => 'Person'
   after_save :calc_matchings!
   searchable

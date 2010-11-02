@@ -7,7 +7,7 @@ class LoadingSpace < ActiveRecord::Base
   accepts_nested_attributes_for :origin_site_info
   accepts_nested_attributes_for :destination_site_info
   belongs_to :contact_person, :class_name => 'Person'
-  has_many :matching_recordings, :as => 'b', :order => 'result DESC'
+  has_many :matching_recordings, :as => 'b', :order => 'result DESC', :dependent => :destroy
   searchable
   
   include ActiveRecord::HasLocalizedInfos
