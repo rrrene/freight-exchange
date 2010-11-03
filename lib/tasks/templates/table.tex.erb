@@ -1,14 +1,21 @@
 <%= generated_header %>
-
+<%-
+  @table_schema = if %w(freights loading_spaces).include?(@table)
+    'p{.3\textwidth}|p{.09\textwidth}|p{.35\textwidth}|p{.15\textwidth}'
+  elsif %w(companies people users).include?(@table)
+    'p{.3\textwidth}|p{.09\textwidth}|p{.26\textwidth}|p{.24\textwidth}'
+  end
+  @table_schema ||= 'l|p{.09\textwidth}|p{.4\textwidth}|l'
+-%>
 \begin{table}[h]
   \begin{center}
-    \caption{Struktur der "`<%= @table.gsub('_', '\_') %>"'-Datenbanktabelle}
-    \begin{tabular}{|l|l|l|l|} \hline
+    \begin{tabular}{|<%= @table_schema %>|} \hline
       \textbf{Name} & \textbf{Typ}  & \textbf{Beschreibung}  & \textbf{Beispiel} \tabularnewline \hline
     <%- @fields.each do |field| -%>
       <%= field[:name] %> & <%= field[:type].capitalize %> & <%= field[:description] %> & <%= field[:example].is_a?(String) ? %Q("`#{field[:example]}"') : field[:example] %> \tabularnewline \hline
     <%- end -%>
     \end{tabular}
+    \caption{Struktur der "`<%= @table.gsub('_', '\_') %>"'-Datenbanktabelle}
     \label{tab:schema_<%= @table %>}
   \end{center}
 \end{table}
