@@ -1,6 +1,6 @@
 <%= generated_header %>
 <%-
-  @table_schema = if %w(freights loading_spaces).include?(@table)
+  @table_schema = if %w(freights loading_spaces reviews site_infos).include?(@table)
     'p{.3\textwidth}|p{.09\textwidth}|p{.35\textwidth}|p{.15\textwidth}'
   elsif %w(companies people users).include?(@table)
     'p{.3\textwidth}|p{.09\textwidth}|p{.26\textwidth}|p{.24\textwidth}'
