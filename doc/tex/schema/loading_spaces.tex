@@ -1,18 +1,29 @@
-% This file was generated Wed Nov 03 21:38:09 +0100 2010
-%!TEX root = ..//Users/rene/Sites/github/diplom.rails/lib/tasks/../../doc/tex/doc.tex
-\begin{table}[h]
+% This file was generated Thu Nov 04 14:11:13 +0100 2010
+%!TEX root = ../c:/Dokumente und Einstellungen/rf/github/diplom.rails/lib/tasks/../../doc/tex/doc.tex
+
+\begin{table} %[h]
   \begin{center}
     \begin{tabular}{|p{.3\textwidth}|p{.09\textwidth}|p{.35\textwidth}|p{.15\textwidth}|} \hline
       \textbf{Name} & \textbf{Typ}  & \textbf{Beschreibung}  & \textbf{Beispiel} \tabularnewline \hline
+
       user\_id & Integer & Verweis auf den Benutzer, dem das Objekt gehört. & 1 \tabularnewline \hline
+
       company\_id & Integer & Verweis auf die Firma, zu der das Objekt gehört. & 1 \tabularnewline \hline
+
       origin\_site\_info\_id & Integer & Verweis auf den Startort & 34 \tabularnewline \hline
+
       destination\_site\_info\_id & Integer & Verweis auf den Zielort & 35 \tabularnewline \hline
+
       weight & Integer & Gewicht der Fracht (in t) & 50 \tabularnewline \hline
+
       loading\_meter & Integer & Lademeter & 30 \tabularnewline \hline
+
       hazmat & Boolean & Ist das Gut ein Gefahrgut? & true \tabularnewline \hline
+
       transport\_type & String & Art der Wagen & single\_wagon \tabularnewline \hline
+
       contact\_person\_id & Integer & Verweis auf die Person, die Ansprechpartner sein soll. & 1 \tabularnewline \hline
+
     \end{tabular}
     \caption{Struktur der "`loading\_spaces"'-Datenbanktabelle}
     \label{tab:schema_loading_spaces}

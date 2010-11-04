@@ -1,24 +1,41 @@
-% This file was generated Wed Nov 03 21:38:09 +0100 2010
-%!TEX root = ..//Users/rene/Sites/github/diplom.rails/lib/tasks/../../doc/tex/doc.tex
-\begin{table}[h]
+% This file was generated Thu Nov 04 14:11:13 +0100 2010
+%!TEX root = ../c:/Dokumente und Einstellungen/rf/github/diplom.rails/lib/tasks/../../doc/tex/doc.tex
+
+\begin{table} %[h]
   \begin{center}
     \begin{tabular}{|p{.3\textwidth}|p{.09\textwidth}|p{.26\textwidth}|p{.24\textwidth}|} \hline
       \textbf{Name} & \textbf{Typ}  & \textbf{Beschreibung}  & \textbf{Beispiel} \tabularnewline \hline
+
       login & String & Benutzername & "`max.mustermann"' \tabularnewline \hline
+
       email & String & E-Mail & "`mm@example.org"' \tabularnewline \hline
+
       crypted\_password & String & Verschlüsseltes Passwort & "`55024db979..."' \tabularnewline \hline
+
       password\_salt & String & Geheimer Passwortschlüssel & "`55024db979..."' \tabularnewline \hline
+
       persistence\_token & String &  & "`"' \tabularnewline \hline
+
       single\_access\_token & String &  & "`"' \tabularnewline \hline
+
       perishable\_token & String &  & "`"' \tabularnewline \hline
+
       login\_count & Integer & Anzahl Logins & 120 \tabularnewline \hline
+
       failed\_login\_count & Integer & Fehlgeschlagene Loginversuche & 13 \tabularnewline \hline
+
       current\_login\_ip & String & Aktuelle IP & "`192.188.142.11"' \tabularnewline \hline
+
       last\_login\_ip & String & Letzte IP & "`192.188.142.11"' \tabularnewline \hline
+
       company\_id & Integer & Verweis auf die Firma, zu der der Benutzer gehört. & 1 \tabularnewline \hline
+
       person\_id & Integer & Verweis auf die Person, zu der der Benutzer gehört. & 1 \tabularnewline \hline
+
       api\_key & String & Alphanumberischer Schlüssel zur Ansteuerung der XML/JSON-API & "`55024db979..."' \tabularnewline \hline
+
       posting\_type & String &  &  \tabularnewline \hline
+
     \end{tabular}
     \caption{Struktur der "`users"'-Datenbanktabelle}
     \label{tab:schema_users}

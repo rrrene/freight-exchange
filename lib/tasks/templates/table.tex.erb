@@ -7,12 +7,13 @@
   end
   @table_schema ||= 'l|p{.09\textwidth}|p{.4\textwidth}|l'
 -%>
-\begin{table}[h]
+\begin{table}
   \begin{center}
     \begin{tabular}{|<%= @table_schema %>|} \hline
       \textbf{Name} & \textbf{Typ}  & \textbf{Beschreibung}  & \textbf{Beispiel} \tabularnewline \hline
     <%- @fields.each do |field| -%>
-      <%= field[:name] %> & <%= field[:type].capitalize %> & <%= field[:description] %> & <%= field[:example].is_a?(String) ? %Q("`#{field[:example]}"') : field[:example] %> \tabularnewline \hline
+      <%= field[:name] %> & <%= field[:type].capitalize %> & <%= field[:description] %> & <%= field[:example].is_a?(String) ? %Q("`#{field[:example]}"') : field[:example] %> \tabularnewline 
+      \hline
     <%- end -%>
     \end{tabular}
     \caption{Struktur der "`<%= @table.gsub('_', '\_') %>"'-Datenbanktabelle}
