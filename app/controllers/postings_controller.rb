@@ -43,6 +43,15 @@ class PostingsController < RemoteController
     end
   end
   
+  def show
+    show! {
+      if parent_id = params[:search_recording_id]
+        opts = {:user_id => current_user.id, :parent_id => parent_id, :result => resource}
+        @search_recording = SearchRecording.create(opts)
+      end
+    }
+  end
+  
   private
   
   def collection=(val)
