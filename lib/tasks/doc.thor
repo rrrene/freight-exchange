@@ -46,8 +46,8 @@ class Doc < Thor
       end
       tex_file = rel_path.gsub(/(\.html)$/, '.tex').gsub('/', '-')
       tex = RDocHTML2LaTex.new(html_file)
-      tex.write_file( File.join(tex_path, tex_file) )
       unless tex.empty? && !options[:all]
+        tex.write_file( File.join(tex_path, tex_file) )
         tex_includes << tex_file.gsub('.tex', '')
       else
         alert "excluded: #{tex_file}"
@@ -275,6 +275,7 @@ class Doc < Thor
         :failed_login_count => {:description => "Fehlgeschlagene Loginversuche", :example => 13},
         :current_login_ip => {:description => "Aktuelle IP", :example => "192.188.142.11"},
         :last_login_ip => {:description => "Letzte IP", :example => "192.188.142.11"},
+        :posting_type => {:description => "Verweis auf die Inserate, die der Benutzer einstellt.", :example => "Freight"},
         :company_id => {:description => "Verweis auf die Firma, zu der der Benutzer gehört.", :example => 1},
         :person_id => {:description => "Verweis auf die Person, zu der der Benutzer gehört.", :example => 1},
         :api_key => {:description => "Alphanumberischer Schlüssel zur Ansteuerung der XML/JSON-API", :example => "55024db979..."}, #55024db979499d5568f0859d046da09f47234a74
