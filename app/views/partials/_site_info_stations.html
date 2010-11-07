@@ -1,9 +1,9 @@
 <script type="text/javascript">
   site_info_prefix = "<%= resource.class.to_s.underscore %>";
-  var all_stations = {
-    <% Station.all.each do |station| %>
-    '<%= station.id %>': { <%= Station::SITE_ATTRIBUTES.map { |field|
-        %Q('#{field}': "#{station.__send__(field).to_s}")
+  var all_site_infos = {
+    <% current_user.recent_site_infos.each do |site_info| %>
+    '<%= site_info.id %>': { <%= SiteInfo::SITE_ATTRIBUTES.map { |field|
+        %Q('#{field}': "#{site_info.__send__(field).to_s}")
       }.join(', ').html_safe %> },
     <% end %>
     '0': {}

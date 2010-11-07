@@ -8,6 +8,8 @@ class Company < ActiveRecord::Base
   belongs_to :contact_person, :class_name => 'Person'
   has_many :recordings, :order => 'created_at DESC'
   has_many :reviews
+  has_many :freights
+  has_many :loading_spaces
   
   def approved_reviews
     reviews.where('approved_by_id NOT NULL')

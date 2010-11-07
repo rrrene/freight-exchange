@@ -19,12 +19,12 @@ function login_from_name(name) {
 
 var site_info_prefix = "";
 
-function fillSiteInfo(site, station_id) {
-  var station = all_stations[station_id];
-  for(var i in station) {
-    var ele = jQuery("#"+site_info_prefix+'_'+site+'_site_info_attributes_'+i);
+function fillSiteInfo(origin_or_destination, site_info_id) {
+  var site_info = all_site_infos[site_info_id];
+  for(var i in site_info) {
+    var ele = jQuery("#"+site_info_prefix+'_'+origin_or_destination+'_site_info_attributes_'+i);
     if( ele ) {
-      ele.val(station[i]);
+      ele.val(site_info[i]);
     }
   }
 }

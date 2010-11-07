@@ -7,10 +7,10 @@
       <label>template:</label>
       <select onChange="fillSiteInfo('<%= site %>', this.value); return false;">
         <option selected="selected">--</option>
-        <%= options_for_select(Station.all.map { |station| [station.name, station.id] }) %>
+        <%= options_for_select(current_user.recent_site_infos(site).map { |site_info| [site_info.name, site_info.id] }) %>
       </select>
     </li>
-    <% Station::SITE_ATTRIBUTES.each do |field| %>
+    <% SiteInfo::SITE_ATTRIBUTES.each do |field| %>
       <%= f_site.input field, :as => :string %>
     <% end %>
     <%= f_site.input :side_track_available %>

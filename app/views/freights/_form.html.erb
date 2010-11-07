@@ -10,6 +10,7 @@
     <%= localized_info_field f, :goods_text %>
         
     <%= f.input :weight, :as => :string %>
+    <%= f.input :loading_meter, :as => :string %>
     
     <%= f.input :transport_type, :collection => collection_choices(Freight, :transport_type), :include_blank => false %>
     <%= localized_info_field f, :transport_text %>
@@ -22,8 +23,4 @@
   <% end %>
   
   <%= f.buttons %>
-<% end %>
-
-<% content_for(:sidebar) do %>
-  <%= debug @freight %>
 <% end %>
