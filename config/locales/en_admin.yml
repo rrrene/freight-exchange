@@ -10,6 +10,7 @@ en:
         stations: "Stations"
         search_recordings: "Searches"
         user_roles: "User Roles"
+        users: "Users"
         app_configs: "Settings"
         back_to_app: "Back to Frontend"
       new_link: "Create a new one"
@@ -74,6 +75,17 @@ en:
         page_title: "All Roles"
         header: "All Roles"
         intro: "Here you see all user roles."
+
+    # UsersController
+    users:
+      edit:
+        page_title: "Edit User"
+      update:
+        page_title: "Edit User"
+      index:
+        page_title: "All Users"
+        header: "All Users"
+        intro: "Here you see all users."
 
     # CompaniesController
     companies:

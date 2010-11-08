@@ -48,6 +48,7 @@ BlackBoard::Application.routes.draw do |map|
     resources :stations
     resources :search_recordings
     resources :user_roles
+    resources :users
     root :to => "stations#index"
   end
 

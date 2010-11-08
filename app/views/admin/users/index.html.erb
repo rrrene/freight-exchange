@@ -1,0 +1,33 @@
+<div class="box">
+  <h3>
+    <%= t("#{controller_catalog}.index.header") %>
+    <%#= link_new unless controller_name =~ /recording/ %>
+  </h3>
+  <p>
+    <%= t("#{controller_catalog}.index.intro") %>
+  </p>
+  
+  <% %w(login email).tap do |attributes| %>
+  <table>
+    <thead>
+      <tr>
+        <th>id</th>
+        <% attributes.each do |attr| %>
+          <th><%= attr.humanize %></th>
+        <% end %>
+      </tr>
+    </thead>
+    <tbody>
+      <% collection.each do |ar| %>
+        <tr>
+          <td><%= ar.id %></th>
+          <% attributes.each do |attr| %>
+          <td><%= ar[attr].is_a?(Hash) ? debug(ar[attr]) : ar[attr] %></td>
+          <% end %>
+          <td><%= link_to "Edit", {:action => 'edit', :id => ar}, :class => 'edit' %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <% end %>
+</div>
