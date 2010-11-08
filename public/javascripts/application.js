@@ -17,6 +17,16 @@ function login_from_name(name) {
   return login;
 }
 
+function actionListMagic() {
+  jQuery("ul.action_list li").each(function(i, li) {
+    jQuery(li).hover(function(evt) { var item=evt.currentTarget; jQuery(item).addClass('hovered'); }, function(evt) { var item=evt.currentTarget; jQuery(item).removeClass('hovered') });
+    jQuery(li).click(function(evt) {
+    var a = jQuery(evt.currentTarget).find("a").first();
+    self.location.href = jQuery(a).attr('href');
+    });
+  });
+}
+
 var site_info_prefix = "";
 
 function fillSiteInfo(origin_or_destination, site_info_id) {
@@ -29,7 +39,8 @@ function fillSiteInfo(origin_or_destination, site_info_id) {
   }
 }
 
-jQuery.ready(function() {
+jQuery(function() {
+  actionListMagic();
   jQuery('a.minibutton').bind({
     mousedown: function() {
       jQuery(this).addClass('mousedown');
@@ -41,4 +52,5 @@ jQuery.ready(function() {
       jQuery(this).removeClass('mousedown');
     }
   });
+  
 });

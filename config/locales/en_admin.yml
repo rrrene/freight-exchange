@@ -77,15 +77,12 @@ en:
         intro: "Here you see all user roles."
 
     # SearchController
-    users:
-      edit:
-        page_title: "Edit User"
-      update:
-        page_title: "Edit User"
+    search:
       index:
-        page_title: "All Users"
-        header: "All Users"
-        intro: "Here you see all users
+        page_title: "Search"
+        header: "All Results"
+        intro: "Here you see all results for your search query"
+        
     # UsersController
     users:
       edit:

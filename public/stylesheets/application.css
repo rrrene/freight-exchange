@@ -431,7 +431,11 @@ ul.action_list li {
 ul.action_list li {
   border-bottom: 1px solid #ccc;
   padding-bottom: 10px;
-  margin-bottom: 10px;
+  padding-top: 10px;
+}
+ul.action_list li.hovered {
+  cursor: pointer;
+  background: url(action_list_go.png) right center no-repeat #ffe;
 }
 
 ul.action_list div.image {
