@@ -1,0 +1,54 @@
+<div class="box">
+  <h3><%= t "search.common.results.header" %></h3>
+  <% if @results[:main].full? %>
+    <ul class="action_list">
+    <% @results[:main].each do |result| %>
+      <li>
+        <!--
+        <span class="label <%= result.class.to_s.underscore %>"><%= result.class.human_name %></span>
+        -->
+        <div class="image"><%= image_tag "type/#{result.class.to_s.underscore}.png" %></div>
+        <div class="text">
+          <b><%= result.class.human_name %>:</b>
+          <% if result.respond_to?(:name) %>
+            <%= link_to result.name, {:controller => result.class.to_s.pluralize.underscore, :action => 'show', :id => result} %>
+            <br>
+          <% end %>
+          <% if [Freight, LoadingSpace].include?(result.class) %>
+            <b><%= result.origin_site_info.name %></b> <%= l(result.origin_site_info.date, :format => :short) %>
+            -
+            <b><%= result.destination_site_info.name %></b> <%= l(result.destination_site_info.date, :format => :short) %>
+            
+          <% end %>
+          <% if result.respond_to?(:company) %>
+            - <%= link_to result.company.name, {:controller => result.class.to_s.pluralize.underscore, :action => 'show', :id => result} %>
+            <br>
+          <% end %>
+        </div>
+        <%= clear_both %>
+      </li>
+    <% end %>
+    </ul>
+    
+    <% content_for(:subtext) do %>
+      <%= t('search.common.subtext_results', :count => @results[:count]).html_safe %>
+    <% end %>
+  <% else %>
+    <%= t("search.index.no_#{@q.full? ? :results : :query}") %>
+  <% end %>
+  
+  <% content_for(:sidebar) do %>
+    <% @sidebar_result_models.each do |klass| %>
+      <% if results = @results[klass].full? %>
+        <div class="box">
+          <h3><%= t "search.common.sidebar.#{klass}_results.header" %></h3>
+          <ul>
+            <% results.each do |result| %>
+            <li><%= link_to result.name, result %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>

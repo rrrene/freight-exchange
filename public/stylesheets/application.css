@@ -76,7 +76,6 @@ div#page_title h2 {
 }
 
 
-.admin div#page_title div#search_form,
 #root.about div#page_title div#search_form {
   display: none;
 }

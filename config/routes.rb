@@ -44,12 +44,18 @@ BlackBoard::Application.routes.draw do |map|
   
   namespace :admin do
     resources :app_configs
+    resources :companies
+    resources :freights # BEWARE: not implemented
+    resources :loading_spaces # BEWARE: not implemented
+    resources :people # BEWARE: not implemented
+    resources :reviews # BEWARE: not implemented
     resources :recordings
     resources :stations
     resources :search_recordings
     resources :user_roles
     resources :users
     root :to => "stations#index"
+    match "search", :to => "search#index", :as => :search
   end
 
 
