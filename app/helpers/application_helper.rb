@@ -101,7 +101,7 @@ module ApplicationHelper
   end
   
   #  TODO: localized_info_field f, :type_of_goods, :en
-  # BETTA: f.localized_info_field :type_of_goods, :en
+  # BETTER: f.localized_info_field :type_of_goods, :en
   def localized_info_field(f, name, lang = current_person.locale)
     render({:partial => '/partials/localized_info_form_content',
               :locals => {:f => f, :name => name, :lang => lang}})
@@ -123,8 +123,18 @@ module ApplicationHelper
   end
   
   def render_partial(partial, options = {})
-    partial = "admin/#{partial}" if admin? && template_exists?("/partials/admin/_#{partial}")
-    render options.merge(:partial => "/partials/#{partial}")
+    subs = current_user.roles
+    subs << :admin if admin?
+    render options.merge(:partial => search_for_partial(subs, partial))
+  end
+  
+  def search_for_partial(sub_dirs, partial)
+    sub_dirs.each do |sub_dir|
+      if template_exists?("/partials/#{sub_dir}/_#{partial}")
+        return "/partials/#{sub_dir}/#{partial}"
+      end
+    end
+    "/partials/#{partial}"
   end
   
   # Renders a partial with the contact information for the given person.
