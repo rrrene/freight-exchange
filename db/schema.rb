@@ -10,7 +10,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101103202917) do
+ActiveRecord::Schema.define(:version => 20101112220631) do
+
+  create_table "action_recordings", :force => true do |t|
+    t.string   "item_type",  :limit => 30
+    t.integer  "item_id"
+    t.string   "action",     :limit => 10
+    t.text     "diff"
+    t.integer  "user_id"
+    t.integer  "company_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "app_configs", :force => true do |t|
     t.string   "name"

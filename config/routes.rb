@@ -49,8 +49,8 @@ BlackBoard::Application.routes.draw do |map|
     resources :loading_spaces # BEWARE: not implemented
     resources :people # BEWARE: not implemented
     resources :reviews # BEWARE: not implemented
-    resources :recordings
     resources :stations
+    resources :action_recordings
     resources :search_recordings
     resources :user_roles
     resources :users

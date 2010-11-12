@@ -68,7 +68,7 @@ module Recorder # :nodoc:
       #     recording_class 'PersonnelRecord'
       #   end
       def recording_class(class_name = 'Recording')
-        @@recording_classes[name] = class_name.constantize
+        @@recording_classes[name] = class_name.to_s.classify.constantize
       end
     end
 

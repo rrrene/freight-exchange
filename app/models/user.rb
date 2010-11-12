@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
   after_destroy { |user| user.company.ensure_admin }
   brackets_find_by :login
   acts_as_authentic
-  searchable
+  searchable :attributes => ["posting_type", "current_login_ip", "login", "email"]
   
   #:call-seq:
   #   user.has_role?(role_name) # => boolean
