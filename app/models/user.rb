@@ -55,6 +55,17 @@ class User < ActiveRecord::Base
     @roles ||= user_roles.map(&:name)
   end
   
+  #:call-seq:
+  #   user.search_type # => string
+  #
+  # Returns the type of postings the user is searching for, i.e. 
+  # freights if the user is posting loading space and vice versa.
+  #   user.posting_type # => "Freight"
+  #   user.search_type # => "LoadingSpace"
+  def search_type
+    posting_type == 'Freight' ? 'LoadingSpace' : 'Freight'
+  end
+  
   # For permission handling
   def user # :nodoc:
     self
