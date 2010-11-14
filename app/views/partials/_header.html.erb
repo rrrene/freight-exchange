@@ -22,10 +22,10 @@
             </li>
             <li><%= link_to_unless_current(t("common.navi.people"), people_path) %></li>
             <li><%= link_to_unless_current(t("common.navi.reviews"), reviews_path) %></li>
-            <li><%= link_to_unless_current(t("common.navi.logout"), logout_path) %></li>
+            <li class="last"><%= link_to_unless_current(t("common.navi.logout"), logout_path) %></li>
           <% else %>
             <li><%= link_to_unless_current(t("common.navi.login"), login_path) %></li>
-            <li><%= link_to_unless_current(t("common.navi.register"), register_path) %></li>
+            <li class="last"><%= link_to_unless_current(t("common.navi.register"), register_path) %></li>
           <% end %>
         </ul>
       </div>

@@ -38,6 +38,10 @@ ul.navigation {
 ul.navigation li {
   display: block;
   float: left;
+  background: url(navi_seperator.gif) right center no-repeat;
+}
+ul.navigation li.last {
+  background-image: none;
 }
 
 ul.navigation li span,
