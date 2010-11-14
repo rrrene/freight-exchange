@@ -1,0 +1,582 @@
+--- 
+de: 
+  activerecord: 
+    attributes: 
+      company: 
+        address: Adresse
+        address2: ~
+        city: Stadt
+        country: Land
+        email: E-Mail
+        fax: Fax
+        localized_infos: 
+          misc_text: "Weitere Informationen"
+        name: Name
+        phone: Telefon
+        website: Internet
+        zip: PLZ
+      freight: 
+        hazmat: Gefahrengut
+        localized_infos: 
+          goods_text: Gutart
+          transport_text: "Welche Wagen sollen verwendet werden (ggf. Alternativen)?"
+        weight: "Gesamtgewicht (in t)"
+      loading_space: 
+        hazmat: Gefahrengut
+        localized_infos: 
+          misc_text: "Weitere Informationen"
+          transport_text: "Welche Wagen sollen verwendet werden (ggf. Alternativen)?"
+        weight: "Gesamtgewicht (in t)"
+      person: 
+        email: E-Mail
+        fax: Fax
+        first_name: Vorname
+        last_name: Nachname
+        locale: Benutzersprache
+        localized_infos: 
+          misc_text: "Weitere Informationen"
+        phone: Telefon
+        website: Internet
+      user: 
+        email: E-Mail
+        login: Benutzername
+        password: Passwort
+        password_confirmation: "Passwort wiederholen"
+    errors: 
+      messages: 
+        record_invalid: "Validierung fehlgeschlagen: %{errors}"
+        taken: "ist schon vergeben"
+    human_attribute_values: 
+      freight: 
+        desired_proposal_type: 
+          package_price: Pauschalpreis
+          ton_price: Tonnenpreis
+        transport_type: 
+          block_train: Ganzzug
+          single_wagon: Einzelwagen
+          train_set: Wagengruppe
+        wagons_provided_by: 
+          client: Auftraggeber
+          railway: Bahn
+      loading_space: 
+        transport_type: 
+          block_train: Ganzzug
+          single_wagon: Einzelwagen
+          train_set: Wagengruppe
+      person: 
+        gender: 
+          female: Frau
+          male: Herr
+        locale: 
+          de: Deutsch
+          en: English
+    models: 
+      freight: Frachtraum
+      loading_space: Laderaum
+      station: Bahnhof
+  admin: 
+    app_configs: 
+      create: 
+        page_title: "Neue Konfigurationsvariable erstellen"
+      edit: 
+        page_title: "Konfigurationsvariable bearbeiten"
+      index: 
+        header: "Alle Konfigurationsvariablen"
+        intro: "Hier sehen Sie alle systemspezifischen Konfigurationsvariablen."
+        page_title: "Alle Konfigurationsvariablen"
+      new: 
+        page_title: "Neue Konfigurationsvariable erstellen"
+      show: 
+        page_title: "Konfigurationsvariable "
+      update: 
+        page_title: "Konfigurationsvariable bearbeiten"
+    common: 
+      navi: 
+        app_configs: Einstellungen
+        back_to_app: "Zurück zum Frontend"
+        home: "FX Admin"
+        recordings: Aktionen
+        search_recordings: Suchen
+        stations: Bahnhöfe
+        user_roles: Benutzerrollen
+        users: Benutzer
+      new_link: "Neu erstellen"
+    companies: 
+      create: 
+        page_title: "Firma erstellen"
+      dashboard: 
+        page_title: Startseite
+        recordings: 
+          header: Aktionen
+      edit: 
+        header: "Firma Informationen"
+        page_title: "Firma bearbeiten"
+      new: 
+        header: "Firma erstellen"
+        intro: "-"
+        page_title: "Firma erstellen"
+      update: 
+        page_title: "Firma bearbeiten"
+    recordings: 
+      index: 
+        header: "Alle Aktionen"
+        intro: "Hier sehen Sie alle Aktionen der Benutzer im System."
+        page_title: "Alle Aktionen"
+    search: 
+      index: 
+        header: "Alle Ergebnisse"
+        intro: "Hier sehen Sie alle Ergebnisse ihrer Suchanfrage."
+        page_title: Suche
+    search_recordings: 
+      index: 
+        header: "Alle Suchanfragen"
+        intro: "Hier sehen Sie alle Suchanfragen, die im System gestellt wurden."
+        page_title: "Alle Suchanfragen"
+    stations: 
+      create: 
+        page_title: "-"
+      edit: 
+        page_title: "-"
+      index: 
+        header: "-"
+        intro: "-"
+        page_title: "-"
+      new: 
+        page_title: "-"
+      update: 
+        page_title: "-"
+    user_roles: 
+      create: 
+        page_title: "Neue Benutzerrolle erstellen"
+      edit: 
+        page_title: "Benutzerrolle bearbeiten"
+      index: 
+        header: "Alle Benutzerrollen"
+        intro: "Hier sehen Sie alle Benutzerrollen."
+        page_title: "Alle Benutzerrollen"
+      new: 
+        page_title: "Neue Benutzerrolle erstellen"
+      update: 
+        page_title: "Benutzerrolle bearbeiten"
+    users: 
+      edit: 
+        page_title: "Benutzer bearbeiten"
+      index: 
+        header: "Alle Benutzer"
+        intro: "Hier sehen Sie alle Benutzer."
+        page_title: "Alle Benutzer"
+      update: 
+        page_title: "Benutzer bearbeiten"
+  common: 
+    choice_no: Nein
+    choice_yes: Ja
+    create_new_freight: "Neues Inserat erstellen"
+    create_new_loading_space: "Neues Inserat erstellen"
+    create_new_review: "Bewertung schreiben!"
+    deleted_object: "---gelöschtes Objekt---"
+    link_back: "« Zurück"
+    navi: 
+      backend: Administration
+      dashboard: Cockpit
+      freights: Inserate
+      loading_spaces: Inserate
+      login: Anmelden
+      logout: Abmelden
+      people: Benutzer
+      register: Registrieren
+      reviews: Bewertungen
+    sidebar: 
+      company_information: 
+        edit: Bearbeiten
+        header: Firmenprofil
+        please_edit_notice: "Bitte füllen Sie ihr Firmenprofil aus."
+        show: Anzeigen
+      person_information: 
+        edit: Bearbeiten
+        header: Kontaktinformation
+        please_edit_notice: "Bitte füllen Sie ihr Kontaktprofil aus."
+        show: Anzeigen
+    website_title: "Freight Exchange 2010"
+  companies: 
+    create: 
+      page_title: "Ihre Firma registrieren"
+    dashboard: 
+      page_title: Cockpit
+      recordings: 
+        header: Newsfeed
+    edit: 
+      header: Firmenprofil
+      page_title: "Firma bearbeiten"
+    new: 
+      header: "Ihre Firma registrieren"
+      intro: "Erstellen Sie Ihr Konto in einer Minute!"
+      page_title: "Ihre Firma registrieren"
+    show: 
+      header_misc_text: "Wir über uns:"
+      header_people: "Wer wir sind:"
+      header_reviews: "Was andere über uns sagen:"
+      page_title: "{{name}}"
+    update: 
+      page_title: "Firma bearbeiten"
+  date: 
+    abbr_day_names: 
+      - So
+      - Mo
+      - Di
+      - Mi
+      - Do
+      - Fri
+      - Sa
+    abbr_month_names: 
+      - ~
+      - Jan
+      - Feb
+      - Mär
+      - Apr
+      - Mai
+      - Jun
+      - Jul
+      - Aug
+      - Sep
+      - Okt
+      - Nov
+      - Dez
+    day_names: 
+      - Sonntag
+      - Montag
+      - Dienstag
+      - Mittwoch
+      - Donnerstag
+      - Samstag
+      - ~
+    formats: 
+      default: "%Y-%m-%d"
+      long: "%B %d, %Y"
+      short: "%b %d"
+    month_names: 
+      - ~
+      - Januar
+      - Februar
+      - März
+      - April
+      - Mai
+      - Juni
+      - Juli
+      - August
+      - September
+      - Oktober
+      - November
+      - Dezember
+    order: 
+      - !ruby/symbol year
+      - !ruby/symbol month
+      - !ruby/symbol day
+  datetime: 
+    distance_in_words: 
+      about_x_hours: 
+        one: "ungefähr 1 Stunde"
+        other: "ungefähr %{count} Stunden"
+      about_x_months: 
+        one: "ungefähr 1 Monat"
+        other: "ungefähr %{count} Monate"
+      about_x_years: 
+        one: "ungefähr 1 Jahr"
+        other: "ungefähr %{count} Jahre"
+      almost_x_years: 
+        one: "nicht ganz 1 Jahr"
+        other: "nicht ganz %{count} Jahre"
+      half_a_minute: "eine halbe Minute"
+      less_than_x_minutes: 
+        one: "weniger als 1 Minute"
+        other: "weniger als %{count} Minuten"
+      less_than_x_seconds: 
+        one: "weniger als 1 Sekunde"
+        other: "weniger als %{count} Sekunden"
+      over_x_years: 
+        one: "über 1 Jahr"
+        other: "über %{count} Jahr"
+      x_days: 
+        one: "1 Tag"
+        other: "%{count} Tage"
+      x_minutes: 
+        one: "1 Minute"
+        other: "%{count} Minuten"
+      x_months: 
+        one: "1 Monat"
+        other: "%{count} Monate"
+      x_seconds: 
+        one: "1 Sekunde"
+        other: "%{count} Sekunden"
+    prompts: 
+      day: Tag
+      hour: Stunde
+      minute: Minute
+      month: Monat
+      second: Sekunde
+      year: Jahr
+  errors: 
+    format: "%{attribute} %{message}"
+    messages: 
+      accepted: "muss akzeptiert werden"
+      blank: "darf nicht leer sein"
+      confirmation: "stimmt nicht mit Wiederholung überein"
+      empty: "darf nicht leer sein"
+      equal_to: "muss gleich %{count} sein"
+      even: "muss gerade sein"
+      exclusion: "ist reserviert"
+      greater_than: "muss größer als %{count} sein"
+      greater_than_or_equal_to: "muss größer oder gleich %{count} sein"
+      inclusion: "ist nicht in der Liste"
+      invalid: "ist ungültig"
+      less_than: "muss weniger als %{count} sein"
+      less_than_or_equal_to: "muss kleiner oder gleich %{count} sein"
+      not_a_number: "ist keine Nummer"
+      not_an_integer: "muss eine Ganzzahl sein"
+      odd: "muss ungerade sein"
+      too_long: "ist zu lang (max. %{count} Zeichen)"
+      too_short: "ist zu kurz (min. %{count} Zeichen)"
+      wrong_length: "hat die falsche Länge (%{count} Zeichen)"
+  flash: 
+    actions: 
+      create: 
+        notice: "%{resource_name} wurde erfolgreich erstellt."
+      destroy: 
+        alert: "%{resource_name} konnte nicht gelöscht werden."
+        notice: "%{resource_name} wurde erfolgreich gelöscht."
+      update: 
+        notice: "%{resource_name} wurde erfolgreich gespeichert."
+  formtastic: 
+    actions: 
+      create: "{{model}} erstellen"
+      update: Speichern
+    hints: 
+      user: 
+        email: "Bitte geben Sie Ihre E-Mail-Adresse an."
+        login: "Wählen Sie einen Benutzernamen, mit dem Sie sich im System anmelden."
+        password: "Wählen Sie Ihr Passwort."
+        password_confirmation: "Bitte wiederholen Sie Ihr Passwort."
+    titles: 
+      change_password: "Passwort ändern (optional)"
+      company_address: Anschrift
+      company_contact: Kontakt
+      company_contact_person: "Allgemeiner Ansprechpartner"
+      company_name: Name
+      credentials: Anmeldeinformationen
+      destination_site_info: "Entladestelle für Fracht"
+      for_company: Firma
+      freight_description: Frachtbeschreibung
+      origin_site_info: "Beladestelle für Fracht"
+      person_name: "Persönliche Angaben"
+  freights: 
+    common: 
+      edit_link: "Inserat bearbeiten"
+      new_link: "Weiteres Inserat erstellen"
+      template_link: "Als Vorlage benutzen"
+    edit: 
+      header: "Inserat bearbeiten"
+      page_title: "Inserat bearbeiten"
+    index: 
+      header: "Alle Inserate"
+      intro: "Hier sehen Sie alle Frachtrauminserate Ihrer Firma."
+      page_title: "Alle Inserate"
+      table: 
+        headers: 
+          date: Datum
+          destination: Zielort
+          options: Optionen
+          origin: Startort
+        options: 
+          delete: Löschen
+          edit: Bearbeiten
+          template: "Als Vorlage verwenden"
+    new: 
+      page_title: "Inserat erstellen"
+    show: 
+      destination: 
+        header: "Entladestelle für Fracht"
+      header: Inserat
+      origin: 
+        header: "Beladestelle für Fracht"
+      page_title: Inserat
+      transport_description: Frachtbeschreibung
+  helpers: 
+    select: 
+      prompt: "Bitte wählen"
+    submit: 
+      create: "%{model} erstellen"
+      submit: "%{model} speichern"
+      update: "%{model} speichern"
+  loading_spaces: 
+    common: 
+      edit_link: Bearbeiten
+      new_link: "Weiteres Inserat erstellen"
+      template_link: "Als Vorlage verwenden"
+    edit: 
+      header: "Inserat bearbeiten"
+      page_title: "Inserat bearbeiten"
+    index: 
+      header: "Alle Inserate"
+      intro: "Hier sehen Sie alle Laderauminserate Ihrer Firma."
+      page_title: "Alle Inserate"
+      table: 
+        headers: 
+          date: Datum
+          destination: Zielort
+          options: Optionen
+          origin: Startort
+        options: 
+          delete: Löschen
+          edit: Bearbeiten
+          template: "Als Vorlage benutzen"
+    new: 
+      page_title: "Neues Inserat"
+    show: 
+      destination: 
+        header: "Endladestelle für Fracht"
+      header: Laderaum-Inserat
+      origin: 
+        header: "Beladestelle für Fracht"
+      page_title: Laderaum-Inserat
+      transport_description: Laderaumbeschreibung
+  number: 
+    currency: 
+      format: 
+        delimiter: ","
+        format: "%u%n"
+        precision: 2
+        separator: "."
+        significant: f
+        strip_insignificant_zeros: f
+        unit: €
+    format: 
+      delimiter: ","
+      precision: 3
+      separator: "."
+      significant: f
+      strip_insignificant_zeros: f
+    human: 
+      decimal_units: 
+        format: "%n %u"
+        units: 
+          billion: Milliarde
+          million: Million
+          quadrillion: Billiarde
+          thousand: Tausend
+          trillion: Billion
+          unit: ~
+      format: 
+        delimiter: ~
+        precision: 3
+        significant: t
+        strip_insignificant_zeros: t
+      storage_units: 
+        format: "%n %u"
+        units: 
+          byte: 
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage: 
+      format: 
+        delimiter: ~
+    precision: 
+      format: 
+        delimiter: ~
+  people: 
+    edit: 
+      header: "Persönliche Angaben"
+      page_title: "Person bearbeiten"
+    show: 
+      page_title: "{{name}}"
+    update: 
+      header: "Persönliche Angaben"
+      page_title: "Person bearbeiten"
+  postings: 
+    common: 
+      posting: 
+        edit: "Inserat bearbeiten"
+        goods_type: Gutart
+        loading_meter: Lademeter
+        misc: "Sonstige Informationen"
+        wagon_type: "Welche Wagen sollen verwendet werden (ggf. Alternativen)?"
+        weight: "Gesamtgewicht in t"
+    show: 
+      page_title: "Inserat - Detailansicht"
+  recordings: 
+    create: "{{user}} <strong>erstellte</strong> ein {{object_class}}: {{object_link}}"
+    destroy: "{{user}} <strong>löschte</strong> ein {{object_class}}: {{object_link}}"
+    update: "{{user}} <strong>bearbeitete</strong> ein {{object_class}}: {{object_link}}"
+  reviews: 
+    index: 
+      header: "Alle Bewertungen"
+      intro: "Hier sehen Sie alle Bewertungen ihrer Firma."
+      page_title: "Alle Bewertungen"
+      table: 
+        headers: 
+          name: Name
+          options: Optionen
+        options: 
+          approve: Freischalten
+          delete: Löschen
+    new: 
+      header: "Bewertung über '{{company_name}}' schreiben"
+      page_title: "Bewertung schreiben"
+    show: 
+      approve_link: Freischalten
+      is_approved: "Diese Bewertung wurde veröffentlicht!"
+  root: 
+    about: 
+      page_title: Über
+    index: 
+      page_title: Willkommen
+  search: 
+    common: 
+      button: Suche
+      results: 
+        header: Suchergebnisse
+      sidebar: 
+        company_results: 
+          header: "Gefundene Firmen:"
+        station_results: 
+          header: "Gefundene Bahnhöfe:"
+      subtext_results: 
+        one: "1 Ergebnis"
+        other: "{{count}} Ergebnisse"
+    index: 
+      no_query: "Bitte geben Sie einen Suchbegriff ein."
+      no_results: "Ihre Suche ergab leider keine Treffer."
+      page_title: Suche
+  setup: 
+    index: 
+      edit_admin_link: "Administratorpasswort bearbeiten"
+      header: Setup
+      intro: "Das System hat soeben ein Administratorkonto für sie angelegt. Sie können ihr Administratorpasswort hier ändern:"
+      page_title: Willkommen!
+  support: 
+    array: 
+      last_word_connector: und
+      two_words_connector: und
+      words_connector: ","
+  time: 
+    am: vormittags
+    formats: 
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
+    pm: nachmittags
+  user_sessions: 
+    new: 
+      page_title: Anmeldung
+  users: 
+    common: 
+      edit_link: Bearbeiten
+      new_link: "Weiteren Benutzer anlegen"
+    index: 
+      header: "Alle Benutzer"
+      intro: "Hier sehen Sie alle Benutzer ihrer Firma."
+      page_title: "Alle Benutzer"
+    new: 
+      page_title: "Neuen Benutzer registrieren"

@@ -3,6 +3,16 @@
 
 en:
   common:
+    navi:
+      backend: "Backend"
+      dashboard: "Dashboard"
+      freights: "Freights"
+      loading_spaces: "Loading Spaces"
+      people: "People"
+      reviews: "Reviews"
+      logout: "Logout"
+      login: "Login"
+      register: "Register"
     sidebar:
       company_information: 
         header: "Company information"
@@ -213,3 +223,226 @@ en:
   user_sessions:
     new:
       page_title: "Login"
+
+
+#
+#
+# Rails configuration
+#
+#
+
+
+  admin:
+    common:
+      navi:
+        home: "FX Admin"
+        recordings: "Actions"
+        stations: "Stations"
+        search_recordings: "Searches"
+        user_roles: "User Roles"
+        users: "Users"
+        app_configs: "Settings"
+        back_to_app: "Back to Frontend"
+      new_link: "Create a new one"
+
+    # AppConfigsController
+    app_configs:
+      new:
+        page_title: "Create new setting"
+      create:
+        page_title: "Create new setting"
+      edit:
+        page_title: "Edit setting"
+      update:
+        page_title: "Edit setting"
+      show:
+        page_title: "Setting"
+      index:
+        page_title: "All Settings"
+        header: "All Settings"
+        intro: "Here you see all system specific settings."
+
+    # RecordingsController
+    recordings:
+      index:
+        page_title: "All Actions"
+        header: "All Actions"
+        intro: "Here you see all the actions performed by users."
+
+    # SearchRecordingsController
+    search_recordings:
+      index:
+        page_title: "All Searches"
+        header: "All Searches"
+        intro: "Here you see all the searches performed by users."
+
+    # StationsController
+    stations:
+      new:
+        page_title: "Create new station"
+      create:
+        page_title: "Create new station"
+      edit:
+        page_title: "Edit station"
+      update:
+        page_title: "Edit station"
+      index:
+        page_title: "All Stations"
+        header: "All Stations"
+        intro: "Here you see all the stations that can be used as an adress template."
+
+    # UserRolesController
+    user_roles:
+      new:
+        page_title: "Create new Role"
+      create:
+        page_title: "Create new Role"
+      edit:
+        page_title: "Edit Role"
+      update:
+        page_title: "Edit Role"
+      index:
+        page_title: "All Roles"
+        header: "All Roles"
+        intro: "Here you see all user roles."
+
+    # SearchController
+    search:
+      index:
+        page_title: "Search"
+        header: "All Results"
+        intro: "Here you see all results for your search query"
+
+    # UsersController
+    users:
+      edit:
+        page_title: "Edit User"
+      update:
+        page_title: "Edit User"
+      index:
+        page_title: "All Users"
+        header: "All Users"
+        intro: "Here you see all users."
+
+    # CompaniesController
+    companies:
+      dashboard:
+        page_title: "Dashboard"
+        recordings:
+          header: "Actions"
+      new:
+        page_title: "Create company account"
+        header: "Create your company account"
+        intro: "You are just 60 seconds away from your own account!"
+      create:
+        page_title: "Create your company"
+      edit:
+        page_title: "Edit company"
+        header: "Company information"
+      update:
+        page_title: "Edit company"
+
+#
+#
+# Rails configuration
+#
+#
+
+
+  activerecord:
+    models:
+      station: "Station"
+      freight: "Freight"
+      loading_space: "Loading Space"
+    attributes:
+      company:
+        name: "Name"
+        address: "Address"
+        address2: ""
+        zip: "ZIP"
+        city: "City"
+        country: "Country"
+        phone: "Phone"
+        fax: "Fax"
+        email: "E-Mail"
+        website: "Web"
+        localized_infos:
+          misc_text: "Additional information"
+      freight:
+        weight: "Weight (in t)"
+        hazmat: "Harzardous material"
+        localized_infos:
+          goods_text: "Type of Goods"
+          transport_text: "Which kind of wagons are required?"
+      loading_space:
+        weight: "Weight (in t)"
+        hazmat: "Harzardous material"
+        localized_infos:
+          misc_text: "Additional information"
+          transport_text: "Which kind of wagons are required?"
+      person:
+        first_name: "Forename"
+        last_name: "Surname"
+        phone: "Phone"
+        fax: "Fax"
+        email: "E-Mail"
+        website: "Web"
+        locale: "Interface Language"
+        localized_infos:
+          misc_text: "Additional information"
+      user:
+        login: "Username"
+        email: "E-Mail"
+        password: "Password"
+        password_confirmation: "Password (again)"
+    human_attribute_values:
+      freight:
+        wagons_provided_by:
+          client: "Client"
+          railway: "Railway"
+        desired_proposal_type:
+          ton_price: "Price per ton"
+          package_price: "Package price"
+        transport_type:
+          single_wagon: "Single wagon"
+          train_set: "Train set"
+          block_train: "Block train"
+      loading_space:
+        transport_type:
+          single_wagon: "Single wagon"
+          train_set: "Train set"
+          block_train: "Block train"
+      person:
+        gender:
+          male: "Mr."
+          female: "Mrs."
+        locale:
+          en: "English"
+          de: "German"
+
+#        localized_infos:
+#          type_of_goods: "Type of goods"
+#          transport_text: "Which wagons should be used?"
+
+  formtastic:
+    titles:
+      for_company: "Company information"
+      credentials: "Login credentials"
+      change_password: "Change password (optional)"
+      company_name: "Name"
+      company_address: "Postal information"
+      company_contact: "Contact information"
+      company_contact_person: "General Contact Person"
+      origin_site_info: "Loading site"
+      destination_site_info: "Unloading site"
+      freight_description: "Freight description"
+      person_name: "Personal information"
+    hints:
+      user:
+        login: "Choose a username to log in to the service"
+        email: "Enter your e-mail address here"
+        password: "Choose your password carefully"
+        password_confirmation: "Please repeat your password"
+    actions:
+      create: "Create {{model}}"
+      update: "Save changes"

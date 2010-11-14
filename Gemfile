@@ -21,6 +21,8 @@ gem 'factory_girl'
 gem 'faker'
 gem 'random_data'
 
+gem 'tolk'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 

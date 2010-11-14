@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :record_user_in_recordings
+  before_filter :set_locale
   before_filter :set_default_page_title
   helper_method :current_user, :controller_catalog, :current_person, :current_company, :logged_in?, :demo_mode?, :page
   layout 'application'
@@ -200,7 +201,13 @@ class ApplicationController < ActionController::Base
   def set_default_page_title
     page[:title] = t("#{controller_catalog}.#{action_name}.page_title")
   end
-  
+
+  def set_locale
+    locale = params[:locale] || session[:locale] || I18n.default_locale
+    locale = locale.to_s.intern
+    I18n.locale = locale if I18n.available_locales.include?(locale)
+  end
+
   def store_location
     session[:return_to] = request.request_uri
   end

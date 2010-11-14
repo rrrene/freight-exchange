@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101103202917) do
+ActiveRecord::Schema.define(:version => 20101110135418) do
 
   create_table "app_configs", :force => true do |t|
     t.string   "name"
@@ -185,6 +185,32 @@ ActiveRecord::Schema.define(:version => 20101103202917) do
     t.string   "zip"
     t.string   "city"
   end
+
+  create_table "tolk_locales", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "tolk_locales", ["name"], :name => "index_tolk_locales_on_name", :unique => true
+
+  create_table "tolk_phrases", :force => true do |t|
+    t.text     "key"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tolk_translations", :force => true do |t|
+    t.integer  "phrase_id"
+    t.integer  "locale_id"
+    t.text     "text"
+    t.text     "previous_text"
+    t.boolean  "primary_updated", :default => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "tolk_translations", ["phrase_id", "locale_id"], :name => "index_tolk_translations_on_phrase_id_and_locale_id", :unique => true
 
   create_table "user_roles", :force => true do |t|
     t.string   "name"

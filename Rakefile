@@ -4,4 +4,7 @@
 require File.expand_path('../config/application', __FILE__)
 require 'rake'
 
+require 'tolk/sync'
+require 'tolk/import'
+
 BlackBoard::Application.load_tasks
