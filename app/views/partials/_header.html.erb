@@ -3,30 +3,36 @@
     <div class="span-24 last" id="first-header">
       <%= link_to image_tag('logo.png', :onmouseover => 'this.src="/images/logo_hover.png";', :onmouseout => 'this.src="/images/logo.png";'), root_url, :id => 'logo'  %>
       <!--h2 style="float: left; font-weight: bolder;"><%= link_to "FreightExchange", root_url, :style => "text-decoration: none; color: #666;" %></h2-->
-      
-      <div class="navibox">
-        <ul class="navigation navigation-right">
-        
-          <%- if current_user.full? { |u| u.is?(:administrator) } -%>
-            <li><%= link_to(t("common.navi.backend"), admin_root_path, :class => 'backend') %></li>
-          <%- end -%>
-        
-          <% if current_user.full? %>
-            <li><%= link_to_unless_current(t("common.navi.dashboard"), company_dashboard_path) %></li>
-            <li>
-              <% if posting_freights? %>
-                <%= link_to_unless_current(t("common.navi.freights"), freights_path) %>
-              <% else %>
-                <%= link_to_unless_current(t("common.navi.loading_spaces"), loading_spaces_path) %>
-              <% end %>
-            </li>
-            <li><%= link_to_unless_current(t("common.navi.people"), people_path) %></li>
-            <li><%= link_to_unless_current(t("common.navi.reviews"), reviews_path) %></li>
-            <li class="last"><%= link_to_unless_current(t("common.navi.logout"), logout_path) %></li>
-          <% else %>
-            <li><%= link_to_unless_current(t("common.navi.login"), login_path) %></li>
-            <li class="last"><%= link_to_unless_current(t("common.navi.register"), register_path) %></li>
-          <% end %>
+      <div class="navigation-right">
+        <div class="navibox">
+          <ul class="navigation">
+            <%- if current_user.full? { |u| u.is?(:administrator) } -%>
+              <li><%= link_to(t("common.navi.backend"), admin_root_path, :class => 'backend') %></li>
+            <%- end -%>
+
+            <% if current_user.full? %>
+              <li><%= link_to_unless_current(t("common.navi.dashboard"), company_dashboard_path) %></li>
+              <li>
+                <% if posting_freights? %>
+                  <%= link_to_unless_current(t("common.navi.freights"), freights_path) %>
+                <% else %>
+                  <%= link_to_unless_current(t("common.navi.loading_spaces"), loading_spaces_path) %>
+                <% end %>
+              </li>
+              <li><%= link_to_unless_current(t("common.navi.people"), people_path) %></li>
+              <li><%= link_to_unless_current(t("common.navi.reviews"), reviews_path) %></li>
+              <li class="last"><%= link_to_unless_current(t("common.navi.logout"), logout_path) %></li>
+            <% else %>
+              <li><%= link_to_unless_current(t("common.navi.login"), login_path) %></li>
+              <li class="last"><%= link_to_unless_current(t("common.navi.register"), register_path) %></li>
+            <% end %>
+          </ul>
+        </div>
+        <%= clear_both %>
+        <ul class="navigation navigation-lang navigation-right">
+           <li class="noborder"><span><%= t("common.navi.select_locale") %></span></li>
+           <li><%= link_to_unless(I18n.locale == :de, t("common.navi.locale_de"), {:locale => :de}) %></li>
+           <li class="last"><%= link_to_unless(I18n.locale == :en, t("common.navi.locale_en"), {:locale => :en}) %></li>
         </ul>
       </div>
     </div>

@@ -180,11 +180,14 @@ de:
       dashboard: Cockpit
       freights: Inserate
       loading_spaces: Inserate
+      locale_de: Deutsch
+      locale_en: English
       login: Anmelden
       logout: Abmelden
       people: Benutzer
       register: Registrieren
       reviews: Bewertungen
+      select_locale: "Sprache wählen:"
     sidebar: 
       company_information: 
         edit: Bearbeiten
@@ -486,9 +489,16 @@ de:
       format: 
         delimiter: ~
   people: 
+    common: 
+      edit_link: "Person bearbeiten"
+      new_link: "Neuen Benutzer erstellen"
     edit: 
       header: "Persönliche Angaben"
       page_title: "Person bearbeiten"
+    index: 
+      header: "Alle Benutzer"
+      intro: "Hier sehen Sie alle Benutzer Ihrer Firma."
+      page_title: "Überblick: Benutzer"
     show: 
       page_title: "{{name}}"
     update: 

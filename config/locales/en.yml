@@ -13,6 +13,9 @@ en:
       logout: "Logout"
       login: "Login"
       register: "Register"
+      select_locale: "Select language:"
+      locale_de: "Deutsch"
+      locale_en: "English"
     sidebar:
       company_information: 
         header: "Company information"

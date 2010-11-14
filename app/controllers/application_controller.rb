@@ -205,7 +205,9 @@ class ApplicationController < ActionController::Base
   def set_locale
     locale = params[:locale] || session[:locale] || I18n.default_locale
     locale = locale.to_s.intern
-    I18n.locale = locale if I18n.available_locales.include?(locale)
+    if I18n.available_locales.include?(locale)
+      session[:locale] = I18n.locale = locale
+    end
   end
 
   def store_location

@@ -39,8 +39,10 @@ ul.navigation li {
   display: block;
   float: left;
   background: url(navi_seperator.gif) right center no-repeat;
+  padding-right: 4px;
 }
-ul.navigation li.last {
+ul.navigation li.last,
+ul.navigation li.noborder {
   background-image: none;
 }
 
@@ -55,11 +57,14 @@ ul.navigation li a.backend {
   color: #333;
 }
 
-ul.navigation-left {
-  float: left;
+ul.navigation-lang {
+  margin-top: 8px;
 }
 
-ul.navigation-right {
+.navigation-left {
+  float: left;
+}
+.navigation-right {
   float: right;
 }
 
