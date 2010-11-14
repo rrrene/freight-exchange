@@ -203,10 +203,13 @@ class ApplicationController < ActionController::Base
   end
 
   def set_locale
-    locale = params[:locale] || session[:locale] || I18n.default_locale
-    locale = locale.to_s.intern
+    locale = if logged_in?
+      session[:locale] = (params[:locale] || session[:locale] || current_user.person.locale).to_s.intern
+    else
+      I18n.default_locale
+    end
     if I18n.available_locales.include?(locale)
-      session[:locale] = I18n.locale = locale
+      I18n.locale = locale
     end
   end
 
