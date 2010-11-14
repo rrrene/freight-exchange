@@ -13,7 +13,7 @@
         <th><%= t('freights.index.table.headers.date') %></th>
         <th><%= t('freights.index.table.headers.origin') %></th>
         <th><%= t('freights.index.table.headers.destination') %></th>
-        <th><%= t('freights.index.table.headers.options') %></th>
+        <th class="options"><%= t('freights.index.table.headers.options') %></th>
       </tr>
     </thead>
     <tbody>
@@ -22,7 +22,7 @@
           <td><%= link_to ar.origin_site_info.date, ar %></td>
           <td><%= ar.origin_site_info.name %></td>
           <td><%= ar.destination_site_info.name %></td>
-          <td>
+          <td class="options">
             <%= link_to t('freights.index.table.options.edit'), {:action => 'edit', :id => ar}, :class => 'edit' %> 
             |
             <%#= link_to t('freights.index.table.options.delete'), {:action => 'destroy', :id => ar}, :class => 'destroy' %>

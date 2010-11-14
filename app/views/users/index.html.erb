@@ -1,7 +1,7 @@
 <div class="box">
   <h3>
     <%= t('users.index.header') %>
-    <%= link_to t("users.common.new_link"), new_user_path, :class => 'new' %>
+    <%= link_btn t("users.common.new_link"), new_user_path, :icon => 'new' %>
   </h3>
   <p>
     <%= t('users.index.intro') %>
@@ -12,7 +12,7 @@
       <tr>
         <th><%= User.human_attribute_name(:login) %></th>
         <th><%= User.human_attribute_name(:email) %></th>
-        <th></th>
+        <th class="options"></th>
       </tr>
     </thead>
     <tbody>
@@ -20,8 +20,8 @@
         <tr>
           <td><%= ar[:login] %></td>
           <td><%= ar[:email] %></td>
-          <td>
-            <%= link_to t("users.common.edit_link"), edit_user_path(ar), :class => 'edit' %>
+          <td class="options">
+            <%= link_btn t("users.common.edit_link"), edit_user_path(ar), :icon => 'edit' %>
           </td>
         </tr>
       <% end %>

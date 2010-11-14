@@ -5,4 +5,10 @@ class PeopleController < RemoteController
   same_company_required :only => [:edit, :update]
   role_or_ownership_required :company_admin, :only => [:edit, :update]
   role_required :company_admin, :only => [:index, :new, :create]
+  
+  def index
+    index! {
+      @people = current_company.people
+    }
+  end
 end
