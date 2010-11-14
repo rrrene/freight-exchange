@@ -138,6 +138,13 @@ en:
   
   # PeopleController
   people:
+    common:
+      edit_link: "Edit Person"
+      new_link: "Create another User"
+    index:
+      page_title: "Overview: People"
+      header: "All People"
+      intro: "Here you can see all the people of your company."
     edit:
       page_title: "Edit person"
       header: "Personal information"

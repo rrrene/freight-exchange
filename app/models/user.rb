@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
   after_destroy { |user| user.company.ensure_admin }
   brackets_find_by :login
   acts_as_authentic
-  searchable
+  searchable :attributes => ["posting_type", "current_login_ip", "login", "email"]
   
   #:call-seq:
   #   user.has_role?(role_name) # => boolean
@@ -53,6 +53,17 @@ class User < ActiveRecord::Base
   #   user.roles # => ["administrator", "company_admin"]
   def roles
     @roles ||= user_roles.map(&:name)
+  end
+  
+  #:call-seq:
+  #   user.search_type # => string
+  #
+  # Returns the type of postings the user is searching for, i.e. 
+  # freights if the user is posting loading space and vice versa.
+  #   user.posting_type # => "Freight"
+  #   user.search_type # => "LoadingSpace"
+  def search_type
+    posting_type == 'Freight' ? 'LoadingSpace' : 'Freight'
   end
   
   # For permission handling

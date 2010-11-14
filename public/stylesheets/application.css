@@ -194,6 +194,13 @@ thead th {
   color: #666;
   border-bottom: 1px solid #E0E0E0;
 }
+tbody td.options {
+  text-align: right;
+  padding-right: 0;
+}
+.index tbody tr td {
+  border-bottom: 1px solid #f0f0f0;
+}
 
 legend span {
   color: #666;
