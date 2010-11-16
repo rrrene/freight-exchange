@@ -4,7 +4,7 @@
         <% if @person[attr].full? %>
           <tr>
             <th><%= Person.human_attribute_name(attr) %></th>
-            <td><%= auto_link @person[attr] %></td>
+            <td><%= auto_link @person.__send__(attr) %></td>
           </tr>
         <% end %>
       <% end %>

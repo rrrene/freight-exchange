@@ -52,6 +52,15 @@ ul.navigation li a {
   padding: 4px;
 }
 
+ul.navigation li span {
+  font-weight: bold;
+  color: #666;
+}
+ul.navigation li span.normal {
+  font-weight: normal;
+  color: #000;
+}
+
 ul.navigation li a.frontend,
 ul.navigation li a.backend {
   color: #333;
