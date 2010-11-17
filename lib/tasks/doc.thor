@@ -241,7 +241,7 @@ class Doc < Thor
         :side_track_available => {:description => "Gleisanschluss vorhanden?", :example => false},
         :track_number => {:description => "Gleisnummer", :example => 5},
       },
-      "recordings" => {
+      "action_recordings" => {
         :item_type => {:description => "Verweis auf den Typ des veränderten Objekts", :example => "Freight"},
         :item_id => {:description => "Verweis auf die ID des veränderten Objekts", :example => 1},
         :action => {:description => "Art der ausgeführten Aktion", :example => :create},
