@@ -18,10 +18,13 @@
             <b><%= result.origin_site_info.name %></b> <%= l(result.origin_site_info.date, :format => :short) %>
             -
             <b><%= result.destination_site_info.name %></b> <%= l(result.destination_site_info.date, :format => :short) %>
-            
+          <% end %>
+          <% if result.respond_to?(:email) %>
+            <small>E-Mail: <%= auto_link(result.email) %></small>
+            <br>
           <% end %>
           <% if result.respond_to?(:company) %>
-            - <%= link_to result.company.name, {:controller => result.class.to_s.pluralize.underscore, :action => 'show', :id => result} %>
+            <small>Company: <%= link_to result.company.name, {:controller => result.class.to_s.pluralize.underscore, :action => 'show', :id => result} %></small>
             <br>
           <% end %>
         </div>
