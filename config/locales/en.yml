@@ -142,12 +142,13 @@ en:
   # PeopleController
   people:
     common:
-      edit_link: "Edit Person"
+      edit_link: "Edit Contact"
       new_link: "Create another User"
     index:
       page_title: "Overview: People"
       header: "All People"
       intro: "Here you can see all the people of your company."
+      edit_user_link: "Edit User Account"
     edit:
       page_title: "Edit person"
       header: "Personal information"
@@ -222,6 +223,9 @@ en:
     common:
       edit_link: "Edit"
       new_link: "Create another User"
+    edit:
+      page_title: "Edit User"
+      header: "Edit User"
     index:
       page_title: "Overview: Users"
       header: "All Users"

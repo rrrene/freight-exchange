@@ -19,11 +19,6 @@ class UsersController < RemoteController
     @user = User.new(params[:user])
     @user.company = current_company
     create!
-#    if @user.save
-#      redirect_to :action => :index
-#    else
-#      render :action => :new
-#    end
   end
   
   def show # :nodoc:

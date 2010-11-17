@@ -22,7 +22,7 @@
             <% if site_info[attr].full? %>
               <tr>
                 <th><%= SiteInfo.human_attribute_name(attr) %></th>
-                <td><%= site_info[attr] %></td>
+                <td><%= site_info.__send__(attr) %></td>
               </tr>
             <% end %>
           <% end %>

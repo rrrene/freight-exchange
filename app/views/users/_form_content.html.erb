@@ -12,3 +12,7 @@
   <% f.inputs :posting do %>
     <%= f.input :posting_type, :collection => %w(Freight LoadingSpace), :include_blank => false %>
   <% end %>
+  
+  <% f.inputs :user_roles do %>
+    <%= f.input :user_roles %>
+  <% end %>

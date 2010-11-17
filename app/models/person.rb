@@ -17,6 +17,15 @@ class Person < ActiveRecord::Base
     "#{first_name} #{last_name}"
   end
   
+  def website
+    address = self[:website]
+    if address =~ /^\w+\:\/\//
+      address
+    else
+      "http://#{address}"
+    end
+  end
+  
   validates_presence_of :first_name
   validates_presence_of :last_name
   validates_inclusion_of :gender, :in => GENDER_CHOICES
