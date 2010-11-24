@@ -54,7 +54,7 @@ BlackBoard::Application.routes.draw do |map|
     resources :search_recordings
     resources :user_roles
     resources :users
-    root :to => "stations#index"
+    root :to => "action_recordings#index"
     match "search", :to => "search#index", :as => :search
   end
 

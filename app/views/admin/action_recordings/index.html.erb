@@ -10,4 +10,22 @@
 %>
 <%= google_chart_tag :type => :bar, :size => "660x100", :data => @data, :labels => @labels %>
 
+<%= javascript_tag <<-JAVASCRIPT
+      var pollTimestamp = #{@action_recordings.first.created_at.to_i};
+      function pollServer() {
+        jQuery.ajax({
+          url: '#{admin_action_recordings_path}',
+          data: 'timestamp='+pollTimestamp,
+          dataType: 'html',
+          type: 'GET',
+          success: function (data, status, xhr) {
+            document.title = data;
+          }
+        });
+      }
+    JAVASCRIPT
+%>
+
+<input type="button" onclick="pollServer();" value="Poll server">
+
 <%= render_partial :recordings, :locals => {:recordings => @action_recordings} %>
