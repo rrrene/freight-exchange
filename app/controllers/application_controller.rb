@@ -42,7 +42,8 @@ class ApplicationController < ActionController::Base
   def current_user() # :doc:
     @current_user ||= begin
       if api_request?
-         authenticate_by_api_key_in_params || authenticate_by_api_key_in_http_auth
+         UserSession.find.full?(&:user) ||
+          authenticate_by_api_key_in_params || authenticate_by_api_key_in_http_auth
       else
         UserSession.find.full?(&:user)
       end

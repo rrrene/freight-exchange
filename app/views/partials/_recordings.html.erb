@@ -1,14 +1,15 @@
-
-<ul class="action_list">
-<% recordings.each do |recording| %>
-  <li>
-    <div class="image"><%= image_tag "rails.png" %></div>
-    <div class="text">
-      <b><%= l(recording.created_at, :format => :short) %></b><br>
-      <div class="avatar"><%= image_tag "gravatar.png" %></div>
-      <%= humanize_recording(recording).html_safe %>
-    </div>
-    <%= clear_both %>
-  </li>
+<% unless recordings.empty? %>
+  <ul class="action_list">
+  <% recordings.each do |recording| %>
+    <li>
+      <div class="image"><%= image_tag "rails.png" %></div>
+      <div class="text">
+        <b><%= l(recording.created_at, :format => :short) %></b><br>
+        <div class="avatar"><%= image_tag "gravatar.png" %></div>
+        <%= humanize_recording(recording).html_safe %>
+      </div>
+      <%= clear_both %>
+    </li>
+  <% end %>
+  </ul>
 <% end %>
-</ul>

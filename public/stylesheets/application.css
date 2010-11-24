@@ -447,6 +447,10 @@ div.frame a.btn-next:hover .icon, a.btn-download:focus .icon {background-positio
 
 /* Action lists */
 
+#poll_status {
+  color: #eee;
+}
+
 ul.action_list,
 ul.action_list li {
   margin: 0;
@@ -454,7 +458,7 @@ ul.action_list li {
   list-style-type: none;
 }
 ul.action_list li {
-  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #ccc;
   padding-bottom: 10px;
   padding-top: 10px;
 }

@@ -10,22 +10,52 @@
 %>
 <%= google_chart_tag :type => :bar, :size => "660x100", :data => @data, :labels => @labels %>
 
-<%= javascript_tag <<-JAVASCRIPT
-      var pollTimestamp = #{@action_recordings.first.created_at.to_i};
-      function pollServer() {
-        jQuery.ajax({
-          url: '#{admin_action_recordings_path}',
-          data: 'timestamp='+pollTimestamp,
-          dataType: 'html',
-          type: 'GET',
-          success: function (data, status, xhr) {
-            document.title = data;
-          }
-        });
+<script type="text/javascript">
+//<![CDATA[
+  var pollLastID = <%= @action_recordings.first.id %>;
+  var pollIntervalID = null;
+  function pollServer() {
+    jQuery.ajax({
+      url: '<%= admin_action_recordings_path %>',
+      data: 'last_id='+pollLastID,
+      dataType: 'json',
+      type: 'GET',
+      success: function (data, status, xhr) {
+        pollLastID = data['last_id'];
+        var html = jQuery.trim(data['live_content']);
+        document.title = html.length;
+        if( html.length > 0 ) {
+          jQuery('#live_content').prepend(html);
+          jQuery('#live_content ul.action_list').first().glow();
+        }
+        jQuery("#poll_status").html("");
+      },
+      error: function (data, status, xhr) {
+        stopPolling();
+        jQuery("#poll_status").html("[ERROR] Stopped polling!");
+      },
+      beforeSend: function (data, status, xhr) {
+        jQuery("#poll_status").html("Sending "+pollLastID+"...");
+      },
+      complete: function (data, status, xhr) {
+        jQuery("#poll_status").html("");
       }
-    JAVASCRIPT
-%>
+    });
+  }
+  function startPolling() {
+    stopPolling();
+    pollIntervalID = setInterval(pollServer, 1500);
+  }
+  function stopPolling() {
+    if( pollIntervalID ) clearInterval(pollIntervalID);
+  }
+  startPolling();      
+//]]>
+</script>
 
 <input type="button" onclick="pollServer();" value="Poll server">
+<span id="poll_status">&nbsp;</span>
 
-<%= render_partial :recordings, :locals => {:recordings => @action_recordings} %>
+<div id="live_content">
+  <%= render_partial :recordings, :locals => {:recordings => @action_recordings} %>
+</div>

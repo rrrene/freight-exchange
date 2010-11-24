@@ -19,7 +19,8 @@ loop do
   begin
     Robot::Bot.new.go
     sleep 2
-rescue REXML::ParseException => e
+  rescue Exception => e
+    warn 'rescued ' + e.inspect
     nil
   end
 end
