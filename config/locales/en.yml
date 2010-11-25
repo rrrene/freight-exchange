@@ -8,6 +8,8 @@ en:
       dashboard: "Dashboard"
       freights: "Freights"
       loading_spaces: "Loading Spaces"
+      my_company: "My Company"
+      my_person: "My Profile"
       people: "People"
       reviews: "Reviews"
       logout: "Logout"
@@ -143,12 +145,12 @@ en:
   people:
     common:
       edit_link: "Edit Contact"
+      edit_user_link: "Edit User Account"
       new_link: "Create another User"
     index:
       page_title: "Overview: People"
       header: "All People"
       intro: "Here you can see all the people of your company."
-      edit_user_link: "Edit User Account"
     edit:
       page_title: "Edit person"
       header: "Personal information"
@@ -184,6 +186,7 @@ en:
         headers:
           name: "Name"
           options: "Options"
+        review_name: "Review by %{author_user} (%{author_company})"
         options:
           approve: "Approve"
           delete: "Delete"

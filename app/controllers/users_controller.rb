@@ -22,9 +22,7 @@ class UsersController < RemoteController
   end
   
   def show # :nodoc:
-    show! {
-      page[:title] = @user.name
-    }
+    redirect_to resource.person
   end
   
 end

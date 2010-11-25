@@ -19,7 +19,7 @@ class Person < ActiveRecord::Base
   
   def website
     address = self[:website]
-    if address =~ /^\w+\:\/\//
+    if address.blank? || address =~ /^\w+\:\/\//
       address
     else
       "http://#{address}"

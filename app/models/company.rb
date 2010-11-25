@@ -10,11 +10,11 @@ class Company < ActiveRecord::Base
   has_many :reviews
   has_many :freights
   has_many :loading_spaces
-  
+
   def approved_reviews
-    reviews.where('approved_by_id NOT NULL')
+    reviews.where('approved_by_id IS NOT NULL')
   end
-  
+
   include ActiveRecord::HasLocalizedInfos
   def localized_infos=(array_of_hashes)
     localized_infos!(array_of_hashes)
@@ -35,6 +35,10 @@ class Company < ActiveRecord::Base
         u.user_roles << admin_role
       end
     end
+  end
+
+  def unapproved_reviews
+    reviews.where('approved_by_id IS NULL')
   end
   
   validates_presence_of :name

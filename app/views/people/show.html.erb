@@ -1,19 +1,20 @@
+
+
 <div class="box">
-    <table>
-      <% %w(phone fax email website).each do |attr| %>
-        <% if @person[attr].full? %>
-          <tr>
-            <th><%= Person.human_attribute_name(attr) %></th>
-            <td><%= auto_link @person.__send__(attr) %></td>
-          </tr>
-        <% end %>
-      <% end %>
+  <table>
+    <% %w(phone fax email website).each do |attr| %>
+      <% if @person[attr].full? %>
         <tr>
-          <th><%= t("activerecord.attributes.person.localized_infos.misc_text") %></th>
-          <td><%= localized_info(@person, :misc_text) %></td>
+          <th><%= Person.human_attribute_name(attr) %></th>
+          <td><%= auto_link @person.__send__(attr) %></td>
         </tr>
-    </table>
-    
+      <% end %>
+    <% end %>
+      <tr>
+        <th><%= t("activerecord.attributes.person.localized_infos.misc_text") %></th>
+        <td><%= localized_info(@person, :misc_text) %></td>
+      </tr>
+  </table>
 </div>
 
 <%= render_company_info(@person.company) %>

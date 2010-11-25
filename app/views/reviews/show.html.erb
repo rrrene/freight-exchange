@@ -1,6 +1,6 @@
 <div class="box">
   
-  <%= content_tag :h3, t("reviews.show.is_approved") if @review.approved? %>
+  <%= content_tag(:h3, t("reviews.show.is_approved"), :class => 'green') if @review.approved? %>
   
   <table>
     <tr>
@@ -16,8 +16,12 @@
       <td><%= @review.text %></td>
     </tr>
   </table>
-  
-  <% form_tag(:action => :approve) do %>
-    <%= submit_tag t("reviews.show.approve_link") %>
+  <% if @review.company == current_company && !@review.approved? %>
+    <% form_tag(:action => :approve) do %>
+      <%= submit_tag t("reviews.show.approve_link") %>
+    <% end %>
   <% end %>
 </div>
+
+<%= render_person_info(@review.author_user.full?(&:person)) %>
+<%= render_company_info(@review.author_company) %>

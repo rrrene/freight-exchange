@@ -16,11 +16,11 @@
     <tbody>
       <% collection.each do |ar| %>
         <tr>
-          <td><%= link_to ar.name, ar %></td>
+          <td><%= link_to t('reviews.index.table.review_name', {:author_user => ar.author_user.full?(&:name), :author_company => ar.author_company.full?(&:name)}), ar %></td>
           <td class="options">
-            <%= link_to t('reviews.index.table.options.approve'), {:action => 'approve', :id => ar}, :class => 'approve' %> 
+            <%= link_to t('reviews.index.table.options.approve'), {:action => 'approve', :id => ar}, :method => :post, :class => 'approve' %> 
             |
-            <%#= link_to t('reviews.index.table.options.delete'), {:action => 'destroy', :id => ar}, :class => 'destroy' %>
+            <%= link_to t('reviews.index.table.options.delete'), ar, :class => 'destroy', :method => :delete %>
           </td>
         </tr>
       <% end %>

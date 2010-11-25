@@ -118,7 +118,7 @@ module ApplicationHelper
   # Renders a partial with the contact information for the given company.
   # Example:
   #   <%= render_person_info current_company %>
-  def render_company_info(company)
+  def render_company_info(company = resource.company)
     render_partial :sidebar_company_info, :locals => {:company => company}
   end
   
@@ -126,6 +126,15 @@ module ApplicationHelper
     subs = current_user.roles
     subs << :admin if admin?
     render options.merge(:partial => search_for_partial(subs, partial))
+  end
+
+  def review_badge
+    count = current_company.unapproved_reviews.count
+    if count > 0
+      ' ' << content_tag(:span, count, :class => 'badge')
+    else
+      ""
+    end
   end
   
   def search_for_partial(sub_dirs, partial)
