@@ -1,11 +1,16 @@
 <div class="box">
   <h3>
     <%= t('loading_spaces.show.header') %>
-    <% if resource.company == current_company %>
-      <%= link_to t("loading_spaces.common.edit_link"), edit_loading_space_path(@loading_space), :class => 'edit' %>
-      <%= link_to t('loading_spaces.common.template_link'), new_resource_url(:parent_id => resource.id), :class => 'edit' %>
-    <% end %>
   </h3>
+
+  <% if resource.company == current_company %>
+    <% content_for(:toolbar) do %>
+    <%= link_btn t('loading_spaces.common.template_link'), new_resource_url(:parent_id => resource.id), :icon => 'reply' %>
+      <%= link_btn t("loading_spaces.common.edit_link"), edit_loading_space_path(@loading_space), :icon => 'edit' %>
+      <%= link_btn t("loading_spaces.common.delete_link"), loading_space_path(@loading_space), :method => :delete, :confirm => t('common.confirm') %>
+    <% end %>
+  <% end %>
+
   <% %w(origin destination).each do |site| %>
     <div style="width: 48%; margin-right: 10px; float: left;">
       <h3><%= t("loading_spaces.show.#{site}.header") %></h3>

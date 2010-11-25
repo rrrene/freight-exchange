@@ -6,7 +6,7 @@ class PostingsController < RemoteController
     if parent = params[:parent_id].full? { |id| resource_class.find(id) }
       self.resource = parent
     else
-      self.resource = resource_class.new(:hazmat => true, :weight => 1000)
+      self.resource = resource_class.new(:hazmat => true, :weight => 1000, :loading_meter => 10)
       resource.build_origin_site_info({:contractor => current_company.name, :date => Time.new,
           :name => 'Bochum Hbf', :side_track_available => false,
           :address => 'Bahnhofstr. 56', :zip => '44789', :city => 'Bochum', :country => 'Germany',

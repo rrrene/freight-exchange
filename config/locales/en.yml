@@ -31,6 +31,7 @@ en:
         show: "View profile"
     choice_yes: "Yes"
     choice_no: "No"
+    confirm: "Are you sure?"
     create_new_freight: "Create a new posting"
     create_new_loading_space: "Create a new posting"
     create_new_review: "Write a review!"
@@ -106,6 +107,7 @@ en:
   # LoadingSpacesController
   loading_spaces:
     common:
+      delete_link: "Delete this posting"
       edit_link: "Edit this posting"
       new_link: "Create another posting"
       template_link: "Use as template"
@@ -125,7 +127,12 @@ en:
           template: "Use as template"
     new:
       page_title: "New loading space posting"
+    create:
+      page_title: "New loading space posting"
     edit:
+      page_title: "Edit loading space posting"
+      header: "Edit loading space posting"
+    update:
       page_title: "Edit loading space posting"
       header: "Edit loading space posting"
     show:

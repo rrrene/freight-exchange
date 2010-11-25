@@ -5,7 +5,7 @@
     <% unless @review.approved? %>
       <%= link_btn t("reviews.show.approve_link"), approve_review_path(@review), :icon => :compare, :method => :post %>
     <% end %>
-    <%= link_btn t("reviews.show.delete_link"), review_path(@review), :method => :delete %>
+    <%= link_btn t("reviews.show.delete_link"), review_path(@review), :method => :delete, :confirm => t('common.confirm') %>
   <% end %>
 <% end %>
 

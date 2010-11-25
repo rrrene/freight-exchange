@@ -1,3 +1,7 @@
 <div class="box">
   <%= render 'form' %>
 </div>
+
+<% content_for(:sidebar) do %>
+  <%= debug resource %>
+<% end %>
