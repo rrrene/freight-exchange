@@ -6,7 +6,17 @@
   <p>
     <%= t('loading_spaces.index.intro') %>
   </p>
-
+  
+<!--
+  <ul class="action_list">
+    <% collection.each do |posting| %>
+      <li>
+      <%= render :partial => 'search_result', :locals => {:result => posting} %>
+      </li>
+    <% end %>
+  </ul>
+-->
+  
   <table>
     <thead>
       <tr>
@@ -23,10 +33,9 @@
           <td><%= ar.origin_site_info.name %></td>
           <td><%= ar.destination_site_info.name %></td>
           <td class="options">
-            <%= link_to t('loading_spaces.index.table.options.edit'), {:action => 'edit', :id => ar}, :class => 'edit' %> 
-            |
-            <%#= link_to t('freights.index.table.options.delete'), {:action => 'destroy', :id => ar}, :class => 'destroy' %>
-            <%= link_to t('loading_spaces.index.table.options.template'), new_resource_url(:parent_id => ar.id), :class => 'edit' %>
+            <%= link_btn t('loading_spaces.index.table.options.template'), new_resource_url(:parent_id => ar.id), :icon => :reply %>
+            <%= link_btn t('loading_spaces.index.table.options.edit'), {:action => 'edit', :id => ar}, :icon => 'edit' %> 
+            <%= link_btn t('freights.index.table.options.delete'), ar, :method => :delete, :confirm => t('common.confirm'), :class => 'destroy' %>
           </td>
         </tr>
       <% end %>

@@ -1,6 +1,6 @@
 class PostingsController < RemoteController
-  same_company_required :only => %w(edit update)
-  role_required [:company_admin, :company_employee], :only => [:new, :create, :edit, :update]
+  same_company_required :only => %w(edit update destroy)
+  role_required [:company_admin, :company_employee], :only => [:new, :create, :edit, :update, :destroy]
   
   def new
     if parent = params[:parent_id].full? { |id| resource_class.find(id) }

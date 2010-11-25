@@ -7,7 +7,7 @@
     <% content_for(:toolbar) do %>
     <%= link_btn t('loading_spaces.common.template_link'), new_resource_url(:parent_id => resource.id), :icon => 'reply' %>
       <%= link_btn t("loading_spaces.common.edit_link"), edit_loading_space_path(@loading_space), :icon => 'edit' %>
-      <%= link_btn t("loading_spaces.common.delete_link"), loading_space_path(@loading_space), :method => :delete, :confirm => t('common.confirm') %>
+      <%= link_btn t("loading_spaces.common.delete_link"), loading_space_path(@loading_space), :method => :delete, :confirm => t('common.confirm'), :class => 'destroy' %>
     <% end %>
   <% end %>
 

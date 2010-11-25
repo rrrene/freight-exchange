@@ -14,6 +14,12 @@ class UsersController < RemoteController
     }
   end
   
+  def new
+    new! {
+      @user.build_person
+    }
+  end
+  
   # This creates a new user inside the current company.
   # For the original sign up screen, see Companies#new.
   def create
