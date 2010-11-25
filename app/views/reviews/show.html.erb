@@ -2,26 +2,23 @@
   
   <%= content_tag(:h3, t("reviews.show.is_approved"), :class => 'green') if @review.approved? %>
   
-  <table>
-    <tr>
-      <th><%= Review.human_attribute_name(:author_company) %></th>
-      <td><%= link_to_item @review.author_company %></td>
-    </tr>
-    <tr>
-      <th><%= Review.human_attribute_name(:author_user) %></th>
-      <td><%= link_to_item @review.author_user %></td>
-    </tr>
-    <tr>
-      <th><%= Review.human_attribute_name(:text) %></th>
-      <td><%= @review.text %></td>
-    </tr>
-  </table>
+  <h3><%= t('reviews.index.table.review_name', {:author_user => resource.author_user.full?(&:name), :author_company => resource.author_company.full?(&:name)}) %></h3>
+  
+  <%= format_multiline_input @review.text %>
+
   <% if @review.company == current_company && !@review.approved? %>
     <% form_tag(:action => :approve) do %>
       <%= submit_tag t("reviews.show.approve_link") %>
     <% end %>
   <% end %>
+  <% form_tag({:action => :destroy}, {:method => :delete}) do %>
+    <%= submit_tag t("reviews.show.delete_link") %>
+  <% end %>
 </div>
+
+<% content_for(:sidebar) do %>
+  <h3 class="info"><%= t("reviews.show.sidebar_info_title") %></h3>
+<% end %>
 
 <%= render_person_info(@review.author_user.full?(&:person)) %>
 <%= render_company_info(@review.author_company) %>

@@ -7,9 +7,9 @@ class Company < ActiveRecord::Base
   has_many :people, :through => :users
   belongs_to :contact_person, :class_name => 'Person'
   has_many :recordings, :order => 'created_at DESC'
-  has_many :reviews
-  has_many :freights
-  has_many :loading_spaces
+  has_many :reviews, :order => 'created_at DESC'
+  has_many :freights, :order => 'created_at DESC'
+  has_many :loading_spaces, :order => 'created_at DESC'
 
   def approved_reviews
     reviews.where('approved_by_id IS NOT NULL')

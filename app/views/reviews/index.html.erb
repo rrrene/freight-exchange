@@ -5,25 +5,19 @@
   <p>
     <%= t('reviews.index.intro') %>
   </p>
-
-  <table>
-    <thead>
-      <tr>
-        <th><%= t('reviews.index.table.headers.name') %></th>
-        <th class="options"><%= t('reviews.index.table.headers.options') %></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% collection.each do |ar| %>
-        <tr>
-          <td><%= link_to t('reviews.index.table.review_name', {:author_user => ar.author_user.full?(&:name), :author_company => ar.author_company.full?(&:name)}), ar %></td>
-          <td class="options">
-            <%= link_to t('reviews.index.table.options.approve'), {:action => 'approve', :id => ar}, :method => :post, :class => 'approve' %> 
-            |
-            <%= link_to t('reviews.index.table.options.delete'), ar, :class => 'destroy', :method => :delete %>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+  
+  <ul class="action_list">
+    <% collection.each do |ar| %>
+      <li class="<%= ar.approved? ? :approved : :unapproved %>">
+        <div class="image"><%= image_tag "type/review.png" %></div>
+        <div class="text">
+          <b><%= l(ar.created_at, :format => :short) %></b><br>
+          <div class="avatar"><%= image_tag "gravatar.png" %></div>
+          <%= link_to t('reviews.index.table.review_name', {:author_user => ar.author_user.full?(&:name), :author_company => ar.author_company.full?(&:name)}), ar %>
+          <div><%= truncate ar.text, :length => 100 %></div>
+        </div>
+        <%= clear_both %>
+      </li>
+    <% end %>
+  </ul>
 </div>

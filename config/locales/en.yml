@@ -8,8 +8,8 @@ en:
       dashboard: "Dashboard"
       freights: "Freights"
       loading_spaces: "Loading Spaces"
-      my_company: "My Company"
-      my_person: "My Profile"
+      my_company: "My Company Profile"
+      my_person: "My Personal Profile"
       people: "People"
       reviews: "Reviews"
       logout: "Logout"
@@ -192,8 +192,12 @@ en:
           approve: "Approve"
           delete: "Delete"
     show:
+      page_title: "Review"
+      header: "Review by %{author_user} (%{author_company})"
       is_approved: "This review is published!"
-      approve_link: "Approve"
+      sidebar_info_title: "Who wrote this review?"
+      approve_link: "Approve this review"
+      delete_link: "Delete this review"
       
   # SearchController
   search:
