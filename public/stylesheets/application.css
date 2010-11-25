@@ -88,6 +88,8 @@ div#corridor_map {
 div#page_title {
   height: 68px;
 }
+
+div#content h2,
 div#page_title h2 {
   margin-left: 16px;
   color: #666;
