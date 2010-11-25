@@ -9,8 +9,9 @@ class UsersController < RemoteController
   
   # Lists all users in the current company.
   def index
-    @users = current_company.users
-    index!
+    index! {
+      @users = current_company.users
+    }
   end
   
   # This creates a new user inside the current company.

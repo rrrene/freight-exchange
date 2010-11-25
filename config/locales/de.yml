@@ -4,7 +4,6 @@ de:
     attributes: 
       company: 
         address: Adresse
-        address2: ~
         city: Stadt
         country: Land
         email: E-Mail
@@ -91,6 +90,7 @@ de:
       update: 
         page_title: "Konfigurationsvariable bearbeiten"
     common: 
+      edit_link: Bearbeiten
       navi: 
         app_configs: Einstellungen
         back_to_app: "Zurück zum Frontend"
@@ -117,6 +117,15 @@ de:
         page_title: "Firma erstellen"
       update: 
         page_title: "Firma bearbeiten"
+    people: 
+      edit: 
+        page_title: "Person bearbeiten"
+      index: 
+        header: "Alle Personen"
+        intro: "Hier sehen Sie alle Personen"
+        page_title: "Alle Personen"
+      update: 
+        page_title: "Person bearbeiten"
     recordings: 
       index: 
         header: "Alle Aktionen"
@@ -160,6 +169,7 @@ de:
         page_title: "Benutzerrolle bearbeiten"
     users: 
       edit: 
+        edit_person_link: "Person bearbeiten"
         page_title: "Benutzer bearbeiten"
       index: 
         header: "Alle Benutzer"
@@ -466,10 +476,8 @@ de:
           quadrillion: Billiarde
           thousand: Tausend
           trillion: Billion
-          unit: ~
       format: 
-        delimiter: ~
-        precision: 3
+        precision: 4
         significant: t
         strip_insignificant_zeros: t
       storage_units: 
@@ -482,12 +490,6 @@ de:
           kb: KB
           mb: MB
           tb: TB
-    percentage: 
-      format: 
-        delimiter: ~
-    precision: 
-      format: 
-        delimiter: ~
   people: 
     common: 
       edit_link: "Person bearbeiten"
@@ -496,6 +498,7 @@ de:
       header: "Persönliche Angaben"
       page_title: "Person bearbeiten"
     index: 
+      edit_user_link: "Accountdaten bearbeiten"
       header: "Alle Benutzer"
       intro: "Hier sehen Sie alle Benutzer Ihrer Firma."
       page_title: "Überblick: Benutzer"
@@ -584,6 +587,9 @@ de:
     common: 
       edit_link: Bearbeiten
       new_link: "Weiteren Benutzer anlegen"
+    edit: 
+      header: "Account bearbeiten"
+      page_title: "Account bearbeiten"
     index: 
       header: "Alle Benutzer"
       intro: "Hier sehen Sie alle Benutzer ihrer Firma."

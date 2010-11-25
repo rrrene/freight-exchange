@@ -10,9 +10,6 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(:version => 20101110135418) do
-=======
 ActiveRecord::Schema.define(:version => 20101112220631) do
 
   create_table "action_recordings", :force => true do |t|
@@ -25,7 +22,6 @@ ActiveRecord::Schema.define(:version => 20101112220631) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
->>>>>>> bf7fbb1f0906bfdf2f759b7c8a12930fbadde762
 
   create_table "app_configs", :force => true do |t|
     t.string   "name"

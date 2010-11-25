@@ -260,6 +260,7 @@ en:
         users: "Users"
         app_configs: "Settings"
         back_to_app: "Back to Frontend"
+      edit_link: "Edit"  
       new_link: "Create a new one"
 
     # AppConfigsController
@@ -278,6 +279,36 @@ en:
         page_title: "All Settings"
         header: "All Settings"
         intro: "Here you see all system specific settings."
+
+    # CompaniesController
+    companies:
+      dashboard:
+        page_title: "Dashboard"
+        recordings:
+          header: "Actions"
+      new:
+        page_title: "Create company account"
+        header: "Create your company account"
+        intro: "You are just 60 seconds away from your own account!"
+      create:
+        page_title: "Create your company"
+      edit:
+        page_title: "Edit company"
+        header: "Company information"
+      update:
+        page_title: "Edit company"
+
+    # PeopleController
+    people:
+      edit:
+        page_title: "Edit Person"
+        edit_person_link: "Edit User"
+      update:
+        page_title: "Edit Person"
+      index:
+        page_title: "All People"
+        header: "All People"
+        intro: "Here you see all people."
 
     # RecordingsController
     recordings:
@@ -334,30 +365,13 @@ en:
     users:
       edit:
         page_title: "Edit User"
+        edit_person_link: "Edit Person"
       update:
         page_title: "Edit User"
       index:
         page_title: "All Users"
         header: "All Users"
         intro: "Here you see all users."
-
-    # CompaniesController
-    companies:
-      dashboard:
-        page_title: "Dashboard"
-        recordings:
-          header: "Actions"
-      new:
-        page_title: "Create company account"
-        header: "Create your company account"
-        intro: "You are just 60 seconds away from your own account!"
-      create:
-        page_title: "Create your company"
-      edit:
-        page_title: "Edit company"
-        header: "Company information"
-      update:
-        page_title: "Edit company"
 
 #
 #
