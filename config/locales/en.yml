@@ -309,7 +309,7 @@ en:
     people:
       edit:
         page_title: "Edit Person"
-        edit_person_link: "Edit User"
+        edit_user_link: "Edit User"
       update:
         page_title: "Edit Person"
       index:

@@ -14,5 +14,5 @@
   <% end %>
   
   <% f.inputs :user_roles do %>
-    <%= f.input :user_roles %>
+    <%= f.input :user_roles, :as => :check_boxes, :collection => UserRole.frontend_roles %>
   <% end %>

@@ -33,5 +33,9 @@ class UserRole < ActiveRecord::Base
   has_and_belongs_to_many :users, :uniq => true
   searchable
   
+  def self.frontend_roles
+    where('name LIKE ?', 'company_%')
+  end
+  
   validates_uniqueness_of :name
 end

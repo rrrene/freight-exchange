@@ -18,8 +18,8 @@
     <%= f.input :company %>
   <% end %>
   
-  <% f.inputs :posting do %>
-    <%= f.input :user_roles %>
+  <% f.inputs :user_roles do %>
+    <%= f.input :user_roles, :as => :check_boxes %>
   <% end %>
 
   <%= f.buttons %>
