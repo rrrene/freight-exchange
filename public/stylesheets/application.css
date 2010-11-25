@@ -496,3 +496,10 @@ ul.action_list div.avatar img {
 .green {
   color: #0D7F09!important;
 }
+.badge {
+  -moz-border-radius:5px 5px 5px 5px;
+  border-radius: 5px;
+  background: red;
+  color: white;
+  padding: 0 3px;
+}

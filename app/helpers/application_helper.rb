@@ -5,6 +5,10 @@ module ApplicationHelper
     controller.is_a?(Admin::BaseController)
   end
   
+  def badge_for(count)
+    count == 0 ? "" : ' ' << content_tag(:b, count, :class => 'badge')
+  end
+
   def box(title = nil, &block)
     inner = capture(&block)
     head = title.full? { |t| content_tag :h3, t }.to_s
@@ -127,15 +131,6 @@ module ApplicationHelper
     subs << :admin if admin?
     render options.merge(:partial => search_for_partial(subs, partial))
   end
-
-  def review_badge
-    count = current_company.unapproved_reviews.count
-    if count > 0
-      ' ' << content_tag(:span, count, :class => 'badge')
-    else
-      ""
-    end
-  end
   
   def search_for_partial(sub_dirs, partial)
     sub_dirs.each do |sub_dir|
@@ -151,6 +146,10 @@ module ApplicationHelper
   #   <%= render_person_info current_person %>
   def render_person_info(person)
     render_partial :sidebar_person_info, :locals => {:person => person}
+  end
+  
+  def text_with_badge(snippet, count)
+    (t(snippet) + badge_for(count)).html_safe
   end
   
   def yes_no(condition)

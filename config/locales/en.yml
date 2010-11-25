@@ -47,6 +47,7 @@ en:
   companies:
     dashboard:
       page_title: "Dashboard"
+      intro: "Here you can see all the actions of your company's users."
       recordings:
         header: "Actions"
     new:

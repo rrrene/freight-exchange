@@ -22,7 +22,7 @@
               <li><%= link_to_unless_current(t("common.navi.my_company"), company_path(current_company)) %></li>
               <li><%= link_to_unless_current(t("common.navi.my_person"), person_path(current_person)) %></li>
               <li>
-                <%= link_to_unless_current(t("common.navi.reviews") + review_badge, reviews_path) %>
+                <%= link_to_unless_current(text_with_badge("common.navi.reviews", current_company.unapproved_reviews.count), reviews_path) %>
               </li>
               <li><%= link_to_unless_current(t("common.navi.people"), people_path) %></li>
               <li class="last"><%= link_to_unless_current(t("common.navi.logout"), logout_path) %></li>
