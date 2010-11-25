@@ -521,3 +521,14 @@ ul.action_list div.avatar img {
   color: white;
   padding: 0 3px;
 }
+
+
+li.unapproved b {
+  background-color: #fcc;
+  padding: 3px;
+}
+li.approved b {
+  background-color: #0D7F09;
+  color: white;
+  padding: 3px;
+}
