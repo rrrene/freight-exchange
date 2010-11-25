@@ -1,3 +1,14 @@
+
+<% if @review.company == current_company &&  %>
+  <% content_for(:toolbar) do %>
+  <%= link_btn t("reviews.show.index_link"), reviews_path, :icon => :prev %>
+    <% unless @review.approved? %>
+      <%= link_btn t("reviews.show.approve_link"), approve_review_path(@review), :icon => :compare, :method => :post %>
+    <% end %>
+    <%= link_btn t("reviews.show.delete_link"), review_path(@review), :method => :delete %>
+  <% end %>
+<% end %>
+
 <div class="box">
   
   <%= content_tag(:h3, t("reviews.show.is_approved"), :class => 'green') if @review.approved? %>
@@ -5,20 +16,11 @@
   <h3><%= t('reviews.index.table.review_name', {:author_user => resource.author_user.full?(&:name), :author_company => resource.author_company.full?(&:name)}) %></h3>
   
   <%= format_multiline_input @review.text %>
-
-  <% if @review.company == current_company && !@review.approved? %>
-    <% form_tag(:action => :approve) do %>
-      <%= submit_tag t("reviews.show.approve_link") %>
-    <% end %>
-  <% end %>
-  <% form_tag({:action => :destroy}, {:method => :delete}) do %>
-    <%= submit_tag t("reviews.show.delete_link") %>
-  <% end %>
 </div>
+
 
 <% content_for(:sidebar) do %>
   <h3 class="info"><%= t("reviews.show.sidebar_info_title") %></h3>
 <% end %>
-
 <%= render_person_info(@review.author_user.full?(&:person)) %>
 <%= render_company_info(@review.author_company) %>

@@ -1,6 +1,8 @@
 <% if current_person == @person %>
-  <%= link_btn t("people.common.edit_link"), edit_person_path(@person) %>
-  <%= link_btn t("people.common.edit_user_link"), edit_user_path(@person) %>
+  <% content_for(:toolbar) do %>
+    <%= link_btn t("people.common.edit_link"), edit_person_path(@person) %>
+    <%= link_btn t("people.common.edit_user_link"), edit_user_path(@person) %>
+  <% end %>
 <% end %>
 
 <div class="box">

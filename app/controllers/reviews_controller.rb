@@ -1,4 +1,6 @@
 class ReviewsController < RemoteController
+  same_company_required :except => :index
+  
   def new
     @review = Review.new(params[:review])
     @review.company_id = params[:company_id]

@@ -200,6 +200,7 @@ en:
       sidebar_info_title: "Who wrote this review?"
       approve_link: "Approve this review"
       delete_link: "Delete this review"
+      index_link: "Back to overview"
       
   # SearchController
   search:

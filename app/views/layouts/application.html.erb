@@ -22,7 +22,12 @@
         <div class="frame">
           <div class="container" id="frame">
             <%= render_partial :page_title %>
-            <div id="content" class="span-16"><%= yield %></div>
+            <div id="content" class="span-16">
+              <% if toolbar = yield(:toolbar) %>
+                <%= content_tag(:div, toolbar, :class => 'toolbar') %>
+              <% end %>
+              <%= yield %>
+            </div>
             <%= render_partial :sidebar %>
           </div>
         </div>

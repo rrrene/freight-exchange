@@ -532,3 +532,9 @@ li.approved b {
   color: white;
   padding: 3px;
 }
+
+div.toolbar {
+  margin-left: 16px;
+  position: absolute;
+  margin-top: -20px;
+}
