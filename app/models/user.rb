@@ -31,7 +31,7 @@ class User < ActiveRecord::Base
   alias is? has_role?
   
   def name # :nodoc:
-    person.name
+    person.full?(&:name)
   end
   
   def postings

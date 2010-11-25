@@ -7,7 +7,12 @@
   
   <%= render_partial :recordings, :locals => {:recordings => @recordings} %>
 </div>
-
+<% content_for(:sidebar) do %>
+  <h3 class="info"><%= t("companies.dashboard.sidebar_person_info_title") %></h3>
+<% end %>
 <%= render_person_info current_person %>
 
-<%= render_company_info @company %>
+<% content_for(:sidebar) do %>
+  <h3 class="info"><%= t("companies.dashboard.sidebar_company_info_title") %></h3>
+<% end %>
+  <%= render_company_info @company %>

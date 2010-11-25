@@ -19,12 +19,11 @@
                   <%= link_to_unless_current(t("common.navi.loading_spaces"), loading_spaces_path) %>
                 <% end %>
               </li>
-              <li><%= link_to_unless_current(t("common.navi.my_company"), company_path(current_company)) %></li>
-              <li><%= link_to_unless_current(t("common.navi.my_person"), person_path(current_person)) %></li>
               <li>
                 <%= link_to_unless_current(text_with_badge("common.navi.reviews", current_company.unapproved_reviews.count), reviews_path) %>
               </li>
               <li><%= link_to_unless_current(t("common.navi.people"), people_path) %></li>
+              <li><%= link_to_unless_current(t("common.navi.my_company"), company_path(current_company)) %></li>
               <li class="last"><%= link_to_unless_current(t("common.navi.logout"), logout_path) %></li>
             <% else %>
               <li><%= link_to_unless_current(t("common.navi.login"), login_path) %></li>
@@ -32,11 +31,14 @@
             <% end %>
           </ul>
         </div>
+        
         <%= clear_both %>
+        
         <ul class="navigation navigation-lang navigation-right">
-           <li class="noborder"><span class="normal"><%= t("common.navi.select_locale") %></span></li>
-           <li><%= link_to_unless(I18n.locale == :de, t("common.navi.locale_de"), {:locale => :de}) %></li>
-           <li class="last"><%= link_to_unless(I18n.locale == :en, t("common.navi.locale_en"), {:locale => :en}) %></li>
+          <li><%= link_to_unless_current(t("common.navi.my_person", {:name => current_user.name}), person_path(current_person)) %></li>
+         <li class="noborder"><span class="normal"><%= t("common.navi.select_locale") %></span></li>
+         <li><%= link_to_unless(I18n.locale == :de, t("common.navi.locale_de"), {:locale => :de}) %></li>
+         <li class="last"><%= link_to_unless(I18n.locale == :en, t("common.navi.locale_en"), {:locale => :en}) %></li>
         </ul>
       </div>
     </div>

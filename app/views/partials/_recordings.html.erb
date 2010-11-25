@@ -2,7 +2,7 @@
   <ul class="action_list">
   <% recordings.each do |recording| %>
     <li>
-      <div class="image"><%= image_tag "rails.png" %></div>
+      <div class="image"><%= image_tag "type/#{recording.item_type.underscore}.png" %></div>
       <div class="text">
         <b><%= l(recording.created_at, :format => :short) %></b><br>
         <div class="avatar"><%= image_tag "gravatar.png" %></div>

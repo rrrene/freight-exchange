@@ -1,4 +1,5 @@
 <% content_for(:sidebar) do %>
+  
   <div class="box">
     <h3>
       <%= t "common.sidebar.person_information.header" %>
@@ -21,12 +22,12 @@
       <% end %>
     </table>
     
-    <% if person == current_person %>
-      <%= content_tag(:div, t("common.sidebar.person_information.please_edit_notice"), {:class => 'notice'}) if only_some_attributes_filled?(person) %>
-    <% end %>
-    
-    <% if person == current_person %>
-      <%= link_btn t("common.sidebar.person_information.edit"), person.save ? edit_person_path(person) : new_person_path, :icon => :edit %>
+    <% if person == current_person && only_some_attributes_filled?(person) %>
+      <div class="notice">
+        <%= t("common.sidebar.person_information.please_edit_notice") %>
+        <%= link_btn t("common.sidebar.person_information.edit"), person.save ? edit_person_path(person) : new_person_path, :icon => :edit %>
+      </div>
     <% end %>
   </div>
+    
 <% end %>

@@ -21,12 +21,11 @@
       <% end %>
     </table>
     
-    <% if company == current_company %>
-      <%= content_tag(:div, t("common.sidebar.company_information.please_edit_notice"), {:class => 'notice'}) if only_some_attributes_filled?(company) %>
-    <% end %>
-    
-    <% if company == current_company %>
-      <%= link_btn t("common.sidebar.company_information.edit"), edit_company_path(company), :icon => :edit %>
+    <% if company == current_company && only_some_attributes_filled?(company) %>
+      <div class="notice">
+        <%= t("common.sidebar.company_information.please_edit_notice") %>
+        <%= link_btn t("common.sidebar.company_information.edit"), edit_company_path(company), :icon => :edit %>
+      </div>
     <% end %>
   </div>
 <% end %>
