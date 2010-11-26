@@ -15,10 +15,12 @@
         </tr>
       <% end %>
     <% end %>
+    <% if misc_text = localized_info(@person, :misc_text) %>
       <tr>
         <th><%= t("activerecord.attributes.person.localized_infos.misc_text") %></th>
-        <td><%= localized_info(@person, :misc_text) %></td>
+        <td><%= misc_text %></td>
       </tr>
+    <% end %>
   </table>
 </div>
 

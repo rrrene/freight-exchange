@@ -24,10 +24,12 @@
             </tr>
           <% end %>
         <% end %>
-        <tr>
-          <th><%= t("activerecord.attributes.person.localized_infos.misc_text") %></th>
-          <td><%= localized_info(person, :misc_text) %></td>
-        </tr>
+        <% if misc_text = localized_info(person, :misc_text) %>
+          <tr>
+            <th><%= t("activerecord.attributes.person.localized_infos.misc_text") %></th>
+            <td><%= misc_text %></td>
+          </tr>
+        <% end %>
       </table>
     </div>
   <% end %>
@@ -54,12 +56,16 @@
     <% end %>
   <% end %>
 
-<% content_for(:sidebar) do %>
-  <p>
-    <%= link_to t("common.create_new_review"), new_review_url(:company_id => @company.id), :class => 'create_new_freight' %>
-  </p>
-  <%= clear_both %>
-<% end %>
+  <% content_for(:toolbar) do %>
+    <%= link_btn t("common.create_new_review"), new_review_url(:company_id => @company.id), :icon => 'reply' %>
+  <% end %>
+
+  <% content_for(:sidebar) do %>
+    <p>
+      <%= link_to t("common.create_new_review"), new_review_url(:company_id => @company.id), :class => 'create_new_freight' %>
+    </p>
+    <%= clear_both %>
+  <% end %>
 
 <%= render_person_info(@company.contact_person) if @company.contact_person %>
 <%= render_company_info(@company) %>
