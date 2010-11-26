@@ -9,7 +9,7 @@ en:
       freights: "Freights"
       loading_spaces: "Loading Spaces"
       my_company: "My Company Profile"
-      my_person: "My Personal Profile"
+      my_person: "Hello %{name}"
       people: "People"
       reviews: "Reviews"
       logout: "Logout"
