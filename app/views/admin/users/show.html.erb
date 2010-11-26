@@ -1,1 +1,18 @@
-<%= render_partial :show %>
+<% content_for(:toolbar) do %>
+  <%= link_btn t("common.link_back"), 'javascript:void(0);', :icon => :prev, :onclick => 'self.history.back(); return false;' %>
+  <%= link_btn t("admin.common.edit_link"), edit_resource_path(resource), :icon => :edit %>
+  <%= link_btn t("admin.common.frontend_show_link"), resource, :icon => :show %>
+<% end %>
+
+<div class="box">
+  <h3><%= t("admin.users.show.header") %></h3>
+  
+  <ul class="action_list">
+    <%= render_partial :recordings, :locals => {:recordings => resource.action_recordings} %>
+  </ul>
+
+</div>
+
+<%= render_person_info(resource.person) %>
+
+<%= render_company_info(resource.company) %>

@@ -20,11 +20,11 @@
     <tbody>
       <% collection.each do |ar| %>
         <tr>
-          <td><%= ar.id %></th>
+          <td><%= link_to ar.id, admin_user_path(ar) %></td>
           <% attributes.each do |attr| %>
-          <td><%= ar[attr].is_a?(Hash) ? debug(ar[attr]) : ar[attr] %></td>
+          <td><%= link_to(ar[attr].is_a?(Hash) ? debug(ar[attr]) : ar[attr], admin_user_path(ar)) %></td>
           <% end %>
-          <td><%= link_to "Edit", {:action => 'edit', :id => ar}, :class => 'edit' %></td>
+          <!--td><%= link_to "Edit", {:action => 'edit', :id => ar}, :class => 'edit' %></td-->
         </tr>
       <% end %>
     </tbody>

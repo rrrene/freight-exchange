@@ -3,6 +3,7 @@
     <div class="span-24 last" id="first-header">
       <%= link_to image_tag('logo.png', :onmouseover => 'this.src="/images/logo_hover.png";', :onmouseout => 'this.src="/images/logo.png";'), root_url, :id => 'logo'  %>
       <!--h2 style="float: left; font-weight: bolder;"><%= link_to "FreightExchange", root_url, :style => "text-decoration: none; color: #666;" %></h2-->
+
       <div class="navigation-right">
         <div class="navibox">
           <ul class="navigation">
@@ -27,13 +28,18 @@
             <% end %>
           </ul>
         </div>
+
+        <%- if current_user.full? { |u| u.is?(:administrator) } -%>
+              <ul class="navigation navigation-right">
+                <li class="noborder">
+                  <span class="green"><%= link_to(t("common.navi.backend"), admin_root_path, :class => 'backend') %></span>
+                </li>
+              </ul>
+        <%- end -%>
         
         <%= clear_both %>
         
         <ul class="navigation navigation-lang navigation-right">
-          <%- if current_user.full? { |u| u.is?(:administrator) } -%>
-            <li><%= link_to(t("common.navi.backend"), admin_root_path, :class => 'backend') %></li>
-          <%- end -%>
           <li><%= link_to_unless_current(t("common.navi.my_person", {:name => current_user.name}), person_path(current_person)) %></li>
          <li class="noborder"><span class="normal"><%= t("common.navi.select_locale") %></span></li>
          <li><%= link_to_unless(I18n.locale == :de, t("common.navi.locale_de"), {:locale => :de}) %></li>

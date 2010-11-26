@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
   accepts_nested_attributes_for :company
   accepts_nested_attributes_for :person
   has_and_belongs_to_many :user_roles, :uniq => true
+  has_many :action_recordings
   has_many :search_recordings
   before_create :generate_api_key
   after_save { |user| user.company.ensure_admin }

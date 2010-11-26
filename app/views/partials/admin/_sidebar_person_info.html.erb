@@ -1,0 +1,31 @@
+<% content_for(:sidebar) do %>
+  
+  <div class="box">
+    <h3>
+      <%= t "common.sidebar.person_information.header" %>
+      <%= link_btn t("common.sidebar.person_information.show"), admin_person_path(person), :class => 'show', :icon => :show %>
+    </h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th colspan="2">
+            <b><%= person.name %></b>
+            <%= link_btn t("common.sidebar.person_information.edit"), edit_admin_person_path(person), :icon => :edit %>
+          </th>
+        </tr>
+      </thead>
+      <% %w(phone fax email website).each do |attr| %>
+        <% if person[attr].full? %>
+          <tr>
+            <th><%= Person.human_attribute_name(attr) %></th>
+            <td><%= auto_link person.__send__(attr) %></td>
+          </tr>
+        <% end %>
+      <% end %>
+    </table>
+    
+
+  </div>
+    
+<% end %>

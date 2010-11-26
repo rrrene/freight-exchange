@@ -1,2 +1,5 @@
-<%= link_btn t("admin.people.edit.edit_user_link"), edit_admin_user_path(@person.user) %>
+<% content_for(:toolbar) do %>
+  <%= link_btn t("admin.people.edit.edit_user_link"), edit_admin_user_path(@person.user) %>
+<% end %>
+
 <%= render_partial :edit %>

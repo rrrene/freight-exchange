@@ -10,7 +10,6 @@
             <li><%= link_to t("admin.common.navi.users"), admin_users_path %></li>
             <li><%= link_to t("admin.common.navi.recordings"), admin_action_recordings_path %></li>
             <li><%= link_to t("admin.common.navi.search_recordings"), admin_search_recordings_path %></li>
-            <li><%= link_to t("admin.common.navi.stations"), admin_stations_path %></li>
             <li><%= link_to t("admin.common.navi.user_roles"), admin_user_roles_path %></li>
             <li><%= link_to t("admin.common.navi.app_configs"), admin_app_configs_path %></li>
             <li class="last"><%= link_to t("admin.common.navi.back_to_app"), root_path, :class => 'frontend' %></li>
@@ -25,17 +24,7 @@
         -->
       </ul>
       <ul class="navigation navigation-right">
-        
-        <% if false && current_user.full? %>
-          <li><span>Welcome <%= current_user.login %>!</span></li>
-          <li>
-            <div id="search_form">
-            <%= form_tag search_url, :method => :get do %>
-              <div class="input-wrapper"><%= text_field_tag :q, h(params[:q]) %><%= submit_tag t('search.common.button'), :name => nil %></div>
-            <% end %>
-            </div>
-          </li>
-        <% end %>
+
       </ul>
     </div>
   </div>
