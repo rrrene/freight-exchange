@@ -1,8 +1,9 @@
-
-<%= f.semantic_fields_for :localized_infos do |f_site| %>
-  <%= f_site.inputs do %>
-    <%= f_site.input :name, :as => :hidden, :input_html => {:value => name, :name => "#{f.object.class.to_s.underscore}[localized_infos][][name]"} %>
-    <%= f_site.input :lang, :as => :hidden, :input_html => {:value => lang, :name => "#{f.object.class.to_s.underscore}[localized_infos][][lang]"} %>
-    <%= f_site.input :text, :as => :text,   :input_html => {:value => f.object.localized_info(name, lang).full?(&:text), :name => "#{f.object.class.to_s.underscore}[localized_infos][][text]"}, :label => t("activerecord.attributes.#{f.object.class.to_s.underscore}.localized_infos.#{name}") %>
+<div class="localized_info_field" id="<%= "#{f.object_name}_#{name}_#{lang}" %>" style="display: none">
+  <%= f.semantic_fields_for :localized_infos do |f_site| %>
+    <%= f_site.inputs do %>
+      <%= f_site.input :name, :as => :hidden, :input_html => {:value => name, :name => "#{f.object.class.to_s.underscore}[localized_infos][][name]"} %>
+      <%= f_site.input :lang, :as => :hidden, :input_html => {:value => lang, :name => "#{f.object.class.to_s.underscore}[localized_infos][][lang]"} %>
+      <%= f_site.input :text, :as => :text,   :input_html => {:value => f.object.localized_info(name, lang).full?(&:text), :name => "#{f.object.class.to_s.underscore}[localized_infos][][text]"}, :label => t("activerecord.attributes.#{f.object.class.to_s.underscore}.localized_infos.#{name}") %>
+    <% end %>
   <% end %>
-<% end %>
+</div>

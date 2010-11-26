@@ -1,0 +1,15 @@
+<select id="<%= "#{f.object_name}_#{name}" %>" onchange="changeLocalizedInfoLanguage(this);">
+  <% locales.each do |lang| %>
+  <option value="<%= lang %>"><%= lang %></option>
+  <% end %>
+</select>
+
+<div>
+  <% locales.each do |lang| %>
+    <%= localized_info_field f, name, lang %>
+  <% end %>
+</div>
+
+<script type="text/javascript">
+  changeLocalizedInfoLanguage(jQuery("#<%= "#{f.object_name}_#{name}" %>"), <%= locales.to_json.html_safe %>);
+</script>

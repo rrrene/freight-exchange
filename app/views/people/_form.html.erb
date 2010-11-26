@@ -12,7 +12,7 @@
     <%= f.input :locale, :collection => collection_choices(Person, :locale), :as => :select, :include_blank => false %>
   <% end %>
   <% f.inputs :person_misc do %>
-    <%= localized_info_field f, :misc_text %>
+    <%= localized_info_fields f, :misc_text %>
   <% end %>
   
   <%= f.buttons %>

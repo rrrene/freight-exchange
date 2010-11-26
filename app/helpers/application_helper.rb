@@ -99,7 +99,7 @@ module ApplicationHelper
   end
   
   # Returns a formatted string for the associated LocalizedInfo object.
-  def localized_info(obj, name, lang = I18n.default_locale)
+  def localized_info(obj, name, lang = I18n.locale)
     text = obj.localized_info(name, lang).text
     format_multiline_input(text) if text.full?
   end
@@ -109,6 +109,11 @@ module ApplicationHelper
   def localized_info_field(f, name, lang = current_person.locale)
     render({:partial => '/partials/localized_info_form_content',
               :locals => {:f => f, :name => name, :lang => lang}})
+  end
+  
+  def localized_info_fields(f, name, locales = I18n.available_locales)
+    render({:partial => '/partials/localized_info_fields',
+              :locals => {:f => f, :name => name, :locales => locales}})
   end
   
   def only_some_attributes_filled?(ar)

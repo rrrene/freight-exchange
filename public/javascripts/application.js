@@ -27,6 +27,20 @@ function actionListMagic() {
   });
 }
 
+function changeLocalizedInfoLanguage(ele, langs) {
+  ele = jQuery(ele);
+  var id = ele.attr('id');
+  var show_lang = ele.val();
+  jQuery(langs).each(function(index, lang) {
+    var field = jQuery("#"+id+"_"+lang);
+    if( lang == show_lang ) {
+      field.show();
+    } else {
+      field.hide();
+    }
+  });
+}
+
 var site_info_prefix = "";
 
 function fillSiteInfo(origin_or_destination, site_info_id) {
