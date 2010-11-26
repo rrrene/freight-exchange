@@ -25,7 +25,7 @@ class ReviewsController < RemoteController
   end
   
   def index
-    filter = params[:filter].to_s.intern
+    filter = params[:filter].full?(&:to_s).full?(&:intern)
     @reviews = if filter == :approved
       current_company.approved_reviews
     elsif filter == :unapproved
