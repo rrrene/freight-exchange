@@ -1,4 +1,10 @@
 
+  <% content_for(:toolbar) do %>
+    <%= link_btn t("common.navi.people"), people_path %>
+    <%= link_btn t("common.navi.my_company"), company_path(current_company) %>
+    <%= link_btn t("common.navi.my_person"), person_path(current_person) %>
+  <% end %>
+
 <div class="box">
   <h3><%= t("companies.dashboard.recordings.header") %></h3>
   <p>

@@ -1,6 +1,17 @@
+
+<% content_for(:toolbar) do %>
+  <%= link_btn t("reviews.index.filter_all"), reviews_path(:filter => '') %>
+  <%= link_btn t("reviews.index.filter_approved"), reviews_path(:filter => :approved) %>
+  <%= link_btn t("reviews.index.filter_unapproved"), reviews_path(:filter => :unapproved) %>
+<% end %>
+
 <div class="box">
   <h3>
-    <%= t("reviews.index.header") %>
+    <% if params[:filter] %>
+      <%= t("reviews.index.header_#{params[:filter]}") %>
+    <% else %>
+      <%= t("reviews.index.header") %>
+    <% end %>
   </h3>
   <p>
     <%= t('reviews.index.intro') %>

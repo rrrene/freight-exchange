@@ -35,7 +35,7 @@
           <td class="options">
             <%= link_btn t('loading_spaces.index.table.options.template'), new_resource_url(:parent_id => ar.id), :icon => :reply %>
             <%= link_btn t('loading_spaces.index.table.options.edit'), {:action => 'edit', :id => ar}, :icon => 'edit' %> 
-            <%= link_btn t('freights.index.table.options.delete'), ar, :method => :delete, :confirm => t('common.confirm'), :class => 'destroy' %>
+            <%= link_btn t('loading_spaces.index.table.options.delete'), ar, :method => :delete, :confirm => t('common.confirm'), :class => 'destroy' %>
           </td>
         </tr>
       <% end %>

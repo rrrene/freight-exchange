@@ -191,7 +191,12 @@ en:
     index:
       page_title: "All reviews"
       header: "All reviews"
-      intro: "Here you can see all the reviews for your company."
+      header_unapproved: "Unapproved reviews"
+      header_approved: "Approved reviews"
+      intro: "Here you can see the reviews for your company."
+      filter_all: "All Reviews"
+      filter_approved: "Approved Reviews"
+      filter_unapproved: "Unapproved Reviews"
       table:
         headers:
           name: "Name"
