@@ -120,6 +120,12 @@ module ApplicationHelper
     ar.attributes_filled < AppConfig['contact_info.complete_percentage'].to_f
   end
   
+  def phone_number(nr)
+    return nr unless Phone.valid?(nr)
+    Phone.default_country_code = '49'
+    Phone.parse(nr).format(:europe)
+  end
+  
   def posting_freights?
     current_user.full?(&:posting_type) == 'Freight'
   end

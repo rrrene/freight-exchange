@@ -16,7 +16,13 @@
         <% if person[attr].full? %>
           <tr>
             <th><%= Person.human_attribute_name(attr) %></th>
-            <td><%= auto_link person.__send__(attr) %></td>
+            <td>
+              <% if %w(phone fax).include?(attr) %>
+                <%= phone_number person.__send__(attr) %>
+              <% else %>
+                <%= auto_link person.__send__(attr) %>
+              <% end %>
+            </td>
           </tr>
         <% end %>
       <% end %>

@@ -25,6 +25,8 @@ gem 'json'
 
 gem 'tolk'
 
+gem 'phone'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 

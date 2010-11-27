@@ -32,7 +32,7 @@
         <%- if current_user.full? { |u| u.is?(:administrator) } -%>
               <ul class="navigation navigation-right">
                 <li class="noborder">
-                  <span class="green"><%= link_to(t("common.navi.backend"), admin_root_path, :class => 'backend') %></span>
+                  <%= link_to(t("common.navi.backend"), admin_root_path, :class => 'backend') %>
                 </li>
               </ul>
         <%- end -%>
