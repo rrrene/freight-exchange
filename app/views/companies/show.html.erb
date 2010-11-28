@@ -20,7 +20,7 @@
           <% if person[attr].full? %>
             <tr>
               <th><%= Person.human_attribute_name(attr) %></th>
-              <td><%= auto_link person.__send__(attr) %></td>
+              <td><%= contact_info(person, attr)%></td>
             </tr>
           <% end %>
         <% end %>

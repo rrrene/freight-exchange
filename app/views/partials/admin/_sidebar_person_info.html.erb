@@ -1,5 +1,4 @@
 <% content_for(:sidebar) do %>
-  
   <div class="box">
     <h3>
       <%= t "common.sidebar.person_information.header" %>
@@ -19,13 +18,11 @@
         <% if person[attr].full? %>
           <tr>
             <th><%= Person.human_attribute_name(attr) %></th>
-            <td><%= auto_link person.__send__(attr) %></td>
+            <td><%= contact_info(person, attr)%></td>
           </tr>
         <% end %>
       <% end %>
     </table>
-    
 
   </div>
-    
 <% end %>

@@ -16,13 +16,7 @@
         <% if person[attr].full? %>
           <tr>
             <th><%= Person.human_attribute_name(attr) %></th>
-            <td>
-              <% if %w(phone fax).include?(attr) %>
-                <%= phone_number person.__send__(attr) %>
-              <% else %>
-                <%= auto_link person.__send__(attr) %>
-              <% end %>
-            </td>
+            <td><%= contact_info(person, attr)%></td>
           </tr>
         <% end %>
       <% end %>
@@ -31,6 +25,7 @@
     <% if person == current_person && only_some_attributes_filled?(person) %>
       <div class="notice">
         <%= t("common.sidebar.person_information.please_edit_notice") %>
+        <br>
         <%= link_btn t("common.sidebar.person_information.edit"), person.save ? edit_person_path(person) : new_person_path, :icon => :edit %>
       </div>
     <% end %>

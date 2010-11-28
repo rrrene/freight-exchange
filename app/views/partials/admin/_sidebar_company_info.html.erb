@@ -18,7 +18,7 @@
         <% if company[attr].full? %>
           <tr>
             <th><%= Company.human_attribute_name(attr) %></th>
-            <td><%= auto_link company.__send__(attr) %></td>
+            <td><%= contact_info(company, attr)%></td>
           </tr>
         <% end %>
       <% end %>

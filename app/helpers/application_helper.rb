@@ -33,6 +33,15 @@ module ApplicationHelper
     }
   end
   
+  def contact_info(object, attr)
+    if %w(phone fax).include?(attr)
+      phone_number object.__send__(attr)
+    else
+      auto_link object.__send__(attr)
+    end
+  end
+    
+  
   #:call-seq:
   #   controller?(name) # => boolean
   #

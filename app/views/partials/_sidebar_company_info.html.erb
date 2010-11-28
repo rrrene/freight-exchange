@@ -15,13 +15,7 @@
         <% if company[attr].full? %>
           <tr>
             <th><%= Company.human_attribute_name(attr) %></th>
-            <td>
-              <% if %w(phone fax).include?(attr) %>
-                <%= phone_number company.__send__(attr) %>
-              <% else %>
-                <%= auto_link company.__send__(attr) %>
-              <% end %>
-            </td>
+            <td><%= contact_info(company, attr)%></td>
           </tr>
         <% end %>
       <% end %>
@@ -30,6 +24,7 @@
     <% if company == current_company && only_some_attributes_filled?(company) %>
       <div class="notice">
         <%= t("common.sidebar.company_information.please_edit_notice") %>
+        <br>
         <%= link_btn t("common.sidebar.company_information.edit"), edit_company_path(company), :icon => :edit %>
       </div>
     <% end %>
