@@ -1,24 +1,39 @@
 <%= semantic_form_for(resource) do |f| %>
   <% %w(origin destination).each do |site| %>
-    <%= render_partial :site_info_form_content, :locals => {:f => f, :site => site} %>
+    <div class="form_site_info" style="float: left; width: 295px;">
+      <%= render_partial :site_info_form_content, :locals => {:f => f, :site => site} %>
+    </div>
   <% end %>
+  <%= clear_both %>
+
   <%= render_partial :site_info_stations %>
-  
+
+
+  <%= f.inputs :timeframe do %>
+    <% %w(origin destination).each do |site| %>
+      <%= f.semantic_fields_for "#{site}_site_info", resource.__send__("#{site}_site_info") do |f_site| %>
+        <%= f_site.input :date, :label => t("activerecord.attributes.freight.#{site}_date") %>
+      <% end %>
+    <% end %>
+  <% end %>
+
   <%= f.inputs :freight_description do %>
-    <%= f.input :hazmat, :collection => [["yes", true], ["no", false]] %>
-    
-    <%= localized_info_field f, :goods_text %>
-        
     <%= f.input :weight, :as => :string %>
     <%= f.input :loading_meter, :as => :string %>
-    
+
+    <%= localized_info_fields f, :goods_text %>
+
+    <%= f.input :hazmat, :as => :radio %>
+  <% end %> 
+  <%= f.inputs :transport_type do %>
     <%= f.input :transport_type, :collection => collection_choices(Freight, :transport_type), :include_blank => false %>
-    <%= localized_info_field f, :transport_text %>
-    
+    <%= localized_info_fields f, :transport_text %>
+
     <%= f.input :wagons_provided_by, :collection => collection_choices(Freight, :wagons_provided_by), :as => :radio %>
-    <%= f.input :desired_proposal_type, :collection => collection_choices(Freight, :desired_proposal_type), :as => :radio %>
   <% end %>
-  <%= f.inputs :posting_contact do %>
+  <%= f.inputs :misc_text do %>
+    <%= localized_info_fields f, :misc_text %>
+    <%= f.input :desired_proposal_type, :collection => collection_choices(Freight, :desired_proposal_type), :as => :radio %>
     <%= f.input :contact_person, :collection => current_company.people %>
   <% end %>
   

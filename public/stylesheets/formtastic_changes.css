@@ -16,5 +16,35 @@ form.formtastic fieldset ol li fieldset legend { margin-left: -6px;}
 form.formtastic fieldset ol li.string input,
 form.formtastic fieldset ol li.password input {
   padding: 5px;
-  max-width: 300px;
+  max-width: 270px;
+}
+
+form.formtastic fieldset ol li textarea {
+  height: 150px;
+}
+div.localized_info_locale_selector {
+  position: absolute;
+  /*margin-top: 130px!important;*/
+  margin-left: 600px!important;
+}
+div.localized_info_locale_selector label {
+  display: block;
+  font-weight: normal!important;
+}
+
+form.formtastic fieldset ol li label {
+  font-size: 12px;
+  font-weight: normal;
+}
+
+form.formtastic .form_site_info fieldset > ol > li label {
+  width: 148px;
+}
+form.formtastic .form_site_info fieldset > ol > li fieldset ol {
+  padding-left: 148px;
+  width: 148px;
+}
+form.formtastic fieldset > ol > li.radio fieldset ol li {
+  float: left;
+  margin-right: 8px;
 }

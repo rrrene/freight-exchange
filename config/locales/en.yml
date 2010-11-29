@@ -425,11 +425,21 @@ en:
         website: "Web"
         localized_infos:
           misc_text: "Additional information"
+      site_info:
+        name: "Station"
+        address: "Address"
+        address2: ""
+        zip: "ZIP"
+        city: "City"
+        country: "Country"
       freight:
+        origin_date: "From"
+        destination_date: "To"
         weight: "Weight (in t)"
         hazmat: "Harzardous material"
         localized_infos:
           goods_text: "Type of Goods"
+          misc_text: "Additional information"
           transport_text: "Which kind of wagons are required?"
       loading_space:
         weight: "Weight (in t)"
@@ -482,6 +492,7 @@ en:
 #          transport_text: "Which wagons should be used?"
 
   formtastic:
+    localized_info_locale_selector: "Language:"
     titles:
       for_company: "Company information"
       credentials: "Login credentials"
@@ -490,9 +501,12 @@ en:
       company_address: "Postal information"
       company_contact: "Contact information"
       company_contact_person: "General Contact Person"
-      origin_site_info: "Loading site"
-      destination_site_info: "Unloading site"
-      freight_description: "Freight description"
+      origin_site_info: "Loading site:"
+      destination_site_info: "Unloading site:"
+      timeframe: "Time frame:"
+      freight_description: "Freight description:"
+      transport_type: "Transport description:"
+      misc_text: "Additional information:"
       person_name: "Personal information"
     hints:
       user:

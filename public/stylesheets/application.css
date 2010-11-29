@@ -227,6 +227,10 @@ legend span {
   font-size: 1em;
 }
 
+fieldset.inputs {
+  border-bottom: #666 1px solid;
+}
+
 #sidebar .box ul {
   padding-left: 20px;
 }

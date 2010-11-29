@@ -2,7 +2,7 @@
 <%= f.semantic_fields_for "#{site}_site_info", resource.__send__("#{site}_site_info") do |f_site| %>
   <%= f_site.inputs :"#{site}_site_info" do %>
     <%= f_site.input :contractor %>
-    <%= f_site.input :date %>
+    <%#= f_site.input :date %>
     <li>
       <label>template:</label>
       <select onChange="fillSiteInfo('<%= site %>', this.value); return false;">
@@ -13,7 +13,7 @@
     <% SiteInfo::SITE_ATTRIBUTES.each do |field| %>
       <%= f_site.input field, :as => :string %>
     <% end %>
-    <%= f_site.input :side_track_available %>
+    <%= f_site.input :side_track_available, :as => :radio %>
     <%= f_site.input :track_number %>
   <% end %>
 <% end %>
