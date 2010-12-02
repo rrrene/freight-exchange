@@ -19,6 +19,8 @@ loop do
   begin
     Robot::Bot.new.go
     sleep 2
+  rescue SystemExit, Interrupt
+    raise
   rescue Exception => e
     warn 'rescued ' + e.inspect
     nil

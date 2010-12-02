@@ -28,8 +28,4 @@ class UsersController < RemoteController
     create!
   end
   
-  def show # :nodoc:
-    redirect_to resource.person
-  end
-  
 end

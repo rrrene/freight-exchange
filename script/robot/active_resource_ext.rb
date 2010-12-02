@@ -12,6 +12,16 @@ module ActiveResource
     end
     
     class << self
+      def api_key=(api_key)
+        self.user = api_key
+      end
+      
+      def login(api_key = Robot::CurrentUser.api_key, &block)
+        self.api_key = api_key
+        yield if block_given?
+      end
+      alias login! login
+      
       alias old_create create
       def create
         f = self.new(Factory.attributes_for(to_s))

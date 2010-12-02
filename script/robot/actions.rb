@@ -4,6 +4,8 @@ module Robot
   module Actions
     
     def approve_review
+      Robot::Review.approve
+      puts "# #{Robot::Review.all.size} Reviews"
     end
     
     def create_freight

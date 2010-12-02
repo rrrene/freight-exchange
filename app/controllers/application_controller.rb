@@ -43,7 +43,8 @@ class ApplicationController < ActionController::Base
     @current_user ||= begin
       if api_request?
          UserSession.find.full?(&:user) ||
-          authenticate_by_api_key_in_params || authenticate_by_api_key_in_http_auth
+          authenticate_by_api_key_in_params || 
+            authenticate_by_api_key_in_http_auth
       else
         UserSession.find.full?(&:user)
       end
@@ -75,6 +76,7 @@ class ApplicationController < ActionController::Base
     authenticate_or_request_with_http_basic do |api_key, _|
       return User.where(:api_key => api_key).first
     end
+    nil
   end
   
   # Logs the user in for this very request if an API key is provided in the params.
