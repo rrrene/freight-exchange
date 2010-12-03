@@ -41,6 +41,15 @@ class Company < ActiveRecord::Base
     reviews.where('approved_by_id IS NULL')
   end
   
+  def website
+    address = self[:website]
+    if address.blank? || address =~ /^\w+\:\/\//
+      address
+    else
+      "http://#{address}"
+    end
+  end
+  
   validates_presence_of :name
   validates_uniqueness_of :name
 end

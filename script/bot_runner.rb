@@ -21,8 +21,8 @@ loop do
     sleep 2
   rescue SystemExit, Interrupt
     raise
-  rescue Exception => e
-    warn 'rescued ' + e.inspect
-    nil
+#  rescue Exception => e
+#    warn 'rescued ' + e.inspect
+#    nil
   end
 end

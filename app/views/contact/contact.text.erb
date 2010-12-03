@@ -8,14 +8,14 @@
 
 <%= @user.name %>
 
-Profile:  http://<%= AppConfig[:domain] %><%= person_path(@person) %>
+Profile:   http://<%= AppConfig[:domain] %><%= person_path(@person) %>
 <%- %w(phone fax email website).each do |attr| -%>
 <%= (Person.human_attribute_name(attr) + ':').ljust(10) %> <%= @person[attr].full? || '-' %>
 <%- end -%>
     
 <%= @company.name %>
 
-Profile:  http://<%= AppConfig[:domain] %><%= company_path(@company) %>
+Profile:   http://<%= AppConfig[:domain] %><%= company_path(@company) %>
 <%- %w(phone fax email website).each do |attr| -%>
 <%= (Company.human_attribute_name(attr) + ':').ljust(10) %> <%= @company[attr].full? || '-' %>
 <%- end -%>
