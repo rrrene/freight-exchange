@@ -42,9 +42,13 @@ module Robot
     end
     
     def search
+      klass = Robot::Freight
       places = Robot::Places.new
       query = [places.shift[:name], places.shift[:city], Random.boolean ? 'Gefahrgut' : ''].join(' ')
-      Robot::Freight.find(:all, :from => "/search", :params => {:q => query})
+      results = klass.find(:all, :from => "/search", :params => {:q => query})
+      result = results.random
+      sr = ::SearchRecording.where(:query => query).order("updated_at DESC").first
+      klass.find(result.id, :params => {:search_recording_id => sr.id})
     end
     
   end
