@@ -473,6 +473,17 @@ div.frame a.btn-next:hover .icon, a.btn-download:focus .icon {background-positio
   color: #eee;
 }
 
+ul.search_results li.highlight.hovered,
+ul.search_results li.highlight {
+  background-color: #c5ffc8;
+  border-color: #5db15a;
+  border-bottom: 2px solid #5db15a;
+}
+
+ul.search_results li.highlight a {
+  color: #2a8126;
+}
+
 ul.action_list,
 ul.action_list li {
   margin: 0;

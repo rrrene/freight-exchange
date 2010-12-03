@@ -9,7 +9,7 @@
     <div class="span-8 last">
       <div id="search_form">
       <%= form_tag search_url, :method => :get do %>
-        <div class="input-wrapper"><%= text_field_tag :q, h(params[:q]) %><%= image_submit_tag("search_button.png") %></div>
+        <div class="input-wrapper"><%= text_field_tag :q, h(params[:q]), :autocomplete => :off %><%= image_submit_tag("search_button.png") %></div>
       <% end %>
       </div>
     </div>

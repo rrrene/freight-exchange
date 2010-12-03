@@ -17,7 +17,7 @@ class SearchController < ApplicationController
     count = Search.count(q, [current_user.search_type])
     @search_recording = current_user.search_recordings.create({:query => q, :results => count})
     {
-      :main => Search.find(q, ['LoadingSpace', 'Freight']),
+      :main => Search.find(q, [current_user.search_type]),
       :count => count
     }
   end

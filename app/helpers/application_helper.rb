@@ -61,6 +61,11 @@ module ApplicationHelper
     simple_format(h(text)).html_safe
   end
   
+  def highlight_in_search?(result)
+    return unless result.respond_to?(:company) && result.company
+    result.company.approved_reviews.count > AppConfig[:reviews_needed_for_search_highlighting]
+  end
+  
   def humanize_recording(rec)
     opts = {
       :user => rec.user.full?(&:name),

@@ -1,6 +1,7 @@
-<div class="image"><%= image_tag "rails.png" %></div>
+<div class="image"><%= image_tag "type/#{result.class.to_s.underscore}.png" %></div>
 <div class="text">
-  <%= link_to result.company.name, {:controller => result.class.to_s.pluralize.underscore, :action => 'show', :id => result, :search_recording_id => @search_recording.full?(&:id)} %><br>
+  <%= link_to result.company.name, {:controller => result.class.to_s.pluralize.underscore, :action => 'show', :id => result, :search_recording_id => @search_recording.full?(&:id)} %>
+  <br>
   <b><%= result.origin_site_info.name %></b> <%= l(result.origin_site_info.date, :format => :short) %>
   -
   <b><%= result.destination_site_info.name %></b> <%= l(result.destination_site_info.date, :format => :short) %>
