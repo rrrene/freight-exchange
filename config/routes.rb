@@ -39,6 +39,8 @@ BlackBoard::Application.routes.draw do |map|
   
   match "search" => 'search#index', :as => :search
   match "dashboard" => 'companies#dashboard', :as => :company_dashboard
+
+  match "contact" => 'contact#index', :as => :contact
   
   root :to => "root#index"
   

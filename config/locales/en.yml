@@ -39,6 +39,13 @@ en:
     link_back: "Back"
     website_title: "Freight Exchange 2010"
   
+  contact:
+    index:
+      page_title: "Contact"
+      header: "Contact our support staff"
+      intro: "Type your question or suggestion below, and we will contact you shortly!"
+      sent: "Your mail has been sent. Thank you for your feedback."
+      
   recordings:
     create: "{{user}} <strong>created</strong> a {{object_class}}: {{object_link}}"
     update: "{{user}} <strong>updated</strong> a {{object_class}}: {{object_link}}"

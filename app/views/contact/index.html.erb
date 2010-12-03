@@ -1,0 +1,15 @@
+<div class="box">
+  <h3><%= t("contact.index.header") %></h3>
+  
+  <% if params[:sent] %>
+  <div class="notice"><%= t("contact.index.sent") %></div>
+  <% else %>
+    <p>
+      <%= t("contact.index.intro") %>
+    </p>
+    <%= form_tag do %>
+      <%= text_area_tag :text, "Dies ist ein Beispiel." %><br>
+      <%= submit_tag %>
+    <% end %>
+  <% end %>
+</div>

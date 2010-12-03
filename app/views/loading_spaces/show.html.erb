@@ -1,7 +1,5 @@
 <div class="box">
-  <h3>
-    <%= t('loading_spaces.show.header') %>
-  </h3>
+  <h3><%= t('loading_spaces.show.header') %></h3>
 
   <% if resource.company == current_company %>
     <% content_for(:toolbar) do %>
@@ -69,7 +67,6 @@
       <td><%= localized_info(@loading_space, :misc_text) %></td>
     </tr>
   </table>
-  
 </div>
 
 <div class="box">
