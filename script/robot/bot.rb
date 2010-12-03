@@ -11,8 +11,11 @@ module Robot
     end
     
     def perform_action
-      @action = (actions_from_argv || actions).random
-      method(@action).call
+      CurrentUser.random!
+      ActiveResource::Base.login! {
+        @action = (actions_from_argv || actions).random
+        method(@action).call
+      }
     end
     
     def report(&block)

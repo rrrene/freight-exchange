@@ -6,12 +6,10 @@ module Robot
   class User < ActiveResource::Base
     class << self
       def edit
-        login {
-          resource = self.find(CurrentUser.id)
-          resource.login = "robot_#{Faker::Internet.user_name}"
-          resource.save
-          resource
-        }
+        resource = self.find(CurrentUser.id)
+        resource.login = "robot_#{Faker::Internet.user_name}"
+        resource.save
+        resource
       end
     end
   end
