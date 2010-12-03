@@ -4,7 +4,12 @@ class PostingsController < RemoteController
   
   def new
     if parent = params[:parent_id].full? { |id| resource_class.find(id) }
-      self.resource = parent
+      self.resource = resource_class.new(parent.attributes.clone)
+      resource.build_origin_site_info(parent.origin_site_info.attributes)
+      resource.build_destination_site_info(parent.destination_site_info.attributes)
+      parent.localized_infos.each do |li|
+        resource.localized_infos.build(li.attributes)
+      end
     else
       self.resource = resource_class.new(:hazmat => true, :weight => 1000, :loading_meter => 10)
       resource.build_origin_site_info({:contractor => current_company.name, :date => Time.new,
