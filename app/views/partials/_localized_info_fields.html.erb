@@ -1,6 +1,6 @@
 <div  class="localized_info_locale_selector">
   <label for="<%= "#{f.object_name}_#{name}" %>"><%= t("formtastic.localized_info_locale_selector") %></label>
-  <select id="<%= "#{f.object_name}_#{name}" %>" onchange="changeLocalizedInfoLanguage(this);">
+  <select id="<%= "#{f.object_name}_#{name}" %>" onchange='changeLocalizedInfoLanguage(this, <%= locales.to_json.html_safe %>);'>
     <% locales.each do |lang| %>
       <option value="<%= lang %>"><%= t("common.navi.locale_#{lang}") %></option>
     <% end %>
