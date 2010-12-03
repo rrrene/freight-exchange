@@ -40,5 +40,12 @@ module Robot
     def edit_user
       Robot::User.edit
     end
+    
+    def search
+      places = Robot::Places.new
+      query = [places.shift[:name], places.shift[:city], Random.boolean ? 'Gefahrgut' : ''].join(' ')
+      Robot::Freight.find(:all, :from => "/search", :params => {:q => query})
+    end
+    
   end
 end

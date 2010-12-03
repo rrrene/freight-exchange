@@ -11,6 +11,11 @@ class SearchController < ApplicationController
         @results[klass] = Search.find(@q, [klass.classify])
       end
     end
+    respond_to do |format|
+      format.html
+      format.xml { render :xml => @results[:main] }
+      format.json { render :json => @results[:main] }
+    end
   end
   
   def search_for(q)
