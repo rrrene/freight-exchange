@@ -35,7 +35,7 @@ module ApplicationHelper
   
   def contact_info(object, attr)
     if %w(phone fax).include?(attr)
-      phone_number object.__send__(attr)
+      phone_number(object.__send__(attr))
     else
       auto_link object.__send__(attr)
     end
@@ -136,7 +136,6 @@ module ApplicationHelper
   
   def phone_number(nr)
     return nr unless Phone.valid?(nr)
-    Phone.default_country_code = '49'
     Phone.parse(nr).format(:europe)
   end
   

@@ -2,6 +2,10 @@
 class SearchController < ApplicationController
   login_required
   
+  def extended
+    
+  end
+  
   def index
     @sidebar_result_models = %w(company station)
     @results = {}
@@ -17,6 +21,8 @@ class SearchController < ApplicationController
       format.json { render :json => @results[:main] }
     end
   end
+  
+  private
   
   def search_for(q)
     count = Search.count(q, [current_user.search_type])
