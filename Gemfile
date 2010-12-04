@@ -8,6 +8,7 @@ gem 'rails', '3.0.0'
 gem 'sqlite3-ruby', :require => 'sqlite3'
 
 gem 'hirb'
+gem 'term-ansicolor'
 
 gem 'formtastic', '~> 1.1.0'
 gem 'authlogic', '~> 2.1.6'
@@ -26,6 +27,7 @@ gem 'json'
 gem 'tolk'
 
 gem 'phone'
+
 
 # Use unicorn as the web server
 # gem 'unicorn'

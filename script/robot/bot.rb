@@ -1,5 +1,12 @@
 #!/usr/bin/env ruby -wKU
 
+require 'term/ansicolor'
+
+class ::String
+  include Term::ANSIColor
+end
+
+
 module Robot
   class Bot
     def initialize
@@ -19,9 +26,17 @@ module Robot
     end
     
     def report(&block)
-      yield
-      puts [Time.new.strftime("%Y-%m-%d %H:%M:%S"), 
-              CurrentUser.login.to_s.ljust(30), @action].join(' ')
+      ret = yield
+      str = @action.dup.ljust(20)
+      str = str.green if @action =~ /create_/
+      str = str.red if @action =~ /delete_/
+      str = str.yellow if @action =~ /(approve|edit)_/
+      str = str.magenta if @action =~ /(search)/
+      puts [Time.new.strftime("%Y-%m-%d %H:%M:%S").ljust(20), 
+            CurrentUser.login.to_s.ljust(25),
+            str,
+            ret.is_a?(String) ? ret : nil
+          ].compact.join
     end
     
     def actions_from_argv
@@ -30,8 +45,7 @@ module Robot
     
     def actions
       %w(create_user edit_user delete_user
-        approve_review create_review
-          ) + ["create_#{CurrentUser.creates}", "delete_#{CurrentUser.creates}"]
+        approve_review create_review create_posting delete_posting)
     end
     
     private

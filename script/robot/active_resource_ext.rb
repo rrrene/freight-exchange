@@ -21,6 +21,24 @@ module ActiveResource
         yield if block_given?
       end
       alias login! login
+      
+      alias old_create create
+      def create
+        f = self.new(Factory.attributes_for(to_s))
+        f.api_key = Robot::CurrentUser.api_key
+        f.save
+        f
+      end
+      
+      def delete
+        resource = all.random
+        if resource
+          resource.destroy 
+          resource
+        else
+          nil
+        end
+      end
     end
   end
 end
