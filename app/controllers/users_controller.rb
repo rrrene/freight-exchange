@@ -16,7 +16,15 @@ class UsersController < RemoteController
   
   def new
     new! {
-      @user.build_person
+      if @parent = params[:parent_id].full? { |id| resource_class.find(id) }
+        @user.build_person(@parent.person.attributes)
+        %w(login email posting_type).each do |attr|
+          @user[attr] = @parent[attr]
+        end
+        @user.user_roles = @parent.user_roles
+      else
+        @user.build_person
+      end
     }
   end
   

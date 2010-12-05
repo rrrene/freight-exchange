@@ -29,6 +29,7 @@ en:
         please_edit_notice: "Please add more information to your personal profile."
         edit: "Edit info"
         show: "View profile"
+    choose: "-- Choose --"
     choice_yes: "Yes"
     choice_no: "No"
     confirm: "Are you sure?"
@@ -39,6 +40,7 @@ en:
     link_back: "Back"
     website_title: "Freight Exchange 2010"
   
+  # ContactController
   contact:
     index:
       page_title: "Contact"
@@ -83,6 +85,7 @@ en:
       edit_link: "Edit this posting"
       new_link: "Create another posting"
       template_link: "Use as template"
+      required_field_hint: "The fields with an asterix (*) are mandatory:"
     new:
       page_title: "New freight posting"
     edit:
@@ -164,6 +167,7 @@ en:
       edit_link: "Edit Contact"
       edit_user_link: "Edit User Account"
       new_link: "Create another User"
+      template_link: "Use as template"
     index:
       page_title: "Overview: People"
       header: "All People"
@@ -260,8 +264,10 @@ en:
       page_title: "Overview: Users"
       header: "All Users"
       intro: "Here you can see all the registered user accounts of your company."
+    create:
+      page_title: "New User"
     new:
-      page_title: "Register"
+      page_title: "New User"
       
   # UserSessionsController
   user_sessions:
@@ -433,17 +439,26 @@ en:
         localized_infos:
           misc_text: "Additional information"
       site_info:
+        origin_contractor: "Contractor (Sender)"
+        destination_contractor: "Contractor (Receiver)"
+        address_template_label: "Use address template:"
         name: "Station"
         address: "Address"
         address2: ""
         zip: "ZIP"
         city: "City"
         country: "Country"
+        side_track_available: "Side track available?"
+        track_number: "Track No."
       freight:
         origin_date: "From"
         destination_date: "To"
         weight: "Weight (in t)"
         hazmat: "Harzardous material"
+        wagons_provided_by: "Wagons provided by"
+        transport_type: "Transport type"
+        loading_meter: "Loading meter"
+        desired_proposal_type: "Desired proposal type"
         localized_infos:
           goods_text: "Type of Goods"
           misc_text: "Additional information"
@@ -469,6 +484,8 @@ en:
         email: "E-Mail"
         password: "Password"
         password_confirmation: "Password (again)"
+        posting_type: "Will be posting"
+        user_roles: "User Roles"
     human_attribute_values:
       freight:
         wagons_provided_by:

@@ -6,6 +6,15 @@
         <%= f_person.input :first_name %>
         <%= f_person.input :last_name %>
       <% end %>
+      
+      <% f_person.inputs :person_contact do %>
+        <%= f_person.input :phone %>
+        <%= f_person.input :fax %>
+        <%= f_person.input :email %>
+        <%= f_person.input :website %>
+        <%= f_person.input :locale, :collection => collection_choices(Person, :locale), :as => :select, :include_blank => false %>
+      <% end %>
+    
     <% end %>
 
     <%= render :partial => "form_content", :locals => {:f => f} %>
@@ -13,3 +22,7 @@
     <%= f.buttons %>
   <% end %>
 </div>
+
+<% content_for(:sidebar) do %>
+<%= debug @user.person.attributes %>
+  <% end %>

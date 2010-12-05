@@ -21,6 +21,7 @@
           <td class="options">
             <%= link_btn t("people.common.edit_link"), edit_person_path(ar), :icon => 'edit' %>
             <%= link_btn t("people.common.edit_user_link"), edit_user_path(ar.user) %>
+            <%= link_btn t("people.common.template_link"), new_user_path(:parent_id => ar.user), :icon => 'reply' %>
             <%= link_btn t('freights.index.table.options.delete'), user_path(ar.user), :method => :delete, :confirm => t('common.confirm'), :class => 'destroy' %>
           </td>
         </tr>

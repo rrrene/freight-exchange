@@ -1,12 +1,12 @@
 
 <%= f.semantic_fields_for "#{site}_site_info", resource.__send__("#{site}_site_info") do |f_site| %>
   <%= f_site.inputs :"#{site}_site_info" do %>
-    <%= f_site.input :contractor %>
+    <%= f_site.input :contractor, :label => t("activerecord.attributes.site_info.#{site}_contractor") %>
     <%#= f_site.input :date %>
     <li>
-      <label>template:</label>
+      <label><%= t("activerecord.attributes.site_info.address_template_label")%></label>
       <select onChange="fillSiteInfo('<%= site %>', this.value); return false;">
-        <option selected="selected">--</option>
+        <option selected="selected"><%= t("common.choose") %></option>
         <%= options_for_select(current_user.recent_site_infos(site).map { |site_info| [site_info.name, site_info.id] }) %>
       </select>
     </li>

@@ -24,4 +24,16 @@
   </table>
 </div>
 
-<%= render_company_info(@person.company) %>
+<% if @person == current_person %>
+  <% content_for(:sidebar) do %>
+    <h3 class="info"><%= t("companies.dashboard.sidebar_person_info_title") %></h3>
+  <% end %>
+<% end %>
+<%= render_person_info @person %>
+
+<% if @person == current_person %>
+  <% content_for(:sidebar) do %>
+    <h3 class="info"><%= t("companies.dashboard.sidebar_company_info_title") %></h3>
+  <% end %>  
+<% end %>
+<%= render_company_info @person.company %>

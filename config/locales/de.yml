@@ -15,10 +15,17 @@ de:
         website: Internet
         zip: PLZ
       freight: 
+        desired_proposal_type: "Angebot gewünscht als"
+        destination_date: Bis
         hazmat: Gefahrengut
+        loading_meter: Lademeter
         localized_infos: 
           goods_text: Gutart
+          misc_text: "z.B. Lademaß- überschreitungen, Umschlag oder Vor-/Nachlauf, Verzollung, Verwiegung etc."
           transport_text: "Welche Wagen sollen verwendet werden (ggf. Alternativen)?"
+        origin_date: Von
+        transport_type: Transportart
+        wagons_provided_by: "Wagen werden gestellt von"
         weight: "Gesamtgewicht (in t)"
       loading_space: 
         hazmat: Gefahrengut
@@ -36,11 +43,24 @@ de:
           misc_text: "Weitere Informationen"
         phone: Telefon
         website: Internet
+      site_info: 
+        address: Straße/Hausnummer
+        address_template_label: "Adressvorlage benutzen:"
+        city: Stadt
+        country: LAnd
+        destination_contractor: "Firma Empfänger"
+        name: Bahnhof
+        origin_contractor: "Firma Versender"
+        side_track_available: "Gleisanschluss vorhanden"
+        track_number: Gleisnr.
+        zip: PLZ
       user: 
         email: E-Mail
         login: Benutzername
         password: Passwort
         password_confirmation: "Passwort wiederholen"
+        posting_type: "Art der Inserate"
+        user_roles: Berechtigungen
     errors: 
       messages: 
         record_invalid: "Validierung fehlgeschlagen: %{errors}"
@@ -74,6 +94,11 @@ de:
       loading_space: Laderaum
       station: Bahnhof
   admin: 
+    action_recordings: 
+      index: 
+        header: "Alle Aktionen"
+        intro: "Hier sehen Sie alle Aktionen aller Benutzer."
+        page_title: "Alle Aktionen"
     app_configs: 
       create: 
         page_title: "Neue Konfigurationsvariable erstellen"
@@ -91,10 +116,11 @@ de:
         page_title: "Konfigurationsvariable bearbeiten"
     common: 
       edit_link: Bearbeiten
+      frontend_show_link: "Öffentliches Profil ansehen"
       navi: 
         app_configs: Einstellungen
         back_to_app: "Zurück zum Frontend"
-        home: "FX Admin"
+        home: Administration
         recordings: Aktionen
         search_recordings: Suchen
         stations: Bahnhöfe
@@ -115,10 +141,13 @@ de:
         header: "Firma erstellen"
         intro: "-"
         page_title: "Firma erstellen"
+      show: 
+        page_title: Firma
       update: 
         page_title: "Firma bearbeiten"
     people: 
       edit: 
+        edit_user_link: "Benutzer bearbeiten"
         page_title: "Person bearbeiten"
       index: 
         header: "Alle Personen"
@@ -126,11 +155,6 @@ de:
         page_title: "Alle Personen"
       update: 
         page_title: "Person bearbeiten"
-    recordings: 
-      index: 
-        header: "Alle Aktionen"
-        intro: "Hier sehen Sie alle Aktionen der Benutzer im System."
-        page_title: "Alle Aktionen"
     search: 
       index: 
         header: "Alle Ergebnisse"
@@ -175,16 +199,21 @@ de:
         header: "Alle Benutzer"
         intro: "Hier sehen Sie alle Benutzer."
         page_title: "Alle Benutzer"
+      show: 
+        header: Aktionen
+        page_title: Benutzer
       update: 
         page_title: "Benutzer bearbeiten"
   common: 
     choice_no: Nein
     choice_yes: Ja
+    choose: "-- Wählen --"
+    confirm: "Sind Sie sicher?"
     create_new_freight: "Neues Inserat erstellen"
     create_new_loading_space: "Neues Inserat erstellen"
     create_new_review: "Bewertung schreiben!"
     deleted_object: "---gelöschtes Objekt---"
-    link_back: "« Zurück"
+    link_back: Zurück
     navi: 
       backend: Administration
       dashboard: Cockpit
@@ -194,6 +223,8 @@ de:
       locale_en: English
       login: Anmelden
       logout: Abmelden
+      my_company: "Unser Firmenprofil"
+      my_person: "Hallo %{name}"
       people: Benutzer
       register: Registrieren
       reviews: Bewertungen
@@ -207,16 +238,19 @@ de:
       person_information: 
         edit: Bearbeiten
         header: Kontaktinformation
-        please_edit_notice: "Bitte füllen Sie ihr Kontaktprofil aus."
+        please_edit_notice: "Bitte füllen Sie ihr Kontaktprofil vollständig aus."
         show: Anzeigen
     website_title: "Freight Exchange 2010"
   companies: 
     create: 
       page_title: "Ihre Firma registrieren"
     dashboard: 
+      intro: "Hier sehen Sie alle Aktionen der Benutzer Ihrer Firma."
       page_title: Cockpit
       recordings: 
         header: Newsfeed
+      sidebar_company_info_title: "Dies ist die InfoCard zu Ihrer Firma:"
+      sidebar_person_info_title: "Dies ist die InfoCard zu Ihrer Person:"
     edit: 
       header: Firmenprofil
       page_title: "Firma bearbeiten"
@@ -231,6 +265,12 @@ de:
       page_title: "{{name}}"
     update: 
       page_title: "Firma bearbeiten"
+  contact: 
+    index: 
+      header: "Kontaktieren Sie unsere Support-Mitarbeiter"
+      intro: "Geben Sie einfach Ihre Fragen oder Anregungen ein und unsere Mitarbeiter werden sich unverzüglich bei Ihnen melden!"
+      page_title: Kontakt
+      sent: "Ihre E-Mail wurde versendet. Vielen Dank für Ihr Feedback!"
   date: 
     abbr_day_names: 
       - So
@@ -368,6 +408,7 @@ de:
         login: "Wählen Sie einen Benutzernamen, mit dem Sie sich im System anmelden."
         password: "Wählen Sie Ihr Passwort."
         password_confirmation: "Bitte wiederholen Sie Ihr Passwort."
+    localized_info_locale_selector: "Sprache:"
     titles: 
       change_password: "Passwort ändern (optional)"
       company_address: Anschrift
@@ -375,15 +416,19 @@ de:
       company_contact_person: "Allgemeiner Ansprechpartner"
       company_name: Name
       credentials: Anmeldeinformationen
-      destination_site_info: "Entladestelle für Fracht"
+      destination_site_info: "Entladestelle für Fracht:"
       for_company: Firma
-      freight_description: Frachtbeschreibung
-      origin_site_info: "Beladestelle für Fracht"
+      freight_description: "Frachtbeschreibung:"
+      misc_text: "Sonstige Informationen:"
+      origin_site_info: "Beladestelle für Fracht:"
       person_name: "Persönliche Angaben"
+      timeframe: "Transportzeitraum:"
+      transport_type: "Frachtbeschreibung:"
   freights: 
     common: 
       edit_link: "Inserat bearbeiten"
       new_link: "Weiteres Inserat erstellen"
+      required_field_hint: "Die mit einem (*) gekennzeichneten Felder sind Pflichtfelder:"
       template_link: "Als Vorlage benutzen"
     edit: 
       header: "Inserat bearbeiten"
@@ -421,9 +466,12 @@ de:
       update: "%{model} speichern"
   loading_spaces: 
     common: 
+      delete_link: "Inserat löschen"
       edit_link: Bearbeiten
       new_link: "Weiteres Inserat erstellen"
       template_link: "Als Vorlage verwenden"
+    create: 
+      page_title: "Neues Inserat"
     edit: 
       header: "Inserat bearbeiten"
       page_title: "Inserat bearbeiten"
@@ -451,6 +499,9 @@ de:
         header: "Beladestelle für Fracht"
       page_title: Laderaum-Inserat
       transport_description: Laderaumbeschreibung
+    update: 
+      header: "Inserat bearbeiten"
+      page_title: "Inserat bearbeiten"
   number: 
     currency: 
       format: 
@@ -493,12 +544,13 @@ de:
   people: 
     common: 
       edit_link: "Person bearbeiten"
+      edit_user_link: "Benutzeraccount bearbeiten"
       new_link: "Neuen Benutzer erstellen"
+      template_link: "Als Vorlage verwenden"
     edit: 
       header: "Persönliche Angaben"
       page_title: "Person bearbeiten"
     index: 
-      edit_user_link: "Accountdaten bearbeiten"
       header: "Alle Benutzer"
       intro: "Hier sehen Sie alle Benutzer Ihrer Firma."
       page_title: "Überblick: Benutzer"
@@ -513,7 +565,7 @@ de:
         edit: "Inserat bearbeiten"
         goods_type: Gutart
         loading_meter: Lademeter
-        misc: "Sonstige Informationen"
+        misc: "Additional information:"
         wagon_type: "Welche Wagen sollen verwendet werden (ggf. Alternativen)?"
         weight: "Gesamtgewicht in t"
     show: 
@@ -524,8 +576,13 @@ de:
     update: "{{user}} <strong>bearbeitete</strong> ein {{object_class}}: {{object_link}}"
   reviews: 
     index: 
+      filter_all: "Alle Bewertungen"
+      filter_approved: "Veröffentlichte Bewertungen"
+      filter_unapproved: "Unveröffentlichte Bewertungen"
       header: "Alle Bewertungen"
-      intro: "Hier sehen Sie alle Bewertungen ihrer Firma."
+      header_approved: "Veröffentlichte Bewertungen"
+      header_unapproved: "Unveröffentlichte Bewertungen"
+      intro: "Hier sehen Sie Bewertungen ihrer Firma."
       page_title: "Alle Bewertungen"
       table: 
         headers: 
@@ -534,12 +591,18 @@ de:
         options: 
           approve: Freischalten
           delete: Löschen
+        review_name: "Bewertung von %{author_user} (%{author_company})"
     new: 
       header: "Bewertung über '{{company_name}}' schreiben"
       page_title: "Bewertung schreiben"
     show: 
-      approve_link: Freischalten
+      approve_link: Veröffentlichen
+      delete_link: "Bewertung löschen"
+      header: "Bewertung von %{author_user} (%{author_company})"
+      index_link: "Zurück zur Übersicht"
       is_approved: "Diese Bewertung wurde veröffentlicht!"
+      page_title: Bewertung
+      sidebar_info_title: "Wer hat diese Bewertung verfasst?"
   root: 
     about: 
       page_title: Über
@@ -587,6 +650,8 @@ de:
     common: 
       edit_link: Bearbeiten
       new_link: "Weiteren Benutzer anlegen"
+    create: 
+      page_title: "Neuer Benutzer"
     edit: 
       header: "Account bearbeiten"
       page_title: "Account bearbeiten"
@@ -595,4 +660,4 @@ de:
       intro: "Hier sehen Sie alle Benutzer ihrer Firma."
       page_title: "Alle Benutzer"
     new: 
-      page_title: "Neuen Benutzer registrieren"
+      page_title: "Neuer Benutzer"

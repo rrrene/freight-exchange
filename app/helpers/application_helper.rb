@@ -33,6 +33,16 @@ module ApplicationHelper
     }
   end
   
+  #:call-seq:
+  #   contact_info(object, attr) # => String
+  #
+  # Returns a formatted string version of the attribute.
+  # Examples:
+  #   <%= contact_info(@company, :phone) %>
+  #   # => '+49 (0) 234 366 98007'
+  #
+  #   <%= contact_info(@company, :website) %>
+  #   # => '<a href="http://www.example.org/">www.example.org</a>'
   def contact_info(object, attr)
     if %w(phone fax).include?(attr)
       phone_number(object.__send__(attr))
@@ -45,7 +55,7 @@ module ApplicationHelper
   #:call-seq:
   #   controller?(name) # => boolean
   #
-  # Returns if c is the current controller.
+  # Returns <tt>true</tt> if c is the current controller.
   # Example:
   #   <%= controller?(:root) %>
   #   # => true
@@ -61,9 +71,15 @@ module ApplicationHelper
     simple_format(h(text)).html_safe
   end
   
+
+  #:call-seq:
+  #   highlight_in_search?(result) # => boolean
+  #
+  # Returns <tt>true</tt> if the given result should be highlighted, i.e.
+  # if the company behind the posting has a certain number of positive reviews.
   def highlight_in_search?(result)
     return unless result.respond_to?(:company) && result.company
-    result.company.approved_reviews.count > AppConfig[:reviews_needed_for_search_highlighting]
+    result.company.approved_reviews.count > AppConfig['reviews.highlight_above']
   end
   
   def humanize_recording(rec)

@@ -3,5 +3,5 @@ just_set_up: true
 name: Freight Exchange
 domain: localhost
 language: en
-reviews_needed_for_search_highlighting: 5
+reviews.highlight_above: 5
 contact_info.complete_percentage: 0.5

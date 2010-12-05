@@ -6,13 +6,8 @@ class ::String
   include Term::ANSIColor
 end
 
-
 module Robot
   class Bot
-    def initialize
-      CurrentUser.random!
-    end
-    
     def go
       report { perform_action }
     end
@@ -44,8 +39,20 @@ module Robot
     end
     
     def actions
-      %w(create_user edit_user delete_user
-        approve_review create_review create_posting delete_posting)
+      with_priority %w(create_posting create_review create_user delete_posting edit_user delete_user approve_review)
+    end
+    
+    def with_priority(all_actions)
+      all_actions.map { |action|
+        arr = [action]
+        if action =~ /create/
+          arr * 3
+        elsif action =~ /(delete|approve)/
+          arr * 2
+        else
+          arr
+        end
+      }.flatten
     end
     
     private
