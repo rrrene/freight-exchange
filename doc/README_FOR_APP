@@ -25,3 +25,6 @@ For any information on the search functionality of the app, take a look at the S
 
 For any information on the matching of Freight and LoadingSpace objects, take a look at the Matching module.
 
+== XML/JSON-API
+
+For any information on the XML/JSON-API access on controllers, take a look at the RemoteController class.

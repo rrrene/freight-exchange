@@ -29,6 +29,9 @@ class RemoteController < ApplicationController
   remote_enabled
   login_required
   
+  # The standard show action. 
+  # 
+  # Sets a default page title. 
   def show
     show! {
       page[:title] = t("#{controller_catalog}.show.page_title", {:name => resource.name})
