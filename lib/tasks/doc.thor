@@ -56,10 +56,14 @@ class Doc < Thor
     
     all_include_commands = tex_includes.map { |t| "\\include{classes/#{t}}" }.join("\n")
     
-    master_content = File.read(master_file)
+    if File.exist?(master_file)
+      master_content = File.read(master_file)
     
-    master_content.gsub!(/(\%\%\%begin_includes\%\%\%)(.+?)(\%\%\%end_includes\%\%\%)/m, "\\1\n#{all_include_commands}\n\\3")
-    File.open(master_file, 'w') {|f| f.write(master_content) }
+      master_content.gsub!(/(\%\%\%begin_includes\%\%\%)(.+?)(\%\%\%end_includes\%\%\%)/m, "\\1\n#{all_include_commands}\n\\3")
+      File.open(master_file, 'w') {|f| f.write(master_content) }
+    else
+      alert "no master_file: #{master_file}"
+    end
     success "doc parsed"
   end
   
