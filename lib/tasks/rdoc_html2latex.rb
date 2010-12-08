@@ -140,9 +140,13 @@ class RDocHTML2LaTex # :nodoc:
     label = doc.css("head title").inner_html.match(/\S+$/).to_s.gsub(/::/, ':').
       gsub(/([A-Z]+)([A-Z][a-z])/,'\1_\2').
       gsub(/([a-z\d])([A-Z])/,'\1_\2').
-      tr("-", "_").
-      downcase
-    label = "\\label{doc:#{label}}"
+      tr("-", "_")
+    
+    if label.empty?
+      label = doc.css("body div#fileHeader h1").inner_html
+    end
+    
+    label = "\\label{doc:#{label.downcase}}"
   end
   
   def to_s
