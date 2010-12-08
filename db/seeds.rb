@@ -1,5 +1,6 @@
 require File.join(File.dirname(__FILE__), 'seed_data') 
 
+=begin
 # Create a basis of participating countries
 Seed::COUNTRIES.each do |opts|
   Country.create(opts)
@@ -32,6 +33,7 @@ Seed::STATIONS.each do |iso, opts_arr|
   end
 end
 puts "#{Station.count} Stations"
+=end
 
 # Create basic user roles
 Seed::USER_ROLES.each do |opts|

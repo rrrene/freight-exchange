@@ -2,6 +2,7 @@
 
 module Robot
   class Places
+    @plain_names = %w(Rotterdam Utrecht Genoa)
     @@places = [
       {
         :contractor => 'Frachtunternehmen',
@@ -32,8 +33,19 @@ module Robot
         :country => "Germany",
         :date => Time.new + 87600,
         :side_track_available => true,
-      },
-    ]
+      }
+    ] + @plain_names.map { |name|
+        {
+          :contractor => 'Frachtunternehmen',
+          :name => name,
+          :address => "Am Hauptbahnhof",
+          :zip => "45128",
+          :city => name,
+          :country => "",
+          :date => Time.new + 87600,
+          :side_track_available => Random.boolean,
+        }
+      } 
     
     def initialize
       @places = @@places.clone.sort_by { rand }
