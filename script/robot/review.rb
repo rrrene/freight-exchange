@@ -6,10 +6,12 @@ module Robot
   class Review < ActiveResource::Base
     class << self
       def approve
-        resource = self.find(unapproved_review_id)
-        resource.approved_by_id = Robot::CurrentUser.id
-        resource.save
-        resource
+        if id = unapproved_review_id
+          resource = self.find(id)
+          resource.approved_by_id = Robot::CurrentUser.id
+          resource.save
+          resource
+        end
       end
       
       def unapproved_review_id
