@@ -2,8 +2,10 @@
 class SearchController < ApplicationController
   login_required
   
-  def extended
-    
+  def advanced
+    if request.post?
+      @arel = Freight.where(:weight => 10)
+    end
   end
   
   def index

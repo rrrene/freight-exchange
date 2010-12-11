@@ -38,6 +38,7 @@ BlackBoard::Application.routes.draw do |map|
   match "logout" => 'user_sessions#destroy', :as => :logout
   
   match "search" => 'search#index', :as => :search
+  match "advanced" => 'search#advanced', :as => :advanced_search
   match "dashboard" => 'companies#dashboard', :as => :company_dashboard
 
   match "contact" => 'contact#index', :as => :contact

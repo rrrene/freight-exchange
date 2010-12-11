@@ -1,0 +1,66 @@
+<div class="box">
+    <%= debug @arel.full? { |a| a.to_sql } %>
+<%= form_tag advanced_search_url, :class => :formtastic do %>
+  <% %w(origin destination).each do |site| %>
+    <div class="form_site_info" style="float: left; width: 295px;">
+      <fieldset class="inputs">
+        <ol>
+          <%= search_input_contains :"#{site}_site_info", :contractor %>
+
+          <% SiteInfo::SITE_ATTRIBUTES.each do |field| %>
+            <%= search_input_contains :"#{site}_site_info", field %>
+          <% end %>
+          <%= search_input_is :"#{site}_site_info", :side_track_available, :collection => yes_no_collection %>
+          <%= search_input_contains :"#{site}_site_info", :track_number %>      
+        </ol>
+      </fieldset>
+    </div>
+  <% end %>
+  <%= clear_both %>
+  
+  
+  <!-- TIMEFRAME -->
+  <fieldset class="inputs">
+    <ol>
+      <%= search_input_from_to :origin_site_info, :date %>
+  
+      <%= search_input_from_to :destination_site_info, :date %>
+    </ol>
+  </fieldset>
+  
+  <!-- FREIGHT DESCRIPTION -->
+  <fieldset class="inputs">
+    <ol>
+      <%= search_input_from_to nil, :weight %>
+      <%= search_input_from_to nil, :loading_meter %>
+
+      <%= search_localized_info_field :goods_text %>
+
+      <%= search_input_is nil, :hazmat, :collection => yes_no_collection %>
+    </ol>
+  </fieldset>
+  
+  <!-- TRANSPORT TYPE -->
+  <fieldset class="inputs">
+    <ol>
+      <%= search_input_is nil, :transport_type, :collection => collection_choices(Freight, :transport_type) %>
+      <%= search_localized_info_field :transport_text %>
+
+      <%= search_input_is nil, :wagons_provided_by, :collection => collection_choices(Freight, :wagons_provided_by), :as => :radio %>
+    </ol>
+  </fieldset>
+  
+  <!-- MISC INFORMATION -->
+  <fieldset class="inputs">
+    <ol>
+      <%= search_localized_info_field :misc_text %>
+      <%= search_input_is nil, :desired_proposal_type, :collection => collection_choices(Freight, :desired_proposal_type), :as => :radio %>
+      <%#= f.input :contact_person, :collection => current_company.people %>
+    </ol>
+  </fieldset>
+  
+  <!-- submit tag -->
+  <fieldset class="buttons"><ol><li class="commit"><input class="create" id="freight_submit" name="commit" type="submit" value="<%= t("search.advanced.submit") %>"></li></ol></fieldset>
+  
+<% end %>
+</div>

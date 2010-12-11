@@ -19,6 +19,7 @@ en:
       locale_de: "Deutsch"
       locale_en: "English"
     sidebar:
+      advanced_search_link: "Advanced search"
       company_information: 
         header: "Company information"
         please_edit_notice: "Please add more information to your company's profile."
@@ -239,6 +240,14 @@ en:
           header: "Companies found:"
         station_results:
           header: "Stations found:"
+    advanced:
+      page_title: "Advanced search"
+      collection:
+        hazmat:
+          true: "Yes"
+          false: "No"
+      submit: "Search"
+      
     index:
       page_title: "Search"
       no_results: "There are no results."
