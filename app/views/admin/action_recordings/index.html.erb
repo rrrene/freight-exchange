@@ -23,7 +23,6 @@
       success: function (data, status, xhr) {
         pollLastID = data['last_id'];
         var html = jQuery.trim(data['live_content']);
-        document.title = html.length;
         if( html.length > 0 ) {
           jQuery('#live_content').prepend(html);
           jQuery('#live_content ul.action_list').first().glow();
@@ -44,7 +43,7 @@
   }
   function startPolling() {
     stopPolling();
-    pollIntervalID = setInterval(pollServer, 1500);
+    pollIntervalID = setInterval(pollServer, 5000);
   }
   function stopPolling() {
     if( pollIntervalID ) clearInterval(pollIntervalID);
