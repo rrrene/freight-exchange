@@ -1,3 +1,8 @@
+# The PostingsController provides functionality for creating and editing 
+# postings (freights and loading_spaces).
+#
+# Both the FreightsController and the LoadingSpacesController inherit from here.
+# 
 class PostingsController < RemoteController
   same_company_required :only => %w(edit update destroy)
   role_required [:company_admin, :company_employee], :only => [:new, :create, :edit, :update, :destroy]
