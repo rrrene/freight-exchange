@@ -3,6 +3,7 @@
 module Robot
   class Places
     @plain_names = %w(Rotterdam Utrecht Genoa)
+    @@creation_date = lambda { |place| Time.new + (87600 * 365 * rand).to_i }
     @@places = [
       {
         :contractor => 'Frachtunternehmen',
@@ -11,7 +12,7 @@ module Robot
         :zip => "44787",
         :city => "Bochum",
         :country => "Germany",
-        :date => Time.new,
+        :date => @@creation_date,
         :side_track_available => true,
       },
       {
@@ -21,7 +22,7 @@ module Robot
         :zip => "44137",
         :city => "Dortmund",
         :country => "Germany",
-        :date => Time.new + 87600,
+        :date => @@creation_date,
         :side_track_available => true,
       },
       {
@@ -31,7 +32,7 @@ module Robot
         :zip => "45128",
         :city => "Essen",
         :country => "Germany",
-        :date => Time.new + 87600,
+        :date => @@creation_date,
         :side_track_available => true,
       }
     ] + @plain_names.map { |name|
@@ -42,7 +43,7 @@ module Robot
           :zip => "45128",
           :city => name,
           :country => "",
-          :date => Time.new + 87600,
+          :date => @@creation_date,
           :side_track_available => Random.boolean,
         }
       } 
@@ -51,10 +52,21 @@ module Robot
       @places = @@places.clone.sort_by { rand }
     end
     
-    def shift
-      @places.shift
+    def shift(origin = nil)
+      place = @places.clone.shift
+      place.each do |key, value|
+        place[key] = value.call(place) if value.is_a?(Proc)
+      end
+      place
     end
-    alias origin shift
-    alias destination shift
+    
+    def origin
+      @origin ||= shift
+    end
+    
+    def destination
+      @destination ||= shift(origin)
+    end
+    
   end
 end

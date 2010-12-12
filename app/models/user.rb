@@ -8,7 +8,7 @@ require 'digest/sha1'
 class User < ActiveRecord::Base
   API_KEY_SECRET = "85b66e91fb5929d86f205b82"
   belongs_to :company
-  belongs_to :person
+  belongs_to :person, :dependent => :destroy
   accepts_nested_attributes_for :company
   accepts_nested_attributes_for :person
   has_and_belongs_to_many :user_roles, :uniq => true
