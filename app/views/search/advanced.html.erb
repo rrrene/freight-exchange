@@ -1,75 +1,50 @@
 <div class="box">
   <% if searched? %>
-    <%= @posting_arel.to_sql %>  <br>
-    <%= @localized_info_arel.to_sql %><br>
-    <%= @origin_site_info_arel.to_sql %><br>
-    <%= @destination_site_info_arel.to_sql %>
+    <p>
+      <%= link_to_function t("search.advanced.display_form_link"), "jQuery('#advanced_search').show();" %>
+    </p>
+  <% end %>
+  <div id="advanced_search" <% if searched? %>style="display: none;"<% end %>>
+    <%= render 'advanced_search_form' %>
+  </div>
+  
+  <% if searched? %>
+    <% if @postings.full? %>
+      <h3><%= t "search.common.results.header" %></h3>
+      <ul class="search_results action_list">
+      <% @postings.each do |result| %>
+        <li class="<%= highlight_in_search?(result) ? 'highlight' : '' %>">
+          <!--
+          <span class="label <%= result.class.to_s.underscore %>"><%= result.class.human_name %></span>
+          -->
+            <% if template_exists?("/#{result.class.to_s.tableize}/_search_result")%>
+              <%= render :partial => "/#{result.class.to_s.tableize}/search_result", :locals => {:result => result} %>
+            <% else %>
+              <% if result.is_a?(Posting) %>
+                <%= link_to "#{result.origin_station.name} - #{result.destination_station.name}", result %>
+              <% else %>
+                <%= link_to result.name, result %>
+              <% end %>
+            <% end %>
+
+        </li>
+      <% end %>
+      </ul>
+    <% else %>
+      <%= t("search.index.no_results") %>
+    <% end %>
+  <% end %>
+  
+  <% if searched? %>
+    <div style="margin: 20px; color: #aaa;">
+      <%= [@posting_arel, @localized_info_arel, @origin_site_info_arel, @destination_site_info_arel].each do |arel| %>
+        <p>
+          <%= arel.to_sql %><br>
+          <%= arel.all %>
+        </p>
+      <% end %>
+    </div>
     <% content_for :sidebar do %><%= debug params %><% end %>
   <% end %>
 
-
-<%= form_tag advanced_search_url, :class => :formtastic, :method => :get do %>
-  <%= hidden_field_tag :search_type, current_user.search_type %>
-  <% %w(origin destination).each do |site| %>
-    <div class="form_site_info" style="float: left; width: 295px;">
-      <fieldset class="inputs">
-        <ol>
-          <%= search_input_contains :"#{site}_site_info", :contractor %>
-
-          <% SiteInfo::SITE_ATTRIBUTES.each do |field| %>
-            <%= search_input_contains :"#{site}_site_info", field %>
-          <% end %>
-          <%= search_input_is :"#{site}_site_info", :side_track_available, :collection => include_blank(yes_no_collection) %>
-          <%= search_input_contains :"#{site}_site_info", :track_number %>      
-        </ol>
-      </fieldset>
-    </div>
-  <% end %>
-  <%= clear_both %>
-  
-  
-  <!-- TIMEFRAME -->
-  <fieldset class="inputs">
-    <ol>
-      <%= search_input_from_to :origin_site_info, :date %>
-  
-      <%= search_input_from_to :destination_site_info, :date %>
-    </ol>
-  </fieldset>
-  
-  <!-- FREIGHT DESCRIPTION -->
-  <fieldset class="inputs">
-    <ol>
-      <%= search_input_from_to nil, :weight %>
-      <%= search_input_from_to nil, :loading_meter %>
-
-      <%= search_localized_info_field :goods_text %>
-
-      <%= search_input_is nil, :hazmat, :collection => include_blank(yes_no_collection) %>
-    </ol>
-  </fieldset>
-  
-  <!-- TRANSPORT TYPE -->
-  <fieldset class="inputs">
-    <ol>
-      <%= search_input_is nil, :transport_type, :collection => include_blank(collection_choices(Freight, :transport_type)) %>
-      <%= search_localized_info_field :transport_text %>
-
-      <%= search_input_is nil, :wagons_provided_by, :collection => include_blank(collection_choices(Freight, :wagons_provided_by)), :as => :radio %>
-    </ol>
-  </fieldset>
-  
-  <!-- MISC INFORMATION -->
-  <fieldset class="inputs">
-    <ol>
-      <%= search_localized_info_field :misc_text %>
-      <%= search_input_is nil, :desired_proposal_type, :collection => include_blank(collection_choices(Freight, :desired_proposal_type)), :as => :radio %>
-      <%#= f.input :contact_person, :collection => current_company.people %>
-    </ol>
-  </fieldset>
-  
-  <!-- submit tag -->
-  <fieldset class="buttons"><ol><li class="commit"><input class="create" id="freight_submit" name="commit" type="submit" value="<%= t("search.advanced.submit") %>"></li></ol></fieldset>
-  
-<% end %>
 </div>

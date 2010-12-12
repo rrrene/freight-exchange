@@ -48,7 +48,7 @@ module SearchHelper
   end
   
   def include_blank(collection)
-    [[t("common.choose"), '']] << collection
+    [[t("common.choose"), '']] + collection
   end
   
   private

@@ -242,10 +242,7 @@ en:
           header: "Stations found:"
     advanced:
       page_title: "Advanced search"
-      collection:
-        hazmat:
-          true: "Yes"
-          false: "No"
+      display_form_link: "Modify your search"
       submit: "Search"
       
     index:
