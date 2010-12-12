@@ -40,47 +40,4 @@ module Seed
       }
     },
   ]
-  
-  COUNTRIES = [
-    {:iso => 'de', :name => 'Germany'},
-    {:iso => 'ch', :name => 'Switzerland'},
-    {:iso => 'fr', :name => 'France'},
-    {:iso => 'it', :name => 'Italy'},
-    {:iso => 'nl', :name => 'Netherlands'},
-  ]
-  
-  REGIONS = {
-    :de => [
-      {:name => 'Rhein-Neckar'},
-      {:name => 'Rhein-Main'},
-      {:name => 'Ruhr'},
-      {:name => 'Westfalen'},
-    ],
-    :nl => [
-      {:name => 'Utrecht'},
-    ]
-  }
-  
-  STATIONS = {
-    :de => [
-      {:name => 'Bochum Hbf', :regions => ['Ruhr', 'Westfalen'],
-        :address => "Kurt-Schumacher-Platz",
-        :zip => "44787",
-        :city => "Bochum",
-      },
-      {:name => 'Essen Hbf', :regions => ['Ruhr', 'Westfalen'],
-        :address => "Am Hauptbahnhof",
-        :zip => "45128",
-        :city => "Essen",
-      },
-      {:name => 'Dortmund Hbf', :regions => ['Ruhr', 'Westfalen'],
-        :address => "Bahnhofstr.",
-        :zip => "44137",
-        :city => "Dortmund",
-      },
-    ],
-    :nl => [
-      {:name => 'Utrecht Centraal', :regions => ['Utrecht']},
-    ]
-  }
 end
