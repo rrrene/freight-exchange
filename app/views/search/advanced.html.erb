@@ -1,6 +1,15 @@
 <div class="box">
-    <%= debug @arel.full? { |a| a.to_sql } %>
-<%= form_tag advanced_search_url, :class => :formtastic do %>
+  <% if searched? %>
+    <%= @posting_arel.to_sql %>  <br>
+    <%= @localized_info_arel.to_sql %><br>
+    <%= @origin_site_info_arel.to_sql %><br>
+    <%= @destination_site_info_arel.to_sql %>
+    <% content_for :sidebar do %><%= debug params %><% end %>
+  <% end %>
+
+
+<%= form_tag advanced_search_url, :class => :formtastic, :method => :get do %>
+  <%= hidden_field_tag :search_type, current_user.search_type %>
   <% %w(origin destination).each do |site| %>
     <div class="form_site_info" style="float: left; width: 295px;">
       <fieldset class="inputs">
@@ -10,7 +19,7 @@
           <% SiteInfo::SITE_ATTRIBUTES.each do |field| %>
             <%= search_input_contains :"#{site}_site_info", field %>
           <% end %>
-          <%= search_input_is :"#{site}_site_info", :side_track_available, :collection => yes_no_collection %>
+          <%= search_input_is :"#{site}_site_info", :side_track_available, :collection => include_blank(yes_no_collection) %>
           <%= search_input_contains :"#{site}_site_info", :track_number %>      
         </ol>
       </fieldset>
@@ -36,17 +45,17 @@
 
       <%= search_localized_info_field :goods_text %>
 
-      <%= search_input_is nil, :hazmat, :collection => yes_no_collection %>
+      <%= search_input_is nil, :hazmat, :collection => include_blank(yes_no_collection) %>
     </ol>
   </fieldset>
   
   <!-- TRANSPORT TYPE -->
   <fieldset class="inputs">
     <ol>
-      <%= search_input_is nil, :transport_type, :collection => collection_choices(Freight, :transport_type) %>
+      <%= search_input_is nil, :transport_type, :collection => include_blank(collection_choices(Freight, :transport_type)) %>
       <%= search_localized_info_field :transport_text %>
 
-      <%= search_input_is nil, :wagons_provided_by, :collection => collection_choices(Freight, :wagons_provided_by), :as => :radio %>
+      <%= search_input_is nil, :wagons_provided_by, :collection => include_blank(collection_choices(Freight, :wagons_provided_by)), :as => :radio %>
     </ol>
   </fieldset>
   
@@ -54,7 +63,7 @@
   <fieldset class="inputs">
     <ol>
       <%= search_localized_info_field :misc_text %>
-      <%= search_input_is nil, :desired_proposal_type, :collection => collection_choices(Freight, :desired_proposal_type), :as => :radio %>
+      <%= search_input_is nil, :desired_proposal_type, :collection => include_blank(collection_choices(Freight, :desired_proposal_type)), :as => :radio %>
       <%#= f.input :contact_person, :collection => current_company.people %>
     </ol>
   </fieldset>

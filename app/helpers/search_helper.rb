@@ -47,6 +47,10 @@ module SearchHelper
     [[t("common.choice_yes"), true], [t("common.choice_no"), false]]
   end
   
+  def include_blank(collection)
+    [[t("common.choose"), '']] << collection
+  end
+  
   private
   
   def name_from_object_and_field(object, field, opts)
