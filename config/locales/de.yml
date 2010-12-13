@@ -15,6 +15,7 @@ de:
         website: Internet
         zip: PLZ
       freight: 
+        contact_person: Kontaktperson
         desired_proposal_type: "Angebot gewünscht als"
         destination_date: Bis
         hazmat: Gefahrengut
@@ -37,6 +38,7 @@ de:
         email: E-Mail
         fax: Fax
         first_name: Vorname
+        job_description: Stellenbeschreibung
         last_name: Nachname
         locale: Benutzersprache
         localized_infos: 
@@ -230,6 +232,7 @@ de:
       reviews: Bewertungen
       select_locale: "Sprache wählen:"
     sidebar: 
+      advanced_search_link: "Erweiterte Suche"
       company_information: 
         edit: Bearbeiten
         header: Firmenprofil
@@ -448,6 +451,7 @@ de:
           edit: Bearbeiten
           template: "Als Vorlage verwenden"
     new: 
+      header: "Neues Inserat"
       page_title: "Inserat erstellen"
     show: 
       destination: 
@@ -609,6 +613,10 @@ de:
     index: 
       page_title: Willkommen
   search: 
+    advanced: 
+      display_form_link: "Suche modifizieren"
+      page_title: "Erweiterte Suche"
+      submit: Suche
     common: 
       button: Suche
       results: 
@@ -626,7 +634,15 @@ de:
       no_results: "Ihre Suche ergab leider keine Treffer."
       page_title: Suche
   setup: 
+    demo_company: 
+      company_present: "Es existiert eine Demo-Firma. Klicken Sie auf das Profil in der Seitenleiste oder löschen Sie sie mit dem folgenden Link:"
+      create_demo_company_link: "Demo-Firma erstellen"
+      destroy_demo_company_link: "Demo-Firma löschen"
+      header: "Demo-Firma erstellen oder löschen"
+      no_company_present: "Es existiert im Moment keine Demo-Firma. Erstellen Sie eine mit folgendem Link:"
+      page_title: Demo-Firma
     index: 
+      create_demo_company_link: "Demo-Firma erstellen"
       edit_admin_link: "Administratorpasswort bearbeiten"
       header: Setup
       intro: "Das System hat soeben ein Administratorkonto für sie angelegt. Sie können ihr Administratorpasswort hier ändern:"

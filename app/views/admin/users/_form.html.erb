@@ -19,7 +19,7 @@
   <% end %>
   
   <% f.inputs :user_roles do %>
-    <%= f.input :user_roles, :as => :check_boxes %>
+    <%= f.input :user_roles, :as => :check_boxes, :collection => UserRole.all.map { |r| [t("activerecord.human_attribute_values.user_role.name.#{r.name}"), r.name] } %>
   <% end %>
 
   <%= f.buttons %>

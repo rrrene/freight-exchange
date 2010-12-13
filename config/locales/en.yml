@@ -89,6 +89,7 @@ en:
       required_field_hint: "The fields with an asterix (*) are mandatory:"
     new:
       page_title: "New freight posting"
+      header: "New freight posting"
     edit:
       page_title: "Edit freight posting"
       header: "Edit freight posting"
@@ -474,6 +475,7 @@ en:
         transport_type: "Transport type"
         loading_meter: "Loading meter"
         desired_proposal_type: "Desired proposal type"
+        contact_person: "Contact Person"
         localized_infos:
           goods_text: "Type of Goods"
           misc_text: "Additional information"
@@ -487,6 +489,7 @@ en:
       person:
         first_name: "Forename"
         last_name: "Surname"
+        job_description: "Job Description"
         phone: "Phone"
         fax: "Fax"
         email: "E-Mail"
@@ -525,6 +528,12 @@ en:
         locale:
           en: "English"
           de: "German"
+      user_role:
+        name:
+          administrator: "[System] Administrator"
+          company_admin: "Executive"
+          company_employee: "Regular employee"
+          company_intern: "Trainee/Intern"
 
 #        localized_infos:
 #          type_of_goods: "Type of goods"
