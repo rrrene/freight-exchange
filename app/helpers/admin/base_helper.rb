@@ -2,18 +2,22 @@
 module Admin::BaseHelper
   
   def chart_for_records(record_class, opts = {})
-    steps = opts[:steps] || 7
-    step_width = opts[:step_width] || 1.day
-    attribute = opts[:attribute] || :created_at
+    steps = opts.delete(:steps) || 7
+    step_width = opts.delete(:step_width) || 1.day
+    attribute = opts.delete(:attribute) || :created_at
     data = []
-    labels = []
+    value_labels, labels = [], []
+    time = Time.new.midnight
     (0..steps).to_a.reverse.each do |index|
-      from_time = Time.new - index * step_width
-      to_time = from_time + step_width
+      from_time = time - index * step_width
+      to_time = from_time+ step_width
+      count = record_class.where(["#{attribute} > ? AND #{attribute} < ?", from_time, to_time]).count
       labels << Time.at(from_time.to_i).strftime("%d.")
-      data << record_class.where(["#{attribute} > ? AND #{attribute} < ?", from_time, to_time]).count
+      value_labels << count
+      data << count
     end
-    google_chart_tag :type => :bar, :data => data, :labels => labels
+    std_opts = {:type => :bar, :data => data, :labels => labels, :colors =>"A2C180,3D7930", :marker_format => "N,000000,0,-1,#{data.size}"}
+    google_chart_tag std_opts.merge(opts)
   end
   
   def google_chart_tag(options = {})
@@ -43,7 +47,7 @@ module Admin::BaseHelper
   end
   
   def gchart_translate(field)
-    general = {:size => :chs, :type => :cht, :data => :chd, :labels => :chl, :title => :chtt, :colors => :chco}
+    general = {:size => :chs, :type => :cht, :data => :chd, :labels => :chl, :title => :chtt, :colors => :chco, :marker_format => :chm}
     types = {:line => :lc, :spark => :ls, :pie => :p, :pie3d => :p3, :bar => :bvs}
     general.merge(types)[field.to_s.intern].full? || field
   end

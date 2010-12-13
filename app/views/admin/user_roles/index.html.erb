@@ -1,1 +1,40 @@
 <%= render_partial :index %>
+<div class="box">
+  <h3>
+    <%= t("#{controller_catalog}.index.header") %>
+    <%#= link_new unless controller_name =~ /recording/ %>
+  </h3>
+  <p>
+    <%= t("#{controller_catalog}.index.intro") %>
+  </p>
+  
+  <% %w(name user_count user_percentage).tap do |attributes| %>
+  <table>
+    <thead>
+      <tr>
+        <th>id</th>
+        <% attributes.each do |attr| %>
+          <th><%= attr.humanize %></th>
+        <% end %>
+      </tr>
+    </thead>
+    <tbody>
+      <% collection.each do |ar| %>
+        <tr>
+          <td><%= link_to ar.id, admin_company_path(ar) %></td>
+          <% attributes.each do |attr| %>
+            <td>
+              <% if %w(login name).include?(attr) %>
+                <%= link_to(ar[attr].is_a?(Hash) ? debug(ar[attr]) : ar[attr], admin_company_path(ar)) %>
+              <% else %>
+                <%= contact_info(ar, attr) %>
+              <% end %>
+            </td>
+          <% end %>
+          <!--td><%= link_to "Edit", {:action => 'edit', :id => ar}, :class => 'edit' %></td-->
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <% end %>
+</div>

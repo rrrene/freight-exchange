@@ -38,3 +38,10 @@
   </table>
   <% end %>
 </div>
+
+<% content_for(:sidebar) do %>
+  <div class="box">
+    <h3><%= t("admin.common.stats.last_week.created_companies") %></h3>
+    <%= chart_for_records Company %>
+  </div>
+<% end %>

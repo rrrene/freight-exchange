@@ -37,5 +37,13 @@ class UserRole < ActiveRecord::Base
     where('name LIKE ?', 'company_%')
   end
   
+  def user_count
+    users.count
+  end
+  
+  def user_percentage
+    users.count / User.count.to_f
+  end
+  
   validates_uniqueness_of :name
 end
