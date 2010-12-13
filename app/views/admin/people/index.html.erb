@@ -23,7 +23,13 @@
         <tr>
           <td><%= ar.id %></th>
           <% attributes.each do |attr| %>
-          <td><%= ar[attr].is_a?(Hash) ? debug(ar[attr]) : ar[attr] %></td>
+            <td>
+              <% if %w(login name).include?(attr) %>
+                <%= link_to(ar[attr].is_a?(Hash) ? debug(ar[attr]) : ar[attr], admin_person_path(ar)) %>
+              <% else %>
+                <%= contact_info(ar, attr) %>
+              <% end %>
+            </td>
           <% end %>
           <td><%= link_to "Edit", {:action => 'edit', :id => ar}, :class => 'edit' %></td>
         </tr>

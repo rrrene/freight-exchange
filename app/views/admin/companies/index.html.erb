@@ -8,7 +8,7 @@
     <%= t("#{controller_catalog}.index.intro") %>
   </p>
   
-  <% %w(name email).tap do |attributes| %>
+  <% %w(name phone email).tap do |attributes| %>
   <table>
     <thead>
       <tr>
@@ -23,7 +23,13 @@
         <tr>
           <td><%= link_to ar.id, admin_company_path(ar) %></td>
           <% attributes.each do |attr| %>
-          <td><%= link_to(ar[attr].is_a?(Hash) ? debug(ar[attr]) : ar[attr], admin_company_path(ar)) %></td>
+            <td>
+              <% if %w(login name).include?(attr) %>
+                <%= link_to(ar[attr].is_a?(Hash) ? debug(ar[attr]) : ar[attr], admin_company_path(ar)) %>
+              <% else %>
+                <%= contact_info(ar, attr) %>
+              <% end %>
+            </td>
           <% end %>
           <!--td><%= link_to "Edit", {:action => 'edit', :id => ar}, :class => 'edit' %></td-->
         </tr>
