@@ -7,8 +7,8 @@ module Robot
   end
   
   Factory.define "Robot::Freight" do |f|
-    f.origin_site_info_attributes { Places.new.origin }
-    f.destination_site_info_attributes { Places.new.destination }
+    f.origin_site_info_attributes { @places = Places.new ; @places.origin }
+    f.destination_site_info_attributes { @places.destination }
     f.weight { 1_000 * (rand * 20).to_i }
     f.loading_meter { 100 * (rand * 20).to_i }
     f.hazmat { rand < 0.5 }

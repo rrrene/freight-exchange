@@ -57,7 +57,8 @@ module Robot
     def search
       klass = Robot::Freight
       places = Robot::Places.new
-      query = [places.shift[:name], places.shift[:city], Random.boolean ? 'Gefahrgut' : ''].join(' ')
+      item = Random.boolean ? ['Gefahrgut', 'Einzelwagen', 'Ganzzug', '2011', '2012', 'pauschal'].random : ''
+      query = [places.origin[:city], places.destination[:city], item].join(' ').strip
       results = klass.find(:all, :from => "/search", :params => {:q => query})
       unless results.empty?
         result = results.random

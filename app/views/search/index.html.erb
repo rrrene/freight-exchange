@@ -1,6 +1,9 @@
 <div class="box">
   <h3><%= t "search.common.results.header" %></h3>
   <% if @results[:main].full? %>
+    <p>
+      <%= t('search.common.subtext_results', :count => @results[:count]).html_safe %>
+    </p>
     <ul class="search_results action_list">
     <% @results[:main].each do |result| %>
       <li class="<%= highlight_in_search?(result) ? 'highlight' : '' %>">
@@ -20,10 +23,6 @@
       </li>
     <% end %>
     </ul>
-    
-    <% content_for(:subtext) do %>
-      <%= t('search.common.subtext_results', :count => @results[:count]).html_safe %>
-    <% end %>
   <% else %>
     <%= t("search.index.no_#{@q.full? ? :results : :query}") %>
   <% end %>

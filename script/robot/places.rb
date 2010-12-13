@@ -3,7 +3,9 @@
 module Robot
   class Places
     @plain_names = %w(Rotterdam Utrecht Genoa)
-    @@creation_date = lambda { |place| Time.new + (87600 * 365 * rand).to_i }
+    @@creation_date = lambda { |place, origin| 
+        (origin.nil? ? Time.new : origin[:date]) + (87600 * 365 * rand).to_i 
+      }
     @@places = [
       {
         :contractor => 'Frachtunternehmen',
@@ -53,9 +55,9 @@ module Robot
     end
     
     def shift(origin = nil)
-      place = @places.clone.shift
+      place = @places.shift
       place.each do |key, value|
-        place[key] = value.call(place) if value.is_a?(Proc)
+        place[key] = value.call(place, origin) if value.is_a?(Proc)
       end
       place
     end
