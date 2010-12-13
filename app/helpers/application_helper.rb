@@ -47,7 +47,7 @@ module ApplicationHelper
     if %w(phone fax).include?(attr)
       phone_number(object.__send__(attr))
     else
-      auto_link object.__send__(attr)
+      auto_link object.__send__(attr).to_s
     end
   end
     

@@ -231,8 +231,24 @@ tbody td.options {
   text-align: right;
   padding-right: 0;
 }
+table.stats tbody tr td,
 .index tbody tr td {
   border-bottom: 1px solid #f0f0f0;
+}
+
+table.stats td.id a,
+table.stats td.created_at,
+.nil {
+  font-weight: normal;
+  color: #aaa;
+}
+
+table.stats .highlight {
+  padding: 3px;
+  background-color: #0D7F09;
+  color: white;
+  background-color: #ffa;
+  color: #333;
 }
 
 legend span {

@@ -1,0 +1,61 @@
+<div class="box">
+  <h3><%= t("#{controller_catalog}.keyword.header") %></h3>
+  <p>
+    <%= t("#{controller_catalog}.keyword.intro") %>
+  </p>
+  <p>
+    <%= t("#{controller_catalog}.keyword.keywords_label") %>
+    <% @keywords.each do |keyword| %>
+      <%= link_to keyword, {:action => :keyword, :id => keyword} %>
+    <% end %>
+  </p>
+</div>
+<h2 class="green"><%= @query %></h2>
+
+<div class="box">
+  
+  <% %w(query results clicks created_at).tap do |attributes| %>
+  <table class="stats">
+    <thead>
+      <tr>
+        <th class="id">id</th>
+        <% attributes.each do |attr| %>
+          <th class="<%= attr %>"><%= attr.humanize %></th>
+        <% end %>
+      </tr>
+    </thead>
+    <tbody>
+      <% SearchRecording.where(['query LIKE ?', "%#{@keywords.join('%')}%"]).order('created_at DESC').each do |ar| %>
+        <tr>
+          <td class="id"><%= link_to ar.id, admin_user_path(ar) %></td>
+          <% attributes.each do |attr| %>
+            <td class="<%= attr %>">
+              <% if %w(login name query).include?(attr) %>
+                <%= link_to(highlight(ar.__send__(attr), @query), {:action => :keyword, :id => ar.__send__(attr)}) %>
+              <% else %>
+                <%= contact_info(ar, attr) %>
+              <% end %>
+            </td>
+          <% end %>
+          <!--td><%= link_to "Edit", {:action => 'edit', :id => ar}, :class => 'edit' %></td-->
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <% end %>
+  
+</div>
+
+
+<% content_for(:sidebar) do %>
+  <h3 class="info"><%= t("admin.common.stats.last_week.search_recordings_for_keywords") %></h3>
+  <div class="box">
+    <%= chart_for_records SearchRecording.where(['query LIKE ?', "%#{@keywords.join('%')}%"]) %>
+  </div>
+  <% @keywords.each do |keyword| %>
+    <h3 class="info"><%= t("admin.common.stats.last_week.search_recordings_for_keyword", :keyword => keyword) %></h3>
+    <div class="box">
+      <%= chart_for_records SearchRecording.where(['query LIKE ?', "%#{keyword}%"]) %>
+    </div>
+  <% end %>
+<% end %>

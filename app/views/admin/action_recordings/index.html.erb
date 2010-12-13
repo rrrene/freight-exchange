@@ -1,14 +1,9 @@
-<%
-  @data = []
-  @labels = []
-  (1..7).each do |index|
-    from_time = Time.new - index.days
-    to_time = from_time + 1.day
-    @labels << from_time.to_i
-    @data << ActionRecording.where(['created_at > ? AND created_at < ?', from_time, to_time]).count
-  end
-%>
-<%= google_chart_tag :type => :bar, :size => "660x100", :data => @data, :labels => @labels %>
+<% content_for(:sidebar) do %>
+  <div class="box">
+    <h3><%= t("admin.common.stats.action_recordings.last_week") %></h3>
+    <%= chart_for_records ActionRecording %>
+  </div>
+<% end %>
 
 <script type="text/javascript">
 //<![CDATA[

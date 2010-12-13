@@ -1,1 +1,63 @@
+<% content_for(:sidebar) do %>
+  <div class="box">
+    <h3><%= t("admin.common.stats.last_week.search_recordings") %></h3>
+    <%= chart_for_records SearchRecording %>
+  </div>
+  
+  <% %w(top_searched top_results top_clicked).each do |stat| %>
+  
+    <div class="box">
+      <h3><%= t("admin.common.stats.last_week.#{stat}") %></h3>
+      <table>
+        <tbody>
+          <% instance_variable_get("@#{stat}").each do |hash| %>
+          <tr>
+            <td><%= link_to hash[:query], {:action => :keyword, :id => hash[:query]} %></td>
+            <td><%= hash[:count] || hash[:clicks] || hash[:results] %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  <% end %>
+<% end %>
+
+
+
 <%= render_partial :index %>
+<div class="box">
+  <h3><%= t("#{controller_catalog}.index.header") %></h3>
+  <p>
+    <%= t("#{controller_catalog}.index.intro") %>
+  </p>
+  
+  <% %w(query parent_id created_at).tap do |attributes| %>
+  <table>
+    <thead>
+      <tr>
+        <th>id</th>
+        <% attributes.each do |attr| %>
+          <th><%= attr.humanize %></th>
+        <% end %>
+      </tr>
+    </thead>
+    <tbody>
+      <% collection.each do |ar| %>
+        <tr>
+          <td><%= link_to ar.id, admin_user_path(ar) %></td>
+          <% attributes.each do |attr| %>
+            <td>
+              <% if %w(login name).include?(attr) %>
+                <%= link_to(ar.__send__(attr), admin_user_path(ar)) %>
+              <% else %>
+                <%= contact_info(ar, attr) %>
+              <% end %>
+            </td>
+          <% end %>
+          <!--td><%= link_to "Edit", {:action => 'edit', :id => ar}, :class => 'edit' %></td-->
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <% end %>
+</div>

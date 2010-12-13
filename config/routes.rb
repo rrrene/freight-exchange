@@ -54,7 +54,11 @@ BlackBoard::Application.routes.draw do |map|
     resources :people # BEWARE: not implemented
     resources :reviews # BEWARE: not implemented
     resources :action_recordings
-    resources :search_recordings
+    resources :search_recordings do
+      collection do
+        get :keyword
+      end
+    end
     resources :user_roles
     resources :users
     root :to => "action_recordings#index"

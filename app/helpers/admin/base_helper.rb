@@ -1,6 +1,20 @@
 # The BaseHelper provides basic helper methods all backend views.
 module Admin::BaseHelper
   
+  def chart_for_records(record_class, opts = {})
+    steps = opts[:steps] || 7
+    step_width = opts[:step_width] || 1.day
+    attribute = opts[:attribute] || :created_at
+    data = []
+    labels = []
+    (0..steps).to_a.reverse.each do |index|
+      from_time = Time.new - index * step_width
+      to_time = from_time + step_width
+      labels << Time.at(from_time.to_i).strftime("%d.")
+      data << record_class.where(["#{attribute} > ? AND #{attribute} < ?", from_time, to_time]).count
+    end
+    google_chart_tag :type => :bar, :data => data, :labels => labels
+  end
   
   def google_chart_tag(options = {})
     options[:size] ||= "220x100"

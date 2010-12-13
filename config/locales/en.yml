@@ -302,7 +302,7 @@ en:
     common:
       navi:
         home: "Administration"
-        recordings: "Actions"
+        action_recordings: "Newsfeed"
         stations: "Stations"
         search_recordings: "Searches"
         user_roles: "User Roles"
@@ -310,6 +310,15 @@ en:
         companies: "Companies"
         app_configs: "Settings"
         back_to_app: "Back to Frontend"
+      stats:
+        last_week:
+          action_recordings: "User actions per day (past week)"
+          search_recordings: "User searches per day (past week)"
+          top_searched: "Most searched keywords (past week)"
+          top_clicked: "Most clicked keywords (past week)"
+          top_results: "Most results on keywords (past week)"
+          search_recordings_for_keywords: "Keyword searches per day (past week)"
+          search_recordings_for_keyword: "Searches containing '%{keyword}' (past week)"
       edit_link: "Edit"  
       new_link: "Create a new one"
       frontend_show_link: "View public profile"
@@ -385,6 +394,11 @@ en:
         page_title: "All Searches"
         header: "All Searches"
         intro: "Here you see all the searches performed by users."
+      keyword:
+        page_title: "Keyword Analysis"
+        header: "Keyword Analysis"
+        intro: "Here you can see all the info about a certain keyword."
+        keywords_label: "Keywords:"
 
     # StationsController
     stations:
