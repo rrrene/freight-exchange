@@ -16,6 +16,12 @@
             <th colspan="2"><b><%= person.name %></b></th>
           </tr>
         </thead>
+        <% if person[:job_description].full? %>
+          <tr>
+            <td><%= contact_info(person, :job_description) %></td>
+            <th></th>
+          </tr>
+        <% end %>
         <% %w(phone fax email website).each do |attr| %>
           <% if person[attr].full? %>
             <tr>

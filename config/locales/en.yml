@@ -257,7 +257,16 @@ en:
       header: "Setup"
       intro: "The software just created your admin account. You can customize this account by clicking the button above:"
       edit_admin_link: "Edit your admin user"
-
+      create_demo_company_link: "Create a demo company"
+    demo_company:
+      page_title: "Demo Company"
+      header: "Create or reset the demo company"
+      intro: ""
+      company_present: "There is a demo company. Click the profile in the sidebar to view their profile or the link below to destroy it:"
+      no_company_present: "There is no demo company at this moment. Click this link to create one:"
+      create_demo_company_link: "Create demo company"
+      destroy_demo_company_link: "Destroy demo company"
+      
   # UsersController
   users:
     common:

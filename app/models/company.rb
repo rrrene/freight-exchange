@@ -3,13 +3,13 @@
 # Each Company has different types of users, e.g. admins.
 class Company < ActiveRecord::Base
   searchable
-  has_many :users
+  has_many :users, :dependent => :destroy
   has_many :people, :through => :users
   belongs_to :contact_person, :class_name => 'Person'
-  has_many :recordings, :order => 'created_at DESC'
-  has_many :reviews, :order => 'created_at DESC'
-  has_many :freights, :order => 'created_at DESC'
-  has_many :loading_spaces, :order => 'created_at DESC'
+  has_many :recordings, :order => 'created_at DESC', :dependent => :destroy
+  has_many :reviews, :order => 'created_at DESC', :dependent => :destroy
+  has_many :freights, :order => 'created_at DESC', :dependent => :destroy
+  has_many :loading_spaces, :order => 'created_at DESC', :dependent => :destroy
 
   def approved_reviews
     reviews.where('approved_by_id IS NOT NULL')

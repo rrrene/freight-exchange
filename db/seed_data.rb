@@ -6,7 +6,9 @@ module Seed
     {:name => 'administrator'},
   ]
     
-  USERS = [
+  USERS = []
+  # TODO: should we seed users? since we have robots now, i mean...
+  [
     {
       :login => 'freight_supplier',
       :email => 'freight_supplier@example.org',

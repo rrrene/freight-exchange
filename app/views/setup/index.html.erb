@@ -1,3 +1,6 @@
 <h3><%= t("setup.index.header") %></h3>
 <p><%= t("setup.index.intro") %></p>
+
 <p><%= link_btn t("setup.index.edit_admin_link"), edit_user_path(current_user), :icon => :edit %>
+
+<p><%= link_btn t("setup.index.create_demo_company_link"), demo_company_path, :icon => :compare %>

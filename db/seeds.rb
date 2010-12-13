@@ -9,13 +9,7 @@ puts "#{UserRole.count} UserRoles"
 if Rails.env == 'development'
   # Create some users to fill the db
   Seed::USERS.each do |opts|
-#    company_opts = opts.delete(:company)
-#    company = Company.create(company_opts)
-#    person_opts = opts.delete(:person)
-#    person = Person.create(person_opts)
     user = User.new(opts)
-#    user.company = company
-#    user.person = person
     user.save
   end
   puts "#{User.count} Users"
@@ -85,26 +79,5 @@ if Rails.env == 'development'
   f.save!
   
   puts "#{LoadingSpace.count} LoadingSpaces"
-  
-  
-  #station_ids = Station.all.map(&:id)
-  #[LoadingSpace, Freight].each do |model|
-  #  user = User[model.to_s.underscore << '_supplier']
-  #  100.times do 
-  #    opts = {
-  #      :user_id => user.id,
-  #      :origin_station_id => station_ids.shuffle.first,
-  #      :destination_station_id => station_ids.shuffle.first,
-  #      :origin_date => Time.now + rand(10) * 86400,
-  #      :destination_date => Time.now + rand(10) * 86400,
-  #      :goods_type => %w(normal radioactive explosive).shuffle.first,
-  #      :wagon_type => %w(normal super ultra).shuffle.first,
-  #      :weight => rand(10) * 1_000,
-  #      :loading_meter => rand(100),
-  #    }
-  #    model.create(opts)
-  #  end
-  #  puts "#{model.count} #{model.to_s.pluralize}"
-  #end
 end
 puts "SimpleSearch.where(:item_type => 'Freight').count = " << SimpleSearch.where(:item_type => 'Freight').count.to_s

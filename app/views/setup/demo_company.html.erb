@@ -1,0 +1,19 @@
+<h3><%= t("setup.demo_company.header") %></h3>
+<p><%= t("setup.demo_company.intro") %></p>
+
+<% if @company %>
+  <%= render_company_info @company %>
+  <p>
+    <%= t("setup.demo_company.company_present") %>
+  </p>
+  <p>
+    <%= link_btn t("setup.demo_company.destroy_demo_company_link"), demo_company_path(:destroy => true), :icon => :next %>
+  </p>
+<% else %>
+  <p>
+    <%= t("setup.demo_company.no_company_present") %>
+  </p>
+  <p>
+    <%= link_btn t("setup.demo_company.create_demo_company_link"), demo_company_path(:create => true), :icon => :next %>
+  </p>
+<% end %>

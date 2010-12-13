@@ -15,8 +15,8 @@ class User < ActiveRecord::Base
   has_many :action_recordings
   has_many :search_recordings
   before_create :generate_api_key
-  after_save { |user| user.company.ensure_admin }
-  after_destroy { |user| user.company.ensure_admin }
+  after_save { |user| user.company.full?(&:ensure_admin) }
+  after_destroy { |user| user.company.full?(&:ensure_admin) }
   brackets_find_by :login
   acts_as_authentic
   searchable :attributes => ["posting_type", "current_login_ip", "login", "email"]

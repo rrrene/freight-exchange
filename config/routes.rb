@@ -1,6 +1,7 @@
 BlackBoard::Application.routes.draw do |map|
   match "setup" => 'setup#index', :as => :setup  
   match "not_seeded" => 'setup#not_seeded', :as => :not_seeded
+  match "demo_company" => 'setup#demo_company', :as => :demo_company
 
   resources :reviews do
     member do

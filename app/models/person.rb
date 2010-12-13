@@ -5,6 +5,7 @@ class Person < ActiveRecord::Base
   LOCALE_CHOICES = I18n.available_locales.map(&:to_s)
   has_one :user
   has_one :company, :through => :user
+  before_save :inherit_email_address
   searchable
   
   include ActiveRecord::HasLocalizedInfos
@@ -23,6 +24,14 @@ class Person < ActiveRecord::Base
       address
     else
       "http://#{address}"
+    end
+  end
+  
+  private
+  
+  def inherit_email_address
+    if self[:email].blank? && self.user
+      self[:email] = self.user.email
     end
   end
   

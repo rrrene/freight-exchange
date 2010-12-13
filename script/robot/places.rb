@@ -46,7 +46,7 @@ module Robot
           :date => @@creation_date,
           :side_track_available => Random.boolean,
         }
-      } 
+      }
     
     def initialize
       @places = @@places.clone.sort_by { rand }
