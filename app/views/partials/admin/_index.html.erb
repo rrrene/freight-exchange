@@ -1,3 +1,9 @@
+<% content_for(:toolbar) do %>
+  <% %w(id name created_at).each do |filter| %>
+    <%= link_btn t("admin.common.filter_by_#{filter}"), {:filter => filter}, :icon => filter == @filter ? :next : nil %>
+  <% end %>
+<% end %>
+<!--
 <div class="box">
   <h3>
     <%= t("#{controller_catalog}.index.header") %>
@@ -9,3 +15,4 @@
   
   <%= render_table collection %>
 </div>
+-->

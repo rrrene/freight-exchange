@@ -4,4 +4,10 @@
 class Admin::BaseController < ApplicationController
   inherit_resources
   role_required :administrator
+  
+  def index # :nodoc:
+    @filter = params[:filter].full? || 'id'
+    instance_variable_set("@#{resource_class.to_s.pluralize.underscore}", resource_class.order("#{@filter} ASC").all)
+    index!
+  end
 end

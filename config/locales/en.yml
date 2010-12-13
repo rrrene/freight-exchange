@@ -307,11 +307,15 @@ en:
         search_recordings: "Searches"
         user_roles: "User Roles"
         users: "Users"
+        companies: "Companies"
         app_configs: "Settings"
         back_to_app: "Back to Frontend"
       edit_link: "Edit"  
       new_link: "Create a new one"
       frontend_show_link: "View public profile"
+      filter_by_id: "1 - 100"
+      filter_by_name: "A - Z"
+      filter_by_created_at: "Newest first"
 
     # ActionRecordingsController
     action_recordings:
@@ -352,10 +356,16 @@ en:
       edit:
         page_title: "Edit company"
         header: "Company information"
+      index:
+        page_title: "Companies"
+        header: "Companies"
+        intro: "Here you can see all companies in the system."
       update:
         page_title: "Edit company"
       show:
         page_title: "Company"
+        users_header: "Users in this company"
+        users_intro: "Here you can see all users in this company."
 
     # PeopleController
     people:
@@ -367,7 +377,7 @@ en:
       index:
         page_title: "All People"
         header: "All People"
-        intro: "Here you see all people."
+        intro: "Here you can see all people."
 
     # SearchRecordingsController
     search_recordings:

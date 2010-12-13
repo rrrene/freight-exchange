@@ -1,1 +1,35 @@
+<div class="box">
+  <h3><%= t("#{controller_catalog}.show.user_header") %></h3>
+  <p>
+    <%= t("#{controller_catalog}.show.users_intro") %>
+  </p>
+  
+  <% %w(login email).tap do |attributes| %>
+  <table>
+    <thead>
+      <tr>
+        <th>id</th>
+        <% attributes.each do |attr| %>
+          <th><%= attr.humanize %></th>
+        <% end %>
+      </tr>
+    </thead>
+    <tbody>
+      <% resource.users.each do |ar| %>
+        <tr>
+          <td><%= link_to ar.id, admin_user_path(ar) %></td>
+          <% attributes.each do |attr| %>
+          <td><%= link_to(ar[attr].is_a?(Hash) ? debug(ar[attr]) : ar[attr], admin_user_path(ar)) %></td>
+          <% end %>
+          <!--td><%= link_to "Edit", {:action => 'edit', :id => ar}, :class => 'edit' %></td-->
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <% end %>
+</div>
+
 <%= render_partial :show %>
+
+<%= render_company_info(resource) %>
+<%= render_person_info(resource.contact_person) if resource.contact_person %>
