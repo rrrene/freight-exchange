@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby -wKU
 
+require File.join(File.dirname(__FILE__), 'places')
+require File.join(File.dirname(__FILE__), 'array_ext')
 require 'factory_girl'
 
 module Robot

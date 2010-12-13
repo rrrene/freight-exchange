@@ -1,9 +1,11 @@
 #!/usr/bin/env ruby -wKU
 
+require 'random_data'
+
 module Robot
   class Places
-    @plain_names = %w(Rotterdam Utrecht Genoa)
-    @@creation_date = lambda { |place, origin| 
+    @plain_names = %w(Mühlheim Hagen Gelsenkirchen Recklinghausen Solingen Ahlen Duisburg Oberhausen Amsterdam Rotterdam Utrecht Genoa)
+    @@date_blueprint = lambda { |place, origin| 
         (origin.nil? ? Time.new : origin[:date]) + (87600 * 365 * rand).to_i 
       }
     @@places = [
@@ -14,7 +16,7 @@ module Robot
         :zip => "44787",
         :city => "Bochum",
         :country => "Germany",
-        :date => @@creation_date,
+        :date => @@date_blueprint,
         :side_track_available => true,
       },
       {
@@ -24,7 +26,7 @@ module Robot
         :zip => "44137",
         :city => "Dortmund",
         :country => "Germany",
-        :date => @@creation_date,
+        :date => @@date_blueprint,
         :side_track_available => true,
       },
       {
@@ -34,7 +36,7 @@ module Robot
         :zip => "45128",
         :city => "Essen",
         :country => "Germany",
-        :date => @@creation_date,
+        :date => @@date_blueprint,
         :side_track_available => true,
       }
     ] + @plain_names.map { |name|
@@ -45,7 +47,7 @@ module Robot
           :zip => "45128",
           :city => name,
           :country => "",
-          :date => @@creation_date,
+          :date => @@date_blueprint,
           :side_track_available => Random.boolean,
         }
       }
@@ -55,9 +57,10 @@ module Robot
     end
     
     def shift(origin = nil)
-      place = @places.shift
-      place.each do |key, value|
-        place[key] = value.call(place, origin) if value.is_a?(Proc)
+      place = {}
+      blueprint = @places.shift
+      blueprint.each do |key, value|
+        place[key] = value.is_a?(Proc) ? value.call(place, origin) : value
       end
       place
     end
