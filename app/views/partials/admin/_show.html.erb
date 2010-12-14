@@ -2,7 +2,11 @@
   <% content_for(:toolbar) do %>
     <%= link_btn t("common.link_back"), 'javascript:void(0);', :icon => :prev, :onclick => 'self.history.back(); return false;' %>
     <%= link_btn t("admin.common.edit_link"), edit_resource_path(resource), :icon => :edit %>
-    <%= link_btn t("admin.common.frontend_show_link"), resource, :icon => :show %>
+    <%= begin
+      link_btn t("admin.common.frontend_show_link"), resource, :icon => :show 
+      rescue
+      end
+    %>
   <% end %>
   <%= debug resource.attributes %>
 </div>

@@ -3,6 +3,30 @@
     <h3><%= t("admin.common.stats.last_week.action_recordings") %></h3>
     <%= chart_for_records ActionRecording %>
   </div>
+  
+  <h3 class="info"><%= t("admin.common.stats.last_week.action_recordings_actions") %></h3>
+  <div class="box">
+    <%= pie_chart_for_records ActionRecording, :attribute => :action %>
+  </div>
+
+  <% %w(create update destroy).each do |action| %>
+    <h3 class="info"><%= t("admin.common.stats.last_week.action_recordings_#{action}") %></h3>
+    <div class="box">
+      <%= chart_for_records ActionRecording.where(['action = ?', action]) %>
+    </div>
+  <% end %>
+  
+  <h3 class="info"><%= t("admin.common.stats.last_week.action_recordings_item_types") %></h3>
+  <div class="box">
+    <%= pie_chart_for_records ActionRecording, :attribute => :item_type %>
+  </div>
+
+  <% GeneralObserver::USER_EDITABLE_MODELS.each do |item_type| %>
+    <h3 class="info"><%= t("admin.common.stats.last_week.action_recordings_#{item_type}") %></h3>
+    <div class="box">
+      <%= chart_for_records ActionRecording.where(['item_type = ?', item_type.to_s.classify]) %>
+    </div>
+  <% end %>
 <% end %>
 
 <script type="text/javascript">

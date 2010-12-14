@@ -6,18 +6,39 @@ module Admin::BaseHelper
     step_width = opts.delete(:step_width) || 1.day
     attribute = opts.delete(:attribute) || :created_at
     data = []
-    value_labels, labels = [], []
+    labels = []
     time = Time.new.midnight
     (0..steps).to_a.reverse.each do |index|
       from_time = time - index * step_width
       to_time = from_time+ step_width
       count = record_class.where(["#{attribute} > ? AND #{attribute} < ?", from_time, to_time]).count
       labels << Time.at(from_time.to_i).strftime("%d.")
-      value_labels << count
       data << count
     end
-    std_opts = {:type => :bar, :data => data, :labels => labels, :colors =>"A2C180,3D7930", :marker_format => "N,000000,0,-1,#{data.size}"}
+    std_opts = {
+        :type => :bar, :data => data, :labels => labels, 
+        :colors =>"A2C180,3D7930", 
+        :marker_format => "N*f0*,000000,0,-1,#{data.size}",
+        :size => "220x120"
+      }
     google_chart_tag std_opts.merge(opts)
+  end
+  
+  def pie_chart_for_records(record_class, opts = {})
+    attribute = opts.delete(:attribute) || :created_at
+    data = []
+    labels = []
+    record_class.group(attribute).each do |record|
+      value = record.__send__(attribute)
+      data << record_class.where(attribute => value).count
+      labels << value
+    end
+    std_opts = {
+        :type => :pie, :data => data, :labels => labels, 
+        :size => "280x120"
+      }
+    google_chart_tag std_opts.merge(opts)
+    
   end
   
   def google_chart_tag(options = {})

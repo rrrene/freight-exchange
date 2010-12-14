@@ -25,7 +25,7 @@
           <% attributes.each do |attr| %>
             <td>
               <% if %w(login name).include?(attr) %>
-                <%= link_to(ar[attr].is_a?(Hash) ? debug(ar[attr]) : ar[attr], admin_company_path(ar)) %>
+                <%= link_to(ar[attr].is_a?(Hash) ? debug(ar[attr]) : ar[attr], admin_user_role_path(ar)) %>
               <% else %>
                 <%= contact_info(ar, attr) %>
               <% end %>

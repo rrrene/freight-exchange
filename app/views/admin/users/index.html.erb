@@ -45,4 +45,8 @@
     <h3><%= t("admin.common.stats.last_week.created_users") %></h3>
     <%= chart_for_records User %>
   </div>
+  <div class="box">
+    <h3><%= t("admin.common.stats.last_week.users_posting_types") %></h3>
+    <%= pie_chart_for_records User, :attribute => :posting_type %>
+  </div>
 <% end %>

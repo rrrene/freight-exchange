@@ -1,1 +1,31 @@
 <%= render_partial :index %>
+
+<% %w(name value).tap do |attributes| %>
+<table>
+  <thead>
+    <tr>
+      <th>id</th>
+      <% attributes.each do |attr| %>
+        <th><%= attr.humanize %></th>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <% collection.each do |ar| %>
+      <tr>
+        <td><%= link_to ar.id, admin_company_path(ar) %></td>
+        <% attributes.each do |attr| %>
+          <td>
+            <% if %w(name).include?(attr) %>
+              <%= link_to(ar[attr].is_a?(Hash) ? debug(ar[attr]) : ar[attr], admin_app_config_path(ar)) %>
+            <% else %>
+              <%= contact_info(ar, attr) %>
+            <% end %>
+          </td>
+        <% end %>
+        <!--td><%= link_to "Edit", {:action => 'edit', :id => ar}, :class => 'edit' %></td-->
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% end %>
