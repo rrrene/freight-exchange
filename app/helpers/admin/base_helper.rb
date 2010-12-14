@@ -30,8 +30,9 @@ module Admin::BaseHelper
     labels = []
     record_class.group(attribute).each do |record|
       value = record.__send__(attribute)
-      data << record_class.where(attribute => value).count
-      labels << value
+      count = record_class.where(attribute => value).count
+      data << count
+      labels << "#{value} (#{count})"
     end
     std_opts = {
         :type => :pie, :data => data, :labels => labels, 
