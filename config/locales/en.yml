@@ -255,10 +255,22 @@ en:
   setup:
     index:
       page_title: "Welcome"
-      header: "Setup"
-      intro: "The software just created your admin account. You can customize this account by clicking the button above:"
-      edit_admin_link: "Edit your admin user"
-      create_demo_company_link: "Create a demo company"
+      admin_user:
+        header: "Admin Account"
+        intro: "The software just created your admin account. You can customize this account by clicking the button above:"
+        edit_link: "Edit your admin user"
+      app_configs:
+        header: "Settings"
+        intro: "You can access the applications settings by clicking the button above:"
+        link: "Open Settings"
+      demo_company:
+        header: "Demo Company"
+        intro: "You can modify the demo company by clicking the button above:"
+        create_link: "Create a demo company"
+      tolk:
+        header: "Localization"
+        intro: "You can access the 'tolk' localization interface by clicking the button above:"
+        link: "Open Tolk"
     demo_company:
       page_title: "Demo Company"
       header: "Create or reset the demo company"
@@ -302,6 +314,7 @@ en:
     common:
       navi:
         home: "Administration"
+        setup: "Setup"
         action_recordings: "Newsfeed"
         stations: "Stations"
         search_recordings: "Searches"

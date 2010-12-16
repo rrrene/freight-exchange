@@ -1,6 +1,4 @@
-class SetupController < ApplicationController
-  before_filter :require_just_set_up, :except => :demo_company
-  
+class SetupController < Admin::BaseController
   def demo_company
     @company = Company.where(:name => demo_company_attributes[:name]).first
     if params[:create]
@@ -12,20 +10,25 @@ class SetupController < ApplicationController
   end
   
   def index
-    unless just_set_up_but_not_seeded?
-      # db is seeded properly, now we need to create an admin account
-      # => SetupController
-      #     Login & Passwort ändern
-      admin = create_admin!
-      UserSession.login(admin)
-      just_set_up!
-    else
+    if just_set_up_but_not_seeded?
       # db has to be seeded to proceed
-      redirect_to :action => 'not_seeded'  
+      redirect_to :action => 'not_seeded'
+    else  
+      # db is seeded properly, now we need to create an admin account
+      if just_set_up?
+        admin = create_admin!
+        UserSession.login(admin)
+        just_set_up!
+      end
     end
   end
   
   def not_seeded
+    if just_set_up? && just_set_up_but_not_seeded?
+      render :layout => false
+    else
+      redirect_to :action => :index
+    end
   end
   
   private
@@ -161,12 +164,6 @@ class SetupController < ApplicationController
   
   def just_set_up_but_not_seeded?
     UserRole.count == 0
-  end
-  
-  def require_just_set_up
-    unless just_set_up?
-      permission_denied!
-    end
   end
   
   def create_or_find(attributes = {})

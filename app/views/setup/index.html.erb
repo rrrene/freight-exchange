@@ -1,6 +1,20 @@
-<h3><%= t("setup.index.header") %></h3>
-<p><%= t("setup.index.intro") %></p>
-
-<p><%= link_btn t("setup.index.edit_admin_link"), edit_user_path(current_user), :icon => :edit %>
-
-<p><%= link_btn t("setup.index.create_demo_company_link"), demo_company_path, :icon => :compare %>
+<div class="box">
+  <h3><%= t("setup.index.admin_user.header") %></h3>
+  <p><%= t("setup.index.admin_user.intro") %></p>
+  <p><%= link_btn t("setup.index.admin_user.edit_link"), edit_user_path(current_user), :icon => :edit %>
+</div>
+<div class="box">
+  <h3><%= t("setup.index.demo_company.header") %></h3>
+  <p><%= t("setup.index.demo_company.intro") %></p>
+  <p><%= link_btn t("setup.index.demo_company.create_link"), demo_company_path, :icon => :compare %>
+</div>
+<div class="box">
+  <h3><%= t("setup.index.app_configs.header") %></h3>
+  <p><%= t("setup.index.app_configs.intro") %></p>
+  <p><%= link_btn t("setup.index.app_configs.link"), '/tolk', :icon => :next %>
+</div>
+<div class="box">
+  <h3><%= t("setup.index.tolk.header") %></h3>
+  <p><%= t("setup.index.tolk.intro") %></p>
+  <p><%= link_btn t("setup.index.tolk.link"), '/tolk', :icon => :next %>
+</div>

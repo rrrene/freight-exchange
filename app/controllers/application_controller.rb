@@ -154,6 +154,7 @@ class ApplicationController < ActionController::Base
   end
   
   def require_role(allowed_roles = [])
+    return if controller_name == "setup" && %w(index not_seeded).include?(action_name)
     unless current_user && (current_user.roles & allowed_roles).any?
       permission_denied!
     end
