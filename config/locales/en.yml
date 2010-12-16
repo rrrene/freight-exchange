@@ -350,6 +350,17 @@ en:
 
     # AppConfigsController
     app_configs:
+      common:
+        hints:
+          demo_mode: "Is the "
+          domain: "The domain under which the application is running."
+          just_set_up: "Indicates whether or not the prototype has just been set up."
+          language: "The default language of the application."
+          name: "Name of the running application."
+          contact_info:
+            complete_percentage: "How much contact info has to be filled out to make a profile 'complete'."
+          reviews:
+            highlight_above: "How many published reviews does a company need to have to get highlighted in search results."
       new:
         page_title: "Create new setting"
       create:
@@ -364,6 +375,7 @@ en:
         page_title: "All Settings"
         header: "All Settings"
         intro: "Here you see all system specific settings."
+        reimport_defaults_link: "Reimport default values"
 
     # CompaniesController
     companies:

@@ -6,4 +6,13 @@
 # delete and index are provided via inheritance from Admin::BaseController.
 #
 class Admin::AppConfigsController < Admin::BaseController
+  
+  def reimport_defaults
+    APP_CONFIG_DEFAULTS.each do |key, value|
+      AppConfig[key] = value
+    end
+    flash[:notice] = "Done."
+    redirect_to :action => :index
+  end
+  
 end

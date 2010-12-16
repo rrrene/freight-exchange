@@ -22,8 +22,6 @@
   <% end %>
 <% end %>
 
-
-
 <%= render_partial :index %>
 <div class="box">
   <h3><%= t("#{controller_catalog}.index.header") %></h3>
@@ -32,7 +30,7 @@
   </p>
   
   <% %w(query parent_id created_at).tap do |attributes| %>
-  <table>
+  <table class="stats">
     <thead>
       <tr>
         <th>id</th>

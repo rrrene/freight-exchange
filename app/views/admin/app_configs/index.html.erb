@@ -1,7 +1,11 @@
 <%= render_partial :index %>
 
+<% content_for(:toolbar) do %>
+  <%= link_btn t("admin.app_configs.index.reimport_defaults_link"), {:action => :reimport_defaults} %>
+<% end %>
+
 <% %w(name value).tap do |attributes| %>
-<table>
+<table class="stats">
   <thead>
     <tr>
       <th>id</th>
@@ -15,9 +19,10 @@
       <tr>
         <td><%= link_to ar.id, admin_company_path(ar) %></td>
         <% attributes.each do |attr| %>
-          <td>
+          <td class="<%= attr %>">
             <% if %w(name).include?(attr) %>
               <%= link_to(ar[attr].is_a?(Hash) ? debug(ar[attr]) : ar[attr], admin_app_config_path(ar)) %>
+              <small><%= t("admin.app_configs.common.hints.#{ar[attr]}") %></small>
             <% else %>
               <%= contact_info(ar, attr) %>
             <% end %>

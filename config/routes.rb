@@ -47,7 +47,11 @@ BlackBoard::Application.routes.draw do |map|
   root :to => "root#index"
   
   namespace :admin do
-    resources :app_configs
+    resources :app_configs do
+      collection do
+        get :reimport_defaults 
+      end
+    end
     resources :companies
     resources :freights # BEWARE: not implemented
     resources :loading_spaces # BEWARE: not implemented

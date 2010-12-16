@@ -251,6 +251,11 @@ table.stats .highlight {
   color: #333;
 }
 
+table.stats small {
+  display: block;
+  color: #333;
+}
+
 legend span {
   color: #666;
   font-size: 1em;
