@@ -270,7 +270,11 @@ en:
       tolk:
         header: "Localization"
         intro: "You can access the 'tolk' localization interface by clicking the button above:"
-        link: "Open Tolk"
+        open_link: "Open Tolk"
+        intro_rake_tasks: "You can also access the main 'tolk' rake tasks by clicking the buttons above:"
+        import_link: "Import secondary locales!"
+        sync_link: "Sync!"
+        dump_all_link: "Dump all!"
     demo_company:
       page_title: "Demo Company"
       header: "Create or reset the demo company"

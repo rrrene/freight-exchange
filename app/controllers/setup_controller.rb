@@ -14,8 +14,8 @@ class SetupController < Admin::BaseController
       # db has to be seeded to proceed
       redirect_to :action => 'not_seeded'
     else  
-      # db is seeded properly, now we need to create an admin account
       if just_set_up?
+        # db is seeded properly, now we need to create an admin account
         admin = create_admin!
         UserSession.login(admin)
         just_set_up!
@@ -30,6 +30,26 @@ class SetupController < Admin::BaseController
       redirect_to :action => :index
     end
   end
+  
+  def tolk_import
+    Tolk::Locale.sync!
+    Tolk::Locale.import_secondary_locales
+    flash[:tolk] = "Improted all secondary languages! (none #{Tolk::Locale.primary_locale} locales)"
+    redirect_to :action => :index
+  end
+  
+  def tolk_dump_all
+    Tolk::Locale.dump_all
+    flash[:tolk] = "Dumped all!"
+    redirect_to :action => :index
+  end
+  
+  def tolk_sync
+    Tolk::Locale.sync!
+    flash[:tolk] = "Synced!"
+    redirect_to :action => :index
+  end
+
   
   private
   

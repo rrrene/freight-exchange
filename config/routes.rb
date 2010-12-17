@@ -2,7 +2,11 @@ BlackBoard::Application.routes.draw do |map|
   match "setup" => 'setup#index', :as => :setup  
   match "not_seeded" => 'setup#not_seeded', :as => :not_seeded
   match "demo_company" => 'setup#demo_company', :as => :demo_company
-
+  
+  match "tolk_import" => 'setup#tolk_import', :as => :tolk_import
+  match "tolk_sync_all" => 'setup#tolk_sync', :as => :tolk_sync
+  match "tolk_dump_all" => 'setup#tolk_dump_all', :as => :tolk_dump_all
+  
   resources :reviews do
     member do
       post :approve
