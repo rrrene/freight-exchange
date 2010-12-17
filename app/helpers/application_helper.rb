@@ -79,7 +79,7 @@ module ApplicationHelper
   # if the company behind the posting has a certain number of positive reviews.
   def highlight_in_search?(result)
     return unless result.respond_to?(:company) && result.company
-    result.company.approved_reviews.count > AppConfig['reviews.highlight_above']
+    result.company.approved_reviews.count > AppConfig['reviews.highlight_above'].to_i
   end
   
   def humanize_recording(rec)

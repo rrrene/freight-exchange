@@ -63,7 +63,7 @@ class SearchController < ApplicationController
   end
   
   def index
-    @sidebar_result_models = %w(company station)
+    @sidebar_result_models = %w(company)
     @results = {}
     if @q = params[:q].full?
       @results = search_for(@q)
@@ -114,11 +114,15 @@ class SearchController < ApplicationController
   end
   
   def search_for(q)
+    time = Time.now
     count = Search.count(q, [current_user.search_type])
+    main = Search.find(q, [current_user.search_type])
+    main_filtered = main.select { |p| p.origin_site_info.date > time }
     @search_recording = current_user.search_recordings.create({:query => q, :results => count})
     {
-      :main => Search.find(q, [current_user.search_type]),
-      :count => count
+      :main => main_filtered,
+      :count => main_filtered.size,
+      :count_unfiltered => main.size,
     }
   end
   

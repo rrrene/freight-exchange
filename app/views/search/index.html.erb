@@ -4,6 +4,13 @@
     <p>
       <%= t('search.common.subtext_results', :count => @results[:count]).html_safe %>
     </p>
+    <!--
+    <% if @results[:count_unfiltered] > @results[:count] %>
+    <p>
+      <%= @results[:count_unfiltered] - @results[:count] %>
+    </p>
+    <% end %>
+    -->
     <ul class="search_results action_list">
     <% @results[:main].each do |result| %>
       <li class="<%= highlight_in_search?(result) ? 'highlight' : '' %>">
