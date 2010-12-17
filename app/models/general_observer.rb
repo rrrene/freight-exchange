@@ -8,7 +8,7 @@ class GeneralObserver < Recorder::Observer
   
   IGNORE_TIMESTAMPS = [:updated_at, :created_at, :last_request_at, :current_login_at, :last_login_at]
   IGNORE_TOKENS = [:single_access_token, :perishable_token, :persistence_token]
-  IGNORE_USER_FIELDS = [:crypted_password, :password_salt] #, :login_count, :failed_login_count
+  IGNORE_USER_FIELDS = [:crypted_password, :password_salt, :login_count, :failed_login_count]
   
   recording_class :action_recording
   observe USER_EDITABLE_MODELS + ADMIN_EDITABLE_MODELS
