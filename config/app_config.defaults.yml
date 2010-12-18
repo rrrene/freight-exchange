@@ -3,5 +3,6 @@ just_set_up: true
 name: Freight Exchange
 domain: localhost
 language: en
+support_email: "contact@example.org"
 reviews.highlight_above: 5
 contact_info.complete_percentage: 0.5

@@ -369,11 +369,12 @@ en:
     app_configs:
       common:
         hints:
-          demo_mode: "Is the "
+          demo_mode: "Is the application running in demo mode?"
           domain: "The domain under which the application is running."
           just_set_up: "Indicates whether or not the prototype has just been set up."
           language: "The default language of the application."
           name: "Name of the running application."
+          support_email: "E-Mail-Address for receiving user feedback"
           contact_info:
             complete_percentage: "How much contact info has to be filled out to make a profile 'complete'."
           reviews:

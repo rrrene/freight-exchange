@@ -61,9 +61,14 @@ ul.navigation li span.normal {
   color: #000;
 }
 
-ul.navigation li a.frontend,
+ul.navigation li a.frontend {
+  color: #aaa;
+}
+
 ul.navigation li a.backend {
+  margin-right: 20px;
   color: #333;
+  background: #ff0;
 }
 
 ul.navigation-lang {

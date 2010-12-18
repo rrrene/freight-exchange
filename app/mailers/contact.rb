@@ -1,11 +1,10 @@
 class Contact < ActionMailer::Base
   default :from => "from@example.com"
-  default :to => "rf-da@bamaru.de"
   
   def contact(text, user)
     @text = text
     @user = user
     @person, @company, = @user.person, @user.company
-    mail(:subject => "Contact Form")
+    mail(:subject => "Contact Form", :to => AppConfig[:support_email])
   end
 end
