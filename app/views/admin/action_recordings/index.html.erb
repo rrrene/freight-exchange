@@ -4,9 +4,9 @@
     <%= chart_for_records ActionRecording %>
   </div>
   
-  <h3 class="info"><%= t("admin.common.stats.last_week.action_recordings_actions") %></h3>
+  <h3 class="info"><%= t("admin.common.stats.last_week.action_recordings_item_types") %></h3>
   <div class="box">
-    <%= pie_chart_for_records ActionRecording, :attribute => :action %>
+    <%= pie_chart_for_records ActionRecording, :attribute => :item_type %>
   </div>
 
   <% %w(create update destroy).each do |action| %>
@@ -16,9 +16,9 @@
     </div>
   <% end %>
   
-  <h3 class="info"><%= t("admin.common.stats.last_week.action_recordings_item_types") %></h3>
+  <h3 class="info"><%= t("admin.common.stats.last_week.action_recordings_actions") %></h3>
   <div class="box">
-    <%= pie_chart_for_records ActionRecording, :attribute => :item_type %>
+    <%= pie_chart_for_records ActionRecording, :attribute => :action %>
   </div>
 
   <% GeneralObserver::USER_EDITABLE_MODELS.each do |item_type| %>
