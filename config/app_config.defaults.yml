@@ -6,3 +6,4 @@ language: en
 support_email: "contact@example.org"
 reviews.highlight_above: 5
 contact_info.complete_percentage: 0.5
+contact_info.default_country_code: 49

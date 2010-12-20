@@ -151,8 +151,10 @@ module ApplicationHelper
   end
   
   def phone_number(nr)
-    return nr unless Phone.valid?(nr)
-    Phone.parse(nr).format(:europe)
+    country_code = AppConfig['contact_info.default_country_code'].to_s
+    Phone.parse(nr, :country_code => country_code).format(:europe)
+  rescue
+    return nr
   end
   
   def posting_freights?
