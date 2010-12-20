@@ -7,7 +7,7 @@
     <%= t('freights.index.intro') %>
   </p>
 
-  <table>
+  <table class="postings">
     <thead>
       <tr>
         <th><%= t('freights.index.table.headers.date') %></th>
@@ -18,13 +18,13 @@
     </thead>
     <tbody>
       <% collection.each do |ar| %>
-        <tr>
-          <td><%= link_to ar.origin_site_info.date, ar %></td>
-          <td><%= ar.origin_site_info.name %></td>
-          <td><%= ar.destination_site_info.name %></td>
+        <tr class="<%= ar.origin_site_info.date < Time.now ? :old : :new %>">
+          <td class="origin_date"><%= link_to ar.origin_site_info.date, ar %></td>
+          <td class="origin_name"><%= ar.origin_site_info.name %></td>
+          <td class="destination_name"><%= ar.destination_site_info.name %></td>
           <td class="options">
             <%= link_btn t('freights.index.table.options.template'), new_resource_url(:parent_id => ar.id), :icon => :reply %>
-            <%= link_btn t('freights.index.table.options.edit'), {:action => 'edit', :id => ar}, :icon => 'edit' %>
+            <%= link_btn t('freights.index.table.options.edit'), {:action => 'edit', :id => ar}, :icon => :edit %>
             <%= link_btn t('freights.index.table.options.delete'), ar, :method => :delete, :confirm => t('common.confirm'), :class => 'destroy' %>
           </td>
         </tr>

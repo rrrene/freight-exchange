@@ -236,6 +236,7 @@ tbody td.options {
   text-align: right;
   padding-right: 0;
 }
+
 table.stats tbody tr td,
 .index tbody tr td {
   border-bottom: 1px solid #f0f0f0;
@@ -259,6 +260,14 @@ table.stats .highlight {
 table.stats small {
   display: block;
   color: #333;
+}
+
+table.postings tr.old td.origin_date,
+table.postings tr.old td.origin_name,
+table.postings tr.old td.destination_name,
+table.postings tr.old td.options a.btn-edit, 
+table.postings tr.old td.options a.btn-reply {
+  opacity: 0.25;
 }
 
 legend span {
