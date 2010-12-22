@@ -2,6 +2,9 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  time:
+    formats:
+      date: "%Y-%m-%d"
   common:
     navi:
       backend: "Backend"
@@ -282,6 +285,8 @@ en:
       company_present: "There is a demo company. Click the profile in the sidebar to view their profile or the link below to destroy it:"
       no_company_present: "There is no demo company at this moment. Click this link to create one:"
       create_demo_company_link: "Create demo company"
+      create_freights_link: "Create freight postings in demo company"
+      freights_present: "%{count} freight postings present."
       destroy_demo_company_link: "Destroy demo company"
       
   # UsersController

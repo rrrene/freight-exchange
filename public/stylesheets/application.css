@@ -373,6 +373,7 @@ div.frame a.minibutton {
     overflow:visible;
     cursor:pointer;
     text-decoration:none;
+    text-transform: none;
   }
 div.frame a.minibutton>span {
     display:block;

@@ -5,12 +5,12 @@
 
 <% if demo_mode? %>
   <% content_for(:sidebar) do %>
-    <% box "Quick Login" do %>
+    <% box "Quick Login (DEMO)" do %>
       <% Company.order('created_at DESC').all.each do |company| %>
         <% if users = company.users.order('login').all.select { |u| !(u.login =~ /^robot/)}.full? %>
             <h3><%= company.name %></h3>
             <% users.each do |user| %>
-              <%= link_btn user.login, {:action => 'demo_login', :id => user}, :icon => :leave %>
+              <%= link_btn "#{user.name} (#{user.login})", {:action => 'demo_login', :id => user}, :icon => :leave %><br>
             <% end %>
         <% end %>
       <% end %>

@@ -19,7 +19,7 @@
     <tbody>
       <% collection.each do |ar| %>
         <tr class="<%= ar.origin_site_info.date < Time.now ? :old : :new %>">
-          <td class="origin_date"><%= link_to ar.origin_site_info.date, ar %></td>
+          <td class="origin_date"><%= link_to l(ar.origin_site_info.date, :format => :date), ar %></td>
           <td class="origin_name"><%= ar.origin_site_info.name %></td>
           <td class="destination_name"><%= ar.destination_site_info.name %></td>
           <td class="options">

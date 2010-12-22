@@ -91,6 +91,12 @@ de:
         locale: 
           de: Deutsch
           en: English
+      user_role: 
+        name: 
+          administrator: "[System] Administrator"
+          company_admin: Führungskraft
+          company_employee: "Regulärer Mitarbeiter"
+          company_intern: Praktikant
     models: 
       freight: Frachtraum
       loading_space: Laderaum
@@ -102,6 +108,18 @@ de:
         intro: "Hier sehen Sie alle Aktionen aller Benutzer."
         page_title: "Alle Aktionen"
     app_configs: 
+      common: 
+        hints: 
+          contact_info: 
+            complete_percentage: "Gibt an, wieviele Kontaktinformationen angegeben werden müssen, damit ein Profil als 'vollständig' gilt."
+          demo_mode: "Gibt an, ob die Applikation im Demo-Modus betrieben wird."
+          domain: "Gibt an, unter welcher Domain die Applikation läuft."
+          just_set_up: "Gibt an, ob die Applikation grade frisch aufgesetzt wurde."
+          language: "Gibt an, welche Standardsprache für die Applikation eingestellt wurde."
+          name: "Gibt an, welcher Name für die Applikation in E-Mails etc. verwendet wird."
+          reviews: 
+            highlight_above: "Gibt an, wieviele freigeschaltete Rezensionen eine Firma braucht, um in den Suchergebnissen hervorgehoben zu werden."
+          support_email: "Gibt an, an welche E-Mail das Feedback der Benutzer gesendet wird."
       create: 
         page_title: "Neue Konfigurationsvariable erstellen"
       edit: 
@@ -110,6 +128,7 @@ de:
         header: "Alle Konfigurationsvariablen"
         intro: "Hier sehen Sie alle systemspezifischen Konfigurationsvariablen."
         page_title: "Alle Konfigurationsvariablen"
+        reimport_defaults_link: "Voreinstellungen reimportieren"
       new: 
         page_title: "Neue Konfigurationsvariable erstellen"
       show: 
@@ -118,17 +137,46 @@ de:
         page_title: "Konfigurationsvariable bearbeiten"
     common: 
       edit_link: Bearbeiten
+      filter_by_created_at: "Neuste zuerst"
+      filter_by_id: "1 - 100"
+      filter_by_name: "A - Z"
       frontend_show_link: "Öffentliches Profil ansehen"
       navi: 
+        action_recordings: Aktionen
         app_configs: Einstellungen
         back_to_app: "Zurück zum Frontend"
+        companies: Firmen
         home: Administration
-        recordings: Aktionen
-        search_recordings: Suchen
+        search_recordings: Suchanfragen
+        setup: Systemassistent
         stations: Bahnhöfe
         user_roles: Benutzerrollen
         users: Benutzer
       new_link: "Neu erstellen"
+      stats: 
+        last_week: 
+          action_recordings: "Benutzeraktionen pro Tag (letzte 7 Tage)"
+          action_recordings_actions: "Benutzeraktionen (insgesamt)"
+          action_recordings_company: "Aktionen auf Firmen (letzte 7 Tage)"
+          action_recordings_create: "'Create' Aktionen pro Tag (letzte 7 Tage)"
+          action_recordings_destroy: "'Destroy' Aktionen pro Tag (letzte 7 Tage)"
+          action_recordings_freight: "Aktionen auf Fracht (letzte 7 Tage)"
+          action_recordings_item_types: "Benutzeraktionen nach Typ (insgesamt)"
+          action_recordings_loading_space: "Aktionen auf Laderaum (letzte 7 Tage)"
+          action_recordings_person: "Aktionen auf Personen (letzte 7 Tage)"
+          action_recordings_review: "Aktionen auf Bewertungen (letzte 7 Tage)"
+          action_recordings_update: "'Update' Aktionen pro Tag (letzte 7 Tage)"
+          action_recordings_user: "Aktionen auf Benutzer (letzte 7 Tage)"
+          created_companies: "Neue Firmen pro Tag (letzte 7 Tage)"
+          created_users: "Neue Benutzer pro Tag (letzte 7 Tage)"
+          search_recordings: "Suchanfragen pro Tag (letzte 7 Tage)"
+          search_recordings_for_keyword: "Suchanfragen, die '%{keyword}' beinhalteten (letzte 7 Tage)"
+          search_recordings_for_keywords: "Suchanfragen nach Keyword pro Tag (letzte 7 Tage)"
+          top_clicked: "Am meisten angeklickte Keywords (letzte 7 Tage)"
+          top_results: "Meiste Resultate pro Keyword (letzte 7 Tage)"
+          top_searched: "Am meisten gesuchte Keywords (letzte 7 Tage)"
+          users_logins: "Logins pro Tag (letzte 7 Tage)"
+          users_posting_types: "Art der Inserate aller Benutzer (insgesamt)"
     companies: 
       create: 
         page_title: "Firma erstellen"
@@ -139,12 +187,18 @@ de:
       edit: 
         header: "Firma Informationen"
         page_title: "Firma bearbeiten"
+      index: 
+        header: Firmen
+        intro: "Hier sehen Sie alle Firmen im System."
+        page_title: Firmen
       new: 
         header: "Firma erstellen"
         intro: "-"
         page_title: "Firma erstellen"
       show: 
         page_title: Firma
+        users_header: "Benutzer in dieser Firma"
+        users_intro: "Hier sehen Sie alle Benutzer dieser Firma."
       update: 
         page_title: "Firma bearbeiten"
     people: 
@@ -153,7 +207,7 @@ de:
         page_title: "Person bearbeiten"
       index: 
         header: "Alle Personen"
-        intro: "Hier sehen Sie alle Personen"
+        intro: "Hier sehen Sie alle Personen."
         page_title: "Alle Personen"
       update: 
         page_title: "Person bearbeiten"
@@ -167,6 +221,11 @@ de:
         header: "Alle Suchanfragen"
         intro: "Hier sehen Sie alle Suchanfragen, die im System gestellt wurden."
         page_title: "Alle Suchanfragen"
+      keyword: 
+        header: Keyword-Analyse
+        intro: "Hier sehen Sie alle Infos zu einem bestimmten Keyword."
+        keywords_label: "Keywords:"
+        page_title: Keyword-Analyse
     stations: 
       create: 
         page_title: "-"
@@ -637,16 +696,34 @@ de:
     demo_company: 
       company_present: "Es existiert eine Demo-Firma. Klicken Sie auf das Profil in der Seitenleiste oder löschen Sie sie mit dem folgenden Link:"
       create_demo_company_link: "Demo-Firma erstellen"
+      create_freights_link: "Weitere Inserate erzeugen"
       destroy_demo_company_link: "Demo-Firma löschen"
+      freights_present: "%{count} Inserate in Demo-Firma."
       header: "Demo-Firma erstellen oder löschen"
       no_company_present: "Es existiert im Moment keine Demo-Firma. Erstellen Sie eine mit folgendem Link:"
       page_title: Demo-Firma
     index: 
-      create_demo_company_link: "Demo-Firma erstellen"
-      edit_admin_link: "Administratorpasswort bearbeiten"
-      header: Setup
-      intro: "Das System hat soeben ein Administratorkonto für sie angelegt. Sie können ihr Administratorpasswort hier ändern:"
+      admin_user: 
+        edit_link: "Ihren Admin-Benutzer bearbeiten"
+        header: Admin-Benutzer
+        intro: "Die Applikation hat grade Ihren Admin-Benutzer erzeugt. Sie können Ihren Admin-Benutzer anpassen, indem Sie folgenden Link verwenden:"
+      app_configs: 
+        header: Einstellungen
+        intro: "Sie können die Einstellungen der Applikation ändern:"
+        link: "Einstellungen öffnen"
+      demo_company: 
+        create_link: "Demo-Firma verwalten"
+        header: Demo-Firma
+        intro: "Sie können die erzeugte Demo-Firma erzeugen/löschen:"
       page_title: Willkommen!
+      tolk: 
+        dump_all_link: "Tolk ins System laden!"
+        header: Übersetzungen
+        import_link: "Sekundärsprachen in Tolk laden!"
+        intro: "Sie können das 'Tolk'-Übersetzungsinterface aufrufen:"
+        intro_rake_tasks: "Sie können auch die 'tolk'-rake Tasks ausführen:"
+        open_link: "Tolk öffnen"
+        sync_link: "Englische Sprache in Tolk laden!"
   support: 
     array: 
       last_word_connector: und
@@ -654,10 +731,12 @@ de:
       words_connector: ","
   time: 
     am: vormittags
-    formats: 
-      default: "%a, %d %b %Y %H:%M:%S %z"
-      long: "%B %d, %Y %H:%M"
-      short: "%d %b %H:%M"
+    formats:
+      default: "%e. %B %Y, %H:%M Uhr"
+      short: "%e. %B, %H:%M Uhr"
+      long: "%A, %e. %B %Y, %H:%M Uhr"
+      date: "%d.%m.%Y"
+      time: "%H:%M"
     pm: nachmittags
   user_sessions: 
     new: 

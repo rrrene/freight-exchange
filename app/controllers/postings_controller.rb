@@ -37,7 +37,7 @@ class PostingsController < RemoteController
   end
   
   def index
-    self.collection = resource_class.where(:company_id => current_company.id)
+    self.collection = resource_class.where(:company_id => current_company.id).sort_by { |posting| posting.origin_site_info.date }
     index!
   end
   

@@ -6,5 +6,7 @@ require 'search'
 require 'inherited_resources_ext'
 require 'error_messages'
 
+require 'demo'
+
 require 'tolk/sync'
 require 'tolk/import'
