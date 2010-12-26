@@ -7,7 +7,7 @@ class UserSessionsController < ApplicationController
   layout 'content_only'
   
   # This action is only available if the application is running in demo mode.
-  # It creates a UserSession for a given user without any authentication.
+  # It creates a UserSession for a given user without any further authentication.
   def demo_login
     if demo_mode?
       @user = User.find(params[:id])
