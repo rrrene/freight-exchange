@@ -1,4 +1,13 @@
 module ActiveRecord
+  # This module can be included in ActiverRecord::Base objects to provide
+  # the functionality of LocalizedInfo attributes to that object.
+  # 
+  # Example:
+  # 
+  #   class Person < ActiveRecord::Base
+  #     include ActiveRecord::HasLocalizedInfos
+  #   end
+  # 
   module HasLocalizedInfos
     def self.included(base)
       base.__send__(:has_many, :localized_infos, :as => :item)
