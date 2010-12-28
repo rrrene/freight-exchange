@@ -174,7 +174,7 @@ de:
           search_recordings_for_keywords: "Suchanfragen nach Keyword pro Tag (letzte 7 Tage)"
           top_clicked: "Am meisten angeklickte Keywords (letzte 7 Tage)"
           top_results: "Meiste Resultate pro Keyword (letzte 7 Tage)"
-          top_searched: "Am meisten gesuchte Keywords (letzte 7 Tage)"
+          top_searched: "Meistgesuchte Keywords (letzte 7 Tage)"
           users_logins: "Logins pro Tag (letzte 7 Tage)"
           users_posting_types: "Art der Inserate aller Benutzer (insgesamt)"
     companies: 
@@ -508,7 +508,7 @@ de:
         options: 
           delete: Löschen
           edit: Bearbeiten
-          template: "Als Vorlage verwenden"
+          template: "Als Vorlage"
     new: 
       header: "Neues Inserat"
       page_title: "Inserat erstellen"

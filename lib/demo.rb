@@ -1,4 +1,4 @@
-%w(freight loading_space review).each do |file|
+%w(freight loading_space).each do |file|
   load "script/robot/#{file}.rb"
 end
 
@@ -29,7 +29,6 @@ module Demo
   
   class Freight < Base; end
   class LoadingSpace < Base; end
-  class Review < Base; end
   
   class Company < Base
     class << self
