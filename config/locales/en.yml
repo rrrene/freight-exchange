@@ -93,7 +93,13 @@ en:
     new:
       page_title: "New freight posting"
       header: "New freight posting"
+    create:
+      page_title: "New freight posting"
+      header: "New freight posting"
     edit:
+      page_title: "Edit freight posting"
+      header: "Edit freight posting"
+    update:
       page_title: "Edit freight posting"
       header: "Edit freight posting"
     index:
@@ -518,7 +524,7 @@ en:
       company:
         name: "Name"
         address: "Address"
-        address2: ""
+        address2: "address2"
         zip: "ZIP"
         city: "City"
         country: "Country"

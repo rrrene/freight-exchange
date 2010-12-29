@@ -48,3 +48,44 @@ form.formtastic fieldset > ol > li.radio fieldset ol li {
   float: left;
   margin-right: 8px;
 }
+
+/* destination site attributes */
+#freight_destination_site_info_attributes_name_input label,
+#freight_destination_site_info_attributes_address_input label,
+#freight_destination_site_info_attributes_address2_input label,
+#freight_destination_site_info_attributes_zip_input label,
+#freight_destination_site_info_attributes_city_input label,
+#freight_destination_site_info_attributes_country_input label,
+#freight_destination_site_info_attributes_track_number_input label,
+/* origin site attributes */
+#freight_origin_site_info_attributes_name_input label,
+#freight_origin_site_info_attributes_address_input label,
+#freight_origin_site_info_attributes_address2_input label,
+#freight_origin_site_info_attributes_zip_input label,
+#freight_origin_site_info_attributes_city_input label,
+#freight_origin_site_info_attributes_country_input label,
+#freight_origin_site_info_attributes_track_number_input label {
+  width: 80px;
+  float: left;
+}
+
+/* destination site attributes */
+#freight_destination_site_info_attributes_name_input input[type=text],
+#freight_destination_site_info_attributes_address_input input[type=text],
+#freight_destination_site_info_attributes_address2_input input[type=text],
+#freight_destination_site_info_attributes_zip_input input[type=text],
+#freight_destination_site_info_attributes_city_input input[type=text],
+#freight_destination_site_info_attributes_country_input input[type=text],
+/* origin site attributes */
+#freight_origin_site_info_attributes_name_input input[type=text],
+#freight_origin_site_info_attributes_address_input input[type=text],
+#freight_origin_site_info_attributes_address2_input input[type=text],
+#freight_origin_site_info_attributes_zip_input input[type=text],
+#freight_origin_site_info_attributes_city_input input[type=text],
+#freight_origin_site_info_attributes_country_input input[type=text] {
+  max-width: 180px;
+}
+  #freight_destination_site_info_attributes_track_number_input input[type=text],
+  #freight_origin_site_info_attributes_track_number_input input[type=text] {
+    max-width: 40px;
+  }

@@ -1,10 +1,20 @@
 = Rails Application Documentation
 
-Build this documentation with either rake doc:* for standard rails doc output, or with the rake doc:ajax task to get nicer doc layout using breakpointer's ajax-rdoc (which is available at http://github.com/breakpointer/ajax-rdoc and has to installed separately).
+Build this documentation with either rake doc:* for standard rails doc output, or with the rake doc:ajax task to get nicer doc layout using breakpointer's ajax-rdoc (which is available at http://github.com/breakpointer/ajax-rdoc and has to be installed separately).
 
 == Installation
 
-The first step is to run these rake tasks: 
+First, run:
+
+  bundle install
+  
+Unfortunately, the nokogiri gem needs to be installed separately. 
+
+Follow these instructions: 
+
+http://nokogiri.org/tutorials/installing_nokogiri.html
+
+The next step is to run these rake tasks: 
 
   rake db:migrate
   rake db:seed
