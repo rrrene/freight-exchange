@@ -114,6 +114,7 @@ class RDocHTML2LaTex # :nodoc:
     replace_html_tag_with_tex_command(:h2, :"subsection*").
     replace_html_tag_with_tex_command(:h3, :"subsubsection*").
     replace_html_tag_with_tex_command(:h4, :paragraph).
+    replace_html_tag_with_tex_command(:a, :url).
     replace_html_tag_with_tex_command(:tt, :texttt).
     replace_opening_html_tag_with(:vspace, '\\vspace{0.5cm}').
     replace_html_tag_with_tex_command(:methodname, :textbf).

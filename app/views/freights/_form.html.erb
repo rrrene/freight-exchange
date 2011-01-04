@@ -12,13 +12,15 @@
   <%= f.inputs :timeframe do %>
     <% %w(origin destination).each do |site| %>
       <%= f.semantic_fields_for "#{site}_site_info", resource.__send__("#{site}_site_info") do |f_site| %>
-        <%= f_site.input :date, :label => t("activerecord.attributes.freight.#{site}_date") %>
+        <%= f_site.input :date, :label => t("activerecord.attributes.freight.#{site}_date"), :as => :date %>
       <% end %>
     <% end %>
   <% end %>
 
   <%= f.inputs :freight_description do %>
     <%= f.input :weight, :as => :string %>
+    <%= f.input :transports_per_year, :as => :string %>
+    <%= f.input :transport_weight, :as => :string %>
     <%= f.input :loading_meter, :as => :string %>
 
     <%= localized_info_fields f, :goods_text %>

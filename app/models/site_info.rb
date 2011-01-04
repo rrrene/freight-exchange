@@ -12,12 +12,13 @@ class SiteInfo < ActiveRecord::Base
     [
       contractor,
       I18n.available_locales.map { |lang| 
-        I18n.l(date, :locale => lang, :format => :long) 
+        I18n.l(date, :locale => lang, :format => :long)
       }, 
       name,
       address,
       address2,
-      zip, city,
+      zip, 
+      city,
       country
     ].map(&:full?).compact.join("\n").simplify
   end
