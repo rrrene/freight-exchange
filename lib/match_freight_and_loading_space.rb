@@ -4,6 +4,7 @@ module Matching
   class << self
     #:call-seq:
     #   Match.compare_freight_and_loading_space(freight, loading_space) # => Float
+    #:call-seq:
     #   Match.fls freight, loading_space # => Float
     #
     # Returns the likeness of a Freight and a LoadingSpace object.
