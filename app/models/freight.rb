@@ -15,10 +15,11 @@ class Freight < ActiveRecord::Base
   searchable
   
   include ActiveRecord::HasLocalizedInfos
-  def localized_infos=(array_of_hashes)
+  def localized_infos=(array_of_hashes) # :nodoc:
     localized_infos!(array_of_hashes)
   end
   
+  # Calculates and saves all matching results for the freight.
   def calc_matchings!
     LoadingSpace.all.each do |record|
       result = Matching.fls(self, record)
@@ -29,17 +30,18 @@ class Freight < ActiveRecord::Base
       end
     end
   end
-
+  
+  # Returns the given number of matching loading space objects for the freight.
   def matching_loading_spaces(limit = 3)
     matching_recordings.limit(limit).map(&:b)
   end
   alias matching_objects matching_loading_spaces
   
-  def name
+  def name # :nodoc:
     "#{origin_site_info.name} - #{destination_site_info.name}"
   end
   
-  def to_search
+  def to_search # :nodoc:
     search_str = [
       origin_site_info.to_search,
       destination_site_info.to_search,

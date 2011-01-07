@@ -11,20 +11,21 @@ class LoadingSpace < ActiveRecord::Base
   searchable
   
   include ActiveRecord::HasLocalizedInfos
-  def localized_infos=(array_of_hashes)
+  def localized_infos=(array_of_hashes) # :nodoc:
     localized_infos!(array_of_hashes)
   end
   
+  # Returns the given number of matching freight objects for the loading space.
   def matching_freights(limit = 3)
     matching_recordings.limit(limit).map(&:a)
   end
   alias matching_objects matching_freights
   
-  def name
+  def name # :nodoc:
     "#{origin_site_info.name} - #{destination_site_info.name}"
   end
   
-  def to_search
+  def to_search # :nodoc:
     search_str = [
       origin_site_info.to_search,
       destination_site_info.to_search,
@@ -48,7 +49,6 @@ class LoadingSpace < ActiveRecord::Base
       human_attribute_value(attr, :locale => lang, :default => '').full?
     }.compact
   end
-  
   
   validates_presence_of :user_id
   validates_presence_of :company_id

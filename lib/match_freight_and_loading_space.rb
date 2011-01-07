@@ -3,12 +3,11 @@ require 'matching'
 module Matching
   class << self
     #:call-seq:
-    #   Match.compare_freight_and_loading_space(freight, loading_space) # => Float
-    #:call-seq:
-    #   Match.fls freight, loading_space # => Float
+    #   Match.compare_freight_and_loading_space(freight, space) # => Float
+    #   Match.fls(freight, space) # => Float
     #
     # Returns the likeness of a Freight and a LoadingSpace object.
-    #   Match.fls Freight.first, LoadingSpace.first # => 0.977920227850516
+    #   Match.fls(Freight.first, LoadingSpace.first) # => 0.977920227850516
     def compare_freight_and_loading_space(f = Freight.first, l = LoadingSpace.first)
       Compare::FreightToLoadingSpace.new(f, l).result
     end

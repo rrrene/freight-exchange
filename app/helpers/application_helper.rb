@@ -5,6 +5,7 @@ module ApplicationHelper
     controller.is_a?(Admin::BaseController)
   end
   
+  # Renders a badge labelled with count, unless the given count is zero.
   def badge_for(count)
     count == 0 ? "" : ' ' << content_tag(:b, count, :class => 'badge')
   end
@@ -21,6 +22,7 @@ module ApplicationHelper
   end
   
   # Returns the collection of localized choices for a given attribute.
+  #
   # Example:
   #   collection_choices(Person, :gender)
   #
@@ -37,12 +39,13 @@ module ApplicationHelper
   #   contact_info(object, attr) # => String
   #
   # Returns a formatted string version of the attribute.
+  # 
   # Examples:
   #   <%= contact_info(@company, :phone) %>
-  #   # => '+49 (0) 234 366 98007'
+  #     # => '+49 (0) 234 366 98007'
   #
   #   <%= contact_info(@company, :website) %>
-  #   # => '<a href="http://www.example.org/">www.example.org</a>'
+  #     # => '<a href="http://www.example.org/">www.example.org</a>'
   def contact_info(object, attr)
     if %w(phone fax).include?(attr)
       phone_number(object.__send__(attr))
@@ -58,15 +61,16 @@ module ApplicationHelper
   # Returns <tt>true</tt> if c is the current controller.
   # Example:
   #   <%= controller?(:root) %>
-  #   # => true
+  #     # => true
   def controller?(name)
     controller.controller_name == name
   end
   
   # Returns a HTML formatted version of <tt>text</tt>.
+  # 
   # Example:
   #   <%= format_multiline_input("First line.\nSecond Line.") %>
-  #   # => "First line.<br>Second line."
+  #     # => "First line.<br>Second line."
   def format_multiline_input(text)
     simple_format(h(text)).html_safe
   end
@@ -82,6 +86,7 @@ module ApplicationHelper
     result.company.approved_reviews.count > AppConfig['reviews.highlight_above'].to_i
   end
   
+  # Returns a humanized string for the given ActionRecording.
   def humanize_recording(rec)
     opts = {
       :user => rec.user.full?(&:name),
@@ -91,6 +96,7 @@ module ApplicationHelper
     t("recordings.#{rec.action}", opts)
   end
   
+  # Renders a linked button (optionally with an icon).
   def link_btn(text, path, opts = {})
     if icon = opts.delete(:icon)
       text = content_tag(:span, "", :class => 'icon') << text
@@ -104,6 +110,7 @@ module ApplicationHelper
     link_to text, path, opts
   end
   
+  # Renders a link to the given item.
   def link_to_item(item)
     return t("common.deleted_object") if item.blank?
     text = item.respond_to?(:name) ? item.name : item.to_s
@@ -117,6 +124,7 @@ module ApplicationHelper
     link_to_function text, "self.history.back();", :class => 'back'
   end
   
+  # Renders a link to the given result.
   def link_to_result(t, result)
     url_method = method(result.class.to_s.underscore << '_path')
     url = url_method.call(:id => result, :search_recording_id => @search_recording.full?(&:id))
@@ -124,7 +132,7 @@ module ApplicationHelper
   end
   
   # TODO: lookup rails3 implementation
-  def link_to_unless(condition, name, options = {}, html_options = {}, &block)
+  def link_to_unless(condition, name, options = {}, html_options = {}, &block) # :nodoc:
     condition ? content_tag(:span, name, html_options) : link_to(name, options, html_options, &block)
   end
   
@@ -136,7 +144,7 @@ module ApplicationHelper
   
   #  TODO: localized_info_field f, :type_of_goods, :en
   # BETTER: f.localized_info_field :type_of_goods, :en
-  def localized_info_field(f, name, lang = current_person.locale)
+  def localized_info_field(f, name, lang = current_person.locale) # :nodoc:
     render({:partial => '/partials/localized_info_form_content',
               :locals => {:f => f, :name => name, :lang => lang}})
   end
@@ -146,10 +154,13 @@ module ApplicationHelper
               :locals => {:f => f, :name => name, :locales => locales}})
   end
   
+  # REturns <tt>true</tt>, if only some attributes are not blank for the given ActiveRecord object.
   def only_some_attributes_filled?(ar)
     ar.attributes_filled < AppConfig['contact_info.complete_percentage'].to_f
   end
   
+  # Tries to render a phone number in a certain format.
+  # Returns the reformatted number.
   def phone_number(nr)
     country_code = AppConfig['contact_info.default_country_code'].to_s
     Phone.parse(nr, :country_code => country_code).format(:europe)
@@ -157,6 +168,7 @@ module ApplicationHelper
     return nr
   end
   
+  # Returns <tt>true</tt>, if the current_user is posting freights.
   def posting_freights?
     current_user.full?(&:posting_type) == 'Freight'
   end
@@ -168,13 +180,14 @@ module ApplicationHelper
     render_partial :sidebar_company_info, :locals => {:company => company}
   end
   
+  # Renders a partial taking into account the current user's UserRole objects.
   def render_partial(partial, options = {})
     subs = current_user.roles
     subs << :admin if admin?
     render options.merge(:partial => search_for_partial(subs, partial))
   end
   
-  def search_for_partial(sub_dirs, partial)
+  def search_for_partial(sub_dirs, partial) # :nodoc:
     sub_dirs.each do |sub_dir|
       if template_exists?("/partials/#{sub_dir}/_#{partial}")
         return "/partials/#{sub_dir}/#{partial}"
@@ -190,11 +203,12 @@ module ApplicationHelper
     render_partial :sidebar_person_info, :locals => {:person => person}
   end
   
+  # Renders a text next to a badge.
   def text_with_badge(snippet, count)
     (t(snippet) + badge_for(count)).html_safe
   end
   
-  def yes_no(condition)
+  def yes_no(condition) # :nodoc:
     condition ? t("common.choice_yes") : t("common.choice_no")
   end
   

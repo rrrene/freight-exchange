@@ -7,17 +7,30 @@ module ActiveRecord
   #   class Person < ActiveRecord::Base
   #     include ActiveRecord::HasLocalizedInfos
   #   end
-  # 
+  #  
+  #  person = Person.new
+  #  infos = [
+  #      {:name => 'misc_text', :lang => 'de', :text => 'Etwas Text...'},
+  #      {:name => 'misc_text', :lang => 'en', :text => 'Some text...'}
+  #    ]
+  #  person.localized_infos!(infos)
+  #  
+  #  
   module HasLocalizedInfos
-    def self.included(base)
+    def self.included(base) # :nodoc:
       base.__send__(:has_many, :localized_infos, :as => :item)
       base.__send__(:after_save, :update_localized_infos)
       base.__send__(:include, InstanceMethods)
     end
     
     module InstanceMethods
-      # Saves the provided localized infos.
-      #   obj.localized_infos!({:name => 'sample', :language => 'de', :text => 'Beispiel'})
+      # Saves (or updates) the provided localized infos.
+      #
+      #  infos = [
+      #      {:name => 'misc_text', :lang => 'de', :text => 'Etwas Text...'},
+      #      {:name => 'misc_text', :lang => 'en', :text => 'Some text...'}
+      #    ]
+      #  obj.localized_infos!(infos)
       def localized_infos!(array_of_hashes)
         array_of_hashes.each do |opts|
           if text = opts[:text].full?
@@ -68,17 +81,23 @@ module ActiveRecord
     
     # Returns the localized version of the attribute's value.
     #
-    #   freight[:transport_type] # => 'single_wagon'
-    #   freight.human_attribute_value(:transport_type) # => 'Single Wagon'
-    #   freight.human_attribute_value(:transport_type, :locale => :de) # => 'Einzelwagen'
+    #   freight[:transport_type] 
+    #     # => 'single_wagon'
+    #   freight.human_attribute_value(:transport_type) 
+    #     # => 'Single Wagon'
+    #   freight.human_attribute_value(:transport_type, :locale => :de) 
+    #     # => 'Einzelwagen'
     def human_attribute_value(attribute_name, i18n_opts = {})
       self.class.human_attribute_value(attribute_name, self[attribute_name], i18n_opts)
     end
     
     # Returns the localized version of the given attribute and its value.
     #
-    #   Freight.human_attribute_value(:transport_type, 'single_wagon') # => 'Single Wagon'
-    #   I18n.t('activerecord.human_attribute_values.freight.transport_type.single_wagon') # => 'Single Wagon'
+    #   Freight.human_attribute_value(:transport_type, 'single_wagon') 
+    #     # => 'Single Wagon'
+    #   I18n.t('activerecord.human_attribute_values.freight.
+    #              transport_type.single_wagon') 
+    #     # => 'Single Wagon'
     def self.human_attribute_value(attribute_name, value, i18n_opts = {})
       arr = [:activerecord, :human_attribute_values, 
               self.to_s.underscore, attribute_name, value]
@@ -94,7 +113,8 @@ module ActiveRecord
       #     brackets_find_by :iso_code
       #   end
       #   
-      #   Country[:de] => #<Country id: 1, name: "Germany", iso_code: "de">
+      #   Country[:de] 
+      #     # => #<Country id: 1, name: "Germany", iso_code: "de">
       def brackets_find_by(attribute_name)
         self.instance_eval "
           def [](val)

@@ -22,7 +22,7 @@ class ApplicationController < ActionController::Base
   #     end
   #   end
   #
-  def controller_catalog # :doc:
+  def controller_catalog() # :doc:
     controller_path.gsub('/', '.')
   end
   

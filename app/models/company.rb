@@ -10,13 +10,14 @@ class Company < ActiveRecord::Base
   has_many :reviews, :order => 'created_at DESC', :dependent => :destroy
   has_many :freights, :order => 'created_at DESC', :dependent => :destroy
   has_many :loading_spaces, :order => 'created_at DESC', :dependent => :destroy
-
+  
+  # Returns all approved reviews for the company.
   def approved_reviews
     reviews.where('approved_by_id IS NOT NULL')
   end
 
   include ActiveRecord::HasLocalizedInfos
-  def localized_infos=(array_of_hashes)
+  def localized_infos=(array_of_hashes) # :nodoc:
     localized_infos!(array_of_hashes)
   end
   
@@ -36,12 +37,13 @@ class Company < ActiveRecord::Base
       end
     end
   end
-
+  
+  # Returns all unapproved reviews for the company.
   def unapproved_reviews
     reviews.where('approved_by_id IS NULL')
   end
   
-  def website
+  def website # :nodoc:
     address = self[:website]
     if address.blank? || address =~ /^\w+\:\/\//
       address

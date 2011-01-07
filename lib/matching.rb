@@ -107,8 +107,7 @@ module Matching
         #
         # ==== Options
         # 
-        # * <tt>:as</tt> - A Symbol identifying the Comparer class to be used 
-        # (e.g. <tt>:String</tt>, <tt>:Time</tt> etc.)
+        # * <tt>:as</tt> - A Symbol identifying the Comparer class to be used  (e.g. <tt>:String</tt>)
         # 
         #     class UserComparer < Matching::Compare::Base
         #       compare :created_at, :as => :Time

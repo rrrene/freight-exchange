@@ -1,6 +1,7 @@
 class Contact < ActionMailer::Base
   default :from => "from@example.com"
   
+  # Returns a contact mail from the given user to the support email address.
   def contact(text, user)
     @text = text
     @user = user

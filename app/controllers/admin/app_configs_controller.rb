@@ -6,7 +6,7 @@
 # delete and index are provided via inheritance from Admin::BaseController.
 #
 class Admin::AppConfigsController < Admin::BaseController
-  
+  # Reimports the default values from the YAML file to the database.
   def reimport_defaults
     APP_CONFIG_DEFAULTS.each do |key, value|
       AppConfig[key] = value

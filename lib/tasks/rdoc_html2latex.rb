@@ -57,7 +57,8 @@ class RDocHTML2LaTex # :nodoc:
   
   def initialize(_uri)
     self.uri = _uri
-    self.doc = Nokogiri::HTML(open(uri)) 
+    html = open(uri).read.gsub('<br />', '<br>')
+    self.doc = Nokogiri::HTML(html) 
     clean_up!
   end
   
@@ -95,7 +96,8 @@ class RDocHTML2LaTex # :nodoc:
   
   def modify_method_names!
     doc.css("span.method-name").each do |node|
-      node.content = "<vspace>\n<methodname>#{node.content}</methodname>"
+      content = node.content.to_s.gsub("\n", " <br> ")
+      node.content = "<vspace>\n<methodname>#{content}</methodname>"
     end
     doc.css("span.method-args").each do |node|
       node.content = "<methodargs>#{node.content}</methodargs>" #.split(/\n/).map { |line| line.gsub('<br>', '').strip }.join('<br>')
@@ -106,9 +108,11 @@ class RDocHTML2LaTex # :nodoc:
   # TODO: don't escape special chars in verbatim environment
   # 
   def texify(selector)
+    #puts doc.css(selector).to_s
     doc.css(selector).to_s.
     gsub('&amp;', '&').gsub('&gt;', '>').gsub('&lt;', '<').
     escape_special_tex_chars.
+    replace_opening_html_tag_with(:br, "\\\\\\\\").
     replace_html_tag_with_tex_command(:title, :"section*").
     replace_html_tag_with_tex_command(:h1, :"section*").
     replace_html_tag_with_tex_command(:h2, :"subsection*").
@@ -121,7 +125,6 @@ class RDocHTML2LaTex # :nodoc:
     replace_html_tag_with_tex_command(:methodargs, :textit).
     replace_opening_html_tag_with(:li, '\\item ').
     replace_closing_html_tag_with(:li, '').
-    replace_opening_html_tag_with(:br, '\\').
     replace_html_block_with_tex_environment(:ul, :itemize).
     replace_html_block_with_tex_environment(:pre, :verbatim).
     remove_html_tags(:p, :span, :div).
