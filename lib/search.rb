@@ -9,11 +9,14 @@ module Search
     # 
     # Removes the search index for the given record.
     #
-    #   user = User.create(:name # => 'Bob')  # => #<User id: 1, name: "Bob">
-    #   Search.find 'bob'           # => [#<User id: 1, name: "Bob">]
+    #   user = User.create(:name # => 'Bob')  
+    #     # => #<User id: 1, name: "Bob">
+    #   Search.find 'bob'           
+    #     # => [#<User id: 1, name: "Bob">]
     #
     #   Search.clear_index_for(user)
-    #   Search.find 'bob'           # => []
+    #   Search.find 'bob'           
+    #     # => []
     def clear_index_for(record)
       SimpleSearch.clear_item(record)
     end
@@ -45,7 +48,9 @@ module Search
     
     #:call-seq:
     #   Search.update_index_for(model_or_record)
+    #--
     #   Search << model_or_record
+    #++
     # 
     # Adds a record or a model to the search index.
     #   Search << User.first  # update the index for a specific user

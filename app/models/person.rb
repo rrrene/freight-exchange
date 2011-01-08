@@ -1,5 +1,16 @@
 # Person objects contain personal information about a User.
 # 
+#   opts = {
+#     :gender => 'male',
+#     :first_name => 'Maximilian',
+#     :last_name => 'Sprenkler',
+#     :job_description => 'Chief Executive Officer',
+#     :phone => '+49 (0) 234 569986-1',
+#     :fax => '+49 (0) 234 569986-55',
+#     :website => 'example.org/team/m.sprenkler',
+#   }
+#   user.person.create(opts)
+# 
 class Person < ActiveRecord::Base
   GENDER_CHOICES = %w(male female)
   LOCALE_CHOICES = I18n.available_locales.map(&:to_s)
@@ -9,16 +20,19 @@ class Person < ActiveRecord::Base
   searchable
   
   include ActiveRecord::HasLocalizedInfos
-  def localized_infos=(array_of_hashes)
+  def localized_infos=(array_of_hashes) # :nodoc:
     localized_infos!(array_of_hashes)
   end
   
-  # TODO: Anrede?
+  #:call-seq:
+  #   person.name # => String
+  #
+  # Returns the full name of the person.
   def name
     "#{first_name} #{last_name}"
   end
   
-  def website
+  def website # :nodoc:
     address = self[:website]
     if address.blank? || address =~ /^\w+\:\/\//
       address

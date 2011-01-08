@@ -1,6 +1,14 @@
 # SiteInfo objects contain information about loading and unloading sites, 
 # such as name of the site, address of the site, name of the contractor etc.
 #
+#   opts = {
+#     :name => 'Rotterdam Centraal',
+#     :address => 'Centraal Station',
+#     :zip => '3013',
+#     :city => 'Rotterdam',
+#     :country => 'Nederlands'
+#   }
+#   freight.origin_site_info.create(opts)
 class SiteInfo < ActiveRecord::Base
   SITE_ATTRIBUTES = %w(name address address2 zip city country)
 #  validates_presence_of :address

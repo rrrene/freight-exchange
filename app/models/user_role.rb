@@ -33,14 +33,35 @@ class UserRole < ActiveRecord::Base
   has_and_belongs_to_many :users, :uniq => true
   searchable
   
+  #:call-seq:
+  #   UserRole.frontend_roles # => Array
+  #
+  # Returns an array with all UserRoles that can be assigned via the frontend.
+  #
+  #   UserRole.frontend_roles.map(&:name)
+  #     # => ['company_admin', 'employee', 'employee_of_the_month']
   def self.frontend_roles
     where('name LIKE ?', 'company_%')
   end
   
+  #:call-seq:
+  #   user_role.user_count # => int
+  #
+  # Returns the number of users who have this UserRole.
+  #
+  #   UserRole[:company_admin].user_count
+  #     # => 521
   def user_count
     users.count
   end
   
+  #:call-seq:
+  #   user_role.user_percentage # => Float
+  #
+  # Returns the percentage of users who have this UserRole.
+  #
+  #   UserRole[:company_admin].user_percentage
+  #     # => 0.763
   def user_percentage
     users.count / User.count.to_f
   end

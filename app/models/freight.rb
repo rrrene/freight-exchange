@@ -1,4 +1,8 @@
-
+# Freight objects are postings for freight.
+# 
+# They have two SiteInfo objects attached for their origin and destination 
+# and several LocalizedInfo objects to describe the posting.
+#
 class Freight < ActiveRecord::Base
   TRANSPORT_TYPE_CHOICES = %w(single_wagon train_set block_train)
   DESIRED_PROPOSAL_TYPE_CHOICES = %w(ton_price package_price)

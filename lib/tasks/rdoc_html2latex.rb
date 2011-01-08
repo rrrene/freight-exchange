@@ -110,6 +110,7 @@ class RDocHTML2LaTex # :nodoc:
   def texify(selector)
     #puts doc.css(selector).to_s
     doc.css(selector).to_s.
+    gsub('<<', '\<\<').
     gsub('&amp;', '&').gsub('&gt;', '>').gsub('&lt;', '<').
     escape_special_tex_chars.
     replace_opening_html_tag_with(:br, "\\\\\\\\").
