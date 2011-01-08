@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101227193119) do
+ActiveRecord::Schema.define(:version => 20110108143248) do
 
   create_table "action_recordings", :force => true do |t|
     t.string   "item_type",  :limit => 30
@@ -116,17 +116,6 @@ ActiveRecord::Schema.define(:version => 20101227193119) do
     t.string   "locale",          :default => "en"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "recordings", :force => true do |t|
-    t.string   "item_type",  :limit => 30
-    t.integer  "item_id"
-    t.string   "action",     :limit => 10
-    t.text     "diff"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "user_id"
-    t.integer  "company_id"
   end
 
   create_table "reviews", :force => true do |t|
