@@ -10,8 +10,8 @@ models.each { |model| all[model] = model.to_s.classify.constantize.all }
 puts '', '', "=" * 70, '', ''
 
 (1..7).each do |days_back|
-  actions_for_this_day = (75 + rand * 50).to_i
-  actions_for_this_day.times do
+  recordings_for_this_day = (75 + rand * 50).to_i
+  recordings_for_this_day.times do
     action = %w(create update destroy).rand
     model = models.rand
     user = all[:user].rand

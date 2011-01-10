@@ -56,14 +56,12 @@ module Robot
     
     def search
       klass = Robot::Freight
-      places = Robot::Places.new
-      item = Random.boolean ? ['Gefahrgut', 'Einzelwagen', 'Ganzzug', '2011', '2012', 'pauschal'].random : ''
-      query = [places.origin[:city], places.destination[:city], item].join(' ').strip
+      query = generate_search_query
       results = klass.find(:all, :from => "/search", :params => {:q => query})
       unless results.empty?
         result = results.random
-        sr = ::SearchRecording.where(:query => query).order("updated_at DESC").first
-        klass.find(result.id, :params => {:search_recording_id => sr.id})
+        parent = ::SearchRecording.where(:query => query).order("updated_at DESC").first
+        klass.find(result.id, :params => {:search_recording_id => parent.id})
       end
       humanize "searched for '#{query}'"
     end
@@ -78,6 +76,12 @@ module Robot
           resource_or_string.class.to_s.gsub('Robot::', ''),
           "##{resource_or_string.attributes[:id]}"] * ' '
       end
+    end
+    
+    def generate_search_query
+      places = Robot::Places.new
+      item = Random.boolean ? ['Gefahrgut', 'Einzelwagen', 'Ganzzug', '2011', '2012', 'pauschal'].random : ''
+      query = [places.origin[:city], places.destination[:city], item].join(' ').strip
     end
   end
 end

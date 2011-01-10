@@ -2,11 +2,6 @@
 
 require File.join(File.dirname(__FILE__), '..', 'config', 'environment')
 
-class User < ActiveRecord::Base
-  ROBOT_ARMY_SIZE = 30
-  scope :robots, where('login LIKE "robot_%"')
-end
-
 require File.join(File.dirname(__FILE__), 'robot')
 
 puts '', '', "=" * 70, '', ''

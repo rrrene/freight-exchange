@@ -7,6 +7,11 @@ require 'factory_girl'
 require 'random_data'
 require 'faker'
 
+class User < ActiveRecord::Base
+  ROBOT_ARMY_SIZE = 30
+  scope :robots, where('login LIKE "robot_%"')
+end
+
 module Robot
   SITE = "http://localhost:3000/"
 end

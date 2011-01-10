@@ -2,7 +2,8 @@ class Admin::SearchRecordingsController < Admin::BaseController
   
   def index
     index! {
-      @search_recordings = records = resource_class.where("created_at > ?", Time.new - 7.days)
+      records = resource_class.where("created_at > ?", Time.new - 7.days).order("created_at DESC")
+      @search_recordings = records[0..100]
       @top_searched = top_searched(records)
       @top_clicked = top_clicked(records)
       @top_results = top_results(records)
