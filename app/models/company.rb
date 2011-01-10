@@ -6,7 +6,7 @@ class Company < ActiveRecord::Base
   has_many :users, :dependent => :destroy
   has_many :people, :through => :users
   belongs_to :contact_person, :class_name => 'Person'
-  has_many :recordings, :order => 'created_at DESC', :dependent => :destroy
+  has_many :action_recordings, :order => 'created_at DESC', :dependent => :destroy
   has_many :reviews, :order => 'created_at DESC', :dependent => :destroy
   has_many :freights, :order => 'created_at DESC', :dependent => :destroy
   has_many :loading_spaces, :order => 'created_at DESC', :dependent => :destroy

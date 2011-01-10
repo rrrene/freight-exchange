@@ -9,7 +9,7 @@ class CompaniesController < RemoteController
   # activities.
   def dashboard
     @company = current_company
-    @recordings = current_company.recordings.limit(50)
+    @recordings = current_company.action_recordings.limit(50)
   end
   
   # The Companies#new action is actually the "Create a new Account"-screen

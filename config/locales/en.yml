@@ -61,11 +61,10 @@ en:
   companies:
     dashboard:
       page_title: "Dashboard"
+      header: "Actions"
       intro: "Here you can see all the actions of your company's users."
       sidebar_person_info_title: "This is your personal info card:"
       sidebar_company_info_title: "This is your company info card:"
-      recordings:
-        header: "Actions"
     new:
       page_title: "Create company account"
       header: "Create your company account"
