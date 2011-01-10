@@ -4,7 +4,7 @@ de:
     attributes: 
       company: 
         address: Adresse
-        address2: "test"
+        address2: test
         city: Stadt
         country: Land
         email: E-Mail
@@ -26,6 +26,7 @@ de:
           misc_text: "z.B. Lademaß- überschreitungen, Umschlag oder Vor-/Nachlauf, Verzollung, Verwiegung etc."
           transport_text: "Welche Wagen sollen verwendet werden (ggf. Alternativen)?"
         origin_date: Von
+        paying_freight: Frachtzahler
         transport_type: Transportart
         wagons_provided_by: "Wagen werden gestellt von"
         weight: "Gesamtgewicht (in t)"
@@ -47,11 +48,10 @@ de:
         phone: Telefon
         website: Internet
       site_info: 
-        address: Adresse
-        address2: ""
+        address: Straße/Hausnummer
         address_template_label: "Adressvorlage benutzen:"
         city: Stadt
-        country: Land
+        country: LAnd
         destination_contractor: "Firma Empfänger"
         name: Bahnhof
         origin_contractor: "Firma Versender"
@@ -74,6 +74,9 @@ de:
         desired_proposal_type: 
           package_price: Pauschalpreis
           ton_price: Tonnenpreis
+        paying_freight: 
+          receiver: Empfänger
+          sender: Versender
         transport_type: 
           block_train: Ganzzug
           single_wagon: Einzelwagen
@@ -149,7 +152,7 @@ de:
         back_to_app: "Zurück zum Frontend"
         companies: Firmen
         home: Administration
-        search_recordings: Suchanfragen
+        search_recordings: Suchen
         setup: Systemassistent
         stations: Bahnhöfe
         user_roles: Benutzerrollen
@@ -309,10 +312,9 @@ de:
     create: 
       page_title: "Ihre Firma registrieren"
     dashboard: 
+      header: Newsfeed
       intro: "Hier sehen Sie alle Aktionen der Benutzer Ihrer Firma."
       page_title: Cockpit
-      recordings: 
-        header: Newsfeed
       sidebar_company_info_title: "Dies ist die InfoCard zu Ihrer Firma:"
       sidebar_person_info_title: "Dies ist die InfoCard zu Ihrer Person:"
     edit: 
@@ -494,6 +496,9 @@ de:
       new_link: "Weiteres Inserat erstellen"
       required_field_hint: "Die mit einem (*) gekennzeichneten Felder sind Pflichtfelder:"
       template_link: "Als Vorlage benutzen"
+    create: 
+      header: "Neues Inserat"
+      page_title: "Neues Inserat"
     edit: 
       header: "Inserat bearbeiten"
       page_title: "Inserat bearbeiten"
@@ -510,7 +515,7 @@ de:
         options: 
           delete: Löschen
           edit: Bearbeiten
-          template: "Als Vorlage"
+          template: "Als Vorlage verwenden"
     new: 
       header: "Neues Inserat"
       page_title: "Inserat erstellen"
@@ -522,6 +527,9 @@ de:
         header: "Beladestelle für Fracht"
       page_title: Inserat
       transport_description: Frachtbeschreibung
+    update: 
+      header: "Inserat bearbeiten"
+      page_title: "Inserat bearbeiten"
   helpers: 
     select: 
       prompt: "Bitte wählen"
@@ -734,6 +742,7 @@ de:
   time: 
     am: vormittags
     formats: 
+      date: "%d.&m.%Y"
       default: "%a, %d %b %Y %H:%M:%S %z"
       long: "%B %d, %Y %H:%M"
       short: "%d %b %H:%M"

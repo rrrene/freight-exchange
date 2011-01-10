@@ -5,6 +5,7 @@ module Recorder # :nodoc:
   #   class Recording < Recorder::Recording
   #   end
   class Recording < ActiveRecord::Base
+    self.abstract_class = true
     serialize :diff
     belongs_to :item, :polymorphic => true
   end

@@ -551,6 +551,7 @@ en:
         weight: "Weight (in t)"
         hazmat: "Harzardous material"
         wagons_provided_by: "Wagons provided by"
+        paying_freight: "Freight paid by"
         transport_type: "Transport type"
         loading_meter: "Loading meter"
         desired_proposal_type: "Desired proposal type"
@@ -585,6 +586,9 @@ en:
         user_roles: "User Roles"
     human_attribute_values:
       freight:
+        paying_freight:
+          sender: "Sender"
+          receiver: "Receiver"
         wagons_provided_by:
           client: "Client"
           railway: "Railway"

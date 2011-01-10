@@ -32,6 +32,7 @@
     <%= localized_info_fields f, :transport_text %>
 
     <%= f.input :wagons_provided_by, :collection => collection_choices(Freight, :wagons_provided_by), :as => :radio %>
+    <%= f.input :paying_freight, :collection => collection_choices(Freight, :paying_freight), :as => :select %>
   <% end %>
   <%= f.inputs :misc_text do %>
     <%= localized_info_fields f, :misc_text %>
