@@ -3,6 +3,9 @@
 end
 
 module Demo
+  # The Base class is inherited by other classes (e.g. Demo::Freight)
+  # and provides basic functionality to dynamically create the demo
+  # company and its users, freights, reviews etc.
   class Base
     class << self
       def create(user = nil)
