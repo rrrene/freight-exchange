@@ -78,7 +78,7 @@ module Demo
       def demo_user_attributes
         [
           {
-            :login => 'demo_user',
+            :login => 'demo_user01_admin',
             :email => 'm.sprenkler@example.org',
             :password => user_pwd,
             :password_confirmation => user_pwd,
@@ -93,7 +93,7 @@ module Demo
             },
           },
           {
-            :login => 'demo_user2',
+            :login => 'demo_user02',
             :email => 'b.sprenkler@example.org',
             :password => user_pwd,
             :password_confirmation => user_pwd,
@@ -108,7 +108,7 @@ module Demo
             },
           },
           {
-            :login => 'demo_user3',
+            :login => 'demo_user03',
             :email => 'p.krause@example.org',
             :password => user_pwd,
             :password_confirmation => user_pwd,
@@ -123,7 +123,7 @@ module Demo
             },
           },
           {
-            :login => 'demo_user4',
+            :login => 'demo_user04',
             :email => 'm.kowalla@example.org',
             :password => user_pwd,
             :password_confirmation => user_pwd,
@@ -138,7 +138,7 @@ module Demo
             },
           },
           {
-            :login => 'demo_user5',
+            :login => 'demo_user05',
             :email => 'a.baumann@example.org',
             :password => user_pwd,
             :password_confirmation => user_pwd,
@@ -153,7 +153,7 @@ module Demo
             },
           },
           {
-            :login => 'demo_user6',
+            :login => 'demo_user06',
             :email => 'b.baumann@example.org',
             :password => user_pwd,
             :password_confirmation => user_pwd,
@@ -168,7 +168,7 @@ module Demo
             },
           },
           {
-            :login => 'demo_user7',
+            :login => 'demo_user07',
             :email => 'j.etterich@example.org',
             :password => user_pwd,
             :password_confirmation => user_pwd,
@@ -183,7 +183,7 @@ module Demo
             },
           },
           {
-            :login => 'demo_user8',
+            :login => 'demo_user08',
             :email => 'm.mueller@example.org',
             :password => user_pwd,
             :password_confirmation => user_pwd,
@@ -198,7 +198,7 @@ module Demo
             },
           },
           {
-            :login => 'demo_user9',
+            :login => 'demo_user09',
             :email => 'c.ampel@example.org',
             :password => user_pwd,
             :password_confirmation => user_pwd,
