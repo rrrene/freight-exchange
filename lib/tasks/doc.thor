@@ -79,7 +79,9 @@ class Doc < Thor
       else
         arr = line.scan(/t\.(string|text|integer|float|boolean)\s+\"([^\"]+)\"/).flatten
         unless arr.empty?
-          @tables[@table] << {:name => arr[1], :type => arr[0]}
+          unless arr[1] =~ /_token$/
+            @tables[@table] << {:name => arr[1], :type => arr[0]}
+          end
         end
       end
     end
