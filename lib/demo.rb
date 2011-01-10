@@ -78,7 +78,7 @@ module Demo
       def demo_user_attributes
         [
           {
-            :login => 'demo_user01_admin',
+            :login => 'demo_user_admin',
             :email => 'm.sprenkler@example.org',
             :password => user_pwd,
             :password_confirmation => user_pwd,
