@@ -96,7 +96,7 @@ class Doc < Thor
             warn "#{table}: no desc_hash for #{name}"
           end  
         else
-          warn "#{table}: no desc_table for #{table}"
+          warn "#{table}: no desc_table for #{table}" unless table =~ /tolk/
         end
         field_hash.each do |key, value|
           field_hash[key] = escape_for_template(value) if value.is_a?(String)
@@ -179,7 +179,10 @@ class Doc < Thor
         :company_id => {:description => "Verweis auf die Firma, zu der das Objekt gehört", :example => 1},
         :origin_site_info_id => {:description => "Verweis auf den Startort", :example => 34},
         :destination_site_info_id => {:description => "Verweis auf den Zielort", :example => 35},
-        :weight => {:description => "Gewicht (in t)", :example => 50},
+        :weight => {:description => "Gesamtgewicht (in t)", :example => 52_000},
+        :transport_weight => {:description => "Gewicht pro Transport (in t)", :example => 1_000},
+        :transports_per_year => {:description => "Transporte pro Jahr", :example => 52},
+        :paying_freight => {:description => "Frachtzahler", :example => "Sender"},
         :loading_meter => {:description => "Lademeter", :example => 30},
         :hazmat => {:description => "Ist das Gut ein Gefahrengut?", :example => true},
         :transport_type => {:description => "Art der Wagen", :example => :"single\\_wagon"},
@@ -192,7 +195,10 @@ class Doc < Thor
         :company_id => {:description => "Verweis auf die Firma, zu der das Objekt gehört", :example => 1},
         :origin_site_info_id => {:description => "Verweis auf den Startort", :example => 34},
         :destination_site_info_id => {:description => "Verweis auf den Zielort", :example => 35},
-        :weight => {:description => "Gewicht (in t)", :example => 50},
+        :weight => {:description => "Gesamtgewicht (in t)", :example => 52_000},
+        :transport_weight => {:description => "Gewicht pro Transport (in t)", :example => 1_000},
+        :transports_per_year => {:description => "Transporte pro Jahr", :example => 52},
+        :paying_freight => {:description => "Frachtzahler", :example => "Sender"},
         :loading_meter => {:description => "Lademeter", :example => 30},
         :hazmat => {:description => "Ist das Gut ein Gefahrengut?", :example => true},
         :transport_type => {:description => "Art der Wagen", :example => :"single\\_wagon"},
@@ -205,7 +211,7 @@ class Doc < Thor
         :fax => {:description => "Faxnummer", :example => "0123-5436896"},
         :mobile => {:description => "Mobilfunknummer", :example => "0123-5436897"},
         :email => {:description => "E-Mail-Adresse", :example => "mm@example.org"},
-        :website => {:description => "URL der Website", :example => "www.example.org"},
+        :website => {:description => "URL der Webseite", :example => "www.example.org"},
         :address => {:description => "Addresse", :example => "Musterstr. 21"},
         :address2 => {:description => "Addresse (Fortsetzung)", :example => "3. Etage"},
         :zip => {:description => "Postleitzahl", :example => "12345"},
@@ -273,7 +279,7 @@ class Doc < Thor
         :fax => {:description => "Faxnummer", :example => "0123-5436896"},
         :mobile => {:description => "Mobilfunknummer", :example => "0123-5436897"},
         :email => {:description => "E-Mail-Adresse", :example => "mm@example.org"},
-        :website => {:description => "URL der Website", :example => "www.example.org"},
+        :website => {:description => "URL der Webseite", :example => "www.example.org"},
         :locale => {:description => "Sprache, in der die Person die Benutzeroberfläche nutzt", :example => "de"},
       },
       "user_roles_users" => {
