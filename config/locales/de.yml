@@ -4,13 +4,14 @@ de:
     attributes: 
       company: 
         address: Adresse
-        address2: test
+        address2: "-"
         city: Stadt
+        contact_person: Kontaktperson
         country: Land
         email: E-Mail
         fax: Fax
         localized_infos: 
-          misc_text: "Weitere Informationen"
+          misc_text: "Fakten, Meilensteine, Erfolge, ..."
         name: Name
         phone: Telefon
         website: Internet
@@ -28,13 +29,26 @@ de:
         origin_date: Von
         paying_freight: Frachtzahler
         transport_type: Transportart
+        transport_weight: "Gewicht pro Transport"
+        transports_per_year: "Transporte pro Jahr"
         wagons_provided_by: "Wagen werden gestellt von"
         weight: "Gesamtgewicht (in t)"
       loading_space: 
+        contact_person: Kontaktperson
+        desired_proposal_type: "Angebot gewünscht als"
+        destination_date: Bis
         hazmat: Gefahrengut
+        loading_meter: Lademeter
         localized_infos: 
+          goods_text: Gutart
           misc_text: "Weitere Informationen"
           transport_text: "Welche Wagen sollen verwendet werden (ggf. Alternativen)?"
+        origin_date: Von
+        paying_freight: Frachtzahler
+        transport_type: Transportart
+        transport_weight: "Gewicht pro Transport"
+        transports_per_year: "Transporte pro Jahr"
+        wagons_provided_by: "Wagen werden gestellt von"
         weight: "Gesamtgewicht (in t)"
       person: 
         email: E-Mail
@@ -49,10 +63,10 @@ de:
         phone: Telefon
         website: Internet
       site_info: 
-        address: Straße/Hausnummer
+        address: Straße
         address_template_label: "Adressvorlage benutzen:"
         city: Stadt
-        country: LAnd
+        country: Land
         destination_contractor: "Firma Empfänger"
         name: Bahnhof
         origin_contractor: "Firma Versender"
@@ -481,6 +495,7 @@ de:
       company_address: Anschrift
       company_contact: Kontakt
       company_contact_person: "Allgemeiner Ansprechpartner"
+      company_misc: "Weitere Informationen"
       company_name: Name
       credentials: Anmeldeinformationen
       destination_site_info: "Entladestelle für Fracht:"
@@ -543,6 +558,7 @@ de:
       delete_link: "Inserat löschen"
       edit_link: Bearbeiten
       new_link: "Weiteres Inserat erstellen"
+      required_field_hint: "Die mit einem (*) gekennzeichneten Felder sind Pflichtfelder:"
       template_link: "Als Vorlage verwenden"
     create: 
       page_title: "Neues Inserat"
@@ -564,6 +580,7 @@ de:
           edit: Bearbeiten
           template: "Als Vorlage benutzen"
     new: 
+      header: "Neues Inserat"
       page_title: "Neues Inserat"
     show: 
       destination: 

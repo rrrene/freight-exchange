@@ -39,7 +39,7 @@ class SetupController < Admin::BaseController
   def tolk_import
     Tolk::Locale.sync!
     Tolk::Locale.import_secondary_locales
-    flash[:tolk] = "Improted all secondary languages! (none #{Tolk::Locale.primary_locale} locales)"
+    flash[:tolk] = "Imported all secondary languages! (none :#{Tolk::Locale.primary_locale.name} locales)"
     redirect_to :action => :index
   end
   

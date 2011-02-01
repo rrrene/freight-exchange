@@ -1,11 +1,23 @@
 <%= semantic_form_for(resource) do |f| %>
   <% %w(origin destination).each do |site| %>
-    <%= render_partial :site_info_form_content, :locals => {:f => f, :site => site} %>
+    <div class="form_site_info" style="float: left; width: 295px;">
+      <%= render_partial :site_info_form_content, :locals => {:f => f, :site => site} %>
+    </div>
   <% end %>
+  <%= clear_both %>
+
   <%= render_partial :site_info_stations %>
-  
+
+  <%= f.inputs :timeframe do %>
+    <% %w(origin destination).each do |site| %>
+      <%= f.semantic_fields_for "#{site}_site_info", resource.__send__("#{site}_site_info") do |f_site| %>
+        <%= f_site.input :date, :label => t("activerecord.attributes.freight.#{site}_date"), :as => :date %>
+      <% end %>
+    <% end %>
+  <% end %>
+
   <%= f.inputs :freight_description do %>
-    <%= f.input :hazmat, :collection => [["yes", true], ["no", false]] %>
+    <%= f.input :hazmat, :as => :radio, :collection => yes_no_collection %>
     
     <%= f.input :weight, :as => :string %>
     <%= f.input :transports_per_year, :as => :string %>

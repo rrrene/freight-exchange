@@ -212,4 +212,8 @@ module ApplicationHelper
     condition ? t("common.choice_yes") : t("common.choice_no")
   end
   
+  def yes_no_collection
+    [true, false].map { |b| [yes_no(b), b] }
+  end
+  
 end

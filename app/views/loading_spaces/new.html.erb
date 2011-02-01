@@ -1,7 +1,7 @@
 <div class="box">
+  <h3><%= t("loading_spaces.new.header") %></h3>
+  <p>
+    <%= t("loading_spaces.common.required_field_hint") %>
+  </p>
   <%= render 'form' %>
 </div>
-
-<% content_for(:sidebar) do %>
-  <%= debug resource %>
-<% end %>

@@ -131,6 +131,7 @@ en:
       edit_link: "Edit this posting"
       new_link: "Create another posting"
       template_link: "Use as template"
+      required_field_hint: "The fields with an asterix (*) are mandatory:"
     index:
       page_title: "All loading space postings"
       header: "All loading space postings"
@@ -147,6 +148,7 @@ en:
           template: "Use as template"
     new:
       page_title: "New loading space posting"
+      header: "New loading space posting"
     create:
       page_title: "New loading space posting"
     edit:
@@ -523,7 +525,7 @@ en:
       company:
         name: "Name"
         address: "Address"
-        address2: "address2"
+        address2: ""
         zip: "ZIP"
         city: "City"
         country: "Country"
@@ -531,8 +533,9 @@ en:
         fax: "Fax"
         email: "E-Mail"
         website: "Web"
+        contact_person: "Contact Person"
         localized_infos:
-          misc_text: "Additional information"
+          misc_text: "Your history, achievements, etc."
       site_info:
         origin_contractor: "Contractor (Sender)"
         destination_contractor: "Contractor (Receiver)"
@@ -553,6 +556,9 @@ en:
         wagons_provided_by: "Wagons provided by"
         paying_freight: "Freight paid by"
         transport_type: "Transport type"
+        transports_per_year: "Transports per year"
+        transport_weight: "Weight per transport (in t)"
+        transport_type: "Transport type"
         loading_meter: "Loading meter"
         desired_proposal_type: "Desired proposal type"
         contact_person: "Contact Person"
@@ -561,9 +567,20 @@ en:
           misc_text: "Additional information"
           transport_text: "Which kind of wagons are required?"
       loading_space:
+        origin_date: "From"
+        destination_date: "To"
         weight: "Weight (in t)"
         hazmat: "Harzardous material"
+        wagons_provided_by: "Wagons provided by"
+        paying_freight: "Freight paid by"
+        transports_per_year: "Transports per year"
+        transport_weight: "Weight per transport (in t)"
+        transport_type: "Transport type"
+        loading_meter: "Loading meter"
+        desired_proposal_type: "Desired proposal type"
+        contact_person: "Contact Person"
         localized_infos:
+          goods_text: "Type of Goods"
           misc_text: "Additional information"
           transport_text: "Which kind of wagons are required?"
       person:
@@ -633,6 +650,7 @@ en:
       company_address: "Postal information"
       company_contact: "Contact information"
       company_contact_person: "General Contact Person"
+      company_misc: "Additional information"
       origin_site_info: "Loading site:"
       destination_site_info: "Unloading site:"
       timeframe: "Time frame:"

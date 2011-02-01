@@ -25,7 +25,7 @@
 
     <%= localized_info_fields f, :goods_text %>
 
-    <%= f.input :hazmat, :as => :radio %>
+    <%= f.input :hazmat, :as => :radio, :collection => yes_no_collection %>
   <% end %> 
   <%= f.inputs :transport_type do %>
     <%= f.input :transport_type, :collection => collection_choices(Freight, :transport_type), :include_blank => false %>

@@ -13,7 +13,7 @@
     <% SiteInfo::SITE_ATTRIBUTES.each do |field| %>
       <%= f_site.input field, :as => :string %>
     <% end %>
-    <%= f_site.input :side_track_available, :as => :radio %>
+    <%= f_site.input :side_track_available, :as => :radio, :collection =>yes_no_collection %>
     <%= f_site.input :track_number %>
   <% end %>
 <% end %>

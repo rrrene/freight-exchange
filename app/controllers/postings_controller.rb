@@ -16,16 +16,9 @@ class PostingsController < RemoteController
         resource.localized_infos.build(li.attributes)
       end
     else
-      self.resource = resource_class.new(:hazmat => true, :weight => 1000, :loading_meter => 10)
-      resource.build_origin_site_info({:contractor => current_company.name, :date => Time.new,
-          :name => 'Bochum Hbf', :side_track_available => false,
-          :address => 'Bahnhofstr. 56', :zip => '44789', :city => 'Bochum', :country => 'Germany',
-        })
-      resource.build_destination_site_info({:date => Time.new,
-            :contractor => 'RWE Essen', :name => 'Essen Hbf', :side_track_available => true,
-            :track_number => '16-A',
-            :address => 'Kennedystr. 56', :zip => '45243', :city => 'Essen', :country => 'Germany',
-      })
+      self.resource = resource_class.new
+      resource.build_origin_site_info
+      resource.build_destination_site_info
       resource.localized_infos.build
     end
   end
