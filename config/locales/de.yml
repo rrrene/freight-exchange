@@ -40,6 +40,7 @@ de:
         email: E-Mail
         fax: Fax
         first_name: Vorname
+        gender: Anrede
         job_description: Stellenbeschreibung
         last_name: Nachname
         locale: Benutzersprache
@@ -601,7 +602,7 @@ de:
           thousand: Tausend
           trillion: Billion
       format: 
-        precision: 4
+        precision: 3
         significant: t
         strip_insignificant_zeros: t
       storage_units: 

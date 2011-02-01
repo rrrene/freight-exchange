@@ -567,6 +567,7 @@ en:
           misc_text: "Additional information"
           transport_text: "Which kind of wagons are required?"
       person:
+        gender: "Gender"
         first_name: "Forename"
         last_name: "Surname"
         job_description: "Job Description"

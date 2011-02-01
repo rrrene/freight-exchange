@@ -12,24 +12,27 @@
     <%= link_btn t("setup.index.demo_company.create_link"), demo_company_path, :icon => :compare %>
   </p>
 </div>
-<div class="box">
-  <h3><%= t("setup.index.app_configs.header") %></h3>
-  <p><%= t("setup.index.app_configs.intro") %></p>
-  <p>
-    <%= link_btn t("setup.index.app_configs.link"), '/tolk', :icon => :show %>
-  </p>
-</div>
-<div class="box">
-  <h3><%= t("setup.index.tolk.header") %></h3>
-  <p><%= t("setup.index.tolk.intro") %></p>
-  <p>
-    <%= link_btn t("setup.index.tolk.open_link"), '/tolk', :icon => :show %>
-  </p>
-  <p><%= t("setup.index.tolk.intro_rake_tasks") %></p>
-  <%= content_tag :div, flash[:tolk], :class => :notice if flash[:tolk].full? %>
-  <p>
-    <%= link_btn t("setup.index.tolk.dump_all_link"), tolk_dump_all_path, :icon => :upload %>
-    <%= link_btn t("setup.index.tolk.sync_link"), tolk_sync_path, :icon => nil %>
-    <%= link_btn t("setup.index.tolk.import_link"), tolk_import_path, :icon => nil %>
-  </p>
-</div>
+
+<% content_for(:sidebar) do %>
+  <div class="box">
+    <h3><%= t("setup.index.app_configs.header") %></h3>
+    <p><%= t("setup.index.app_configs.intro") %></p>
+    <p>
+      <%= link_btn t("setup.index.app_configs.link"), '/tolk', :icon => :show %>
+    </p>
+  </div>
+  <div class="box">
+    <h3><%= t("setup.index.tolk.header") %></h3>
+    <p><%= t("setup.index.tolk.intro") %></p>
+    <p>
+      <%= link_btn t("setup.index.tolk.open_link"), '/tolk', :icon => :show %>
+    </p>
+    <p><%= t("setup.index.tolk.intro_rake_tasks") %></p>
+    <%= content_tag :div, flash[:tolk], :class => :notice if flash[:tolk].full? %>
+    <p>
+      <%= link_btn t("setup.index.tolk.dump_all_link"), tolk_dump_all_path, :icon => :upload %>
+      <%= link_btn t("setup.index.tolk.sync_link"), tolk_sync_path, :icon => nil %>
+      <%= link_btn t("setup.index.tolk.import_link"), tolk_import_path, :icon => nil %>
+    </p>
+  </div>
+<% end %>

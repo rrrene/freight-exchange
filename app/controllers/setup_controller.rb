@@ -22,6 +22,7 @@ class SetupController < Admin::BaseController
         # db is seeded properly, now we need to create an admin account
         admin = create_admin!
         UserSession.login(admin)
+        set_locale
         just_set_up!
       end
     end
@@ -66,7 +67,8 @@ class SetupController < Admin::BaseController
       :person_attributes => {
         :gender => 'male',
         :first_name => 'Max',
-        :last_name => 'Power'
+        :last_name => 'Power',
+        :locale => 'de',
       },
       :company_attributes => {
         :name => 'Freight Exchange Service Provider',
@@ -79,8 +81,22 @@ class SetupController < Admin::BaseController
     admin.user_roles << UserRole[:administrator]
     admin
   end
-  
+
+  def create_or_find(attributes = {})
+    user = User.new(attributes)
+    if user.save 
+      user
+    else
+      ::User.where(:login => user.login).first
+    end
+  end
+
   def just_set_up_but_not_seeded?
     UserRole.count == 0
   end
+  
+  def user_pwd
+    "admin"
+  end
+  
 end
