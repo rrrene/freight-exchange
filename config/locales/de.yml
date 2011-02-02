@@ -64,6 +64,7 @@ de:
         website: Internet
       site_info: 
         address: Straße
+        address2: "-"
         address_template_label: "Adressvorlage benutzen:"
         city: Stadt
         country: Land
@@ -598,14 +599,12 @@ de:
       format: 
         delimiter: ","
         format: "%u%n"
-        precision: 2
         separator: "."
         significant: f
         strip_insignificant_zeros: f
         unit: €
     format: 
       delimiter: ","
-      precision: 3
       separator: "."
       significant: f
       strip_insignificant_zeros: f
@@ -619,7 +618,6 @@ de:
           thousand: Tausend
           trillion: Billion
       format: 
-        precision: 3
         significant: t
         strip_insignificant_zeros: t
       storage_units: 
@@ -728,6 +726,7 @@ de:
       destroy_demo_company_link: "Demo-Firma löschen"
       freights_present: "%{count} Inserate in Demo-Firma."
       header: "Demo-Firma erstellen oder löschen"
+      intro: "Verwalten Sie Ihre Demo-Firma."
       no_company_present: "Es existiert im Moment keine Demo-Firma. Erstellen Sie eine mit folgendem Link:"
       page_title: Demo-Firma
     index: 
