@@ -118,6 +118,8 @@ de:
           company_admin: Führungskraft
           company_employee: "Regulärer Mitarbeiter"
           company_intern: Praktikant
+          marketing: "[System] Marketing Mitarbeiter"
+          support: "[System] Support Mitarbeiter"
     models: 
       freight: Frachtraum
       loading_space: Laderaum

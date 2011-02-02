@@ -38,7 +38,7 @@ class SetupController < Admin::BaseController
   
   def redirect
     if current_user.is?(:marketing)
-      redirect_to :controller => '/admin/users', :action => 'index'
+      redirect_to :controller => '/admin/users', :action => 'index', :filter => :created_at
     else
       redirect_to :controller => '/setup', :action => 'index'
     end

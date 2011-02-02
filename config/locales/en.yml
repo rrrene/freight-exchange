@@ -635,6 +635,9 @@ en:
           company_admin: "Executive"
           company_employee: "Regular employee"
           company_intern: "Trainee/Intern"
+          support: "Trainee/Intern"
+          support: "[System] Support staff"
+          marketing: "[System] Marketing staff"
 
 #        localized_infos:
 #          type_of_goods: "Type of goods"
