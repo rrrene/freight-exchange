@@ -7,6 +7,10 @@ class Admin::BaseController < ApplicationController
   
   def index # :nodoc:
     @filter = params[:filter].full? || 'id'
+    if controller_name == 'users' && @filter == 'name'
+      @filter = 'login'
+    end
+    
     order_clause = "#{@filter} #{@filter == 'created_at' ? :DESC : :ASC}"
     instance_variable_set("@#{resource_class.to_s.pluralize.underscore}", resource_class.order(order_clause).all)
     index!
