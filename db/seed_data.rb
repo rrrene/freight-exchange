@@ -5,6 +5,7 @@ module Seed
     {:name => 'company_intern'},
     {:name => 'administrator'},
     {:name => 'support'},
+    {:name => 'marketing'},
   ]
     
   USERS = []

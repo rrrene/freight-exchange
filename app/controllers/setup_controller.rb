@@ -36,6 +36,14 @@ class SetupController < Admin::BaseController
     end
   end
   
+  def redirect
+    if current_user.is?(:marketing)
+      redirect_to :controller => '/admin/users', :action => 'index'
+    else
+      redirect_to :controller => '/setup', :action => 'index'
+    end
+  end
+  
   def tolk_import
     Tolk::Locale.sync!
     Tolk::Locale.import_secondary_locales
