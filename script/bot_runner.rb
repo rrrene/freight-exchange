@@ -1,4 +1,4 @@
-#!/usr/bin/env ruby -wKU
+#!/usr/bin/env ruby
 
 require File.join(File.dirname(__FILE__), '..', 'config', 'environment')
 
