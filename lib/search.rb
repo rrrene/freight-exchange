@@ -1,7 +1,6 @@
-# search.rb
-# 
 # The Search module acts as a wrapper to whatever search engine is running 
 # in the background.
+#
 module Search
   class << self
     #:call-seq:
