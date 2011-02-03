@@ -39,9 +39,20 @@ class UserRole < ActiveRecord::Base
   # Returns an array with all UserRoles that can be assigned via the frontend.
   #
   #   UserRole.frontend_roles.map(&:name)
-  #     # => ['company_admin', 'employee', 'employee_of_the_month']
+  #     # => ['company_admin', 'company_employee', 'company_intern']
   def self.frontend_roles
     where('name LIKE ?', 'company_%')
+  end
+  
+  #:call-seq:
+  #   UserRole.backend_roles # => Array
+  #
+  # Returns an array with all UserRoles that can be assigned only via the backend.
+  #
+  #   UserRole.backend_roles.map(&:name)
+  #     # => ['administrator', 'marketing', 'support']
+  def self.backend_roles
+    where('name NOT LIKE ?', 'company_%')
   end
   
   #:call-seq:

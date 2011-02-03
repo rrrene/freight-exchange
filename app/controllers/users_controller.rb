@@ -36,4 +36,12 @@ class UsersController < RemoteController
     create!
   end
   
+  def update
+    save_roles = @user.user_roles & UserRole.backend_roles
+    update! {
+      save_roles.each { |r| @user.user_roles << r }
+      @user
+    }
+  end
+  
 end
