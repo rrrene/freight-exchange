@@ -4,8 +4,55 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
-# column: value
-#
-two: {}
-#  column: value
+geldschrank:
+  name: Essener Geldschrankfabrik AG
+  city: 
+  address: 
+  zip: 
+  created_at: 2010-11-02 20:11:29.447997 Z
+  address2: 
+  country: 
+  updated_at: 2010-11-02 20:11:29.447997 Z
+  id: 1
+  mobile: 
+  contact_person_id: 
+  website: example.org
+  phone: +49 201 555 1001
+  fax: 
+  email: some@example.org
+
+
+schenker:
+  name: DB Schenker Logistics
+  city: 
+  address: 
+  zip: 
+  created_at: 2010-11-02 20:11:29.568200 Z
+  address2: 
+  country: 
+  updated_at: 2010-11-02 20:11:29.568200 Z
+  id: 2
+  mobile: 
+  contact_person_id: 
+  website: example.org
+  phone: +49 231 555 1001
+  fax: 
+  email: db-logistics@example.org
+
+
+neopoly:
+  name: Neopoly GmbH
+  city: Bochum
+  address: Hellweg 5-7
+  zip: "44787"
+  created_at: 2010-11-02 20:11:42.933997 Z
+  address2: ""
+  country: Germany
+  updated_at: 2010-12-13 10:03:14.595082 Z
+  id: 3
+  mobile: 
+  contact_person_id: 
+  website: http://www.neopoly.de
+  phone: 0234/56789-100
+  fax: ""
+  email: ""

@@ -1,9 +1,24 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  name: MyString
-  value: MyText
+  name: just_set_up
+  created_at: 2010-11-02 20:11:43.180103 Z
+  updated_at: 2010-12-18 15:17:20.053586 Z
+  id: 1
+  value: t
+
 
 two:
-  name: MyString
-  value: MyText
+  name: name
+  created_at: 2010-12-16 11:27:11.596468 Z
+  updated_at: 2010-12-16 11:27:11.596468 Z
+  id: 2
+  value: Freight Exchange
+
+
+three:
+  name: reviews.highlight_above
+  created_at: 2010-12-16 11:27:13.316590 Z
+  updated_at: 2010-12-18 15:17:20.013424 Z
+  id: 3
+  value: "5"

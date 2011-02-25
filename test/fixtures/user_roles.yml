@@ -1,7 +1,30 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+company_admin:
+  name: company_admin
+  created_at: 2010-11-02 20:11:29.307190 Z
+  updated_at: 2010-11-02 20:11:29.307190 Z
+  id: 1
 
-one:
-  name: MyString
+company_employee:
+  name: company_employee
+  created_at: 2010-11-02 20:11:29.311736 Z
+  updated_at: 2010-11-02 20:11:29.311736 Z
+  id: 2
 
-two:
-  name: MyString
+company_intern:
+  name: company_intern
+  created_at: 2010-11-02 20:11:29.314922 Z
+  updated_at: 2010-11-02 20:11:29.314922 Z
+  id: 3
+
+administrator:
+  name: administrator
+  created_at: 2010-11-02 20:11:29.317910 Z
+  updated_at: 2010-11-02 20:11:29.317910 Z
+  id: 4
+
+support:
+  name: support
+  created_at: 2010-12-13 13:17:10.917131 Z
+  updated_at: 2010-12-13 13:17:10.917131 Z
+  id: 5
