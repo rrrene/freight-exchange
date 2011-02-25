@@ -23,7 +23,7 @@ class CompaniesController < RemoteController
   def create
     @company = Company.new(params[:company])
     @user = User.new(params[:user])
-    @company.valid? # to fill @company.errors
+    @company.valid? # to populate @company.errors
     if @user.valid? && @company.valid?
       @company.save!
       @user.company = @company

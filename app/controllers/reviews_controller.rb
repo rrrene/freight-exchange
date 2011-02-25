@@ -1,9 +1,14 @@
 class ReviewsController < RemoteController
+  login_required
   same_company_required :except => %w(index new create)
   
   def new
     @review = Review.new(params[:review])
-    @review.company_id = params[:company_id]
+    if company_id = params[:company_id]
+      @review.company_id = company_id
+    else
+      raise "Parameter error: company_id required" 
+    end
     new!
   end
   

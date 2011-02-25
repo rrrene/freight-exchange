@@ -182,7 +182,7 @@ module ApplicationHelper
   
   # Renders a partial taking into account the current user's UserRole objects.
   def render_partial(partial, options = {})
-    subs = current_user.roles
+    subs = current_user.full? { |user| user.roles } || []
     subs << :admin if admin?
     render options.merge(:partial => search_for_partial(subs, partial))
   end

@@ -2,13 +2,14 @@ require 'test_helper'
 
 class FreightsControllerTest < ActionController::TestCase
   test "should get new" do
-    #get :new
-    #assert_response :success
+    assert_login_required_for :new
   end
 
   test "should get edit" do
-    #get :edit
-    #assert_response :success
+    user = User.first
+    #assert_login_required(user) do
+    # TODO:  get :edit, :id => user.company.freights.first
+    #end
   end
 
 end
