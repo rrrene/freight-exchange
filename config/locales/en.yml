@@ -668,5 +668,5 @@ en:
         password: "Choose your password carefully"
         password_confirmation: "Please repeat your password"
     actions:
-      create: "Create {{model}}"
+      create: "Create %{model}"
       update: "Save changes"
