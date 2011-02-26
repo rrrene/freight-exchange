@@ -32,6 +32,7 @@ module ActiveRecord
       #    ]
       #  obj.localized_infos!(infos)
       def localized_infos!(array_of_hashes)
+        return if array_of_hashes.blank?
         array_of_hashes.each do |opts|
           if text = opts[:text].full?
             self.localized_info(opts[:name], opts[:lang]).text = text
