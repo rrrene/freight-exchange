@@ -1,13 +1,12 @@
 require 'test_helper'
 
 class UserSessionsControllerTest < ActionController::TestCase
-  
   test "should NOT require login for #new" do
     assert_no_login_required_for :new
   end
   
   test "should login via #create" do
-    post :create, :user_session => {:login => "freight_supplier", :password => dummy_password}
+    post :create, :user_session => {:login => "freight_supplier", :password => 'asdf'}
     assert_response :redirect
   end
   
@@ -15,5 +14,4 @@ class UserSessionsControllerTest < ActionController::TestCase
     post :create, :user_session => {:login => "freight_supplier", :password => 'something'}
     assert_response :success
   end
-  
 end
