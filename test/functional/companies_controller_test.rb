@@ -29,17 +29,36 @@ class CompaniesControllerTest < ActionController::TestCase
     assert_response :redirect
   end
   
-  test "should NOT get #edit without role :company_admin" do
-    with_login(company_employee_user) do |user|
+  test "should get #edit with role :company_admin" do
+    assert_permission_granted(company_admin_user) do |user|
       get :edit, :id => user.company
-      assert_response 401
     end
   end
   
-  test "should get #edit with role :company_admin" do
-    with_login(company_admin_user) do |user|
+  test "should NOT get #edit with role :company_admin" do
+    assert_permission_denied(company_employee_user) do |user|
       get :edit, :id => user.company
-      assert_response :success
+    end
+  end
+  
+  # ===== DOES NOT WORK PROPERLY (YET) =====
+  
+  test "should require role :company_admin for #edit" do
+    assert_role_required(:company_admin) do |user|
+      get :edit, :id => user.company.id
+    end
+  end
+  
+  def assert_role_required(role_to_pass = :company_admin, role_to_fail = :company_employee, &block)
+    # TODO: this doesnot work in the same test.
+    #with_login(user_with_single_role(role_to_pass)) do |user|
+    #  puts "\npass: #{user.user_roles.map(&:name)}"
+    #  puts request.session.inspect
+    #  yield(user)
+    #  assert_response :success
+    #end
+    with_login(user_with_single_role(role_to_fail)) do |user|
+      assert_permission_denied(user, &block)
     end
   end
   

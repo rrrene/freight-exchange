@@ -28,7 +28,7 @@ freight_supplier:
   last_login_at: 
   email: freight_supplier@example.org
 
-loading_space_supplier: 
+company_admin: 
   single_access_token: hSesExquBoqQVQ1XVT
   last_request_at: 
   created_at: 2010-11-02 20:11:29.579821
@@ -51,7 +51,7 @@ loading_space_supplier:
   last_login_at: 
   email: loading_space_supplier@example.org
 
-employee: 
+company_employee: 
   single_access_token: hSesExquBoqQVQ1XVT
   last_request_at: 
   created_at: 2010-11-02 20:11:29.579821
@@ -74,7 +74,7 @@ employee:
   last_login_at: 
   email: loading_space_supplier_employee@example.org
 
-admin: 
+administrator: 
   single_access_token: MtD8kMhumjo7oRJIcPUQ
   last_request_at: 2011-02-03 09:31:20.159391
   created_at: 2010-11-02 20:11:43.044825

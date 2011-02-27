@@ -10,6 +10,14 @@ module LoginTestHelper
     assert_response :success
   end
   
+  def assert_login_required_for(*actions)
+    actions.each do |action|
+      assert_login_required do
+        get action
+      end
+    end
+  end
+  
   def assert_no_login_required(user = standard_user, &block)
     yield(user)
     assert_response :success
@@ -27,12 +35,14 @@ module LoginTestHelper
     end
   end
   
-  def assert_login_required_for(*actions)
-    actions.each do |action|
-      assert_login_required do
-        get action
-      end
-    end
+  def assert_permission_denied(user = nil, &block)
+    login_if_user_present_yield_otherwise(user, &block)
+    assert_response 401
+  end
+  
+  def assert_permission_granted(user = nil, &block)
+    login_if_user_present_yield_otherwise(user, &block)
+    assert_response :success
   end
   
   def login!(user = nil)
@@ -50,7 +60,7 @@ module LoginTestHelper
   end
   
   def logout!
-    UserSession.find.destroy
+    UserSession.find.full?(&:destroy)
   end
   
   def with_login(user = standard_user, &block)
@@ -66,17 +76,30 @@ module LoginTestHelper
   end
   
   def company_admin_user
-    user_with_single_role(:company_admin)
+    role_user(:company_admin)
   end
   
   def company_employee_user
-    user_with_single_role(:company_employee)
+    role_user(:company_employee)
   end
     
+  def login_if_user_present_yield_otherwise(user, &block)
+    if user.blank?
+      yield
+    else
+      with_login(user, &block)
+    end
+  end
+  
   def user_with_single_role(role = :company_admin)
-    user = users(:employee)
-    user.user_roles = [UserRole[role]]
+    user = users(role)
+    if user
+      user.user_roles = [UserRole[role]]
+    else
+      raise "Could not find user '#{role}' in fixtures."
+    end
     user
   end
+  alias role_user user_with_single_role
   
 end
