@@ -2,7 +2,7 @@
 module LoginTestHelper
   # Add more helper methods to be used by all tests here...
   
-  def assert_login_required(&block)
+  def assert_login_required(user = standard_user, &block)
     yield(user)
     assert_response :redirect
     login!(user)
@@ -10,7 +10,7 @@ module LoginTestHelper
     assert_response :success
   end
   
-  def assert_no_login_required(&block)
+  def assert_no_login_required(user = standard_user, &block)
     yield(user)
     assert_response :success
     # TODO: would it be better to include this?
@@ -36,7 +36,7 @@ module LoginTestHelper
   end
   
   def login!(user = nil)
-    user ||= :freight_supplier
+    user ||= standard_user
     user = case user
       when User
         user
@@ -53,15 +53,30 @@ module LoginTestHelper
     UserSession.find.destroy
   end
   
-  def with_login(user = nil, &block)
+  def with_login(user = standard_user, &block)
     login!(user)
-    yield
+    yield(user)
     logout!
   end
   
   private
   
-  def user
-    User.first
+  def standard_user
+    company_admin_user
   end
+  
+  def company_admin_user
+    user_with_single_role(:company_admin)
+  end
+  
+  def company_employee_user
+    user_with_single_role(:company_employee)
+  end
+    
+  def user_with_single_role(role = :company_admin)
+    user = users(:employee)
+    user.user_roles = [UserRole[role]]
+    user
+  end
+  
 end

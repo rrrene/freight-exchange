@@ -1,7 +1,7 @@
 require "demo"
 
 module TestedModelHelper
-  def create_model
+  def create_model(user = standard_user)
     model_factory.create(user)
   end
   

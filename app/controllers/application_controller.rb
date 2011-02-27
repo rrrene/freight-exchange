@@ -136,7 +136,7 @@ class ApplicationController < ActionController::Base
   
   def permission_denied!
     page[:title] = "Permission denied."
-    render :text => "You tried to access a restricted area or function.", :layout => 'content_only'
+    render :text => "You tried to access a restricted area or function.", :layout => 'content_only', :status => 401
     return false
   end
   

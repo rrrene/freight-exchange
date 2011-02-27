@@ -9,7 +9,7 @@ class CompaniesControllerTest < ActionController::TestCase
     assert_no_login_required_for :new
   end
   
-  test "should create new user and company via #new" do
+  test "should create new user and company via #create" do
     params = {
       :company => {
         :name => 'Test Company'
@@ -28,4 +28,19 @@ class CompaniesControllerTest < ActionController::TestCase
     post :create, params
     assert_response :redirect
   end
+  
+  test "should NOT get #edit without role :company_admin" do
+    with_login(company_employee_user) do |user|
+      get :edit, :id => user.company
+      assert_response 401
+    end
+  end
+  
+  test "should get #edit with role :company_admin" do
+    with_login(company_admin_user) do |user|
+      get :edit, :id => user.company
+      assert_response :success
+    end
+  end
+  
 end
