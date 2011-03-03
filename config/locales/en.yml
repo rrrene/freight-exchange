@@ -317,6 +317,8 @@ en:
   user_sessions:
     new:
       page_title: "Login"
+    create:
+      page_title: "Login"
 
 
 #

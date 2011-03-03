@@ -768,7 +768,9 @@ de:
     pm: nachmittags
   user_sessions: 
     new: 
-      page_title: Anmeldung
+      page_title: Willkommen
+    create:
+      page_title: Willkommen
   users: 
     common: 
       edit_link: Bearbeiten

@@ -16,7 +16,7 @@ class CompaniesController < RemoteController
   # a user sees when he originally signs up for the freight exchange.
   def new
     @company = Company.new
-    @user = User.new
+    @user = User.new(:user_roles => [UserRole[:company_admin]])
     @user.build_person
   end
   

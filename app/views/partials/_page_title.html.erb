@@ -7,12 +7,14 @@
       </div>
     </div>
     <div class="span-8 last">
-      <div id="search_form">
-      <%= form_tag search_url, :method => :get do %>
-        <div class="input-wrapper"><%= text_field_tag :q, h(params[:q]), :autocomplete => :off %><%= image_submit_tag("search_button.png") %></div>
-        <div class="advanced-search-wrapper"><%= link_to t("common.sidebar.advanced_search_link"), advanced_search_path %>
+      <% if logged_in? %>
+        <div id="search_form">
+          <%= form_tag search_url, :method => :get do %>
+            <div class="input-wrapper"><%= text_field_tag :q, h(params[:q]), :autocomplete => :off %><%= image_submit_tag("search_button.png") %></div>
+            <div class="advanced-search-wrapper"><%= link_to t("common.sidebar.advanced_search_link"), advanced_search_path %>
+          <% end %>
+        </div>
       <% end %>
-      </div>
     </div>
   </div>
 </div>
