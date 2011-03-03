@@ -69,7 +69,7 @@ BlackBoard::Application.routes.draw do |map|
     end
     resources :user_roles
     resources :users
-    root :to => "setup#redirect"
+    root :to => "root#index"
     match "search", :to => "search#index", :as => :search
   end
 
