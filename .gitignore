@@ -4,7 +4,6 @@
 *.iml
 .idea
 *.tmproj
-Gemfile.lock
 config/database.yml
 db/*.sqlite3
 log/*.log
