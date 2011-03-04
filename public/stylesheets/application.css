@@ -424,6 +424,7 @@ div.frame a.btn-next:hover .icon, a.btn-download:focus .icon {background-positio
 .navibox {
   -webkit-box-shadow: rgba(0, 0, 0, 0.199219) 0px 1px 1px;
   background: -webkit-gradient(linear, 0% 0, 0% 100%, from(#FCFCFC), to(#E8E8E8));
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#FCFCFC',endColorstr='#ECECEC');
   border-bottom-color: whiteSmoke;
   border-bottom-left-radius: 5px 5px;
   border-bottom-right-radius: 5px 5px;
