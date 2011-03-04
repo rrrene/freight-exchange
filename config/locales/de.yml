@@ -697,8 +697,12 @@ de:
   root: 
     about: 
       page_title: Über
-    index: 
+    index:
       page_title: Willkommen
+    welcome:
+      page_title: Software-Prototyp / Online-Frachtenbörse
+      header: "Willkommen!"
+      intro: "Sie können sich nun einloggen (auch ohne Registrierung) oder einen eigenen Account erstellen:"
   search: 
     advanced: 
       display_form_link: "Suche modifizieren"

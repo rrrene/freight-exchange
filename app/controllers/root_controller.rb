@@ -6,24 +6,26 @@
 # Additionally, the RootController also holds information about the app 
 # (e.g. the about action).
 class RootController < ApplicationController
-  login_required :only => [:welcome]
-  
   # The index action decides where the current_user is redirected
   # based on whether or not the app is already set up.
   def index
     if just_set_up?
       redirect_to setup_path
     else
-      redirect_to company_dashboard_url
+      redirect_to :action => 'welcome'
     end
   end
   
   # The welcome action decides what to do with a freshly logged in user.
   def welcome
-    if current_user.company.blank?
-      redirect_to new_company_url
+    if logged_in?
+      if current_user.company.blank?
+        redirect_to new_company_url
+      else
+        redirect_to company_dashboard_url
+      end
     else
-      redirect_to company_dashboard_url
+      #render :layout => 'content_only'
     end
   end
   

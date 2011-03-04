@@ -1,0 +1,10 @@
+<div class="box">
+  <h3><%= t(".header") %></h3>
+  <p>
+    <%= t(".intro") %>
+  </p>
+  <big>
+    <%= link_to_unless_current(t("common.navi.login"), login_path) %> |
+    <%= link_to_unless_current(t("common.navi.register"), register_path) %>
+  </big>
+</div>

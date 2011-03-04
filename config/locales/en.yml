@@ -172,7 +172,10 @@ en:
       page_title: "About"
     index:
       page_title: "Welcome"
-  
+    welcome:
+      page_title: Welcome to the software prototype of an online freight exchange!
+      header: "Welcome"
+      intro: ""
   # PeopleController
   people:
     common:
