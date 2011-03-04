@@ -460,6 +460,7 @@ div.frame a.btn-next:hover .icon, a.btn-download:focus .icon {background-positio
   background-color: transparent;
   background-image: -webkit-gradient(linear, 50% 100%, 50% 0%, from(#ECECEC), to(#F4F4F4));
   background-origin: padding-box;
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#F4F4F4',endColorstr='#ECECEC');
   border-bottom-color: #D4D4D4;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
