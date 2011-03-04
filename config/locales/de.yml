@@ -514,7 +514,7 @@ de:
       edit_link: "Inserat bearbeiten"
       new_link: "Weiteres Inserat erstellen"
       required_field_hint: "Die mit einem (*) gekennzeichneten Felder sind Pflichtfelder:"
-      template_link: "Als Vorlage benutzen"
+      template_link: "Als Vorlage"
     create: 
       header: "Neues Inserat"
       page_title: "Neues Inserat"
@@ -534,7 +534,7 @@ de:
         options: 
           delete: Löschen
           edit: Bearbeiten
-          template: "Als Vorlage verwenden"
+          template: "Als Vorlage"
     new: 
       header: "Neues Inserat"
       page_title: "Inserat erstellen"
@@ -562,7 +562,7 @@ de:
       edit_link: Bearbeiten
       new_link: "Weiteres Inserat erstellen"
       required_field_hint: "Die mit einem (*) gekennzeichneten Felder sind Pflichtfelder:"
-      template_link: "Als Vorlage verwenden"
+      template_link: "Als Vorlage"
     create: 
       page_title: "Neues Inserat"
     edit: 
@@ -581,7 +581,7 @@ de:
         options: 
           delete: Löschen
           edit: Bearbeiten
-          template: "Als Vorlage benutzen"
+          template: "Als Vorlage"
     new: 
       header: "Neues Inserat"
       page_title: "Neues Inserat"
@@ -637,7 +637,7 @@ de:
       edit_link: "Person bearbeiten"
       edit_user_link: "Benutzeraccount bearbeiten"
       new_link: "Neuen Benutzer erstellen"
-      template_link: "Als Vorlage verwenden"
+      template_link: "Als Vorlage"
     edit: 
       header: "Persönliche Angaben"
       page_title: "Person bearbeiten"
@@ -761,7 +761,7 @@ de:
   time: 
     am: vormittags
     formats: 
-      date: "%d.&m.%Y"
+      date: "%d.%m.%Y"
       default: "%a, %d %b %Y %H:%M:%S %z"
       long: "%B %d, %Y %H:%M"
       short: "%d %b %H:%M"
