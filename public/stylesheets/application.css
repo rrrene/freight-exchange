@@ -439,6 +439,7 @@ div.frame a.btn-next:hover .icon, a.btn-download:focus .icon {background-positio
   -moz-border-radius-topleft:0;
   -moz-border-radius-topright:0;
   -moz-box-shadow:0 1px 1px rgba(0, 0, 0, 0.2);
+  background:#FCFCFC;
   background:-moz-linear-gradient(270deg, #FCFCFC, #ECECEC) repeat scroll 0 0 transparent;
   border-color:#E9E9E9 #E9E9E9 #F5F5F5;
   border-style:solid;
@@ -453,6 +454,7 @@ div.frame a.btn-next:hover .icon, a.btn-download:focus .icon {background-positio
 #sidebar .create_new_loading_space {
   -moz-border-radius:5px 5px 5px 5px;
   -moz-box-shadow:0 1px 0 #ECECEC;
+  background: #ECECEC;
   background: -moz-linear-gradient(90deg, #ECECEC, #F4F4F4) repeat scroll 0 0 transparent;
   -webkit-box-shadow: #ECECEC 0px 1px 0px 0px;
   background-attachment: scroll;
@@ -461,22 +463,8 @@ div.frame a.btn-next:hover .icon, a.btn-download:focus .icon {background-positio
   background-image: -webkit-gradient(linear, 50% 100%, 50% 0%, from(#ECECEC), to(#F4F4F4));
   background-origin: padding-box;
   filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#F4F4F4',endColorstr='#ECECEC');
-  border-bottom-color: #D4D4D4;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-left-color: #D4D4D4;
-  border-left-style: solid;
-  border-left-width: 1px;
-  border-right-color: #D4D4D4;
-  border-right-style: solid;
-  border-right-width: 1px;
-  border-top-color: #D4D4D4;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  border-top-style: solid;
-  border-top-width: 1px;
+  border: 1px solid  #D4D4D4;
+  border-radius: 5px;
   color: #666;
   cursor: auto;
   display: block;
