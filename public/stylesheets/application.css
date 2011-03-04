@@ -75,10 +75,14 @@ ul.navigation-lang {
   margin-top: 8px;
 }
 
+.float_left,
 .navigation-left {
+  display: block;
   float: left;
 }
+.float_right,
 .navigation-right {
+  display: block;
   float: right;
 }
 

@@ -1,8 +1,9 @@
 <% content_for(:sidebar) do %>
   <div class="box">
     <h3>
-      <%= t "common.sidebar.company_information.header" %>
+      <%= float_tag t("common.sidebar.company_information.header") %>
       <%= link_btn t("common.sidebar.company_information.show"), company_path(company), :class => 'show', :icon => :show %>
+      <%= clear_both %>
     </h3>
 
     <table>

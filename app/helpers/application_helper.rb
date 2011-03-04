@@ -66,6 +66,10 @@ module ApplicationHelper
     controller.controller_name == name
   end
   
+  def float_tag(text, dir = :left)
+    content_tag :span, text, :class => "float_#{dir}"
+  end
+  
   # Returns a HTML formatted version of <tt>text</tt>.
   # 
   # Example:
