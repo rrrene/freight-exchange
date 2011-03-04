@@ -12,7 +12,7 @@ html, body {
 div.header {
 }
 div.frame {
-background: url(frame_bg.png) center top no-repeat;
+  background: url(frame_bg.png) center top no-repeat;
   min-height: 650px;
 }
 div.footer {
