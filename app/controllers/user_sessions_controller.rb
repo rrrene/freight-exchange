@@ -19,10 +19,6 @@ class UserSessionsController < ApplicationController
     end
   end
   
-  def new
-    @user_session = UserSession.new
-  end
-  
   # Authenticates a User by creating and saving a UserSession.
   def create
     @user_session = UserSession.new(params[:user_session])
@@ -32,6 +28,14 @@ class UserSessionsController < ApplicationController
     else
       render :action => :new
     end
+  end
+  
+  # this is kind of a bugfix:
+  # after an unsuccessful POST to index (#create),
+  # a reload caused a 'no such action' error 
+  # (because it's a GET request now)
+  def index
+    render :action => :new
   end
   
   # Logs a user out.
