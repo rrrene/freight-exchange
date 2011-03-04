@@ -509,13 +509,16 @@ div.frame a.btn-next:hover .icon, a.btn-download:focus .icon {background-positio
 
 #sidebar .create_new_freight:hover,
 #sidebar .create_new_loading_space:hover {
-  background: -webkit-gradient(linear, 50% 100%, 50% 0%, from(#3570B8), to(#5E9AE2));
-  background:-moz-linear-gradient(90deg, #558BCB, #336FB7) repeat scroll 0 0 transparent;
+  cursor: pointer;
+  text-shadow: #2E63A5 0px -1px 0px;
   border: 1px solid #2E63A5;
   color: white;
-  cursor: pointer;
   text-decoration: none;
-  text-shadow: #2E63A5 0px -1px 0px;
+  text-shadow: 0 -1px 0 #2E63A5;
+  background: #3570B8;
+  background: -webkit-gradient(linear,center bottom,center top,from(#3570B8),to(#5E9AE2));
+  background: -moz-linear-gradient(90deg,#3570B8,#5E9AE2);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#3570B8',endColorstr='#5E9AE2');
 }
 
 /* Action lists */
