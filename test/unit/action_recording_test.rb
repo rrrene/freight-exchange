@@ -1,8 +1,6 @@
 require 'test_helper'
 
 class ActionRecordingTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
-  test "the truth" do
-    assert true
-  end
+  should belong_to(:user)
+  should belong_to(:company)
 end

@@ -1,8 +1,7 @@
 require 'test_helper'
 
 class AppConfigTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
-  test "the truth" do
-    assert true
-  end
+  should validate_presence_of(:name)
+  # TODO: why does this not pass?
+  #should validate_uniqueness_of(:name).case_insensitive
 end

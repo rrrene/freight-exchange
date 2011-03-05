@@ -77,5 +77,5 @@ class UserRole < ActiveRecord::Base
     users.count / User.count.to_f
   end
   
-  validates_uniqueness_of :name
+  validates_uniqueness_of :name, :case_insensitive => false
 end

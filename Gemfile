@@ -47,6 +47,6 @@ gem 'phone'
 
 # Bundle gems for certain environments:
 # gem 'rspec', :group => :test
-# group :test do
-#   gem 'webrat'
-# end
+group :test do
+  gem 'shoulda'
+end

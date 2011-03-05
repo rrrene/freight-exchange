@@ -1,8 +1,8 @@
 require 'test_helper'
 
 class ReviewTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
-  test "the truth" do
-    assert true
-  end
+  should belong_to(:author_user)
+  should belong_to(:author_company)
+  should belong_to(:company)
+  should validate_presence_of(:text)
 end

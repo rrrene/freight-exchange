@@ -51,5 +51,5 @@ class AppConfig < ActiveRecord::Base
   end
   
   validates_presence_of :name, :message => "can't be blank"
-  validates_uniqueness_of :name, :message => "must be unique"
+  validates_uniqueness_of :name, :case_insensitive => false, :message => "must be unique"
 end
