@@ -3,6 +3,7 @@
   <% %w(origin destination).each do |site| %>
     <div class="form_site_info" style="float: left; width: 295px;">
       <fieldset class="inputs">
+        <legend><%= t("search.advanced.#{site}.header") %></legend>
         <ol>
           <%= search_input_contains :"#{site}_site_info", :contractor %>
 

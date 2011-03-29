@@ -66,8 +66,16 @@ module SearchHelper
   end
   
   def wrap_search_input(field, content, opts = {})
-    lbl = label_tag(field.to_s.html_safe << opts[:keyword].full? { |f| " (#{f})" }.to_s)
+    lbl = label_tag(field, label_text(field, content, opts))
     content_tag(:li, lbl << ' ' << content, :class => opts[:class] || :string)
+  end
+  
+  def label_text(field, content, opts = {})
+    # this is an evil hack. general fields such as weight are wrongfully supposed to be in :destination
+    site = content.to_s =~ /origin/ ? :origin : :destination
+    field_translation = t("search.advanced.#{site}.fields.#{field}")
+    keyword_translation = t("search.advanced.keyword_#{opts[:keyword]}")
+    field_translation.html_safe << keyword_translation.full? { |f| " (#{f})" }.to_s
   end
   
 end

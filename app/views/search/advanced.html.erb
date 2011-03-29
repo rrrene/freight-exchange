@@ -5,7 +5,7 @@
     </p>
   <% end %>
   <div id="advanced_search" <% if searched? %>style="display: none;"<% end %>>
-    <%= render 'advanced_search_form' %>
+    <%= render :partial => 'advanced_search_form' %>
   </div>
   
   <% if searched? %>

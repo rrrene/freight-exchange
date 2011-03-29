@@ -709,6 +709,55 @@ de:
       display_form_link: "Suche modifizieren"
       page_title: "Erweiterte Suche"
       submit: Suche
+      origin:
+        header: Beladestelle
+        fields:
+          date: Datum
+          address: Straße
+          address2: "Straße (Fortsetzung)"
+          address_template_label: "Adressvorlage benutzen:"
+          city: Stadt
+          country: Land
+          name: Bahnhof
+          contractor: "Firma Versender"
+          side_track_available: "Gleisanschluss vorhanden"
+          track_number: Gleisnr.
+          zip: PLZ
+      destination:
+        header: Entladestelle
+        fields:
+          date: Datum
+          address: Straße
+          address2: "Straße (Fortsetzung)"
+          address_template_label: "Adressvorlage benutzen:"
+          city: Stadt
+          country: Land
+          contractor: "Firma Empfänger"
+          name: Bahnhof
+          side_track_available: "Gleisanschluss vorhanden"
+          track_number: Gleisnr.
+          zip: PLZ
+          # these do not belong to destination - see search_helper why they are required here
+          contact_person: Kontaktperson
+          desired_proposal_type: "Angebot gewünscht als"
+          destination_date: Bis
+          hazmat: Gefahrengut
+          loading_meter: Lademeter
+          goods_text: Gutart
+          misc_text: "Sonstige Infos"
+          transport_text: "Welche Wagen sollen verwendet werden (ggf. Alternativen)?"
+          origin_date: Von
+          paying_freight: Frachtzahler
+          transport_type: Transportart
+          transport_weight: "Gewicht pro Transport"
+          transports_per_year: "Transporte pro Jahr"
+          wagons_provided_by: "Wagen werden gestellt von"
+          weight: "Gesamtgewicht (in t)"
+        
+      keyword_is: ""
+      keyword_contains: enthält
+      keyword_from: von
+      keyword_to: bis
     common: 
       button: Suche
       results: 

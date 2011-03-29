@@ -256,10 +256,55 @@ en:
         station_results:
           header: "Stations found:"
     advanced:
-      page_title: "Advanced search"
       display_form_link: "Modify your search"
-      submit: "Search"
-      
+      page_title: "Advanced search"
+      submit: Search
+      origin:
+        header: Origin
+        fields:
+          date: Date
+          address: Street
+          address2: "Street (continued)"
+          city: City
+          country: Country
+          contractor: "Contractor Sender"
+          name: Station
+          side_track_available: "Side track available"
+          track_number: Track number
+          zip: ZIP
+      destination:
+        header: Destination
+        fields:
+          date: Date
+          address: Street
+          address2: "Street (continued)"
+          city: City
+          country: Country
+          contractor: "Contractor Receiver"
+          name: Station
+          side_track_available: "Side track available"
+          track_number: Track number
+          zip: ZIP
+          # these do not belong to destination - see search_helper why they are required here
+          weight: "Weight (in t)"
+          hazmat: "Harzardous material"
+          wagons_provided_by: "Wagons provided by"
+          paying_freight: "Freight paid by"
+          transport_type: "Transport type"
+          transports_per_year: "Transports per year"
+          transport_weight: "Weight per transport (in t)"
+          transport_type: "Transport type"
+          loading_meter: "Loading meter"
+          desired_proposal_type: "Desired proposal type"
+          contact_person: "Contact Person"
+          goods_text: "Type of Goods"
+          misc_text: "Additional information"
+          transport_text: "Which kind of wagons are required?"
+        
+      keyword_is: ""
+      keyword_contains: contains
+      keyword_from: from
+      keyword_to: to      
     index:
       page_title: "Search"
       no_results: "There are no results."
