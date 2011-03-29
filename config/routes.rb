@@ -8,6 +8,9 @@ BlackBoard::Application.routes.draw do |map|
   match "tolk_dump_all" => 'setup#tolk_dump_all', :as => :tolk_dump_all
   
   resources :reviews do
+    collection do
+      get :created
+    end
     member do
       post :approve
     end

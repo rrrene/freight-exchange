@@ -687,6 +687,9 @@ de:
     new: 
       header: "Bewertung über '{{company_name}}' schreiben"
       page_title: "Bewertung schreiben"
+    created: 
+      page_title: "Bewertung gesendet"
+      hint: "Ihre Bewertung wurde erfolgreich abgeschickt."
     show: 
       approve_link: Veröffentlichen
       delete_link: "Bewertung löschen"

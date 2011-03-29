@@ -215,6 +215,9 @@ en:
     new:
       page_title: "Review Company"
       header: "Write a review about '{{company_name}}'"
+    created: 
+      page_title: "Review created"
+      hint: "Your review has been submitted."
     index:
       page_title: "All reviews"
       header: "All reviews"

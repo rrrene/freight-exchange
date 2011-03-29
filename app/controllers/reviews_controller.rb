@@ -1,6 +1,6 @@
 class ReviewsController < RemoteController
   login_required
-  same_company_required :except => %w(index new create)
+  same_company_required :except => %w(index new create created)
   
   def new
     @review = Review.new(params[:review])
@@ -26,7 +26,9 @@ class ReviewsController < RemoteController
     @company = @review.company
     @review.author_user_id = current_user.id
     @review.author_company_id = current_company.id
-    create!
+    if @review.save
+      redirect_to :action => :created
+    end
   end
   
   def index
