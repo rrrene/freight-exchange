@@ -78,6 +78,7 @@ en:
       page_title: "Edit company"
     show:
       page_title: "{{name}}"
+      edit_company_link: "Edit profile"
       header_misc_text: "About us:"
       header_people: "Who works here?"
       header_reviews: "What are others saying?"

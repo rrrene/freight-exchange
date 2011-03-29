@@ -343,6 +343,7 @@ de:
       intro: "Erstellen Sie Ihr Konto in einer Minute!"
       page_title: "Ihre Firma registrieren"
     show: 
+      edit_company_link: "Profil bearbeiten"
       header_misc_text: "Wir über uns:"
       header_people: "Wer wir sind:"
       header_reviews: "Was andere über uns sagen:"

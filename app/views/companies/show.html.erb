@@ -64,6 +64,9 @@
 
   <% content_for(:toolbar) do %>
     <%= link_btn t("common.create_new_review"), new_review_url(:company_id => @company.id), :icon => 'reply' %>
+    <% if resource == current_user.company %>
+      <%= link_btn t(".edit_company_link"), edit_company_path(@company), :icon => 'edit' %>
+    <% end %>
   <% end %>
 
   <% content_for(:sidebar) do %>
