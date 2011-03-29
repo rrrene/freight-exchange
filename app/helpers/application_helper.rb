@@ -153,7 +153,7 @@ module ApplicationHelper
               :locals => {:f => f, :name => name, :lang => lang}})
   end
   
-  def localized_info_fields(f, name, locales = I18n.available_locales)
+  def localized_info_fields(f, name, locales = [:de, :en])
     render({:partial => '/partials/localized_info_fields',
               :locals => {:f => f, :name => name, :locales => locales}})
   end
