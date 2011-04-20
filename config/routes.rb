@@ -21,7 +21,11 @@ BlackBoard::Application.routes.draw do |map|
   resources :people
 
   resources :freights
-  resources :companies
+  resources :companies do
+    member do
+      get :postings
+    end
+  end
 
   resources :stations
   resources :postings

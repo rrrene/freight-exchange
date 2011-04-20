@@ -28,6 +28,7 @@ en:
         please_edit_notice: "Please add more information to your company's profile."
         edit: "Edit info"
         show: "View profile"
+        postings: "View all postings"
       person_information: 
         header: "Contact information"
         please_edit_notice: "Please add more information to your personal profile."
@@ -82,6 +83,8 @@ en:
       header_misc_text: "About us:"
       header_people: "Who works here?"
       header_reviews: "What are others saying?"
+    postings:
+      page_title: "All company postings"
   
   # FreightsController
   freights:
