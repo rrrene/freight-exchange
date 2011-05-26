@@ -1,0 +1,28 @@
+<%= generated_header %>
+<%-
+  @table_schema = if %w(freights loading_spaces reviews site_infos).include?(@table)
+    'p{.3\textwidth}|p{.09\textwidth}|p{.35\textwidth}|p{.15\textwidth}'
+  elsif %w(companies people users).include?(@table)
+    'p{.3\textwidth}|p{.09\textwidth}|p{.26\textwidth}|p{.24\textwidth}'
+  end
+  @table_schema ||= 'l|p{.09\textwidth}|p{.4\textwidth}|l'
+  
+  @table_schema = 'p{.3\textwidth}|p{.09\textwidth}|p{.26\textwidth}|p{.24\textwidth}'
+-%>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Typ</th>
+    <th>Beschreibung</th>
+    <th>Beispiel</th>
+  </tr>
+  <%- @fields.each do |field| -%>
+    <tr>
+      <td><%= field[:name] %> </td>
+      <td> <%= field[:type].capitalize %> </td>
+      <td> <%= field[:description] %> </td>
+      <td> <%= field[:example].is_a?(String) ? %Q("`#{field[:example]}"') : field[:example] %></td>
+    </tr>
+  <%- end -%>
+</table>
+Struktur der "`<%= @table.gsub('_', '\_') %>"'-Datenbanktabelle

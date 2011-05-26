@@ -3,7 +3,7 @@
 class Doc < Thor
   include Thor::Actions
   source_root '.'
-  include Thesis
+  include ::Thesis
 
   desc "app", "Generates the RDOC HTML files for the app"
   def app
@@ -106,6 +106,7 @@ class Doc < Thor
         @fields[i] = field_hash
       end
       template "lib/tasks/templates/table.tex.erb", "doc/tex/schema/#{table}.tex", template_options
+      template "lib/tasks/templates/table.html.erb", "doc/tex/schema/#{table}.html", template_options
       success "#{table} generated"
     end
     #puts "{"
@@ -178,7 +179,7 @@ class Doc < Thor
       },
       "freights" => {
         :user_id => {:description => "Verweis auf den Benutzer, dem das Objekt gehört", :example => 1},
-        :company_id => {:description => "Verweis auf die Firma, zu der das Objekt gehört", :example => 1},
+        :company_id => {:description => "Verweis auf das Unternehmen, zu der das Objekt gehört", :example => 1},
         :origin_site_info_id => {:description => "Verweis auf den Startort", :example => 34},
         :destination_site_info_id => {:description => "Verweis auf den Zielort", :example => 35},
         :weight => {:description => "Gesamtgewicht (in t)", :example => 52_000},
@@ -194,7 +195,7 @@ class Doc < Thor
       },
       "loading_spaces" => {
         :user_id => {:description => "Verweis auf den Benutzer, dem das Objekt gehört", :example => 1},
-        :company_id => {:description => "Verweis auf die Firma, zu der das Objekt gehört", :example => 1},
+        :company_id => {:description => "Verweis auf das Unternehmen, zu der das Objekt gehört", :example => 1},
         :origin_site_info_id => {:description => "Verweis auf den Startort", :example => 34},
         :destination_site_info_id => {:description => "Verweis auf den Zielort", :example => 35},
         :weight => {:description => "Gesamtgewicht (in t)", :example => 52_000},
@@ -207,7 +208,7 @@ class Doc < Thor
         :contact_person_id => {:description => "Verweis auf die Person, die Ansprechpartner sein soll", :example => 1},
       },
       "companies" => {
-        :name => {:description => "Name der Firma", :example => "Mustermann GmbH"},
+        :name => {:description => "Name des Unternehmens", :example => "Mustermann GmbH"},
         :contact_person => {:description => "", :example => ""},
         :phone => {:description => "Festnetznummer", :example => "0123-5436895"},
         :fax => {:description => "Faxnummer", :example => "0123-5436896"},
@@ -239,7 +240,7 @@ class Doc < Thor
         :action => {:description => "Art der ausgeführten Aktion", :example => :create},
         :diff => {:description => "Zusammenfassung aller getätigten Änderungen in Form eines serialisierten Hash-Objekts", :example => "\\{weight: [50, 60]\\}"},
         :user_id => {:description => "Verweis auf den Benutzer, dem das Objekt gehört", :example => 1},
-        :company_id => {:description => "Verweis auf die Firma, zu der das Objekt gehört", :example => 1},
+        :company_id => {:description => "Verweis auf das Unternehmen, zu der das Objekt gehört", :example => 1},
       },
       "matching_recordings" => {
         :a_type => {:description => "Verweist auf den Typ des A-Objekts", :example => "Freight"},
@@ -250,9 +251,9 @@ class Doc < Thor
       },
       "reviews" => {
         :author_user_id => {:description => "Verweis auf den Benutzer, der die Bewertung erstellt hat", :example => 1},
-        :author_company_id => {:description => "Verweis auf die Firma, deren Benutzer die Bewertung erstellt hat", :example => 1},
+        :author_company_id => {:description => "Verweis auf das Unternehmen, deren Benutzer die Bewertung erstellt hat", :example => 1},
         :approved_by_id => {:description => "Verweis auf den Benutzer, der die Bewertung freigegeben hat", :example => 2},
-        :company_id => {:description => "Verweis auf die Firma, zu der die Bewertung gehört", :example => 1},
+        :company_id => {:description => "Verweis auf das Unternehmen, zu der die Bewertung gehört", :example => 1},
         :text => {:description => "Text der Bewertung", :example => "Danke für die..."},
       },
       "users" => {
@@ -268,7 +269,7 @@ class Doc < Thor
         :current_login_ip => {:description => "Aktuelle IP", :example => "192.188.142.11"},
         :last_login_ip => {:description => "Letzte IP", :example => "192.188.142.11"},
         :posting_type => {:description => "Verweis auf die Inserate, die der Benutzer einstellt", :example => "Freight"},
-        :company_id => {:description => "Verweis auf die Firma, zu der der Benutzer gehört", :example => 1},
+        :company_id => {:description => "Verweis auf das Unternehmen, zu der der Benutzer gehört", :example => 1},
         :person_id => {:description => "Verweis auf die Person, zu der der Benutzer gehört", :example => 1},
         :api_key => {:description => "Alphanumberischer Schlüssel zur Ansteuerung der XML/JSON-API", :example => "55024db979..."}, #55024db979499d5568f0859d046da09f47234a74
       },
