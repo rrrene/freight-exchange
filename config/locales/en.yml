@@ -92,11 +92,12 @@ en:
     freights:
       page_title: "Freights"
       header: "Freights of %{company}"
-      intro: "Here you can see all freights of this company."
+      intro: "Here you can see all freights."
     loading_spaces:
       page_title: "Loading Spaces"
-      intro: "Here you can see all loading spaces of this company."
-      header: "Loading Spaces of %{company}"# FreightsController
+      intro: "Here you can see all loading spaces."
+      header: "Loading Spaces of %{company}"
+  # FreightsController
   freights:
     common:
       edit_link: "Edit this posting"

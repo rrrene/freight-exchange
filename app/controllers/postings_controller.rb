@@ -30,10 +30,11 @@ class PostingsController < RemoteController
   end
   
   def index
-#    self.collection = resource_class.scoped #.where(:company_id => current_company.id) #.sort_by { |posting| posting.origin_site_info.date }
+    self.collection = resource_class.scoped
+    @count = resource_class.count
     index!
   end
-  
+
   def update
     self.resource = resource_class.find(params[:id])
     resource.localized_infos = params[resource_key].delete(:localized_infos)

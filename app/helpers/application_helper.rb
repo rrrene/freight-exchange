@@ -79,6 +79,17 @@ module ApplicationHelper
   def format_multiline_input(text)
     simple_format(h(text)).html_safe
   end
+
+  # Returns :freights if the user is currently looking at
+  # freights and :loading_spaces if otherwise
+  def freights_or_loading_spaces?
+    arr = %w(freights loading_spaces)
+    if arr.include?(controller_name)
+      controller_name
+    elsif arr.include(action_name)
+      action_name
+    end
+  end
   
 
   #:call-seq:

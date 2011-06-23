@@ -24,7 +24,7 @@
               <%= link_btn t('freights.index.table.options.delete'), ar, :method => :delete, :confirm => t('common.confirm'), :class => 'destroy' %>
             </td>
           <% else %>
-            <td class="company_name"><%= link_to ar.company.name, ar.company %></td>
+            <td class="company_name"><%= link_to ar.company.name, :controller => :companies, :action => freights_or_loading_spaces?, :id => ar.company %></td>
           <% end %>
         </tr>
       <% end %>
