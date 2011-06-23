@@ -66,5 +66,21 @@ jQuery(function() {
       jQuery(this).removeClass('mousedown');
     }
   });
-  
+
+  var elements = [
+    "#freight_origin_site_info_attributes_side_track_available_false",
+    "#freight_destination_site_info_attributes_side_track_available_false",
+    "#loading_space_origin_site_info_attributes_side_track_available_false",
+    "#loading_space_destination_site_info_attributes_side_track_available_false"
+  ];
+  $(elements).each(function(index, element) {
+    $(element).bind({
+      'click': function() {
+        if( $(this).attr('checked') ) {
+          $('#freight_transport_type').val('intermodal_transport');
+          $('#loading_space_transport_type').val('intermodal_transport');
+        }
+      }
+    });
+  });
 });

@@ -687,7 +687,7 @@ en:
           single_wagon: "Single wagon"
           train_set: "Train set"
           block_train: "Block train"
-          intermodal_transport: Intermodal transport
+          intermodal_transport: "Intermodal transport"
       loading_space:
         transport_type:
           single_wagon: "Single wagon"
