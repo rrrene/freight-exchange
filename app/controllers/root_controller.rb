@@ -22,7 +22,7 @@ class RootController < ApplicationController
       if current_user.company.blank?
         redirect_to new_company_url
       else
-        redirect_to company_dashboard_url
+        redirect_to freights_url
       end
     else
       #render :layout => 'content_only'

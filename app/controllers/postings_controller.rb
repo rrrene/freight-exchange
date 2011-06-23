@@ -30,7 +30,7 @@ class PostingsController < RemoteController
   end
   
   def index
-    self.collection = resource_class.where(:company_id => current_company.id).sort_by { |posting| posting.origin_site_info.date }
+#    self.collection = resource_class.scoped #.where(:company_id => current_company.id) #.sort_by { |posting| posting.origin_site_info.date }
     index!
   end
   
@@ -53,25 +53,6 @@ class PostingsController < RemoteController
         @search_recording = SearchRecording.create(opts)
       end
     }
-  end
-  
-  private
-  
-  def collection=(val)
-    instance_variable_set("@#{collection_name}", val)
-  end
-  
-  def collection_name
-    instance_name.pluralize
-  end
-  
-  def instance_name
-    controller_name.classify.underscore
-  end
-  alias resource_key instance_name
-  
-  def resource=(val)
-    instance_variable_set("@#{instance_name}", val)
   end
   
 end

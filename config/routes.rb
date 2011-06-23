@@ -15,21 +15,21 @@ BlackBoard::Application.routes.draw do |map|
       post :approve
     end
   end
-  
-  resources :loading_spaces
+
 
   resources :people
 
+  resources :loading_spaces
   resources :freights
+  
   resources :companies do
     member do
-      get :postings
+      get :freights
+      get :loading_spaces
     end
   end
 
   resources :stations
-  resources :postings
-  resources :loading_spaces, :controller => :postings
   resources :users
 
   match "about" => "root#about", :as => :about

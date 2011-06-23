@@ -1,11 +1,8 @@
 <div id="sidebar" class="span-8 last">
   <% if logged_in? && current_user.is?(:company_admin) %>
     <p>
-      <% if posting_freights? %>
-        <%= link_to t("common.create_new_freight"), new_freight_url, :class => 'create_new_freight' %>
-      <% else %>
-        <%= link_to t("common.create_new_loading_space"), new_loading_space_url, :class => 'create_new_loading_space' %>
-      <% end %>
+      <%= link_to t("common.create_new_freight"), new_freight_url, :class => 'create_new_freight' %>
+      <%= link_to t("common.create_new_loading_space"), new_loading_space_url, :class => 'create_new_loading_space' %>
     </p>
   <% end %>
   <%= clear_both %>

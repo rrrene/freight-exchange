@@ -21,6 +21,8 @@ en:
       select_locale: "Select language:"
       locale_de: "Deutsch"
       locale_en: "English"
+      my_freights: "My Freights"
+      my_loading_spaces: "My Loading Spaces"
     sidebar:
       advanced_search_link: "Advanced search"
       company_information: 
@@ -38,8 +40,8 @@ en:
     choice_yes: "Yes"
     choice_no: "No"
     confirm: "Are you sure?"
-    create_new_freight: "Create a new posting"
-    create_new_loading_space: "Create a new posting"
+    create_new_freight: "Create a new freight"
+    create_new_loading_space: "Create a new loading space"
     create_new_review: "Write a review!"
     deleted_object: "-- deleted object --"
     link_back: "Back"
@@ -86,7 +88,15 @@ en:
     postings:
       page_title: "All company postings"
   
-  # FreightsController
+
+    freights:
+      page_title: "Freights"
+      header: "Freights of %{company}"
+      intro: "Here you can see all freights of this company."
+    loading_spaces:
+      page_title: "Loading Spaces"
+      intro: "Here you can see all loading spaces of this company."
+      header: "Loading Spaces of %{company}"# FreightsController
   freights:
     common:
       edit_link: "Edit this posting"

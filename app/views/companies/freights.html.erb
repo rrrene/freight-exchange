@@ -1,0 +1,14 @@
+<div class="box">
+  <h3>
+    <%= float_tag t("companies.freights.header", :company => resource.name) %>
+    <% if resource == current_company %>
+      <%= link_btn t("freights.common.new_link"), new_freight_path, :icon => 'new' %>
+    <% end %>
+    <%= clear_both %>
+  </h3>
+  <p>
+    <%= t('companies.freights.intro') %>
+  </p>
+
+  <%= render :partial => "freights/postings" %>
+</div>

@@ -1,0 +1,14 @@
+<div class="box">
+  <h3>
+    <%= float_tag t("companies.loading_spaces.header", :company => resource.name) %>
+    <% if resource == current_company %>
+      <%= link_btn t("loading_spaces.common.new_link"), new_loading_space_path, :icon => 'new' %>
+    <% end %>
+    <%= clear_both %>
+  </h3>
+  <p>
+    <%= t('companies.loading_spaces.intro') %>
+  </p>
+
+  <%= render :partial => "loading_spaces/postings" %>
+</div>

@@ -37,4 +37,24 @@ class RemoteController < ApplicationController
       page[:title] = t("#{controller_catalog}.show.page_title", {:name => resource.name})
     }
   end
+
+  private
+
+  def collection=(val)
+    instance_variable_set("@#{collection_name}", val)
+  end
+
+  def collection_name
+    instance_name.pluralize
+  end
+
+  def instance_name
+    controller_name.classify.underscore
+  end
+  alias resource_key instance_name
+
+  def resource=(val)
+    instance_variable_set("@#{instance_name}", val)
+  end
+    
 end

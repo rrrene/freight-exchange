@@ -293,8 +293,8 @@ de:
     choice_yes: Ja
     choose: "-- Wählen --"
     confirm: "Sind Sie sicher?"
-    create_new_freight: "Neues Inserat erstellen"
-    create_new_loading_space: "Neues Inserat erstellen"
+    create_new_freight: "Neues Frachtraum erstellen"
+    create_new_loading_space: "Neues Laderaum erstellen"
     create_new_review: "Bewertung schreiben!"
     deleted_object: "---gelöschtes Objekt---"
     link_back: Zurück

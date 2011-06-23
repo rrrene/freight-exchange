@@ -1,0 +1,24 @@
+<table class="postings">
+  <thead>
+    <tr>
+      <th><%= t('loading_spaces.index.table.headers.date') %></th>
+      <th><%= t('loading_spaces.index.table.headers.origin') %></th>
+      <th><%= t('loading_spaces.index.table.headers.destination') %></th>
+      <th class="options"><%= t('loading_spaces.index.table.headers.options') %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% collection.each do |ar| %>
+      <tr class="<%= ar.origin_site_info.date < Time.now ? :old : :new %>">
+        <td class="origin_date"><%= link_to ar.origin_site_info.date, ar %></td>
+        <td class="origin_name"><%= ar.origin_site_info.name %></td>
+        <td class="destination_name"><%= ar.destination_site_info.name %></td>
+        <td class="options">
+          <%= link_btn t('loading_spaces.index.table.options.template'), new_resource_url(:parent_id => ar.id), :icon => :reply %>
+          <%= link_btn t('loading_spaces.index.table.options.edit'), {:action => 'edit', :id => ar}, :icon => :edit %>
+          <%= link_btn t('loading_spaces.index.table.options.delete'), ar, :method => :delete, :confirm => t('common.confirm'), :class => 'destroy' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
