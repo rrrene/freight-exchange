@@ -127,6 +127,8 @@ en:
           destination: "Destination"
           options: "Options"
           company: "Company"
+          weight: "Weight"
+          transport_type: "Type"
         options:
           edit: "Edit"
           delete: "Delete"
@@ -674,6 +676,7 @@ en:
     human_attribute_values:
       freight:
         paying_freight:
+          unknown: "-- unknown --"
           sender: "Sender"
           receiver: "Receiver"
         wagons_provided_by:
@@ -681,18 +684,22 @@ en:
           railway: "Railway"
           wanted: "Wagons wanted"
         desired_proposal_type:
+          unknown: "unknown"
           ton_price: "Price per ton"
           package_price: "Package price"
         transport_type:
+          unknown: "-- unknown --"
           single_wagon: "Single wagon"
           train_set: "Train set"
           block_train: "Block train"
           intermodal_transport: "Intermodal transport"
       loading_space:
         transport_type:
+          unknown: "-- unknown --"
           single_wagon: "Single wagon"
           train_set: "Train set"
           block_train: "Block train"
+          intermodal_transport: "Intermodal transport"
       person:
         gender:
           male: "Mr."

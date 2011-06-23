@@ -4,10 +4,10 @@
 # and several LocalizedInfo objects to describe the posting.
 #
 class Freight < ActiveRecord::Base
-  TRANSPORT_TYPE_CHOICES = %w(single_wagon train_set block_train intermodal_transport)
-  DESIRED_PROPOSAL_TYPE_CHOICES = %w(ton_price package_price)
-  WAGONS_PROVIDED_BY_CHOICES = %w(client railway wante)
-  PAYING_FREIGHT_CHOICES = %w(sender receiver)
+  TRANSPORT_TYPE_CHOICES = %w(unknown single_wagon train_set block_train intermodal_transport)
+  DESIRED_PROPOSAL_TYPE_CHOICES = %w(unknown ton_price package_price)
+  WAGONS_PROVIDED_BY_CHOICES = %w(client railway wanted)
+  PAYING_FREIGHT_CHOICES = %w(unknown sender receiver)
   belongs_to :user
   belongs_to :company
   belongs_to :origin_site_info, :class_name => 'SiteInfo', :dependent => :destroy
