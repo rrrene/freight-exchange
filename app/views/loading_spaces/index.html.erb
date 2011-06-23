@@ -1,6 +1,11 @@
 <div class="box">
   <h3>
-    <%= float_tag t("loading_spaces.index.header") %>
+    <%= float_tag do %>
+      <%= link_to_unless_current t("freights.index.header"), freights_path %>
+      <%= link_to_unless_current t("loading_spaces.index.header"), loading_spaces_path %>
+    <% end %>
+
+    <%= link_btn t("freights.common.new_link"), new_freight_path, :icon => 'new' %>
     <%= link_btn t("loading_spaces.common.new_link"), new_loading_space_path, :icon => 'new' %>
     <%= clear_both %>
   </h3>

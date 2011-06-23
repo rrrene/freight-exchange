@@ -9,7 +9,6 @@
         <div class="navibox">
           <ul class="navigation">
             <% if logged_in? %>
-              <li><%= link_to_unless_current(t("common.navi.freights"), freights_path) %></li>
               <li><%= link_to_unless_current(t("common.navi.dashboard"), company_dashboard_path) %></li>
               <li><%= link_to_unless_current(t("common.navi.my_freights"), freights_company_path(current_company)) %></li>
               <li><%= link_to_unless_current(t("common.navi.my_loading_spaces"), loading_spaces_company_path(current_company)) %></li>

@@ -4,8 +4,10 @@
         <th><%= t('freights.index.table.headers.date') %></th>
         <th><%= t('freights.index.table.headers.origin') %></th>
         <th><%= t('freights.index.table.headers.destination') %></th>
-        <% if collection.any? { |ar| ar.company == current_company } %>
+        <% if action_name != "index" && collection.any? { |ar| ar.company == current_company } %>
           <th class="options"><%= t('freights.index.table.headers.options') %></th>
+        <% else %>
+          <th><%= t('freights.index.table.headers.company') %></th>
         <% end %>
       </tr>
     </thead>
@@ -15,12 +17,14 @@
           <td class="origin_date"><%= link_to l(ar.origin_site_info.date, :format => :date), ar %></td>
           <td class="origin_name"><%= ar.origin_site_info.name %></td>
           <td class="destination_name"><%= ar.destination_site_info.name %></td>
-          <% if ar.company == current_company %>
+          <% if action_name != "index" && ar.company == current_company %>
             <td class="options">
               <%= link_btn t('freights.index.table.options.template'), new_resource_url(:parent_id => ar.id), :icon => :reply %>
               <%= link_btn t('freights.index.table.options.edit'), {:action => 'edit', :id => ar}, :icon => :edit %>
               <%= link_btn t('freights.index.table.options.delete'), ar, :method => :delete, :confirm => t('common.confirm'), :class => 'destroy' %>
             </td>
+          <% else %>
+            <td class="company_name"><%= link_to ar.company.name, ar.company %></td>
           <% end %>
         </tr>
       <% end %>

@@ -100,7 +100,7 @@ en:
   freights:
     common:
       edit_link: "Edit this posting"
-      new_link: "Create another posting"
+      new_link: "Create freight"
       template_link: "Use as template"
       required_field_hint: "The fields with an asterix (*) are mandatory:"
     new:
@@ -125,6 +125,7 @@ en:
           origin: "Origin"
           destination: "Destination"
           options: "Options"
+          company: "Company"
         options:
           edit: "Edit"
           delete: "Delete"
@@ -143,7 +144,7 @@ en:
     common:
       delete_link: "Delete this posting"
       edit_link: "Edit this posting"
-      new_link: "Create another posting"
+      new_link: "Create loading space"
       template_link: "Use as template"
       required_field_hint: "The fields with an asterix (*) are mandatory:"
     index:

@@ -609,3 +609,9 @@ div.toolbar {
   position: absolute;
   margin-top: -20px;
 }
+
+/*
+#header, #content, #sidebar, #page_title, .toolbar {
+  border: 1px solid red;
+}
+*/

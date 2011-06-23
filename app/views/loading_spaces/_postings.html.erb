@@ -4,7 +4,9 @@
       <th><%= t('loading_spaces.index.table.headers.date') %></th>
       <th><%= t('loading_spaces.index.table.headers.origin') %></th>
       <th><%= t('loading_spaces.index.table.headers.destination') %></th>
-      <th class="options"><%= t('loading_spaces.index.table.headers.options') %></th>
+      <% if action_name != "index" && collection.any? { |ar| ar.company == current_company } %>
+        <th class="options"><%= t('loading_spaces.index.table.headers.options') %></th>
+      <% end %>
     </tr>
   </thead>
   <tbody>
@@ -13,11 +15,13 @@
         <td class="origin_date"><%= link_to ar.origin_site_info.date, ar %></td>
         <td class="origin_name"><%= ar.origin_site_info.name %></td>
         <td class="destination_name"><%= ar.destination_site_info.name %></td>
-        <td class="options">
-          <%= link_btn t('loading_spaces.index.table.options.template'), new_resource_url(:parent_id => ar.id), :icon => :reply %>
-          <%= link_btn t('loading_spaces.index.table.options.edit'), {:action => 'edit', :id => ar}, :icon => :edit %>
-          <%= link_btn t('loading_spaces.index.table.options.delete'), ar, :method => :delete, :confirm => t('common.confirm'), :class => 'destroy' %>
-        </td>
+        <% if action_name != "index" && ar.company == current_company %>
+          <td class="options">
+            <%= link_btn t('loading_spaces.index.table.options.template'), new_resource_url(:parent_id => ar.id), :icon => :reply %>
+            <%= link_btn t('loading_spaces.index.table.options.edit'), {:action => 'edit', :id => ar}, :icon => :edit %>
+            <%= link_btn t('loading_spaces.index.table.options.delete'), ar, :method => :delete, :confirm => t('common.confirm'), :class => 'destroy' %>
+          </td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

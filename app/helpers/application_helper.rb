@@ -66,7 +66,8 @@ module ApplicationHelper
     controller.controller_name == name
   end
   
-  def float_tag(text, dir = :left)
+  def float_tag(text = nil, dir = :left, &block)
+    text = capture(&block) if block_given?
     content_tag :span, text, :class => "float_#{dir}"
   end
   
