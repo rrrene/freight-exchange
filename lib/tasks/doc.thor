@@ -105,7 +105,7 @@ class Doc < Thor
         end
         @fields[i] = field_hash
       end
-      template "lib/tasks/templates/table.tex.erb", "doc/tex/schema/#{table}.tex", template_options
+      #template "lib/tasks/templates/table.tex.erb", "doc/tex/schema/#{table}.tex", template_options
       template "lib/tasks/templates/table.html.erb", "doc/tex/schema/#{table}.html", template_options
       success "#{table} generated"
     end
