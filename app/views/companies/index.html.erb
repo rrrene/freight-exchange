@@ -1,0 +1,26 @@
+<div class="box">
+  <h3><%= link_to_unless_current t("companies.index.header"), companies_path %></h3>
+  <p>
+    <%= t('companies.index.intro') %>
+  </p>
+  <table class="companies">
+      <thead>
+        <tr>
+          <th><%= t('companies.index.table.headers.name') %></th>
+          <th><%= t('companies.index.table.headers.zip') %></th>
+          <th><%= t('companies.index.table.headers.city') %></th>
+          <th><%= t('companies.index.table.headers.country') %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% collection.each do |ar| %>
+          <tr class="">
+            <td class="name"><%= link_to ar.name, ar %></td>
+            <td class="zip"><%= ar.zip %></td>
+            <td class="city"><%= ar.city %></td>
+            <td class="country"><%= ar.country %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+</div>

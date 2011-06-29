@@ -2,8 +2,8 @@
 # as well as the actual 'Create a new Account'-screen.
 class CompaniesController < RemoteController
   login_required :except => [:new, :create]
-  same_company_required :except => [:dashboard, :new, :create, :show, :freights, :loading_spaces]
-  role_required :company_admin, :except => [:dashboard, :new, :create, :show, :freights, :loading_spaces]
+  same_company_required :except => [:dashboard, :index, :new, :create, :show, :freights, :loading_spaces]
+  role_required :company_admin, :except => [:dashboard, :index, :new, :create, :show, :freights, :loading_spaces]
   
   # The dashboard action provides a general overview of the company's 
   # activities.

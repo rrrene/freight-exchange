@@ -68,6 +68,16 @@ en:
       intro: "Here you can see all the actions of your company's users."
       sidebar_person_info_title: "This is your personal info card:"
       sidebar_company_info_title: "This is your company info card:"
+    index:
+      page_title: "Companies"
+      header: "Companies"
+      intro: "Here you can see all companies."
+      table:
+        headers:
+          name: "Name"
+          zip: "ZIP"
+          city: "City"
+          country: "Country"
     new:
       page_title: "Create company account"
       header: "Create your company account"
