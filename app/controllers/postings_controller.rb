@@ -17,7 +17,7 @@ class PostingsController < RemoteController
       end
     else
       self.resource = resource_class.new
-      resource.build_origin_site_info
+      resource.build_origin_site_info(:contractor => current_company.name)
       resource.build_destination_site_info
       resource.localized_infos.build
     end

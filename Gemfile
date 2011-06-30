@@ -15,6 +15,9 @@ gem 'formtastic', '~> 1.1.0'
 gem 'authlogic', '~> 2.1.6'
 gem 'inherited_resources', '1.1.2'
 
+gem 'fastercsv', :require => 'faster_csv'
+gem 'rails3-jquery-autocomplete'
+
 #gem 'nokogiri'
 
 gem 'levenshtein'

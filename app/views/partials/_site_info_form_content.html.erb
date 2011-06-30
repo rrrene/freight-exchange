@@ -10,6 +10,7 @@
         <%= options_for_select(current_user.recent_site_infos(site).map { |site_info| [site_info.name, site_info.id] }) %>
       </select>
     </li>
+    <%= f_site.autocompleted_input "name", :url => autocomplete_station_searchable_stations_path %>
     <% SiteInfo::SITE_ATTRIBUTES.each do |field| %>
       <%= f_site.input field, :as => :string %>
     <% end %>

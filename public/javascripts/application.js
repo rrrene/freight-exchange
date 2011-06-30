@@ -69,18 +69,29 @@ jQuery(function() {
 
   var elements = [
     "#freight_origin_site_info_attributes_side_track_available_false",
+    "#freight_origin_site_info_attributes_side_track_available_true",
     "#freight_destination_site_info_attributes_side_track_available_false",
+    "#freight_destination_site_info_attributes_side_track_available_true",
     "#loading_space_origin_site_info_attributes_side_track_available_false",
-    "#loading_space_destination_site_info_attributes_side_track_available_false"
+    "#loading_space_origin_site_info_attributes_side_track_available_true",
+    "#loading_space_destination_site_info_attributes_side_track_available_false",
+    "#loading_space_destination_site_info_attributes_side_track_available_true"
   ];
   $(elements).each(function(index, element) {
     $(element).bind({
       'click': function() {
-        if( $(this).attr('checked') ) {
+        //freight_origin*_site_info_attributes_*track_number_input
+        var name = $(this).attr('id');
+        var arr = name.match(/(.+)_site_info_attributes_(.+)/);
+        var trackNoElement = $("#"+RegExp.$1+"_site_info_attributes_track_number_input");
+        trackNoElement.css('display', $(this).val() == "false" ? 'none' : 'block' )
+        if( name.match(/_false$/) && $(this).attr('checked') ) {
           $('#freight_transport_type').val('intermodal_transport');
           $('#loading_space_transport_type').val('intermodal_transport');
         }
       }
     });
   });
+
+
 });

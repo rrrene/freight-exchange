@@ -29,7 +29,11 @@ BlackBoard::Application.routes.draw do |map|
     end
   end
 
-  resources :stations
+  resources :stations do
+    collection do
+      get :autocomplete_station_searchable
+    end
+  end
   resources :users
 
   match "about" => "root#about", :as => :about
