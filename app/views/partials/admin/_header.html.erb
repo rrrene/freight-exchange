@@ -1,23 +1,38 @@
 <div class="header">
+  <div id="top-navigation">
+    <div class="navigation-left">
+      <ul class="navigation">
+          <li><%= link_to t("admin.common.navi.setup"), setup_path %></li>
+          <li><%= link_to t("admin.common.navi.action_recordings"), admin_action_recordings_path %></li>
+          <li><%= link_to t("admin.common.navi.search_recordings"), admin_search_recordings_path %></li>
+          <li><%= link_to t("admin.common.navi.companies"), admin_companies_path %></li>
+          <li><%= link_to t("admin.common.navi.users"), admin_users_path %></li>
+      </ul>
+    </div>
+    <div class="navigation-right">
+      <ul class="navigation">
+        <ul class="navigation">
+          <li><%= link_to t("admin.common.navi.user_roles"), admin_user_roles_path %></li>
+          <li><%= link_to t("admin.common.navi.app_configs"), admin_app_configs_path %></li>
+          <li class="last"><%= link_to t("admin.common.navi.back_to_app"), root_path, :class => 'frontend' %></li>
+      </ul>
+    </div>
+    <%= clear_both %>
+  </div>
   <div class="container" id="header">
     <div class="span-24 last" id="first-header">
       <%#= link_to image_tag('home_logo.gif'), root_url %>
-      <h2 style="float: left; font-weight: bolder;"><%= link_to t("admin.common.navi.home"), admin_root_path, :style => "text-decoration: none; color: #666;" %></h2>
-      
-      <div class="navibox">
-        <ul class="navigation navigation-right">
-          <ul class="navigation navigation-left">
-            <li><%= link_to t("admin.common.navi.setup"), setup_path %></li>
-            <li><%= link_to t("admin.common.navi.action_recordings"), admin_action_recordings_path %></li>
-            <li><%= link_to t("admin.common.navi.search_recordings"), admin_search_recordings_path %></li>
-            <li><%= link_to t("admin.common.navi.companies"), admin_companies_path %></li>
-            <li><%= link_to t("admin.common.navi.users"), admin_users_path %></li>
-            <li><%= link_to t("admin.common.navi.user_roles"), admin_user_roles_path %></li>
-            <li><%= link_to t("admin.common.navi.app_configs"), admin_app_configs_path %></li>
-            <li class="last"><%= link_to t("admin.common.navi.back_to_app"), root_path, :class => 'frontend' %></li>
-          </ul>
-        </ul>
+      <div class="float_left">
+        <h2 style="float: left; font-weight: bolder;"><%= link_to t("admin.common.navi.home"), admin_root_path, :style => "text-decoration: none; color: #666;" %></h2>
       </div>
+      <div class="float_left">
+        <div id="search_form">
+          <%= form_tag admin_search_url, :method => :get do %>
+            <div class="input-wrapper"><%= text_field_tag :q, h(params[:q]) %><%= image_submit_tag("search_button.png") %></div>
+          <% end %>
+        </div>
+      </div>
+      <%= clear_both %>
     </div>
 
     <div class="container" id="second-header">

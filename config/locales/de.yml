@@ -300,9 +300,11 @@ de:
     link_back: Zurück
     navi: 
       backend: Administration
-      dashboard: Cockpit
+      dashboard: Startseite
       freights: Inserate
       loading_spaces: Inserate
+      my_freights: Inserate
+      my_loading_spaces: Inserate
       locale_de: Deutsch
       locale_en: English
       login: Anmelden
@@ -313,6 +315,8 @@ de:
       register: Registrieren
       reviews: Bewertungen
       select_locale: "Sprache wählen:"
+      postings: "Inserate"
+      companies: "Unternehmen"
     sidebar: 
       advanced_search_link: "Erweiterte Suche"
       company_information: 
@@ -320,6 +324,7 @@ de:
         header: Firmenprofil
         please_edit_notice: "Bitte füllen Sie ihr Firmenprofil aus."
         show: Anzeigen
+        postings: Inserate anzeigen
       person_information: 
         edit: Bearbeiten
         header: Kontaktinformation
@@ -329,7 +334,18 @@ de:
   companies: 
     create: 
       page_title: "Ihre Firma registrieren"
-    dashboard: 
+
+    index:
+      page_title: "Branchenbuch"
+      header: "Unternehmen"
+      intro: "Hier sehen Sie alle Unternehmen."
+      table:
+        headers:
+          name: "Name"
+          zip: "PLZ"
+          city: "Stadt"
+          country: "Land"
+    dashboard:
       header: Newsfeed
       intro: "Hier sehen Sie alle Aktionen der Benutzer Ihrer Firma."
       page_title: Cockpit
@@ -356,6 +372,7 @@ de:
       intro: "Geben Sie einfach Ihre Fragen oder Anregungen ein und unsere Mitarbeiter werden sich unverzüglich bei Ihnen melden!"
       page_title: Kontakt
       sent: "Ihre E-Mail wurde versendet. Vielen Dank für Ihr Feedback!"
+      submit: "Abschicken"
   date: 
     abbr_day_names: 
       - So
@@ -513,7 +530,7 @@ de:
   freights: 
     common: 
       edit_link: "Inserat bearbeiten"
-      new_link: "Weiteres Inserat erstellen"
+      new_link: "Fracht inserieren"
       required_field_hint: "Die mit einem (*) gekennzeichneten Felder sind Pflichtfelder:"
       template_link: "Als Vorlage"
     create: 
@@ -523,7 +540,7 @@ de:
       header: "Inserat bearbeiten"
       page_title: "Inserat bearbeiten"
     index: 
-      header: "Alle Inserate"
+      header: "Frachten"
       intro: "Hier sehen Sie alle Frachtrauminserate Ihrer Firma."
       page_title: "Alle Inserate"
       table: 
@@ -561,7 +578,7 @@ de:
     common: 
       delete_link: "Inserat löschen"
       edit_link: Bearbeiten
-      new_link: "Weiteres Inserat erstellen"
+      new_link: "Laderaum inserieren"
       required_field_hint: "Die mit einem (*) gekennzeichneten Felder sind Pflichtfelder:"
       template_link: "Als Vorlage"
     create: 
@@ -570,7 +587,7 @@ de:
       header: "Inserat bearbeiten"
       page_title: "Inserat bearbeiten"
     index: 
-      header: "Alle Inserate"
+      header: "Laderäume"
       intro: "Hier sehen Sie alle Laderauminserate Ihrer Firma."
       page_title: "Alle Inserate"
       table: 

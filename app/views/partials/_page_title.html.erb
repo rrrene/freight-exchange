@@ -7,7 +7,7 @@
       </div>
     </div>
     <div class="span-8 last">
-      <% if logged_in? %>
+      <% if false && logged_in? %>
         <div id="search_form">
           <%= form_tag search_url, :method => :get do %>
             <div class="input-wrapper"><%= text_field_tag :q, h(params[:q]), :autocomplete => :off %><%= image_submit_tag("search_button.png") %></div>

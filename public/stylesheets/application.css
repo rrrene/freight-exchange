@@ -8,26 +8,22 @@
 html, body {
   background: #fff;
   background: url(body_bg.png) repeat-x;
+  color: #333;
 }
 div.header {
 }
 div.frame {
-  background: url(frame_bg.png) center top no-repeat;
   min-height: 650px;
 }
 div.footer {
   border-top: 3px solid #CCC;
   border-bottom: 1px solid #CCC;
   background: #f5f5f5;
-  color: #333;
   padding-top: 20px;
   min-height: 120px;
 }
 #header {
   height: 80px;
-}
-#frame {
-  padding-top: 20px;
 }
 
 ul.navigation {
@@ -35,40 +31,55 @@ ul.navigation {
   margin: 0;
 }
 
+#top-navigation {
+  background-color: #2D2D2D;
+  padding: 0 4px;
+}
+
 ul.navigation li {
   display: block;
   float: left;
-  background: url(navi_seperator.gif) right center no-repeat;
-  padding-right: 4px;
 }
 ul.navigation li.last,
 ul.navigation li.noborder {
   background-image: none;
 }
 
-ul.navigation li span,
-ul.navigation li a {
+#top-navigation ul.navigation li span,
+#top-navigation ul.navigation li a {
   display: block;
-  padding: 4px;
+  padding: 6px;
+  color: #aaa;
+  text-decoration: none;
 }
 
-ul.navigation li span {
+#top-navigation ul.navigation li a:hover {
+  background-color: #4D4D4D;
+  color: #ddd;
+}
+#top-navigation ul.navigation li span {
+  font-weight: bold;
+  color: #fff;
+  padding-top: 4px;
+  border-top: 2px solid #DD4B39;
+}
+#top-navigation ul.navigation li span.company_name {
   font-weight: bold;
   color: #666;
+  padding-top: 6px;
+  border-top: none;
 }
-ul.navigation li span.normal {
+#top-navigation ul.navigation li span.normal {
   font-weight: normal;
   color: #000;
 }
 
-ul.navigation li a.frontend {
+#top-navigation ul.navigation li a.frontend {
   color: #aaa;
 }
 
-ul.navigation li a.backend {
+#top-navigation ul.navigation li a.backend {
   margin-right: 20px;
-  color: #333;
-  background: #ff0;
 }
 
 ul.navigation-lang {
@@ -101,52 +112,21 @@ div#page_title {
 div#content h2,
 div#page_title h2 {
   margin-left: 16px;
-  color: #666;
 }
 
-
-#root.about div#page_title div#search_form {
-  display: none;
+.frame h1,
+.frame h2,
+.frame h3 {
+  color: #4183C4;
 }
 
-div.corridor_map h2 {
-  background:url("/images/black50.png") repeat scroll 0 0 transparent;
-  border:medium none;
-  color:#FFFFFF;
-  float:left;
-  font-size:24px;
-  height:auto;
-  margin:10px 0;
-  max-height:90px;
-  overflow:hidden;
-  padding:5px 10px;
-  text-shadow:0 1px 3px #222222;
-  white-space:normal;
-  width:300px;
-  -moz-border-radius: 5px; 
-  -webkit-border-radius: 5px;
+div.header div#search_form {
+  margin: 16px 0 0 10px;
 }
-
-div.corridor_map div.subtext {
-  color:#222222;
-  font-size:32px;
-  font-weight:bold;
-  letter-spacing:-1px;
-  line-height:40px;
-  margin:0 auto;
-  max-width:300px;
-  z-index:999;
-  position: absolute;
-  bottom: 10px;
-}
-
-div.page_title div#search_form {
-  margin: 20px 0 0 0;
-}
-div.page_title div#search_form input[type=image] {
+div.header div#search_form input[type=image] {
   vertical-align: bottom;;
 }
-div.page_title div#search_form .input-wrapper {
+div.header div#search_form .input-wrapper {
   padding: 0;
   margin: 0;
   display: inline-block;
@@ -171,56 +151,59 @@ div.page_title div#search_form .input-wrapper {
   border-top-style: solid;
   border-top-width: 1px;
   float: right;
-  width: 280px;
-  margin-right: 16px;
+  width: 320px;
   position: relative;
 }
-div.page_title div#search_form .input-wrapper input {
+div.header div#search_form .input-wrapper input {
   margin: 0;
   border: 0;
   display: block;
   float: left;
-  width: 34px;
+  width: 24px;
 }
 
-div.page_title div#search_form .input-wrapper input#q {
+div.header div#search_form .input-wrapper input#q {
   background: transparent;
   float: left;
-  width: 239px;
-  font-size: 20px;
+  width: 289px;
+  font-size: 14px;
+  line-height: 16px;
   padding: 3px;
 }
 
-div.page_title div#search_form .input-wrapper input#q:focus {
+div.header div#search_form .input-wrapper input#q:focus {
   outline: none;
 }
 
-div.page_title div#search_form .advanced-search-wrapper {
+div.header div#search_form .advanced-search-wrapper {
   font-size: 11px;
   text-align: right;
-  padding-right: 20px;
 }
-
-div.page_title div#search_form .advanced-search-wrapper a {
+div.header div#search_form .advanced-search-wrapper a {
   font-size: 11px;
   font-weight: normal;
+  color: #aaa;
 }
-
-
+div.header div#search_form .advanced-search-wrapper a:hover {
+  color: inherit;
+}
 
 div.frame div.box {
   background-color: #fff;
 }
 div#sidebar div.box {
+  /*
   -moz-border-radius: 5px; 
   -webkit-border-radius: 5px;
   -moz-box-shadow:0 1px 3px #BBBBBB;
   -webkit-box-shadow: #BBB 0px 1px 3px;
+  */
+  border-top: 2px solid #ddd;
+  border-left: 1px solid #eee;
 }
 
 #content h3,
 div.box h3 {
-  color: #666;
   border-bottom: 1px solid #E0E0E0;
   font-size: 0.9em;
   line-height: 2em;
@@ -372,66 +355,66 @@ fieldset ol li.error input {
 
 
 /* button basics */ 
-div.frame a.minibutton {
+a.minibutton {
     display:inline-block;
     height:23px;
     padding:0 0 0 3px;
     font-size:11px;
     font-weight:bold;
-    color:#333;
+    color:#333!important;
     text-shadow:1px 1px 0 #fff; 
     background:url(minibutton_matrix.png) 0 0 no-repeat;
     white-space:nowrap;
     border:none;
     overflow:visible;
     cursor:pointer;
-    text-decoration:none;
+    text-decoration:none!important;
     text-transform: none;
   }
-div.frame a.minibutton>span {
+a.minibutton>span {
     display:block;
     height:23px;
     padding:0 10px 0 8px;
     line-height:23px;
     background:url(minibutton_matrix.png) 100% 0 no-repeat;
   }
-div.frame a.minibutton:hover, a.minibutton:focus {
-    color:#fff;
+a.minibutton:hover, a.minibutton:focus {
+    color:#fff!important;
     text-decoration:none;
     text-shadow:-1px -1px 0 rgba(0,0,0,0.3);
     background-position:0 -30px;
   }
-div.frame a.minibutton:hover>span, a.minibutton:focus>span {background-position:100% -30px;}
-div.frame a.minibutton.mousedown{background-position:0 -60px; }
-div.frame a.minibutton.mousedown>span{background-position:100% -60px; }
+a.minibutton:hover>span, a.minibutton:focus>span {background-position:100% -30px;}
+a.minibutton.mousedown{background-position:0 -60px; }
+a.minibutton.mousedown>span{background-position:100% -60px; }
   /* with icon */ 
-div.frame a.minibutton .icon {
+a.minibutton .icon {
     float:left;
     margin-left:-4px;
     width:18px;
     height:22px;
     background:url(minibutton_icons.png) 0 0 no-repeat;
   }
-div.frame a.btn-edit .icon {background-position:0 0;}
-div.frame a.btn-edit:hover .icon, a.btn-download:focus .icon {background-position:0 -25px;}
-div.frame a.btn-show .icon {background-position:-20px 0;}
-div.frame a.btn-show:hover .icon, a.btn-download:focus .icon {background-position:-20px -25px;}
-div.frame a.btn-download .icon {background-position:-40px 0;}
-div.frame a.btn-download:hover .icon, a.btn-download:focus .icon {background-position:-40px -25px;}
-div.frame a.btn-upload .icon {background-position:-60px 0;}
-div.frame a.btn-upload:hover .icon, a.btn-download:focus .icon {background-position:-60px -25px;}
-div.frame a.btn-fork .icon {background-position:-80px 0;}
-div.frame a.btn-fork:hover .icon, a.btn-download:focus .icon {background-position:-80px -25px;}
-div.frame a.btn-compare .icon {background-position:-100px 0;}
-div.frame a.btn-compare:hover .icon, a.btn-download:focus .icon {background-position:-100px -25px;}
-div.frame a.btn-leave .icon {background-position:-120px 0;}
-div.frame a.btn-leave:hover .icon, a.btn-download:focus .icon {background-position:-120px -25px;}
-div.frame a.btn-reply .icon {background-position:-140px 0;}
-div.frame a.btn-reply:hover .icon, a.btn-download:focus .icon {background-position:-140px -25px;}
-div.frame a.btn-prev .icon {background-position:-160px 0;}
-div.frame a.btn-prev:hover .icon, a.btn-download:focus .icon {background-position:-160px -25px;}
-div.frame a.btn-next .icon {background-position:-180px 0;}
-div.frame a.btn-next:hover .icon, a.btn-download:focus .icon {background-position:-180px -25px;}
+a.btn-edit .icon {background-position:0 0;}
+a.btn-edit:hover .icon, a.btn-download:focus .icon {background-position:0 -25px;}
+a.btn-show .icon {background-position:-20px 0;}
+a.btn-show:hover .icon, a.btn-download:focus .icon {background-position:-20px -25px;}
+a.btn-download .icon {background-position:-40px 0;}
+a.btn-download:hover .icon, a.btn-download:focus .icon {background-position:-40px -25px;}
+a.btn-upload .icon {background-position:-60px 0;}
+a.btn-upload:hover .icon, a.btn-download:focus .icon {background-position:-60px -25px;}
+a.btn-fork .icon {background-position:-80px 0;}
+a.btn-fork:hover .icon, a.btn-download:focus .icon {background-position:-80px -25px;}
+a.btn-compare .icon {background-position:-100px 0;}
+a.btn-compare:hover .icon, a.btn-download:focus .icon {background-position:-100px -25px;}
+a.btn-leave .icon {background-position:-120px 0;}
+a.btn-leave:hover .icon, a.btn-download:focus .icon {background-position:-120px -25px;}
+a.btn-reply .icon {background-position:-140px 0;}
+a.btn-reply:hover .icon, a.btn-download:focus .icon {background-position:-140px -25px;}
+a.btn-prev .icon {background-position:-160px 0;}
+a.btn-prev:hover .icon, a.btn-download:focus .icon {background-position:-160px -25px;}
+a.btn-next .icon {background-position:-180px 0;}
+a.btn-next:hover .icon, a.btn-download:focus .icon {background-position:-180px -25px;}
 
 
 .navibox {

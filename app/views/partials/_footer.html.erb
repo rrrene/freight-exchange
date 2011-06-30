@@ -1,9 +1,18 @@
 <div class="footer">
   <div class="container" id="footer">
     <div class="span-24 last">
-      <strong>&copy; <%= Time.new.year %> by René Föhring</strong> |
-      <%= link_to "Impressum", about_path %> |
-      <%= link_to "Kontakt", contact_path %>
+      <div class="float_left">
+        <strong>&copy; <%= Time.new.year %> by René Föhring</strong> |
+        <%= link_to "Impressum", about_path %> |
+        <%= link_to "Kontakt", contact_path %>
+      </div>
+      <div class="float_right">
+        <% if logged_in? %>
+          <span><%= t("common.navi.select_locale") %></span>
+          <%= link_to_unless(I18n.locale == :de, t("common.navi.locale_de"), {:locale => :de}) %> |
+          <%= link_to_unless(I18n.locale == :en, t("common.navi.locale_en"), {:locale => :en}) %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
