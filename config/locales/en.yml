@@ -132,9 +132,10 @@ en:
       intro: "Here you can see all the freight postings of your company."
       table:
         headers:
-          date: "Date"
-          origin: "Origin"
-          destination: "Destination"
+          origin_date: "Date"
+          origin_name: "Origin"
+          destination_date: "Date"
+          destination_name: "Destination"
           options: "Options"
           company: "Company"
           weight: "Weight"

@@ -26,8 +26,8 @@
           <div class="container" id="frame">
             <%= render_partial :page_title %>
             <div id="content" class="<%= content_for?(:sidebar) ? "span-16" : "span-24 last" %>">
-              <% if toolbar = yield(:toolbar) %>
-                <%= content_tag(:div, toolbar, :class => 'toolbar') %>
+              <% if content_for?(:toolbar) %>
+                <%= content_tag(:div, content_for(:toolbar), :class => 'toolbar') %>
               <% end %>
               <%= yield %>
             </div>

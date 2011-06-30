@@ -1,9 +1,10 @@
 <table class="postings">
     <thead>
       <tr>
-        <th><%= t('freights.index.table.headers.date') %></th>
-        <th><%= t('freights.index.table.headers.origin') %></th>
-        <th><%= t('freights.index.table.headers.destination') %></th>
+        <th><%= t('freights.index.table.headers.origin_name') %></th>
+        <th><%= t('freights.index.table.headers.origin_date') %></th>
+        <th><%= t('freights.index.table.headers.destination_name') %></th>
+        <th><%= t('freights.index.table.headers.destination_date') %></th>
         <th><%= t('freights.index.table.headers.weight') %></th>
         <th><%= t('freights.index.table.headers.transport_type') %></th>
         <% if action_name != "index" && collection.any? { |ar| ar.company == current_company } %>
@@ -17,8 +18,9 @@
       <% collection.each do |ar| %>
         <tr class="<%= ar.origin_site_info.date < Time.now ? :old : :new %>">
           <td class="origin_date"><%= link_to l(ar.origin_site_info.date, :format => :date), ar %></td>
-          <td class="origin_name"><%= ar.origin_site_info.name %></td>
-          <td class="destination_name"><%= ar.destination_site_info.name %></td>
+          <td class="origin_name"><%= truncate ar.origin_site_info.name %></td>
+          <td class="destination_date"><%= l(ar.destination_site_info.date, :format => :date) %></td>
+          <td class="destination_name"><%= truncate ar.destination_site_info.name %></td>
           <td class="weight"><%= ar.weight %></td>
           <td class="transport_type"><%= ar.human_attribute_value(:transport_type) %></td>
           <% if action_name != "index" && ar.company == current_company %>
@@ -28,7 +30,7 @@
               <%= link_btn t('freights.index.table.options.delete'), ar, :method => :delete, :confirm => t('common.confirm'), :class => 'destroy' %>
             </td>
           <% else %>
-            <td class="company_name"><%= link_to ar.company.name, :controller => :companies, :action => freights_or_loading_spaces?, :id => ar.company %></td>
+            <td class="company_name"><%= link_to truncate(ar.company.name, :length => 30), {:controller => :companies, :action => freights_or_loading_spaces?, :id => ar.company}, {:title => ar.company.name.size > 30 ? ar.company.name : nil} %></td>
           <% end %>
         </tr>
       <% end %>
