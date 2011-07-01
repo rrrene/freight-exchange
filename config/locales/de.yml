@@ -595,7 +595,7 @@ de:
       template_link: "Als Vorlage"
     create: 
       page_title: "Neues Inserat"
-    edit: 
+    edit:
       header: "Inserat bearbeiten"
       page_title: "Inserat bearbeiten"
     index: 

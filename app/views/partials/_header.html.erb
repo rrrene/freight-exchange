@@ -20,7 +20,7 @@
           <li><%= link_to_unless_current(text_with_badge("common.navi.reviews", current_company.unapproved_reviews.count), reviews_path) %></li>
           <li><%= link_to_unless_current(t("common.navi.people"), people_path) %></li>
           <li><%= link_to_unless_current(t("common.navi.my_company"), company_path(current_company)) %></li>
-          <li class="last"><%= link_to_unless_current(t("common.navi.logout"), logout_path) %></li>
+          <li class="last"><%= link_to_unless_current(image_tag("logout.png") + " " + t("common.navi.logout"), logout_path) %></li>
         <% else %>
           <li><%= link_to_unless_current(t("common.navi.login"), login_path) %></li>
           <li class="last"><%= link_to_unless_current(t("common.navi.register"), register_path) %></li>
