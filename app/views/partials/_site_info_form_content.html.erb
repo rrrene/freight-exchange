@@ -11,7 +11,7 @@
       </select>
     </li>
     <%= f_site.autocompleted_input "name", :url => autocomplete_station_searchable_stations_path %>
-    <% SiteInfo::SITE_ATTRIBUTES.each do |field| %>
+    <% (SiteInfo::SITE_ATTRIBUTES - ['name']).each do |field| %>
       <%= f_site.input field, :as => :string %>
     <% end %>
     <%= f_site.input :side_track_available, :as => :radio, :collection =>yes_no_collection %>

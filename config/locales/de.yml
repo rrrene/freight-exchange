@@ -22,10 +22,9 @@ de:
         destination_date: Bis
         hazmat: Gefahrengut
         loading_meter: Lademeter
-        localized_infos: 
-          goods_text: Gutart
-          misc_text: "z.B. Lademaß- überschreitungen, Umschlag oder Vor-/Nachlauf, Verzollung, Verwiegung etc."
-          transport_text: "Welche Wagen sollen verwendet werden (ggf. Alternativen)?"
+        goods_text: "Gutart"
+        misc_text: "z.B. Lademaß- überschreitungen, Umschlag oder Vor-/Nachlauf, Verzollung, Verwiegung etc."
+        transport_text: "Welche Wagen sollen verwendet werden (ggf. Alternativen)?"
         origin_date: Von
         paying_freight: Frachtzahler
         transport_type: Transportart
@@ -90,16 +89,21 @@ de:
         desired_proposal_type: 
           package_price: Pauschalpreis
           ton_price: Tonnenpreis
+          unknown: "nicht bekannt"
         paying_freight: 
           receiver: Empfänger
           sender: Versender
+          unknown: "-- nicht bekannt --"
         transport_type: 
           block_train: Ganzzug
           single_wagon: Einzelwagen
           train_set: Wagengruppe
+          intermodal_transport: "Kombinierter Verkehr"
+          unknown: "-- nicht bekannt --"
         wagons_provided_by: 
           client: Auftraggeber
           railway: Bahn
+          wanted: "Güterwagen gesucht"
       loading_space: 
         transport_type: 
           block_train: Ganzzug
@@ -303,8 +307,8 @@ de:
       dashboard: Startseite
       freights: Inserate
       loading_spaces: Inserate
-      my_freights: Inserate
-      my_loading_spaces: Inserate
+      my_freights: Frachten
+      my_loading_spaces: Laderäume
       locale_de: Deutsch
       locale_en: English
       login: Anmelden
@@ -565,6 +569,7 @@ de:
         header: "Beladestelle für Fracht"
       page_title: Inserat
       transport_description: Frachtbeschreibung
+      no_side_track_available: "Kein Gleisanschluss vorhanden."
     update: 
       header: "Inserat bearbeiten"
       page_title: "Inserat bearbeiten"

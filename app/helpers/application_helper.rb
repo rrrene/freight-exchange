@@ -86,7 +86,7 @@ module ApplicationHelper
     arr = %w(freights loading_spaces)
     if arr.include?(controller_name)
       controller_name
-    elsif arr.include(action_name)
+    elsif arr.include?(action_name)
       action_name
     end
   end
