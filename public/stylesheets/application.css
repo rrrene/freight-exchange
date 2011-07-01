@@ -386,15 +386,26 @@ a.minibutton-active {
     text-shadow:-1px -1px 0 rgba(0,0,0,0.3);
     background-position:0 -30px;
   }
+a.minibutton:hover>span, a.minibutton:focus>span {background-position:100% -30px;}
+/*
+a.minibutton.mousedown{background-position:0 -60px; }
+a.minibutton.mousedown>span{background-position:100% -60px; }
+*/
 a.minibutton-active,
 a.minibutton-active:hover {
   background-position:0 -150px;
 }
-a.minibutton:hover>span, a.minibutton:focus>span {background-position:100% -30px;}
 a.minibutton-active>span, a.minibutton-active:hover>span {background-position:100% -150px;}
-a.minibutton.mousedown{background-position:0 -60px; }
-a.minibutton.mousedown>span{background-position:100% -60px; }
-  /* with icon */ 
+/* Green minibutton */
+a.minibutton-green {
+    color:#fff!important;
+    text-decoration:none;
+    text-shadow:-1px -1px 0 rgba(0,0,0,0.3);
+  background-position:0 -210px;
+}
+a.minibutton-green>span {background-position:100% -210px;}
+
+/* with icon */
 a.minibutton .icon {
     float:left;
     margin-left:-4px;
