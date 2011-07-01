@@ -22,6 +22,8 @@
     <%= f.input :weight, :as => :string %>
     <%= f.input :transports_per_year, :as => :string %>
     <%= f.input :transport_weight, :as => :string %>
+    <%= f.input :frequency, :collection => collection_choices(Freight, :frequency), :as => :radio %>
+    
     <%= f.input :loading_meter, :as => :string %>
 
     <%= f.input :transport_type, :collection => collection_choices(Freight, :transport_type), :include_blank => false %>

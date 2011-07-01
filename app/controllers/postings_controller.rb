@@ -30,7 +30,7 @@ class PostingsController < RemoteController
   end
   
   def index
-    self.collection = resource_class.scoped
+    self.collection = resource_class.scoped.where(:deleted => false)
     @count = resource_class.count
     index!
   end

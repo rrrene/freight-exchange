@@ -8,6 +8,7 @@ class Freight < ActiveRecord::Base
   DESIRED_PROPOSAL_TYPE_CHOICES = %w(unknown ton_price package_price)
   WAGONS_PROVIDED_BY_CHOICES = %w(client railway wanted)
   PAYING_FREIGHT_CHOICES = %w(unknown sender receiver)
+  FREQUENCY_CHOICES = %w(once repeated_regularly repeated_irregularly)
   belongs_to :user
   belongs_to :company
   belongs_to :origin_site_info, :class_name => 'SiteInfo', :dependent => :destroy

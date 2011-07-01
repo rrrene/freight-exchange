@@ -20,6 +20,7 @@ de:
         contact_person: Kontaktperson
         desired_proposal_type: "Angebot gewünscht als"
         destination_date: Bis
+        frequency: Häufigkeit
         hazmat: Gefahrengut
         loading_meter: Lademeter
         goods_text: "Gutart"
@@ -36,6 +37,7 @@ de:
         contact_person: Kontaktperson
         desired_proposal_type: "Angebot gewünscht als"
         destination_date: Bis
+        frequency: Häufigkeit
         hazmat: Gefahrengut
         loading_meter: Lademeter
         localized_infos: 
@@ -85,7 +87,11 @@ de:
         record_invalid: "Validierung fehlgeschlagen: %{errors}"
         taken: "ist schon vergeben"
     human_attribute_values: 
-      freight: 
+      freight:
+        frequency:
+          once: "Einmalig"
+          repeated_regularly: "Wiederholt - regelmäßig"
+          repeated_irregularly: "Wiederholt - sporadisch"
         desired_proposal_type: 
           package_price: Pauschalpreis
           ton_price: Tonnenpreis
@@ -125,7 +131,7 @@ de:
           marketing: "[System] Marketing Mitarbeiter"
           support: "[System] Support Mitarbeiter"
     models: 
-      freight: Frachtraum
+      freight: Fracht
       loading_space: Laderaum
       station: Bahnhof
   admin: 

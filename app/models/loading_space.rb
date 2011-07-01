@@ -5,6 +5,7 @@
 #
 class LoadingSpace < ActiveRecord::Base
   TRANSPORT_TYPE_CHOICES = %w(single_wagon train_set block_train intermodal_transport)
+  FREQUENCY_CHOICES = %w(once repeated_regularly repeated_irregularly)
   belongs_to :user
   belongs_to :company
   belongs_to :origin_site_info, :class_name => 'SiteInfo', :dependent => :destroy
