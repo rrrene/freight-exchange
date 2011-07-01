@@ -125,7 +125,18 @@ module ApplicationHelper
       ].compact.join(' ')
     link_to text, path, opts
   end
-  
+
+  def link_btn_unless(condition, text, path, opts = {})
+    if condition
+      opts[:class] = "#{opts[:class]} minibutton-active".strip
+    end
+    link_btn(text, path, opts)
+  end
+
+  def link_btn_unless_current(text, path, opts = {})
+    link_btn_unless(current_page?(path), text, path, opts)
+  end
+
   # Renders a link to the given item.
   def link_to_item(item)
     return t("common.deleted_object") if item.blank?

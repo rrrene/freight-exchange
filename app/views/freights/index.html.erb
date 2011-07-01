@@ -1,14 +1,11 @@
-<div class="box">
-  <h3>
-    <%= float_tag do %>
-      <%= link_to_unless_current t("freights.index.header"), freights_path %>
-      <%= link_to_unless_current t("loading_spaces.index.header"), loading_spaces_path %>
-    <% end %>
 
-    <%= link_btn t("freights.common.new_link"), new_freight_path, :icon => 'new' %>
-    <%= link_btn t("loading_spaces.common.new_link"), new_loading_space_path, :icon => 'new' %>
-    <%= clear_both %>
-  </h3>
+<% content_for(:toolbar) do %>
+  <%= link_btn_unless_current t("freights.index.all_freights"), freights_path %>
+  <%= link_btn_unless_current t("loading_spaces.index.all_loading_spaces"), loading_spaces_path %>
+<% end %>
+
+<div class="box">
+  <h3><%= t("freights.index.header") %></h3>
   <p>
     <%= t('freights.index.intro') %>
   </p>

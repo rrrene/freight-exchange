@@ -378,13 +378,20 @@ a.minibutton>span {
     line-height:23px;
     background:url(minibutton_matrix.png) 100% 0 no-repeat;
   }
-a.minibutton:hover, a.minibutton:focus {
+a.minibutton:hover,
+a.minibutton:focus,
+a.minibutton-active {
     color:#fff!important;
     text-decoration:none;
     text-shadow:-1px -1px 0 rgba(0,0,0,0.3);
     background-position:0 -30px;
   }
+a.minibutton-active,
+a.minibutton-active:hover {
+  background-position:0 -150px;
+}
 a.minibutton:hover>span, a.minibutton:focus>span {background-position:100% -30px;}
+a.minibutton-active>span, a.minibutton-active:hover>span {background-position:100% -150px;}
 a.minibutton.mousedown{background-position:0 -60px; }
 a.minibutton.mousedown>span{background-position:100% -60px; }
   /* with icon */ 
@@ -415,32 +422,6 @@ a.btn-prev .icon {background-position:-160px 0;}
 a.btn-prev:hover .icon, a.btn-download:focus .icon {background-position:-160px -25px;}
 a.btn-next .icon {background-position:-180px 0;}
 a.btn-next:hover .icon, a.btn-download:focus .icon {background-position:-180px -25px;}
-
-
-.navibox {
-  float: right;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.199219) 0px 1px 1px;
-  background: -webkit-gradient(linear, 0% 0, 0% 100%, from(#FCFCFC), to(#E8E8E8));
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#FCFCFC',endColorstr='#ECECEC');
-  border-bottom-color: whiteSmoke;
-  border-bottom-left-radius: 5px 5px;
-  border-bottom-right-radius: 5px 5px;
-  border: 1px solid #E9E9E9;
-  border-top: none;
-  border-top-left-radius: 0px 0px;
-  border-top-right-radius: 0px 0px;
-  font-size: 12px;
-  padding: 8px 5px 7px 10px;
-  -moz-border-radius:5px 5px 5px 5px;
-  -moz-border-radius-topleft:0;
-  -moz-border-radius-topright:0;
-  -moz-box-shadow:0 1px 1px rgba(0, 0, 0, 0.2);
-  background:#FCFCFC;
-  background:-moz-linear-gradient(270deg, #FCFCFC, #ECECEC) repeat scroll 0 0 transparent;
-  border-color:#E9E9E9 #E9E9E9 #F5F5F5;
-  border-style:solid;
-  border-width:1px;
-}
 
 
 /* 

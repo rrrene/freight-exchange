@@ -1,8 +1,8 @@
 
 <% content_for(:toolbar) do %>
-  <%= link_btn t("reviews.index.filter_all"), reviews_path(:filter => '') %>
-  <%= link_btn t("reviews.index.filter_approved"), reviews_path(:filter => :approved) %>
-  <%= link_btn t("reviews.index.filter_unapproved"), reviews_path(:filter => :unapproved) %>
+  <%= link_btn_unless params[:filter].blank?, t("reviews.index.filter_all"), reviews_path(:filter => '') %>
+  <%= link_btn_unless_current t("reviews.index.filter_approved"), reviews_path(:filter => :approved) %>
+  <%= link_btn_unless_current t("reviews.index.filter_unapproved"), reviews_path(:filter => :unapproved) %>
 <% end %>
 
 <div class="box">

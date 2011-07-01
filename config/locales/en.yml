@@ -9,12 +9,15 @@ en:
     navi:
       backend: "Backend"
       dashboard: "Dashboard"
+      postings: "Postings"
+      companies: "Companies"
       freights: "Freights"
       loading_spaces: "Loading Spaces"
       my_company: "My Company Profile"
       my_person: "Hello %{name}"
       people: "People"
       reviews: "Reviews"
+      my_reviews: "My Reviews"
       logout: "Logout"
       login: "Login"
       register: "Register"
@@ -129,6 +132,7 @@ en:
     index:
       page_title: "All freight postings"
       header: "All freight postings"
+      all_freights: "Freights"
       intro: "Here you can see all the freight postings of your company."
       table:
         headers:
@@ -164,6 +168,7 @@ en:
     index:
       page_title: "All loading space postings"
       header: "All loading space postings"
+      all_loading_spaces: "Loading spaces"
       intro: "Here you can see all the loading space postings of your company."
       table:
         headers:
