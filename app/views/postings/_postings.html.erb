@@ -1,10 +1,10 @@
 <table class="postings">
     <thead>
       <tr>
-        <th><%= t('freights.index.table.headers.origin_name') %></th>
         <th><%= t('freights.index.table.headers.origin_date') %></th>
-        <th><%= t('freights.index.table.headers.destination_name') %></th>
+        <th><%= t('freights.index.table.headers.origin_name') %></th>
         <th><%= t('freights.index.table.headers.destination_date') %></th>
+        <th><%= t('freights.index.table.headers.destination_name') %></th>
         <th><%= t('freights.index.table.headers.weight') %></th>
         <th><%= t('freights.index.table.headers.transport_type') %></th>
         <% if action_name != "index" && collection.any? { |ar| ar.company == current_company } %>

@@ -35,18 +35,18 @@ class PostingsController < RemoteController
     # Do not show postings which start dates lie in the past
     self.collection = collection.includes(:origin_site_info).where("site_infos.date > ?", Time.now)
     
-    if @q = params[:q]
-      @simple_searches = SimpleSearch.arel_for(@q, :models => [resource_class])
-      @resource_ids = @simple_searches.map(&:item_id)
-      raise @resource_ids.inspect
+    perform_search!
+    filter_collection!
+    
+    if @q
+      @origin_city ||= collection.detect { |posting| posting.origin_site_info.city =~ /^#{@q}/i }.origin_site_info.city
+      @destination_city ||= collection.detect { |posting| posting.destination_site_info.city =~ /^#{@q}/i }.destination_site_info.city
     end
     
-    filter_collection!
-
     @count = resource_class.count
     index!
   end
-
+  
   def update
     self.resource = resource_class.find(params[:id])
     resource.localized_infos = params[resource_key].delete(:localized_infos)
@@ -73,6 +73,24 @@ class PostingsController < RemoteController
   def filter_collection!
     # Default: newest postings first
     self.collection = collection.order("#{controller_name}.created_at DESC")
+  end
+  
+  def perform_search!
+    if @q = params[:q]
+      @simple_searches = SimpleSearch.arel_for(@q, :models => [resource_class])
+      @resource_ids = @simple_searches.map(&:item_id)
+      self.collection = collection.where(:id => @resource_ids)
+    end
+    if @origin_city = params[:origin_city].full?
+      # TODO: perform lookup via SQL
+      matched_ids = collection.select { |posting| posting.origin_site_info.city == @origin_city }.map(&:id)
+      self.collection = collection.where(:id => matched_ids)
+    end
+    if @destination_city = params[:destination_city].full?
+      # TODO: perform lookup via SQL
+      matched_ids = collection.select { |posting| posting.destination_site_info.city == @destination_city }.map(&:id)
+      self.collection = collection.where(:id => matched_ids)
+    end
   end
     
 end

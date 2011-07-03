@@ -120,6 +120,20 @@ div#page_title h2 {
   color: #4183C4;
 }
 
+.frame h1 small,
+.frame h2 small,
+.frame h3 small {
+  color: #88cc33;
+  font-size: 12px;
+}
+
+.frame h1 small a,
+.frame h2 small a,
+.frame h3 small a {
+  color: inherit;
+  text-decoration: underline;
+}
+
 div.header div#search_form {
   margin: 16px 0 0 10px;
 }
@@ -581,6 +595,7 @@ li.approved b {
 
 div.toolbar {
   margin-left: 16px;
+  width: 920px;
   position: absolute;
   margin-top: -20px;
 }

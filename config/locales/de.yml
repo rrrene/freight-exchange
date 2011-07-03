@@ -549,10 +549,14 @@ de:
     edit: 
       header: "Inserat bearbeiten"
       page_title: "Inserat bearbeiten"
-    index: 
-      header: "Ladungen"
+    index:   
+      page_title: "Ladungen"
+      switch_to_loading_spaces: "Zu Laderäumen wechseln"
+      header: "Alle Ladungen"
+      header_query: "Alle Ladungen für '%{query}'"
       intro: "Hier sehen Sie alle Ladungsinserate Ihrer Firma."
-      page_title: "Alle Inserate"
+      from_origin_city: "Nur Ladungen aus '%{city}'"
+      to_destination_city: "Nur Ladungen nach '%{city}'"
       table: 
         headers: 
           date: Datum
@@ -599,9 +603,13 @@ de:
       header: "Inserat bearbeiten"
       page_title: "Inserat bearbeiten"
     index: 
-      header: "Laderäume"
+      page_title: "Laderäume"
+      switch_to_freights: "Zu Ladungen wechseln"
+      header: "Alle Laderäume"
+      header_query: "Alle Laderäume für '%{query}'"
       intro: "Hier sehen Sie alle Laderauminserate Ihrer Firma."
-      page_title: "Alle Inserate"
+      from_origin_city: "Nur Laderäume aus '%{city}'"
+      to_destination_city: "Nur Laderäume nach '%{city}'"
       table: 
         headers: 
           date: Datum

@@ -63,7 +63,7 @@ module ApplicationHelper
   #   <%= controller?(:root) %>
   #     # => true
   def controller?(name)
-    controller.controller_name == name
+    controller.controller_name == name.to_s
   end
   
   def float_tag(text = nil, dir = :left, &block)

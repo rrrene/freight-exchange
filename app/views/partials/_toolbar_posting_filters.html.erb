@@ -1,5 +1,23 @@
 
+<% content_for(:page_title_options) do %>
+  <% if controller?(:freights) %>
+    <%= link_to t("freights.index.switch_to_loading_spaces"), params.merge(:controller => :loading_spaces) %>
+  <% else %>
+    <%= link_to t("loading_spaces.index.switch_to_freights"), params.merge(:controller => :freights) %>
+  <% end %>
+<% end %>
+
 <% content_for(:toolbar) do %>
-  <%= link_btn_unless_current t("freights.index.all_freights"), freights_path %>
-  <%= link_btn_unless_current t("loading_spaces.index.all_loading_spaces"), loading_spaces_path %>
+  <div class="float_left">
+    <%#= link_btn_unless_current t("freights.index.all_freights"), params.merge(:controller => :freights) %>
+    <%#= link_btn_unless_current t("loading_spaces.index.all_loading_spaces"), params.merge(:controller => :loading_spaces) %>
+  </div>
+  <div class="float_right">
+    <% if @origin_city %>
+      <%= link_btn_unless_current t("#{controller_name}.index.from_origin_city", :city => @origin_city), params.merge(:origin_city => @origin_city, :destination_city => '') %>
+    <% end %>
+    <% if @destination_city %>
+      <%= link_btn_unless_current t("#{controller_name}.index.to_destination_city", :city => @destination_city), params.merge(:origin_city => '', :destination_city => @destination_city) %>
+    <% end %>
+  </div>
 <% end %>

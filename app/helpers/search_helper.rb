@@ -1,5 +1,10 @@
 module SearchHelper
   
+  def contextual_search_path
+    _controller = controller?(:loading_spaces) ? :loading_spaces : :freights
+    {:controller => _controller, :action => :index}
+  end
+  
   def search_input_is(object, field, opts = {})
     opts.merge!(:keyword => :is)
     name = name_from_object_and_field(object, field, opts)
