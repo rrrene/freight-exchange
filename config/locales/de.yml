@@ -131,7 +131,7 @@ de:
           marketing: "[System] Marketing Mitarbeiter"
           support: "[System] Support Mitarbeiter"
     models: 
-      freight: Fracht
+      freight: Ladung
       loading_space: Laderaum
       station: Bahnhof
   admin: 
@@ -193,7 +193,7 @@ de:
           action_recordings_company: "Aktionen auf Firmen (letzte 7 Tage)"
           action_recordings_create: "'Create' Aktionen pro Tag (letzte 7 Tage)"
           action_recordings_destroy: "'Destroy' Aktionen pro Tag (letzte 7 Tage)"
-          action_recordings_freight: "Aktionen auf Fracht (letzte 7 Tage)"
+          action_recordings_freight: "Aktionen auf Ladung (letzte 7 Tage)"
           action_recordings_item_types: "Benutzeraktionen nach Typ (insgesamt)"
           action_recordings_loading_space: "Aktionen auf Laderaum (letzte 7 Tage)"
           action_recordings_person: "Aktionen auf Personen (letzte 7 Tage)"
@@ -303,8 +303,8 @@ de:
     choice_yes: Ja
     choose: "-- Wählen --"
     confirm: "Sind Sie sicher?"
-    create_new_freight: "Neues Frachtraum erstellen"
-    create_new_loading_space: "Neues Laderaum erstellen"
+    create_new_freight: "Neue Ladung erstellen"
+    create_new_loading_space: "Neuen Laderaum erstellen"
     create_new_review: "Bewertung schreiben!"
     deleted_object: "---gelöschtes Objekt---"
     link_back: Zurück
@@ -313,7 +313,7 @@ de:
       dashboard: Startseite
       freights: Inserate
       loading_spaces: Inserate
-      my_freights: Frachten
+      my_freights: Ladungen
       my_loading_spaces: Laderäume
       locale_de: Deutsch
       locale_en: English
@@ -529,18 +529,18 @@ de:
       company_misc: "Weitere Informationen"
       company_name: Name
       credentials: Anmeldeinformationen
-      destination_site_info: "Entladestelle für Fracht:"
+      destination_site_info: "Entladestelle für Ladung:"
       for_company: Firma
       freight_description: "Frachtbeschreibung:"
       misc_text: "Sonstige Informationen:"
-      origin_site_info: "Beladestelle für Fracht:"
+      origin_site_info: "Beladestelle für Ladung:"
       person_name: "Persönliche Angaben"
       timeframe: "Transportzeitraum:"
       transport_type: "Frachtbeschreibung:"
   freights: 
     common: 
       edit_link: "Inserat bearbeiten"
-      new_link: "Fracht inserieren"
+      new_link: "Ladung inserieren"
       required_field_hint: "Die mit einem (*) gekennzeichneten Felder sind Pflichtfelder:"
       template_link: "Als Vorlage"
     create: 
@@ -550,8 +550,8 @@ de:
       header: "Inserat bearbeiten"
       page_title: "Inserat bearbeiten"
     index: 
-      header: "Frachten"
-      intro: "Hier sehen Sie alle Frachtrauminserate Ihrer Firma."
+      header: "Ladungen"
+      intro: "Hier sehen Sie alle Ladungsinserate Ihrer Firma."
       page_title: "Alle Inserate"
       table: 
         headers: 
@@ -563,18 +563,18 @@ de:
           delete: Löschen
           edit: Bearbeiten
           template: "Als Vorlage"
-      all_freights: "Frachten"
+      all_freights: "Ladungen"
     new: 
       header: "Neues Inserat"
       page_title: "Inserat erstellen"
     show: 
       destination: 
-        header: "Entladestelle für Fracht"
+        header: "Entladestelle für Ladung"
       header: Inserat
       origin: 
-        header: "Beladestelle für Fracht"
+        header: "Beladestelle für Ladung"
       page_title: Inserat
-      transport_description: Frachtbeschreibung
+      transport_description: Ladungsbeschreibung
       no_side_track_available: "Kein Gleisanschluss vorhanden."
     update: 
       header: "Inserat bearbeiten"
@@ -618,10 +618,10 @@ de:
       page_title: "Neues Inserat"
     show: 
       destination: 
-        header: "Endladestelle für Fracht"
+        header: "Endladestelle für Ladung"
       header: Laderaum-Inserat
       origin: 
-        header: "Beladestelle für Fracht"
+        header: "Beladestelle für Ladung"
       page_title: Laderaum-Inserat
       transport_description: Laderaumbeschreibung
     update: 
@@ -856,6 +856,10 @@ de:
   user_sessions: 
     new: 
       page_title: Willkommen
+      failed: Benutzername/Passwort falsch!
+      login: Benutzername
+      password: Passwort
+      submit: Einloggen
     create:
       page_title: Willkommen
   users: 

@@ -26,6 +26,7 @@ class UserSessionsController < ApplicationController
       flash[:notice] = "Login successful!"
       redirect_back_or_default after_login_url
     else
+      @failed = true
       render :action => :new
     end
   end

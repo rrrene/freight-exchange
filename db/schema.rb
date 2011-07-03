@@ -170,6 +170,11 @@ ActiveRecord::Schema.define(:version => 20110701120440) do
     t.string   "name"
     t.string   "numeric_id"
     t.text     "searchable"
+    t.string   "address"
+    t.string   "address2"
+    t.string   "zip"
+    t.string   "city"
+    t.string   "country"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
