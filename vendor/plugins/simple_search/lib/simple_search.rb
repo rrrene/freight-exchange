@@ -74,9 +74,7 @@ class SimpleSearch < ActiveRecord::Base
     #   SimpleSearch.count "some query"
     def count(query, opts = {})
       arel_for(query, opts).count
-    end
-    
-    private 
+    end 
     
     def arel_for(query, opts = {})
       opts.reverse_merge!(:models => nil, :simplify => true)

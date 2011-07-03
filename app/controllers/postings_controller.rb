@@ -35,6 +35,12 @@ class PostingsController < RemoteController
     # Do not show postings which start dates lie in the past
     self.collection = collection.includes(:origin_site_info).where("site_infos.date > ?", Time.now)
     
+    if @q = params[:q]
+      @simple_searches = SimpleSearch.arel_for(@q, :models => [resource_class])
+      @resource_ids = @simple_searches.map(&:item_id)
+      raise @resource_ids.inspect
+    end
+    
     filter_collection!
 
     @count = resource_class.count
