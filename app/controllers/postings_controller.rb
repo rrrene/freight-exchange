@@ -30,7 +30,13 @@ class PostingsController < RemoteController
   end
   
   def index
+    # Do not show deleted postings
     self.collection = resource_class.scoped.where(:deleted => false)
+    # Do not show postings which start dates lie in the past
+    self.collection = collection.includes(:origin_site_info).where("site_infos.date > ?", Time.now)
+    
+    filter_collection!
+
     @count = resource_class.count
     index!
   end
@@ -56,4 +62,11 @@ class PostingsController < RemoteController
     }
   end
   
+  private
+  
+  def filter_collection!
+    # Default: newest postings first
+    self.collection = collection.order("#{controller_name}.created_at DESC")
+  end
+    
 end

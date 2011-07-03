@@ -311,8 +311,8 @@ de:
     navi: 
       backend: Administration
       dashboard: Startseite
-      freights: Inserate
-      loading_spaces: Inserate
+      freights: Ladungen
+      loading_spaces: Laderäume
       my_freights: Ladungen
       my_loading_spaces: Laderäume
       locale_de: Deutsch
@@ -325,7 +325,6 @@ de:
       register: Registrieren
       reviews: Bewertungen
       select_locale: "Sprache wählen:"
-      postings: "Inserate"
       companies: "Unternehmen"
     sidebar: 
       advanced_search_link: "Erweiterte Suche"

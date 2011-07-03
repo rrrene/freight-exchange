@@ -3,8 +3,12 @@ module NavigationHelper
     current_page? company_dashboard_path
   end
 
-  def section_is_postings?
-    %w(freights loading_spaces).include?(controller_name)
+  def section_is_freights?
+    %w(freights).include?(controller_name)
+  end
+  
+  def section_is_loading_spaces?
+    %w(loading_spaces).include?(controller_name)
   end
 
   def section_is_companies?

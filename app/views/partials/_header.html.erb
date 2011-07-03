@@ -4,7 +4,8 @@
       <ul class="navigation">
         <% if logged_in? %>
           <li><%= link_to_unless(section_is_dashboard?, t("common.navi.dashboard"), company_dashboard_path) %></li>
-          <li><%= link_to_unless(section_is_postings?, t("common.navi.postings"), freights_path) %></li>
+          <li><%= link_to_unless(section_is_freights?, t("common.navi.freights"), freights_path) %></li>
+          <li><%= link_to_unless(section_is_loading_spaces?, t("common.navi.loading_spaces"), loading_spaces_path) %></li>
           <li><%= link_to_unless(section_is_companies?, t("common.navi.companies"), companies_path) %></li>
         <% else %>
         <% end %>
