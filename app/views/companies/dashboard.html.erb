@@ -1,8 +1,4 @@
-
-  <% content_for(:toolbar) do %>
-    <%= link_btn t("common.navi.my_company"), company_path(current_company) %>
-    <%= link_btn t("common.navi.people"), people_path %>
-  <% end %>
+<%= render :partial => "partials/toolbar_settings" %>
 
 <div class="box">
   <h3><%= t("companies.dashboard.header") %></h3>

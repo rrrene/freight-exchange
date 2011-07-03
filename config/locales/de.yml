@@ -310,6 +310,7 @@ de:
     link_back: Zurück
     navi: 
       backend: Administration
+      companies: "Unternehmen"
       dashboard: Startseite
       freights: Ladungen
       loading_spaces: Laderäume
@@ -325,7 +326,7 @@ de:
       register: Registrieren
       reviews: Bewertungen
       select_locale: "Sprache wählen:"
-      companies: "Unternehmen"
+      settings: "Einstellungen"
     sidebar: 
       advanced_search_link: "Erweiterte Suche"
       company_information: 

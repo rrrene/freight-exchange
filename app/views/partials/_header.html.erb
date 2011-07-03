@@ -19,8 +19,7 @@
           <li><%= link_to_unless_current(t("common.navi.my_freights"), freights_company_path(current_company)) %></li>
           <li><%= link_to_unless_current(t("common.navi.my_loading_spaces"), loading_spaces_company_path(current_company)) %></li>
           <li><%= link_to_unless_current(text_with_badge("common.navi.reviews", current_company.unapproved_reviews.count), reviews_path) %></li>
-          <li><%= link_to_unless_current(t("common.navi.people"), people_path) %></li>
-          <li><%= link_to_unless_current(t("common.navi.my_company"), company_path(current_company)) %></li>
+          <li><%= link_to_unless_current(t("common.navi.settings"), people_path) %></li>
           <li class="last"><%= link_to_unless_current(image_tag("logout.png") + " " + t("common.navi.logout"), logout_path) %></li>
         <% else %>
           <li><%= link_to_unless_current(t("common.navi.login"), login_path) %></li>
@@ -59,29 +58,6 @@
         <%= link_btn t("loading_spaces.common.new_link"), new_loading_space_path, :class => 'minibutton-green' %>
       </div>
       <%= clear_both %>
-    </div>
-
-    <div class="container" id="second-header">
-      <ul class="navigation navigation-left">
-        <!--
-        <li><span>
-          <b><%#= Station.count %></b> stations and <b><%#= User.count %></b> users and stuff...
-        </span></li>
-        -->
-      </ul>
-      <ul class="navigation navigation-right">
-
-        <% if false && current_user.full? %>
-          <li><span>Welcome <%= current_user.login %>!</span></li>
-          <li>
-            <div id="search_form">
-            <%= form_tag search_url, :method => :get do %>
-              <div class="input-wrapper"><%= text_field_tag :q, h(params[:q]) %><%= submit_tag t('search.common.button'), :name => nil %></div>
-            <% end %>
-            </div>
-          </li>
-        <% end %>
-      </ul>
     </div>
   </div>
 </div>
