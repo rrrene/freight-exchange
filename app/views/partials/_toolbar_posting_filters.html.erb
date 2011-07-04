@@ -19,5 +19,8 @@
     <% if @destination_city %>
       <%= link_btn_unless_current t("#{controller_name}.index.to_destination_city", :city => @destination_city), params.merge(:origin_city => '', :destination_city => @destination_city) %>
     <% end %>
+    <% if @company %>
+      <%= link_btn_unless_current t("#{controller_name}.index.show_company", :company => @company.name), company_path(@company) %>
+    <% end %>
   </div>
 <% end %>

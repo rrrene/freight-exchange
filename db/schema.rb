@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110701120440) do
+ActiveRecord::Schema.define(:version => 20110704132945) do
 
   create_table "action_recordings", :force => true do |t|
     t.string   "item_type",  :limit => 30
@@ -26,6 +26,14 @@ ActiveRecord::Schema.define(:version => 20110701120440) do
   create_table "app_configs", :force => true do |t|
     t.string   "name"
     t.text     "value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "black_listed_items", :force => true do |t|
+    t.integer  "company_id"
+    t.integer  "item_id"
+    t.string   "item_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

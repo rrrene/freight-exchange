@@ -1,0 +1,2 @@
+module BlackListedItemsHelper
+end

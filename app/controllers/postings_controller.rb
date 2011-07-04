@@ -39,7 +39,9 @@ class PostingsController < RemoteController
     filter_collection!
     
     if @q
-      @origin_city ||= collection.detect { |posting| posting.origin_site_info.city =~ /^#{@q}/i }.origin_site_info.city
+      @origin_city ||= collection.detect { |posting|
+        posting.origin_site_info.city =~ /^#{@q}/i
+      }.full?(&:origin_site_info).full?(&:city)
       @destination_city ||= collection.detect { |posting|
         posting.destination_site_info.city =~ /^#{@q}/i
       }.full?(&:destination_site_info).full?(&:city)
@@ -74,9 +76,12 @@ class PostingsController < RemoteController
   
   def filter_collection!
     # Default: newest postings first
+    @blocked_ids = blocked_company_ids
+    self.collection = collection.where("#{controller_name}.company_id NOT IN (?)", @blocked_ids) if @blocked_ids.full?
     self.collection = collection.order("#{controller_name}.created_at DESC")
     if @company_id = params[:company_id].full?
-      # TODO: blacklisting beachten
+      @company = Company.find(@company_id)
+      # TODO: blacklisting beachten?
       self.collection = collection.where(:company_id => @company_id)
     end
   end

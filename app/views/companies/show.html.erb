@@ -1,80 +1,83 @@
-  <% if misc_text = localized_info(@company, :misc_text) %>
-    <h2><%= t("companies.show.header_misc_text") %></h2>
-    <div class="box">
-      <%= misc_text %>
-    </div>
-  <% end %>
+<% if misc_text = localized_info(@company, :misc_text) %>
+  <h2><%= t("companies.show.header_misc_text") %></h2>
+  <div class="box">
+    <%= misc_text %>
+  </div>
+<% end %>
 
-  <h2><%= t("companies.show.header_people") %></h2>
-  <% @company.people.each do |person| %>
+<h2><%= t("companies.show.header_people") %></h2>
+<% @company.people.each do |person| %>
+  <div class="box">
+    <h3><%= t "common.sidebar.person_information.header" %></h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th colspan="2"><b><%= person.name %></b></th>
+        </tr>
+      </thead>
+      <% if person[:job_description].full? %>
+        <tr>
+          <td><%= contact_info(person, :job_description) %></td>
+          <th></th>
+        </tr>
+      <% end %>
+      <% %w(phone fax email website).each do |attr| %>
+        <% if person[attr].full? %>
+          <tr>
+            <th><%= Person.human_attribute_name(attr) %></th>
+            <td><%= contact_info(person, attr)%></td>
+          </tr>
+        <% end %>
+      <% end %>
+      <% if misc_text = localized_info(person, :misc_text) %>
+        <tr>
+          <th><%= t("activerecord.attributes.person.localized_infos.misc_text") %></th>
+          <td><%= misc_text %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+<% end %>
+
+<% if reviews = @company.approved_reviews %>
+  <h2><%= t("companies.show.header_reviews") %></h2>
+  <% reviews.each do |review| %>
     <div class="box">
-      <h3><%= t "common.sidebar.person_information.header" %></h3>
-  
       <table>
-        <thead>
-          <tr>
-            <th colspan="2"><b><%= person.name %></b></th>
-          </tr>
-        </thead>
-        <% if person[:job_description].full? %>
-          <tr>
-            <td><%= contact_info(person, :job_description) %></td>
-            <th></th>
-          </tr>
-        <% end %>
-        <% %w(phone fax email website).each do |attr| %>
-          <% if person[attr].full? %>
-            <tr>
-              <th><%= Person.human_attribute_name(attr) %></th>
-              <td><%= contact_info(person, attr)%></td>
-            </tr>
-          <% end %>
-        <% end %>
-        <% if misc_text = localized_info(person, :misc_text) %>
-          <tr>
-            <th><%= t("activerecord.attributes.person.localized_infos.misc_text") %></th>
-            <td><%= misc_text %></td>
-          </tr>
-        <% end %>
+        <tr>
+          <th><%= Review.human_attribute_name(:author_company) %></th>
+          <td><%= link_to_item review.author_company %></td>
+        </tr>
+        <tr>
+          <th><%= Review.human_attribute_name(:author_user) %></th>
+          <td><%= link_to_item review.author_user %></td>
+        </tr>
+        <tr>
+          <th><%= Review.human_attribute_name(:text) %></th>
+          <td><%= review.text %></td>
+        </tr>
       </table>
     </div>
   <% end %>
-  
-  <% if reviews = @company.approved_reviews %>
-    <h2><%= t("companies.show.header_reviews") %></h2>
-    <% reviews.each do |review| %>
-      <div class="box">
-        <table>
-          <tr>
-            <th><%= Review.human_attribute_name(:author_company) %></th>
-            <td><%= link_to_item review.author_company %></td>
-          </tr>
-          <tr>
-            <th><%= Review.human_attribute_name(:author_user) %></th>
-            <td><%= link_to_item review.author_user %></td>
-          </tr>
-          <tr>
-            <th><%= Review.human_attribute_name(:text) %></th>
-            <td><%= review.text %></td>
-          </tr>
-        </table>
-      </div>
-    <% end %>
-  <% end %>
+<% end %>
 
-  <% content_for(:toolbar) do %>
+<% content_for(:toolbar) do %>
+  <div class="float_left">
     <%= link_btn t("common.create_new_review"), new_review_url(:company_id => @company.id), :icon => 'reply' %>
     <% if resource == current_user.company %>
       <%= link_btn t(".edit_company_link"), edit_company_path(@company), :icon => 'edit' %>
     <% end %>
-  <% end %>
+  </div>
 
-  <% content_for(:sidebar) do %>
-    <p>
-      <%= link_to t("common.create_new_review"), new_review_url(:company_id => @company.id), :class => 'create_new_freight' %>
-    </p>
-    <%= clear_both %>
-  <% end %>
+  <div class="float_right">
+    <% if black_listed?(resource) %>
+      <%= link_btn_unless black_listed?(@company), t("common.black_listed_company"), {:controller => :black_listed_items, :action => :destroy_all, :black_listed_item => {:item_type => 'Company', :item_id => resource.id}}, :method => :post %>
+    <% else %>
+      <%= link_btn_unless black_listed?(@company), t("common.black_list_company"), {:controller => :black_listed_items, :action => :create, :black_listed_item => {:item_type => 'Company', :item_id => resource.id}}, :method => :post, :confirm => t("common.black_list_company_confirm") %>
+    <% end %>
+  </div>
+<% end %>
 
 <%= render_person_info(@company.contact_person) if @company.contact_person %>
 <%= render_company_info(@company) %>

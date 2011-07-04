@@ -113,7 +113,7 @@ module ApplicationHelper
   end
   
   # Renders a linked button (optionally with an icon).
-  def link_btn(text, path, opts = {})
+  def link_btn(text, path, opts = {}, html_opts = {})
     if icon = opts.delete(:icon)
       text = content_tag(:span, "", :class => 'icon') << text
     end
@@ -123,18 +123,18 @@ module ApplicationHelper
         opts[:class].full? ? opts[:class] : icon.full?, 
         icon.full? { |i| "btn-#{i}" }
       ].compact.join(' ')
-    link_to text, path, opts
+    link_to text, path, opts, html_opts
   end
 
-  def link_btn_unless(condition, text, path, opts = {})
+  def link_btn_unless(condition, text, path, opts = {}, html_opts = {})
     if condition
       opts[:class] = "#{opts[:class]} minibutton-active".strip
     end
-    link_btn(text, path, opts)
+    link_btn(text, path, opts, html_opts)
   end
 
-  def link_btn_unless_current(text, path, opts = {})
-    link_btn_unless(current_page?(path), text, path, opts)
+  def link_btn_unless_current(text, path, opts = {}, html_opts = {})
+    link_btn_unless(current_page?(path), text, path, opts, html_opts)
   end
 
   # Renders a link to the given item.

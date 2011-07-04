@@ -1,4 +1,10 @@
 BlackBoard::Application.routes.draw do |map|
+  resources :black_listed_items do
+    collection do
+      post :destroy_all
+    end
+  end
+
   match "setup" => 'setup#index', :as => :setup  
   match "not_seeded" => 'setup#not_seeded', :as => :not_seeded
   match "demo_company" => 'setup#demo_company', :as => :demo_company

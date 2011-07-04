@@ -326,7 +326,7 @@ de:
       register: Registrieren
       reviews: Bewertungen
       select_locale: "Sprache wählen:"
-      settings: "Einstellungen"
+      settings: "Verwaltung"
     sidebar: 
       advanced_search_link: "Erweiterte Suche"
       company_information: 
@@ -341,6 +341,9 @@ de:
         please_edit_notice: "Bitte füllen Sie ihr Kontaktprofil vollständig aus."
         show: Anzeigen
     website_title: "Freight Exchange 2010"
+    black_list_company: "Unternehmen ignorieren"
+    black_list_company_confirm: "Wollen Sie wirklich zukünftig alle Inserate dieser Firma ignorieren?"
+    black_listed_company: "Unternehmen wird ignoriert"
   companies: 
     create: 
       page_title: "Ihre Firma registrieren"
@@ -355,6 +358,10 @@ de:
           zip: "PLZ"
           city: "Stadt"
           country: "Land"
+      all_companies: "Alle Unternehmen"
+      black_listed_companies: "Ignorierte Unternehmen"
+      filter_by_name: "Von A bis Z"
+      filter_by_created_at: "Neuste zuerst"
     dashboard:
       header: Newsfeed
       intro: "Hier sehen Sie alle Aktionen der Benutzer Ihrer Firma."
@@ -557,6 +564,7 @@ de:
       intro: "Hier sehen Sie alle Ladungsinserate Ihrer Firma."
       from_origin_city: "Nur Ladungen aus '%{city}'"
       to_destination_city: "Nur Ladungen nach '%{city}'"
+      show_company: "Profil von %{company}"
       table: 
         headers: 
           origin_date: Von
