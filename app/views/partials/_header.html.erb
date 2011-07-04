@@ -16,8 +16,8 @@
       <ul class="navigation">
         <% if logged_in? %>
           <li><span class="company_name"><%= current_company.name %>:</span></li>
-          <li><%= link_to_unless_current(t("common.navi.my_freights"), freights_company_path(current_company)) %></li>
-          <li><%= link_to_unless_current(t("common.navi.my_loading_spaces"), loading_spaces_company_path(current_company)) %></li>
+          <li><%= link_to_unless_current(t("common.navi.my_freights"), freights_path(:company_id => current_company)) %></li>
+          <li><%= link_to_unless_current(t("common.navi.my_loading_spaces"), loading_spaces_path(:company_id => current_company)) %></li>
           <li><%= link_to_unless_current(text_with_badge("common.navi.reviews", current_company.unapproved_reviews.count), reviews_path) %></li>
           <li><%= link_to_unless(section_is_settings?, t("common.navi.settings"), people_path) %></li>
           <li class="last"><%= link_to_unless_current(image_tag("logout.png") + " " + t("common.navi.logout"), logout_path) %></li>

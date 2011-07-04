@@ -738,6 +738,7 @@ de:
     new: 
       header: "Bewertung über '{{company_name}}' schreiben"
       page_title: "Bewertung schreiben"
+      intro: "Hier können Sie eine Bewertung schreiben und dem Unternehmen zukommen lassen."
     created: 
       page_title: "Bewertung gesendet"
       hint: "Ihre Bewertung wurde erfolgreich abgeschickt."

@@ -1,4 +1,9 @@
+<%= render_partial "toolbar_company" %>
+
 <div class="box">
-  <h2><%= t("reviews.new.header", :company_name => link_to(@review.company.name, @review.company)).html_safe %></h2>
+  <h3><%= t("reviews.new.header", :company_name => link_to(@company.name, @company)).html_safe %></h3>
+  <p>
+    <%= t('reviews.new.intro') %>
+  </p>
   <%= render 'form' %>
 </div>

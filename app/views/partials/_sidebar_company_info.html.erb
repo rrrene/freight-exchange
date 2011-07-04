@@ -30,7 +30,7 @@
       <% end %>
     </table>
 
-    <%= link_btn t("common.sidebar.company_information.postings"), freights_company_path(company), :class => 'show', :icon => :show %>
+    <%= link_btn t("common.sidebar.company_information.postings"), freights_path(:company_id => company), :class => 'show', :icon => :show %>
     
     <% if company == current_company && only_some_attributes_filled?(company) %>
       <div class="notice">

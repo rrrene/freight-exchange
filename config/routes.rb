@@ -28,13 +28,7 @@ BlackBoard::Application.routes.draw do |map|
   resources :loading_spaces
   resources :freights
   
-  resources :companies do
-    member do
-      get :freights
-      get :loading_spaces
-    end
-  end
-
+  resources :companies
   resources :stations do
     collection do
       get :autocomplete_station_searchable

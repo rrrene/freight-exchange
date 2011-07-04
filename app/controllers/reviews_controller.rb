@@ -9,6 +9,8 @@ class ReviewsController < RemoteController
     else
       raise "Parameter error: company_id required" 
     end
+    @company = @review.company
+    page[:title] = @company.name
     new!
   end
   
