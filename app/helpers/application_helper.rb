@@ -181,6 +181,19 @@ module ApplicationHelper
               :locals => {:f => f, :name => name, :locales => locales}})
   end
   
+  def navi_to_unless(condition, text, opts = {}, html_opts = {})
+    if condition
+      html_opts[:class] = "#{html_opts[:class]} active".strip
+      link_to(text, opts, html_opts)
+    else
+      link_to(text, opts, html_opts)
+    end
+  end
+  
+  def navi_to_unless_current(text, opts = {}, html_opts = {})
+    navi_to_unless(current_page?(opts), text, opts, html_opts)
+  end
+  
   # REturns <tt>true</tt>, if only some attributes are not blank for the given ActiveRecord object.
   def only_some_attributes_filled?(ar)
     ar.attributes_filled < AppConfig['contact_info.complete_percentage'].to_f

@@ -46,6 +46,7 @@ ul.navigation li.noborder {
 }
 
 #top-navigation ul.navigation li span,
+#top-navigation ul.navigation li a.active,
 #top-navigation ul.navigation li a {
   display: block;
   padding: 6px;
@@ -57,7 +58,8 @@ ul.navigation li.noborder {
   background-color: #4D4D4D;
   color: #ddd;
 }
-#top-navigation ul.navigation li span {
+#top-navigation ul.navigation li span,
+#top-navigation ul.navigation li a.active {
   font-weight: bold;
   color: #fff;
   padding-top: 4px;
