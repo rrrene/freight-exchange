@@ -40,7 +40,9 @@ class PostingsController < RemoteController
     
     if @q
       @origin_city ||= collection.detect { |posting| posting.origin_site_info.city =~ /^#{@q}/i }.origin_site_info.city
-      @destination_city ||= collection.detect { |posting| posting.destination_site_info.city =~ /^#{@q}/i }.destination_site_info.city
+      @destination_city ||= collection.detect { |posting|
+        posting.destination_site_info.city =~ /^#{@q}/i
+      }.full?(&:destination_site_info).full?(&:city)
     end
     
     @count = resource_class.count
@@ -73,6 +75,10 @@ class PostingsController < RemoteController
   def filter_collection!
     # Default: newest postings first
     self.collection = collection.order("#{controller_name}.created_at DESC")
+    if @company_id = params[:company_id].full?
+      # TODO: blacklisting beachten
+      self.collection = collection.where(:company_id => @company_id)
+    end
   end
   
   def perform_search!

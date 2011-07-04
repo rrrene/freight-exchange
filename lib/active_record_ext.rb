@@ -104,7 +104,21 @@ module ActiveRecord
               self.to_s.underscore, attribute_name, value]
       I18n.t(arr * '.', i18n_opts)
     end
-    
+
+    def pretty_prefix(sym = '#')
+      name = self.class.to_s.underscore
+      if name =~ /_/
+        arr = name.split('_')
+        sym + (arr[0][0..0] + arr[1][0..0]).upcase
+      else
+        sym + name[0..1].upcase
+      end
+    end
+
+    def pretty_id
+      pretty_prefix + "%06d" % id
+    end
+
     class << self
       # Adds a convenient [] find_by to the model utilizing the given attribute
       # and returning the first record matching the condition. Therefore this

@@ -1,6 +1,7 @@
 <table class="postings">
     <thead>
       <tr>
+        <th><%= t('freights.index.table.headers.id') %></th>
         <th><%= t('freights.index.table.headers.origin_date') %></th>
         <th><%= t('freights.index.table.headers.origin_name') %></th>
         <th><%= t('freights.index.table.headers.destination_date') %></th>
@@ -17,7 +18,8 @@
     <tbody>
       <% collection.each do |ar| %>
         <tr class="<%= ar.origin_site_info.date < Time.now ? :old : :new %>">
-          <td class="origin_date"><%= link_to l(ar.origin_site_info.date, :format => :date), ar %></td>
+          <td class="origin_date"><%= link_to ar.pretty_id, ar %></td>
+          <td class="origin_date"><%= l(ar.origin_site_info.date, :format => :date) %></td>
           <td class="origin_name"><%= truncate ar.origin_site_info.name %></td>
           <td class="destination_date"><%= l(ar.destination_site_info.date, :format => :date) %></td>
           <td class="destination_name"><%= truncate ar.destination_site_info.name %></td>
@@ -30,7 +32,7 @@
               <%= link_btn t('freights.index.table.options.delete'), ar, :method => :delete, :confirm => t('common.confirm'), :class => 'destroy' %>
             </td>
           <% else %>
-            <td class="company_name"><%= link_to truncate(ar.company.name, :length => 30), {:controller => :companies, :action => freights_or_loading_spaces?, :id => ar.company}, {:title => ar.company.name.size > 30 ? ar.company.name : nil} %></td>
+            <td class="company_name"><%= link_to truncate(ar.company.name, :length => 30), {:company_id => ar.company}, {:title => ar.company.name.size > 30 ? ar.company.name : nil} %></td>
           <% end %>
         </tr>
       <% end %>

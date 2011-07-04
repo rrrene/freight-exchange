@@ -559,10 +559,12 @@ de:
       to_destination_city: "Nur Ladungen nach '%{city}'"
       table: 
         headers: 
-          date: Datum
-          destination: Zielort
+          origin_date: Von
+          origin_name: Startort
+          destination_date: Bis
+          destination_name: Zielort
           options: Optionen
-          origin: Startort
+          id: "Nummer"
         options: 
           delete: Löschen
           edit: Bearbeiten

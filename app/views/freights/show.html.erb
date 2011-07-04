@@ -78,28 +78,29 @@
   </table>
 </div>
 
-<div class="box">
-  <h3><%= t "search.common.results.header" %></h3>
-  <% if matching_results.full? %>
-    <ul class="search_results action_list">
-    <% matching_results.each do |result| %>
-      <li class="<%= highlight_in_search?(result) ? 'highlight' : '' %>">
-        <% if template_exists?("/#{result.class.to_s.tableize}/_search_result")%>
-          <%= render :partial => "/#{result.class.to_s.tableize}/search_result", :locals => {:result => result} %>
-        <% else %>
-          <% if result.is_a?(Posting) %>
-            <%= link_to "#{result.origin_station.name} - #{result.destination_station.name}", result %>
-          <% else %>
-            <%= link_to result.name, result %>
-          <% end %>
-        <% end %>
-      </li>
-    <% end %>
-    </ul>
-  <% end %>
-</div>
-
 <% content_for(:sidebar) do %>
   <%= render_person_info(resource.contact_person) if resource.contact_person %>
   <%= render_company_info(resource.company) %>
+
+  <div class="box">
+    <h3><%= t "search.common.results.header" %></h3>
+    <% if matching_results.full? %>
+      <ul class="search_results action_list">
+      <% matching_results.each do |result| %>
+        <li class="<%= highlight_in_search?(result) ? 'highlight' : '' %>">
+          <% if template_exists?("/#{result.class.to_s.tableize}/_search_result")%>
+            <%= render :partial => "/#{result.class.to_s.tableize}/search_result", :locals => {:result => result} %>
+          <% else %>
+            <% if result.is_a?(Posting) %>
+              <%= link_to "#{result.origin_station.name} - #{result.destination_station.name}", result %>
+            <% else %>
+              <%= link_to result.name, result %>
+            <% end %>
+          <% end %>
+        </li>
+      <% end %>
+      </ul>
+    <% end %>
+  </div>
+
 <% end %>
