@@ -20,8 +20,17 @@
           </tr>
         <% end %>
       <% end %>
-    </table>  
-      <%= link_btn t("common.sidebar.company_information.postings"), freights_company_path(company), :class => 'show', :icon => :show %>
+      <% %w(commercial_register_entry vat_id).each do |attr| %>
+      <tr>
+        <th colspan="2"><%= Company.human_attribute_name(attr) %></th>
+      </tr>
+      <tr>
+        <td colspan="2"><%= company[attr] || '-' %></td>
+      </tr>
+      <% end %>
+    </table>
+
+    <%= link_btn t("common.sidebar.company_information.postings"), freights_company_path(company), :class => 'show', :icon => :show %>
     
     <% if company == current_company && only_some_attributes_filled?(company) %>
       <div class="notice">

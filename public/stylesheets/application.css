@@ -205,6 +205,9 @@ div.header div#search_form .advanced-search-wrapper a:hover {
 div.frame div.box {
   background-color: #fff;
 }
+div#sidebar {
+  padding-top: 20px;
+}
 div#sidebar div.box {
   /*
   -moz-border-radius: 5px; 

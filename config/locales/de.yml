@@ -16,6 +16,8 @@ de:
         phone: Telefon
         website: Internet
         zip: PLZ
+        commercial_register_entry: "Handelsregister-Eintragung"
+        vat_id: "Umsatzsteuer-Identifikationsnummer"
       freight: 
         contact_person: Kontaktperson
         desired_proposal_type: "Angebot gewünscht als"
@@ -376,7 +378,7 @@ de:
       intro: "Erstellen Sie Ihr Konto in einer Minute!"
       page_title: "Ihre Firma registrieren"
     show: 
-      edit_company_link: "Profil bearbeiten"
+      edit_company_link: "Unternehmen bearbeiten"
       header_misc_text: "Wir über uns:"
       header_people: "Wer wir sind:"
       header_reviews: "Was andere über uns sagen:"
@@ -532,6 +534,7 @@ de:
       change_password: "Passwort ändern (optional)"
       company_address: Anschrift
       company_contact: Kontakt
+      company_registries: "Registrierungen"
       company_contact_person: "Allgemeiner Ansprechpartner"
       company_misc: "Weitere Informationen"
       company_name: Name
