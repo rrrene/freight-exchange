@@ -14,11 +14,7 @@ class CompaniesController < RemoteController
 
   def index
     self.collection = Company.scoped
-    if params[:black_listed].full?
-      self.collection = collection.where(:id => blocked_company_ids)
-    else
-      self.collection = collection.where("id NOT IN (?)", blocked_company_ids)
-    end
+    filter_collection!
     order = if params[:order].blank? || params[:order] == 'name'
       'UPPER(name) ASC'
     elsif params[:order] == 'created_at'
@@ -49,17 +45,16 @@ class CompaniesController < RemoteController
       render :action => :new
     end
   end
-
-  def freights
-    show! do
-      self.collection = @company.freights
+  
+  private
+  
+  def filter_collection!
+    if params[:black_listed].full?
+      self.collection = collection.where(:id => blocked_company_ids)
+    else
+      if blocked_company_ids.full?
+        self.collection = collection.where("id NOT IN (?)", blocked_company_ids)
+      end
     end
   end
-
-  def loading_spaces
-    show! do
-      self.collection = @company.loading_spaces
-    end
-  end
-
 end
