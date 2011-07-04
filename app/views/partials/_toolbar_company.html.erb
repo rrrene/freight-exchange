@@ -1,0 +1,21 @@
+
+<% content_for(:toolbar) do %>
+  <div class="float_left">
+    <%= link_btn_unless_current "Profil", company_path(@company) %>
+    <%= link_btn_unless_current "Ladungen", freights_path(:company_id => @company) %>
+    <%= link_btn_unless_current "Laderäume", loading_spaces_path(:company_id => @company) %>
+  </div>
+
+  <div class="float_right">
+    <% if @company == current_user.company %>
+      <%= link_btn t("companies.show.edit_company_link"), edit_company_path(@company), :icon => 'edit' %>
+    <% else %>
+      <%= link_btn_unless_current t("common.create_new_review"), new_review_url(:company_id => @company.id), :icon => 'reply' %>
+      <% if black_listed?(@company) %>
+        <%= link_btn_unless black_listed?(@company), t("common.black_listed_company"), {:controller => :black_listed_items, :action => :destroy_all, :black_listed_item => {:item_type => 'Company', :item_id => resource.id}}, :method => :post %>
+      <% else %>
+        <%= link_btn_unless black_listed?(@company), t("common.black_list_company"), {:controller => :black_listed_items, :action => :create, :black_listed_item => {:item_type => 'Company', :item_id => resource.id}}, :method => :post, :confirm => t("common.black_list_company_confirm") %>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>

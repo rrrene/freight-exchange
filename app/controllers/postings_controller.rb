@@ -81,6 +81,7 @@ class PostingsController < RemoteController
     self.collection = collection.order("#{controller_name}.created_at DESC")
     if @company_id = params[:company_id].full?
       @company = Company.find(@company_id)
+      page[:title] = @company.name
       # TODO: blacklisting beachten?
       self.collection = collection.where(:company_id => @company_id)
     end
