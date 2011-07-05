@@ -1,4 +1,10 @@
 BlackBoard::Application.routes.draw do |map|
+  resources :white_listed_items do
+    collection do
+      post :destroy_all
+    end
+  end
+
   resources :black_listed_items do
     collection do
       post :destroy_all

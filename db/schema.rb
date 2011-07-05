@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110705165231) do
+ActiveRecord::Schema.define(:version => 20110705173942) do
 
   create_table "action_recordings", :force => true do |t|
     t.string   "item_type",  :limit => 30
@@ -248,6 +248,14 @@ ActiveRecord::Schema.define(:version => 20110705165231) do
     t.integer  "person_id"
     t.string   "api_key"
     t.string   "posting_type",        :default => "Freight"
+  end
+
+  create_table "white_listed_items", :force => true do |t|
+    t.integer  "company_id"
+    t.integer  "item_id"
+    t.string   "item_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

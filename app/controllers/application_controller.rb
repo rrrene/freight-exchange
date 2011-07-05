@@ -4,13 +4,17 @@ class ApplicationController < ActionController::Base
   before_filter :set_locale
   before_filter :set_default_page_title
   helper_method :current_user, :controller_catalog, :current_person, :current_company, :logged_in?, :demo_mode?, :page
-  helper_method :black_listed?
+  helper_method :black_listed?, :white_listed?
   layout 'application'
   
   private
 
   def black_listed?(record)
     current_company.black_listed?(record)
+  end
+
+  def white_listed?(record)
+    current_company.white_listed?(record)
   end
 
   def blocked_company_ids

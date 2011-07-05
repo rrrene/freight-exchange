@@ -11,6 +11,7 @@ class Company < ActiveRecord::Base
   has_many :freights, :order => 'created_at DESC', :dependent => :destroy
   has_many :loading_spaces, :order => 'created_at DESC', :dependent => :destroy
   has_many :black_listed_items, :dependent => :destroy
+  has_many :white_listed_items, :dependent => :destroy
   
   # Returns all approved reviews for the company.
   def approved_reviews
@@ -19,6 +20,11 @@ class Company < ActiveRecord::Base
 
   def black_listed?(record)
     arel = black_listed_items.where(:item_type => record.class.to_s, :item_id => record.id)
+    arel.count > 0
+  end
+
+  def white_listed?(record)
+    arel = white_listed_items.where(:item_type => record.class.to_s, :item_id => record.id)
     arel.count > 0
   end
 

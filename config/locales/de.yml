@@ -346,6 +346,8 @@ de:
     black_list_company: "Unternehmen ignorieren"
     black_list_company_confirm: "Wollen Sie wirklich zukünftig alle Inserate dieser Firma ignorieren?"
     black_listed_company: "Unternehmen wird ignoriert"
+    white_list_company: "Unternehmen favorisieren"
+    white_listed_company: "Unternehmen wird favorisiert"
   companies:
     common:
       search-label: "Unternehmen:"
