@@ -60,6 +60,7 @@ class PostingsController < RemoteController
         opts = {:user_id => current_user.id, :parent_id => parent_id, :result => resource}
         @search_recording = SearchRecording.create(opts)
       end
+      page[:title] = t("#{controller_name}.show.page_title", :pretty_id => resource.pretty_id)
     }
   end
   

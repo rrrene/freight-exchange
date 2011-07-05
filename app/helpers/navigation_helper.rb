@@ -4,11 +4,19 @@ module NavigationHelper
   end
 
   def section_is_freights?
-    %w(freights).include?(controller_name)
+    controller_name == 'freights' && !section_is_my_freights?
   end
   
   def section_is_loading_spaces?
-    %w(loading_spaces).include?(controller_name)
+    controller_name == 'loading_spaces' && !section_is_my_loading_spaces?
+  end
+  
+  def section_is_my_freights?
+    controller_name == 'freights' && @company == current_company
+  end
+
+  def section_is_my_loading_spaces?
+    controller_name == 'loading_spaces' && @company == current_company
   end
 
   def section_is_companies?

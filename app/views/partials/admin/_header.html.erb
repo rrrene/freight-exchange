@@ -14,7 +14,7 @@
         <ul class="navigation">
           <li><%= link_to t("admin.common.navi.user_roles"), admin_user_roles_path %></li>
           <li><%= link_to t("admin.common.navi.app_configs"), admin_app_configs_path %></li>
-          <li class="last"><%= link_to t("admin.common.navi.back_to_app"), root_path, :class => 'frontend' %></li>
+          <li class="last"><%= link_to image_tag("logout.png") + " " + t("admin.common.navi.back_to_app"), root_path, :class => 'frontend' %></li>
       </ul>
     </div>
     <%= clear_both %>

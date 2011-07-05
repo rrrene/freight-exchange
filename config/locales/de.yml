@@ -369,7 +369,7 @@ de:
     dashboard:
       header: Newsfeed
       intro: "Hier sehen Sie alle Aktionen der Benutzer Ihrer Firma."
-      page_title: Cockpit
+      page_title: Startseite
       sidebar_company_info_title: "Dies ist die InfoCard zu Ihrer Firma:"
       sidebar_person_info_title: "Dies ist die InfoCard zu Ihrer Person:"
     edit: 
@@ -588,12 +588,12 @@ de:
       header: "Neues Inserat"
       page_title: "Inserat erstellen"
     show: 
+      page_title: "Inserat %{pretty_id}"
       destination: 
         header: "Entladestelle für Ladung"
       header: Inserat
       origin: 
         header: "Beladestelle für Ladung"
-      page_title: Inserat
       transport_description: Ladungsbeschreibung
       no_side_track_available: "Kein Gleisanschluss vorhanden."
     update: 
@@ -642,12 +642,12 @@ de:
       header: "Neues Inserat"
       page_title: "Neues Inserat"
     show: 
+      page_title: "Inserat %{pretty_id}"
       destination: 
         header: "Endladestelle für Ladung"
       header: Laderaum-Inserat
       origin: 
         header: "Beladestelle für Ladung"
-      page_title: Laderaum-Inserat
       transport_description: Laderaumbeschreibung
     update: 
       header: "Inserat bearbeiten"
