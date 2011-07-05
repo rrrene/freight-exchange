@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110704145052) do
+ActiveRecord::Schema.define(:version => 20110705165231) do
 
   create_table "action_recordings", :force => true do |t|
     t.string   "item_type",  :limit => 30
@@ -174,6 +174,7 @@ ActiveRecord::Schema.define(:version => 20110704145052) do
     t.string   "track_number"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "station_id"
   end
 
   create_table "stations", :force => true do |t|

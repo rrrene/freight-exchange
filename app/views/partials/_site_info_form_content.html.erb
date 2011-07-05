@@ -2,19 +2,21 @@
 <%= f.semantic_fields_for "#{site}_site_info", resource.__send__("#{site}_site_info") do |f_site| %>
   <%= f_site.inputs :"#{site}_site_info" do %>
     <%= f_site.input :contractor, :label => t("activerecord.attributes.site_info.#{site}_contractor") %>
-    <%#= f_site.input :date %>
-    <li>
-      <label><%= t("activerecord.attributes.site_info.address_template_label")%></label>
-      <select onChange="fillSiteInfo('<%= site %>', this.value); return false;">
-        <option selected="selected"><%= t("common.choose") %></option>
-        <%= options_for_select(current_user.recent_site_infos(site).map { |site_info| [site_info.name, site_info.id] }) %>
-      </select>
-    </li>
-    <%= f_site.autocompleted_input "name", :url => autocomplete_station_searchable_stations_path %>
-    <% (SiteInfo::SITE_ATTRIBUTES - ['name']).each do |field| %>
+    <%= f_site.input :side_track_available, :as => :radio, :collection =>yes_no_collection %>
+    <% if false %>
+      <li>
+        <label><%= t("activerecord.attributes.site_info.address_template_label")%></label>
+        <select onChange="fillSiteInfo('<%= site %>', this.value); return false;">
+          <option selected="selected"><%= t("common.choose") %></option>
+          <%= options_for_select(current_user.recent_site_infos(site).map { |site_info| [site_info.name, site_info.id] }) %>
+        </select>
+      </li>
+      <%#= f_site.autocompleted_input "name", :url => autocomplete_station_searchable_stations_path %>
+    <% end %>
+    <%= f_site.input :station %>
+    <%= f_site.input :track_number %>
+    <% SiteInfo::SITE_ATTRIBUTES.each do |field| %>
       <%= f_site.input field, :as => :string %>
     <% end %>
-    <%= f_site.input :side_track_available, :as => :radio, :collection =>yes_no_collection %>
-    <%= f_site.input :track_number %>
   <% end %>
 <% end %>

@@ -11,6 +11,7 @@
 #   freight.origin_site_info.create(opts)
 class SiteInfo < ActiveRecord::Base
   SITE_ATTRIBUTES = %w(name address address2 zip city country)
+  belongs_to :station
 #  validates_presence_of :address
 #  validates_presence_of :zip
 #  validates_presence_of :city

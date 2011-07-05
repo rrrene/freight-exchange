@@ -63,11 +63,11 @@ ul.navigation li.noborder {
   font-weight: bold;
   color: #fff;
   padding-top: 4px;
-  border-top: 2px solid #DD4B39;
+  border-top: 2px solid #4183C4;
 }
 #top-navigation .navigation-right ul.navigation li span,
 #top-navigation .navigation-right ul.navigation li a.active {
-  border-color: #4183C4;
+  border-color: #DD4B39;
 }
 #top-navigation ul.navigation li span.company_name {
   font-weight: bold;
