@@ -177,14 +177,31 @@ div.header div#search_form .input-wrapper input {
   float: left;
   width: 24px;
 }
-
+div.header div#search_form .input-wrapper #search-label {
+  display: block;
+  float: left;
+  margin: 2px 0 0 2px;
+  padding: 2px;
+  border-radius: 3px;
+  font-size: 11px;
+  color: #fff;
+  text-decoration: none;
+}
+div.header div#search_form .input-wrapper .search-label-freights,
+div.header div#search_form .input-wrapper .search-label-loading_spaces {
+  background-color: #4183C4;
+}
+div.header div#search_form .input-wrapper .search-label-companies {
+  background-color: #6ba028;
+}
 div.header div#search_form .input-wrapper input#q {
   background: transparent;
   float: left;
-  width: 289px;
+  width: 89px;
   font-size: 14px;
   line-height: 16px;
   padding: 3px;
+  margin-top: 1px;
 }
 
 div.header div#search_form .input-wrapper input#q:focus {

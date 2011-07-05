@@ -53,8 +53,7 @@ function fillSiteInfo(origin_or_destination, site_info_id) {
   }
 }
 
-jQuery(function() {
-  actionListMagic();
+function bindMiniButtons() {
   jQuery('a.minibutton').bind({
     mousedown: function() {
       jQuery(this).addClass('mousedown');
@@ -66,6 +65,11 @@ jQuery(function() {
       jQuery(this).removeClass('mousedown');
     }
   });
+}
+
+jQuery(function() {
+  actionListMagic();
+  bindMiniButtons();
 
   var elements = [
     "#freight_origin_site_info_attributes_side_track_available_false",
@@ -93,5 +97,9 @@ jQuery(function() {
     });
   });
 
+  var labelWidth = parseInt($('#search-label').css('width'));
+  var wrapperWidth = parseInt($('.input-wrapper').css('width'));
+$('#q').css('width', (wrapperWidth-labelWidth-40)+'px')
 
+  console.log( (wrapperWidth-labelWidth-64) )
 });

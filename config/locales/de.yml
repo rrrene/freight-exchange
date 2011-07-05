@@ -346,7 +346,9 @@ de:
     black_list_company: "Unternehmen ignorieren"
     black_list_company_confirm: "Wollen Sie wirklich zukünftig alle Inserate dieser Firma ignorieren?"
     black_listed_company: "Unternehmen wird ignoriert"
-  companies: 
+  companies:
+    common:
+      search-label: "Unternehmen:"
     create: 
       page_title: "Ihre Firma registrieren"
 
@@ -553,6 +555,7 @@ de:
       new_link: "Ladung inserieren"
       required_field_hint: "Die mit einem (*) gekennzeichneten Felder sind Pflichtfelder:"
       template_link: "Als Vorlage"
+      search-label: "Ladungen:"
     create: 
       header: "Neues Inserat"
       page_title: "Neues Inserat"
@@ -610,6 +613,7 @@ de:
       new_link: "Laderaum inserieren"
       required_field_hint: "Die mit einem (*) gekennzeichneten Felder sind Pflichtfelder:"
       template_link: "Als Vorlage"
+      search-label: "Laderäume:"
     create: 
       page_title: "Neues Inserat"
     edit:

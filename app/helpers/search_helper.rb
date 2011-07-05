@@ -1,10 +1,18 @@
 module SearchHelper
-  
+
   def contextual_search_path
-    _controller = controller?(:loading_spaces) ? :loading_spaces : :freights
-    {:controller => _controller, :action => :index}
+    {:controller => contextual_search_controller, :action => :index}
   end
-  
+
+  def contextual_search_controller
+    if action_name != 'dashboard'
+      if %w(freights loading_spaces companies).include?(controller_name)
+        return controller_name
+      end
+    end
+    'freights'
+  end
+
   def search_input_is(object, field, opts = {})
     opts.merge!(:keyword => :is)
     name = name_from_object_and_field(object, field, opts)
