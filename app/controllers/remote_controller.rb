@@ -28,7 +28,15 @@ class RemoteController < ApplicationController
   inherit_resources
   remote_enabled
   login_required
-  
+
+  def index(&block)
+    self.collection = resource_class.scoped
+    filter_collection!
+    perform_search!
+    order_collection!
+    index!(&block)
+  end
+
   # The standard show action. 
   # 
   # Sets a default page title. 
@@ -56,5 +64,24 @@ class RemoteController < ApplicationController
   def resource=(val)
     instance_variable_set("@#{instance_name}", val)
   end
-    
+
+  def perform_search!
+    if @q = params[:q].full?
+      @simple_searches = SimpleSearch.arel_for(@q, :models => [resource_class])
+      @resource_ids = @simple_searches.map(&:item_id)
+      self.collection = collection.where(:id => @resource_ids)
+    end
+  end
+
+  def filter_collection!
+  end
+
+  def order_collection!
+    order = if params[:order].blank? || params[:order] == 'name'
+      'UPPER(name) ASC'
+    elsif params[:order] == 'created_at'
+      'created_at DESC'
+    end
+    self.collection = collection.order(order)
+  end
 end

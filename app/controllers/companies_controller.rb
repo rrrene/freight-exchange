@@ -12,18 +12,6 @@ class CompaniesController < RemoteController
     @recordings = current_company.action_recordings.limit(50)
   end
 
-  def index
-    self.collection = Company.scoped
-    filter_collection!
-    order = if params[:order].blank? || params[:order] == 'name'
-      'UPPER(name) ASC'
-    elsif params[:order] == 'created_at'
-      'created_at DESC'
-    end
-    self.collection = collection.order(order)
-    index!
-  end
-
   # The Companies#new action is actually the "Create a new Account"-screen
   # a user sees when he originally signs up for the freight exchange.
   def new
@@ -56,5 +44,14 @@ class CompaniesController < RemoteController
         self.collection = collection.where("id NOT IN (?)", blocked_company_ids)
       end
     end
+  end
+
+  def order_collection!
+    order = if params[:order].blank? || params[:order] == 'name'
+      'UPPER(name) ASC'
+    elsif params[:order] == 'created_at'
+      'created_at DESC'
+    end
+    self.collection = collection.order(order)    
   end
 end
