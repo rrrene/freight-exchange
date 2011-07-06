@@ -2,7 +2,10 @@
 # postings (freights and loading_spaces).
 #
 # Both the FreightsController and the LoadingSpacesController inherit from here.
-# 
+#
+
+require_dependency 'uploaded_sheet' if Rails.env == 'development'
+
 class PostingsController < RemoteController
   same_company_required :only => %w(edit update destroy)
   role_required [:company_admin, :company_employee], :only => [:new, :create, :edit, :update, :destroy]
@@ -53,7 +56,17 @@ class PostingsController < RemoteController
       render :action => :edit
     end
   end
-  
+
+  def upload
+    if request.post?
+      @sheet = UploadedSheet.new(params[:data])
+      # TODO: write worker to parse postings in background?
+      @sheet.rows.each do |row|
+        # ...
+      end
+    end
+  end
+
   def show
     show! {
       if parent_id = params[:search_recording_id]

@@ -6,6 +6,7 @@ require 'inherited_resources_ext'
 require 'error_messages'
 
 require 'demo'
+require 'uploaded_sheet'
 
 require 'tolk/sync'
 require 'tolk/import'

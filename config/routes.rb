@@ -31,8 +31,18 @@ BlackBoard::Application.routes.draw do |map|
 
   resources :people
 
-  resources :loading_spaces
-  resources :freights
+  resources :loading_spaces do
+    collection do
+      get :upload
+      post :upload
+    end
+  end
+  resources :freights do
+    collection do
+      get :upload
+      post :upload
+    end
+  end
   
   resources :companies
   resources :stations do

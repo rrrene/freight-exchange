@@ -22,6 +22,9 @@ gem 'rails3-jquery-autocomplete'
 
 gem 'levenshtein'
 
+gem 'rubyzip' # needed for roo
+gem 'roo'
+
 gem 'factory_girl'
 gem 'faker'
 gem 'random_data'
