@@ -1,5 +1,6 @@
 
 <% content_for(:toolbar) do %>
+  <%= link_btn_unless_current t("companies.dashboard.header"), company_dashboard_path %>
   <%= link_btn_unless_current t("common.navi.people"), people_path %>
   <%= link_btn_unless_current t("common.navi.my_company"), company_path(current_company) %>
 <% end %>

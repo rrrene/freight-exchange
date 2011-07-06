@@ -1,12 +1,11 @@
 module SearchHelper
-
   def contextual_search_path
     {:controller => contextual_search_controller, :action => :index}
   end
 
   def contextual_search_controller
     if action_name != 'dashboard'
-      if %w(freights loading_spaces companies).include?(controller_name)
+      if %w(companies freights loading_spaces stations).include?(controller_name)
         return controller_name
       end
     end

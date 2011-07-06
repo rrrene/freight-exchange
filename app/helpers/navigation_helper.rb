@@ -26,4 +26,8 @@ module NavigationHelper
   def section_is_settings?
     %w(users).include?(controller_name) || (controller?(:companies) && action_name == 'edit')
   end
+
+  def section_is_stations?
+    %w(stations).include?(controller_name)
+  end
 end

@@ -329,6 +329,7 @@ de:
       reviews: Bewertungen
       select_locale: "Sprache wählen:"
       settings: "Verwaltung"
+      stations: "Bahnhöfe"
     sidebar: 
       advanced_search_link: "Erweiterte Suche"
       company_information: 
@@ -690,6 +691,13 @@ de:
           kb: KB
           mb: MB
           tb: TB
+  stations:
+    common:
+      search-label: "Bahnhöfe:"
+    index:
+      header: "Alle Bahnhöfe"
+      intro: "Hier sehen Sie alle Bahnhöfe."
+      page_title: "Bahnhöfe"
   people: 
     common: 
       edit_link: "Person bearbeiten"

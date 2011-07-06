@@ -1,12 +1,8 @@
 class Station < ActiveRecord::Base
-  before_save :write_searchable
+  searchable
 
   def full_name
     "#{numeric_id} - #{name}"
-  end
-
-  def write_searchable
-    self.searchable = [numeric_id, name] * ' '
   end
 
   validates_presence_of :name
