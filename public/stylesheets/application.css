@@ -181,7 +181,8 @@ div.header div#search_form .input-wrapper input {
   float: left;
   width: 24px;
 }
-div.header div#search_form .input-wrapper #search-label {
+.popover .search-label,
+div.header div#search_form .search-label {
   display: block;
   float: left;
   margin: 2px 0 0 2px;
@@ -190,17 +191,32 @@ div.header div#search_form .input-wrapper #search-label {
   font-size: 11px;
   color: #fff;
   text-decoration: none;
-  opacity: 0.5;
 }
-div.header div#search_form .input-wrapper .search-label-freights,
-div.header div#search_form .input-wrapper .search-label-loading_spaces {
+.popover .search-label {
+  margin: 2px;
+  float: none;
+  clear: both;
+  text-align: center;
+}
+div.header div#search_form .search-label {
+  opacity: 0.7;
+}
+
+.popover .search-label-freights,
+div.header div#search_form .input-wrapper .search-label-freights {
   background-color: #4183C4;
 }
-div.header div#search_form .input-wrapper .search-label-companies {
+.popover .search-label-loading_spaces,
+div.header div#search_form .input-wrapper .search-label-loading_spaces {
   background-color: #6ba028;
 }
+.popover .search-label-companies,
+div.header div#search_form .input-wrapper .search-label-companies {
+  background-color: #6941c4;
+}
+.popover .search-label-stations,
 div.header div#search_form .input-wrapper .search-label-stations {
-  background-color: #6ba028;
+  background-color: #c46f41;
 }
 div.header div#search_form .input-wrapper input#q {
   background: transparent;
