@@ -84,6 +84,11 @@ function switchSearchContext(context, text) {
   $('#q').select();
 }
 
+function popover(base_selector) {
+  var popover_selector = base_selector+'-popover';
+  $(base_selector).popover({header: popover_selector + ' > .header', content: popover_selector + ' > .content'});
+}
+
 jQuery(function() {
   actionListMagic();
   bindMiniButtons();
@@ -115,6 +120,5 @@ jQuery(function() {
   });
 
   rearrangeSearchForm();
-  popover()
-  $('#search-label').popover({header: '#my-popover > .header', content: '#my-popover > .content'});
+  popover('#search-label');
 });
