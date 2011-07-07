@@ -115,6 +115,6 @@ jQuery(function() {
   });
 
   rearrangeSearchForm();
-
+  popover()
   $('#search-label').popover({header: '#my-popover > .header', content: '#my-popover > .content'});
 });

@@ -80,7 +80,7 @@
 }
 /* line 64, ../../app/stylesheets/popover.scss */
 .popover > .content {
-  min-width: 15em;
+  min-width: 10em;
   overflow-x: hidden;
   overflow-y: auto;
 }

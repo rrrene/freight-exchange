@@ -13,19 +13,17 @@
               <div class="input-wrapper"><%= link_to_function t("#{contextual_search_controller}.common.search-label"), "void(0);", :id => "search-label", :class => "search-label search-label-#{contextual_search_controller}" %><%= text_field_tag :q, h(params[:q]), :autocomplete => :off %><%= image_submit_tag("search_button.png") %></div>
               <div class="advanced-search-wrapper"><%= link_to t("common.sidebar.advanced_search_link"), advanced_search_path %></div>
             <% end %>
-
-
-<div id="my-popover">
-   <div class="header">
-    <%= "Suche ändern" %>
-   </div>
-   <div class="content">
-     <% %w(freights loading_spaces companies stations).each do |context| %>
-       <% text = t("#{context}.common.search-label") %>
-       <%= link_to_function text, "switchSearchContext('#{context}', '#{text}');", :id => "", :class => "search-label search-label-#{context}" %>
-     <% end %>
-   </div>
- </div>
+            <div id="search-label-popover">
+               <div class="header">
+                <%= "Suche ändern" %>
+               </div>
+               <div class="content">
+                 <% %w(freights loading_spaces companies stations).each do |context| %>
+                   <% text = t("#{context}.common.search-label") %>
+                   <%= link_to_function text, "switchSearchContext('#{context}', '#{text}');", :id => "", :class => "search-label search-label-#{context}" %>
+                 <% end %>
+               </div>
+             </div>
           </div>
         <% end %>
       </div>
