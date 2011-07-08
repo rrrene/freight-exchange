@@ -84,6 +84,7 @@ BlackBoard::Application.routes.draw do |map|
       end
     end
     resources :companies
+    resources :stations
     resources :freights # BEWARE: not implemented
     resources :loading_spaces # BEWARE: not implemented
     resources :people # BEWARE: not implemented
