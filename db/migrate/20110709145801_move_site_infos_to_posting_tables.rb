@@ -6,6 +6,7 @@ class MoveSiteInfosToPostingTables < ActiveRecord::Migration
       table = model.table_name
       FIELDS.each do |origin_or_destination|
         puts "migrating #{table} #{origin_or_destination}"
+        add_column table, :"#{origin_or_destination}_date", :datetime
         add_column table, :"#{origin_or_destination}_station_id", :integer
         add_column table, :"#{origin_or_destination}_contractor", :string
         add_column table, :"#{origin_or_destination}_name", :string
@@ -35,6 +36,7 @@ class MoveSiteInfosToPostingTables < ActiveRecord::Migration
     MODELS.each do |model|
       table = model.table_name
       FIELDS.each do |origin_or_destination|
+        remove_column table, :"#{origin_or_destination}_date"
         remove_column table, :"#{origin_or_destination}_track_number"
         remove_column table, :"#{origin_or_destination}_contractor"
         remove_column table, :"#{origin_or_destination}_side_track_available"

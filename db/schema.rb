@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110705173942) do
+ActiveRecord::Schema.define(:version => 20110709145801) do
 
   create_table "action_recordings", :force => true do |t|
     t.string   "item_type",  :limit => 30
@@ -73,9 +73,31 @@ ActiveRecord::Schema.define(:version => 20110705173942) do
     t.integer  "contact_person_id"
     t.integer  "transport_weight"
     t.integer  "transports_per_year"
-    t.string   "paying_freight",           :default => "sender"
+    t.string   "paying_freight",                   :default => "sender"
     t.string   "frequency"
-    t.boolean  "deleted",                  :default => false
+    t.boolean  "deleted",                          :default => false
+    t.datetime "origin_date"
+    t.integer  "origin_station_id"
+    t.string   "origin_contractor"
+    t.string   "origin_name"
+    t.string   "origin_address"
+    t.string   "origin_address2"
+    t.string   "origin_zip"
+    t.string   "origin_city"
+    t.string   "origin_country"
+    t.boolean  "origin_side_track_available"
+    t.string   "origin_track_number"
+    t.datetime "destination_date"
+    t.integer  "destination_station_id"
+    t.string   "destination_contractor"
+    t.string   "destination_name"
+    t.string   "destination_address"
+    t.string   "destination_address2"
+    t.string   "destination_zip"
+    t.string   "destination_city"
+    t.string   "destination_country"
+    t.boolean  "destination_side_track_available"
+    t.string   "destination_track_number"
   end
 
   create_table "loading_spaces", :force => true do |t|
@@ -92,9 +114,31 @@ ActiveRecord::Schema.define(:version => 20110705173942) do
     t.integer  "contact_person_id"
     t.integer  "transport_weight"
     t.integer  "transports_per_year"
-    t.string   "paying_freight",           :default => "sender"
+    t.string   "paying_freight",                   :default => "sender"
     t.string   "frequency"
-    t.boolean  "deleted",                  :default => false
+    t.boolean  "deleted",                          :default => false
+    t.datetime "origin_date"
+    t.integer  "origin_station_id"
+    t.string   "origin_contractor"
+    t.string   "origin_name"
+    t.string   "origin_address"
+    t.string   "origin_address2"
+    t.string   "origin_zip"
+    t.string   "origin_city"
+    t.string   "origin_country"
+    t.boolean  "origin_side_track_available"
+    t.string   "origin_track_number"
+    t.datetime "destination_date"
+    t.integer  "destination_station_id"
+    t.string   "destination_contractor"
+    t.string   "destination_name"
+    t.string   "destination_address"
+    t.string   "destination_address2"
+    t.string   "destination_zip"
+    t.string   "destination_city"
+    t.string   "destination_country"
+    t.boolean  "destination_side_track_available"
+    t.string   "destination_track_number"
   end
 
   create_table "localized_infos", :force => true do |t|

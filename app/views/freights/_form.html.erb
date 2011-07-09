@@ -5,10 +5,7 @@
     </div>
   <% end %>
   <%= clear_both %>
-
-  <%= partial :site_info_stations %>
-
-
+  
   <%= f.inputs :timeframe do %>
     <% %w(origin destination).each do |site| %>
       <%= f.semantic_fields_for "#{site}_site_info", resource.__send__("#{site}_site_info") do |f_site| %>
