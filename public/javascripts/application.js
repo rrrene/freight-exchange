@@ -131,5 +131,5 @@ jQuery(function() {
 
   rearrangeSearchForm();
   popover('#search-label');
-  $('#q').focus(function() { $('#search_form').addClass('focussed') }).blur(function() { $('#search_form').removClass('focussed') });
+  $('#q').focus(function() { $('#search_form').addClass('focussed') }).blur(function() { $('#search_form').removeClass('focussed') });
 });
