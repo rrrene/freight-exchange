@@ -20,10 +20,10 @@
             &nbsp;
           </div>
         <% end %>
-        <%= render_partial :header %>
+        <%= partial :header %>
         <div class="frame">
           <div class="container" id="frame">
-            <%= render_partial :page_title %>
+            <%= partial :page_title %>
             <div id="content" class="<%= content_for?(:sidebar) ? "span-16" : "span-24 last" %>">
               <% if content_for?(:toolbar) %>
                 <%= content_tag(:div, content_for(:toolbar), :class => 'toolbar') %>
@@ -31,11 +31,11 @@
               <%= yield %>
             </div>
             <% if content_for?(:sidebar) %>
-              <%= render_partial :sidebar %>
+              <%= partial :sidebar %>
             <% end %>
           </div>
         </div>
-        <%= render_partial :footer %>
+        <%= partial :footer %>
       </div> <!-- div#wrap -->
   </div> <!-- div#controller.action -->
 </body>

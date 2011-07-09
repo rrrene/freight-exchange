@@ -8,7 +8,7 @@
   <h3><%= t("admin.users.show.header") %></h3>
   
   <ul class="action_list">
-    <%= render_partial :recordings, :locals => {:recordings => resource.action_recordings} %>
+    <%= partial :recordings, :locals => {:recordings => resource.action_recordings} %>
   </ul>
 
 </div>

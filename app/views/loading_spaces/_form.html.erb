@@ -1,12 +1,12 @@
 <%= semantic_form_for(resource) do |f| %>
   <% %w(origin destination).each do |site| %>
     <div class="form_site_info" style="float: left; width: 295px;">
-      <%= render_partial :site_info_form_content, :locals => {:f => f, :site => site} %>
+      <%= partial :site_info_form_content, :locals => {:f => f, :site => site} %>
     </div>
   <% end %>
   <%= clear_both %>
 
-  <%= render_partial :site_info_stations %>
+  <%= partial :site_info_stations %>
 
   <%= f.inputs :timeframe do %>
     <% %w(origin destination).each do |site| %>

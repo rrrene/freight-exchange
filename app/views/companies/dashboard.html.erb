@@ -1,4 +1,4 @@
-<%= render_partial "toolbar_settings" %>
+<%= partial "toolbar_settings" %>
 
 <div class="box">
   <h3><%= t("companies.dashboard.header") %></h3>
@@ -6,7 +6,7 @@
     <%= t('companies.dashboard.intro') %>
   </p>
   
-  <%= render_partial :recordings, :locals => {:recordings => @recordings} %>
+  <%= partial :recordings, :locals => {:recordings => @recordings} %>
 </div>
 
 <% content_for(:sidebar) do %>

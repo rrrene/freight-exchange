@@ -217,34 +217,14 @@ module ApplicationHelper
   # Example:
   #   <%= render_person_info current_company %>
   def render_company_info(company = resource.company)
-    render_partial :sidebar_company_info, :locals => {:company => company}
-  end
-  
-  # Renders a partial taking into account the current user's UserRole objects.
-  def render_partial(partial, options = {})
-    subs = current_user.full? { |user| user.roles } || []
-    subs << :admin if admin?
-    render options.merge(:partial => search_for_partial(partial, subs))
-  end
-  
-  def search_for_partial(partial, sub_dirs, views_dirs = [controller_name, 'partials']) # :nodoc:
-    sub_dirs << '' unless sub_dirs.include?('')
-    views_dirs.each do |view_dir|
-      sub_dirs.each do |sub_dir|
-        sub_dir = sub_dir.full? { |d| "#{d}/" }.to_s
-        if template_exists?("/#{view_dir}/#{sub_dir}_#{partial}")
-          return "/#{view_dir}/#{sub_dir}#{partial}"
-        end
-      end
-    end
-    raise "partial not found: #{partial} (sub_dirs: #{sub_dirs.inspect})"
+    partial :sidebar_company_info, :locals => {:company => company}
   end
   
   # Renders a partial with the contact information for the given person.
   # Example:
   #   <%= render_person_info current_person %>
   def render_person_info(person)
-    render_partial :sidebar_person_info, :locals => {:person => person}
+    partial :sidebar_person_info, :locals => {:person => person}
   end
   
   # Renders a text next to a badge.

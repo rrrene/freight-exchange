@@ -86,7 +86,7 @@ module Admin::BaseHelper
   #   <%= render_table User.all %>
   def render_table(arel)
     return if arel.first.nil?
-    render_partial :table, :locals => {:model => arel.first.class, :arel => arel}
+    partial :table, :locals => {:model => arel.first.class, :arel => arel}
   end
   
 end
