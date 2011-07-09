@@ -180,6 +180,7 @@ ActiveRecord::Schema.define(:version => 20110705173942) do
   create_table "stations", :force => true do |t|
     t.string   "name"
     t.string   "numeric_id"
+    t.text     "searchable"
     t.string   "address"
     t.string   "address2"
     t.string   "zip"

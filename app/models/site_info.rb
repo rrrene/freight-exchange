@@ -32,7 +32,7 @@ class SiteInfo < ActiveRecord::Base
     ].map(&:full?).compact.join("\n").simplify
   end
 
-  validates_presence_of :contractor
-  validates_presence_of :name
-  validates_inclusion_of :side_track_available, :in => [true, false]
+  #validates_presence_of :contractor
+  #validates_presence_of :name
+  #validates_inclusion_of :side_track_available, :in => [true, false]
 end
