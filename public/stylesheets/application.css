@@ -144,14 +144,14 @@ div.header div#search_form {
   margin: 16px 0 0 10px;
 }
 div.header div#search_form input[type=image] {
-  vertical-align: bottom;;
+  vertical-align: bottom;
 }
 div.header div#search_form .input-wrapper {
   padding: 0;
   margin: 0;
   display: inline-block;
   background-color: #fff;
-  border-color:#CCCCCC #CCCCCC #999999;
+  border-color:#ccc #ccc #999;
   border-style:solid;
   border-width:1px;
   border-bottom-color: #D4D4D4;
@@ -173,6 +173,10 @@ div.header div#search_form .input-wrapper {
   float: right;
   width: 320px;
   position: relative;
+}
+div.header div#search_form.focussed .input-wrapper {
+  background-color: #eef;
+  border-color: #ccf;
 }
 div.header div#search_form .input-wrapper input {
   margin: 0;
@@ -220,6 +224,7 @@ div.header div#search_form .input-wrapper .search-label-stations {
 }
 div.header div#search_form .input-wrapper input#q {
   background: transparent;
+  color: #4183C4;
   float: left;
   width: 89px;
   font-size: 14px;
