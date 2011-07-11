@@ -241,7 +241,6 @@ ActiveRecord::Schema.define(:version => 20110711134525) do
   create_table "stations", :force => true do |t|
     t.string   "name"
     t.string   "numeric_id"
-    t.text     "searchable"
     t.string   "address"
     t.string   "address2"
     t.string   "zip"

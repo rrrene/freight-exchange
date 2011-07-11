@@ -40,10 +40,10 @@ class NotificationBuilder
 
     def created_objects
       @created_objects ||= begin
-        collection = []
-        collection << user.company.freights.where('updated_at > ?', timestamp).all
-        collection << user.company.loading_spaces.where('updated_at > ?', timestamp).all
-        collection.flatten
+        company = user.company
+        [:freights, :loading_spaces, :reviews].map do |method|
+          company.__send__(method).where('updated_at > ?', timestamp).all
+        end.flatten
       end
     end
   end
