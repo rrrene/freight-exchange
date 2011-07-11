@@ -8,10 +8,7 @@ class LoadingSpace < ActiveRecord::Base
   FREQUENCY_CHOICES = %w(once repeated_regularly repeated_irregularly)
   belongs_to :user
   belongs_to :company
-  belongs_to :origin_site_info, :class_name => 'SiteInfo', :dependent => :destroy
-  belongs_to :destination_site_info, :class_name => 'SiteInfo', :dependent => :destroy
-  accepts_nested_attributes_for :origin_site_info
-  accepts_nested_attributes_for :destination_site_info
+
   belongs_to :contact_person, :class_name => 'Person'
   has_many :matching_recordings, :as => 'b', :order => 'result DESC', :dependent => :destroy
   searchable
@@ -28,14 +25,12 @@ class LoadingSpace < ActiveRecord::Base
   alias matching_objects matching_freights
   
   def name # :nodoc:
-    "#{origin_site_info.name} - #{destination_site_info.name}"
+    "#{origin_name} - #{destination_name}"
   end
   
   def to_search # :nodoc:
     search_str = [
-      origin_site_info.to_search,
-      destination_site_info.to_search,
-      
+      # TODO: origin_city etc.
     ] * "\n"
     
     I18n.available_locales.each do |lang|

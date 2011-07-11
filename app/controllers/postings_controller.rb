@@ -13,15 +13,11 @@ class PostingsController < RemoteController
   def new
     if parent = params[:parent_id].full? { |id| resource_class.find(id) }
       self.resource = resource_class.new(parent.attributes.clone)
-      resource.build_origin_site_info(parent.origin_site_info.attributes)
-      resource.build_destination_site_info(parent.destination_site_info.attributes)
       parent.localized_infos.each do |li|
         resource.localized_infos.build(li.attributes)
       end
     else
       self.resource = resource_class.new
-      resource.build_origin_site_info(:contractor => current_company.name)
-      resource.build_destination_site_info
       resource.localized_infos.build
     end
   end
@@ -36,11 +32,11 @@ class PostingsController < RemoteController
     super do
       if @q
         @origin_city ||= collection.detect { |posting|
-          posting.origin_site_info.city =~ /^#{@q}/i
-        }.full?(&:origin_site_info).full?(&:city)
+          posting.origin_city =~ /^#{@q}/i
+        }.full?(&:origin_city)
         @destination_city ||= collection.detect { |posting|
-          posting.destination_site_info.city =~ /^#{@q}/i
-        }.full?(&:destination_site_info).full?(&:city)
+          posting.destination_city =~ /^#{@q}/i
+        }.full?(&:destination_city)
       end
     end
   end
@@ -83,7 +79,7 @@ class PostingsController < RemoteController
     # Do not show deleted postings
     self.collection = resource_class.scoped.where(:deleted => false)
     # Do not show postings which start dates lie in the past
-    self.collection = collection.includes(:origin_site_info).where("site_infos.date > ?", Time.now)
+    self.collection = collection.where("origin_date > ?", Time.now)
 
     # Default: newest postings first
     @blocked_ids = blocked_company_ids
@@ -101,12 +97,12 @@ class PostingsController < RemoteController
     super
     if @origin_city = params[:origin_city].full?
       # TODO: perform lookup via SQL
-      matched_ids = collection.select { |posting| posting.origin_site_info.city == @origin_city }.map(&:id)
+      matched_ids = collection.select { |posting| posting.origin_city == @origin_city }.map(&:id)
       self.collection = collection.where(:id => matched_ids)
     end
     if @destination_city = params[:destination_city].full?
       # TODO: perform lookup via SQL
-      matched_ids = collection.select { |posting| posting.destination_site_info.city == @destination_city }.map(&:id)
+      matched_ids = collection.select { |posting| posting.destination_city == @destination_city }.map(&:id)
       self.collection = collection.where(:id => matched_ids)
     end
   end

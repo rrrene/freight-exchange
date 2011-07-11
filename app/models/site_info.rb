@@ -8,7 +8,7 @@
 #     :city => 'Rotterdam',
 #     :country => 'Nederlands'
 #   }
-#   freight.origin_site_info.create(opts)
+#   freight.some_site_info.create(opts)
 class SiteInfo < ActiveRecord::Base
   SITE_ATTRIBUTES = %w(name address address2 zip city country)
   belongs_to :station

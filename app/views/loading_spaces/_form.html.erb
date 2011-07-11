@@ -1,7 +1,7 @@
 <%= semantic_form_for(resource) do |f| %>
-  <% %w(origin destination).each do |site| %>
+  <% %w(origin destination).each do |origin_or_destination| %>
     <div class="form_site_info" style="float: left; width: 295px;">
-      <%= partial :site_info_form_content, :locals => {:f => f, :site => site} %>
+      <%= partial :site_info_form_content, :locals => {:f => f, :origin_or_destination => origin_or_destination} %>
     </div>
   <% end %>
   <%= clear_both %>

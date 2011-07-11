@@ -77,7 +77,8 @@ class RemoteController < ApplicationController
   end
 
   def order_collection!
-    order = if params[:order].blank? || params[:order] == 'name'
+    order = 'created_at DESC'
+    if params[:order].blank? || params[:order] == 'name'
       'UPPER(name) ASC'
     elsif params[:order] == 'created_at'
       'created_at DESC'

@@ -18,9 +18,9 @@
             <br>
           <% end %>
           <% if [Freight, LoadingSpace].include?(result.class) %>
-            <b><%= result.origin_site_info.name %></b> <%= l(result.origin_site_info.date, :format => :short) %>
+            <b><%= result.origin_name %></b> <%= l(result.origin_date, :format => :short) %>
             -
-            <b><%= result.destination_site_info.name %></b> <%= l(result.destination_site_info.date, :format => :short) %>
+            <b><%= result.destination_name %></b> <%= l(result.destination_date, :format => :short) %>
           <% end %>
           <% if result.respond_to?(:email) %>
             <small>E-Mail: <%= auto_link(result.email) %></small>

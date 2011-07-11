@@ -55,14 +55,6 @@ class User < ActiveRecord::Base
     @postings ||= self.company.__send__(self.posting_type.underscore.pluralize)
   end
   
-  def recent_site_infos(origin_or_destination = nil)
-    if origin_or_destination
-      postings.map(&:"#{origin_or_destination}_site_info")
-    else
-      postings.map(&:origin_site_info) + postings.map(&:destination_site_info)
-    end
-  end
-  
   #:call-seq:
   #   user.roles # => array
   #

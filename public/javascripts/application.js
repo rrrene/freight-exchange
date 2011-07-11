@@ -94,7 +94,6 @@ function onClickSideTrackAvailable() {
   var name = $(this).attr('id');
   var origin_or_destination = name.match(/origin/) ? 'origin' : 'destination';
   
-  
   var arr = name.match(/(.+)_(.+)/);
   console.log(name, arr)
   var trackNoElement = $("#"+RegExp.$1+"_track_number_input");

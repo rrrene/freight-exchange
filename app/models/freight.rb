@@ -12,15 +12,10 @@ class Freight < ActiveRecord::Base
   belongs_to :user
   belongs_to :company
 
-  belongs_to :origin_site_info, :class_name => 'SiteInfo', :dependent => :destroy
-  belongs_to :destination_site_info, :class_name => 'SiteInfo', :dependent => :destroy
-  accepts_nested_attributes_for :origin_site_info
-  accepts_nested_attributes_for :destination_site_info
-
   belongs_to :origin_station, :class_name => 'Station', :dependent => :destroy
   belongs_to :destination_station, :class_name => 'Station', :dependent => :destroy
-  has_many :matching_recordings, :as => 'a', :order => 'result DESC', :dependent => :destroy
   belongs_to :contact_person, :class_name => 'Person'
+  has_many :matching_recordings, :as => 'a', :order => 'result DESC', :dependent => :destroy
   after_save :calc_matchings!
   searchable
   
@@ -48,14 +43,12 @@ class Freight < ActiveRecord::Base
   alias matching_objects matching_loading_spaces
   
   def name # :nodoc:
-    "#{origin_site_info.name} - #{destination_site_info.name}"
+    "#{origin_name} - #{destination_name}"
   end
   
   def to_search # :nodoc:
     search_str = [
-      origin_site_info.to_search,
-      destination_site_info.to_search,
-      
+      # origin_city etc.
     ] * "\n"
     
     I18n.available_locales.each do |lang|
