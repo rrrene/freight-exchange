@@ -4,6 +4,10 @@
 # and several LocalizedInfo objects to describe the posting.
 #
 class Freight < ActiveRecord::Base
+  SITE_ATTRIBUTES = %w(name address address2 zip city country)
+  ORIGIN_ATTRIBUTES = SITE_ATTRIBUTES.map { |s| "origin_#{s}" }
+  DESTINATION_ATTRIBUTES = SITE_ATTRIBUTES.map { |s| "destination_#{s}" }
+  
   TRANSPORT_TYPE_CHOICES = %w(unknown single_wagon train_set block_train intermodal_transport)
   DESIRED_PROPOSAL_TYPE_CHOICES = %w(unknown ton_price package_price)
   WAGONS_PROVIDED_BY_CHOICES = %w(client railway wanted)

@@ -18,5 +18,6 @@ loop do
     raise
   rescue Exception => e
     warn ' ' * 20 << '[i] rescued ' + e.class.to_s
+    raise
   end
 end

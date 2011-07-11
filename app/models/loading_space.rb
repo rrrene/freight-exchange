@@ -4,6 +4,10 @@
 # and several LocalizedInfo objects to describe the posting.
 #
 class LoadingSpace < ActiveRecord::Base
+  SITE_ATTRIBUTES = %w(name address address2 zip city country)
+  ORIGIN_ATTRIBUTES = SITE_ATTRIBUTES.map { |s| "origin_#{s}" }
+  DESTINATION_ATTRIBUTES = SITE_ATTRIBUTES.map { |s| "destination_#{s}" }
+
   TRANSPORT_TYPE_CHOICES = %w(single_wagon train_set block_train intermodal_transport)
   FREQUENCY_CHOICES = %w(once repeated_regularly repeated_irregularly)
   belongs_to :user

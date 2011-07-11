@@ -17,7 +17,21 @@ module Matching
   module Compare
     # Compares a Freight with a LoadingSpace object by comparing their attributes.
     class FreightToLoadingSpace < Base
-      compare :origin_site_info, :destination_site_info
+      compare :origin_name
+      compare :origin_contractor
+      compare :origin_address
+      compare :origin_address2
+      compare :origin_zip
+      compare :origin_city
+      compare :origin_country
+      
+      compare :destination_name
+      compare :destination_contractor
+      compare :destination_address
+      compare :destination_address2
+      compare :destination_zip
+      compare :destination_city
+      compare :destination_country
       
       compare :weight, :threshold => {:up => 0}
       compare :hazmat?, :threshold => :perfect

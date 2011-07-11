@@ -74,7 +74,9 @@ module Robot
       else
         [ action,
           resource_or_string.class.to_s.gsub('Robot::', ''),
-          "##{resource_or_string.attributes[:id]}"] * ' '
+          "##{resource_or_string.attributes[:id]}",
+          resource_or_string.errors.to_s
+        ] * ' '
       end
     end
     

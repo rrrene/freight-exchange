@@ -46,7 +46,7 @@ module Robot
           :address => "Am Hauptbahnhof",
           :zip => "45128",
           :city => name,
-          :country => "",
+          :country => "Germany",
           :date => @@date_blueprint,
           :side_track_available => Random.boolean,
         }
