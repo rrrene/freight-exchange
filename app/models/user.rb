@@ -14,6 +14,8 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :user_roles, :uniq => true
   has_many :action_recordings
   has_many :search_recordings
+  has_many :notifications
+  has_many :notification_items
   before_create :generate_api_key
   after_save { |user| user.company.full?(&:ensure_admin) }
   after_destroy { |user| user.company.full?(&:ensure_admin) }
@@ -21,6 +23,20 @@ class User < ActiveRecord::Base
   acts_as_authentic
   searchable :attributes => ["posting_type", "current_login_ip", "login", "email"]
   
+  def current_notification
+    notification = notifications.order('created_at DESC').first
+    if notification.blank? || notification.closed?
+      notifications.create
+    else
+      notification
+    end
+  end
+
+  def last_notification
+    arel = notifications.where('closed_at IS NOT NULL').order('created_at DESC')
+    arel.first || current_notification
+  end
+
   #:call-seq:
   #   user.has_role?(role_name) # => boolean
   #

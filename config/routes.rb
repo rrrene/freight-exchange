@@ -1,4 +1,6 @@
 BlackBoard::Application.routes.draw do |map|
+  resources :notifications
+
   resources :white_listed_items do
     collection do
       post :destroy_all
