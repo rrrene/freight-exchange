@@ -18,6 +18,8 @@ en:
       people: "People"
       reviews: "Reviews"
       my_reviews: "My Reviews"
+      stations: "Stations"
+      settings: "Users & Settings"
       logout: "Logout"
       login: "Login"
       register: "Register"

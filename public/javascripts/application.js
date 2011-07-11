@@ -46,7 +46,7 @@ var site_info_prefix = "";
 function fillSiteInfo(origin_or_destination, site_info_id) {
   var site_info = all_site_infos[site_info_id];
   for(var i in site_info) {
-    var ele = jQuery("#"+site_info_prefix+'_'+origin_or_destination+'_site_info_attributes_'+i);
+    var ele = jQuery("#"+site_info_prefix+'_'+origin_or_destination+'_'+i);
     if( ele ) {
       ele.val(site_info[i]);
     }
@@ -89,33 +89,43 @@ function popover(base_selector) {
   $(base_selector).popover({header: popover_selector + ' > .header', content: popover_selector + ' > .content'});
 }
 
+function onClickSideTrackAvailable() {
+  //freight_origin*_*track_number_input
+  var name = $(this).attr('id');
+  var origin_or_destination = name.match(/origin/) ? 'origin' : 'destination';
+  
+  
+  var arr = name.match(/(.+)_(.+)/);
+  console.log(name, arr)
+  var trackNoElement = $("#"+RegExp.$1+"_track_number_input");
+  trackNoElement.css('display', $(this).val() == "false" ? 'none' : 'block' );
+  
+  if( name.match(/_true$/) && $(this).attr('checked') ) {
+    $('#'+origin_or_destination+'_with_station').show();
+  } else {
+    $('#'+origin_or_destination+'_with_station').hide();
+    $('#freight_transport_type, #loading_space_transport_type').val('intermodal_transport');
+  }
+  $('#'+origin_or_destination+'_address').show();
+}
+
 jQuery(function() {
   actionListMagic();
   bindMiniButtons();
 
   var elements = [
-    "#freight_origin_site_info_attributes_side_track_available_false",
-    "#freight_origin_site_info_attributes_side_track_available_true",
-    "#freight_destination_site_info_attributes_side_track_available_false",
-    "#freight_destination_site_info_attributes_side_track_available_true",
-    "#loading_space_origin_site_info_attributes_side_track_available_false",
-    "#loading_space_origin_site_info_attributes_side_track_available_true",
-    "#loading_space_destination_site_info_attributes_side_track_available_false",
-    "#loading_space_destination_site_info_attributes_side_track_available_true"
+    "#freight_origin_side_track_available_false",
+    "#freight_origin_side_track_available_true",
+    "#freight_destination_side_track_available_false",
+    "#freight_destination_side_track_available_true",
+    "#loading_space_origin_side_track_available_false",
+    "#loading_space_origin_side_track_available_true",
+    "#loading_space_destination_side_track_available_false",
+    "#loading_space_destination_side_track_available_true"
   ];
   $(elements).each(function(index, element) {
     $(element).bind({
-      'click': function() {
-        //freight_origin*_site_info_attributes_*track_number_input
-        var name = $(this).attr('id');
-        var arr = name.match(/(.+)_site_info_attributes_(.+)/);
-        var trackNoElement = $("#"+RegExp.$1+"_site_info_attributes_track_number_input");
-        trackNoElement.css('display', $(this).val() == "false" ? 'none' : 'block' )
-        if( name.match(/_false$/) && $(this).attr('checked') ) {
-          $('#freight_transport_type').val('intermodal_transport');
-          $('#loading_space_transport_type').val('intermodal_transport');
-        }
-      }
+      'click': onClickSideTrackAvailable
     });
   });
 

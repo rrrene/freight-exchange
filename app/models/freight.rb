@@ -11,10 +11,14 @@ class Freight < ActiveRecord::Base
   FREQUENCY_CHOICES = %w(once repeated_regularly repeated_irregularly)
   belongs_to :user
   belongs_to :company
+
   belongs_to :origin_site_info, :class_name => 'SiteInfo', :dependent => :destroy
   belongs_to :destination_site_info, :class_name => 'SiteInfo', :dependent => :destroy
   accepts_nested_attributes_for :origin_site_info
   accepts_nested_attributes_for :destination_site_info
+
+  belongs_to :origin_station, :class_name => 'Station', :dependent => :destroy
+  belongs_to :destination_station, :class_name => 'Station', :dependent => :destroy
   has_many :matching_recordings, :as => 'a', :order => 'result DESC', :dependent => :destroy
   belongs_to :contact_person, :class_name => 'Person'
   after_save :calc_matchings!
@@ -75,6 +79,12 @@ class Freight < ActiveRecord::Base
   
   validates_presence_of :user_id
   validates_presence_of :company_id
+  
+  validates_presence_of :origin_city
+  validates_presence_of :origin_country
+  validates_presence_of :destination_city
+  validates_presence_of :destination_country
+  
   validates_presence_of :weight
   validates_presence_of :loading_meter
   validates_inclusion_of :hazmat, :in => [true, false]
