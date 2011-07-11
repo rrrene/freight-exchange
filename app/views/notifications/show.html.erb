@@ -1,0 +1,26 @@
+<div class="box">
+  <h3>
+    <%= t('notifications.show.header') %>
+  </h3>
+  <p>
+    <%= t('notifications.show.intro') %>
+  </p>
+  <% if collection = @notification_items %>
+    <table>
+      <thead>
+        <tr>
+          <th><%= Station.human_attribute_name(:name) %></th>
+          <th><%= Station.human_attribute_name(:numeric_id) %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% collection.each do |ar| %>
+          <tr>
+            <td><%= ar[:item_type] %></td>
+            <td><%= ar[:item_id] %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
+</div>
