@@ -10,11 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20110711134525) do
-=======
-ActiveRecord::Schema.define(:version => 20110709145801) do
->>>>>>> feature-coherent-postings
 
   create_table "action_recordings", :force => true do |t|
     t.string   "item_type",  :limit => 30
