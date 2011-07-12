@@ -915,4 +915,6 @@ de:
       page_title: "Neuer Benutzer"
   notifications:
     show:
+      header: Benachrichtigungen
+      intro: Hier sehen Sie für Sie möglicherweise interessante Inserate und neue Bewertungen zu ihrem Unternehmen.
       no_notifications: "Keine Benachrichtigungen vorhanden."

@@ -87,6 +87,11 @@ ul.navigation li.noborder {
 #top-navigation ul.navigation li a.backend {
   margin-right: 20px;
 }
+#top-navigation ul.navigation li.no-border span,
+#top-navigation ul.navigation li.no-border a.active {
+  border-top: 2px solid transparent;
+  background-color: #4D4D4D;
+}
 
 ul.navigation-lang {
   margin-top: 8px;
@@ -625,10 +630,16 @@ ul.action_list div.avatar img {
 .green {
   color: #0D7F09!important;
 }
+
 #top-navigation .badge {
   background-color: #DD4B39;
   color: white;
-  padding: 1px 3px;
+  padding: 1px 5px;
+  border-radius: 2px;
+}
+#top-navigation .viewed .badge {
+  background-color: #666;
+  color: #aaa;
 }
 
 li.unapproved b {

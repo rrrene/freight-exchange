@@ -18,6 +18,11 @@ class Notification < ActiveRecord::Base
     self.closed_at = Time.now
     save!
   end
+
+  def viewed!
+    self.viewed = true
+    save!
+  end
   
   validates_associated :user
 end

@@ -229,7 +229,7 @@ module ApplicationHelper
   
   # Renders a text next to a badge.
   def text_with_badge(snippet, count)
-    (t(snippet) + badge_for(count)).html_safe
+    (snippet.full? { t(snippet) }.to_s + badge_for(count)).html_safe
   end
   
   def yes_no(condition) # :nodoc:
