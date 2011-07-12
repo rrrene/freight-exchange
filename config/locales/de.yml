@@ -913,3 +913,6 @@ de:
       page_title: "Alle Benutzer"
     new: 
       page_title: "Neuer Benutzer"
+  notifications:
+    show:
+      no_notifications: "Keine Benachrichtigungen vorhanden."

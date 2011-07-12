@@ -7,10 +7,8 @@
   <%= clear_both %>
   
   <%= f.inputs :timeframe do %>
-    <% %w(origin destination).each do |site| %>
-      <%= f.semantic_fields_for "#{site}_site_info", resource.__send__("#{site}_site_info") do |f_site| %>
-        <%= f_site.input :date, :label => t("activerecord.attributes.freight.#{site}_date"), :as => :date %>
-      <% end %>
+    <% %w(origin destination).each do |origin_or_destination| %>
+      <%= f.input :"{site}_date", :label => t("activerecord.attributes.freight.#{origin_or_destination}_date"), :as => :date %>
     <% end %>
   <% end %>
 

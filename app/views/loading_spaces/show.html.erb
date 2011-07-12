@@ -9,39 +9,7 @@
     <% end %>
   <% end %>
 
-  <% %w(origin destination).each do |site| %>
-    <div style="width: 48%; margin-right: 10px; float: left;">
-      <h3><%= t("loading_spaces.show.#{site}.header") %></h3>
-      <% @loading_space.__send__("#{site}_site_info").tap do |site_info| %>
-        <strong><%= site_info.contractor %></strong><br>
-        <span><%= l site_info.date, :format => :long %></span>
-        <table>
-          <thead>
-            <tr>
-              <th colspan="2"><b><%= site_info.name %></b></th>
-            </tr>
-          </thead>
-          <% %w(address address2 zip city country).each do |attr| %>
-            <% if site_info[attr].full? %>
-              <tr>
-                <th><%= SiteInfo.human_attribute_name(attr) %></th>
-                <td><%= site_info.__send__(attr) %></td>
-              </tr>
-            <% end %>
-          <% end %>
-          <tr>
-            <th><%= SiteInfo.human_attribute_name(:side_track_available) %></th>
-            <td><%= yes_no site_info.side_track_available %></td>
-          </tr>
-          <tr>
-            <th><%= SiteInfo.human_attribute_name(:tracknumber) %></th>
-            <td><%= site_info.track_number %></td>
-          </tr>
-        </table>
-      <% end %>
-    </div>
-  <% end %>
-  <%= clear_both %>
+  <%= render :partial => "postings/origin_and_destination" %>
   
   <h3><%= t("loading_spaces.show.transport_description") %></h3>
   <table>

@@ -9,32 +9,7 @@
     <% end %>
   <% end %>
 
-  <% %w(origin destination).each do |site| %>
-    <div style="width: 48%; margin-right: 10px; float: left;">
-      <% @freight.__send__("#{site}_site_info").tap do |site_info| %>
-          <%= site_info.contractor %><br>
-        <span><%= l site_info.date, :format => :long %></span>
-        <h3><%= t("freights.show.#{site}.header") %></h3>
-
-        <p>
-          <strong><%= site_info.name %></strong><br>
-          <%= site_info.address %>
-          <%= site_info.address2 %><br>
-          <%= site_info.zip %>
-          <%= site_info.city %><br>
-          <%= site_info.country %>
-        </p>
-
-        <% if site_info.side_track_available %>
-          <strong><%= SiteInfo.human_attribute_name(:track_number) %></strong>
-          <%= site_info.track_number %>
-        <% else %>
-          <em><%= t("freights.show.no_side_track_available") %></em>
-        <% end %>
-      <% end %>
-    </div>
-  <% end %>
-  <%= clear_both %>
+  <%= render :partial => "postings/origin_and_destination" %>
   
   <h3><%= t("freights.show.transport_description") %></h3>
   <table>

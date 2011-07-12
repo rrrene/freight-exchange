@@ -22,5 +22,9 @@
         <% end %>
       </tbody>
     </table>
+  <% else %>
+    <%= t("notifications.show.no_notifications") %>
   <% end %>
+
+  <%= current_user.notifications.inspect %>
 </div>
