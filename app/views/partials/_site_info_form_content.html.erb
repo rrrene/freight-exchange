@@ -1,7 +1,5 @@
-<% origin_or_destination = site %>
-
 <%= f.inputs :"#{origin_or_destination}_site_info" do %>
-  <%= f.input :"#{origin_or_destination}_contractor", :label => t("activerecord.attributes.site_info.#{site}_contractor") %>
+  <%= f.input :"#{origin_or_destination}_contractor", :label => t("activerecord.attributes.site_info.#{origin_or_destination}_contractor") %>
   <%= f.input :"#{origin_or_destination}_side_track_available", :as => :radio, :collection =>yes_no_collection %>
   <div id="<%= origin_or_destination %>_with_station" style="display: none">
     <%= f.input :"#{origin_or_destination}_station" %>

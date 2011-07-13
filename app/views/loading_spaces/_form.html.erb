@@ -1,20 +1,5 @@
 <%= semantic_form_for(resource) do |f| %>
-  <% %w(origin destination).each do |origin_or_destination| %>
-    <div class="form_site_info" style="float: left; width: 295px;">
-      <%= partial :site_info_form_content, :locals => {:f => f, :origin_or_destination => origin_or_destination} %>
-    </div>
-  <% end %>
-  <%= clear_both %>
-
-  <%= partial :site_info_stations %>
-
-  <%= f.inputs :timeframe do %>
-    <% %w(origin destination).each do |site| %>
-      <%= f.semantic_fields_for "#{site}_site_info", resource.__send__("#{site}_site_info") do |f_site| %>
-        <%= f_site.input :date, :label => t("activerecord.attributes.freight.#{site}_date"), :as => :date %>
-      <% end %>
-    <% end %>
-  <% end %>
+  <%= render :partial => "postings/form_origin_and_destination", :locals => {:f => f} %>
 
   <%= f.inputs :freight_description do %>
     <%= f.input :hazmat, :as => :radio, :collection => yes_no_collection %>

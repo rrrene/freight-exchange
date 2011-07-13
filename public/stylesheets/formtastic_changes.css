@@ -16,7 +16,10 @@ form.formtastic fieldset ol li fieldset legend { margin-left: -6px;}
 form.formtastic fieldset ol li.string input,
 form.formtastic fieldset ol li.password input,
 form.formtastic textarea {
-  padding: 5px;
+  background: white;
+  border: 1px solid #CCC;
+  border-top-color: #999;
+  padding: 6px 6px 0 6px;
 }
 
 form.formtastic fieldset ol li.string input,
@@ -26,6 +29,7 @@ form.formtastic fieldset ol li.password input {
 
 form.formtastic fieldset ol li textarea {
   height: 150px;
+  min-height: 3.9em;
 }
 div.localized_info_locale_selector {
   position: absolute;

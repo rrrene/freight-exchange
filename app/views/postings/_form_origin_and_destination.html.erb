@@ -1,0 +1,13 @@
+
+<% %w(origin destination).each do |origin_or_destination| %>
+  <div class="form_site_info" style="float: left; width: 295px;">
+    <%= partial :site_info_form_content, :locals => {:f => f, :origin_or_destination => origin_or_destination} %>
+  </div>
+<% end %>
+<%= clear_both %>
+
+<%= f.inputs :timeframe do %>
+  <% %w(origin destination).each do |origin_or_destination| %>
+    <%= f.input :"#{origin_or_destination}_date", :label => t("activerecord.attributes.freight.#{origin_or_destination}_date"), :as => :date %>
+  <% end %>
+<% end %>
