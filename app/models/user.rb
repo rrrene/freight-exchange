@@ -14,8 +14,8 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :user_roles, :uniq => true
   has_many :action_recordings
   has_many :search_recordings
-  has_many :notifications
-  has_many :notification_items
+  has_many :notifications, :order => "created_at DESC", :dependent => :destroy
+  has_many :notification_items, :order => "created_at DESC", :dependent => :destroy
   before_create :generate_api_key
   after_save { |user| user.company.full?(&:ensure_admin) }
   after_destroy { |user| user.company.full?(&:ensure_admin) }

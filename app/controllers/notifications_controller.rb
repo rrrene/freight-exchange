@@ -11,12 +11,21 @@ class NotificationsController < ApplicationController
   end
   
   def set_notification
-    @notification = if params[:id]
-      current_user.notifications.find(params[:id])
+    if params[:id]
+      @notification = current_user.notifications.find(params[:id])
+      @notifications = [@notification]
+      @notification_items = @notification.notification_items
     else
-      current_user.last_notification
+      @notification_items = current_user.notification_items.includes(:notification)
+      @notifications = @notification_items.map(&:notification)
+      @notification = @notifications.first
     end
-    @notification.viewed!
-    @notification_items = @notification.notification_items
+    @unread = []
+    @notifications.each do |notification|
+      unless notification.viewed?
+        @unread.concat notification.notification_items
+        #notification.viewed!
+      end
+    end
   end
 end

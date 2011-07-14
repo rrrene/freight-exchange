@@ -6,22 +6,11 @@
     <%= t('notifications.show.intro') %>
   </p>
   <% if collection = @notification_items %>
-    <table>
-      <thead>
-        <tr>
-          <th><%= Station.human_attribute_name(:name) %></th>
-          <th><%= Station.human_attribute_name(:numeric_id) %></th>
-        </tr>
-      </thead>
-      <tbody>
-        <% collection.each do |ar| %>
-          <tr>
-            <td><%= link_to ar.item.pretty_id, ar.item %></td>
-            <td><%= ar[:item_id] %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
+    <ul class="action_list notifications">
+      <% collection.each do |ar| %>
+        <li class="<%= ar.item_type.underscore %><%= ' unread' if @unread.include?(ar) %>"><%= partial ar.item_type.underscore, :object => ar.item %></li>
+      <% end %>
+    </ul>
   <% else %>
     <%= t("notifications.show.no_notifications") %>
   <% end %>

@@ -642,6 +642,7 @@ ul.action_list div.avatar img {
   color: #aaa;
 }
 
+/* Reviews */
 li.unapproved b {
   background-color: #fcc;
   padding: 3px;
@@ -650,6 +651,18 @@ li.approved b {
   background-color: #0D7F09;
   color: white;
   padding: 3px;
+}
+
+/* Notifications */
+
+ul.notifications li {
+  border-left: 2px solid #aaa;
+  padding: 5px;
+}
+
+ul.notifications li.unread {
+  border-left-color: #5ba320;
+  background-color: #f0fff0;
 }
 
 div.toolbar {
