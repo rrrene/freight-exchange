@@ -84,6 +84,39 @@ function switchSearchContext(context, text) {
   $('#q').select();
 }
 
+// Clicks anywhere outside the menus should close any active menus.
+jQuery(function() {
+  $('html').click(function() {
+    $('.top-navigation-menu').each(function(index, item) {
+      deactivateMenu($(item).attr('id'));
+    });
+  });
+  $('.top-navigation-menu, .top-navigation-menu-link').click(function(event){
+    event.stopPropagation();
+  });
+});
+
+function deactivateMenu(name) {
+  $('#'+name).hide();
+  var a = $('#'+name+'_link');
+  a.removeClass('menu-active');
+}
+
+function toggleMenu(name) {
+  $('.top-navigation-menu').each(function(index, item) {
+    item = $(item);
+    if( item.attr('id') != name ) deactivateMenu(item.attr('id'));
+  });
+  $('#'+name).toggle();
+  var a = $('#'+name+'_link');
+  console.log(a)
+  if( a.hasClass('menu-active') ) {
+    a.removeClass('menu-active');
+  } else {
+    a.addClass('menu-active');
+  }
+}
+
 function popover(base_selector) {
   var popover_selector = base_selector+'-popover';
   $(base_selector).popover({header: popover_selector + ' > .header', content: popover_selector + ' > .content'});

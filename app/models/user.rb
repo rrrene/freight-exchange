@@ -37,6 +37,11 @@ class User < ActiveRecord::Base
     arel.first || current_notification
   end
 
+  def unread_notification_item_count
+    #notifications.where(:viewed => false).includes
+    notification_items.includes(:notification).where(:notifications => {:viewed => false}).count
+  end
+
   #:call-seq:
   #   user.has_role?(role_name) # => boolean
   #

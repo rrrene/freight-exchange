@@ -34,6 +34,7 @@ ul.navigation {
 #top-navigation {
   background-color: #2D2D2D;
   padding: 0 4px;
+  position: relative;
 }
 
 ul.navigation li {
@@ -79,6 +80,26 @@ ul.navigation li.noborder {
   font-weight: normal;
   color: #000;
 }
+#top-navigation ul.navigation li.no-border span,
+#top-navigation ul.navigation li.no-border a.active {
+  border-top: 2px solid transparent;
+  background-color: #4D4D4D;
+  background: #fcfcfc;
+}
+#top-navigation ul.navigation li.no-border a .badge {
+  border: 1px solid #900;
+  border-top-width: 2px;
+  border-top-color: #c00;
+  border-left-color: #c00;
+}
+#top-navigation ul.navigation li.no-border a.active .badge {
+  border: 1px solid #bbb;
+  border-top-width: 2px;
+  border-top-color: #999;
+  border-left-color: #999;
+  background: #ddd;
+  color: #333;
+}
 
 #top-navigation ul.navigation li a.frontend {
   color: #aaa;
@@ -86,11 +107,6 @@ ul.navigation li.noborder {
 
 #top-navigation ul.navigation li a.backend {
   margin-right: 20px;
-}
-#top-navigation ul.navigation li.no-border span,
-#top-navigation ul.navigation li.no-border a.active {
-  border-top: 2px solid transparent;
-  background-color: #4D4D4D;
 }
 
 ul.navigation-lang {
@@ -685,3 +701,41 @@ div.toolbar {
   border: 1px solid blue;
 }
 */
+
+
+.top-navigation-menu {
+  position: absolute;
+  z-index: 100;
+  width: 170px;
+  box-shadow: 0 3px 3px #666
+}
+#top-navigation a.menu-active:hover,
+#top-navigation a.menu-active,
+.top-navigation-menu {
+  background: #fff!important;
+  color:#505050!important;
+}
+.top-navigation-menu ul {
+  padding: 0;
+  margin: 0;
+}
+.top-navigation-menu ul li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: block;
+  clear: both;
+  width: 100%;
+}
+.top-navigation-menu ul li a {
+  display: block;
+  padding: 6px;
+  clear: both;
+}
+.top-navigation-menu ul li a:hover {
+  background: #aaa!important;
+  color: #fff!important;
+}
+#personal-menu {
+  right: 0;
+}

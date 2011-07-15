@@ -35,7 +35,21 @@ de:
         transports_per_year: "Transporte pro Jahr"
         wagons_provided_by: "Wagen werden gestellt von"
         weight: "Gesamtgewicht (in t)"
-      loading_space: 
+        origin_side_track_available: "Gleisanschluss vorhanden?"
+        origin_name: "Name"
+        origin_address: "Strasse"
+        origin_address2: "(fortgesetzt)"
+        origin_zip: "PLZ"
+        origin_city: "Stadt"
+        origin_country: "Land"
+        destination_side_track_available: "Gleisanschluss vorhanden?"
+        destination_name: "Name"
+        destination_address: "Strasse"
+        destination_address2: "(fortgesetzt)"
+        destination_zip: "PLZ"
+        destination_city: "Stadt"
+        destination_country: "Land"
+      loading_space:
         contact_person: Kontaktperson
         desired_proposal_type: "Angebot gewünscht als"
         destination_date: Bis
@@ -337,7 +351,8 @@ de:
       login: Anmelden
       logout: Abmelden
       my_company: "Unser Firmenprofil"
-      my_person: "Hallo %{name}"
+      my_person: "Profil ändern"
+      my_user: "Passwort etc. ändern"
       people: Benutzer
       register: Registrieren
       reviews: Bewertungen

@@ -6,8 +6,9 @@
     <%= f.input :"#{origin_or_destination}_track_number" %>
   </div>
   <div id="<%= origin_or_destination %>_address" style="display: none">
-    <% SiteInfo::SITE_ATTRIBUTES.each do |field| %>
+    <% %w(name address address2 zip city).each do |field| %>
       <%= f.input :"#{origin_or_destination}_#{field}", :as => :string %>
     <% end %>
+    <%= f.input :"#{origin_or_destination}_country", :priority_countries => ["Germany", "Netherlands", "Austria", "Switzerland", "France", "Italy"] %>
   </div>
 <% end %>
