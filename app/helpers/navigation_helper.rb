@@ -30,4 +30,17 @@ module NavigationHelper
   def section_is_stations?
     %w(stations).include?(controller_name)
   end
+  
+  def section_is_my_company?
+    if controller_name == 'companies'
+      @company == current_company
+    else
+      params[:company_id].to_i == current_company.id
+    end
+  end
+  
+  def section_is_my_person?
+    
+  end
+  
 end

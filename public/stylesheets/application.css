@@ -59,8 +59,8 @@ ul.navigation li.noborder {
   background-color: #4D4D4D;
   color: #ddd;
 }
-#top-navigation ul.navigation li span,
-#top-navigation ul.navigation li a.active {
+#top-navigation .navigation-left ul.navigation li span,
+#top-navigation .navigation-left ul.navigation li a.active {
   font-weight: bold;
   color: #fff;
   padding-top: 4px;
@@ -86,13 +86,15 @@ ul.navigation li.noborder {
   background-color: #4D4D4D;
   background: #fcfcfc;
 }
-#top-navigation ul.navigation li.no-border a .badge {
+#top-navigation ul.navigation li.notifications a .badge {
+  background-color: #DD4B39;
+  color: white;
   border: 1px solid #900;
   border-top-width: 2px;
   border-top-color: #c00;
   border-left-color: #c00;
 }
-#top-navigation ul.navigation li.no-border a.active .badge {
+#top-navigation ul.navigation li.notifications a.active .badge {
   border: 1px solid #bbb;
   border-top-width: 2px;
   border-top-color: #999;
@@ -653,8 +655,6 @@ ul.action_list div.avatar img {
 }
 
 #top-navigation .badge {
-  background-color: #DD4B39;
-  color: white;
   padding: 1px 5px;
   border-radius: 2px;
 }
@@ -709,6 +709,8 @@ div.toolbar {
   width: 170px;
   box-shadow: 0 3px 3px #666
 }
+
+#top-navigation .navigation-right ul.navigation li a.active,
 #top-navigation a.menu-active:hover,
 #top-navigation a.menu-active,
 .top-navigation-menu {
@@ -731,10 +733,14 @@ div.toolbar {
   display: block;
   padding: 6px;
   clear: both;
+  color: #333!important;
+}
+.top-navigation-menu ul li a.active {
+  border: 0!important;
 }
 .top-navigation-menu ul li a:hover {
-  background: #aaa!important;
-  color: #fff!important;
+  background: #ddd!important;
+  color: #333!important;
 }
 #personal-menu {
   right: 0;

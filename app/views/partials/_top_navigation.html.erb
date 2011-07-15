@@ -15,9 +15,10 @@
   <div class="navigation-right">
     <ul class="navigation">
       <% if logged_in? %>
-        <li class="no-border<%= current_user.last_notification.viewed? ? ' viewed' : '' %>"><%= navi_to_unless_current(content_tag(:b, @unread ? @unread.count : current_user.unread_notification_item_count, :class => 'badge'), notifications_path) %></li>
+        <li><span class="company_name"><%= t("common.navi.notifications")%></span></li>
+        <li class="notifications no-border<%= current_user.last_notification.viewed? ? ' viewed' : '' %>"><%= navi_to_unless_current(content_tag(:b, @unread ? @unread.count : current_user.unread_notification_item_count, :class => 'badge'), notifications_path) %></li>
         <li>
-          <%= link_to_function current_company.name, "toggleMenu('company_menu');", :id => "company_menu_link", :class => "top-navigation-menu-link" %>
+          <%= link_to_function current_company.name, "toggleMenu('company_menu');", :id => "company_menu_link", :class => "top-navigation-menu-link#{' active' if section_is_my_company?}" %>
           
           <div id="company_menu" class="top-navigation-menu" style="display: none">
             <ul>
@@ -29,7 +30,7 @@
           </div>
         </li>
         <li>
-          <%= link_to_function current_user.name, "toggleMenu('personal_menu');", :id => "personal_menu_link", :class => "top-navigation-menu-link" %>
+          <%= link_to_function current_user.name, "toggleMenu('personal_menu');", :id => "personal_menu_link", :class => "top-navigation-menu-link#{' active' if section_is_my_person?}" %>
           <div id="personal_menu" class="top-navigation-menu" style="display: none">
             <ul>
               <li><%= navi_to_unless_current(t("common.navi.my_person"), person_path(current_person)) %></li>
