@@ -1,18 +1,9 @@
 <% content_for(:toolbar) do %>
-  <% %w(id name created_at).each do |filter| %>
-    <%= link_btn t("admin.common.filter_by_#{filter}"), {:filter => filter}, :icon => filter == @filter ? :next : nil %>
-  <% end %>
+  <div class="float_left">
+    <% %w(id name login created_at).each do |order| %>
+      <% if order == 'id' || resource_class.new.attributes.keys.include?(order) %>
+        <%= link_btn_unless (params[:order].blank? && order == default_order_param) || params[:order] == order, t("admin.common.filter_by_#{order}"), {:order => order} %>
+      <% end %>
+    <% end %>
+  </div>
 <% end %>
-<!--
-<div class="box">
-  <h3>
-    <%= t("#{controller_catalog}.index.header") %>
-    <%= link_new unless controller_name =~ /recording/ %>
-  </h3>
-  <p>
-    <%= t("#{controller_catalog}.index.intro") %>
-  </p>
-  
-  <%= render_table collection %>
-</div>
--->

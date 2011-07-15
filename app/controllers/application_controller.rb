@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   before_filter :set_default_page_title
   helper_method :current_user, :controller_catalog, :current_person, :current_company, :logged_in?, :demo_mode?, :page
   helper_method :black_listed?, :white_listed?
+  helper_method :contextual_search_controller
   layout 'application'
   
   private
@@ -19,6 +20,15 @@ class ApplicationController < ActionController::Base
 
   def blocked_company_ids
     current_company.black_listed_items.where(:item_type => 'Company').collect(&:item_id)
+  end
+
+  def contextual_search_controller
+    if action_name != 'dashboard'
+      if %w(companies freights loading_spaces stations).include?(controller_name)
+        return controller_name
+      end
+    end
+    'freights'
   end
 
   # Returns the i18n catalog path for the current controller.

@@ -1,18 +1,16 @@
 # The Admin::BaseController is the controller every other backend controller inherits
 # from. He is mainly responsible for providing basic functionality to all controllers
 # in the Admin module, e.g. rights management.
-class Admin::BaseController < ApplicationController
-  inherit_resources
+class Admin::BaseController < RemoteController
   role_required :administrator
-  
-  def index # :nodoc:
-    @filter = params[:filter].full? || 'id'
-    if controller_name == 'users' && @filter == 'name'
-      @filter = 'login'
+
+  # overrides ApplicationController#contextual_search_controller
+  def contextual_search_controller # :nodoc:
+    if action_name != 'dashboard'
+      if %w(app_configs companies freights loading_spaces stations users).include?(controller_name)
+        return controller_name
+      end
     end
-    
-    order_clause = "#{@filter} #{@filter == 'created_at' ? :DESC : :ASC}"
-    instance_variable_set("@#{resource_class.to_s.pluralize.underscore}", resource_class.order(order_clause).all)
-    index!
+    'search'
   end
 end

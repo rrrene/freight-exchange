@@ -24,15 +24,27 @@
     <div class="span-24 last" id="first-header">
       <%#= link_to image_tag('home_logo.gif'), root_url %>
       <div class="float_left">
-        <h2 style="float: left; font-weight: bolder;"><%= link_to t("admin.common.navi.home"), admin_root_path, :style => "text-decoration: none; color: #666;" %></h2>
+        <h2 style="float: left; font-weight: bolder; padding-top: 10px"><%= link_to t("admin.common.navi.home"), admin_root_path, :style => "text-decoration: none; color: #666;" %></h2>
       </div>
       <div class="float_left">
         <div id="search_form">
-          <%= form_tag admin_search_url, :method => :get do %>
-            <div class="input-wrapper"><%= text_field_tag :q, h(params[:q]) %><%= image_submit_tag("search_button.png") %></div>
+          <%= form_tag contextual_search_path, :method => :get do %>
+            <div class="input-wrapper"><%= link_to_function t("admin.#{contextual_search_controller}.common.search-label"), "void(0);", :id => "search-label", :class => "search-label search-label-#{contextual_search_controller}" %><%= text_field_tag :q, h(params[:q]), :autocomplete => :off %><%= image_submit_tag("search_button.png") %></div>
+            <div class="advanced-search-wrapper"><%= link_to t("common.sidebar.advanced_search_link"), advanced_search_path %></div>
           <% end %>
         </div>
       </div>
+      <div id="search-label-popover">
+         <div class="header">
+          <%= "Suche ändern" %>
+         </div>
+         <div class="content">
+           <% %w(app_configs companies stations users).each do |context| %>
+             <% text = t("admin.#{context}.common.search-label") %>
+             <%= link_to_function text, "switchSearchContext('#{context}', '#{text}');", :id => "", :class => "search-label search-label-#{context}" %>
+           <% end %>
+         </div>
+       </div>
       <%= clear_both %>
     </div>
 

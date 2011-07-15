@@ -136,14 +136,16 @@ de:
       freight: Ladung
       loading_space: Laderaum
       station: Bahnhof
-  admin: 
-    action_recordings: 
+  admin:
+    action_recordings:
+      search-label: Aktionen
       index: 
         header: "Alle Aktionen"
         intro: "Hier sehen Sie alle Aktionen aller Benutzer."
         page_title: "Alle Aktionen"
     app_configs: 
-      common: 
+      common:
+        search-label: Einstellungen
         hints: 
           contact_info: 
             complete_percentage: "Gibt an, wieviele Kontaktinformationen angegeben werden müssen, damit ein Profil als 'vollständig' gilt."
@@ -170,10 +172,12 @@ de:
         page_title: "Konfigurationsvariable "
       update: 
         page_title: "Konfigurationsvariable bearbeiten"
-    common: 
+    common:
+      search-label: "Global"
       edit_link: Bearbeiten
       filter_by_created_at: "Neuste zuerst"
       filter_by_id: "1 - 100"
+      filter_by_login: "A - Z"
       filter_by_name: "A - Z"
       frontend_show_link: "Öffentliches Profil ansehen"
       navi: 
@@ -212,7 +216,9 @@ de:
           top_searched: "Meistgesuchte Keywords (letzte 7 Tage)"
           users_logins: "Logins pro Tag (letzte 7 Tage)"
           users_posting_types: "Art der Inserate aller Benutzer (insgesamt)"
-    companies: 
+    companies:
+      common:
+        search-label: Unternehmen
       create: 
         page_title: "Firma erstellen"
       dashboard: 
@@ -236,7 +242,7 @@ de:
         users_intro: "Hier sehen Sie alle Benutzer dieser Firma."
       update: 
         page_title: "Firma bearbeiten"
-    people: 
+    people:
       edit: 
         edit_user_link: "Benutzer bearbeiten"
         page_title: "Person bearbeiten"
@@ -246,7 +252,9 @@ de:
         page_title: "Alle Personen"
       update: 
         page_title: "Person bearbeiten"
-    search: 
+    search:
+      common:
+        search-label: "Alle:"
       index: 
         header: "Alle Ergebnisse"
         intro: "Hier sehen Sie alle Ergebnisse ihrer Suchanfrage."
@@ -261,20 +269,24 @@ de:
         intro: "Hier sehen Sie alle Infos zu einem bestimmten Keyword."
         keywords_label: "Keywords:"
         page_title: Keyword-Analyse
-    stations: 
+    stations:
+      common:
+        search-label: "Bahnhöfe:"
       create: 
-        page_title: "-"
+        page_title: "Bahnhöfe"
       edit: 
-        page_title: "-"
+        page_title: "Bahnhof bearbeiten"
       index: 
-        header: "-"
-        intro: "-"
-        page_title: "-"
-      new: 
-        page_title: "-"
+        page_title: "Bahnhöfe"
+        header: "Bahnhöfe"
+        intro: "Hier sehen Sie alle im System bereitgestellten Bahnhöfe."
+      new:
+        page_title: "Neuen Bahnhof erstellen"
       update: 
-        page_title: "-"
-    user_roles: 
+        page_title: "Bahnhof bearbeiten"
+    user_roles:
+      common:
+        search-label: "Benutzerrolle:"
       create: 
         page_title: "Neue Benutzerrolle erstellen"
       edit: 
@@ -287,7 +299,9 @@ de:
         page_title: "Neue Benutzerrolle erstellen"
       update: 
         page_title: "Benutzerrolle bearbeiten"
-    users: 
+    users:
+      common:
+        search-label: "Benutzer:"
       edit: 
         edit_person_link: "Person bearbeiten"
         page_title: "Benutzer bearbeiten"

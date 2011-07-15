@@ -71,6 +71,8 @@
 //]]>
 </script>
 
+<%= pie_chart_for_records ActionRecording, :attribute => :item_type, :size => "620x310" %>
+
 <input type="button" onclick="pollServer();" value="Poll server">
 <span id="poll_status">&nbsp;</span>
 

@@ -1,7 +1,9 @@
 <%= partial :index %>
 
 <% content_for(:toolbar) do %>
-  <%= link_btn t("admin.app_configs.index.reimport_defaults_link"), {:action => :reimport_defaults} %>
+  <div class="float_right">
+    <%= link_btn t("admin.app_configs.index.reimport_defaults_link"), {:action => :reimport_defaults} %>
+  </div>
 <% end %>
 
 <% %w(name value).tap do |attributes| %>

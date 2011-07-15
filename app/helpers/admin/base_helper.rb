@@ -1,6 +1,15 @@
 # The BaseHelper provides basic helper methods all backend views.
 module Admin::BaseHelper
-  
+
+  def contextual_admin_search_controller
+    if action_name != 'dashboard'
+      if %w(companies freights loading_spaces stations).include?(controller_name)
+        return controller_name
+      end
+    end
+    'search'
+  end
+
   def chart_for_records(record_class, opts = {})
     steps = opts.delete(:steps) || 7
     step_width = opts.delete(:step_width) || 1.day

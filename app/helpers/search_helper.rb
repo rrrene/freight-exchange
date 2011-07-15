@@ -1,15 +1,7 @@
 module SearchHelper
   def contextual_search_path
+    # contextual_search_controller is defined in ApplicationController
     {:controller => contextual_search_controller, :action => :index}
-  end
-
-  def contextual_search_controller
-    if action_name != 'dashboard'
-      if %w(companies freights loading_spaces stations).include?(controller_name)
-        return controller_name
-      end
-    end
-    'freights'
   end
 
   def search_input_is(object, field, opts = {})

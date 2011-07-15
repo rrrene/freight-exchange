@@ -29,6 +29,8 @@ class RemoteController < ApplicationController
   remote_enabled
   login_required
 
+  helper_method :default_order_param
+
   def index(&block)
     self.collection = resource_class.scoped
     filter_collection!
@@ -77,12 +79,19 @@ class RemoteController < ApplicationController
   end
 
   def order_collection!
-    order = 'created_at DESC'
-    if params[:order].blank? || params[:order] == 'name'
-      'UPPER(name) ASC'
-    elsif params[:order] == 'created_at'
-      'created_at DESC'
-    end
+    order = order_map[params[:order].full? || default_order_param]
     self.collection = collection.order(order)
+  end
+
+  def order_map
+    {
+      'default' => :name,
+      'name' => 'UPPER(name) ASC',
+      'created_at' => 'created_at DESC',
+    }
+  end
+
+  def default_order_param
+    order_map['default'].to_s
   end
 end

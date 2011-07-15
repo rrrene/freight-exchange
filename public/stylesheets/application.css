@@ -199,6 +199,7 @@ div.header div#search_form .search-label {
   border-radius: 3px;
   font-size: 11px;
   color: #fff;
+  background: #333;
   text-decoration: none;
 }
 .popover .search-label {
@@ -226,6 +227,10 @@ div.header div#search_form .input-wrapper .search-label-companies {
 .popover .search-label-stations,
 div.header div#search_form .input-wrapper .search-label-stations {
   background-color: #c46f41;
+}
+.popover .search-label-admin,
+div.header div#search_form .input-wrapper .search-label-admin {
+  background: #7e00ff;
 }
 div.header div#search_form .input-wrapper input#q {
   background: transparent;
