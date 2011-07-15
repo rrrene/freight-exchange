@@ -352,11 +352,12 @@ de:
       logout: Abmelden
       my_company: "Unser Firmenprofil"
       my_person: "Profil ändern"
+      my_profile: "Unternehmensprofil"
+      my_reviews: Bewertungen
       my_user: "Passwort etc. ändern"
       notifications: "Neuigkeiten:"
       people: Benutzer
       register: Registrieren
-      reviews: Bewertungen
       select_locale: "Sprache wählen:"
       settings: "Verwaltung"
       stations: "Bahnhöfe"

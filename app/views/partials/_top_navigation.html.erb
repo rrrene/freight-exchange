@@ -16,7 +16,7 @@
     <ul class="navigation">
       <% if logged_in? %>
         <li><span class="company_name"><%= t("common.navi.notifications")%></span></li>
-        <li class="notifications no-border<%= current_user.last_notification.viewed? ? ' viewed' : '' %>"><%= navi_to_unless_current(content_tag(:b, @unread ? @unread.count : current_user.unread_notification_item_count, :class => 'badge'), notifications_path) %></li>
+        <li class="notifications no-border<%= current_user.last_notification.viewed? ? ' viewed' : '' %>"><%= navi_to_unless_current(content_tag(:b, @unread ? @unread.count : current_user.unread_notification_items.count, :class => 'badge'), notifications_path) %></li>
         <li>
           <%= link_to_function current_company.name, "toggleMenu('company_menu');", :id => "company_menu_link", :class => "top-navigation-menu-link#{' active' if section_is_my_company?}" %>
           

@@ -1,0 +1,7 @@
+<% content_for(:toolbar) do %>
+  <div class="float_left">
+    <%= link_btn_unless_current "Überblick", notifications_path %>
+    <%= link_btn_unless_current "Ladungen", "#" %>
+    <%= link_btn_unless_current "Laderäume", "#" %>
+  </div>
+<% end %>

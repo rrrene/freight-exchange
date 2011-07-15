@@ -20,12 +20,7 @@ class NotificationsController < ApplicationController
       @notifications = @notification_items.map(&:notification)
       @notification = @notifications.first
     end
-    @unread = []
-    @notifications.each do |notification|
-      unless notification.viewed?
-        @unread.concat notification.notification_items
-        #notification.viewed!
-      end
-    end
+    @unread = current_user.unread_notification_items.all
+    @unread.each(&:viewed!)
   end
 end
