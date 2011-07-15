@@ -79,19 +79,21 @@ class RemoteController < ApplicationController
   end
 
   def order_collection!
-    order = order_map[params[:order].full? || default_order_param]
+    order = order_map[params[:order].full?(&:to_sym) || default_order_param]
     self.collection = collection.order(order)
   end
 
   def order_map
     {
-      'default' => :name,
-      'name' => 'UPPER(name) ASC',
-      'created_at' => 'created_at DESC',
+      :default => :name,
+      :id => 'id ASC',
+      :login => 'UPPER(login) ASC',
+      :name => 'UPPER(name) ASC',
+      :created_at => 'created_at DESC',
     }
   end
 
   def default_order_param
-    order_map['default'].to_s
+    order_map[:default]
   end
 end

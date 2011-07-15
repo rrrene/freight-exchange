@@ -2,7 +2,7 @@
   <div class="float_left">
     <% %w(id name login created_at).each do |order| %>
       <% if order == 'id' || resource_class.new.attributes.keys.include?(order) %>
-        <%= link_btn_unless (params[:order].blank? && order == default_order_param) || params[:order] == order, t("admin.common.filter_by_#{order}"), {:order => order} %>
+        <%= link_btn_unless (params[:order].blank? && order == default_order_param.to_s) || params[:order] == order, t("admin.common.filter_by_#{order}"), {:order => order} %>
       <% end %>
     <% end %>
   </div>

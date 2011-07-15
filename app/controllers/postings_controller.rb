@@ -106,5 +106,9 @@ class PostingsController < RemoteController
       self.collection = collection.where(:id => matched_ids)
     end
   end
-    
+
+  def order_map
+    super.merge(:default => :created_at)
+  end
+
 end

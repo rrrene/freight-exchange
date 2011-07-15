@@ -13,4 +13,9 @@ class Admin::BaseController < RemoteController
     end
     'search'
   end
+
+  def order_map
+    super.merge(:default => :id)
+  end
+
 end
