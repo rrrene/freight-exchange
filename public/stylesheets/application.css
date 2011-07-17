@@ -94,13 +94,18 @@ ul.navigation li.noborder {
   border-top-color: #c00;
   border-left-color: #c00;
 }
+#top-navigation ul.navigation li.viewed .badge {
+  border: none!important;
+}
 #top-navigation ul.navigation li.notifications a.active .badge {
-  border: 1px solid #bbb;
-  border-top-width: 2px;
-  border-top-color: #999;
-  border-left-color: #999;
-  background: #ddd;
-  color: #333;
+  border: 1px solid #bbb!important;
+  border-top-width: 2px!important;
+  border-top-color: #999!important;
+  border-left-color: #999!important;
+}
+#top-navigation ul.navigation li.notifications a.active .badge {
+  background: #ddd!important;
+  color: #333!important;
 }
 
 #top-navigation ul.navigation li a.frontend {
@@ -659,8 +664,8 @@ ul.action_list div.avatar img {
   border-radius: 2px;
 }
 #top-navigation .viewed .badge {
-  background-color: #666;
-  color: #aaa;
+  background-color: #666!important;
+  color: #aaa!important;
 }
 
 /* Reviews */
