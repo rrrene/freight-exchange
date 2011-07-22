@@ -116,7 +116,8 @@ module ActiveRecord
     end
 
     def pretty_id
-      pretty_prefix + "%06d" % id
+      number = "%06d" % id
+      pretty_prefix + number.gsub(/(.{3})/, '.\1')
     end
 
     class << self

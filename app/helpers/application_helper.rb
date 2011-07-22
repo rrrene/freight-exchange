@@ -5,6 +5,30 @@ module ApplicationHelper
     controller.is_a?(Admin::BaseController)
   end
   
+  def auto_link(text, *args, &block)
+    text = text.to_s.gsub(/#([A-Za-z0-9\.\_\-]+)\b/) do |m|
+      indicator, numeric_id = m[1..2], m[3..-1].gsub('.', '').to_i
+      if klass = auto_link_pretty_map[indicator]
+        opts = {:controller => klass.to_s.tableize, :action => :show, :id => numeric_id}
+        link_to(m, opts, :class => 'pretty_id')
+      else
+        m
+      end
+    end
+    super(text, *args, &block)
+  end
+  
+  def auto_link_pretty_map
+    @auto_link_pretty_map ||= {
+      Freight => %w(FR),
+      LoadingSpace => %w(LS),
+      Review => %w(RE),
+    }.inject({}) do |hsh, (key, value)|
+      value.each { |str| hsh[str] = key }
+      hsh
+    end
+  end
+  
   # Renders a badge labelled with count, unless the given count is zero.
   def badge_for(count)
     count == 0 ? "" : ' ' << content_tag(:b, count, :class => 'badge')
