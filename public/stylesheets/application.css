@@ -751,3 +751,8 @@ div.toolbar {
 #personal-menu {
   right: 0;
 }
+
+#origin_with_station label,
+#destination_with_station label {
+  display: none;
+}

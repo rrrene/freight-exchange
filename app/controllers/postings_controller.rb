@@ -26,6 +26,8 @@ class PostingsController < RemoteController
       end
     else
       self.resource = resource_class.new
+      resource.origin_side_track_available = true
+      resource.destination_side_track_available = true
       #resource.origin_country = resource.destination_country = "Germany"
       resource.localized_infos.build
     end

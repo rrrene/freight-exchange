@@ -42,6 +42,7 @@ de:
         origin_zip: "PLZ"
         origin_city: "Stadt"
         origin_country: "Land"
+        origin_station: "Beladebahnhof"
         destination_side_track_available: "Gleisanschluss vorhanden?"
         destination_name: "Name"
         destination_address: "Strasse"
@@ -49,6 +50,7 @@ de:
         destination_zip: "PLZ"
         destination_city: "Stadt"
         destination_country: "Land"
+        destination_station: "Entladebahnhof"
       loading_space:
         contact_person: Kontaktperson
         desired_proposal_type: "Angebot gewünscht als"
