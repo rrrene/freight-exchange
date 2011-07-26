@@ -3,8 +3,8 @@
 class PeopleController < RemoteController
   login_required
   same_company_required :only => [:edit, :update]
-  role_or_ownership_required :company_admin, :only => [:edit, :update]
-  role_required :company_admin, :only => [:index, :new, :create]
+  role_or_ownership_required [:company_admin, :company_employee], :only => [:edit, :update]
+  role_required [:company_admin, :company_employee], :only => [:index, :new, :create]
   
   def index
     index! {

@@ -666,6 +666,7 @@ ul.action_list div.avatar img {
 #top-navigation .viewed .badge {
   background-color: #666!important;
   color: #aaa!important;
+  border-color: #666!important;
 }
 
 /* Reviews */

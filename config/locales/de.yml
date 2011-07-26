@@ -342,10 +342,10 @@ de:
       backend: Administration
       companies: "Unternehmen"
       dashboard: Startseite
-      freights: Ladungen
-      loading_spaces: Laderäume
-      my_freights: Ladungen
-      my_loading_spaces: Laderäume
+      freights: Nachfragen
+      loading_spaces: Angebote
+      my_freights: Nachfragen
+      my_loading_spaces: Angebote
       locale_de: Deutsch
       locale_en: English
       login: Anmelden
@@ -358,6 +358,7 @@ de:
       notifications: "Neuigkeiten:"
       people: Benutzer
       register: Registrieren
+      my_reviews: Bewertungen
       select_locale: "Sprache wählen:"
       settings: "Verwaltung"
       stations: "Bahnhöfe"

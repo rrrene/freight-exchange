@@ -147,7 +147,7 @@ class ApplicationController < ActionController::Base
   def self.role_or_ownership_required(roles, opts = {}) # :doc:
     allowed_role_names = [roles].flatten.map(&:to_s)
     before_filter(opts) do |controller|
-      require_role(allowed_role_names) or require_owner
+      require_owner or require_role(allowed_role_names)
     end
   end
   
@@ -171,7 +171,7 @@ class ApplicationController < ActionController::Base
   
   def permission_denied!
     page[:title] = "Permission denied."
-    render :text => "You tried to access a restricted area or function.", :layout => 'content_only', :status => 401
+    render :text => "You tried to access a restricted area or function.", :layout => true, :status => 401
     return false
   end
   

@@ -39,7 +39,8 @@ module Demo
         company = ::Company.where(:name => factory_attributes[:name]).first
         company ||= ::Company.create(factory_attributes)
         demo_user_attributes.each do |attr|
-          create_or_find(attr.merge(:company_id => company.id))
+          user = create_or_find(attr.merge(:company_id => company.id))
+          user.user_roles << ::UserRole[:company_employee]
         end
         if company_admin = company.users.first
           company_admin.user_roles << ::UserRole[:company_admin]
