@@ -15,6 +15,7 @@ class Freight < ActiveRecord::Base
   FREQUENCY_CHOICES = %w(once repeated_regularly repeated_irregularly)
   belongs_to :user
   belongs_to :company
+  belongs_to :reply_to, :class_name => 'LoadingSpace'
 
   belongs_to :origin_station, :class_name => 'Station'
   belongs_to :destination_station, :class_name => 'Station'
@@ -32,10 +33,12 @@ class Freight < ActiveRecord::Base
   def calc_matchings!
     LoadingSpace.all.each do |record|
       result = Matching.fls(self, record)
-      if matching = matching_recordings.where(:b_type => record.class.to_s, :b_id => record.id).first
-        matching.update_attribute(:result, result)
-      else
-        matching_recordings.create(:b => record, :result => result)
+      unless result.nan?
+        if matching = matching_recordings.where(:b_type => record.class.to_s, :b_id => record.id).first
+          matching.update_attribute(:result, result)
+        else
+          matching_recordings.create(:b => record, :result => result)
+        end
       end
     end
   end
@@ -51,7 +54,7 @@ class Freight < ActiveRecord::Base
   end
   
   def pretty_prefix
-    '#NF'
+    '#N'
   end
   
   def to_search # :nodoc:
@@ -81,13 +84,13 @@ class Freight < ActiveRecord::Base
   validates_presence_of :user_id
   validates_presence_of :company_id
   
-  validates_presence_of :origin_city
-  validates_presence_of :origin_country
-  validates_presence_of :destination_city
-  validates_presence_of :destination_country
+#  validates_presence_of :origin_city
+#  validates_presence_of :origin_country
+#  validates_presence_of :destination_city
+#  validates_presence_of :destination_country
   
   validates_presence_of :weight
-  validates_presence_of :loading_meter
+#  validates_presence_of :loading_meter
   validates_inclusion_of :hazmat, :in => [true, false]
   validates_inclusion_of :transport_type, :in => TRANSPORT_TYPE_CHOICES
   validates_inclusion_of :wagons_provided_by, :in => WAGONS_PROVIDED_BY_CHOICES

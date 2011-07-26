@@ -1,11 +1,21 @@
 <div class="box">
   <h3><%= t('freights.show.header') %></h3>
+  
+  <% if resource.reply_to.full? %>
+    <div class="success">
+      <%= auto_link t("freights.show.is_reply_to", :name => resource.reply_to.pretty_id) %>
+    </div>
+  <% end %>
 
   <% if resource.company == current_company %>
     <% content_for(:toolbar) do %>
       <%= link_btn t('freights.common.template_link'), new_resource_url(:parent_id => resource.id), :icon => 'reply' %>
       <%= link_btn t("freights.common.edit_link"), edit_freight_path(resource), :icon => 'edit' %>
       <%= link_btn t("loading_spaces.common.delete_link"), freight_path(resource), :method => :delete, :confirm => t('common.confirm'), :class => 'destroy' %>
+    <% end %>
+  <% else %>
+    <% content_for(:toolbar) do %>
+      <%= link_btn t('freights.common.reply_to_link'), new_freight_path(:reply_to_id => resource.id), :icon => 'reply' %>
     <% end %>
   <% end %>
 

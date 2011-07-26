@@ -8,10 +8,11 @@ class LoadingSpace < ActiveRecord::Base
   ORIGIN_ATTRIBUTES = SITE_ATTRIBUTES.map { |s| "origin_#{s}" }
   DESTINATION_ATTRIBUTES = SITE_ATTRIBUTES.map { |s| "destination_#{s}" }
 
-  TRANSPORT_TYPE_CHOICES = %w(single_wagon train_set block_train intermodal_transport)
+  TRANSPORT_TYPE_CHOICES = ::Freight::TRANSPORT_TYPE_CHOICES
   FREQUENCY_CHOICES = %w(once repeated_regularly repeated_irregularly)
   belongs_to :user
   belongs_to :company
+  belongs_to :reply_to, :class_name => 'Freight'
 
   belongs_to :origin_station, :class_name => 'Station'
   belongs_to :destination_station, :class_name => 'Station'
@@ -35,7 +36,7 @@ class LoadingSpace < ActiveRecord::Base
   end
   
   def pretty_prefix
-    '#AN'
+    '#A'
   end
   
   def to_search # :nodoc:
@@ -63,8 +64,8 @@ class LoadingSpace < ActiveRecord::Base
   
   validates_presence_of :user_id
   validates_presence_of :company_id
-  validates_presence_of :weight
-  validates_presence_of :loading_meter
+  #validates_presence_of :weight
+  #validates_presence_of :loading_meter
   validates_inclusion_of :hazmat, :in => [true, false]
   validates_inclusion_of :transport_type, :in => TRANSPORT_TYPE_CHOICES
 end

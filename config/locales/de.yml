@@ -589,10 +589,11 @@ de:
   freights: 
     common: 
       edit_link: "Inserat bearbeiten"
-      new_link: "Ladung inserieren"
+      new_link: "Neue Nachfrage"
       required_field_hint: "Die mit einem (*) gekennzeichneten Felder sind Pflichtfelder:"
       template_link: "Als Vorlage"
-      search-label: "Ladungen:"
+      search-label: "Nachfrage:"
+      reply_to_link: "Mit Angebot beantworten"
     create: 
       header: "Neues Inserat"
       page_title: "Neues Inserat"
@@ -600,13 +601,13 @@ de:
       header: "Inserat bearbeiten"
       page_title: "Inserat bearbeiten"
     index:   
-      page_title: "Ladungen"
-      switch_to_loading_spaces: "Zu Laderäumen wechseln"
-      header: "Alle Ladungen"
-      header_query: "Alle Ladungen für '%{query}'"
-      intro: "Hier sehen Sie alle Ladungsinserate Ihrer Firma."
-      from_origin_city: "Nur Ladungen aus '%{city}'"
-      to_destination_city: "Nur Ladungen nach '%{city}'"
+      page_title: "Nachfragen"
+      switch_to_loading_spaces: "Zu Angeboten wechseln"
+      header: "Alle Nachfragen"
+      header_query: "Alle Nachfragen für '%{query}'"
+      intro: "Hier sehen Sie alle Nachfragen Ihrer Firma."
+      from_origin_city: "Nur Nachfragen aus '%{city}'"
+      to_destination_city: "Nur Nachfragen nach '%{city}'"
       show_company: "Profil von %{company}"
       table: 
         headers: 
@@ -620,7 +621,7 @@ de:
           delete: Löschen
           edit: Bearbeiten
           template: "Als Vorlage"
-      all_freights: "Ladungen"
+      all_freights: "Nachfragen"
     new: 
       header: "Neues Inserat"
       page_title: "Inserat erstellen"
@@ -633,6 +634,7 @@ de:
         header: "Beladestelle für Ladung"
       transport_description: Ladungsbeschreibung
       no_side_track_available: "Kein Gleisanschluss vorhanden."
+      is_reply_to: "Diese Nachfrage ist eine Antwort auf das Angebot %{name}"
     update: 
       header: "Inserat bearbeiten"
       page_title: "Inserat bearbeiten"
@@ -647,23 +649,24 @@ de:
     common: 
       delete_link: "Inserat löschen"
       edit_link: Bearbeiten
-      new_link: "Laderaum inserieren"
+      new_link: "Neues Angebot"
       required_field_hint: "Die mit einem (*) gekennzeichneten Felder sind Pflichtfelder:"
       template_link: "Als Vorlage"
-      search-label: "Laderäume:"
+      search-label: "Angebote:"
+      reply_to_link: "Mit Nachfrage beantworten"
     create: 
       page_title: "Neues Inserat"
     edit:
       header: "Inserat bearbeiten"
       page_title: "Inserat bearbeiten"
     index: 
-      page_title: "Laderäume"
-      switch_to_freights: "Zu Ladungen wechseln"
-      header: "Alle Laderäume"
-      header_query: "Alle Laderäume für '%{query}'"
-      intro: "Hier sehen Sie alle Laderauminserate Ihrer Firma."
-      from_origin_city: "Nur Laderäume aus '%{city}'"
-      to_destination_city: "Nur Laderäume nach '%{city}'"
+      page_title: "Angebote"
+      switch_to_freights: "Zu Nachfragen wechseln"
+      header: "Alle Angebote"
+      header_query: "Alle Angebote für '%{query}'"
+      intro: "Hier sehen Sie alle Angebote Ihrer Firma."
+      from_origin_city: "Nur Angebote aus '%{city}'"
+      to_destination_city: "Nur Angebote nach '%{city}'"
       table: 
         headers: 
           date: Datum
@@ -674,7 +677,7 @@ de:
           delete: Löschen
           edit: Bearbeiten
           template: "Als Vorlage"
-      all_loading_spaces: "Laderäume"
+      all_loading_spaces: "Angebote"
     new: 
       header: "Neues Inserat"
       page_title: "Neues Inserat"
@@ -682,10 +685,11 @@ de:
       page_title: "Inserat %{pretty_id}"
       destination: 
         header: "Endladestelle für Ladung"
-      header: Laderaum-Inserat
+      header: Laderaum-Angebot
       origin: 
         header: "Beladestelle für Ladung"
       transport_description: Laderaumbeschreibung
+      is_reply_to: "Dieses Angebot ist eine Antwort auf die Nachfrage %{name}"
     update: 
       header: "Inserat bearbeiten"
       page_title: "Inserat bearbeiten"

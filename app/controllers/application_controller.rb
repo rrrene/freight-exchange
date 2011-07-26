@@ -13,9 +13,9 @@ class ApplicationController < ActionController::Base
   
   def auto_link_pretty_map
     @auto_link_pretty_map ||= {
-      Freight => %w(FR NF),
-      LoadingSpace => %w(LS AN),
-      Review => %w(RE),
+      Freight => %w(FR NF N),
+      LoadingSpace => %w(LS AN A),
+      Review => %w(RE BW),
     }.inject({}) do |hsh, (key, value)|
       value.each { |str| hsh[str] = key }
       hsh

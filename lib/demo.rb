@@ -41,6 +41,7 @@ module Demo
         demo_user_attributes.each do |attr|
           user = create_or_find(attr.merge(:company_id => company.id))
           user.user_roles << ::UserRole[:company_employee]
+          user.update_attribute(:locale, 'de')
         end
         if company_admin = company.users.first
           company_admin.user_roles << ::UserRole[:company_admin]

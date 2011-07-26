@@ -7,7 +7,7 @@ module ApplicationHelper
   
   def auto_link(text, *args, &block)
     text = text.to_s.gsub(/#([A-Za-z0-9\.\_\-]+)\b/) do |m|
-      indicator, numeric_id = m[1..2], m[3..-1].gsub('.', '').to_i
+      indicator, numeric_id = m[1..2].gsub(/[\.\d]/, ''), m[3..-1].gsub('.', '').to_i
       if klass = auto_link_pretty_map[indicator]
         opts = {:controller => klass.to_s.tableize, :action => :show, :id => numeric_id}
         link_to(m, opts, :class => 'pretty_id')

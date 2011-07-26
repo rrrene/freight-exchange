@@ -1,13 +1,24 @@
 <div class="box">
   <h3><%= t('loading_spaces.show.header') %></h3>
 
+  <% if resource.reply_to.full? %>
+    <div class="success">
+      <%= auto_link t("loading_spaces.show.is_reply_to", :name => resource.reply_to.pretty_id) %>
+    </div>
+  <% end %>
+
   <% if resource.company == current_company %>
     <% content_for(:toolbar) do %>
       <%= link_btn t('loading_spaces.common.template_link'), new_resource_url(:parent_id => resource.id), :icon => 'reply' %>
       <%= link_btn t("loading_spaces.common.edit_link"), edit_loading_space_path(@loading_space), :icon => 'edit' %>
       <%= link_btn t("loading_spaces.common.delete_link"), loading_space_path(@loading_space), :method => :delete, :confirm => t('common.confirm'), :class => 'destroy' %>
     <% end %>
+  <% else %>
+    <% content_for(:toolbar) do %>
+      <%= link_btn t('loading_spaces.common.reply_to_link'), new_freight_path(:reply_to_id => resource.id), :icon => 'reply' %>
+    <% end %>
   <% end %>
+
 
   <%= render :partial => "postings/origin_and_destination" %>
   
@@ -59,8 +70,6 @@
 </div>
 
 <% content_for(:sidebar) do %>
-  <%= link_btn "REPLY", new_freight_path(:reply_to_id => resource.id) %>
-  
   <%= render_person_info(resource.contact_person) if resource.contact_person %>
   <%= render_company_info(resource.company) %>
 <% end %>

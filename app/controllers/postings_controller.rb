@@ -22,12 +22,16 @@ class PostingsController < RemoteController
       self.resource = resource_class.new
       @reply_to.attributes.each do |key, value|
         new_key = key =~ /^origin/ ? key.gsub('origin_', 'destination_') : key.gsub('destination_', 'origin_')
-        resource[new_key] = value if resource.attributes.has_key?(new_key)
+        resource[new_key] = value if resource.attributes.has_key?(new_key) && !%w(contact_person_id).include?(key)
       end
+      self.resource.reply_to_id = @reply_to.id
     else
       self.resource = resource_class.new
       resource.origin_side_track_available = true
       resource.destination_side_track_available = true
+      resource.origin_date = Time.now.beginning_of_week + 1.week
+      resource.destination_date = resource.origin_date + 1.month
+      resource.hazmat = false
       #resource.origin_country = resource.destination_country = "Germany"
       resource.localized_infos.build
     end

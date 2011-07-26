@@ -8,19 +8,19 @@
     <%= f.input :frequency, :collection => collection_choices(Freight, :frequency), :as => :radio %>
     <%= f.input :loading_meter, :as => :string %>
 
-    <%= localized_info_fields f, :goods_text %>
+    <%#= localized_info_fields f, :goods_text %>
 
     <%= f.input :hazmat, :as => :radio, :collection => yes_no_collection %>
   <% end %> 
   <%= f.inputs :transport_type do %>
     <%= f.input :transport_type, :collection => collection_choices(Freight, :transport_type), :include_blank => false %>
-    <%= localized_info_fields f, :transport_text %>
+    <%#= localized_info_fields f, :transport_text %>
 
     <%= f.input :wagons_provided_by, :collection => collection_choices(Freight, :wagons_provided_by), :as => :radio %>
-    <%= f.input :paying_freight, :collection => collection_choices(Freight, :paying_freight), :as => :select %>
+    <%= f.input :paying_freight, :collection => collection_choices(Freight, :paying_freight), :as => :select, :include_blank => false %>
   <% end %>
   <%= f.inputs :misc_text do %>
-    <%= localized_info_fields f, :misc_text %>
+    <%#= localized_info_fields f, :misc_text %>
     <%= f.input :desired_proposal_type, :collection => collection_choices(Freight, :desired_proposal_type), :as => :radio %>
     <%= f.input :contact_person, :collection => current_company.people %>
   <% end %>

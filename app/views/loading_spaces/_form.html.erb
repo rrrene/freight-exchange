@@ -1,16 +1,18 @@
-<p>
-  <%= "Reply to:" %>
-  <%= auto_link @reply_to.pretty_id %>
-</p>
+<% if @reply_to %>
+  <p>
+    <%= "Reply to:" %>
+    <%= auto_link @reply_to.pretty_id %>
+  </p>
+<% end %>
 <%= semantic_form_for(resource) do |f| %>
-  <% if @reply_to %>
-    <%= f.input :reply_to_id, :as => :hidden %>
-  <% end %>
   <%= clear_both %>
   
   <%= render :partial => "postings/form_origin_and_destination", :locals => {:f => f} %>
 
   <%= f.inputs :freight_description do %>
+    <% if @reply_to %>
+      <%= f.input :reply_to_id, :as => :hidden %>
+    <% end %>
     <%= f.input :hazmat, :as => :radio, :collection => yes_no_collection %>
     
     <%= f.input :weight, :as => :string %>
@@ -20,7 +22,7 @@
     
     <%= f.input :loading_meter, :as => :string %>
 
-    <%= f.input :transport_type, :collection => collection_choices(Freight, :transport_type), :include_blank => false %>
+    <%= f.input :transport_type, :collection => collection_choices(LoadingSpace, :transport_type), :include_blank => false %>
     <%= localized_info_field f, :transport_text %>
 
     <%= localized_info_field f, :misc_text %>
