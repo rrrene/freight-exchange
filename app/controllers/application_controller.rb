@@ -6,9 +6,21 @@ class ApplicationController < ActionController::Base
   helper_method :current_user, :controller_catalog, :current_person, :current_company, :logged_in?, :demo_mode?, :page
   helper_method :black_listed?, :white_listed?
   helper_method :contextual_search_controller
+  helper_method :auto_link_pretty_map
   layout 'application'
   
   private
+  
+  def auto_link_pretty_map
+    @auto_link_pretty_map ||= {
+      Freight => %w(FR NF),
+      LoadingSpace => %w(LS AN),
+      Review => %w(RE),
+    }.inject({}) do |hsh, (key, value)|
+      value.each { |str| hsh[str] = key }
+      hsh
+    end
+  end
 
   def black_listed?(record)
     current_company.black_listed?(record)

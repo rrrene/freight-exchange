@@ -18,17 +18,6 @@ module ApplicationHelper
     super(text, *args, &block)
   end
   
-  def auto_link_pretty_map
-    @auto_link_pretty_map ||= {
-      Freight => %w(FR),
-      LoadingSpace => %w(LS),
-      Review => %w(RE),
-    }.inject({}) do |hsh, (key, value)|
-      value.each { |str| hsh[str] = key }
-      hsh
-    end
-  end
-  
   # Renders a badge labelled with count, unless the given count is zero.
   def badge_for(count)
     count == 0 ? "" : ' ' << content_tag(:b, count, :class => 'badge')

@@ -59,6 +59,8 @@
 </div>
 
 <% content_for(:sidebar) do %>
+  <%= link_btn "REPLY", new_freight_path(:reply_to_id => resource.id) %>
+  
   <%= render_person_info(resource.contact_person) if resource.contact_person %>
   <%= render_company_info(resource.company) %>
 <% end %>

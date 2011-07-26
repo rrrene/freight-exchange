@@ -2,8 +2,8 @@
 <div class="text">
   <%= link_to result.company.name, {:controller => result.class.to_s.pluralize.underscore, :action => 'show', :id => result, :search_recording_id => @search_recording.full?(&:id)} %>
   <br>
-  <b><%= result.origin_name %></b> <%= l(result.origin_date, :format => :short) %>
+  <b><%= result.origin_name %></b> <%= l(result.origin_date, :format => :short) if result.origin_date %>
   -
-  <b><%= result.destination_name %></b> <%= l(result.destination_date, :format => :short) %>
+  <b><%= result.destination_name %></b> <%= l(result.destination_date, :format => :short) if result.destination_date %>
 </div>
 <%= clear_both %>

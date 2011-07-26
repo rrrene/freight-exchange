@@ -13,6 +13,8 @@ class LoadingSpace < ActiveRecord::Base
   belongs_to :user
   belongs_to :company
 
+  belongs_to :origin_station, :class_name => 'Station'
+  belongs_to :destination_station, :class_name => 'Station'
   belongs_to :contact_person, :class_name => 'Person'
   has_many :matching_recordings, :as => 'b', :order => 'result DESC', :dependent => :destroy
   searchable
@@ -30,6 +32,10 @@ class LoadingSpace < ActiveRecord::Base
   
   def name # :nodoc:
     "#{origin_name} - #{destination_name}"
+  end
+  
+  def pretty_prefix
+    '#AN'
   end
   
   def to_search # :nodoc:

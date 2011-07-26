@@ -1,11 +1,11 @@
 <%= f.inputs :"#{origin_or_destination}_site_info" do %>
   <%= f.input :"#{origin_or_destination}_contractor", :label => t("activerecord.attributes.site_info.#{origin_or_destination}_contractor") %>
-  <%= f.input :"#{origin_or_destination}_side_track_available", :as => :radio, :collection =>yes_no_collection %>
+  <%= f.input :"#{origin_or_destination}_side_track_available", :as => :radio, :collection => yes_no_collection, :selected => !!resource[:"#{origin_or_destination}_side_track_available"] %>
   <div id="<%= origin_or_destination %>_with_station" style="display: none">
     <%= f.input :"#{origin_or_destination}_station" %>
     <%= f.input :"#{origin_or_destination}_track_number" %>
   </div>
-  <div id="<%= origin_or_destination %>_address" style="display: none">
+  <div id="<%= origin_or_destination %>_address" style="<%= resource[:"#{origin_or_destination}_side_track_available"].full? ? nil : 'display: none' %>">
     <% %w(name address address2 zip city).each do |field| %>
       <%= f.input :"#{origin_or_destination}_#{field}", :as => :string %>
     <% end %>

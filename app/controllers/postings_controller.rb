@@ -16,6 +16,14 @@ class PostingsController < RemoteController
       parent.localized_infos.each do |li|
         resource.localized_infos.build(li.attributes)
       end
+    elsif reply_to_id = params[:reply_to_id]
+      klass = resource_class == Freight ? LoadingSpace : Freight
+      @reply_to = klass.find(reply_to_id)
+      self.resource = resource_class.new
+      @reply_to.attributes.each do |key, value|
+        new_key = key =~ /^origin/ ? key.gsub('origin_', 'destination_') : key.gsub('destination_', 'origin_')
+        resource[new_key] = value if resource.attributes.has_key?(new_key)
+      end
     else
       self.resource = resource_class.new
       #resource.origin_country = resource.destination_country = "Germany"
