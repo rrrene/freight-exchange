@@ -12,7 +12,7 @@
     </p>
     <p>
       <%= link_btn t("setup.demo_company.create_freights_link"), demo_company_path(:create_freights => true) %>
-      <%= t("setup.demo_company.freights_present", :count => @company.freights.count) %>
+      <%= t("setup.demo_company.freights_present", :count => @company.freights.count + @company.loading_spaces.count) %>
     </p>
   <% else %>
     <p>

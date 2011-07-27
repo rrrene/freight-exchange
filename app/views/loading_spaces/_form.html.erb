@@ -1,9 +1,9 @@
 <% if @reply_to %>
-  <p>
-    <%= "Reply to:" %>
-    <%= auto_link @reply_to.pretty_id %>
-  </p>
+  <div class="success">
+    <%= auto_link t("loading_spaces.common.is_reply_to", :name => @reply_to.pretty_id) %>
+  </div>
 <% end %>
+
 <%= semantic_form_for(resource) do |f| %>
   <%= clear_both %>
   

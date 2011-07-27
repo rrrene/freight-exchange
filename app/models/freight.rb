@@ -23,7 +23,11 @@ class Freight < ActiveRecord::Base
   has_many :matching_recordings, :as => 'a', :order => 'result DESC', :dependent => :destroy
   after_save :calc_matchings!
   searchable
-  
+
+  def contact_email
+    contact_person.full?(&:email) || company.email
+  end
+
   include ActiveRecord::HasLocalizedInfos
   def localized_infos=(array_of_hashes) # :nodoc:
     localized_infos!(array_of_hashes)

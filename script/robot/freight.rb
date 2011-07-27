@@ -10,6 +10,7 @@ module Robot
   
   Factory.define "Robot::Freight" do |f|
     f.origin_name { @places = Places.new ; @places.origin[:name] }
+    f.origin_date { @places = Places.new ; @places.origin[:date] }
     f.origin_contractor { @places = Places.new ; @places.origin[:contractor] }
     f.origin_address { @places = Places.new ; @places.origin[:address] }
     f.origin_address2 { @places = Places.new ; @places.origin[:address2] }
@@ -18,6 +19,7 @@ module Robot
     f.origin_country { @places = Places.new ; @places.origin[:country] }
 
     f.destination_name { @places = Places.new ; @places.destination[:name] }
+    f.destination_date { @places = Places.new ; @places.destination[:date] }
     f.destination_contractor { @places = Places.new ; @places.destination[:contractor] }
     f.destination_address { @places = Places.new ; @places.destination[:address] }
     f.destination_address2 { @places = Places.new ; @places.destination[:address2] }

@@ -19,7 +19,11 @@ class LoadingSpace < ActiveRecord::Base
   belongs_to :contact_person, :class_name => 'Person'
   has_many :matching_recordings, :as => 'b', :order => 'result DESC', :dependent => :destroy
   searchable
-  
+
+  def contact_email
+    contact_person.full?(&:email) || company.email
+  end
+
   include ActiveRecord::HasLocalizedInfos
   def localized_infos=(array_of_hashes) # :nodoc:
     localized_infos!(array_of_hashes)

@@ -16,6 +16,9 @@
   <% else %>
     <% content_for(:toolbar) do %>
       <%= link_btn t('loading_spaces.common.reply_to_link'), new_freight_path(:reply_to_id => resource.id), :icon => 'reply' %>
+      <% if resource.contact_email.full? %>
+        <%= link_btn t('loading_spaces.common.contact_to_link'), t('loading_spaces.common.contact_to_href', :email => resource.contact_email, :name => resource.pretty_id, :url => @resource_url), :icon => 'next' %>
+      <% end %>
     <% end %>
   <% end %>
 

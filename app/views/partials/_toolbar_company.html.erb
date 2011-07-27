@@ -2,8 +2,8 @@
 <% content_for(:toolbar) do %>
   <div class="float_left">
     <%= link_btn_unless_current "Profil", company_path(@company) %>
-    <%= link_btn_unless_current "Ladungen", freights_path(:company_id => @company) %>
-    <%= link_btn_unless_current "Laderäume", loading_spaces_path(:company_id => @company) %>
+    <%= link_btn_unless_current "Angebote", loading_spaces_path(:company_id => @company) %>
+    <%= link_btn_unless_current "Nachfragen", freights_path(:company_id => @company) %>
   </div>
 
   <div class="float_right">

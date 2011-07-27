@@ -594,6 +594,9 @@ de:
       template_link: "Als Vorlage"
       search-label: "Nachfrage:"
       reply_to_link: "Mit Angebot beantworten"
+      is_reply_to: "Diese Nachfrage ist eine Antwort auf %{name}"
+      contact_to_link: "E-Mail an Nachfrager"
+      contact_to_href: "mailto:%{email}?subject=Anfrage bzgl. %{name}&body=Inserat: %{url}"
     create: 
       header: "Neues Inserat"
       page_title: "Neues Inserat"
@@ -654,6 +657,9 @@ de:
       template_link: "Als Vorlage"
       search-label: "Angebote:"
       reply_to_link: "Mit Nachfrage beantworten"
+      is_reply_to: "Dieses Angebot ist eine Antwort auf %{name}"
+      contact_to_link: "E-Mail an Anbieter"
+      contact_to_href: "mailto:%{email}?subject=Anfrage bzgl. %{name}&body=Inserat: %{url}"
     create: 
       page_title: "Neues Inserat"
     edit:

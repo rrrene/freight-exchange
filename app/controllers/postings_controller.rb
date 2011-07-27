@@ -85,6 +85,7 @@ class PostingsController < RemoteController
         @search_recording = SearchRecording.create(opts)
       end
       page[:title] = t("#{controller_name}.show.page_title", :pretty_id => resource.pretty_id)
+      @resource_url = url_for(resource)
     }
   end
   
@@ -93,9 +94,6 @@ class PostingsController < RemoteController
   def filter_collection!
     # Do not show deleted postings
     self.collection = resource_class.scoped.where(:deleted => false)
-    # Do not show postings which start dates lie in the past
-    self.collection = collection.where("origin_date > ?", Time.now)
-
     # Default: newest postings first
     @blocked_ids = blocked_company_ids
     self.collection = collection.where("#{controller_name}.company_id NOT IN (?)", @blocked_ids) if @blocked_ids.full?
@@ -105,6 +103,11 @@ class PostingsController < RemoteController
       page[:title] = @company.name
       # TODO: blacklisting beachten?
       self.collection = collection.where(:company_id => @company_id)
+    end
+
+    unless @company == current_company
+      # Do not show postings which start dates lie in the past
+      self.collection = collection.where("origin_date > ?", Time.now)
     end
   end
   

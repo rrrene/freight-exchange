@@ -41,14 +41,16 @@ module Demo
         demo_user_attributes.each do |attr|
           user = create_or_find(attr.merge(:company_id => company.id))
           user.user_roles << ::UserRole[:company_employee]
-          user.update_attribute(:locale, 'de')
+          user.person.update_attribute(:locale, 'de')
         end
         if company_admin = company.users.first
           company_admin.user_roles << ::UserRole[:company_admin]
         end
-        
-        10.times do
-          Demo::Freight.create(company)
+
+        [Demo::Freight, Demo::LoadingSpace].each do |model|
+          5.times do
+            model.create(company)
+          end
         end
         
         company

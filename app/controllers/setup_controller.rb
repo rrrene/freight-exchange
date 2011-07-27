@@ -4,10 +4,12 @@ class SetupController < Admin::BaseController
     if params[:create]
       @company = Demo::Company.create
     elsif params[:create_freights]
-      5.times do 
-        Demo::Freight.create(@company.users.rand)
+      [Demo::Freight, Demo::LoadingSpace].each do |model|
+        5.times do
+          model.create(company)
+        end
       end
-    elsif params[:destroy]
+    elsif params[:destroy] && @company
       @company.destroy
       @company = nil
     end
