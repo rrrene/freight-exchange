@@ -17,6 +17,9 @@ class NotificationsController < ApplicationController
       @notification_items = @notification.notification_items
     else
       @notification_items = current_user.notification_items.includes(:notification)
+      if item_type = params[:item_type].presence
+        @notification_items = @notification_items.where(:item_type => item_type)
+      end
       @notifications = @notification_items.map(&:notification)
       @notification = @notifications.first
     end

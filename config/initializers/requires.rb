@@ -10,3 +10,5 @@ require 'uploaded_sheet'
 
 require 'tolk/sync'
 require 'tolk/import'
+
+require 'notifications'

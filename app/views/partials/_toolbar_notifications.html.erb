@@ -1,7 +1,8 @@
 <% content_for(:toolbar) do %>
   <div class="float_left">
-    <%= link_btn_unless_current "Überblick", notifications_path %>
-    <%= link_btn_unless_current "Ladungen", "#" %>
-    <%= link_btn_unless_current "Laderäume", "#" %>
+    <%= link_btn_unless params[:item_type].blank?, "Überblick", notifications_path %>
+    <%= link_btn_unless_current "Nachfragen", notifications_path(:item_type => 'Freight') %>
+    <%= link_btn_unless_current "Angebote", notifications_path(:item_type => 'LoadingSpace') %>
+    <%= link_btn_unless_current "Bewertungen", notifications_path(:item_type => 'Review') %>
   </div>
 <% end %>
