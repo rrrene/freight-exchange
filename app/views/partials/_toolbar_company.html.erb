@@ -1,9 +1,9 @@
 
 <% content_for(:toolbar) do %>
   <div class="float_left">
-    <%= link_btn_unless_current "Profil", company_path(@company) %>
-    <%= link_btn_unless_current "Angebote", loading_spaces_path(:company_id => @company) %>
-    <%= link_btn_unless_current "Nachfragen", freights_path(:company_id => @company) %>
+    <%= link_btn_unless_current t("companies.common.profile"), company_path(@company) %>
+    <%= link_btn_unless_current t('companies.common.loading_spaces'), loading_spaces_path(:company_id => @company) %>
+    <%= link_btn_unless_current t('companies.common.freights'), freights_path(:company_id => @company) %>
   </div>
 
   <div class="float_right">
@@ -23,7 +23,6 @@
       <% else %>
         <%= link_btn t("common.black_list_company"), {:controller => :black_listed_items, :action => :create, :black_listed_item => {:item_type => 'Company', :item_id => @company.id}}, :method => :post, :confirm => t("common.black_list_company_confirm") %>
       <% end %>
-
     <% end %>
   </div>
 <% end %>

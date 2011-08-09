@@ -69,6 +69,22 @@ de:
         transports_per_year: "Transporte pro Jahr"
         wagons_provided_by: "Wagen werden gestellt von"
         weight: "Gesamtgewicht (in t)"
+        origin_side_track_available: "Gleisanschluss vorhanden?"
+        origin_name: "Name"
+        origin_address: "Strasse"
+        origin_address2: "(fortgesetzt)"
+        origin_zip: "PLZ"
+        origin_city: "Stadt"
+        origin_country: "Land"
+        origin_station: "Beladebahnhof"
+        destination_side_track_available: "Gleisanschluss vorhanden?"
+        destination_name: "Name"
+        destination_address: "Strasse"
+        destination_address2: "(fortgesetzt)"
+        destination_zip: "PLZ"
+        destination_city: "Stadt"
+        destination_country: "Land"
+        destination_station: "Entladebahnhof"
       person: 
         email: E-Mail
         fax: Fax
@@ -133,6 +149,8 @@ de:
           block_train: Ganzzug
           single_wagon: Einzelwagen
           train_set: Wagengruppe
+          intermodal_transport: "Kombinierter Verkehr"
+          unknown: "-- nicht bekannt --"
       person: 
         gender: 
           female: Frau
@@ -386,6 +404,9 @@ de:
   companies:
     common:
       search-label: "Unternehmen:"
+      profile: Profil
+      loading_spaces: "Angebote"
+      freights: "Nachfragen"
     create: 
       page_title: "Ihre Firma registrieren"
 
