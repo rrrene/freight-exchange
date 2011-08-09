@@ -13,10 +13,13 @@ form.formtastic fieldset ol li fieldset legend { margin-left: -6px;}
 
 --------------------------------------------------------------------------------------------------*/
 
+#user_session_submit,
 form.formtastic fieldset.buttons ol li.commit input {
   padding: 4px;
 }
 
+#user_session_login,
+#user_session_password,
 form.formtastic fieldset ol li.string input,
 form.formtastic fieldset ol li.password input,
 form.formtastic textarea {
