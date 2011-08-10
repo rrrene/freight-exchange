@@ -104,11 +104,11 @@ class PostingsController < RemoteController
       # TODO: blacklisting beachten?
       self.collection = collection.where(:company_id => @company_id)
     end
-
     unless @company == current_company
       # Do not show postings which start dates lie in the past
       self.collection = collection.where("origin_date > ?", Time.now)
     end
+
   end
   
   def perform_search!
@@ -122,6 +122,12 @@ class PostingsController < RemoteController
       # TODO: perform lookup via SQL
       matched_ids = collection.select { |posting| posting.destination_city == @destination_city }.map(&:id)
       self.collection = collection.where(:id => matched_ids)
+    end
+    if @origin_station_id = params[:origin_station_id].full?
+      self.collection = collection.where(:origin_station_id => @origin_station_id)
+    end
+    if @destination_station_id = params[:destination_station_id].full?
+      self.collection = collection.where(:destination_station_id => @destination_station_id)
     end
   end
 

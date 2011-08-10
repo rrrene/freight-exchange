@@ -116,6 +116,9 @@ de:
         password_confirmation: "Passwort wiederholen"
         posting_type: "Art der Inserate"
         user_roles: Berechtigungen
+      station:
+        name: Name
+        numeric_id: Nummer
     errors: 
       messages: 
         record_invalid: "Validierung fehlgeschlagen: %{errors}"
@@ -763,6 +766,10 @@ de:
       header: "Alle Bahnhöfe"
       intro: "Hier sehen Sie alle Bahnhöfe."
       page_title: "Bahnhöfe"
+      loading_spaces_origin: "Angebote von hier"
+      loading_spaces_destination: "Angebote nach hier"
+      freights_origin: "Nachfragen von hier"
+      freights_destination: "Nachfragen nach hier"
   people: 
     common: 
       edit_link: "Person bearbeiten"

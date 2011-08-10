@@ -62,9 +62,18 @@ class Freight < ActiveRecord::Base
   end
   
   def to_search # :nodoc:
-    search_str = [
-      # origin_city etc.
-    ] * "\n"
+    search_str = [:origin, :destination].map { |origin_or_destination|
+      [
+        self.__send__("#{origin_or_destination}_station").full? { |station|
+          [
+            station.name, station.numeric_id
+          ]
+        },
+        SITE_ATTRIBUTES.map { |field|
+          self.__send__("#{origin_or_destination}_#{field}").full?
+        }
+      ]
+    }.flatten.compact * "\n"
     
     I18n.available_locales.each do |lang|
       search_str << "\n" << [
@@ -83,7 +92,6 @@ class Freight < ActiveRecord::Base
       human_attribute_value(attr, :locale => lang, :default => '').full?
     }.compact
   end
-  
   
   validates_presence_of :user_id
   validates_presence_of :company_id

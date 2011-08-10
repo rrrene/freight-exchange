@@ -9,9 +9,13 @@
 
   <% if resource.company == current_company %>
     <% content_for(:toolbar) do %>
-      <%= link_btn t('loading_spaces.common.template_link'), new_resource_url(:parent_id => resource.id), :icon => 'reply' %>
-      <%= link_btn t("loading_spaces.common.edit_link"), edit_loading_space_path(@loading_space), :icon => 'edit' %>
-      <%= link_btn t("loading_spaces.common.delete_link"), loading_space_path(@loading_space), :method => :delete, :confirm => t('common.confirm'), :class => 'destroy' %>
+      <div class="left">
+        <%= link_btn t('loading_spaces.common.template_link'), new_resource_url(:parent_id => resource.id), :icon => 'reply' %>
+        <%= link_btn t("loading_spaces.common.edit_link"), edit_loading_space_path(@loading_space), :icon => 'edit' %>
+      </div>
+      <div class="right">
+        <%= link_btn t("loading_spaces.common.delete_link"), loading_space_path(@loading_space), :method => :delete, :confirm => t('common.confirm'), :class => 'destroy' %>
+      </div>
     <% end %>
   <% else %>
     <% content_for(:toolbar) do %>
@@ -21,7 +25,6 @@
       <% end %>
     <% end %>
   <% end %>
-
 
   <%= render :partial => "postings/origin_and_destination" %>
   
