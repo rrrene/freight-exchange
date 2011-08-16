@@ -271,6 +271,7 @@ div.header div#search_form .input-wrapper input#q:focus {
 }
 
 div.header div#search_form .advanced-search-wrapper {
+  display: none;
   font-size: 11px;
   text-align: right;
 }
