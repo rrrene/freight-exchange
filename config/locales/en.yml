@@ -170,8 +170,8 @@ en:
           marketing: "[System] Marketing staff"
           support: "[System] Support staff"
     models: 
-      freight: Freight
-      loading_space: "Loading Space"
+      freight: Demand
+      loading_space: Offer
       station: Station
   admin: 
     action_recordings: 
@@ -236,9 +236,9 @@ en:
           action_recordings_company: "Actions on companies per day (past week)"
           action_recordings_create: "Create actions per day (past week)"
           action_recordings_destroy: "Destroy actions per day (past week)"
-          action_recordings_freight: "Actions on freights per day (past week)"
+          action_recordings_freight: "Actions on demands per day (past week)"
           action_recordings_item_types: "Actions (overall)"
-          action_recordings_loading_space: "Actions on loading spaces per day (past week)"
+          action_recordings_loading_space: "Actions on offers per day (past week)"
           action_recordings_person: "Actions on people per day (past week)"
           action_recordings_review: "Actions on reviews per day (past week)"
           action_recordings_update: "Update actions per day (past week)"
@@ -359,8 +359,8 @@ en:
     choice_yes: "Yes"
     choose: "-- Choose --"
     confirm: "Are you sure?"
-    create_new_freight: "Create a new freight"
-    create_new_loading_space: "Create a new loading space"
+    create_new_freight: "Create a new demand"
+    create_new_loading_space: "Create a new offer"
     create_new_review: "Write a review!"
     deleted_object: "-- deleted object --"
     footer: 
@@ -371,15 +371,15 @@ en:
       backend: Backend
       companies: Companies
       dashboard: Dashboard
-      freights: Freights
-      loading_spaces: "Loading Spaces"
+      freights: Demands
+      loading_spaces: "Offers"
       locale_de: Deutsch
       locale_en: English
       login: Login
       logout: Logout
       my_company: "My Company Profile"
-      my_freights: "My Freights"
-      my_loading_spaces: "My Loading Spaces"
+      my_freights: "My demands"
+      my_loading_spaces: "My offers"
       my_person: "Hello %{name}"
       my_profile: "Company profile"
       my_reviews: "My Reviews"
@@ -403,7 +403,7 @@ en:
         header: "Contact information"
         please_edit_notice: "Please add more information to your personal profile."
         show: "View profile"
-    website_title: "Freight Exchange 2010"
+    website_title: "CODE24 Exchange"
     white_list_company: "Subscribe to company"
     white_listed_company: "Subscribed to company"
   companies: 
@@ -513,24 +513,24 @@ en:
       contact_to_link: "Contact company"
       edit_link: "Edit this posting"
       is_reply_to: "This demand is a reply to offer %{name}"
-      new_link: "Create freight"
+      new_link: "Create demand"
       reply_to_link: "Reply with offer"
       required_field_hint: "The fields with an asterix (*) are mandatory:"
       search-label: "Demand:"
       template_link: "Use as template"
     create: 
-      header: "New freight posting"
-      page_title: "New freight posting"
+      header: "New demand"
+      page_title: "New demand"
     edit: 
-      header: "Edit freight posting"
-      page_title: "Edit freight posting"
+      header: "Edit demand"
+      page_title: "Edit demand"
     index: 
-      all_freights: Freights
+      all_freights: Demands
       from_origin_city: "Only show demands originating from '%{city}'"
-      header: "All freight postings"
+      header: "All demands"
       header_query: "All demands for '%{query}'"
-      intro: "Here you can see all the freight postings of your company."
-      page_title: "All freight postings"
+      intro: "Here you can see all the demands of your company."
+      page_title: "All demands"
       show_company: "Company profile: %{company}"
       switch_to_loading_spaces: "Switch to offers"
       table: 
@@ -550,21 +550,21 @@ en:
           template: "Use as template"
       to_destination_city: "Only show demands destined to '%{city}'"
     new: 
-      header: "New freight posting"
-      page_title: "New freight posting"
+      header: "New demand"
+      page_title: "New demand"
     show: 
       destination: 
         header: "Unloading site"
-      header: "Freight posting"
+      header: "Demand"
       is_reply_to: "This demand is a reply to the offer %{name}"
       no_side_track_available: "No sidetrack available."
       origin: 
         header: "Loading site"
-      page_title: "Freight posting"
+      page_title: "Demand"
       transport_description: "Transport description"
     update: 
-      header: "Edit freight posting"
-      page_title: "Edit freight posting"
+      header: "Edit demand"
+      page_title: "Edit demand"
   helpers: 
     select: 
       prompt: "Please choose"
@@ -575,23 +575,23 @@ en:
       delete_link: "Delete this posting"
       edit_link: "Edit this posting"
       is_reply_to: "This offer is a reply to the demand %{name}"
-      new_link: "Create loading space"
+      new_link: "Create offer"
       reply_to_link: "Reply with demand"
       required_field_hint: "The fields with an asterix (*) are mandatory:"
       search-label: "Offers:"
       template_link: "Use as template"
     create: 
-      page_title: "New loading space posting"
+      page_title: "New offer"
     edit: 
-      header: "Edit loading space posting"
-      page_title: "Edit loading space posting"
+      header: "Edit offer"
+      page_title: "Edit offer"
     index: 
-      all_loading_spaces: "Loading spaces"
+      all_loading_spaces: "Offers"
       from_origin_city: "Only show offers originating from '%{city}'"
-      header: "All loading space postings"
+      header: "All offers"
       header_query: "All offers for '%{query}'"
-      intro: "Here you can see all the loading space postings of your company."
-      page_title: "All loading space postings"
+      intro: "Here you can see all the offers of your company."
+      page_title: "All offers"
       switch_to_freights: "Switch to demands"
       table: 
         headers: 
@@ -608,20 +608,20 @@ en:
           template: "Use as template"
       to_destination_city: "Only show offers destined to '%{city}'"
     new: 
-      header: "New loading space posting"
-      page_title: "New loading space posting"
+      header: "New offer"
+      page_title: "New offer"
     show: 
       destination: 
         header: "Unloading site"
-      header: "Loading space posting"
+      header: "Offer"
       is_reply_to: "This offer is a reply to demand: %{name}"
       origin: 
         header: "Loading site"
-      page_title: "Loading space posting"
+      page_title: "Offer"
       transport_description: "Transport description"
     update: 
-      header: "Edit loading space posting"
-      page_title: "Edit loading space posting"
+      header: "Edit offer"
+      page_title: "Edit offer"
   notifications: 
     index: 
       page_title: "New & interesting"
@@ -776,9 +776,9 @@ en:
     demo_company: 
       company_present: "There is a demo company. Click the profile in the sidebar to view their profile or the link below to destroy it:"
       create_demo_company_link: "Create demo company"
-      create_freights_link: "Create freight postings in demo company"
+      create_freights_link: "Create postings in demo company"
       destroy_demo_company_link: "Destroy demo company"
-      freights_present: "%{count} freight postings present."
+      freights_present: "%{count} postings present."
       header: "Create or reset the demo company"
       intro: "Administrate your demo company."
       no_company_present: "There is no demo company at this moment. Click this link to create one:"
