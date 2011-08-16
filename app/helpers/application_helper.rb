@@ -17,7 +17,11 @@ module ApplicationHelper
     end
     super(text, *args, &block)
   end
-  
+
+  def available_locales
+    [:de, :en]
+  end
+
   # Renders a badge labelled with count, unless the given count is zero.
   def badge_for(count)
     count == 0 ? "" : ' ' << content_tag(:b, count, :class => 'badge')

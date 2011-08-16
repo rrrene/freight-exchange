@@ -9,8 +9,10 @@
       <div class="float_right">
         <% if logged_in? %>
           <span><%= t("common.navi.select_locale") %></span>
-          <%= link_to_unless(I18n.locale == :de, t("common.navi.locale_de"), {:locale => :de}) %> |
-          <%= link_to_unless(I18n.locale == :en, t("common.navi.locale_en"), {:locale => :en}) %>
+          <% available_locales.each do |locale| %>
+            <%= link_to_unless(I18n.locale == locale, t("common.navi.locale_#{locale}"), params.merge(:locale => locale)) %>
+            <%= "|" unless locale == available_locales.last %>
+          <% end %>
         <% end %>
       </div>
     </div>
