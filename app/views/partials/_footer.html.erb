@@ -3,8 +3,8 @@
     <div class="span-24 last">
       <div class="float_left">
         <strong>&copy; <%= Time.new.year %> by René Föhring</strong> |
-        <%= link_to "Impressum", about_path %> |
-        <%= link_to "Kontakt", contact_path %>
+        <%= link_to t('common.footer.imprint_link'), about_path %> |
+        <%= link_to t('common.footer.contact_link'), contact_path %>
       </div>
       <div class="float_right">
         <% if logged_in? %>

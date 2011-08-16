@@ -1,769 +1,852 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
-en:
-  time:
-    formats:
-      date: "%Y-%m-%d"
-  common:
-    navi:
-      backend: "Backend"
-      dashboard: "Dashboard"
-      postings: "Postings"
-      companies: "Companies"
-      freights: "Freights"
-      loading_spaces: "Loading Spaces"
-      my_company: "My Company Profile"
-      my_person: "Hello %{name}"
-      people: "People"
-      reviews: "Reviews"
-      my_reviews: "My Reviews"
-      stations: "Stations"
-      notifications: "New & interesting"
-      settings: "Users & Settings"
-      logout: "Logout"
-      login: "Login"
-      register: "Register"
-      select_locale: "Select language:"
-      locale_de: "Deutsch"
-      locale_en: "English"
-      my_freights: "My Freights"
-      my_loading_spaces: "My Loading Spaces"
-    sidebar:
-      advanced_search_link: "Advanced search"
-      company_information: 
-        header: "Company information"
-        please_edit_notice: "Please add more information to your company's profile."
-        edit: "Edit info"
-        show: "View profile"
-        postings: "View all postings"
-      person_information: 
-        header: "Contact information"
-        please_edit_notice: "Please add more information to your personal profile."
-        edit: "Edit info"
-        show: "View profile"
-    choose: "-- Choose --"
-    choice_yes: "Yes"
-    choice_no: "No"
-    confirm: "Are you sure?"
-    create_new_freight: "Create a new freight"
-    create_new_loading_space: "Create a new loading space"
-    create_new_review: "Write a review!"
-    deleted_object: "-- deleted object --"
-    link_back: "Back"
-    website_title: "Freight Exchange 2010"
-  
-  # ContactController
-  contact:
-    index:
-      page_title: "Contact"
-      header: "Contact our support staff"
-      intro: "Type your question or suggestion below, and we will contact you shortly!"
-      sent: "Your mail has been sent. Thank you for your feedback."
-      
-  recordings:
-    create: "{{user}} <strong>created</strong> a {{object_class}}: {{object_link}}"
-    update: "{{user}} <strong>updated</strong> a {{object_class}}: {{object_link}}"
-    destroy: "{{user}} <strong>deleted</strong> a {{object_class}}: {{object_link}}"
-      
-  # CompaniesController
-  companies:
-    dashboard:
-      page_title: "Dashboard"
-      header: "Actions"
-      intro: "Here you can see all the actions of your company's users."
-      sidebar_person_info_title: "This is your personal info card:"
-      sidebar_company_info_title: "This is your company info card:"
-    index:
-      page_title: "Companies"
-      header: "Companies"
-      intro: "Here you can see all companies."
-      table:
-        headers:
-          name: "Name"
-          zip: "ZIP"
-          city: "City"
-          country: "Country"
-    new:
-      page_title: "Create company account"
-      header: "Create your company account"
-      intro: "You are just 60 seconds away from your own account!"
-    create:
-      page_title: "Create your company"
-    edit:
-      page_title: "Edit company"
-      header: "Company information"
-    update:
-      page_title: "Edit company"
-    show:
-      page_title: "{{name}}"
-      edit_company_link: "Edit profile"
-      header_misc_text: "About us:"
-      header_people: "Who works here?"
-      header_reviews: "What are others saying?"
-    postings:
-      page_title: "All company postings"
-  
-
-    freights:
-      page_title: "Freights"
-      header: "Freights of %{company}"
-      intro: "Here you can see all freights."
-    loading_spaces:
-      page_title: "Loading Spaces"
-      intro: "Here you can see all loading spaces."
-      header: "Loading Spaces of %{company}"
-  # FreightsController
-  freights:
-    common:
-      edit_link: "Edit this posting"
-      new_link: "Create freight"
-      template_link: "Use as template"
-      required_field_hint: "The fields with an asterix (*) are mandatory:"
-    new:
-      page_title: "New freight posting"
-      header: "New freight posting"
-    create:
-      page_title: "New freight posting"
-      header: "New freight posting"
-    edit:
-      page_title: "Edit freight posting"
-      header: "Edit freight posting"
-    update:
-      page_title: "Edit freight posting"
-      header: "Edit freight posting"
-    index:
-      page_title: "All freight postings"
-      header: "All freight postings"
-      all_freights: "Freights"
-      intro: "Here you can see all the freight postings of your company."
-      table:
-        headers:
-          origin_date: "Date"
-          origin_name: "Origin"
-          destination_date: "Date"
-          destination_name: "Destination"
-          options: "Options"
-          company: "Company"
-          weight: "Weight"
-          transport_type: "Type"
-        options:
-          edit: "Edit"
-          delete: "Delete"
-          template: "Use as template"
-    show:
-      page_title: "Freight posting"
-      header: "Freight posting"
-      transport_description: "Transport description"
-      origin:
-        header: "Loading site"
-      destination:
-        header: "Unloading site"
-  
-  # LoadingSpacesController
-  loading_spaces:
-    common:
-      delete_link: "Delete this posting"
-      edit_link: "Edit this posting"
-      new_link: "Create loading space"
-      template_link: "Use as template"
-      required_field_hint: "The fields with an asterix (*) are mandatory:"
-    index:
-      page_title: "All loading space postings"
-      header: "All loading space postings"
-      all_loading_spaces: "Loading spaces"
-      intro: "Here you can see all the loading space postings of your company."
-      table:
-        headers:
-          date: "Date"
-          origin: "Origin"
-          destination: "Destination"
-          options: "Options"
-        options:
-          edit: "Edit"
-          delete: "Delete"
-          template: "Use as template"
-    new:
-      page_title: "New loading space posting"
-      header: "New loading space posting"
-    create:
-      page_title: "New loading space posting"
-    edit:
-      page_title: "Edit loading space posting"
-      header: "Edit loading space posting"
-    update:
-      page_title: "Edit loading space posting"
-      header: "Edit loading space posting"
-    show:
-      page_title: "Loading space posting"
-      header: "Loading space posting"
-      transport_description: "Transport description"
-      origin:
-        header: "Loading site"
-      destination:
-        header: "Unloading site"
-  
-  # RootController
-  root:
-    about:
-      page_title: "About"
-    index:
-      page_title: "Welcome"
-    welcome:
-      page_title: Welcome to the software prototype of an online freight exchange!
-      header: "Welcome"
-      intro: ""
-  # PeopleController
-  people:
-    common:
-      edit_link: "Edit Contact"
-      edit_user_link: "Edit User Account"
-      new_link: "Create another User"
-      template_link: "Use as template"
-    index:
-      page_title: "Overview: People"
-      header: "All People"
-      intro: "Here you can see all the people in your company."
-    edit:
-      page_title: "Edit person"
-      header: "Personal information"
-    update:
-      page_title: "Edit person"
-      header: "Personal information"
-    show:
-      page_title: "{{name}}"
-  
-  # PostingsController
-  postings:
-    common:
-      posting:
-        loading_meter: "Loading metre:"
-        weight: "Weight (kg):"
-        goods_type: "Type of goods:"
-        wagon_type: "Type of wagon:"
-        misc: "Additional information:"
-        edit: "Edit this posting"
-    show:
-      page_title: "Posting details"
-  
-  # ReviewsController
-  reviews:
-    new:
-      page_title: "Review Company"
-      header: "Write a review about '{{company_name}}'"
-    created: 
-      page_title: "Review created"
-      hint: "Your review has been submitted."
-    index:
-      page_title: "All reviews"
-      header: "All reviews"
-      header_unapproved: "Unapproved reviews"
-      header_approved: "Approved reviews"
-      intro: "Here you can see the reviews for your company."
-      filter_all: "All Reviews"
-      filter_approved: "Approved Reviews"
-      filter_unapproved: "Unapproved Reviews"
-      table:
-        headers:
-          name: "Name"
-          options: "Options"
-        review_name: "Review by %{author_user} (%{author_company})"
-        options:
-          approve: "Approve"
-          delete: "Delete"
-    show:
-      page_title: "Review"
-      header: "Review by %{author_user} (%{author_company})"
-      is_approved: "This review is published!"
-      sidebar_info_title: "Who wrote this review?"
-      approve_link: "Approve this review"
-      delete_link: "Delete this review"
-      index_link: "Back to overview"
-      
-  # SearchController
-  search:
-    common:
-      button: "Search"
-      subtext_results:
-        one: "1 result <small>for your query</small>"
-        other: "{{count}} results <small>for your query</small>"
-      results:
-        header: "Search results"
-      sidebar:
-        company_results:
-          header: "Companies found:"
-        station_results:
-          header: "Stations found:"
-    advanced:
-      display_form_link: "Modify your search"
-      page_title: "Advanced search"
-      submit: Search
-      origin:
-        header: Origin
-        fields:
-          date: Date
-          address: Street
-          address2: "Street (continued)"
-          city: City
-          country: Country
-          contractor: "Contractor Sender"
-          name: Station
-          side_track_available: "Side track available"
-          track_number: Track number
-          zip: ZIP
-      destination:
-        header: Destination
-        fields:
-          date: Date
-          address: Street
-          address2: "Street (continued)"
-          city: City
-          country: Country
-          contractor: "Contractor Receiver"
-          name: Station
-          side_track_available: "Side track available"
-          track_number: Track number
-          zip: ZIP
-          # these do not belong to destination - see search_helper why they are required here
-          weight: "Weight (in t)"
-          hazmat: "Harzardous material"
-          wagons_provided_by: "Wagons provided by"
-          paying_freight: "Freight paid by"
-          transport_type: "Transport type"
-          transports_per_year: "Transports per year"
-          transport_weight: "Weight per transport (in t)"
-          transport_type: "Transport type"
-          loading_meter: "Loading meter"
-          desired_proposal_type: "Desired proposal type"
-          contact_person: "Contact Person"
+--- 
+en: 
+  activerecord: 
+    attributes: 
+      company: 
+        address: Address
+        address2: "-"
+        city: City
+        commercial_register_entry: "Commercial register entry"
+        contact_person: "Contact Person"
+        country: Country
+        email: E-Mail
+        fax: Fax
+        localized_infos: 
+          misc_text: "Your history, achievements, etc."
+        name: Name
+        phone: Phone
+        vat_id: VAT-No.
+        website: Web
+        zip: ZIP
+      freight: 
+        contact_person: "Contact Person"
+        desired_proposal_type: "Desired proposal type"
+        destination_address: Street
+        destination_address2: (continued)
+        destination_city: City
+        destination_country: Country
+        destination_date: To
+        destination_name: Name
+        destination_side_track_available: "Sidetrack available?"
+        destination_station: "Unloading station"
+        destination_zip: ZIP
+        frequency: Frequency
+        goods_text: "Kind of goods"
+        hazmat: "Harzardous material"
+        loading_meter: "Loading meter"
+        misc_text: "e.g. taxes, customs duty, etc."
+        origin_address: Street
+        origin_address2: (continued)
+        origin_city: City
+        origin_country: Country
+        origin_date: From
+        origin_name: Name
+        origin_side_track_available: "Sidetrack available?"
+        origin_station: "Loading station"
+        origin_zip: ZIP
+        paying_freight: "Freight paid by"
+        transport_text: "Which kind of wagons should be used?"
+        transport_type: "Transport type"
+        transport_weight: "Weight per transport (in t)"
+        transports_per_year: "Transports per year"
+        wagons_provided_by: "Wagons provided by"
+        weight: "Weight (in t)"
+      loading_space: 
+        contact_person: "Contact Person"
+        desired_proposal_type: "Desired proposal type"
+        destination_address: Street
+        destination_address2: (continued)
+        destination_city: City
+        destination_country: Country
+        destination_date: To
+        destination_name: Name
+        destination_side_track_available: "Sidetrack available?"
+        destination_station: "Unloading station"
+        destination_zip: ZIP
+        frequency: Frequency
+        hazmat: "Harzardous material"
+        loading_meter: "Loading meter"
+        localized_infos: 
           goods_text: "Type of Goods"
           misc_text: "Additional information"
           transport_text: "Which kind of wagons are required?"
-        
-      keyword_is: ""
-      keyword_contains: contains
-      keyword_from: from
-      keyword_to: to      
-    index:
-      page_title: "Search"
-      no_results: "There are no results."
-      no_query: "Please type in a search query above."
-  
-  #SetupController
-  setup:
-    index:
-      page_title: "Welcome"
-      admin_user:
-        header: "Admin Account"
-        intro: "The software just created your admin account. You can customize this account by clicking the button above:"
-        edit_link: "Edit your admin user"
-      app_configs:
-        header: "Settings"
-        intro: "You can access the applications settings by clicking the button above:"
-        link: "Open Settings"
-      demo_company:
-        header: "Demo Company"
-        intro: "You can modify the demo company by clicking the button above:"
-        create_link: "Create a demo company"
-      tolk:
-        header: "Localization"
-        intro: "You can access the 'tolk' localization interface by clicking the button above:"
-        open_link: "Open Tolk"
-        intro_rake_tasks: "You can also access the main 'tolk' rake tasks by clicking the buttons above:"
-        import_link: "Import secondary locales!"
-        sync_link: "Sync!"
-        dump_all_link: "Dump all!"
-    demo_company:
-      page_title: "Demo Company"
-      header: "Create or reset the demo company"
-      intro: ""
-      company_present: "There is a demo company. Click the profile in the sidebar to view their profile or the link below to destroy it:"
-      no_company_present: "There is no demo company at this moment. Click this link to create one:"
-      create_demo_company_link: "Create demo company"
-      create_freights_link: "Create freight postings in demo company"
-      freights_present: "%{count} freight postings present."
-      destroy_demo_company_link: "Destroy demo company"
-      
-  # UsersController
-  users:
-    common:
-      edit_link: "Edit"
-      new_link: "Create another User"
-    edit:
-      page_title: "Edit User"
-      header: "Edit User"
-    index:
-      page_title: "Overview: Users"
-      header: "All Users"
-      intro: "Here you can see all the registered user accounts of your company."
-    create:
-      page_title: "New User"
-    new:
-      page_title: "New User"
-      
-  # UserSessionsController
-  user_sessions:
-    new:
-      page_title: "Login"
-    create:
-      page_title: "Login"
-
-
-#
-#
-# Admin namespace
-#
-#
-
-
-  admin:
-    common:
-      navi:
-        home: "Administration"
-        setup: "Setup"
-        action_recordings: "Newsfeed"
-        stations: "Stations"
-        search_recordings: "Searches"
+        origin_address: Street
+        origin_address2: (continued)
+        origin_city: City
+        origin_country: Country
+        origin_date: From
+        origin_name: Name
+        origin_side_track_available: "Sidetrack available?"
+        origin_station: "Loading station"
+        origin_zip: ZIP
+        paying_freight: "Freight paid by"
+        transport_type: "Transport type"
+        transport_weight: "Weight per transport (in t)"
+        transports_per_year: "Transports per year"
+        wagons_provided_by: "Wagons provided by"
+        weight: "Weight (in t)"
+      person: 
+        email: E-Mail
+        fax: Fax
+        first_name: Forename
+        gender: Gender
+        job_description: "Job Description"
+        last_name: Surname
+        locale: "Interface Language"
+        localized_infos: 
+          misc_text: "Additional information"
+        phone: Phone
+        website: Web
+      site_info: 
+        address: Address
+        address2: "-"
+        address_template_label: "Use address template:"
+        city: City
+        country: Country
+        destination_contractor: "Contractor (Receiver)"
+        name: Station
+        origin_contractor: "Contractor (Sender)"
+        side_track_available: "Side track available?"
+        track_number: "Track No."
+        zip: ZIP
+      station: 
+        name: Name
+        numeric_id: "Numeric ID"
+      user: 
+        email: E-Mail
+        login: Username
+        password: Password
+        password_confirmation: "Password (again)"
+        posting_type: "Will be posting"
         user_roles: "User Roles"
-        users: "Users"
-        companies: "Companies"
-        app_configs: "Settings"
-        back_to_app: "Back to Frontend"
-      stats:
-        last_week:
-          action_recordings: "User actions per day (past week)"
-          action_recordings_actions: "Actions (overall)"
-          action_recordings_create: "Create actions per day (past week)"
-          action_recordings_update: "Update actions per day (past week)"
-          action_recordings_destroy: "Destroy actions per day (past week)"
-          action_recordings_item_types: "Actions (overall)"
-          action_recordings_user: "Actions on users per day (past week)"
-          action_recordings_person: "Actions on people per day (past week)"
-          action_recordings_company: "Actions on companies per day (past week)"
-          action_recordings_freight: "Actions on freights per day (past week)"
-          action_recordings_loading_space: "Actions on loading spaces per day (past week)"
-          action_recordings_review: "Actions on reviews per day (past week)"
-          search_recordings: "User searches per day (past week)"
-          top_searched: "Most searched keywords (past week)"
-          top_clicked: "Most clicked keywords (past week)"
-          top_results: "Most results on keywords (past week)"
-          search_recordings_for_keywords: "Keyword searches per day (past week)"
-          search_recordings_for_keyword: "Searches containing '%{keyword}' (past week)"
-          created_users: "New Users per day (past week)"
-          users_logins: "User logins per day (past week)"
-          users_posting_types: "User's posting types (overall)"
-          created_companies: "New Companies per day (past week)"
-      edit_link: "Edit"  
-      new_link: "Create a new one"
-      frontend_show_link: "View public profile"
-      filter_by_id: "1 - 100"
-      filter_by_name: "A - Z"
-      filter_by_created_at: "Newest first"
-
-    # ActionRecordingsController
-    action_recordings:
-      index:
-        page_title: "All Actions"
+    errors: 
+      messages: 
+        record_invalid: "Validation failed: %{errors}"
+        taken: "has already been taken"
+    human_attribute_values: 
+      freight: 
+        desired_proposal_type: 
+          package_price: "Package price"
+          ton_price: "Price per ton"
+          unknown: unknown
+        frequency: 
+          once: Once
+          repeated_irregularly: "Repeated - Irregulary"
+          repeated_regularly: "Repeated - Regulary"
+        paying_freight: 
+          receiver: Receiver
+          sender: Sender
+          unknown: "-- unknown --"
+        transport_type: 
+          block_train: "Block train"
+          intermodal_transport: "Intermodal transport"
+          single_wagon: "Single wagon"
+          train_set: "Train set"
+          unknown: "-- unknown --"
+        wagons_provided_by: 
+          client: Client
+          railway: Railway
+          wanted: "Wagons wanted"
+      loading_space: 
+        transport_type: 
+          block_train: "Block train"
+          intermodal_transport: "Intermodal transport"
+          single_wagon: "Single wagon"
+          train_set: "Train set"
+          unknown: "-- unknown --"
+      person: 
+        gender: 
+          female: Mrs.
+          male: Mr.
+        locale: 
+          de: German
+          en: English
+      user_role: 
+        name: 
+          administrator: "[System] Administrator"
+          company_admin: Executive
+          company_employee: "Regular employee"
+          company_intern: Trainee/Intern
+          marketing: "[System] Marketing staff"
+          support: "[System] Support staff"
+    models: 
+      freight: Freight
+      loading_space: "Loading Space"
+      station: Station
+  admin: 
+    action_recordings: 
+      index: 
         header: "All Actions"
         intro: "Here you see all the actions performed by users."
-
-    # AppConfigsController
-    app_configs:
-      common:
-        hints:
+        page_title: "All Actions"
+      search-label: Actions
+    app_configs: 
+      common: 
+        hints: 
+          contact_info: 
+            complete_percentage: "How much contact info has to be filled out to make a profile 'complete'."
           demo_mode: "Is the application running in demo mode?"
           domain: "The domain under which the application is running."
           just_set_up: "Indicates whether or not the prototype has just been set up."
           language: "The default language of the application."
           name: "Name of the running application."
-          support_email: "E-Mail-Address for receiving user feedback"
-          contact_info:
-            complete_percentage: "How much contact info has to be filled out to make a profile 'complete'."
-          reviews:
+          reviews: 
             highlight_above: "How many published reviews does a company need to have to get highlighted in search results."
-      new:
+          support_email: "E-Mail-Address for receiving user feedback"
+        search-label: Settings
+      create: 
         page_title: "Create new setting"
-      create:
-        page_title: "Create new setting"
-      edit:
+      edit: 
         page_title: "Edit setting"
-      update:
-        page_title: "Edit setting"
-      show:
-        page_title: "Setting"
-      index:
-        page_title: "All Settings"
+      index: 
         header: "All Settings"
         intro: "Here you see all system specific settings."
+        page_title: "All Settings"
         reimport_defaults_link: "Reimport default values"
-
-    # CompaniesController
-    companies:
-      dashboard:
-        page_title: "Dashboard"
-        recordings:
-          header: "Actions"
-      new:
-        page_title: "Create company account"
+      new: 
+        page_title: "Create new setting"
+      show: 
+        page_title: Setting
+      update: 
+        page_title: "Edit setting"
+    common: 
+      edit_link: Edit
+      filter_by_created_at: "Newest first"
+      filter_by_id: "1 - 100"
+      filter_by_login: "A - Z"
+      filter_by_name: "A - Z"
+      frontend_show_link: "View public profile"
+      navi: 
+        action_recordings: Newsfeed
+        app_configs: Settings
+        back_to_app: "Back to Frontend"
+        companies: Companies
+        home: Administration
+        search_recordings: Searches
+        setup: Setup
+        stations: Stations
+        user_roles: "User Roles"
+        users: Users
+      new_link: "Create a new one"
+      search-label: Global
+      stats: 
+        last_week: 
+          action_recordings: "User actions per day (past week)"
+          action_recordings_actions: "Actions (overall)"
+          action_recordings_company: "Actions on companies per day (past week)"
+          action_recordings_create: "Create actions per day (past week)"
+          action_recordings_destroy: "Destroy actions per day (past week)"
+          action_recordings_freight: "Actions on freights per day (past week)"
+          action_recordings_item_types: "Actions (overall)"
+          action_recordings_loading_space: "Actions on loading spaces per day (past week)"
+          action_recordings_person: "Actions on people per day (past week)"
+          action_recordings_review: "Actions on reviews per day (past week)"
+          action_recordings_update: "Update actions per day (past week)"
+          action_recordings_user: "Actions on users per day (past week)"
+          created_companies: "New Companies per day (past week)"
+          created_users: "New Users per day (past week)"
+          search_recordings: "User searches per day (past week)"
+          search_recordings_for_keyword: "Searches containing '%{keyword}' (past week)"
+          search_recordings_for_keywords: "Keyword searches per day (past week)"
+          top_clicked: "Most clicked keywords (past week)"
+          top_results: "Most results on keywords (past week)"
+          top_searched: "Most searched keywords (past week)"
+          users_logins: "User logins per day (past week)"
+          users_posting_types: "User's posting types (overall)"
+    companies: 
+      common: 
+        search-label: Companies
+      create: 
+        page_title: "Create your company"
+      dashboard: 
+        page_title: Dashboard
+        recordings: 
+          header: Actions
+      edit: 
+        header: "Company information"
+        page_title: "Edit company"
+      index: 
+        header: Companies
+        intro: "Here you can see all companies in the system."
+        page_title: Companies
+      new: 
         header: "Create your company account"
         intro: "You are just 60 seconds away from your own account!"
-      create:
-        page_title: "Create your company"
-      edit:
-        page_title: "Edit company"
-        header: "Company information"
-      index:
-        page_title: "Companies"
-        header: "Companies"
-        intro: "Here you can see all companies in the system."
-      update:
-        page_title: "Edit company"
-      show:
-        page_title: "Company"
+        page_title: "Create company account"
+      show: 
+        page_title: Company
         users_header: "Users in this company"
         users_intro: "Here you can see all users in this company."
-
-    # PeopleController
-    people:
-      edit:
-        page_title: "Edit Person"
+      update: 
+        page_title: "Edit company"
+    people: 
+      edit: 
         edit_user_link: "Edit User"
-      update:
         page_title: "Edit Person"
-      index:
-        page_title: "All People"
+      index: 
         header: "All People"
         intro: "Here you can see all people."
-
-    # SearchRecordingsController
-    search_recordings:
-      index:
-        page_title: "All Searches"
+        page_title: "All People"
+      update: 
+        page_title: "Edit Person"
+    search: 
+      common: 
+        search-label: "All:"
+      index: 
+        header: "All Results"
+        intro: "Here you see all results for your search query"
+        page_title: Search
+    search_recordings: 
+      index: 
         header: "All Searches"
         intro: "Here you see all the searches performed by users."
-      keyword:
-        page_title: "Keyword Analysis"
+        page_title: "All Searches"
+      keyword: 
         header: "Keyword Analysis"
         intro: "Here you can see all the info about a certain keyword."
         keywords_label: "Keywords:"
-
-    # StationsController
-    stations:
-      new:
+        page_title: "Keyword Analysis"
+    stations: 
+      common: 
+        search-label: "Stations:"
+      create: 
         page_title: "Create new station"
-      create:
-        page_title: "Create new station"
-      edit:
+      edit: 
         page_title: "Edit station"
-      update:
-        page_title: "Edit station"
-      index:
-        page_title: "All Stations"
+      index: 
         header: "All Stations"
         intro: "Here you see all the stations that can be used as an adress template."
-
-    # UserRolesController
-    user_roles:
-      new:
+        page_title: "All Stations"
+      new: 
+        page_title: "Create new station"
+      update: 
+        page_title: "Edit station"
+    user_roles: 
+      common: 
+        search-label: "User Role:"
+      create: 
         page_title: "Create new Role"
-      create:
-        page_title: "Create new Role"
-      edit:
+      edit: 
         page_title: "Edit Role"
-      update:
-        page_title: "Edit Role"
-      index:
-        page_title: "All Roles"
+      index: 
         header: "All Roles"
         intro: "Here you see all user roles."
-
-    # SearchController
-    search:
-      index:
-        page_title: "Search"
-        header: "All Results"
-        intro: "Here you see all results for your search query"
-
-    # UsersController
-    users:
-      edit:
-        page_title: "Edit User"
+        page_title: "All Roles"
+      new: 
+        page_title: "Create new Role"
+      update: 
+        page_title: "Edit Role"
+    users: 
+      common: 
+        search-label: "User:"
+      edit: 
         edit_person_link: "Edit Person"
-      update:
         page_title: "Edit User"
-      index:
-        page_title: "All Users"
+      index: 
         header: "All Users"
         intro: "Here you see all users."
-      show:
-        page_title: "User"
-        header: "Actions"
-
-#
-#
-# Rails configuration
-#
-#
-
-
-  activerecord:
-    models:
-      station: "Station"
-      freight: "Freight"
-      loading_space: "Loading Space"
-    attributes:
-      company:
-        name: "Name"
-        address: "Address"
-        address2: ""
-        zip: "ZIP"
-        city: "City"
-        country: "Country"
-        phone: "Phone"
-        fax: "Fax"
-        email: "E-Mail"
-        website: "Web"
-        contact_person: "Contact Person"
-        localized_infos:
-          misc_text: "Your history, achievements, etc."
-      site_info:
-        origin_contractor: "Contractor (Sender)"
-        destination_contractor: "Contractor (Receiver)"
-        address_template_label: "Use address template:"
-        name: "Station"
-        address: "Address"
-        address2: ""
-        zip: "ZIP"
-        city: "City"
-        country: "Country"
-        side_track_available: "Side track available?"
-        track_number: "Track No."
-      freight:
-        origin_date: "From"
-        destination_date: "To"
-        weight: "Weight (in t)"
-        hazmat: "Harzardous material"
-        wagons_provided_by: "Wagons provided by"
-        paying_freight: "Freight paid by"
-        transport_type: "Transport type"
-        transports_per_year: "Transports per year"
-        transport_weight: "Weight per transport (in t)"
-        transport_type: "Transport type"
-        loading_meter: "Loading meter"
-        desired_proposal_type: "Desired proposal type"
-        contact_person: "Contact Person"
-        localized_infos:
-          goods_text: "Type of Goods"
-          misc_text: "Additional information"
-          transport_text: "Which kind of wagons are required?"
-      loading_space:
-        origin_date: "From"
-        destination_date: "To"
-        weight: "Weight (in t)"
-        hazmat: "Harzardous material"
-        wagons_provided_by: "Wagons provided by"
-        paying_freight: "Freight paid by"
-        transports_per_year: "Transports per year"
-        transport_weight: "Weight per transport (in t)"
-        transport_type: "Transport type"
-        loading_meter: "Loading meter"
-        desired_proposal_type: "Desired proposal type"
-        contact_person: "Contact Person"
-        localized_infos:
-          goods_text: "Type of Goods"
-          misc_text: "Additional information"
-          transport_text: "Which kind of wagons are required?"
-      person:
-        gender: "Gender"
-        first_name: "Forename"
-        last_name: "Surname"
-        job_description: "Job Description"
-        phone: "Phone"
-        fax: "Fax"
-        email: "E-Mail"
-        website: "Web"
-        locale: "Interface Language"
-        localized_infos:
-          misc_text: "Additional information"
-      user:
-        login: "Username"
-        email: "E-Mail"
-        password: "Password"
-        password_confirmation: "Password (again)"
-        posting_type: "Will be posting"
-        user_roles: "User Roles"
-    human_attribute_values:
-      freight:
-        paying_freight:
-          unknown: "-- unknown --"
-          sender: "Sender"
-          receiver: "Receiver"
-        wagons_provided_by:
-          client: "Client"
-          railway: "Railway"
-          wanted: "Wagons wanted"
-        desired_proposal_type:
-          unknown: "unknown"
-          ton_price: "Price per ton"
-          package_price: "Package price"
-        transport_type:
-          unknown: "-- unknown --"
-          single_wagon: "Single wagon"
-          train_set: "Train set"
-          block_train: "Block train"
-          intermodal_transport: "Intermodal transport"
-      loading_space:
-        transport_type:
-          unknown: "-- unknown --"
-          single_wagon: "Single wagon"
-          train_set: "Train set"
-          block_train: "Block train"
-          intermodal_transport: "Intermodal transport"
-      person:
-        gender:
-          male: "Mr."
-          female: "Mrs."
-        locale:
-          en: "English"
-          de: "German"
-      user_role:
-        name:
-          administrator: "[System] Administrator"
-          company_admin: "Executive"
-          company_employee: "Regular employee"
-          company_intern: "Trainee/Intern"
-          support: "Trainee/Intern"
-          support: "[System] Support staff"
-          marketing: "[System] Marketing staff"
-
-#        localized_infos:
-#          type_of_goods: "Type of goods"
-#          transport_text: "Which wagons should be used?"
-
-  formtastic:
+        page_title: "All Users"
+      show: 
+        header: Actions
+        page_title: User
+      update: 
+        page_title: "Edit User"
+  common: 
+    black_list_company: "Ignore company"
+    black_list_company_confirm: "Do you really want to ignore all postings by this company?"
+    black_listed_company: "Company ignored"
+    choice_no: "No"
+    choice_yes: "Yes"
+    choose: "-- Choose --"
+    confirm: "Are you sure?"
+    create_new_freight: "Create a new freight"
+    create_new_loading_space: "Create a new loading space"
+    create_new_review: "Write a review!"
+    deleted_object: "-- deleted object --"
+    footer: 
+      contact_link: Contact
+      imprint_link: Imprint
+    link_back: Back
+    navi: 
+      backend: Backend
+      companies: Companies
+      dashboard: Dashboard
+      freights: Freights
+      loading_spaces: "Loading Spaces"
+      locale_de: Deutsch
+      locale_en: English
+      login: Login
+      logout: Logout
+      my_company: "My Company Profile"
+      my_freights: "My Freights"
+      my_loading_spaces: "My Loading Spaces"
+      my_person: "Hello %{name}"
+      my_profile: "Company profile"
+      my_reviews: "My Reviews"
+      my_user: "Change password etc."
+      notifications: "New & interesting"
+      people: People
+      register: Register
+      select_locale: "Select language:"
+      settings: "Users & Settings"
+      stations: Stations
+    sidebar: 
+      advanced_search_link: "Advanced search"
+      company_information: 
+        edit: "Edit info"
+        header: "Company information"
+        please_edit_notice: "Please add more information to your company's profile."
+        postings: "View all postings"
+        show: "View profile"
+      person_information: 
+        edit: "Edit info"
+        header: "Contact information"
+        please_edit_notice: "Please add more information to your personal profile."
+        show: "View profile"
+    website_title: "Freight Exchange 2010"
+    white_list_company: "Subscribe to company"
+    white_listed_company: "Subscribed to company"
+  companies: 
+    common: 
+      freights: Demands
+      loading_spaces: Offers
+      profile: Profile
+      search-label: "Company:"
+    create: 
+      page_title: "Create your company"
+    dashboard: 
+      header: Actions
+      intro: "Here you can see all the actions of your company's users."
+      page_title: Dashboard
+      sidebar_company_info_title: "This is your company info card:"
+      sidebar_person_info_title: "This is your personal info card:"
+    edit: 
+      header: "Company information"
+      page_title: "Edit company"
+    index: 
+      all_companies: "All companies"
+      black_listed_companies: "Ignored Companies"
+      filter_by_created_at: "Newest first"
+      filter_by_name: "A - Z"
+      header: Companies
+      intro: "Here you can see all companies."
+      page_title: Companies
+      table: 
+        headers: 
+          city: City
+          country: Country
+          name: Name
+          zip: ZIP
+    new: 
+      header: "Create your company account"
+      intro: "You are just 60 seconds away from your own account!"
+      page_title: "Create company account"
+    show: 
+      edit_company_link: "Edit profile"
+      header_misc_text: "About us:"
+      header_people: "Who works here?"
+      header_reviews: "What are others saying?"
+      page_title: "{{name}}"
+    update: 
+      page_title: "Edit company"
+  contact: 
+    index: 
+      header: "Contact our support staff"
+      intro: "Type your question or suggestion below, and we will contact you shortly!"
+      page_title: Contact
+      sent: "Your mail has been sent. Thank you for your feedback."
+      submit: "Submit request"
+  date: 
+    abbr_day_names: 
+      - Su
+      - Mo
+      - Tu
+      - We
+      - Th
+      - Fri
+      - Sa
+    abbr_month_names: 
+      - ~
+      - Jan
+      - Feb
+      - Mar
+      - Apr
+      - May
+      - Jun
+      - Jul
+      - Aug
+      - Sep
+      - Oct
+      - Nov
+      - Dec
+  formtastic: 
+    actions: 
+      create: "Create %{model}"
+      update: "Save changes"
+    hints: 
+      user: 
+        email: "Enter your e-mail address here"
+        login: "Choose a username to log in to the service"
+        password: "Choose your password carefully"
+        password_confirmation: "Please repeat your password"
     localized_info_locale_selector: "Language:"
-    titles:
-      for_company: "Company information"
-      credentials: "Login credentials"
+    titles: 
       change_password: "Change password (optional)"
-      company_name: "Name"
       company_address: "Postal information"
       company_contact: "Contact information"
       company_contact_person: "General Contact Person"
       company_misc: "Additional information"
-      origin_site_info: "Loading site:"
+      company_name: Name
+      company_registries: Registrations
+      credentials: "Login credentials"
       destination_site_info: "Unloading site:"
-      timeframe: "Time frame:"
+      for_company: "Company information"
       freight_description: "Freight description:"
-      transport_type: "Transport description:"
       misc_text: "Additional information:"
+      origin_site_info: "Loading site:"
       person_name: "Personal information"
-    hints:
-      user:
-        login: "Choose a username to log in to the service"
-        email: "Enter your e-mail address here"
-        password: "Choose your password carefully"
-        password_confirmation: "Please repeat your password"
-    actions:
-      create: "Create %{model}"
-      update: "Save changes"
+      timeframe: "Time frame:"
+      transport_type: "Transport description:"
+  freights: 
+    common: 
+      contact_to_href: "mailto:%{email}?subject=Re: %{name}&body=Posting: %{url}"
+      contact_to_link: "Contact company"
+      edit_link: "Edit this posting"
+      is_reply_to: "This demand is a reply to offer %{name}"
+      new_link: "Create freight"
+      reply_to_link: "Reply with offer"
+      required_field_hint: "The fields with an asterix (*) are mandatory:"
+      search-label: "Demand:"
+      template_link: "Use as template"
+    create: 
+      header: "New freight posting"
+      page_title: "New freight posting"
+    edit: 
+      header: "Edit freight posting"
+      page_title: "Edit freight posting"
+    index: 
+      all_freights: Freights
+      from_origin_city: "Only show demands originating from '%{city}'"
+      header: "All freight postings"
+      header_query: "All demands for '%{query}'"
+      intro: "Here you can see all the freight postings of your company."
+      page_title: "All freight postings"
+      show_company: "Company profile: %{company}"
+      switch_to_loading_spaces: "Switch to offers"
+      table: 
+        headers: 
+          company: Company
+          destination_date: Date
+          destination_name: Destination
+          id: "Numeric ID"
+          options: Options
+          origin_date: Date
+          origin_name: Origin
+          transport_type: "Type of transport"
+          weight: Weight
+        options: 
+          delete: Delete
+          edit: Edit
+          template: "Use as template"
+      to_destination_city: "Only show demands destined to '%{city}'"
+    new: 
+      header: "New freight posting"
+      page_title: "New freight posting"
+    show: 
+      destination: 
+        header: "Unloading site"
+      header: "Freight posting"
+      is_reply_to: "This demand is a reply to the offer %{name}"
+      no_side_track_available: "No sidetrack available."
+      origin: 
+        header: "Loading site"
+      page_title: "Freight posting"
+      transport_description: "Transport description"
+    update: 
+      header: "Edit freight posting"
+      page_title: "Edit freight posting"
+  helpers: 
+    select: 
+      prompt: "Please choose"
+  loading_spaces: 
+    common: 
+      contact_to_href: "mailto:%{email}?subject=Re: %{name}&body=Posting: %{url}"
+      contact_to_link: "Contact company"
+      delete_link: "Delete this posting"
+      edit_link: "Edit this posting"
+      is_reply_to: "This offer is a reply to the demand %{name}"
+      new_link: "Create loading space"
+      reply_to_link: "Reply with demand"
+      required_field_hint: "The fields with an asterix (*) are mandatory:"
+      search-label: "Offers:"
+      template_link: "Use as template"
+    create: 
+      page_title: "New loading space posting"
+    edit: 
+      header: "Edit loading space posting"
+      page_title: "Edit loading space posting"
+    index: 
+      all_loading_spaces: "Loading spaces"
+      from_origin_city: "Only show offers originating from '%{city}'"
+      header: "All loading space postings"
+      header_query: "All offers for '%{query}'"
+      intro: "Here you can see all the loading space postings of your company."
+      page_title: "All loading space postings"
+      switch_to_freights: "Switch to demands"
+      table: 
+        headers: 
+          company: Company
+          date: Date
+          destination: Destination
+          options: Options
+          origin: Origin
+          transport_type: "Type of transport"
+          weight: Weight
+        options: 
+          delete: Delete
+          edit: Edit
+          template: "Use as template"
+      to_destination_city: "Only show offers destined to '%{city}'"
+    new: 
+      header: "New loading space posting"
+      page_title: "New loading space posting"
+    show: 
+      destination: 
+        header: "Unloading site"
+      header: "Loading space posting"
+      is_reply_to: "This offer is a reply to demand: %{name}"
+      origin: 
+        header: "Loading site"
+      page_title: "Loading space posting"
+      transport_description: "Transport description"
+    update: 
+      header: "Edit loading space posting"
+      page_title: "Edit loading space posting"
+  notifications: 
+    index: 
+      page_title: "New & interesting"
+    show: 
+      header: Notifications
+      intro: "Here you can see postings and reviews that might me of interest for you."
+      no_notifications: "No notifications found."
+      page_title: "New & interesting"
+  people: 
+    common: 
+      edit_link: "Edit Contact"
+      edit_user_link: "Edit User Account"
+      new_link: "Create another User"
+      template_link: "Use as template"
+    edit: 
+      header: "Personal information"
+      page_title: "Edit person"
+    index: 
+      header: "All People"
+      intro: "Here you can see all the people in your company."
+      page_title: "Overview: People"
+    show: 
+      page_title: "{{name}}"
+    update: 
+      header: "Personal information"
+      page_title: "Edit person"
+  postings: 
+    common: 
+      posting: 
+        edit: "Edit this posting"
+        goods_type: "Type of goods:"
+        loading_meter: "Loading metre:"
+        misc: "Additional information:"
+        wagon_type: "Type of wagon:"
+        weight: "Weight (kg):"
+    show: 
+      page_title: "Posting details"
+  recordings: 
+    create: "{{user}} <strong>created</strong> a {{object_class}}: {{object_link}}"
+    destroy: "{{user}} <strong>deleted</strong> a {{object_class}}: {{object_link}}"
+    update: "{{user}} <strong>updated</strong> a {{object_class}}: {{object_link}}"
+  reviews: 
+    created: 
+      hint: "Your review has been submitted."
+      page_title: "Review created"
+    index: 
+      filter_all: "All Reviews"
+      filter_approved: "Approved Reviews"
+      filter_unapproved: "Unapproved Reviews"
+      header: "All reviews"
+      header_approved: "Approved reviews"
+      header_unapproved: "Unapproved reviews"
+      intro: "Here you can see the reviews for your company."
+      page_title: "All reviews"
+      table: 
+        headers: 
+          name: Name
+          options: Options
+        options: 
+          approve: Approve
+          delete: Delete
+        review_name: "Review by %{author_user} (%{author_company})"
+    new: 
+      header: "Write a review about '{{company_name}}'"
+      intro: "Here you can write a review and send it to the company."
+      page_title: "Review Company"
+    show: 
+      approve_link: "Approve this review"
+      delete_link: "Delete this review"
+      header: "Review by %{author_user} (%{author_company})"
+      index_link: "Back to overview"
+      is_approved: "This review is published!"
+      page_title: Review
+      sidebar_info_title: "Who wrote this review?"
+  root: 
+    about: 
+      page_title: About
+    index: 
+      page_title: Welcome
+    welcome: 
+      header: Welcome
+      intro: "You can now login (no sign-up necessary) or create your personal account."
+      page_title: "Welcome to the software prototype of an online freight exchange!"
+  search: 
+    advanced: 
+      destination: 
+        fields: 
+          address: Street
+          address2: "Street (continued)"
+          address_template_label: "Use address template:"
+          city: City
+          contact_person: "Contact Person"
+          contractor: "Contractor Receiver"
+          country: Country
+          date: Date
+          desired_proposal_type: "Desired proposal type"
+          destination_date: To
+          goods_text: "Type of Goods"
+          hazmat: "Harzardous material"
+          loading_meter: "Loading meter"
+          misc_text: "Additional information"
+          name: Station
+          origin_date: From
+          paying_freight: "Freight paid by"
+          side_track_available: "Side track available"
+          track_number: "Track number"
+          transport_text: "Which kind of wagons are required?"
+          transport_type: "Transport type"
+          transport_weight: "Weight per transport (in t)"
+          transports_per_year: "Transports per year"
+          wagons_provided_by: "Wagons provided by"
+          weight: "Weight (in t)"
+          zip: ZIP
+        header: Destination
+      display_form_link: "Modify your search"
+      keyword_contains: contains
+      keyword_from: from
+      keyword_to: to
+      origin: 
+        fields: 
+          address: Street
+          address2: "Street (continued)"
+          address_template_label: "Use adress template:"
+          city: City
+          contractor: "Contractor Sender"
+          country: Country
+          date: Date
+          name: Station
+          side_track_available: "Side track available"
+          track_number: "Track number"
+          zip: ZIP
+        header: Origin
+      page_title: "Advanced search"
+      submit: Search
+    common: 
+      button: Search
+      results: 
+        header: "Search results"
+      sidebar: 
+        company_results: 
+          header: "Companies found:"
+        station_results: 
+          header: "Stations found:"
+      subtext_results: 
+        one: "1 result <small>for your query</small>"
+        other: "{{count}} results <small>for your query</small>"
+    index: 
+      no_query: "Please type in a search query above."
+      no_results: "There are no results."
+      page_title: Search
+  setup: 
+    demo_company: 
+      company_present: "There is a demo company. Click the profile in the sidebar to view their profile or the link below to destroy it:"
+      create_demo_company_link: "Create demo company"
+      create_freights_link: "Create freight postings in demo company"
+      destroy_demo_company_link: "Destroy demo company"
+      freights_present: "%{count} freight postings present."
+      header: "Create or reset the demo company"
+      intro: "Administrate your demo company."
+      no_company_present: "There is no demo company at this moment. Click this link to create one:"
+      page_title: "Demo Company"
+    index: 
+      admin_user: 
+        edit_link: "Edit your admin user"
+        header: "Admin Account"
+        intro: "The software just created your admin account. You can customize this account by clicking the button above:"
+      app_configs: 
+        header: Settings
+        intro: "You can access the applications settings by clicking the button above:"
+        link: "Open Settings"
+      demo_company: 
+        create_link: "Create a demo company"
+        header: "Demo Company"
+        intro: "You can modify the demo company by clicking the button above:"
+      page_title: Welcome
+      tolk: 
+        dump_all_link: "Dump all!"
+        header: Localization
+        import_link: "Import secondary locales!"
+        intro: "You can access the 'tolk' localization interface by clicking the button above:"
+        intro_rake_tasks: "You can also access the main 'tolk' rake tasks by clicking the buttons above:"
+        open_link: "Open Tolk"
+        sync_link: Sync!
+  stations: 
+    common: 
+      search-label: "Stations:"
+    index: 
+      freights_destination: "Demands destined to here"
+      freights_origin: "Demands originating from here"
+      header: "All stations"
+      intro: "Here you can see all stations."
+      loading_spaces_destination: "Offers destined to here"
+      loading_spaces_origin: "Offers originating from here"
+      page_title: Stations
+  support: 
+    array: 
+      last_word_connector: and
+      two_words_connector: and
+      words_connector: ","
+  time: 
+    am: am
+    formats: 
+      date: "%Y-%m-%d"
+    pm: pm
+  user_sessions: 
+    create: 
+      page_title: Login
+    new: 
+      failed: "Username/Passwort invalid!"
+      login: Username
+      page_title: Login
+      password: Password
+      submit: Login
+  users: 
+    common: 
+      edit_link: Edit
+      new_link: "Create another User"
+    create: 
+      page_title: "New User"
+    edit: 
+      header: "Edit User"
+      page_title: "Edit User"
+    index: 
+      header: "All Users"
+      intro: "Here you can see all the registered user accounts of your company."
+      page_title: "Overview: Users"
+    new: 
+      page_title: "New User"

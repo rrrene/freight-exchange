@@ -404,6 +404,9 @@ de:
     black_listed_company: "Unternehmen wird ignoriert"
     white_list_company: "Unternehmen favorisieren"
     white_listed_company: "Unternehmen wird favorisiert"
+    footer:
+      imprint_link: "Impressum"
+      contact_link: "Kontakt"
   companies:
     common:
       search-label: "Unternehmen:"
@@ -644,6 +647,9 @@ de:
           destination_name: Zielort
           options: Optionen
           id: "Nummer"
+          weight: Gewicht
+          transport_type: Transportart
+          company: Unternehmen
         options: 
           delete: Löschen
           edit: Bearbeiten
@@ -703,6 +709,9 @@ de:
           destination: Zielort
           options: Optionen
           origin: Startort
+          weight: Gewicht
+          transport_type: Transportart
+          company: Unternehmen
         options: 
           delete: Löschen
           edit: Bearbeiten
