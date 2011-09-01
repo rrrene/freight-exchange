@@ -18,12 +18,15 @@ function login_from_name(name) {
 }
 
 function actionListMagic() {
-  jQuery("ul.action_list li").each(function(i, li) {
-    jQuery(li).hover(function(evt) { var item=evt.currentTarget; jQuery(item).addClass('hovered'); }, function(evt) { var item=evt.currentTarget; jQuery(item).removeClass('hovered') });
-    jQuery(li).click(function(evt) {
-    var a = jQuery(evt.currentTarget).find("a").first();
-    self.location.href = jQuery(a).attr('href');
-    });
+  jQuery("ul.action_list li").each(function(index, li, arr) {
+    var links = jQuery(li).find("a");
+    if( links.length > 0 ) {
+      jQuery(li).hover(function(evt) { var item=evt.currentTarget; jQuery(item).addClass('hovered'); }, function(evt) { var item=evt.currentTarget; jQuery(item).removeClass('hovered') });
+      jQuery(li).click(function(evt) {
+        var a = jQuery(evt.currentTarget).find("a").first();
+        self.location.href = jQuery(a).attr('href');
+      });
+    }
   });
 }
 

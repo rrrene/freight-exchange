@@ -51,6 +51,10 @@ de:
         destination_city: "Stadt"
         destination_country: "Land"
         destination_station: "Entladebahnhof"
+        localized_infos:
+          goods_text: Güterbeschreibung
+          transport_text: "Weitere Angaben zum Transport"
+          misc_text: "Sonstige Informationen"
       loading_space:
         contact_person: Kontaktperson
         desired_proposal_type: "Angebot gewünscht als"
