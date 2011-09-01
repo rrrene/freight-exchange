@@ -10,11 +10,9 @@ module LoginTestHelper
     assert_response :success
   end
   
-  def assert_login_required_for(*actions)
-    actions.each do |action|
-      assert_login_required do
-        get action
-      end
+  def assert_login_required_for(action, parameters = {})
+    assert_login_required do
+      get action, parameters
     end
   end
   

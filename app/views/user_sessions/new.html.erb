@@ -5,7 +5,7 @@
 
 <% if demo_mode? %>
   <% content_for(:sidebar) do %>
-    <% box "Quick Login (DEMO-ACCOUNT)" do %>
+    <%= box "Quick Login (DEMO-ACCOUNT)" do %>
       <% Company.order('created_at DESC').all.each do |company| %>
         <% if users = company.users.order('login').all.select { |u| u.login =~ /^demo_/ }.full? %>
             <h3><%= company.name %></h3>

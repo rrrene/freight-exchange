@@ -1,9 +1,11 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  name: MyString
-  number: MyString
+  id: 1
+  name: Bochum
+  numeric_id: 123
 
 two:
-  name: MyString
-  number: MyString
+  id: 2
+  name: Essen
+  numeric_id: 456

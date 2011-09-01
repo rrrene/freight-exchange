@@ -49,7 +49,7 @@ class CompaniesControllerTest < ActionController::TestCase
     end
   end
   
-  def assert_role_required(role_to_pass = :company_admin, role_to_fail = :company_employee, &block)
+  def assert_role_required(role_to_pass = :company_admin, role_to_fail = :company_intern, &block)
     # TODO: this doesnot work in the same test.
     #with_login(user_with_single_role(role_to_pass)) do |user|
     #  puts "\npass: #{user.user_roles.map(&:name)}"

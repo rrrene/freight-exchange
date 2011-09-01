@@ -51,9 +51,9 @@ company_admin:
   last_login_at: 
   email: loading_space_supplier@example.org
 
-company_employee: 
+company_employee:
   single_access_token: hSesExquBoqQVQ1XVT
-  last_request_at: 
+  last_request_at:
   created_at: 2010-11-02 20:11:29.579821
   crypted_password: 279b1972fedb85f433537e82d7a40694269b453b97c622bb826b68e81eb08d1718604705c93e7c353d5f5a6eeaa9fd363f800d629cf05b8b970cde97e8792885
   perishable_token: 60kmZK72XgF7ygz2RU8B
@@ -61,18 +61,41 @@ company_employee:
   api_key: 69c6d0012c7cfacd805de990288f24f22c5c0431
   id: 3
   failed_login_count: 0
-  current_login_ip: 
+  current_login_ip:
   posting_type: Freight
   password_salt: plwlICN0bqNNcv1h3b9h
-  current_login_at: 
+  current_login_at:
   persistence_token: 36506eca50a1c105e67121a98923ffa5fe534e69329530eb1251dd36ada8d19be8f27043fc3e34d9ab78f5c5cf5a6fab025919c80cb25aa8639c9497fabd3c3a
   login_count: 0
   company_id: 2
   person_id: 2
-  last_login_ip: 
+  last_login_ip:
   login: loading_space_supplier_employee
-  last_login_at: 
+  last_login_at:
   email: loading_space_supplier_employee@example.org
+
+company_intern:
+  single_access_token: hSesExquBoqQVQ1XVT
+  last_request_at:
+  created_at: 2010-11-02 20:11:29.579821
+  crypted_password: 279b1972fedb85f433537e82d7a40694269b453b97c622bb826b68e81eb08d1718604705c93e7c353d5f5a6eeaa9fd363f800d629cf05b8b970cde97e8792885
+  perishable_token: 60kmZK72XgF7ygz2RU8B
+  updated_at: 2010-11-02 20:11:29.579821
+  api_key: 69c6d0012c7cfacd805de990288f24f22c5c0431
+  id: 4
+  failed_login_count: 0
+  current_login_ip:
+  posting_type: Freight
+  password_salt: plwlICN0bqNNcv1h3b9h
+  current_login_at:
+  persistence_token: 36506eca50a1c105e67121a98923ffa5fe534e69329530eb1251dd36ada8d19be8f27043fc3e34d9ab78f5c5cf5a6fab025919c80cb25aa8639c9497fabd3c3a
+  login_count: 0
+  company_id: 2
+  person_id: 2
+  last_login_ip:
+  login: loading_space_supplier_intern
+  last_login_at:
+  email: loading_space_supplier_intern@example.org
 
 administrator: 
   single_access_token: MtD8kMhumjo7oRJIcPUQ
@@ -82,7 +105,7 @@ administrator:
   perishable_token: qkBajKGWtNeaQeu5KXKA
   updated_at: 2011-02-03 09:31:20.160144
   api_key: db0dfcedd64c9a94fd3e88b7581f1208c42b3a97
-  id: 4
+  id: 5
   failed_login_count: 0
   current_login_ip: 127.0.0.1
   posting_type: Freight

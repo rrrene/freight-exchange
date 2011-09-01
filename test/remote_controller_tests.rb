@@ -14,7 +14,7 @@ module ::RemoteControllerTests
   def test_should_get_index
     assert_login_required_for :index
   end
-  
+
   def test_should_delete_destroy
     setup_model
     with_login do
