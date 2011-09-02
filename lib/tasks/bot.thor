@@ -12,8 +12,10 @@ class Bot < Thor
   method_options %w(times -t) => 0
   method_options %w(actions -a) => []
   method_options %w(pause -p) => 2
+  method_options %w(site -s) => "http://localhost:3000/"
   def go
-    puts "options: " + options.inspect
+    ActiveResource::Base.site = 
+    ActiveResource::Base.proxy = options[:site]
     index = 0
     times = options[:times].to_i
     infinite = times == 0
@@ -31,9 +33,9 @@ class Bot < Thor
   rescue SystemExit, Interrupt
     raise
   rescue Errno::ECONNREFUSED
-    warn ' ' * 20 << "[X] No connection to server: #{Robot::SITE}"
+    warn ' ' * 20 << "[X] No connection to server: #{ActiveResource::Base.site}"
   rescue Exception => e
     warn ' ' * 20 << '[i] rescued ' + e.class.to_s
-    #raise
+    raise
   end
 end

@@ -3,8 +3,6 @@
 
 module ActiveResource
   class Base
-    self.site = Robot::SITE
-    self.proxy = Robot::SITE
     self.timeout = 2000
     
     def api_key=(api_key)
