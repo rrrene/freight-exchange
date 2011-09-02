@@ -111,13 +111,13 @@ GEM
     todonotes (0.1.0)
       log4r
     tolk (1.0)
-      will_paginate (= 3.0.pre)
+      will_paginate (= 3.0.0)
       ya2yaml (~> 0.26)
     treetop (1.4.10)
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.29)
-    will_paginate (3.0.pre)
+    will_paginate (3.0.0)
     ya2yaml (0.30)
 
 PLATFORMS

@@ -8,14 +8,16 @@ end
 
 module Robot
   class Bot
-    def go
-      report { perform_action }
+    def go(options = {})
+      report { 
+        @action = (options[:actions].presence || actions).random
+        perform_action 
+      }
     end
     
     def perform_action
       CurrentUser.random!
       ActiveResource::Base.login! {
-        @action = (actions_from_argv || actions).random
         method(@action).call
       }
     end
@@ -32,10 +34,6 @@ module Robot
             str,
             ret.is_a?(String) ? ret : nil
           ].compact.join
-    end
-    
-    def actions_from_argv
-      ARGV unless ARGV.empty?
     end
     
     def actions
