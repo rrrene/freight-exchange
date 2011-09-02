@@ -1,4 +1,4 @@
-<% semantic_form_for(@user) do |f| %>
+<%= semantic_form_for(@user) do |f| %>
   <%= render :partial => "form_content", :locals => {:f => f} %>
   <%= f.buttons %>
 <% end %>

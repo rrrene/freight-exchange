@@ -1,4 +1,4 @@
-<% form_for :user_session, :url => '/user_sessions' do |f| %>
+<%= form_for :user_session, :url => '/user_sessions' do |f| %>
   <p>
     <%= f.label :login, t("user_sessions.new.login") %><br>
     <%= f.text_field :login %>

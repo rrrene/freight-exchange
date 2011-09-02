@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.0'
+gem 'rails', '3.0.10'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -11,7 +11,7 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'hirb'
 gem 'term-ansicolor'
 
-gem 'formtastic', '~> 1.1.0'
+gem 'formtastic'
 gem 'authlogic'
 gem 'inherited_resources', '1.1.2'
 

@@ -1,5 +1,5 @@
 <div class="box">
-  <% semantic_form_for(@user) do |f| %>
+  <%= semantic_form_for(@user) do |f| %>
     <%= f.semantic_fields_for :person do |f_person| %>
       <%= f_person.inputs :person_name do %>
         <%= f_person.input :gender, :collection => collection_choices(Person, :gender), :as => :select, :include_blank => false %>
@@ -7,7 +7,7 @@
         <%= f_person.input :last_name %>
       <% end %>
       
-      <% f_person.inputs :person_contact do %>
+      <%= f_person.inputs :person_contact do %>
         <%= f_person.input :phone %>
         <%= f_person.input :fax %>
         <%= f_person.input :email %>

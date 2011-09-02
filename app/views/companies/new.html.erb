@@ -3,13 +3,13 @@
   <p>
     <%= t("companies.new.intro") %>
   </p>
-  <% semantic_form_for(:user, @user, :url => companies_url) do |f| %>
+  <%= semantic_form_for(@user, :url => companies_url) do |f| %>
     <fieldset class="inputs">
       <legend><span><%= t("formtastic.titles.for_company") %></span></legend>
       <ol>
         <li class="string optional<%= ' error' if @company.errors.full? %>">
           <%= label :company, :name %> <%= text_field :company, :name, :size => 50, :maxlength => 255 %>
-          <%= @company.errors.on(:name) %>
+          <%= @company.errors[:name] %>
         </li>
       </ol>
     </fieldset>

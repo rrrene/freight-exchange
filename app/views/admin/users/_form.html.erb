@@ -1,24 +1,24 @@
-<% semantic_form_for(resource, :url => resource.new_record? ? collection_url : resource_url) do |f| %>
+<%= semantic_form_for(resource, :url => resource.new_record? ? collection_url : resource_url) do |f| %>
   
-  <% f.inputs :credentials do %>
+  <%= f.inputs :credentials do %>
     <%= f.input :login %>
     <%= f.input :email %>
   <% end %>
   
-  <% f.inputs :change_password do %>
+  <%= f.inputs :change_password do %>
     <%= f.input :password %>
     <%= f.input :password_confirmation %>
   <% end %>
   
-  <% f.inputs :posting do %>
-  <%= f.input :posting_type, :collection => [[t("activerecord.models.freight"), "Freight"], [t("activerecord.models.loading_space"), "LoadingSpace"]], :include_blank => false %>
+  <%= f.inputs :posting do %>
+    <%= f.input :posting_type, :collection => [[t("activerecord.models.freight"), "Freight"], [t("activerecord.models.loading_space"), "LoadingSpace"]], :include_blank => false %>
   <% end %>
   
-  <% f.inputs :posting do %>
+  <%= f.inputs :posting do %>
     <%= f.input :company %>
   <% end %>
   
-  <% f.inputs :user_roles do %>
+  <%= f.inputs :user_roles do %>
     <%= f.input :user_roles, :as => :check_boxes, :collection => UserRole.all.map { |r| [t("activerecord.human_attribute_values.user_role.name.#{r.name}"), r.id] }.sort_by { |arr| arr.first } %>
   <% end %>
 

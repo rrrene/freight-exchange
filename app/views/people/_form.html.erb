@@ -1,18 +1,18 @@
-<% semantic_form_for(@person) do |f| %>
-  <% f.inputs :person_name do %>
+<%= semantic_form_for(@person) do |f| %>
+  <%= f.inputs :person_name do %>
     <%= f.input :gender, :collection => collection_choices(Person, :gender), :as => :radio %>
     <%= f.input :first_name %>
     <%= f.input :last_name %>
     <%= f.input :job_description %>
   <% end %>
-  <% f.inputs :person_contact do %>
+  <%= f.inputs :person_contact do %>
     <%= f.input :phone %>
     <%= f.input :fax %>
     <%= f.input :email %>
     <%= f.input :website %>
     <%= f.input :locale, :collection => collection_choices(Person, :locale), :as => :select, :include_blank => false %>
   <% end %>
-  <% f.inputs :person_misc do %>
+  <%= f.inputs :person_misc do %>
     <%= localized_info_fields f, :misc_text %>
   <% end %>
   

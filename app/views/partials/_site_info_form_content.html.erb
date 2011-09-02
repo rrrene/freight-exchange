@@ -3,7 +3,7 @@
 %>
 <%= f.inputs :"#{origin_or_destination}_site_info" do %>
   <%= f.input :"#{origin_or_destination}_contractor", :label => t("activerecord.attributes.site_info.#{origin_or_destination}_contractor") %>
-  <%= f.input :"#{origin_or_destination}_side_track_available", :as => :radio, :collection => yes_no_collection, :selected => !!resource[:"#{origin_or_destination}_side_track_available"] %>
+  <%= f.input :"#{origin_or_destination}_side_track_available", :as => :radio, :collection => yes_no_collection %>
 
   <div id="<%= origin_or_destination %>_with_station" style="<%= show_station ? nil : 'display: none' %>">
     <%= f.input :"#{origin_or_destination}_station", :input_html => {:title => t("activerecord.attributes.freight.#{origin_or_destination}_station"),:class => 'chosen'} %>
