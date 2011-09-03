@@ -639,7 +639,7 @@ de:
       switch_to_loading_spaces: "Zu Angeboten wechseln"
       header: "Alle Nachfragen"
       header_query: "Alle Nachfragen für '%{query}'"
-      intro: "Hier sehen Sie alle Nachfragen Ihrer Firma."
+      intro: "Hier sehen Sie alle Nachfragen."
       from_origin_city: "Nur Nachfragen aus '%{city}'"
       to_destination_city: "Nur Nachfragen nach '%{city}'"
       show_company: "Profil von %{company}"
@@ -704,7 +704,7 @@ de:
       switch_to_freights: "Zu Nachfragen wechseln"
       header: "Alle Angebote"
       header_query: "Alle Angebote für '%{query}'"
-      intro: "Hier sehen Sie alle Angebote Ihrer Firma."
+      intro: "Hier sehen Sie alle Angebote."
       from_origin_city: "Nur Angebote aus '%{city}'"
       to_destination_city: "Nur Angebote nach '%{city}'"
       table: 
@@ -824,7 +824,7 @@ de:
       header: "Alle Bewertungen"
       header_approved: "Veröffentlichte Bewertungen"
       header_unapproved: "Unveröffentlichte Bewertungen"
-      intro: "Hier sehen Sie Bewertungen ihrer Firma."
+      intro: "Hier sehen Sie Bewertungen."
       page_title: "Alle Bewertungen"
       table: 
         headers: 
