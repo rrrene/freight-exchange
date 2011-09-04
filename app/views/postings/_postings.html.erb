@@ -2,11 +2,10 @@
   <thead>
     <tr>
       <th><%= t('freights.index.table.headers.id') %></th>
-      <th><%= t('freights.index.table.headers.origin_date') %></th>
+      <th><%= t('freights.index.table.headers.valid_until') %></th>
       <th><%= t('freights.index.table.headers.origin_name') %></th>
-      <th><%= t('freights.index.table.headers.destination_date') %></th>
       <th><%= t('freights.index.table.headers.destination_name') %></th>
-      <th><%= t('freights.index.table.headers.weight') %></th>
+      <th><%= t('freights.index.table.headers.frequency') %></th>
       <% if action_name != "index" && collection.any? { |ar| ar.company == current_company } %>
         <th class="options"><%= t('freights.index.table.headers.options') %></th>
       <% else %>
@@ -16,13 +15,12 @@
   </thead>
   <tbody>
     <% collection.each do |ar| %>
-      <tr class="<%= ar.origin_date < Time.now ? :old : :new %>">
-        <td class="origin_date"><%= link_to ar.pretty_id, ar %></td>
-        <td class="origin_date"><%= l(ar.origin_date, :format => :date) %></td>
+      <tr class="<%= ar.valid_until < Time.now ? :old : :new %>">
+        <td class="pretty_id"><%= link_to ar.pretty_id, ar %></td>
+        <td class="origin_date"><%= l(ar.valid_until, :format => :date) %></td>
         <td class="origin_name"><%= truncate ar.origin_name %></td>
-        <td class="destination_date"><%= l(ar.destination_date, :format => :date) %></td>
         <td class="destination_name"><%= truncate ar.destination_name %></td>
-        <td class="total_weight numeric"><%= ar.total_weight %></td>
+        <td class="total_weight numeric"><%= ar.frequency %></td>
         <% if action_name != "index" && ar.company == current_company %>
           <td class="options">
             <%= link_btn t('freights.index.table.options.template'), new_resource_url(:parent_id => ar.id), :icon => :reply %>

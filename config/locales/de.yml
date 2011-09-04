@@ -24,7 +24,7 @@ de:
         contact_person: Kontaktperson
         desired_proposal_type: "Angebot gewünscht als"
         destination_date: Bis
-        frequency: Häufigkeit
+        frequency: Zeitraum
         hazmat: Gefahrengut
         loading_meter: Lademeter
         goods_text: "Gutart"
@@ -706,9 +706,9 @@ de:
       show_company: "Profil von %{company}"
       table: 
         headers: 
-          origin_date: Von
+          valid_until: "Gültig bis"
           origin_name: Startort
-          destination_date: Bis
+          frequency: Zeitraum
           destination_name: Zielort
           options: Optionen
           id: "Nummer"

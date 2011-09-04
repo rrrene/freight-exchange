@@ -109,7 +109,7 @@ class PostingsController < RemoteController
     end
     unless @company == current_company
       # Do not show postings which start dates lie in the past
-      self.collection = collection.where("origin_date > ?", Time.now)
+      self.collection = collection.where("valid_until > ?", Time.now)
     end
 
   end
