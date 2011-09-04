@@ -144,3 +144,4 @@ DEPENDENCIES
   sqlite3-ruby
   term-ansicolor
   tolk
+  will_paginate

@@ -11,6 +11,7 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'hirb'
 gem 'term-ansicolor'
 
+gem 'will_paginate'
 gem 'formtastic'
 gem 'authlogic'
 gem 'inherited_resources', '1.1.2'

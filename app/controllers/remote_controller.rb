@@ -36,6 +36,7 @@ class RemoteController < ApplicationController
     filter_collection!
     perform_search!
     order_collection!
+    paginate_collection!
     index!(&block)
   end
 
@@ -66,7 +67,11 @@ class RemoteController < ApplicationController
   def resource=(val)
     instance_variable_set("@#{instance_name}", val)
   end
-
+  
+  def paginate_collection!
+    self.collection = collection.paginate(:page => params[:page], :per_page => 25)
+  end
+  
   def perform_search!
     if @q = params[:q].full?
       @simple_searches = SimpleSearch.arel_for(@q, :models => [resource_class])
