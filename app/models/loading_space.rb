@@ -9,7 +9,9 @@ class LoadingSpace < ActiveRecord::Base
   DESTINATION_ATTRIBUTES = SITE_ATTRIBUTES.map { |s| "destination_#{s}" }
 
   TRANSPORT_TYPE_CHOICES = ::Freight::TRANSPORT_TYPE_CHOICES
-  FREQUENCY_CHOICES = %w(once repeated_regularly repeated_irregularly)
+  FREQUENCY_CHOICES = %w(once weekly monthly yearly)
+  FREE_CAPACITIES_CHOICES = %w(train wagon slots)
+  OWN_MEANS_OF_TRANSPORT_CHOICES = %w(closed_wagon container_wagon custom)
   belongs_to :user
   belongs_to :company
   belongs_to :reply_to, :class_name => 'Freight'
@@ -77,8 +79,14 @@ class LoadingSpace < ActiveRecord::Base
   
   validates_presence_of :user_id
   validates_presence_of :company_id
-  #validates_presence_of :weight
-  #validates_presence_of :loading_meter
-  validates_inclusion_of :hazmat, :in => [true, false]
-  validates_inclusion_of :transport_type, :in => TRANSPORT_TYPE_CHOICES
+  
+  
+  validates_presence_of :contractor
+  validates_presence_of :valid_until
+  
+  validates_inclusion_of :frequency, :in => FREQUENCY_CHOICES
+  validates_inclusion_of :free_capacities, :in => FREE_CAPACITIES_CHOICES
+  
+  validates_inclusion_of :own_means_of_transport_present, :in => [true, false]
+  validates_inclusion_of :own_means_of_transport, :in => OWN_MEANS_OF_TRANSPORT_CHOICES, :if => :own_means_of_transport_present
 end

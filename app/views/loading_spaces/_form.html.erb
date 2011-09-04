@@ -5,31 +5,35 @@
 <% end %>
 
 <%= semantic_form_for(resource) do |f| %>
-  <%= clear_both %>
-  
+  <%= f.inputs :contractor_info do %>
+    <%= f.input :contractor, :as => :string %>
+    <%= f.input :valid_until, :as => :string, :input_html => { :value => I18n.l(resource.valid_until.to_date) } %>
+  <% end %>
+
   <%= render :partial => "postings/form_origin_and_destination", :locals => {:f => f} %>
 
-  <%= f.inputs :freight_description do %>
-    <% if @reply_to %>
-      <%= f.input :reply_to_id, :as => :hidden %>
-    <% end %>
-    <%= f.input :hazmat, :as => :radio, :collection => yes_no_collection %>
-    
-    <%= f.input :weight, :as => :string %>
-    <%= f.input :transports_per_year, :as => :string %>
-    <%= f.input :transport_weight, :as => :string %>
-    <%= f.input :frequency, :collection => collection_choices(Freight, :frequency), :as => :radio %>
-    
-    <%= f.input :loading_meter, :as => :string %>
+  <%= f.inputs :transport_timeframe do %>
+    <%= f.input :frequency, :collection => collection_choices(resource.class, :frequency), :as => :select %>
+    <%= f.input :first_transport_at, :as => :string, :input_html => { :value => resource.first_transport_at ? I18n.l(resource.first_transport_at.to_date) : nil } %>
 
-    <%= f.input :transport_type, :collection => collection_choices(LoadingSpace, :transport_type), :include_blank => false %>
-    <%= localized_info_field f, :transport_text %>
+    <%= f.input :free_capacities, :collection => collection_choices(resource.class, :free_capacities), :as => :select %>
     
-    <%= localized_info_field f, :misc_text %>
+    <%#= localized_info_field f, :transport_text %>
+    
+    <%#= localized_info_field f, :misc_text %>
+    
+    <%= f.input :own_means_of_transport_present, :as => :radio, :collection => yes_no_collection %>
+    <%= f.input :own_means_of_transport, :collection => collection_choices(Freight, :own_means_of_transport), :include_blank => true %>
+    <%= f.input :own_means_of_transport_custom, :as => :string %>
+    
   <% end %>
 
   <%= f.inputs :posting_contact do %>
     <%= f.input :contact_person, :collection => current_company.people %>
+  <% end %>
+  
+  <% if @reply_to %>
+    <%= f.input :reply_to_id, :as => :hidden %>
   <% end %>
   
   <%= f.buttons %>

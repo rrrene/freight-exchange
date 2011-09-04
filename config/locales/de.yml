@@ -37,7 +37,7 @@ de:
         transports_per_year: "Transporte pro Jahr"
         wagons_provided_by: "Wagen werden gestellt von"
         total_weight: "Gesamtgewicht (in t)"
-        first_transport_at: "Erster Transport am"
+        first_transport_at: "Datum"
         product_name: "Produktname"
         product_state: "Aggregatzustand"
         hazmat_class: "Gefahrgutklasse (RID)"
@@ -46,7 +46,7 @@ de:
         desired_means_of_transport: Gewünschte Transportmittel
         desired_means_of_transport_custom: ""
         own_means_of_transport_present: Eigene Transportmittel vorhanden?
-        own_means_of_transport: Eigene Transportmittel
+        own_means_of_transport: Wagentyp
         own_means_of_transport_custom: ""
         origin_side_track_available: "Gleisanschluss vorhanden?"
         origin_contractor: "Firma"
@@ -71,10 +71,13 @@ de:
           transport_text: "Weitere Angaben zum Transport"
           misc_text: "Sonstige Informationen"
       loading_space:
+        contractor: "Firma Anbieter"
+        valid_until: "Inserat gültig bis"
         contact_person: Kontaktperson
         desired_proposal_type: "Angebot gewünscht als"
         destination_date: Bis
         frequency: Häufigkeit
+        first_transport_at: "Datum"
         hazmat: Gefahrengut
         loading_meter: Lademeter
         localized_infos: 
@@ -88,7 +91,12 @@ de:
         transports_per_year: "Transporte pro Jahr"
         wagons_provided_by: "Wagen werden gestellt von"
         weight: "Gesamtgewicht (in t)"
+        own_means_of_transport_present: Eigene Transportmittel vorhanden?
+        own_means_of_transport: Wagentyp
+        own_means_of_transport_custom: ""
+        free_capacities: "Freie Transportkapazitäten"
         origin_side_track_available: "Gleisanschluss vorhanden?"
+        origin_contractor: "Firma"
         origin_name: "Name"
         origin_address: "Strasse"
         origin_address2: "(fortgesetzt)"
@@ -97,6 +105,7 @@ de:
         origin_country: "Land"
         origin_station: "Beladebahnhof"
         destination_side_track_available: "Gleisanschluss vorhanden?"
+        destination_contractor: "Firma"
         destination_name: "Name"
         destination_address: "Strasse"
         destination_address2: "(fortgesetzt)"
@@ -188,6 +197,15 @@ de:
           train_set: Wagengruppe
           intermodal_transport: "Kombinierter Verkehr"
           unknown: "-- nicht bekannt --"
+        frequency:
+          once: "Einmalig"
+          weekly: "Wöchentlich"
+          monthly: "Monatlich"
+          yearly: "Jährlich"
+        free_capacities:
+          train: Zug
+          wagon: Wagen
+          slots: "Stellplätze"
       person: 
         gender: 
           female: Frau
@@ -633,6 +651,12 @@ de:
         login: "Wählen Sie einen Benutzernamen, mit dem Sie sich im System anmelden."
         password: "Wählen Sie Ihr Passwort."
         password_confirmation: "Bitte wiederholen Sie Ihr Passwort."
+      freight:
+        valid_until: "(Format: TT.MM.JJJJ)"
+        first_transport_at: "(Format: TT.MM.JJJJ)"
+      loading_space:
+        valid_until: "(Format: TT.MM.JJJJ)"
+        first_transport_at: "(Format: TT.MM.JJJJ)"
     localized_info_locale_selector: "Sprache:"
     titles: 
       change_password: "Passwort ändern (optional)"

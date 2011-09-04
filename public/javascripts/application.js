@@ -87,18 +87,6 @@ function switchSearchContext(context, text) {
   $('#q').select();
 }
 
-// Clicks anywhere outside the menus should close any active menus.
-jQuery(function() {
-  $('html').click(function() {
-    $('.top-navigation-menu').each(function(index, item) {
-      deactivateMenu($(item).attr('id'));
-    });
-  });
-  $('.top-navigation-menu, .top-navigation-menu-link').click(function(event){
-    event.stopPropagation();
-  });
-});
-
 function deactivateMenu(name) {
   $('#'+name).hide();
   var a = $('#'+name+'_link');
@@ -112,7 +100,6 @@ function toggleMenu(name) {
   });
   $('#'+name).toggle();
   var a = $('#'+name+'_link');
-  console.log(a)
   if( a.hasClass('menu-active') ) {
     a.removeClass('menu-active');
   } else {
@@ -125,94 +112,25 @@ function popover(base_selector) {
   $(base_selector).popover({header: popover_selector + ' > .header', content: popover_selector + ' > .content'});
 }
 
-function onClickSideTrackAvailable() {
-  //freight_origin*_*track_number_input
-  var name = $(this).attr('id');
-  var origin_or_destination = name.match(/origin/) ? 'origin' : 'destination';
-  
-  var arr = name.match(/(.+)_(.+)/);
-  console.log(name, arr)
-  var trackNoElement = $("#"+RegExp.$1+"_track_number_input");
-  trackNoElement.css('display', $(this).val() == "false" ? 'none' : 'block' );
-  
-  if( name.match(/_true$/) && $(this).attr('checked') ) {
-    $('#'+origin_or_destination+'_with_station').show();
-  } else {
-    $('#'+origin_or_destination+'_with_station').hide();
-    $('#freight_transport_type, #loading_space_transport_type').val('intermodal_transport');
-  }
-  $('#'+origin_or_destination+'_address').show();
-}
-
-function showOrHideFields(show_more, fields) {
-  if( show_more ) {
-    $(fields).show().addClass("more_info");
-  } else {
-    $(fields).hide().removeClass("more_info");
-  }
-}
-
-function showHazmatFields() {
-  var show_more = $("#freight_hazmat_true").attr("checked");
-  var fields = "#freight_hazmat_class_input, #freight_un_no_input";
-  showOrHideFields(show_more, fields);
-}
-function showDesiredMeansOfTransportFields() {
-  var show_more = $("#freight_desired_means_of_transport").val() == "custom";
-  console.log($("#freight_desired_means_of_transport").val())
-  var fields = "#freight_desired_means_of_transport_custom_input";
-  showOrHideFields(show_more, fields);
-}
-
-function showOwnMeansOfTransportFields() {
-  var show_more = $("#freight_own_means_of_transport").val() == "custom";
-  console.log($("#freight_own_means_of_transport").val())
-  var fields = "#freight_own_means_of_transport_custom_input";
-  showOrHideFields(show_more, fields);
-}
-
-function showOwnMeansOfTransportPresentFields() {
-  var show_more = $("#freight_own_means_of_transport_present_true").attr("checked");
-  var fields = "#freight_own_means_of_transport_input, #freight_own_means_of_transport_custom_input";
-  showOrHideFields(show_more, fields);
-  if( show_more ) showOwnMeansOfTransportFields();
-}
-
 jQuery(function() {
   actionListMagic();
   bindMiniButtons();
-
-  var elements = [
-    "#freight_origin_side_track_available_false",
-    "#freight_origin_side_track_available_true",
-    "#freight_destination_side_track_available_false",
-    "#freight_destination_side_track_available_true",
-    "#loading_space_origin_side_track_available_false",
-    "#loading_space_origin_side_track_available_true",
-    "#loading_space_destination_side_track_available_false",
-    "#loading_space_destination_side_track_available_true"
-  ];
-  $(elements).each(function(index, element) {
-    $(element).bind({
-      'click': onClickSideTrackAvailable
-    });
-  });
-
-  $("#freight_hazmat_true, #freight_hazmat_false").click(showHazmatFields);
-  showHazmatFields();
-
-  $("#freight_desired_means_of_transport").bind("change", showDesiredMeansOfTransportFields);
-  showDesiredMeansOfTransportFields();
-
-  $("#freight_own_means_of_transport").bind("change", showOwnMeansOfTransportFields);
-  showOwnMeansOfTransportFields();
-
-  $("#freight_own_means_of_transport_present_true, #freight_own_means_of_transport_present_false").click(showOwnMeansOfTransportPresentFields);
-  showOwnMeansOfTransportPresentFields();
 
   rearrangeSearchForm();
   popover('#search-label');
   $('#q').focus(function() { $('#search_form').addClass('focussed') }).blur(function() { $('#search_form').removeClass('focussed') });
 
   $('.chosen').chosen();
+
+  // Clicks anywhere outside the menus should close any active menus.
+
+  $('html').click(function() {
+    $('.top-navigation-menu').each(function(index, item) {
+      deactivateMenu($(item).attr('id'));
+    });
+  });
+  $('.top-navigation-menu, .top-navigation-menu-link').click(function(event){
+    event.stopPropagation();
+  });
 });
+

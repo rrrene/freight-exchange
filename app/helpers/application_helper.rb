@@ -66,11 +66,12 @@ module ApplicationHelper
   def contact_info(object, attr)
     if %w(phone fax).include?(attr)
       phone_number(object.__send__(attr))
+    elsif %w(email website).include?(attr)
+      auto_link(object.__send__(attr).to_s).html_safe
     else
-      auto_link object.__send__(attr).to_s
+      object.__send__(attr).to_s
     end
   end
-    
   
   #:call-seq:
   #   controller?(name) # => boolean

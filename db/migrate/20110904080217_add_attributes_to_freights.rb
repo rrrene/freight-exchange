@@ -19,8 +19,8 @@ class AddAttributesToFreights < ActiveRecord::Migration
   def self.down
     remove_column :freights, :own_means_of_transport_present
     remove_column :freights, :own_means_of_transport_custom
-    remove_column :freights, :desired_means_of_transport_custom
     remove_column :freights, :own_means_of_transport
+    remove_column :freights, :desired_means_of_transport_custom
     remove_column :freights, :desired_means_of_transport
     remove_column :freights, :first_transport_at
     rename_column :freights, :total_weight, :weight

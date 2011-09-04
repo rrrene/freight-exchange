@@ -70,12 +70,27 @@ form.formtastic li.more_info label {
   width: 24%;
   padding-left: 1%;
 }
+#freight_valid_until,
+#loading_space_valid_until,
+#freight_contractor,
+#loading_space_contractor {
+  font-size: 14px;
+}
+
+#freight_contractor,
+#loading_space_contractor {
+  width: 400px;
+}
 
 #freight_origin_contractor_input,
-#freight_destination_contractor_input {
+#freight_destination_contractor_input,
+#loading_space_origin_contractor_input,
+#loading_space_destination_contractor_input {
   margin-top: 20px;
 }
 #freight_origin_country,
-#freight_destination_country {
+#freight_destination_country,
+#loading_space_origin_country,
+#loading_space_destination_country {
   width: 200px;
 }
