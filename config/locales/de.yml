@@ -19,6 +19,8 @@ de:
         commercial_register_entry: "Handelsregister-Eintragung"
         vat_id: "Umsatzsteuer-Identifikationsnummer"
       freight: 
+        contractor: "Firma Nachfrager"
+        valid_until: "Inserat gültig bis"
         contact_person: Kontaktperson
         desired_proposal_type: "Angebot gewünscht als"
         destination_date: Bis
@@ -34,8 +36,20 @@ de:
         transport_weight: "Gewicht pro Transport"
         transports_per_year: "Transporte pro Jahr"
         wagons_provided_by: "Wagen werden gestellt von"
-        weight: "Gesamtgewicht (in t)"
+        total_weight: "Gesamtgewicht (in t)"
+        first_transport_at: "Erster Transport am"
+        product_name: "Produktname"
+        product_state: "Aggregatzustand"
+        hazmat_class: "Gefahrgutklasse (RID)"
+        un_no: "UN-Nr."
+        nhm_no: "NHM-Nr."
+        desired_means_of_transport: Gewünschte Transportmittel
+        desired_means_of_transport_custom: ""
+        own_means_of_transport_present: Eigene Transportmittel vorhanden?
+        own_means_of_transport: Eigene Transportmittel
+        own_means_of_transport_custom: ""
         origin_side_track_available: "Gleisanschluss vorhanden?"
+        origin_contractor: "Firma"
         origin_name: "Name"
         origin_address: "Strasse"
         origin_address2: "(fortgesetzt)"
@@ -44,6 +58,7 @@ de:
         origin_country: "Land"
         origin_station: "Beladebahnhof"
         destination_side_track_available: "Gleisanschluss vorhanden?"
+        destination_contractor: "Firma"
         destination_name: "Name"
         destination_address: "Strasse"
         destination_address2: "(fortgesetzt)"
@@ -131,11 +146,26 @@ de:
       freight:
         frequency:
           once: "Einmalig"
-          repeated_regularly: "Wiederholt - regelmäßig"
-          repeated_irregularly: "Wiederholt - sporadisch"
+          weekly: "Wöchentlich"
+          monthly: "Monatlich"
+          yearly: "Jährlich"
+        product_state:
+          liquid: "Flüssig"
+          gas: "Gasförmig"
+          loose: "Lose"
+          packaged: "Verpackt"
+          container: "Container"
+        desired_means_of_transport: 
+          tank_wagon: Kesselwagen
+          tank_container: Tankcontainer
+          custom: "sonstige"
+        own_means_of_transport: 
+          closed_wagon: gedeckte Wagen
+          container_wagon: Containertragwagen
+          custom: "sonstige"
         desired_proposal_type: 
-          package_price: Pauschalpreis
-          ton_price: Tonnenpreis
+          package_price: Preis je Transporteinheit
+          ton_price: Preis je Tonne
           unknown: "nicht bekannt"
         paying_freight: 
           receiver: Empfänger
@@ -452,7 +482,7 @@ de:
       header_misc_text: "Wir über uns:"
       header_people: "Wer wir sind:"
       header_reviews: "Was andere über uns sagen:"
-      page_title: "{{name}}"
+      page_title: "%{name}"
     update: 
       page_title: "Firma bearbeiten"
   contact: 
@@ -494,9 +524,9 @@ de:
       - Samstag
       - ~
     formats: 
-      default: "%Y-%m-%d"
-      long: "%B %d, %Y"
-      short: "%b %d"
+      default: "%d.%m.%Y"
+      long: "%d.%m.%Y"
+      short: "%d.%m."
     month_names: 
       - ~
       - Januar
@@ -515,7 +545,7 @@ de:
       - !ruby/symbol year
       - !ruby/symbol month
       - !ruby/symbol day
-  datetime: 
+  datetime:     
     distance_in_words: 
       about_x_hours: 
         one: "ungefähr 1 Stunde"
@@ -558,19 +588,23 @@ de:
       month: Monat
       second: Sekunde
       year: Jahr
+    formats: 
+      default: "%d.%m.%Y %H:%M"
+      long: "%d.%m.%Y %H:%M"
+      short: "%d.%m. %H:%M"
   errors: 
     format: "%{attribute} %{message}"
     messages: 
       accepted: "muss akzeptiert werden"
-      blank: "darf nicht leer sein"
+      blank: "Bitte ausfüllen!"
       confirmation: "stimmt nicht mit Wiederholung überein"
-      empty: "darf nicht leer sein"
+      empty: "Bitte ausfüllen!"
       equal_to: "muss gleich %{count} sein"
       even: "muss gerade sein"
       exclusion: "ist reserviert"
       greater_than: "muss größer als %{count} sein"
       greater_than_or_equal_to: "muss größer oder gleich %{count} sein"
-      inclusion: "ist nicht in der Liste"
+      inclusion: "Bitte auswählen!"
       invalid: "ist ungültig"
       less_than: "muss weniger als %{count} sein"
       less_than_or_equal_to: "muss kleiner oder gleich %{count} sein"
@@ -591,7 +625,7 @@ de:
         notice: "%{resource_name} wurde erfolgreich gespeichert."
   formtastic: 
     actions: 
-      create: "{{model}} erstellen"
+      create: "%{model} erstellen"
       update: Speichern
     hints: 
       user: 
@@ -615,7 +649,10 @@ de:
       misc_text: "Sonstige Informationen:"
       origin_site_info: "Beladestelle für Ladung:"
       person_name: "Persönliche Angaben"
+      contractor_info: "Firma Nachfrager"
       timeframe: "Transportzeitraum:"
+      transport_timeframe: "Zeitraum und Transporte"
+      freight_classification: "Klassifikation"
       transport_type: "Frachtbeschreibung:"
   freights: 
     common: 
@@ -797,7 +834,7 @@ de:
       intro: "Hier sehen Sie alle Benutzer Ihrer Firma."
       page_title: "Überblick: Benutzer"
     show: 
-      page_title: "{{name}}"
+      page_title: "%{name}"
     update: 
       header: "Persönliche Angaben"
       page_title: "Person bearbeiten"
@@ -813,9 +850,9 @@ de:
     show: 
       page_title: "Inserat - Detailansicht"
   recordings: 
-    create: "{{user}} <strong>erstellte</strong> ein {{object_class}}: {{object_link}}"
-    destroy: "{{user}} <strong>löschte</strong> ein {{object_class}}: {{object_link}}"
-    update: "{{user}} <strong>bearbeitete</strong> ein {{object_class}}: {{object_link}}"
+    create: "%{user} <strong>erstellte</strong> ein %{object_class}: %{object_link}"
+    destroy: "%{user} <strong>löschte</strong> ein %{object_class}: %{object_link}"
+    update: "%{user} <strong>bearbeitete</strong> ein %{object_class}: %{object_link}"
   reviews: 
     index: 
       filter_all: "Alle Bewertungen"
@@ -835,7 +872,7 @@ de:
           delete: Löschen
         review_name: "Bewertung von %{author_user} (%{author_company})"
     new: 
-      header: "Bewertung über '{{company_name}}' schreiben"
+      header: "Bewertung über '%{company_name}' schreiben"
       page_title: "Bewertung schreiben"
       intro: "Hier können Sie eine Bewertung schreiben und dem Unternehmen zukommen lassen."
     created: 
@@ -923,7 +960,7 @@ de:
           header: "Gefundene Bahnhöfe:"
       subtext_results: 
         one: "1 Ergebnis"
-        other: "{{count}} Ergebnisse"
+        other: "%{count} Ergebnisse"
     index: 
       no_query: "Bitte geben Sie einen Suchbegriff ein."
       no_results: "Ihre Suche ergab leider keine Treffer."

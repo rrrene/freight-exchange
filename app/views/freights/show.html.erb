@@ -26,22 +26,31 @@
   
   <h3><%= t("freights.show.transport_description") %></h3>
   <table>
+    <% %w(contractor valid_until product_name product_state).each do |attrib| %>
+      <%= partial :show_row, :locals => {:attrib => attrib} %>
+    <% end %>
     <tr>
-      <th><%= Freight.human_attribute_name(:weight) %></th>
-      <td><%= @freight.weight %></td>
+      <th><%= Freight.human_attribute_name(:hazmat) %></th>
+      <td><%= yes_no resource.hazmat %></td>
     </tr>
+    <% if resource.hazmat? %>
+      <tr>
+        <th><%= Freight.human_attribute_name(:hazmat_class) %></th>
+        <td><%= resource.hazmat_class %></td>
+      </tr>
+      <tr>
+        <th><%= Freight.human_attribute_name(:un_no) %></th>
+        <td><%= resource.un_no %></td>
+      </tr>
+    <% end %>
+    <% %w(total_weight frequency first_transport_at transport_weight desired_means_of_transport own_means_of_transport desired_proposal_type).each do |attrib| %>
+      <%= partial :show_row, :locals => {:attrib => attrib} %>
+    <% end %>
+    
+    <!--
     <tr>
       <th><%= Freight.human_attribute_name(:goods_text) %></th>
       <td><%= localized_info(@freight, :goods_text) %></td>
-    </tr>
-    <tr>
-      <th><%= Freight.human_attribute_name(:hazmat) %></th>
-      <td><%= yes_no @freight.hazmat %></td>
-    </tr>
-    
-    <tr>
-      <th><%= Freight.human_attribute_name(:transport_type) %></th>
-      <td><%= @freight.human_attribute_value(:transport_type) %></td>
     </tr>
     <tr>
       <th><%#= Freight.human_attribute_name(:transport_text) %></th>
@@ -49,20 +58,10 @@
     </tr>
   
     <tr>
-      <th><%= Freight.human_attribute_name(:wagons_provided_by) %></th>
-      <td><%= @freight.human_attribute_value(:wagons_provided_by) %></td>
-    </tr>
-  
-    <tr>
-      <th><%= Freight.human_attribute_name(:desired_proposal_type) %></th>
-      <td><%= @freight.human_attribute_value(:desired_proposal_type) %></td>
-    </tr>
-  
-    <tr>
       <th><%#= Freight.human_attribute_name(:misc_text) %></th>
       <td><%= localized_info(@freight, :misc_text) %></td>
     </tr>
-
+      -->
   </table>
 </div>
 

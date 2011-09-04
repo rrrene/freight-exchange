@@ -5,31 +5,49 @@
 <% end %>
 
 <%= semantic_form_for(resource) do |f| %>
+  <%= f.inputs :contractor_info do %>
+    <%= f.input :contractor, :as => :string %>
+    <%= f.input :valid_until, :as => :string, :input_html => { :value => I18n.l(resource.valid_until.to_date) } %>
+  <% end %>
+  
   <%= render :partial => "postings/form_origin_and_destination", :locals => {:f => f} %>
 
   <%= f.inputs :freight_description do %>
-    <%= f.input :weight, :as => :string %>
-    <%= f.input :transports_per_year, :as => :string %>
-    <%= f.input :transport_weight, :as => :string %>
-    <%= f.input :frequency, :collection => collection_choices(Freight, :frequency), :as => :radio %>
-    <%= f.input :loading_meter, :as => :string %>
-
-    <%= localized_info_fields f, :goods_text %>
-
+    <%= f.input :product_name, :as => :string %>
+    <%= f.input :product_state, :collection => collection_choices(Freight, :product_state), :as => :select %>
+    
     <%= f.input :hazmat, :as => :radio, :collection => yes_no_collection %>
+    <%= f.input :hazmat_class, :as => :string %>
+    <%= f.input :un_no, :as => :string %>
+    <%= f.input :nhm_no, :as => :string %>
+    
+    <%= f.input :total_weight, :as => :string %>
   <% end %>
 
-  <%= f.inputs :transport_type do %>
-    <%= f.input :transport_type, :collection => collection_choices(Freight, :transport_type), :include_blank => false %>
-    <%= localized_info_fields f, :transport_text %>
+  <%= f.inputs :transport_timeframe do %>
+    <%= f.input :frequency, :collection => collection_choices(Freight, :frequency), :as => :select %>
+    <%= f.input :first_transport_at, :as => :string, :input_html => { :value => resource.first_transport_at ? I18n.l(resource.first_transport_at.to_date) : nil } %>
+    <%= f.input :transport_weight, :as => :string %>
 
-    <%= f.input :wagons_provided_by, :collection => collection_choices(Freight, :wagons_provided_by), :as => :radio %>
-    <%= f.input :paying_freight, :collection => collection_choices(Freight, :paying_freight), :as => :select, :include_blank => false %>
+    <%#= localized_info_fields f, :goods_text %>
+    
+    <%#= f.input :transport_type, :collection => collection_choices(Freight, :transport_type), :include_blank => false %>
+    <%#= localized_info_fields f, :transport_text %>
+    <%= f.input :desired_means_of_transport, :collection => collection_choices(Freight, :desired_means_of_transport), :include_blank => false %>
+    <%= f.input :desired_means_of_transport_custom, :as => :string %>
+    
+    <%= f.input :own_means_of_transport_present, :as => :radio, :collection => yes_no_collection %>
+    <%= f.input :own_means_of_transport, :collection => collection_choices(Freight, :own_means_of_transport), :include_blank => true %>
+    <%= f.input :own_means_of_transport_custom, :as => :string %>
+    
+    <%#= f.input :wagons_provided_by, :collection => collection_choices(Freight, :wagons_provided_by), :as => :radio %>
+    <%#= f.input :paying_freight, :collection => collection_choices(Freight, :paying_freight), :as => :select, :include_blank => false %>
+    
+    <%= f.input :desired_proposal_type, :collection => collection_choices(Freight, :desired_proposal_type), :as => :radio %>
   <% end %>
 
   <%= f.inputs :misc_text do %>
-    <%= localized_info_fields f, :misc_text %>
-    <%= f.input :desired_proposal_type, :collection => collection_choices(Freight, :desired_proposal_type), :as => :radio %>
+    <%#= localized_info_fields f, :misc_text %>
     <%= f.input :contact_person, :collection => current_company.people %>
   <% end %>
   

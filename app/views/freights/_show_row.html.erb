@@ -1,0 +1,14 @@
+<%
+  value = if %w(product_state frequency desired_means_of_transport own_means_of_transport desired_proposal_type).include?(attrib.to_s)
+    resource.human_attribute_value(attrib)
+  else
+    resource.__send__(attrib)
+  end
+  if value.is_a?(Date) or value.is_a?(DateTime) or value.is_a?(ActiveSupport::TimeWithZone)
+    value = l(value)
+  end
+%>
+<tr>
+  <th><%= resource.class.human_attribute_name(attrib) %></th>
+  <td><%= value %></td>
+</tr>

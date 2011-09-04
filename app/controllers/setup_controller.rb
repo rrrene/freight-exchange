@@ -6,7 +6,7 @@ class SetupController < Admin::BaseController
     elsif params[:create_freights]
       [Demo::Freight, Demo::LoadingSpace].each do |model|
         5.times do
-          model.create(company)
+          model.create(@company)
         end
       end
     elsif params[:destroy] && @company

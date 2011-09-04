@@ -144,6 +144,40 @@ function onClickSideTrackAvailable() {
   $('#'+origin_or_destination+'_address').show();
 }
 
+function showOrHideFields(show_more, fields) {
+  if( show_more ) {
+    $(fields).show().addClass("more_info");
+  } else {
+    $(fields).hide().removeClass("more_info");
+  }
+}
+
+function showHazmatFields() {
+  var show_more = $("#freight_hazmat_true").attr("checked");
+  var fields = "#freight_hazmat_class_input, #freight_un_no_input";
+  showOrHideFields(show_more, fields);
+}
+function showDesiredMeansOfTransportFields() {
+  var show_more = $("#freight_desired_means_of_transport").val() == "custom";
+  console.log($("#freight_desired_means_of_transport").val())
+  var fields = "#freight_desired_means_of_transport_custom_input";
+  showOrHideFields(show_more, fields);
+}
+
+function showOwnMeansOfTransportFields() {
+  var show_more = $("#freight_own_means_of_transport").val() == "custom";
+  console.log($("#freight_own_means_of_transport").val())
+  var fields = "#freight_own_means_of_transport_custom_input";
+  showOrHideFields(show_more, fields);
+}
+
+function showOwnMeansOfTransportPresentFields() {
+  var show_more = $("#freight_own_means_of_transport_present_true").attr("checked");
+  var fields = "#freight_own_means_of_transport_input, #freight_own_means_of_transport_custom_input";
+  showOrHideFields(show_more, fields);
+  if( show_more ) showOwnMeansOfTransportFields();
+}
+
 jQuery(function() {
   actionListMagic();
   bindMiniButtons();
@@ -163,6 +197,18 @@ jQuery(function() {
       'click': onClickSideTrackAvailable
     });
   });
+
+  $("#freight_hazmat_true, #freight_hazmat_false").click(showHazmatFields);
+  showHazmatFields();
+
+  $("#freight_desired_means_of_transport").bind("change", showDesiredMeansOfTransportFields);
+  showDesiredMeansOfTransportFields();
+
+  $("#freight_own_means_of_transport").bind("change", showOwnMeansOfTransportFields);
+  showOwnMeansOfTransportFields();
+
+  $("#freight_own_means_of_transport_present_true, #freight_own_means_of_transport_present_false").click(showOwnMeansOfTransportPresentFields);
+  showOwnMeansOfTransportPresentFields();
 
   rearrangeSearchForm();
   popover('#search-label');

@@ -7,7 +7,6 @@
       <th><%= t('freights.index.table.headers.destination_date') %></th>
       <th><%= t('freights.index.table.headers.destination_name') %></th>
       <th><%= t('freights.index.table.headers.weight') %></th>
-      <th><%= t('freights.index.table.headers.transport_type') %></th>
       <% if action_name != "index" && collection.any? { |ar| ar.company == current_company } %>
         <th class="options"><%= t('freights.index.table.headers.options') %></th>
       <% else %>
@@ -23,8 +22,7 @@
         <td class="origin_name"><%= truncate ar.origin_name %></td>
         <td class="destination_date"><%= l(ar.destination_date, :format => :date) %></td>
         <td class="destination_name"><%= truncate ar.destination_name %></td>
-        <td class="weight"><%= ar.weight %></td>
-        <td class="transport_type"><%= ar.human_attribute_value(:transport_type) %></td>
+        <td class="total_weight numeric"><%= ar.total_weight %></td>
         <% if action_name != "index" && ar.company == current_company %>
           <td class="options">
             <%= link_btn t('freights.index.table.options.template'), new_resource_url(:parent_id => ar.id), :icon => :reply %>

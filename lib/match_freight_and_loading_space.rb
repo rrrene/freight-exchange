@@ -33,7 +33,6 @@ module Matching
       compare :destination_city
       compare :destination_country
       
-      compare :weight, :threshold => {:up => 0}
       compare :hazmat?, :threshold => :perfect
     end
     

@@ -63,3 +63,19 @@ form.formtastic fieldset > ol > li.radio fieldset ol li {
   float: left;
   margin-right: 8px;
 }
+
+form.formtastic li.more_info label {
+  font-style: italic;
+  color: #666;
+  width: 24%;
+  padding-left: 1%;
+}
+
+#freight_origin_contractor_input,
+#freight_destination_contractor_input {
+  margin-top: 20px;
+}
+#freight_origin_country,
+#freight_destination_country {
+  width: 200px;
+}

@@ -9,6 +9,12 @@ module Robot
   end
   
   Factory.define "Robot::Freight" do |f|
+    f.contractor { @places = Places.new ; @places.origin[:name] }
+    f.product_name { @places = Places.new ; @places.origin[:name] }
+    
+    f.valid_until { Time.now + (rand * 87600).to_i * 365 }
+    f.first_transport_at { Time.now + (rand * 87600).to_i * 365 }
+      
     f.origin_name { @places = Places.new ; @places.origin[:name] }
     f.origin_date { @places = Places.new ; @places.origin[:date] }
     f.origin_contractor { @places = Places.new ; @places.origin[:contractor] }
@@ -27,10 +33,16 @@ module Robot
     f.destination_city { @places = Places.new ; @places.destination[:city] }
     f.destination_country { @places = Places.new ; @places.destination[:country] }
 
-    f.weight { 1_000 * (rand * 20).to_i }
-    f.loading_meter { 100 * (rand * 20).to_i }
-    f.hazmat { rand < 0.5 }
-    f.transport_type { %w(single_wagon train_set block_train).random }
+    f.total_weight { 1_000 * (rand * 20).to_i }
+    f.transport_weight { 100 * (rand * 20).to_i }
+    f.hazmat { false }
+    f.product_state { %w(liquid gas loose packaged container).random }
+    f.frequency { %w(once weekly monthly yearly).random }
+    f.desired_means_of_transport { %w(tank_wagon tank_container).random }
+    
+    f.own_means_of_transport_present { rand < 0.5 }
+    f.own_means_of_transport { %w(closed_wagon container_wagon).random }
+    
     f.wagons_provided_by { %w(client railway).random }
     f.desired_proposal_type { %w(ton_price package_price).random }
   end

@@ -27,6 +27,9 @@ class PostingsController < RemoteController
       self.resource.reply_to_id = @reply_to.id
     else
       self.resource = resource_class.new
+      resource.contractor = current_company.name if resource.respond_to?(:contractor)
+      resource.valid_until = Time.zone.now.midnight + 1.week if resource.respond_to?(:valid_until)
+      resource.first_transport_at = Time.zone.now.midnight + 1.week if resource.respond_to?(:first_transport_at)
       resource.origin_side_track_available = true
       resource.destination_side_track_available = true
       resource.origin_date = Time.now.beginning_of_week + 1.week

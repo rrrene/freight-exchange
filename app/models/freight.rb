@@ -9,10 +9,13 @@ class Freight < ActiveRecord::Base
   DESTINATION_ATTRIBUTES = SITE_ATTRIBUTES.map { |s| "destination_#{s}" }
   
   TRANSPORT_TYPE_CHOICES = %w(unknown single_wagon train_set block_train intermodal_transport)
-  DESIRED_PROPOSAL_TYPE_CHOICES = %w(unknown ton_price package_price)
+  DESIRED_PROPOSAL_TYPE_CHOICES = %w(ton_price package_price unknown)
   WAGONS_PROVIDED_BY_CHOICES = %w(client railway wanted)
   PAYING_FREIGHT_CHOICES = %w(unknown sender receiver)
-  FREQUENCY_CHOICES = %w(once repeated_regularly repeated_irregularly)
+  FREQUENCY_CHOICES = %w(once weekly monthly yearly)
+  PRODUCT_STATE_CHOICES = %w(liquid gas loose packaged container)
+  DESIRED_MEANS_OF_TRANSPORT_CHOICES = %w(tank_wagon tank_container custom)
+  OWN_MEANS_OF_TRANSPORT_CHOICES = %w(closed_wagon container_wagon custom)
   belongs_to :user
   belongs_to :company
   belongs_to :reply_to, :class_name => 'LoadingSpace'
@@ -101,10 +104,22 @@ class Freight < ActiveRecord::Base
 #  validates_presence_of :destination_city
 #  validates_presence_of :destination_country
   
-  validates_presence_of :weight
-#  validates_presence_of :loading_meter
+  validates_presence_of :contractor
+  validates_presence_of :product_name
+  validates_presence_of :valid_until
+  
+  validates_presence_of :total_weight
+  validates_presence_of :transport_weight
+  validates_inclusion_of :frequency, :in => FREQUENCY_CHOICES
+  
   validates_inclusion_of :hazmat, :in => [true, false]
-  validates_inclusion_of :transport_type, :in => TRANSPORT_TYPE_CHOICES
-  validates_inclusion_of :wagons_provided_by, :in => WAGONS_PROVIDED_BY_CHOICES
+  validates_presence_of :hazmat_class, :if => :hazmat
+  validates_presence_of :un_no, :if => :hazmat
+  
+  validates_inclusion_of :product_state, :in => PRODUCT_STATE_CHOICES
+  validates_inclusion_of :desired_means_of_transport, :in => DESIRED_MEANS_OF_TRANSPORT_CHOICES
   validates_inclusion_of :desired_proposal_type, :in => DESIRED_PROPOSAL_TYPE_CHOICES
+  
+  validates_inclusion_of :own_means_of_transport_present, :in => [true, false]
+  validates_inclusion_of :own_means_of_transport, :in => OWN_MEANS_OF_TRANSPORT_CHOICES, :if => :own_means_of_transport_present
 end

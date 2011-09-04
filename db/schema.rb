@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110724192624) do
+ActiveRecord::Schema.define(:version => 20110904080217) do
 
   create_table "action_recordings", :force => true do |t|
     t.string   "item_type",  :limit => 30
@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(:version => 20110724192624) do
     t.integer  "company_id"
     t.integer  "origin_site_info_id"
     t.integer  "destination_site_info_id"
-    t.integer  "weight"
+    t.integer  "total_weight"
     t.integer  "loading_meter"
     t.boolean  "hazmat"
     t.string   "transport_type"
@@ -73,9 +73,9 @@ ActiveRecord::Schema.define(:version => 20110724192624) do
     t.integer  "contact_person_id"
     t.integer  "transport_weight"
     t.integer  "transports_per_year"
-    t.string   "paying_freight",                   :default => "sender"
+    t.string   "paying_freight",                    :default => "sender"
     t.string   "frequency"
-    t.boolean  "deleted",                          :default => false
+    t.boolean  "deleted",                           :default => false
     t.datetime "origin_date"
     t.integer  "origin_station_id"
     t.string   "origin_contractor"
@@ -99,6 +99,19 @@ ActiveRecord::Schema.define(:version => 20110724192624) do
     t.boolean  "destination_side_track_available"
     t.string   "destination_track_number"
     t.integer  "reply_to_id"
+    t.string   "contractor"
+    t.datetime "valid_until"
+    t.string   "product_name"
+    t.string   "product_state"
+    t.string   "hazmat_class"
+    t.string   "un_no"
+    t.string   "nhm_no"
+    t.datetime "first_transport_at"
+    t.string   "desired_means_of_transport"
+    t.string   "desired_means_of_transport_custom"
+    t.string   "own_means_of_transport"
+    t.string   "own_means_of_transport_custom"
+    t.boolean  "own_means_of_transport_present",    :default => false
   end
 
   create_table "loading_spaces", :force => true do |t|
