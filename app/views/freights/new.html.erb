@@ -1,5 +1,7 @@
-<% content_for(:toolbar) do %>
-  <%= link_btn_unless_current("Upload Excel", :action => 'upload') %>
+<% if Rails.env == 'development' %>
+  <% content_for(:toolbar) do %>
+    <%= link_btn_unless_current("Upload Excel", :action => 'upload') %>
+  <% end %>
 <% end %>
 
 <div class="box">
