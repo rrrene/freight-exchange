@@ -1,2 +1,4 @@
-<%= auto_link loading_space.pretty_id %>
-<%= loading_space.name %>
+<% if item = notification_item.item %>
+  <%= link_to(item.pretty_id, notification_item) %>
+  <%= item.name %>
+<% end %>

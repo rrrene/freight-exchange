@@ -24,6 +24,6 @@ class NotificationsController < ApplicationController
       @notification = @notifications.first
     end
     @unread = current_user.unread_notification_items.all
-    @unread.each(&:viewed!)
+    #@unread.each(&:viewed!)
   end
 end

@@ -10,7 +10,7 @@
   <% if collection = @notification_items %>
     <ul class="action_list notifications">
       <% collection.each do |ar| %>
-        <li class="<%= ar.item_type.underscore %><%= ' unread' if @unread.include?(ar) %>"><%= partial ar.item_type.underscore, :object => ar.item %></li>
+        <li class="<%= ar.item_type.underscore %><%= ' unread' if @unread.include?(ar) %>"><%= partial ar.item_type.underscore, :locals => {:notification_item => ar} %></li>
       <% end %>
     </ul>
   <% else %>

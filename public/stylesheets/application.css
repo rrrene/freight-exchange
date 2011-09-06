@@ -644,9 +644,12 @@ ul.action_list li {
   list-style-type: none;
 }
 ul.action_list li {
-  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
   padding-bottom: 10px;
   padding-top: 10px;
+}
+ul.action_list li:first-child {
+  border-top: 1px solid #ccc;
 }
 ul.action_list li.hovered {
   cursor: pointer;
@@ -717,6 +720,8 @@ ul.notifications li {
 ul.notifications li.unread {
   border-left-color: #5ba320;
   background-color: #f0fff0;
+  border-top-color: #999;
+  border-bottom-color: #999;
 }
 
 div.toolbar {
