@@ -20,49 +20,70 @@ en:
         zip: ZIP
       freight: 
         contact_person: "Contact Person"
+        contractor: Contractor
+        desired_means_of_transport: "Desired means of transport"
         desired_proposal_type: "Desired proposal type"
         destination_address: Street
         destination_address2: (continued)
         destination_city: City
+        destination_contractor: Contractor
         destination_country: Country
         destination_date: To
         destination_name: Name
         destination_side_track_available: "Sidetrack available?"
         destination_station: "Unloading station"
         destination_zip: ZIP
+        first_transport_at: Date
         frequency: Frequency
         goods_text: "Kind of goods"
         hazmat: "Harzardous material"
+        hazmat_class: "Hazmat classification (RID)"
         loading_meter: "Loading meter"
+        localized_infos: 
+          goods_text: "Freight description"
+          misc_text: "Miscellaneous Information"
+          transport_text: "Additional information regarding transport"
         misc_text: "e.g. taxes, customs duty, etc."
+        nhm_no: NHM-No.
         origin_address: Street
         origin_address2: (continued)
         origin_city: City
+        origin_contractor: Contractor
         origin_country: Country
         origin_date: From
         origin_name: Name
         origin_side_track_available: "Sidetrack available?"
         origin_station: "Loading station"
         origin_zip: ZIP
+        own_means_of_transport: "Type of wagon"
+        own_means_of_transport_present: "Own means of transport present?"
         paying_freight: "Freight paid by"
+        product_name: "Product name"
+        product_state: "State of product"
+        total_weight: "Total weight (t)"
         transport_text: "Which kind of wagons should be used?"
         transport_type: "Transport type"
         transport_weight: "Weight per transport (in t)"
         transports_per_year: "Transports per year"
+        un_no: UN-No.
+        valid_until: "Posting valid until"
         wagons_provided_by: "Wagons provided by"
-        weight: "Weight (in t)"
       loading_space: 
         contact_person: "Contact Person"
+        contractor: Contractor
         desired_proposal_type: "Desired proposal type"
         destination_address: Street
         destination_address2: (continued)
         destination_city: City
+        destination_contractor: Contractor
         destination_country: Country
         destination_date: To
         destination_name: Name
         destination_side_track_available: "Sidetrack available?"
         destination_station: "Unloading station"
         destination_zip: ZIP
+        first_transport_at: Date
+        free_capacities: "Free capacities"
         frequency: Frequency
         hazmat: "Harzardous material"
         loading_meter: "Loading meter"
@@ -73,16 +94,20 @@ en:
         origin_address: Street
         origin_address2: (continued)
         origin_city: City
+        origin_contractor: Contractor
         origin_country: Country
         origin_date: From
         origin_name: Name
         origin_side_track_available: "Sidetrack available?"
         origin_station: "Loading station"
         origin_zip: ZIP
+        own_means_of_transport: "Type of wagon"
+        own_means_of_transport_present: "Own means of transport present?"
         paying_freight: "Freight paid by"
         transport_type: "Transport type"
         transport_weight: "Weight per transport (in t)"
         transports_per_year: "Transports per year"
+        valid_until: "Posting valid until"
         wagons_provided_by: "Wagons provided by"
         weight: "Weight (in t)"
       person: 
@@ -125,18 +150,33 @@ en:
         taken: "has already been taken"
     human_attribute_values: 
       freight: 
+        desired_means_of_transport: 
+          custom: other
+          tank_container: "Tank container"
+          tank_wagon: "Tank wagon"
         desired_proposal_type: 
           package_price: "Package price"
           ton_price: "Price per ton"
           unknown: unknown
         frequency: 
+          monthly: Monthly
           once: Once
-          repeated_irregularly: "Repeated - Irregulary"
-          repeated_regularly: "Repeated - Regulary"
+          weekly: Weekly
+          yearly: Yearly
+        own_means_of_transport: 
+          closed_wagon: "Closed wagon"
+          container_wagon: "Container wagon"
+          custom: other
         paying_freight: 
           receiver: Receiver
           sender: Sender
           unknown: "-- unknown --"
+        product_state: 
+          container: Container
+          gas: gas
+          liquid: liquid
+          loose: Loose
+          packaged: Packaged
         transport_type: 
           block_train: "Block train"
           intermodal_transport: "Intermodal transport"
@@ -148,6 +188,15 @@ en:
           railway: Railway
           wanted: "Wagons wanted"
       loading_space: 
+        free_capacities: 
+          slots: Space
+          train: Train
+          wagon: Wagon
+        frequency: 
+          monthly: Monthly
+          once: Once
+          weekly: Weekly
+          yearly: Yearly
         transport_type: 
           block_train: "Block train"
           intermodal_transport: "Intermodal transport"
@@ -372,7 +421,7 @@ en:
       companies: Companies
       dashboard: Dashboard
       freights: Demands
-      loading_spaces: "Offers"
+      loading_spaces: Offers
       locale_de: Deutsch
       locale_en: English
       login: Login
@@ -484,6 +533,12 @@ en:
       create: "Create %{model}"
       update: "Save changes"
     hints: 
+      freight: 
+        first_transport_at: (MM/DD/YYYY)
+        valid_until: (MM/DD/YYYY)
+      loading_space: 
+        first_transport_at: (MM/DD/YYYY)
+        valid_until: (MM/DD/YYYY)
       user: 
         email: "Enter your e-mail address here"
         login: "Choose a username to log in to the service"
@@ -498,14 +553,17 @@ en:
       company_misc: "Additional information"
       company_name: Name
       company_registries: Registrations
+      contractor_info: Contractor
       credentials: "Login credentials"
       destination_site_info: "Unloading site:"
       for_company: "Company information"
+      freight_classification: Classification
       freight_description: "Freight description:"
       misc_text: "Additional information:"
       origin_site_info: "Loading site:"
       person_name: "Personal information"
       timeframe: "Time frame:"
+      transport_timeframe: "Timeframe and Transports"
       transport_type: "Transport description:"
   freights: 
     common: 
@@ -536,13 +594,13 @@ en:
       table: 
         headers: 
           company: Company
-          destination_date: Date
           destination_name: Destination
+          frequency: Timeframe
           id: "Numeric ID"
           options: Options
-          origin_date: Date
           origin_name: Origin
           transport_type: "Type of transport"
+          valid_until: "Valid until"
           weight: Weight
         options: 
           delete: Delete
@@ -555,12 +613,12 @@ en:
     show: 
       destination: 
         header: "Unloading site"
-      header: "Demand"
+      header: Demand
       is_reply_to: "This demand is a reply to the offer %{name}"
       no_side_track_available: "No sidetrack available."
       origin: 
         header: "Loading site"
-      page_title: "Demand"
+      page_title: Demand
       transport_description: "Transport description"
     update: 
       header: "Edit demand"
@@ -586,7 +644,7 @@ en:
       header: "Edit offer"
       page_title: "Edit offer"
     index: 
-      all_loading_spaces: "Offers"
+      all_loading_spaces: Offers
       from_origin_city: "Only show offers originating from '%{city}'"
       header: "All offers"
       header_query: "All offers for '%{query}'"
@@ -613,11 +671,11 @@ en:
     show: 
       destination: 
         header: "Unloading site"
-      header: "Offer"
+      header: Offer
       is_reply_to: "This offer is a reply to demand: %{name}"
       origin: 
         header: "Loading site"
-      page_title: "Offer"
+      page_title: Offer
       transport_description: "Transport description"
     update: 
       header: "Edit offer"
