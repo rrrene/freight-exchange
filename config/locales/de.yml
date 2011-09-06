@@ -76,7 +76,7 @@ de:
         contact_person: Kontaktperson
         desired_proposal_type: "Angebot gewünscht als"
         destination_date: Bis
-        frequency: Häufigkeit
+        frequency: Zeitraum
         first_transport_at: "Datum"
         hazmat: Gefahrengut
         loading_meter: Lademeter
@@ -847,7 +847,7 @@ de:
   people: 
     common: 
       edit_link: "Person bearbeiten"
-      edit_user_link: "Benutzeraccount bearbeiten"
+      edit_user_link: "Stammdaten bearbeiten"
       new_link: "Neuen Benutzer erstellen"
       template_link: "Als Vorlage"
     edit: 
