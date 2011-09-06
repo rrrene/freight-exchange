@@ -36,7 +36,7 @@
           <div id="personal_menu" class="top-navigation-menu" style="display: none">
             <ul>
               <li><%= navi_to_unless_current(t("common.navi.my_person"), person_path(current_person)) %></li>
-              <li><%= navi_to_unless_current(t("common.navi.my_user"), loading_spaces_path(:company_id => current_company)) %></li>
+              <li><%= navi_to_unless_current(t("common.navi.my_user"), edit_user_path(current_user)) %></li>
             </ul>
           </div>
         </li>

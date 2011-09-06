@@ -426,10 +426,10 @@ de:
       login: Anmelden
       logout: Abmelden
       my_company: "Unser Firmenprofil"
-      my_person: "Profil ändern"
+      my_person: "Mein Profil"
       my_profile: "Unternehmensprofil"
       my_reviews: Bewertungen
-      my_user: "Passwort etc. ändern"
+      my_user: "Mein Passwort etc. ändern"
       notifications: "Neuigkeiten:"
       people: Benutzer
       register: Registrieren
@@ -846,8 +846,8 @@ de:
       freights_destination: "Nachfragen nach hier"
   people: 
     common: 
-      edit_link: "Person bearbeiten"
-      edit_user_link: "Stammdaten bearbeiten"
+      edit_link: "Profil bearbeiten"
+      edit_user_link: "Benutzerkonto bearbeiten"
       new_link: "Neuen Benutzer erstellen"
       template_link: "Als Vorlage"
     edit: 
