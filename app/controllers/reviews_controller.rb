@@ -33,7 +33,7 @@ class ReviewsController < RemoteController
     end
   end
   
-  def index
+  def filter_collection!
     filter = params[:filter].full?(&:to_s).full?(&:intern)
     @reviews = if filter == :approved
       current_company.approved_reviews
@@ -42,6 +42,9 @@ class ReviewsController < RemoteController
     else
       current_company.reviews
     end
-    index!
+  end
+  
+  def default_order_param
+    :id
   end
 end

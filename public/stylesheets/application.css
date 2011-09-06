@@ -770,6 +770,8 @@ div.toolbar {
 }
 .top-navigation-menu ul li a.active {
   border: 0!important;
+  font-weight: bold;
+  color: #000!important;
 }
 .top-navigation-menu ul li a:hover {
   background: #ddd!important;

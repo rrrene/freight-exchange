@@ -1,9 +1,15 @@
 
 <% content_for(:toolbar) do %>
   <div class="float_left">
-    <%= link_btn_unless_current t("companies.common.profile"), company_path(@company) %>
     <%= link_btn_unless_current t('companies.common.loading_spaces'), loading_spaces_path(:company_id => @company) %>
     <%= link_btn_unless_current t('companies.common.freights'), freights_path(:company_id => @company) %>
+    <% if @company == current_company %>
+      <%= link_btn_unless_current t("companies.common.reviews"), reviews_path %>
+    <% end %>
+    <%= link_btn_unless_current t("companies.common.profile"), company_path(@company) %>
+    <% if @company == current_company %>
+      <%= link_btn_unless_current t("companies.common.people"), people_path %>
+    <% end %>
   </div>
 
   <div class="float_right">

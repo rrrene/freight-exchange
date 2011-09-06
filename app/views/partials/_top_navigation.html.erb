@@ -27,6 +27,7 @@
               <li><%= navi_to_unless_current(t("common.navi.my_loading_spaces"), loading_spaces_path(:company_id => current_company)) %></li>
               <li><%= navi_to_unless_current(t("common.navi.my_freights"), freights_path(:company_id => current_company)) %></li>
               <li><%= navi_to_unless_current(text_with_badge("common.navi.my_reviews", current_company.unapproved_reviews.count), reviews_path) %></li>
+              <li><%= navi_to_unless_current(t("common.navi.my_company"), company_path(current_company)) %></li>
               <li><%= navi_to_unless(section_is_settings?, t("common.navi.settings"), people_path) %></li>
             </ul>
           </div>

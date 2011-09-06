@@ -425,7 +425,7 @@ de:
       locale_en: English
       login: Anmelden
       logout: Abmelden
-      my_company: "Unser Firmenprofil"
+      my_company: "Firmenprofil"
       my_person: "Mein Profil"
       my_profile: "Unternehmensprofil"
       my_reviews: Bewertungen
@@ -462,7 +462,9 @@ de:
   companies:
     common:
       search-label: "Unternehmen:"
-      profile: Profil
+      profile: Firmenprofil
+      people: Benutzer
+      reviews: Bewertungen
       loading_spaces: "Angebote"
       freights: "Nachfragen"
     create: 
@@ -496,7 +498,7 @@ de:
       intro: "Erstellen Sie Ihr Konto in einer Minute!"
       page_title: "Ihre Firma registrieren"
     show: 
-      edit_company_link: "Unternehmen bearbeiten"
+      edit_company_link: "Firmenprofil bearbeiten"
       header_misc_text: "Wir über uns:"
       header_people: "Wer wir sind:"
       header_reviews: "Was andere über uns sagen:"
