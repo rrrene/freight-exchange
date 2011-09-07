@@ -38,7 +38,7 @@ class User < ActiveRecord::Base
   end
 
   def unread_notification_items
-    @unread_notification_items ||= notification_items.includes(:notification).where(:notifications => {:viewed => false})
+    @unread_notification_items ||= notification_items.where(:viewed => false)
   end
 
   #:call-seq:

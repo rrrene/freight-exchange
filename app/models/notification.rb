@@ -19,10 +19,5 @@ class Notification < ActiveRecord::Base
     save!
   end
 
-  def viewed!
-    self.viewed = true
-    save!
-  end
-  
   validates_associated :user
 end

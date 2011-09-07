@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110904120749) do
+ActiveRecord::Schema.define(:version => 20110907171149) do
 
   create_table "action_recordings", :force => true do |t|
     t.string   "item_type",  :limit => 30
@@ -190,6 +190,7 @@ ActiveRecord::Schema.define(:version => 20110904120749) do
     t.string   "item_type"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "viewed",          :default => false
   end
 
   create_table "notifications", :force => true do |t|
@@ -198,7 +199,6 @@ ActiveRecord::Schema.define(:version => 20110904120749) do
     t.datetime "closed_at"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "viewed",     :default => false
   end
 
   create_table "people", :force => true do |t|

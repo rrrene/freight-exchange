@@ -5,9 +5,10 @@ class NotificationItem < ActiveRecord::Base
   belongs_to :item, :polymorphic => true
   
   def viewed!
-    notification.viewed! unless notification.viewed?
+    self.viewed = true
+    save!
   end
-  
+
   validates_associated :user
   validates_associated :item
   validates_inclusion_of :item_type, :in => ITEM_TYPE_CHOICES
