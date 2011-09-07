@@ -1,6 +1,10 @@
 BlackBoard::Application.routes.draw do |map|
   resources :notifications
-  resources :notification_items
+  resources :notification_items do
+    collection do
+      post :mark_all_as_read
+    end
+  end
 
   resources :white_listed_items do
     collection do

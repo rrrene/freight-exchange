@@ -1062,6 +1062,12 @@ de:
     new: 
       page_title: "Neuer Benutzer"
   notifications:
+    common:
+      overview: Überblick
+      loading_spaces: Angebote
+      freights: Nachfragen
+      reviews: Bewertungen
+      mark_all_as_read: "Alle als 'gelesen' markieren"
     index:
       page_title: "Neu & interessant"
     show:
