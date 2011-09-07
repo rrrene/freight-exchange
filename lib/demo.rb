@@ -36,8 +36,7 @@ module Demo
   class Company < Base
     class << self
       def create
-        company = ::Company.where(:name => factory_attributes[:name]).first
-        company ||= ::Company.create(factory_attributes)
+        company = instance
         demo_user_attributes.each do |attr|
           user = create_or_find(attr.merge(:company_id => company.id))
           user.user_roles << ::UserRole[:company_employee]
@@ -46,13 +45,26 @@ module Demo
         if company_admin = company.users.first
           company_admin.user_roles << ::UserRole[:company_admin]
         end
-
+        company
+      end
+      
+      def create_postings(count = 5)
+        company = instance
         [Demo::Freight, Demo::LoadingSpace].each do |model|
-          5.times do
+          count.times do
             model.create(company)
           end
         end
-        
+      end
+      
+      def instance
+        company = ::Company.where(:name => factory_attributes[:name]).first
+        company ||= ::Company.create(factory_attributes)
+      end
+      
+      def setup
+        company = create
+        create_postings
         company
       end
 

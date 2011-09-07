@@ -1,14 +1,10 @@
 class SetupController < Admin::BaseController
   def demo_company
-    @company = Company.where(:name => Demo::Company.factory_attributes[:name]).first
+    @company = Demo::Company.instance
     if params[:create]
-      @company = Demo::Company.create
+      @company = Demo::Company.setup
     elsif params[:create_freights]
-      [Demo::Freight, Demo::LoadingSpace].each do |model|
-        5.times do
-          model.create(@company)
-        end
-      end
+      Demo::Company.create_postings
     elsif params[:destroy] && @company
       @company.destroy
       @company = nil
