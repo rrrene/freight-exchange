@@ -57,14 +57,27 @@ module Demo
         end
       end
       
+      def fake_notifications(count = 5)
+        instance.users.each do |current_user|
+          notification = current_user.current_notification
+          arr = [::Freight, ::LoadingSpace].map do |model|
+            model.limit(5).order('created_at DESC').all
+          end.flatten
+          count.times do 
+            notification << arr.rand
+          end
+          notification.close!
+        end
+      end
+      
       def instance
         company = ::Company.where(:name => factory_attributes[:name]).first
         company ||= ::Company.create(factory_attributes)
       end
       
-      def setup
+      def setup(options)
         company = create
-        create_postings
+        create_postings(options[:postings].to_i)
         company
       end
 
