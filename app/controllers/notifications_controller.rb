@@ -23,7 +23,7 @@ class NotificationsController < ApplicationController
       @notifications = @notification_items.map(&:notification)
       @notification = @notifications.first
     end
+    @notification_items = @notification_items.paginate(:page => params[:page], :per_page => RemoteController::PER_PAGE)
     @unread = current_user.unread_notification_items.all
-    #@unread.each(&:viewed!)
   end
 end

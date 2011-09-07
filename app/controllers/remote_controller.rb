@@ -25,6 +25,8 @@ class RemoteController < ApplicationController
     end
   end
   
+  PER_PAGE = 25
+  
   inherit_resources
   remote_enabled
   login_required
@@ -69,7 +71,7 @@ class RemoteController < ApplicationController
   end
   
   def paginate_collection!
-    self.collection = collection.paginate(:page => params[:page], :per_page => 25)
+    self.collection = collection.paginate(:page => params[:page], :per_page => PER_PAGE)
   end
   
   def perform_search!
