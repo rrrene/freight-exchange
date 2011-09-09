@@ -26,10 +26,15 @@ module App
       stats
     end
     
-    desc "postings", "create postings for the demo company"
+    desc "postings", "ensure there are N postings (freights and loading_spaces) in the demo company"
     method_options %w(number -n) => 10
     def postings
-      ::Demo::Company.create_postings(options[:number])
+      company = ::Demo::Company.instance
+      existing = [company.freights, company.loading_spaces].inject(0) do |sum, model|
+        sum += model.where(:deleted => false).where('valid_until > ?', Time.now).count
+      end
+      how_many = options[:number].to_i - existing
+      ::Demo::Company.create_postings(how_many) if how_many > 0
       stats
     end
     

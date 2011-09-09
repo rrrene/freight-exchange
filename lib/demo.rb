@@ -50,10 +50,10 @@ module Demo
       
       def create_postings(count = 5)
         company = instance
-        [Demo::Freight, Demo::LoadingSpace].each do |model|
-          count.times do
-            model.create(company)
-          end
+        count.times do
+          more_freights = company.freights.count > company.loading_spaces.count
+          model = more_freights ? Demo::LoadingSpace : Demo::Freight
+          model.create(company)
         end
       end
       
