@@ -6,6 +6,11 @@ class PeopleController < RemoteController
   role_or_ownership_required [:company_admin, :company_employee], :only => [:edit, :update]
   role_required [:company_admin, :company_employee], :only => [:index, :new, :create]
   
+  def index(&block)
+    @company = current_company
+    super
+  end
+
   def filter_collection!
     self.collection = current_company.people
   end
