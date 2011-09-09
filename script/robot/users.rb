@@ -2,7 +2,7 @@
 
 module Robot
   class CurrentUser
-    @@users = ::Robot::User.all
+    @@users = ::User.robots.all
     class << self
       attr_accessor :user
       

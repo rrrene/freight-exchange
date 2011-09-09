@@ -6,8 +6,8 @@ require File.join(File.dirname(__FILE__), 'robot')
 
 puts '', '', "=" * 70, '', ''
 
-if Robot::User.count < Robot::User::ROBOT_ARMY_SIZE
-  Robot::User.create_robot_army!
+if User.robots.count < User::ROBOT_ARMY_SIZE
+  create_robot_army!(User::ROBOT_ARMY_SIZE)
 end
 
 loop do
