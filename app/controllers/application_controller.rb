@@ -85,7 +85,10 @@ class ApplicationController < ActionController::Base
       end
     end
   end
-  alias logged_in? current_user
+  
+  def logged_in?
+    @current_user.present?
+  end
   
   # Returns <tt>true</tt> if the application is running in demo mode.
   def demo_mode?() # :doc:
