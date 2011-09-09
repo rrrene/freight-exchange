@@ -20,7 +20,7 @@
         <td class="origin_date"><%= l(ar.valid_until, :format => :date) if ar.valid_until.present? %></td>
         <td class="origin_name"><%= truncate ar.origin_name %></td>
         <td class="destination_name"><%= truncate ar.destination_name %></td>
-        <td class="total_weight numeric"><%= ar.frequency %></td>
+        <td class="total_weight numeric"><%= ar.human_attribute_value(:frequency) %></td>
         <% if action_name != "index" && ar.company == current_company %>
           <td class="options">
             <%= link_btn t('freights.index.table.options.template'), new_resource_url(:parent_id => ar.id), :icon => :reply %>

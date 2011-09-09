@@ -84,7 +84,7 @@ en:
         destination_zip: ZIP
         first_transport_at: Date
         free_capacities: "Free capacities"
-        frequency: Timeframe
+        frequency: Frequency
         hazmat: "Harzardous material"
         loading_meter: "Loading meter"
         localized_infos: 
