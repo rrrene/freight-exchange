@@ -84,7 +84,7 @@ en:
         destination_zip: ZIP
         first_transport_at: Date
         free_capacities: "Free capacities"
-        frequency: Frequency
+        frequency: Timeframe
         hazmat: "Harzardous material"
         loading_meter: "Loading meter"
         localized_infos: 
@@ -426,10 +426,10 @@ en:
       locale_en: English
       login: Login
       logout: Logout
-      my_company: "My Company Profile"
+      my_company: "Company Profile"
       my_freights: "My demands"
       my_loading_spaces: "My offers"
-      my_person: "Hello %{name}"
+      my_person: "My Profile"
       my_profile: "Company profile"
       my_reviews: "My Reviews"
       my_user: "Change password etc."
@@ -459,7 +459,9 @@ en:
     common: 
       freights: Demands
       loading_spaces: Offers
-      profile: Profile
+      people: People
+      profile: "Company Profile"
+      reviews: Reviews
       search-label: "Company:"
     create: 
       page_title: "Create your company"
@@ -681,6 +683,12 @@ en:
       header: "Edit offer"
       page_title: "Edit offer"
   notifications: 
+    common: 
+      freights: Demands
+      loading_spaces: Offers
+      mark_all_as_read: "Mark all as 'read'"
+      overview: Overview
+      reviews: Reviews
     index: 
       page_title: "New & interesting"
     show: 
@@ -690,7 +698,7 @@ en:
       page_title: "New & interesting"
   people: 
     common: 
-      edit_link: "Edit Contact"
+      edit_link: "Edit Profile"
       edit_user_link: "Edit User Account"
       new_link: "Create another User"
       template_link: "Use as template"
