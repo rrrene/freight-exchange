@@ -12,11 +12,37 @@ class User < ActiveRecord::Base
   scope :robots, where('login LIKE "robot_%"')
 end
 
+module Robot
+  class User
+    ROBOT_ARMY_SIZE = 50
+    class << self
+      def all
+        arel.all
+      end
+      
+      def count
+        arel.count
+      end
+      
+      def create_robot_army!(wanted = ROBOT_ARMY_SIZE)
+        how_many = wanted - count
+        how_many.times do
+          Factory.build(:RobotUserAdmin).save
+        end
+      end
+      
+      def arel
+        ::User.where('login LIKE "robot_%"')
+      end
+    end
+  end
+end
+
 %w(actions active_resource_ext array_ext bot users places user review).each do |rb|
   require File.join(File.dirname(__FILE__), 'robot', rb)
 end
 
-Factory.define "AdminRobot", :class => "User" do |u|
+Factory.define "RobotUserAdmin", :class => "User" do |u|
   u.company_attributes {
     company = {}
     company[:name] = Faker::Company.name
@@ -39,13 +65,5 @@ Factory.define "AdminRobot", :class => "User" do |u|
   u.posting_type { User.last.posting_type == 'Freight' ? 'LoadingSpace' : 'Freight' }
 end
 
-def create_robot_army!(size = 10)
-  size.times { 
-    bot = Factory.build(:AdminRobot)
-    if bot.save
-      puts "Created #{bot.login}"
-    else
-      puts bot.errors.full_messages
-    end
-  }
+def create_robot_army!
 end
