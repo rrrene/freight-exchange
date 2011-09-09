@@ -87,7 +87,7 @@ class ApplicationController < ActionController::Base
   end
   
   def logged_in?
-    @current_user.present?
+    current_user.present?
   end
   
   # Returns <tt>true</tt> if the application is running in demo mode.

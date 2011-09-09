@@ -8,7 +8,9 @@
     <%= f.input :password %>
     <%= f.input :password_confirmation %>
   <% end %>
-
-  <%= f.inputs :user_roles do %>
-    <%= f.input :user_roles, :as => :check_boxes, :collection => UserRole.frontend_roles.map { |r| [t("activerecord.human_attribute_values.user_role.name.#{r.name}"), r.id] } %>
+  
+  <% if controller?(:users) %>
+    <%= f.inputs :user_roles do %>
+      <%= f.input :user_roles, :as => :check_boxes, :collection => UserRole.frontend_roles.map { |r| [t("activerecord.human_attribute_values.user_role.name.#{r.name}"), r.id] } %>
+    <% end %>
   <% end %>
