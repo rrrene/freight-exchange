@@ -12,6 +12,8 @@ end
 
 loop do
   begin
+    ActiveResource::Base.site = 
+    ActiveResource::Base.proxy = "http://localhost:3000/"
     Robot::Bot.new.go
     sleep 2
   rescue SystemExit, Interrupt
