@@ -16,19 +16,19 @@ module Robot
     end
     
     def create_freight
-      humanize Robot::Freight.create
+      humanize Robot.create(:Freight)
     end
     
     def create_loading_space
-      humanize Robot::LoadingSpace.create
+      humanize Robot.create(:LoadingSpace)
     end
     
     def create_review
-      humanize Robot::Review.create
+      humanize Robot::Review.create()
     end
     
     def create_user
-      humanize Robot::User.create
+      humanize Robot.create(:User)
     end
     
     def delete_posting

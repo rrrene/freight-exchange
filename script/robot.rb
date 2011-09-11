@@ -12,6 +12,26 @@ class User < ActiveRecord::Base
   scope :robots, where('login LIKE "robot_%"')
 end
 
+module Robot
+  class << self
+    def create(klass, attributes = nil)
+      puts "creating Robot: #{klass}"
+      create_by_active_resource(klass, attributes)
+    end
+    
+    def create_by_active_resource(klass, attributes)
+      resource_class = "::Robot::#{klass}".constantize
+      resource_class.create
+    end
+    
+    def create_by_active_record(klass, attributes)
+      attributes ||= Factory.attributes_for("Robot::#{klass}")
+      resource_class = "::#{klass}".constantize
+      resource_class.create(attributes)
+    end
+  end
+end
+
 %w(actions active_resource_ext array_ext bot users places user review).each do |rb|
   require File.join(File.dirname(__FILE__), 'robot', rb)
 end
@@ -40,12 +60,7 @@ Factory.define "AdminRobot", :class => "User" do |u|
 end
 
 def create_robot_army!(size = 10)
-  size.times { 
-    bot = Factory.build(:AdminRobot)
-    if bot.save
-      puts "Created #{bot.login}"
-    else
-      puts bot.errors.full_messages
-    end
-  }
+  size.times do
+    Factory.create(:AdminRobot)
+  end
 end
