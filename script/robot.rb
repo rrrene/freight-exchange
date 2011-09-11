@@ -12,36 +12,14 @@ class User < ActiveRecord::Base
   scope :robots, where('login LIKE "robot_%"')
 end
 
-module Robot
-  class << self
-    def create(klass, attributes = nil)
-      create_by_active_record(klass, attributes)
-    end
-    
-    def create_by_active_resource(klass, attributes)
-      puts "creating by active resource: #{klass}"
-      resource_class = "::Robot::#{klass}".constantize
-      resource_class.create
-    end
-    
-    def create_by_active_record(klass, attributes)
-      attributes ||= Factory.attributes_for("Robot::#{klass}")
-      resource_class = "::#{klass}".constantize
-      if current_user = ::User.offset((rand * ::User.count).to_i).first
-        resource = resource_class.new(attributes)
-        resource.user_id = current_user.id if resource.respond_to?(:user_id)
-        resource.company_id = current_user.company.id if resource.respond_to?(:company_id)
-        resource.save!
-        resource
-      else
-        raise "Current_user could not be found."
-      end
-    end
-  end
-end
-
 %w(actions active_resource_ext array_ext string_ext bot users places user review).each do |rb|
   require File.join(File.dirname(__FILE__), 'robot', rb)
+end
+
+def create_robot_army!(size = 10)
+  size.times do
+    Factory.create(:AdminRobot)
+  end
 end
 
 Factory.define "AdminRobot", :class => "User" do |u|
@@ -67,8 +45,26 @@ Factory.define "AdminRobot", :class => "User" do |u|
   u.posting_type { User.last.posting_type == 'Freight' ? 'LoadingSpace' : 'Freight' }
 end
 
-def create_robot_army!(size = 10)
-  size.times do
-    Factory.create(:AdminRobot)
+module Robot
+  class << self
+    def create(klass, attributes = nil)
+      create_by_active_record(klass, attributes)
+    end
+    
+    def create_by_active_resource(klass, attributes)
+      puts "creating by active resource: #{klass}"
+      resource_class = "::Robot::#{klass}".constantize
+      resource_class.create
+    end
+    
+    def create_by_active_record(klass, attributes)
+      attributes ||= Factory.attributes_for("Robot::#{klass}")
+      resource_class = "::#{klass}".constantize
+      resource = resource_class.new(attributes)
+      resource.user_id = CurrentUser.id if resource.respond_to?(:user_id)
+      resource.company_id = CurrentUser.company_id if resource.respond_to?(:company_id)
+      resource.save!
+      resource
+    end
   end
 end

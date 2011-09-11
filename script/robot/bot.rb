@@ -10,7 +10,7 @@ module Robot
     end
     
     def perform_action
-      perform_action_by_active_resource
+      perform_action_by_active_record
     end
     
     def perform_action_by_active_resource
@@ -18,6 +18,11 @@ module Robot
       ActiveResource::Base.login! {
         method(@action).call
       }
+    end
+    
+    def perform_action_by_active_record
+      CurrentUser.random!
+      method(@action).call
     end
     
     def report(&block)

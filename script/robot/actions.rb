@@ -24,7 +24,7 @@ module Robot
     end
     
     def create_review
-      humanize Robot::Review.create()
+      humanize Robot.create(:Review)
     end
     
     def create_user
