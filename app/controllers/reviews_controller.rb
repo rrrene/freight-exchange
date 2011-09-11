@@ -29,7 +29,9 @@ class ReviewsController < RemoteController
     @review.author_user_id = current_user.id
     @review.author_company_id = current_company.id
     if @review.save
-      redirect_to :action => :created
+      respond_to do |format|
+        format.html { redirect_to :action => :created }
+      end
     end
   end
   
