@@ -16,7 +16,7 @@ module Robot
       
       def unapproved_review_id
         company = ::User.find(CurrentUser.id).company
-        company.unapproved_reviews.first.id
+        company.unapproved_reviews.first.try(:id)
       end
     end
   end

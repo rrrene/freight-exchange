@@ -1,11 +1,5 @@
 #!/usr/bin/env ruby -wKU
 
-require 'term/ansicolor'
-
-class ::String
-  include Term::ANSIColor
-end
-
 module Robot
   class Bot
     def go(options = {})
@@ -16,6 +10,10 @@ module Robot
     end
     
     def perform_action
+      perform_action_by_active_resource
+    end
+    
+    def perform_action_by_active_resource
       CurrentUser.random!
       ActiveResource::Base.login! {
         method(@action).call

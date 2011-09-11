@@ -15,11 +15,11 @@ end
 module Robot
   class << self
     def create(klass, attributes = nil)
-      puts "creating Robot: #{klass}"
-      create_by_active_resource(klass, attributes)
+      create_by_active_record(klass, attributes)
     end
     
     def create_by_active_resource(klass, attributes)
+      puts "creating by active resource: #{klass}"
       resource_class = "::Robot::#{klass}".constantize
       resource_class.create
     end
@@ -27,12 +27,20 @@ module Robot
     def create_by_active_record(klass, attributes)
       attributes ||= Factory.attributes_for("Robot::#{klass}")
       resource_class = "::#{klass}".constantize
-      resource_class.create(attributes)
+      if current_user = ::User.offset((rand * ::User.count).to_i).first
+        resource = resource_class.new(attributes)
+        resource.user_id = current_user.id if resource.respond_to?(:user_id)
+        resource.company_id = current_user.company.id if resource.respond_to?(:company_id)
+        resource.save!
+        resource
+      else
+        raise "Current_user could not be found."
+      end
     end
   end
 end
 
-%w(actions active_resource_ext array_ext bot users places user review).each do |rb|
+%w(actions active_resource_ext array_ext string_ext bot users places user review).each do |rb|
   require File.join(File.dirname(__FILE__), 'robot', rb)
 end
 
