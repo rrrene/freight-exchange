@@ -40,11 +40,22 @@ module App
     end
   
     private
+    
+    def self.logger
+      @logger ||= begin
+        logger = Logger.new(STDOUT)
+        logger.formatter = proc { |severity, datetime, progname, msg|
+            datetime_format = "%Y-%m-%d %H:%M:%S"
+            "[#{datetime.strftime(datetime_format)}] #{severity} #{msg}\n"
+          }
+        logger
+      end
+    end
   
     def run_bot(options)
       ActiveResource::Base.site = 
       ActiveResource::Base.proxy = options[:site]
-      Robot::Bot.new.go(options)
+      Robot::Bot.new.go(options.merge(:logger => self.class.logger))
     rescue SystemExit, Interrupt
       raise
     rescue Errno::ECONNREFUSED

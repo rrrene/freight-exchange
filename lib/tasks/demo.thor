@@ -41,12 +41,19 @@ module App
     desc "stats", "shows the demo company's stats"
     def stats
       company = ::Demo::Company.instance
-      puts "=== DEMO COMPANY =============================="
-      puts "Name: ".ljust(20) + company.name
+      logger.info "=== DEMO COMPANY =============================="
+      logger.info "Name: ".ljust(20) + company.name
       %w(users loading_spaces freights).each do |assoc|
-        puts "#{assoc.classify.pluralize}: ".ljust(20) + company.__send__(assoc).count.to_s
+        logger.info "#{assoc.classify.pluralize}: ".ljust(20) + company.__send__(assoc).count.to_s
       end
-      puts "Notifications/user: ".ljust(20) + company.users.first.unread_notification_items.count.to_s
+      logger.info "Notifications/user: ".ljust(20) + company.users.first.unread_notification_items.count.to_s
     end
+    
+    private
+
+    def logger
+      @logger ||= App::Bot.logger
+    end
+
   end
 end

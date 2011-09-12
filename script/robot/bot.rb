@@ -2,7 +2,9 @@
 
 module Robot
   class Bot
+    attr_accessor :logger
     def go(options = {})
+      self.logger = options[:logger] || Logger.new(STDOUT)
       report { 
         @action = (options[:actions].presence || actions).random
         perform_action 
@@ -32,7 +34,9 @@ module Robot
       str = str.red if @action =~ /delete_/
       str = str.yellow if @action =~ /(approve|edit)_/
       str = str.magenta if @action =~ /(search)/
-      puts [Time.new.strftime("%Y-%m-%d %H:%M:%S").ljust(20), 
+      time = Time.new.strftime("%Y-%m-%d %H:%M:%S")
+      # "[#{time}]".ljust(20), 
+      logger.info [
             CurrentUser.login.to_s.ljust(25),
             str,
             ret.is_a?(String) ? ret : nil
