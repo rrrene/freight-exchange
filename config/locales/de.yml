@@ -710,9 +710,9 @@ de:
       table: 
         headers: 
           valid_until: "Gültig bis"
-          origin_name: Startort
+          origin_name: "Startort (Bf)"
           frequency: Zeitraum
-          destination_name: Zielort
+          destination_name: "Zielort (Bf)"
           options: Optionen
           id: "Nummer"
           weight: Gewicht
@@ -780,6 +780,9 @@ de:
           weight: Gewicht
           transport_type: Transportart
           company: Unternehmen
+          origin_name: "Startort (Bf)"
+          frequency: Zeitraum
+          destination_name: "Zielort (Bf)"
         options: 
           delete: Löschen
           edit: Bearbeiten

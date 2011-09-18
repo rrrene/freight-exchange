@@ -18,8 +18,16 @@
       <tr class="<%= ar.try(:valid_until).to_i < Time.now.to_i ? :old : :new %>">
         <td class="pretty_id"><%= link_to ar.pretty_id, ar %></td>
         <td class="origin_date"><%= l(ar.valid_until, :format => :date) if ar.valid_until.present? %></td>
-        <td class="origin_name"><%= link_to truncate( ar.origin_city), params.merge(:origin_city => ar.origin_city), :class => "filter origin_city" %></td>
-        <td class="destination_name"><%= link_to truncate( ar.destination_city), params.merge(:destination_city => ar.destination_city), :class => "filter destination_city" %></td>
+        <% %w(origin destination).each do |origin_or_destination| %>
+          <td class="<%= origin_or_destination %>_name">
+            <% if city = ar.__send__("#{origin_or_destination}_city") %>
+              <%= link_to_filter truncate(city), {:"#{origin_or_destination}_city" => city}, :title => city %>
+            <% end %>
+            <% if station = ar.__send__("#{origin_or_destination}_station") %>
+              (<%= link_to_filter "##{station.numeric_id}", {:"#{origin_or_destination}_station_id" => station.id}, :title => station.name %>)
+            <% end %>
+          </td>
+        <% end %>
         <td class="total_weight numeric"><%= ar.human_attribute_value(:frequency) %></td>
         <% if action_name != "index" && ar.company == current_company %>
           <td class="options">
@@ -28,7 +36,9 @@
             <%= link_btn t('freights.index.table.options.delete'), ar, :method => :delete, :confirm => t('common.confirm'), :class => 'destroy' %>
           </td>
         <% else %>
-          <td class="company_name"><%= link_to truncate(ar.company.name, :length => 30), {:company_id => ar.company}, {:title => ar.company.name, :class => "filter company"} %></td>
+          <td class="company_name">
+            <%= link_to_filter truncate(ar.company.name), {:company_id => ar.company}, :title => ar.company.try(:name) %>
+          </td>
         <% end %>
       </tr>
     <% end %>

@@ -164,6 +164,13 @@ module ApplicationHelper
     text
   end
   
+  def link_to_filter(text, p = {}, opts = {})
+    raise "only supports 1 key: link_to_filter" if p.size > 1
+    key = p.keys.first
+    active = !!params[key]
+    link_to text, p.reverse_merge(params), opts.reverse_merge(:class => "filter #{key} #{active ? :active : nil}".strip)    
+  end
+  
   # Returns a link back to the last visited page with a localized caption.
   def link_back(text = t("common.link_back"))
     link_to_function text, "self.history.back();", :class => 'back'

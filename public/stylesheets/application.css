@@ -694,6 +694,9 @@ a.filter {
   font-weight: normal!important;
   text-decoration: underline!important;
 }
+a.filter.active {
+  font-weight: bold!important;
+}
 
 #top-navigation .badge {
   padding: 1px 5px;
