@@ -3,9 +3,10 @@
 #
 # Both the FreightsController and the LoadingSpacesController inherit from here.
 #
-
-require_dependency 'uploaded_sheet' if Rails.env == 'development'
-
+if Rails.env == 'development'
+  require_dependency 'uploaded/sheet' 
+  require_dependency 'uploaded/posting' 
+end
 class PostingsController < RemoteController
   same_company_required :only => %w(edit update destroy)
   role_required [:company_admin, :company_employee], :only => [:new, :create, :edit, :update, :destroy]
@@ -71,12 +72,14 @@ class PostingsController < RemoteController
     end
   end
 
+  # TODO: write worker to parse postings in background?
   def upload
     if request.post?
-      @sheet = UploadedSheet.new(params[:data])
-      # TODO: write worker to parse postings in background?
-      @sheet.rows.each do |row|
-        # ...
+      @sheet = Uploaded::Sheet.new(params[:data])
+      @headers = headers_from_sheet(@sheet)
+      @rows = extract_after(@sheet.rows, @headers)
+      @postings = @rows.map do |row|
+        Uploaded::Posting.new(row, @headers)
       end
     end
   end
@@ -93,6 +96,19 @@ class PostingsController < RemoteController
   end
   
   private
+  
+  def extract_after(rows, first_row)
+    result = []
+    first_row_found = false
+    rows.each do |row|
+      if first_row_found
+        result << row unless row.first.blank?
+      else
+        first_row_found = true if row == first_row
+      end
+    end
+    result
+  end
   
   def filter_collection!
     # Do not show deleted postings
@@ -114,6 +130,10 @@ class PostingsController < RemoteController
     else
       self.collection = collection.where("valid_until >= ?", Time.now)
     end
+  end
+  
+  def headers_from_sheet(sheet, attributes = Uploaded::Posting::ATTRIBUTES)
+    sheet.rows.detect { |row| attributes.include?(row.first) }
   end
   
   def perform_search!
