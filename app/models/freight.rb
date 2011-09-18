@@ -113,13 +113,15 @@ class Freight < ActiveRecord::Base
   validates_inclusion_of :frequency, :in => FREQUENCY_CHOICES
   
   validates_inclusion_of :hazmat, :in => [true, false]
-  validates_presence_of :hazmat_class, :if => :hazmat
-  validates_presence_of :un_no, :if => :hazmat
+  # commented because upload excel does not include this dependency between hazmat => true and requiring the other fields
+  #validates_presence_of :hazmat_class, :if => :hazmat
+  #validates_presence_of :un_no, :if => :hazmat
   
   validates_inclusion_of :product_state, :in => PRODUCT_STATE_CHOICES
   validates_inclusion_of :desired_means_of_transport, :in => DESIRED_MEANS_OF_TRANSPORT_CHOICES
   validates_inclusion_of :desired_proposal_type, :in => DESIRED_PROPOSAL_TYPE_CHOICES
   
   validates_inclusion_of :own_means_of_transport_present, :in => [true, false]
-  validates_inclusion_of :own_means_of_transport, :in => OWN_MEANS_OF_TRANSPORT_CHOICES, :if => :own_means_of_transport_present
+  # commented because upload excel does not include these fields (own_means_of_transport & own_means_of_transport_custom)
+  #validates_inclusion_of :own_means_of_transport, :in => OWN_MEANS_OF_TRANSPORT_CHOICES, :if => :own_means_of_transport_present
 end

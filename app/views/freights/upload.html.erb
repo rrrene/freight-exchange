@@ -8,7 +8,14 @@
     <pre>
       <%= i %>
       <%= row.inspect %>
-      <%= @postings[i].try(:attributes).inspect %>
+      <% if attributes = @postings[i].try(:attributes) %>
+        <%= attributes.inspect %>
+        <% record = Freight.new(attributes.reverse_merge(:contractor => current_company.name, :desired_means_of_transport => 'custom')) %>
+        <% record.user = current_user %>
+        <% record.company = current_company %>
+        <%= record.valid?.inspect %>
+        <%= record.attributes.inspect %>
+      <% end %>
     </pre>
   <% end %>
   

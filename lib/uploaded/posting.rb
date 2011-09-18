@@ -3,7 +3,7 @@ module Uploaded
   class Posting
     attr_accessor :attributes
     ATTRIBUTES = %w(origin_country origin_name origin_station_numeric_id destination_country destination_name destination_station_numeric_id) + 
-      %w(valid_until product_name product_state hazmat hazmat_class un_no nhm_no desired_means_of_transport) + 
+      %w(valid_until product_name product_state hazmat hazmat_class un_no nhm_no desired_means_of_transport_custom) + 
         %w(total_weight frequency first_transport_at transport_weight own_means_of_transport_present desired_proposal_type)
   
     YES_NO_MAP = {
@@ -26,10 +26,16 @@ module Uploaded
         %w(Monatlich Monthly) => "monthly",
         %w(Jährlich Yearly) => "yearly",
       },
+      # %w(ton_price package_price unknown)
+      :desired_proposal_type => {
+        ["EUR pro Tonne", "€ pro Tonne", "€ / Tonne", 
+         "EUR per ton", "€ per ton"] => "ton_price",
+        ["EUR pro Wagen", "€ pro Wagen", "EUR per wagon", "€ per wagon"] => "package_price",
+      },
       :own_means_of_transport_present => YES_NO_MAP,
       :hazmat => YES_NO_MAP,
     }
-
+    
     ATTRIBUTES.each do |attr|
       define_method "#{attr}=" do |value|
         self.attributes[attr] = if self.respond_to?("#{attr}_map")
@@ -52,6 +58,14 @@ module Uploaded
       headers.each_with_index do |attr, i|
         self.__send__("#{attr}=", row[i])
       end
+    end
+    
+    def destination_station_numeric_id=(value)
+      attributes[:destination_station_id] = Station.where(:numeric_id => value).first.try(:id)
+    end
+    
+    def origin_station_numeric_id=(value)
+      attributes[:origin_station_id] = Station.where(:numeric_id => value).first.try(:id)
     end
     
     def expand_map(map, include_downcase = true)
