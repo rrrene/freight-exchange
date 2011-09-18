@@ -689,6 +689,12 @@ ul.action_list div.avatar img {
   color: #0D7F09!important;
 }
 
+a.filter {
+  color: #333!important;
+  font-weight: normal!important;
+  text-decoration: underline!important;
+}
+
 #top-navigation .badge {
   padding: 1px 5px;
   border-radius: 2px;
