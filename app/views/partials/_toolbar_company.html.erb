@@ -14,7 +14,11 @@
 
   <div class="float_right">
     <% if @company == current_user.company %>
-      <%= link_btn t("companies.show.edit_company_link"), edit_company_path(@company), :icon => 'edit' %>
+      <% if postings_controller? %>
+        <%= link_btn_unless_current t("companies.common.invalid_postings_link"), params.merge(:invalid => true) %>
+      <% else %>
+        <%= link_btn t("companies.show.edit_company_link"), edit_company_path(@company), :icon => 'edit' %>
+      <% end %>
     <% else %>
       <%= link_btn_unless_current t("common.create_new_review"), new_review_url(:company_id => @company.id), :icon => 'reply' %>
 

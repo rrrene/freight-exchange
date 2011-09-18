@@ -231,6 +231,10 @@ module ApplicationHelper
     current_user.full?(&:posting_type) == 'Freight'
   end
   
+  def postings_controller?
+    %w(freights loading_spaces).include?(controller_name)
+  end
+  
   # Renders a partial with the contact information for the given company.
   # Example:
   #   <%= render_person_info current_company %>

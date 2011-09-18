@@ -107,11 +107,13 @@ class PostingsController < RemoteController
       # TODO: blacklisting beachten?
       self.collection = collection.where(:company_id => @company_id)
     end
-    unless @company == current_company
-      # Do not show postings which start dates lie in the past
-      self.collection = collection.where("valid_until > ?", Time.now)
+    # Do not show postings which start dates lie in the past
+    if @company == current_company && params[:invalid]
+      # show invalid
+        self.collection = collection.where("valid_until < ?", Time.now)
+    else
+      self.collection = collection.where("valid_until >= ?", Time.now)
     end
-
   end
   
   def perform_search!

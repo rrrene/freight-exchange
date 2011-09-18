@@ -467,6 +467,7 @@ de:
       reviews: Bewertungen
       loading_spaces: "Angebote"
       freights: "Nachfragen"
+      invalid_postings_link: "Abgelaufene Inserate"
     create: 
       page_title: "Ihre Firma registrieren"
 
