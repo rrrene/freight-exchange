@@ -1,11 +1,9 @@
-<%
-   show_station = !!resource[:"#{origin_or_destination}_side_track_available"].full?
-%>
+
 <%= f.inputs :"#{origin_or_destination}_site_info" do %>
   <%#= f.input :"#{origin_or_destination}_contractor", :label => t("activerecord.attributes.site_info.#{origin_or_destination}_contractor") %>
   <%= f.input :"#{origin_or_destination}_side_track_available", :as => :radio, :collection => yes_no_collection %>
 
-  <div id="<%= origin_or_destination %>_with_station" style="<%= show_station ? nil : 'display: none' %>">
+  <div id="<%= origin_or_destination %>_with_station">
     <%= f.input :"#{origin_or_destination}_station", :input_html => {:title => t("activerecord.attributes.freight.#{origin_or_destination}_station"),:class => 'chosen'} %>
     <%#= f.input :"#{origin_or_destination}_track_number" %>
   </div>
@@ -15,4 +13,14 @@
   <% end %>
   
   <%= f.input :"#{origin_or_destination}_country", :priority_countries => ["Germany", "Netherlands", "Austria", "Switzerland", "France", "Italy"] %>
+<% end %>
+
+<% dont_show_station = !resource[:"#{origin_or_destination}_side_track_available"].full? %>
+<% if dont_show_station %>
+  <%= javascript_tag <<-JS
+    jQuery(function() {
+      $('##{origin_or_destination}_with_station').hide();    
+    });
+  JS
+  %>
 <% end %>
