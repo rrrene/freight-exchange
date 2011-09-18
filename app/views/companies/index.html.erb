@@ -5,6 +5,7 @@
     <%= link_btn_unless_current t("companies.index.filter_by_created_at"), :order => 'created_at' %>
   </div>
   <div class="float_right">
+    <%= link_btn_unless_current t("companies.index.white_listed_companies"), :white_listed => true %>
     <%= link_btn_unless_current t("companies.index.black_listed_companies"), :black_listed => true %>
   </div>
 <% end %>

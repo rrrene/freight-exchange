@@ -482,6 +482,7 @@ de:
           city: "Stadt"
           country: "Land"
       all_companies: "Alle Unternehmen"
+      white_listed_companies: "Favorisierte Unternehmen"
       black_listed_companies: "Ignorierte Unternehmen"
       filter_by_name: "Von A bis Z"
       filter_by_created_at: "Neuste zuerst"

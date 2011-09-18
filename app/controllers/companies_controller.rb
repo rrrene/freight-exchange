@@ -39,6 +39,9 @@ class CompaniesController < RemoteController
   def filter_collection!
     if params[:black_listed].full?
       self.collection = collection.where(:id => blocked_company_ids)
+    elsif params[:white_listed].full?
+      ids = current_company.white_listed_items.where(:item_type => 'Company').collect(&:item_id)
+      self.collection = collection.where(:id => ids)
     else
       if blocked_company_ids.full?
         self.collection = collection.where("id NOT IN (?)", blocked_company_ids)
