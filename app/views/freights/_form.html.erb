@@ -1,7 +1,9 @@
 <% if @reply_to %>
-  <div class="success">
-    <%= auto_link t("freights.common.is_reply_to", :name => @reply_to.pretty_id) %>
-  </div>
+  <% content_for(:toolbar) do %>
+    <div class="success">
+      <%= auto_link(t("#{controller_name}.common.is_reply_to", :name => @reply_to.pretty_id)).html_safe %>
+    </div>
+  <% end %>
 <% end %>
 
 <%= semantic_form_for(resource) do |f| %>

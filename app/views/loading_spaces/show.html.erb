@@ -6,19 +6,17 @@
       <%= auto_link t("loading_spaces.show.is_reply_to", :name => resource.reply_to.pretty_id) %>
     </div>
   <% end %>
-
-  <% if resource.company == current_company %>
-    <% content_for(:toolbar) do %>
-      <div class="left">
+  
+  <% content_for(:toolbar) do %>
+    <% if resource.company == current_company %>
+      <div class="float_left">
         <%= link_btn t('loading_spaces.common.template_link'), new_resource_url(:parent_id => resource.id), :icon => 'reply' %>
-        <%= link_btn t("loading_spaces.common.edit_link"), edit_loading_space_path(@loading_space), :icon => 'edit' %>
       </div>
-      <div class="right">
+      <div class="float_right">
+        <%= link_btn t("loading_spaces.common.edit_link"), edit_loading_space_path(@loading_space), :icon => 'edit' %>
         <%= link_btn t("loading_spaces.common.delete_link"), loading_space_path(@loading_space), :method => :delete, :confirm => t('common.confirm'), :class => 'destroy' %>
       </div>
-    <% end %>
-  <% else %>
-    <% content_for(:toolbar) do %>
+    <% else %>
       <%= link_btn t('loading_spaces.common.reply_to_link'), new_freight_path(:reply_to_id => resource.id), :icon => 'reply' %>
       <% if resource.contact_email.full? %>
         <%= link_btn t('loading_spaces.common.contact_to_link'), t('loading_spaces.common.contact_to_href', :email => resource.contact_email, :name => resource.pretty_id, :url => @resource_url), :icon => 'next' %>

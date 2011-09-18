@@ -7,14 +7,16 @@
     </div>
   <% end %>
 
-  <% if resource.company == current_company %>
-    <% content_for(:toolbar) do %>
-      <%= link_btn t('freights.common.template_link'), new_resource_url(:parent_id => resource.id), :icon => 'reply' %>
-      <%= link_btn t("freights.common.edit_link"), edit_freight_path(resource), :icon => 'edit' %>
-      <%= link_btn t("loading_spaces.common.delete_link"), freight_path(resource), :method => :delete, :confirm => t('common.confirm'), :class => 'destroy' %>
-    <% end %>
-  <% else %>
-    <% content_for(:toolbar) do %>
+  <% content_for(:toolbar) do %>
+    <% if resource.company == current_company %>
+      <div class="float_left">
+        <%= link_btn t('freights.common.template_link'), new_resource_url(:parent_id => resource.id), :icon => 'reply' %>
+      </div>
+      <div class="float_right">
+        <%= link_btn t("freights.common.edit_link"), edit_freight_path(resource), :icon => 'edit' %>
+        <%= link_btn t("loading_spaces.common.delete_link"), freight_path(resource), :method => :delete, :confirm => t('common.confirm'), :class => 'destroy' %>
+      </div>
+    <% else %>
       <%= link_btn t('freights.common.reply_to_link'), new_loading_space_path(:reply_to_id => resource.id), :icon => 'reply' %>
       <% if resource.contact_email.full? %>
         <%= link_btn t('freights.common.contact_to_link'), t('freights.common.contact_to_href', :email => resource.contact_email, :name => resource.pretty_id, :url => @resource_url), :icon => 'next' %>
