@@ -62,7 +62,7 @@ class User < ActiveRecord::Base
   def reset_password!(pwd = ActiveSupport::SecureRandom.hex(4))
     self.password = pwd
     self.password_confirmation = pwd
-    self.valid? ? pwd : nil
+    self.save ? pwd : nil
   end
   
   #:call-seq:
