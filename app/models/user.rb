@@ -62,7 +62,14 @@ class User < ActiveRecord::Base
   def reset_password!(pwd = ActiveSupport::SecureRandom.hex(4))
     self.password = pwd
     self.password_confirmation = pwd
-    self.save ? pwd : nil
+    if self.save
+      # changing the password seems to save a UserSession 
+      # and logs the given user in
+      UserSession.find.destroy 
+      pwd
+    else
+      nil
+    end
   end
   
   #:call-seq:
