@@ -596,11 +596,11 @@ en:
       table: 
         headers: 
           company: Company
-          destination_name: Destination
+          destination_name: "Destination (Station)"
           frequency: Timeframe
           id: "Numeric ID"
           options: Options
-          origin_name: Origin
+          origin_name: "Origin (Station)"
           transport_type: "Type of transport"
           valid_until: "Valid until"
           weight: Weight
@@ -892,11 +892,23 @@ en:
     formats: 
       date: "%Y-%m-%d"
     pm: pm
+  user_notifier: 
+    forgot_password: 
+      body: "New Password: %{password}"
+      subject: "Forgot password"
   user_sessions: 
     create: 
       page_title: Login
+    forgot_password: 
+      back_to_login: "Back to login page"
+      failed: "Couldnot match email or login!"
+      login_or_email: "E-Mail or Login"
+      page_title: "Forgot passwort"
+      submit: Submit
+      success: "A new password has been sent to \"%{email}\"!"
     new: 
       failed: "Username/Passwort invalid!"
+      forgot_password: "Forgot your password?"
       login: Username
       page_title: Login
       password: Password
