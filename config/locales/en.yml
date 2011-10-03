@@ -458,6 +458,7 @@ en:
   companies: 
     common: 
       freights: Demands
+      invalid_postings_link: "Invalid postings"
       loading_spaces: Offers
       people: People
       profile: "Company Profile"
@@ -488,6 +489,7 @@ en:
           country: Country
           name: Name
           zip: ZIP
+      white_listed_companies: "Favored Companies"
     new: 
       header: "Create your company account"
       intro: "You are just 60 seconds away from your own account!"
@@ -507,29 +509,6 @@ en:
       page_title: Contact
       sent: "Your mail has been sent. Thank you for your feedback."
       submit: "Submit request"
-  date: 
-    abbr_day_names: 
-      - Su
-      - Mo
-      - Tu
-      - We
-      - Th
-      - Fri
-      - Sa
-    abbr_month_names: 
-      - ~
-      - Jan
-      - Feb
-      - Mar
-      - Apr
-      - May
-      - Jun
-      - Jul
-      - Aug
-      - Sep
-      - Oct
-      - Nov
-      - Dec
   formtastic: 
     actions: 
       create: "Create %{model}"
@@ -628,6 +607,10 @@ en:
   helpers: 
     select: 
       prompt: "Please choose"
+    submit: 
+      create: "Create %{model}"
+      submit: "Save %{model}"
+      update: "Update %{model}"
   loading_spaces: 
     common: 
       contact_to_href: "mailto:%{email}?subject=Re: %{name}&body=Posting: %{url}"
@@ -658,8 +641,11 @@ en:
           company: Company
           date: Date
           destination: Destination
+          destination_name: "Destination (Station)"
+          frequency: Frequency
           options: Options
           origin: Origin
+          origin_name: "Origin (Station)"
           transport_type: "Type of transport"
           weight: Weight
         options: 
@@ -887,11 +873,6 @@ en:
       last_word_connector: and
       two_words_connector: and
       words_connector: ","
-  time: 
-    am: am
-    formats: 
-      date: "%Y-%m-%d"
-    pm: pm
   user_notifier: 
     forgot_password: 
       body: "New Password: %{password}"
