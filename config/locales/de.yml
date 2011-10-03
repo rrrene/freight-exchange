@@ -1056,8 +1056,9 @@ de:
       page_title: Passwort vergessen
       failed: E-Mail konnte nicht zugeordnet werden!
       success: "Neues Passwort wurde an %{email} versandt!"
-      email: E-Mail
+      login_or_email: Benutzername oder E-Mail
       submit: Abschicken
+      back_to_login: Zurück zur Anmelden-Seite
   user_notifier:    
     forgot_password:
       subject: Passwort vergessen

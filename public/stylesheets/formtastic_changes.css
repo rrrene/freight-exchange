@@ -20,6 +20,7 @@ form.formtastic fieldset.buttons ol li.commit input {
 
 #user_session_login,
 #user_session_password,
+#user_session_email,
 form.formtastic fieldset ol li.string input,
 form.formtastic fieldset ol li.phone input,
 form.formtastic fieldset ol li.email input,
@@ -29,7 +30,7 @@ form.formtastic textarea {
   background: white;
   border: 1px solid #CCC;
   border-top-color: #999;
-  padding: 6px 6px 0 6px;
+  padding: 3px;
   min-width: 200px;
 }
 
