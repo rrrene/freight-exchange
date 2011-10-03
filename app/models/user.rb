@@ -59,6 +59,12 @@ class User < ActiveRecord::Base
     @postings ||= self.company.__send__(self.posting_type.underscore.pluralize)
   end
   
+  def reset_password!(pwd = ActiveSupport::SecureRandom.hex(4))
+    self.password = pwd
+    self.password_confirmation = pwd
+    self.valid? ? pwd : nil
+  end
+  
   #:call-seq:
   #   user.roles # => array
   #

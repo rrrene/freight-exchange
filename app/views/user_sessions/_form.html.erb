@@ -6,6 +6,7 @@
   <p>
     <%= f.label :password, t("user_sessions.new.password") %><br>
     <%= f.password_field :password %>
+    <small><%= link_to t("user_sessions.new.forgot_password"), forgot_password_path %></small>
   </p>
   <% if @failed %>
     <p class="bad">

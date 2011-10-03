@@ -44,7 +44,7 @@ module Robot
           :contractor => 'Frachtunternehmen',
           :name => name,
           :address => "Am Hauptbahnhof",
-          :zip => "45128",
+          :zip => 10_000 + (rand * 60_000).to_i,
           :city => name,
           :country => "Germany",
           :date => @@date_blueprint,

@@ -1048,9 +1048,21 @@ de:
       failed: Benutzername/Passwort falsch!
       login: Benutzername
       password: Passwort
+      forgot_password: Passwort vergessen?
       submit: Einloggen
     create:
       page_title: Willkommen
+    forgot_password:
+      page_title: Passwort vergessen
+      failed: E-Mail konnte nicht zugeordnet werden!
+      success: "Neues Passwort wurde an %{email} versandt!"
+      email: E-Mail
+      submit: Abschicken
+  user_notifier:    
+    forgot_password:
+      subject: Passwort vergessen
+      body: "Neues Passwort: %{password}"
+    
   users: 
     common: 
       edit_link: Bearbeiten

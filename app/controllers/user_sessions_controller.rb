@@ -31,6 +31,19 @@ class UserSessionsController < ApplicationController
     end
   end
   
+  def forgot_password
+    if request.post?
+      email = params[:user_session][:email].to_s.upcase
+      if @user = User.where("UPPER(email) = ?", email).first
+        if @password = @user.reset_password!
+          UserNotifier.forgot_password(@user, @password).deliver
+          @success = true
+        end
+      end
+      @failed = @password.blank?
+    end
+  end
+  
   # this is kind of a bugfix:
   # after an unsuccessful POST to index (#create),
   # a reload caused a 'no such action' error 
