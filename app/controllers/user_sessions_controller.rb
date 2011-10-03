@@ -36,6 +36,9 @@ class UserSessionsController < ApplicationController
       str = params[:user_session][:email].to_s.upcase
       if @user = User.where("UPPER(email) = ? OR UPPER(login) = ?", str, str).first
         if @password = @user.reset_password!
+          # changing the password seems to save a UserSession 
+          # and logs the given user in
+          UserSession.find.destroy
           UserNotifier.forgot_password(@user, @password).deliver
           @success = true
         end

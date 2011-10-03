@@ -59,13 +59,12 @@ class User < ActiveRecord::Base
     @postings ||= self.company.__send__(self.posting_type.underscore.pluralize)
   end
   
-  def reset_password!(pwd = ActiveSupport::SecureRandom.hex(4))
+  def reset_password!(pwd = ActiveSupport::SecureRandom.hex(8))
     self.password = pwd
     self.password_confirmation = pwd
     if self.save
       # changing the password seems to save a UserSession 
       # and logs the given user in
-      UserSession.find.destroy 
       pwd
     else
       nil
