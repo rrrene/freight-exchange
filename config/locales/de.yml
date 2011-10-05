@@ -39,7 +39,7 @@ de:
         total_weight: "Gesamtgewicht (in t)"
         first_transport_at: "Datum"
         product_name: "Produktname"
-        product_state: "Aggregatzustand"
+        product_state: "Gutart"
         hazmat_class: "Gefahrgutklasse (RID)"
         un_no: "UN-Nr."
         nhm_no: "NHM-Nr."
@@ -47,7 +47,10 @@ de:
         desired_means_of_transport_custom: ""
         own_means_of_transport_present: Eigene Transportmittel vorhanden?
         own_means_of_transport: Wagentyp
-        own_means_of_transport_custom: ""
+        own_means_of_transport_custom: "Bitte angeben:"
+        requirements_means_of_transport: "Anforderungen an Transportmittel(-einheit)"
+        requirements_at_loading: "Anforderung Beladung des Wagens"
+        requirements_at_unloading: "Anforderung Entladung des Wagens"
         origin_side_track_available: "Gleisanschluss vorhanden?"
         origin_contractor: "Firma"
         origin_name: "Name"
@@ -205,7 +208,7 @@ de:
         free_capacities:
           train: Zug
           wagon: Wagen
-          slots: "Stellplätze"
+          slots: "KV-Stellplätze"
       person: 
         gender: 
           female: Frau

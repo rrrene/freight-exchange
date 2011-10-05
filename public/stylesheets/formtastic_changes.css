@@ -43,6 +43,11 @@ form.formtastic fieldset ol li textarea {
   height: 150px;
   min-height: 3.9em;
 }
+form.freight fieldset ol li.text textarea {
+  min-height: 1.3em;
+  height: 50px;
+  width: 50%;
+}
 div.localized_info_locale_selector {
   position: absolute;
   margin-left: 700px!important;
@@ -69,10 +74,14 @@ form.formtastic fieldset > ol > li.radio fieldset ol li {
   margin-right: 8px;
 }
 
+form.formtastic li.more_info {
+  border-left: 4px solid #aaa;
+  margin-left: 4px;
+}
 form.formtastic li.more_info label {
   font-style: italic;
   color: #666;
-  width: 24%;
+  width: 211px;
   padding-left: 1%;
 }
 #freight_valid_until,

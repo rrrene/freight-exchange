@@ -42,6 +42,11 @@
     <%= f.input :own_means_of_transport, :collection => collection_choices(Freight, :own_means_of_transport), :include_blank => true %>
     <%= f.input :own_means_of_transport_custom, :as => :string %>
     
+    <%= f.input :requirements_means_of_transport, :as => :text, :input_html => {:rows => ""} %>
+
+    <%= f.input :requirements_at_loading, :as => :text %>
+    <%= f.input :requirements_at_unloading, :as => :text %>
+    
     <%#= f.input :wagons_provided_by, :collection => collection_choices(Freight, :wagons_provided_by), :as => :radio %>
     <%#= f.input :paying_freight, :collection => collection_choices(Freight, :paying_freight), :as => :select, :include_blank => false %>
     

@@ -50,8 +50,10 @@ function showOwnMeansOfTransportFields() {
 
 function showOwnMeansOfTransportPresentFields() {
   var show_more = $("#freight_own_means_of_transport_present_true, #loading_space_own_means_of_transport_present_true").attr("checked");
-  var fields = "#freight_own_means_of_transport_input, #freight_own_means_of_transport_custom_input, #loading_space_own_means_of_transport_input, #loading_space_own_means_of_transport_custom_input";
-  showOrHideFields(show_more, fields);
+  var show_more_fields = "#freight_own_means_of_transport_input, #freight_own_means_of_transport_custom_input, #loading_space_own_means_of_transport_input, #loading_space_own_means_of_transport_custom_input";
+  var show_less_fields = "#freight_requirements_means_of_transport_input";
+  showOrHideFields(show_more, show_more_fields);
+  showOrHideFields(!show_more, show_less_fields);
   if( show_more ) showOwnMeansOfTransportFields();
 }
 
