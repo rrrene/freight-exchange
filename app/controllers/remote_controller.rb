@@ -48,6 +48,7 @@ class RemoteController < ApplicationController
   def show
     show! {
       page[:title] = t("#{controller_catalog}.show.page_title", {:name => resource.name})
+      record_action!(:read, resource)
     }
   end
 
@@ -65,7 +66,7 @@ class RemoteController < ApplicationController
     controller_name.classify.underscore
   end
   alias resource_key instance_name
-
+  
   def resource=(val)
     instance_variable_set("@#{instance_name}", val)
   end

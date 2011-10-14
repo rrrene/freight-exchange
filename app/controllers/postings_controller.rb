@@ -91,6 +91,7 @@ class PostingsController < RemoteController
         @search_recording = SearchRecording.create(opts)
       end
       page[:title] = t("#{controller_name}.show.page_title", :pretty_id => resource.pretty_id)
+      record_action!(:read, resource)
       @resource_url = url_for(resource)
     }
   end

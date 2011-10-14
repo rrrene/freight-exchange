@@ -12,6 +12,7 @@ class UserSessionsController < ApplicationController
     if demo_mode?
       @user = User.find(params[:id])
       if UserSession.login(@user)
+        record_action!(:demo_login, current_user)
         redirect_to after_login_url
       else
         render :action => :new
@@ -23,6 +24,7 @@ class UserSessionsController < ApplicationController
   def create
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
+      record_action!(:login, current_user)
       flash[:notice] = "Login successful!"
       redirect_back_or_default after_login_url
     else
@@ -36,6 +38,7 @@ class UserSessionsController < ApplicationController
       str = params[:user_session][:email].to_s.upcase
       if @user = User.where("UPPER(email) = ? OR UPPER(login) = ?", str, str).first
         if @password = @user.reset_password!
+          record_action!(:password_reset, current_user)
           # changing the password seems to save a UserSession 
           # and logs the given user in
           UserSession.find.destroy
@@ -58,6 +61,7 @@ class UserSessionsController < ApplicationController
   # Logs a user out.
   def destroy
     UserSession.find.destroy
+      record_action!(:logout, current_user)
     flash[:notice] = "Logout successful!"
     redirect_back_or_default new_user_session_url
   end

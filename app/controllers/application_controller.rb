@@ -178,10 +178,16 @@ class ApplicationController < ActionController::Base
     return false
   end
   
+  def record_action!(action, record)
+    opts = record_user_in_recordings || {}
+    ActionRecording.create!({:action => action.to_s, :item => record}.merge(opts))
+  end
+  
   def record_user_in_recordings
     if logged_in?
       GeneralObserver.always_save(:user_id, current_user.id)
       GeneralObserver.always_save(:company_id, current_company.id)
+      GeneralObserver.additional_attributes
     end
   end
   
