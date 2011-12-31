@@ -74,6 +74,8 @@ BlackBoard::Application.routes.draw do |map|
   match "my_profile" => 'users#edit', :as => :my_profile
   match "register" => 'companies#new', :as => :register
   match "forgot_password" => 'user_sessions#forgot_password', :as => :forgot_password
+  match "reset_password/:user_id/:password_reset_key" => 'user_sessions#reset_password', :as => :reset_password_with_key
+  match "reset_password" => 'user_sessions#reset_password', :as => :reset_password
   match "login" => 'user_sessions#new', :as => :login
   match "logout" => 'user_sessions#destroy', :as => :logout
   

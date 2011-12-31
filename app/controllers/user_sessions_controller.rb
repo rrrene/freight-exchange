@@ -3,7 +3,7 @@
 # Basically that means logging users in and out.
 class UserSessionsController < ApplicationController
   before_filter :require_no_user, :only => [:new, :create, :forgot_password]
-  before_filter :require_user, :only => :destroy
+  before_filter :require_user, :only => :destroy  
   #layout 'content_only'
   
   # This action is only available if the application is running in demo mode.
@@ -42,11 +42,28 @@ class UserSessionsController < ApplicationController
           # changing the password seems to save a UserSession 
           # and logs the given user in
           UserSession.find.destroy
-          UserNotifier.forgot_password(@user, @password).deliver
+          @mail = UserNotifier.forgot_password(@user, @password) 
+          @mail.deliver
           @success = true
         end
       end
       @failed = @password.blank?
+    end
+  end
+  
+  def reset_password
+    @user = begin
+      user = User.find(params[:user_id])
+      user.full?(&:password_reset_key) == params[:password_reset_key] ? user : nil
+    end
+    if request.put? && @user && params[:user] && params[:user][:password].full?
+      @user.update_attributes(params[:user])
+      if @user.save
+        @user.update_attribute(:password_reset_key, nil)
+        UserSession.login(@user)
+        record_action!(:reset_password, current_user)
+        @success = true
+      end
     end
   end
   
@@ -63,6 +80,6 @@ class UserSessionsController < ApplicationController
     UserSession.find.destroy
       record_action!(:logout, current_user)
     flash[:notice] = "Logout successful!"
-    redirect_back_or_default new_user_session_url
+    redirect_back_or_default login_url
   end
 end

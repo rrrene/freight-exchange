@@ -16,7 +16,7 @@
 #
 class AppConfig < ActiveRecord::Base
   searchable
-  serialize :value
+#  serialize :value
   
   class << self
     #attr_accessor :defaults

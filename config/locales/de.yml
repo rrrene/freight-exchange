@@ -1062,10 +1062,15 @@ de:
       login_or_email: Benutzername oder E-Mail
       submit: Abschicken
       back_to_login: Zurück zur Anmelden-Seite
+    reset_password:
+      page_title: Passwort zurücksetzen
+      intro: "Sie haben Ihr Passwort zurückgesetzt und können nun ein neues vergeben:"
+      success: "Neues Passwort wurde gespeichert! Sie sind nun eingeloggt."
   user_notifier:    
     forgot_password:
       subject: Passwort vergessen
       body: "Neues Passwort: %{password}"
+      reset_your_password: "Benutzen Sie diesen Link, um Ihr Passwort wieder zu ändern:"
     
   users: 
     common: 
