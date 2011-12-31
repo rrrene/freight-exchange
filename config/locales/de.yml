@@ -147,6 +147,7 @@ de:
         password_confirmation: "Passwort wiederholen"
         posting_type: "Art der Inserate"
         user_roles: Berechtigungen
+        notify_by_email: "Zusätzlich per E-Mail über neue Inserate etc. benachrichtigen"
       station:
         name: Name
         numeric_id: Nummer
@@ -667,6 +668,7 @@ de:
     localized_info_locale_selector: "Sprache:"
     titles: 
       change_password: "Passwort ändern (optional)"
+      notifications: "Benachrichtigungen (optional)"
       company_address: Anschrift
       company_contact: Kontakt
       company_registries: "Registrierungen"
@@ -1071,6 +1073,9 @@ de:
       subject: Passwort vergessen
       body: "Neues Passwort: %{password}"
       reset_your_password: "Benutzen Sie diesen Link, um Ihr Passwort wieder zu ändern:"
+    notification:
+      subject: Neue Benachritigungen
+      body: "Es gibt neue Benachrichtigungen für Sie in der Online-Frachtenbörse."
     
   users: 
     common: 

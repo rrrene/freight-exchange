@@ -7,4 +7,10 @@ class UserNotifier < ActionMailer::Base
     default_url_options[:host] = AppConfig[:domain]
     mail(:subject => t("user_notifier.forgot_password.subject"), :to => @user.email)
   end
+  
+  def notification(user, notification)
+    @user, @notification = user, notification
+    default_url_options[:host] = AppConfig[:domain]
+    mail(:subject => t("user_notifier.notification.subject"), :to => @user.email)
+  end
 end

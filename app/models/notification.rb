@@ -17,6 +17,9 @@ class Notification < ActiveRecord::Base
   def close!
     self.closed_at = Time.now
     save!
+    if user.notify_by_email?
+      UserNotifier.notification(user, self).deliver
+    end
   end
 
   validates_associated :user
