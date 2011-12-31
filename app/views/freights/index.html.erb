@@ -5,6 +5,11 @@
   <p>
     <%= t('freights.index.intro') %>
   </p>
+  <% if @uploaded %>
+  	<p class="success">
+    	<%= t('freights.index.just_uploaded') %>
+  	</p>
+	<% end %>
 
   <%= render :partial => "postings/postings" %>
   <%= will_paginate collection %>

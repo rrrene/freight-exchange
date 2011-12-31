@@ -710,6 +710,7 @@ de:
       header: "Alle Nachfragen"
       header_query: "Alle Nachfragen für '%{query}'"
       intro: "Hier sehen Sie alle Nachfragen."
+      just_uploaded: "Die markierten Nachfragen wurden per Excel hochgeladen und ins System eingestellt:"
       from_origin_city: "Nur Nachfragen aus '%{city}'"
       to_destination_city: "Nur Nachfragen nach '%{city}'"
       show_company: "Profil von %{company}"

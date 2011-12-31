@@ -15,7 +15,7 @@
   </thead>
   <tbody>
     <% collection.each do |ar| %>
-      <tr class="<%= ar.try(:valid_until).to_i < Time.now.to_i ? :old : :new %>">
+      <tr class="<%= ar.try(:valid_until).to_i < Time.now.to_i ? :old : :new %><%= " highlight" if @highlight && @highlight.include?(ar.id.to_s) %>">
         <td class="pretty_id"><%= link_to ar.pretty_id, ar %></td>
         <td class="origin_date"><%= l(ar.valid_until, :format => :date) if ar.valid_until.present? %></td>
         <% %w(origin destination).each do |origin_or_destination| %>

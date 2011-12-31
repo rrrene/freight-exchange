@@ -4,19 +4,15 @@
 <% end %>
 
 <% if @sheet %>
-  <% @rows.each_with_index do |row, i| %>
-    <pre>
-      <%= i %>
-      <%= row.inspect %>
-      <% if attributes = @postings[i].try(:attributes) %>
-        <%= attributes.inspect %>
-        <% record = Freight.new(attributes.reverse_merge(:contractor => current_company.name, :desired_means_of_transport => 'custom')) %>
-        <% record.user = current_user %>
-        <% record.company = current_company %>
-        <%= record.valid?.inspect %>
-        <%= record.attributes.inspect %>
-      <% end %>
-    </pre>
+  <%= t("postings.upload.created_postings", :count => @collection.size)%>
+
+<pre>
+  <% @collection.each_with_index do |resource, i| %>
+    index: <%= i %>
+    attributes (by upload): <%= @posting_attributes[i].attributes.inspect %>
+    attributes (by resource): <%= resource.attributes.inspect %>  
+    valid?: <%= resource.valid? %>
+    
   <% end %>
-  
+</pre>
 <% end %>

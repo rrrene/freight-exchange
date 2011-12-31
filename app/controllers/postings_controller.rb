@@ -49,6 +49,8 @@ class PostingsController < RemoteController
   
   def index
     super do
+      @uploaded = params[:uploaded]
+      @highlight = @uploaded
       if @q
         @origin_city ||= collection.detect { |posting|
           posting.origin_city =~ /^#{@q}/i
@@ -78,9 +80,18 @@ class PostingsController < RemoteController
       @sheet = Uploaded::Sheet.new(params[:data])
       @headers = headers_from_sheet(@sheet)
       @rows = extract_after(@sheet.rows, @headers)
-      @postings = @rows.map do |row|
+      @posting_attributes = @rows.map do |row|
         Uploaded::Posting.new(row, @headers)
       end
+      klass = Freight
+      @collection = @posting_attributes.map do |posting|
+        record = klass.new(posting.attributes.reverse_merge(:contractor => current_company.name, :desired_means_of_transport => 'custom'))
+        record.user = current_user
+        record.company = current_company
+        record
+      end
+      @saved = @collection.select(&:save).map(&:id)
+      redirect_to :controller => klass.to_s.underscore.pluralize, :company_id => current_company, :uploaded => @saved
     end
   end
 

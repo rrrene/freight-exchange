@@ -378,6 +378,10 @@ table.stats small {
   color: #333;
 }
 
+table.postings tr.highlight td {
+  background-color: #ffa!important;
+}
+
 table.postings tr.old td.origin_date,
 table.postings tr.old td.origin_name,
 table.postings tr.old td.destination_name,

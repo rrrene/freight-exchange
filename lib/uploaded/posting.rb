@@ -60,6 +60,15 @@ module Uploaded
       end
     end
     
+    def nhm_no=(value)
+      self.attributes["nhm_no"] = value.to_i.to_s
+    end
+    
+    def un_no=(value)
+      self.attributes["un_no"] = value.to_i.to_s
+    end
+    
+    
     def destination_station_numeric_id=(value)
       attributes[:destination_station_id] = Station.where(:numeric_id => value).first.try(:id)
     end
