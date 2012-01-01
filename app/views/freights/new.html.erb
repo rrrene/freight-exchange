@@ -1,6 +1,6 @@
 <% if Rails.env == 'development' %>
   <% content_for(:toolbar) do %>
-    <%= link_btn_unless_current("Upload Excel", :action => 'upload') %>
+    <%= link_btn_unless_current(t("freights.common.upload_link"), :action => 'upload') %>
   <% end %>
 <% end %>
 
