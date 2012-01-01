@@ -3,9 +3,16 @@
     <%= t(".intro")%>
   </p>
   <%= form_tag({}, :multipart => true) do %>
-    <%= file_field_tag :data %>
-    <%= submit_tag t(".submit") %>
+    <p>
+      <%= file_field_tag :data %>
+    </p>
+    <p>
+      <%= submit_tag t(".submit") %> <%= link_to t(".excel_template_link"), "/inserate.xls" %>
+    </p>
   <% end %>
+  <p>
+    
+  </p>
 </div>
 
 <% if @sheet %>

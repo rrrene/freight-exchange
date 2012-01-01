@@ -752,6 +752,7 @@ de:
       page_title: "Inserate hochladen"
       intro: "Hier können Sie mehrere Inserate gleichzeitig als Excel-Tabelle hochladen:"
       submit: "Inserate hochladen"
+      excel_template_link: "oder Beispiel-Excel herunterladen..."
   helpers: 
     select: 
       prompt: "Bitte wählen"
