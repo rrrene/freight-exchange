@@ -1,7 +1,12 @@
-<%= form_tag({}, :multipart => true) do %>
-  <%= file_field_tag :data %>
-  <%= submit_tag %>
-<% end %>
+<div class="box">
+  <p>
+    <%= t(".intro")%>
+  </p>
+  <%= form_tag({}, :multipart => true) do %>
+    <%= file_field_tag :data %>
+    <%= submit_tag t(".submit") %>
+  <% end %>
+</div>
 
 <% if @sheet %>
   <%= t("postings.upload.created_postings", :count => @collection.size)%>

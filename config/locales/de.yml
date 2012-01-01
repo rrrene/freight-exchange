@@ -693,7 +693,7 @@ de:
       new_link: "Neue Nachfrage"
       required_field_hint: "Die mit einem (*) gekennzeichneten Felder sind Pflichtfelder:"
       template_link: "Als Vorlage"
-      upload_link: "Upload per Excel-Tabelle"
+      upload_link: "Upload als Excel-Tabelle"
       search-label: "Nachfrage:"
       reply_to_link: "Mit Angebot beantworten"
       is_reply_to: "Diese Nachfrage ist eine Antwort auf %{name}"
@@ -747,6 +747,11 @@ de:
     update: 
       header: "Inserat bearbeiten"
       page_title: "Inserat bearbeiten"
+    upload: 
+      header: "Inserate hochladen"
+      page_title: "Inserate hochladen"
+      intro: "Hier können Sie mehrere Inserate gleichzeitig als Excel-Tabelle hochladen:"
+      submit: "Inserate hochladen"
   helpers: 
     select: 
       prompt: "Bitte wählen"
