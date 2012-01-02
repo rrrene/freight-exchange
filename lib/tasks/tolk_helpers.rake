@@ -4,7 +4,8 @@
 namespace :tolk do
   desc "..."
   task :clean_sync => :environment do
-    %w(errors.messages.% errors.format date.% datetime.% time.% number.% flash.actions.%).each do |str|
+    verboten = %w(errors.messages.% errors.format date.% datetime.% time.% number.% flash.actions.% search.advanced.keyword_is)
+    verboten.each do |str|
       Tolk::Phrase.where("key LIKE ?", str).each(&:destroy)
     end
   end
