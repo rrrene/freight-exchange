@@ -41,6 +41,10 @@ module App
   
     private
     
+    def ensure_robots_present!(size = User::ROBOT_ARMY_SIZE)
+      create_robot_army!(size) if User.robots.count < size
+    end
+    
     def self.logger
       @logger ||= begin
         logger = Logger.new(STDOUT)
@@ -55,6 +59,7 @@ module App
     def run_bot(options)
       ActiveResource::Base.site = 
       ActiveResource::Base.proxy = options[:site]
+      ensure_robots_present!
       Robot::Bot.new.go(options.merge(:logger => self.class.logger))
     rescue SystemExit, Interrupt
       raise

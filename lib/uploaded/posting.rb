@@ -69,11 +69,13 @@ module Uploaded
     end
     
     def destination_station_numeric_id=(value)
-      attributes[:destination_station_id] = Station.where(:numeric_id => value).first.try(:id)
+      station = Station.where(:numeric_id => value).first.try(:id)
+      attributes[:destination_station_id] = station
     end
     
     def origin_station_numeric_id=(value)
-      attributes[:origin_station_id] = Station.where(:numeric_id => value).first.try(:id)
+      station = Station.where(:numeric_id => value).first.try(:id)
+      attributes[:origin_station_id] = station
     end
     
     def expand_map(map, include_downcase = true)
