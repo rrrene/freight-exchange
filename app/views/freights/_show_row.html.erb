@@ -1,8 +1,13 @@
 <%
-  value = if %w(product_state frequency desired_means_of_transport own_means_of_transport desired_proposal_type).include?(attrib.to_s)
-    resource.human_attribute_value(attrib)
-  else
-    resource.__send__(attrib)
+  value = resource.__send__(attrib)
+  if %w(product_state frequency desired_means_of_transport own_means_of_transport desired_proposal_type).include?(attrib.to_s)
+    value = if value.nil?
+      nil
+    elsif value == "custom"
+      resource.__send__("#{attrib}_custom")
+    else
+      resource.human_attribute_value(attrib)
+    end
   end
   if value.is_a?(Date) or value.is_a?(DateTime) or value.is_a?(ActiveSupport::TimeWithZone)
     value = l(value)
@@ -10,5 +15,5 @@
 %>
 <tr>
   <th><%= resource.class.human_attribute_name(attrib) %></th>
-  <td><%= value %></td>
+  <td><%= value || "-" %></td>
 </tr>
