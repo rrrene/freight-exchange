@@ -60,6 +60,7 @@ BlackBoard::Application.routes.draw do |map|
   resources :users
 
   match "about" => "root#about", :as => :about
+  match "error" => "root#server-error", :as => :error
   
   resources :users
   resources :user_sessions do

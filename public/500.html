@@ -1,26 +1,108 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>We're sorry, but something went wrong (500)</title>
-  <style type="text/css">
-    body { background-color: #fff; color: #666; text-align: center; font-family: arial, sans-serif; }
-    div.dialog {
-      width: 25em;
-      padding: 0 4em;
-      margin: 4em auto 0 auto;
-      border: 1px solid #ccc;
-      border-right-color: #999;
-      border-bottom-color: #999;
-    }
-    h1 { font-size: 100%; color: #f00; line-height: 1.5em; }
-  </style>
-</head>
 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Vorgang abgebrochen</title>
+	<link rel="shortcut icon" href="/favicon.gif" type="image/x-icon">
+  <link rel="icon" href="/favicon.gif" type="image/x-icon">
+  <link href="/stylesheets/formtastic.css?1315595019" media="screen" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/formtastic_changes.css?1317839843" media="screen" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/blueprint/screen.css?1315595019" media="screen" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/application.css?1325353642" media="screen" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/jquery-ui-1.8.14.custom.css?1315595019" media="screen" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/popover.css?1315595019" media="screen" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/chosen.css?1315595019" media="screen" rel="stylesheet" type="text/css" />
+  <!--[if IE 6]>
+    <link href="/stylesheets/blueprint/ie.css?1315595019" media="screen" rel="stylesheet" type="text/css" />
+  <![endif]-->
+  <script src="/javascripts/jquery-1.5.1.min.js?1315595019" type="text/javascript"></script>
+<script src="/javascripts/jquery-ui-1.8.14.custom.min.js?1315595019" type="text/javascript"></script>
+<script src="/javascripts/jquery.glow.js?1315595019" type="text/javascript"></script>
+<script src="/javascripts/jquery.popover.js?1315595019" type="text/javascript"></script>
+<script src="/javascripts/chosen.jquery.min.js?1315595019" type="text/javascript"></script>
+<script src="/javascripts/rails.js?1315595019" type="text/javascript"></script>
+<script src="/javascripts/application.js?1315595019" type="text/javascript"></script>
+<script src="/javascripts/form-magic.js?1317839295" type="text/javascript"></script>
+<script src="/javascripts/autocomplete-rails.js?1315595019" type="text/javascript"></script>
+  <meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="CX0jBZJ+/GwE7WDe6GSAZ6jwik80Vme0xjLouzmv/b0="/>
+</head>
 <body>
-  <!-- This file lives in public/500.html -->
-  <div class="dialog">
-    <h1>We're sorry, but something went wrong.</h1>
-    <p>We've been notified about this issue and we'll take a look at it shortly.</p>
+  <div id="root" class="server-error">
+      <div id="wrap">
+          <div id="demo_mode" style="display: none">
+            &nbsp;
+          </div>
+        <div class="header">
+  <div id="top-navigation">
+  <div class="navigation-left">
+    <ul class="navigation">
+    </ul>
   </div>
+
+  <div class="navigation-right">
+    <ul class="navigation">
+        <li><a href="/login">Anmelden</a></li>
+        <li class="last"><a href="/register">Registrieren</a></li>
+    </ul>
+  </div>
+
+  <div style="clear:both"></div>
+</div>
+
+  
+  <div class="container" id="header">
+    <div class="span-24 last" id="first-header">
+      <div class="float_left">
+        <a href="http://frachtenboerse.dev/" id="logo"><img alt="Logo" src="/images/logo.png?1315595019" /></a>
+      </div>
+      <div style="clear:both"></div>
+    </div>
+  </div>
+</div>
+
+
+        <div class="frame">
+          <div class="container" id="frame">
+            <div class="page_title">
+  <div class="container" id="page_title">
+    <div class="span-16">
+      <h2>Vorgang abgebrochen
+        <small class="page_title_options">
+          
+        </small>
+      </h2>
+    </div>
+  </div>
+</div>
+            <div id="content" class="span-24 last">
+              <div class="box">
+  <h3>Serverfehler</h3>
+  <p class="error">
+    Leider konnte der angeforderte Vorganng nicht abgeschlossen werden, da ein interner Serverfehler aufgetreten ist.
+  </p>
+  <p>
+    <a href="/" onclick="history.back();; return false;">Zurück</a>
+  </p>
+</div>
+            </div>
+          </div>
+        </div>
+        <div class="footer">
+  <div class="container" id="footer">
+    <div class="span-24 last">
+      <div class="float_left">
+        <strong>&copy; 2012 by René Föhring</strong> |
+        <a href="/about">Impressum</a> |
+        <a href="/contact">Kontakt</a>
+      </div>
+      <div class="float_right">
+      </div>
+    </div>
+  </div>
+</div>
+      </div> <!-- div#wrap -->
+  </div> <!-- div#controller.action -->
 </body>
 </html>
