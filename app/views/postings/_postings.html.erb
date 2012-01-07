@@ -20,8 +20,10 @@
         <td class="origin_date"><%= l(ar.valid_until, :format => :date) if ar.valid_until.present? %></td>
         <% %w(origin destination).each do |origin_or_destination| %>
           <td class="<%= origin_or_destination %>_name">
-            <% if city = ar.__send__("#{origin_or_destination}_city") %>
+            <% if city = ar.__send__("#{origin_or_destination}_city").full? %>
               <%= link_to_filter truncate(city), {:"#{origin_or_destination}_city" => city}, :title => city %>
+            <% elsif name = ar.__send__("#{origin_or_destination}_name").full? %>
+              <%= content_tag :span, truncate(name), :title => name %>
             <% end %>
             <% if station = ar.__send__("#{origin_or_destination}_station") %>
               (<%= link_to_filter "##{station.numeric_id}", {:"#{origin_or_destination}_station_id" => station.id}, :title => station.name %>)
