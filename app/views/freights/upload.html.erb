@@ -16,15 +16,34 @@
 </div>
 
 <% if @sheet %>
-  <%= t("postings.upload.created_postings", :count => @collection.size)%>
-
-<pre>
-  <% @collection.each_with_index do |resource, i| %>
-    index: <%= i %>
-    attributes (by upload): <%= @posting_attributes[i].attributes.inspect %>
-    attributes (by resource): <%= resource.attributes.inspect %>  
-    valid?: <%= resource.valid? %>
-    
-  <% end %>
-</pre>
+  <div class="box">
+    <%= t("postings.upload.created_postings", :count => @collection.size)%>
+  
+    <table class="stats">
+      <% keys = @posting_attributes[0].attributes.keys %>
+      <thead>
+        <tr>
+          <td>#</td>
+          <% keys.each do |attr| %>
+            <td><%= attr %></td>
+          <% end %>
+        </tr> 
+      </thead> 
+      <tbody>
+        <% @collection.each_with_index do |resource, i| %>
+          <tr>
+            <td rowspan="2">#<%= i %></td>
+            <% keys.each do |attr| %>
+              <td><%= @posting_attributes[i].attributes[attr].inspect %></td>
+            <% end %>
+            </tr>
+            <tr>
+              <% keys.each do |attr| %>
+                <td><%= resource[attr].inspect %></td>
+              <% end %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 <% end %>

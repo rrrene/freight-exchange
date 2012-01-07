@@ -64,6 +64,17 @@ class Freight < ActiveRecord::Base
     '#N'
   end
   
+  def first_transport_at=(value)
+    self[:first_transport_at] = begin
+      if value =~ /^\d\d\.\d\d\d\d$/
+        DateTime.strptime(value, "%m.%Y") # parse month and year only
+      else
+        value
+      end
+    end
+    #raise value.inspect + " => " + self[:first_transport_at].inspect
+  end
+  
   def to_search # :nodoc:
     search_str = [:origin, :destination].map { |origin_or_destination|
       [
