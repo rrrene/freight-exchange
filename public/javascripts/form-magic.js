@@ -34,6 +34,7 @@ function showDesiredMeansOfTransportFields() {
   var show_more = $("#freight_desired_means_of_transport").val() == "custom";
   var fields = "#freight_desired_means_of_transport_custom_input";
   showOrHideFields(show_more, fields);
+  if( show_more ) $(addToStyleQueries(fields, "input")).select();
 }
 
 function showFrequencyFields() {
@@ -46,6 +47,12 @@ function showOwnMeansOfTransportFields() {
   var show_more = $("#freight_own_means_of_transport, #loading_space_own_means_of_transport").val() == "custom";
   var fields = "#freight_own_means_of_transport_custom_input, #loading_space_own_means_of_transport_custom_input";
   showOrHideFields(show_more, fields);
+  if( show_more ) $(addToStyleQueries(fields, "input")).select();
+}
+
+function addToStyleQueries(original_query, additional_query) {
+  var q = " "+additional_query.trim();
+  return original_query.split(",").join(q+",")+q;
 }
 
 function showOwnMeansOfTransportPresentFields() {
