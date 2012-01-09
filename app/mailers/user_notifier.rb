@@ -1,5 +1,5 @@
 class UserNotifier < ActionMailer::Base
-  default :from => "from@example.com"
+  default :from => "noreply@#{AppConfig[:domain]}"
   
   def forgot_password(user, password)
     @user = user

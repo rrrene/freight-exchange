@@ -6,6 +6,6 @@ class Contact < ActionMailer::Base
     @text = text
     @user = user
     @person, @company, = @user.person, @user.company
-    mail(:subject => "Contact Form", :to => AppConfig[:support_email])
+    mail(:subject => "Contact Form", :to => AppConfig[:support_email], :from => @user.email)
   end
 end
