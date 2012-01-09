@@ -8,8 +8,9 @@ class CompaniesController < RemoteController
   # The dashboard action provides a general overview of the company's 
   # activities.
   def dashboard
+    actions = %w(create update destroy)
     @company = current_company
-    @recordings = current_company.action_recordings.limit(50)
+    @recordings = current_company.action_recordings.where(:action => actions).limit(50)
   end
 
   # The Companies#new action is actually the "Create a new Account"-screen

@@ -232,6 +232,9 @@ de:
       freight: Ladung
       loading_space: Laderaum
       station: Bahnhof
+      person: Person
+      company: Anbieter
+      user: Benutzer
   admin:
     action_recordings:
       search-label: Aktionen
@@ -897,9 +900,9 @@ de:
     show: 
       page_title: "Inserat - Detailansicht"
   recordings: 
-    create: "%{user} <strong>erstellte</strong> ein %{object_class}: %{object_link}"
-    destroy: "%{user} <strong>löschte</strong> ein %{object_class}: %{object_link}"
-    update: "%{user} <strong>bearbeitete</strong> ein %{object_class}: %{object_link}"
+    create: "%{user} <strong>erstellte</strong> %{object_class}: %{object_link}"
+    destroy: "%{user} <strong>löschte</strong> %{object_class}: %{object_link}"
+    update: "%{user} <strong>bearbeitete</strong> %{object_class}: %{object_link}"
   reviews: 
     index: 
       filter_all: "Alle Bewertungen"

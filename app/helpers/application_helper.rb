@@ -124,7 +124,7 @@ module ApplicationHelper
   def humanize_recording(rec)
     opts = {
       :user => rec.user.full?(&:name),
-      :object_class => rec.item.full?(&:class),
+      :object_class => t("activerecord.models.#{rec.item_type.underscore}"),
       :object_link => link_to_item(rec.item),
     }
     t("recordings.#{rec.action}", opts)
