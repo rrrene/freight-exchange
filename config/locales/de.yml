@@ -290,6 +290,7 @@ de:
         stations: Bahnhöfe
         user_roles: Benutzerrollen
         users: Benutzer
+        monitoring: "Monitoring"
       new_link: "Neu erstellen"
       stats: 
         last_week: 

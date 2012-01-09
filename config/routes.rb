@@ -108,6 +108,10 @@ BlackBoard::Application.routes.draw do |map|
     end
     resources :user_roles
     resources :users
+
+    get "monitoring/:action"
+    match "monitoring", :to => "monitoring#index", :as => :monitoring
+
     root :to => "root#index"
     match "search", :to => "search#index", :as => :search
   end

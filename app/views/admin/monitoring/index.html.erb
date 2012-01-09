@@ -1,0 +1,8 @@
+<div class="box">
+  <h3><%= "Statistiken" %></h3>
+  <p>
+    <% [Freight, LoadingSpace].each do |model| %>
+      <%= model %> <%= model.count %>
+    <% end %>
+  </p>
+</div>
