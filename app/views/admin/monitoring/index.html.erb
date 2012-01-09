@@ -1,8 +1,22 @@
 <div class="box">
-  <h3><%= "Statistiken" %></h3>
+  <h3><%= t('admin.monitoring.index.header') %></h3>
   <p>
-    <% [Freight, LoadingSpace].each do |model| %>
-      <%= model %> <%= model.count %>
-    <% end %>
+    <%= t("admin.monitoring.index.intro") %>
   </p>
+  <table>
+    <thead>
+      <th>Klasse</th>
+      <th>Objekte in System</th>
+      <th>Gültig</th>
+      <th>Tonnage</th>
+    </thead>
+    <% [Freight, LoadingSpace].each do |model| %>
+      <tr>
+        <td><%= model %></td>
+        <td><%= model.count %></td>
+        <td><%= model.where("valid_until > ?", Time.new).count %></td>
+        <td><%= model.sum(:total_weight) if model.new.respond_to?(:total_weight) %></td>
+      </tr>
+    <% end %>
+  </table>
 </div>

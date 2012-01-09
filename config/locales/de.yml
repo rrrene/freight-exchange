@@ -414,6 +414,11 @@ de:
         page_title: Benutzer
       update: 
         page_title: "Benutzer bearbeiten"
+    monitoring:
+      index:
+        page_title: "Monitoring"
+        header: "Statistiken"
+        intro: "Hier sehen Sie Daten, die Aufschluss über die Aktivität innerhalb der Online-Frachtenbörse geben sollen."
   common: 
     choice_no: Nein
     choice_yes: Ja
