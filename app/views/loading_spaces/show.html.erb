@@ -3,7 +3,7 @@
 
   <% if resource.reply_to.full? %>
     <div class="success">
-      <%= auto_link t("loading_spaces.show.is_reply_to", :name => resource.reply_to.pretty_id) %>
+      <%= auto_link(t("loading_spaces.show.is_reply_to", :name => resource.reply_to.pretty_id)).html_safe %>
     </div>
   <% end %>
   
