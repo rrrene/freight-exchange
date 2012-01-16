@@ -89,7 +89,9 @@ module ActiveRecord
     #   freight.human_attribute_value(:transport_type, :locale => :de) 
     #     # => 'Einzelwagen'
     def human_attribute_value(attribute_name, i18n_opts = {})
-      self.class.human_attribute_value(attribute_name, self[attribute_name], i18n_opts)
+      if value = self[attribute_name]
+        self.class.human_attribute_value(attribute_name, value, i18n_opts)
+      end
     end
     
     # Returns the localized version of the given attribute and its value.
