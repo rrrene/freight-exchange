@@ -5,7 +5,7 @@ require File.join(File.dirname(__FILE__), 'places_data')
 
 module Robot
   class Places
-    
+
     def initialize
       @places = @@places.clone.sort_by { rand }
     end
