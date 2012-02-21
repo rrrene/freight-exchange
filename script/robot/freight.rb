@@ -12,8 +12,8 @@ module Robot
     f.contractor { @places = Places.new ; @places.origin[:name] }
     f.product_name { @places = Places.new ; @places.origin[:name] }
     
-    f.valid_until { Time.now + ((150 + rand) * 87600).to_i * 365 }
-    f.first_transport_at { Time.now + ((150 + rand) * 87600).to_i * 365 }
+    f.valid_until { Time.now + 150.days + (rand * 365.days).to_i }
+    f.first_transport_at { Time.now + 150.days + (rand * 365.days).to_i }
 
     f.origin_name { @places = Places.new ; @places.origin[:name] }
     f.origin_date { @places = Places.new ; @places.origin[:date] }

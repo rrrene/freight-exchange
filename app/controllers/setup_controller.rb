@@ -1,5 +1,6 @@
 class SetupController < ApplicationController
   role_required :administrator, :except => [:index, :not_seeded]
+  before_filter :set_admin_layout
 
   def demo_company
     @company = Demo::Company.instance
@@ -101,6 +102,10 @@ class SetupController < ApplicationController
 
   def just_set_up_but_not_seeded?
     UserRole.count == 0
+  end
+
+  def set_admin_layout
+    @is_admin_controller = true
   end
   
   def user_pwd

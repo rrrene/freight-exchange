@@ -21,7 +21,7 @@ Factory.define "AdminRobot", :class => "User" do |u|
   u.company_attributes {
     company = {}
     place = Robot::Places.new.origin
-    company[:name] = Faker::Company.name
+    company[:name] = place[:contractor]
     company[:zip] = place[:zip]
     company[:city] = place[:city]
     company[:phone] = Random.international_phone

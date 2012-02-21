@@ -2,7 +2,11 @@
 module ApplicationHelper
   # Returns <tt>true</tt> if the current controller is an Admin::BaseController
   def admin?
-    controller.is_a?(Admin::BaseController)
+    if !@is_admin_controller.nil?
+      @is_admin_controller
+    else
+      controller.is_a?(Admin::BaseController)
+    end
   end
   
   def auto_link(text, *args, &block)

@@ -9,8 +9,8 @@ module Robot
   Factory.define "Robot::LoadingSpace" do |f|
     f.contractor { @places = Places.new ; @places.origin[:name] }
 
-    f.valid_until { Time.now + (rand * 87600).to_i * 365 }
-    f.first_transport_at { Time.now + (rand * 87600).to_i * 365 }
+    f.valid_until { Time.now + 150.days + (rand * 365.days).to_i }
+    f.first_transport_at { Time.now + 150.days + (rand * 365.days).to_i }
 
     f.origin_name { @places = Places.new ; @places.origin[:name] }
     f.origin_contractor { @places = Places.new ; @places.origin[:contractor] }
