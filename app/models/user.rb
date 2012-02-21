@@ -22,6 +22,10 @@ class User < ActiveRecord::Base
   brackets_find_by :login
   acts_as_authentic
   searchable :attributes => ["posting_type", "current_login_ip", "login", "email"]
+
+
+  ROBOT_ARMY_SIZE = 30
+  scope :robots, where('login LIKE "robot_%"')
   
   def current_notification
     notification = notifications.order('created_at DESC').first

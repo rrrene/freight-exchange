@@ -1,4 +1,6 @@
-class SetupController < Admin::BaseController
+class SetupController < ApplicationController
+  role_required :administrator, :except => [:index, :not_seeded]
+
   def demo_company
     @company = Demo::Company.instance
     if params[:create]

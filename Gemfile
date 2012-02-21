@@ -36,6 +36,7 @@ gem 'tolk'
 
 gem 'phone'
 
+gem 'thin'
 
 # Use unicorn as the web server
 # gem 'unicorn'

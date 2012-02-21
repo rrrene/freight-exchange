@@ -7,11 +7,6 @@ require 'factory_girl'
 require 'random_data'
 require 'faker'
 
-class User < ActiveRecord::Base
-  ROBOT_ARMY_SIZE = 30
-  scope :robots, where('login LIKE "robot_%"')
-end
-
 %w(actions active_resource_ext array_ext string_ext bot users places user review).each do |rb|
   require File.join(File.dirname(__FILE__), 'robot', rb)
 end
@@ -45,7 +40,6 @@ Factory.define "AdminRobot", :class => "User" do |u|
   u.email { Random.email }
   u.password 'asdf'
   u.password_confirmation { |o| o.password }
-  u.posting_type { User.last.posting_type == 'Freight' ? 'LoadingSpace' : 'Freight' }
 end
 
 module Robot
