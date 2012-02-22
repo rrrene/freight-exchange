@@ -8,16 +8,6 @@ module Robot
     @@places = [
 
     {
-      :contractor => "Name GmbH",
-      :name => "Stadt",
-      :address => "Straße",
-      :zip => "PLZ",
-      :city => "Stadt",
-      :country => "Germany",
-      :date => @@date_blueprint,
-      :side_track_available => false,
-    },
-    {
       :contractor => "Manning AG",
       :name => "Hannover",
       :address => "Dahlweg 81",

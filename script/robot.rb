@@ -12,8 +12,12 @@ require 'faker'
 end
 
 def create_robot_army!(size = 10)
-  size.times do
-    Factory.create(:AdminRobot)
+  while( User.robots.count < size ) do
+    begin
+      Factory.create(:AdminRobot)
+    rescue
+      warn "[!]"
+    end
   end
 end
 
