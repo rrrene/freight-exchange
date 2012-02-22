@@ -61,9 +61,7 @@ class SetupController < ApplicationController
   def tolk_sync
     Tolk::Locale.sync!
     flash[:tolk] = "Synced!"
-     f.valid_until { Time.now + 150.days + (rand * 365.days).to_i }
-    f.first_transport_at { Time.now + 150.days + (rand * 365.days).to_i }
-   redirect_to :action => :index
+    redirect_to :action => :index
   end
 
   
@@ -92,8 +90,6 @@ class SetupController < ApplicationController
     admin.user_roles << UserRole[:administrator]
     admin
   end
-    f.valid_until { Time.now + 150.days + (rand * 365.days).to_i }
-    f.first_transport_at { Time.now + 150.days + (rand * 365.days).to_i }
 
   def create_or_find(attributes = {})
     user = User.new(attributes)
