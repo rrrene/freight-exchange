@@ -26,4 +26,20 @@ blockquote {margin:1.5em;padding:1em;font-style:italic;font-size:.9em;}
 .quiet {color:#999;}
 .hide {display:none;}
 a:link, a:visited {background:transparent;font-weight:700;text-decoration:underline;}
-a:link:after, a:visited:after {content:" (" attr(href) ")";font-size:90%;}
+
+caption, th, td {
+    text-align: left;
+}
+
+#top-navigation,
+#search_form,
+#header .float_right,
+.page_title_options,
+.toolbar,
+#sidebar .minibutton,
+.search_results_box,
+#footer,
+.popover
+{
+    display: none;
+}
