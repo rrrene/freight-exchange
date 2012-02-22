@@ -2,11 +2,11 @@
 
 module Robot
   class CurrentUser
-    @@users = ::User.robots.all
     class << self
       attr_accessor :user
       
       def id
+        random! if !user
         user.id
       end
       
@@ -16,7 +16,7 @@ module Robot
       end
       
       def random!
-        self.user = @@users.random
+        self.user = ::User.robots.all.random
       end
       
       def creates

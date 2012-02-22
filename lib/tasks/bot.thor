@@ -27,7 +27,7 @@ module App
     end
   
     desc "postings", "ensures a given number of existing, valid postings  (freights and loading_spaces)"
-    method_options %w(number -n) => 50
+    method_options %w(number -n) => 20
     method_options %w(actions -a) => %w(create_posting)
     method_options %w(site -s) => DEFAULT_SITE
     def postings
