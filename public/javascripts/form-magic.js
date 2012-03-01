@@ -17,8 +17,8 @@ function onClickSideTrackAvailable() {
   $('#'+origin_or_destination+'_address').show();
 }
 
-function showOrHideFields(show_more, fields) {
-  if( show_more ) {
+function showOrHideFields(show, fields) {
+  if( show ) {
     $(fields).show().addClass("more_info");
   } else {
     $(fields).hide().removeClass("more_info");
@@ -38,9 +38,17 @@ function showDesiredMeansOfTransportFields() {
 }
 
 function showFrequencyFields() {
-  var show_more = $("#freight_frequency, #loading_space_frequency").val() == "once";
-  var fields = "#freight_first_transport_at_input, #loading_space_first_transport_at_input";
-  showOrHideFields(show_more, fields);
+  var val = $("#freight_frequency, #loading_space_frequency").val();
+  if( val == "" ) {
+    showOrHideFields(false, "#freight_first_transport_at_input, #loading_space_first_transport_at_input");
+    showOrHideFields(false, "#freight_last_transport_at_input, #loading_space_last_transport_at_input");
+  } else if( val == "once" ) {
+    showOrHideFields(true, "#freight_first_transport_at_input, #loading_space_first_transport_at_input");
+    showOrHideFields(false, "#freight_last_transport_at_input, #loading_space_last_transport_at_input");
+  } else {
+    showOrHideFields(true, "#freight_first_transport_at_input, #loading_space_first_transport_at_input");
+    showOrHideFields(true, "#freight_last_transport_at_input, #loading_space_last_transport_at_input");
+  }
 }
 
 function showOwnMeansOfTransportFields() {

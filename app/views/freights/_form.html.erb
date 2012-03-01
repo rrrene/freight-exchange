@@ -15,8 +15,8 @@
   <% end %>
 
   <%= f.inputs :transport_timeframe do %>
-    <%= f.input :frequency, :collection => collection_choices(Freight, :frequency), :as => :select %>
-    <%= f.input :first_transport_at, :as => :string, :input_html => { :value => resource.first_transport_at ? I18n.l(resource.first_transport_at.to_date) : nil } %>
+    <%= render :partial => "postings/frequency", :locals => {:f => f} %>
+
     <%= f.input :transport_weight, :as => :string %>
 
     <%#= localized_info_fields f, :goods_text %>

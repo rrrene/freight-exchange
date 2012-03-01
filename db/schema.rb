@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120301131800) do
+ActiveRecord::Schema.define(:version => 20120301145255) do
 
   create_table "action_recordings", :force => true do |t|
     t.string   "item_type",  :limit => 30
@@ -143,6 +143,7 @@ ActiveRecord::Schema.define(:version => 20120301131800) do
     t.text     "requirements_at_loading"
     t.text     "requirements_at_unloading"
     t.string   "custom_category"
+    t.datetime "last_transport_at"
   end
 
   create_table "loading_spaces", :force => true do |t|
@@ -193,6 +194,7 @@ ActiveRecord::Schema.define(:version => 20120301131800) do
     t.boolean  "own_means_of_transport_present",   :default => false
     t.string   "free_capacities"
     t.string   "custom_category"
+    t.datetime "last_transport_at"
   end
 
   create_table "localized_infos", :force => true do |t|
