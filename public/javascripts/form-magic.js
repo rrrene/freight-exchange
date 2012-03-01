@@ -64,6 +64,21 @@ function showOwnMeansOfTransportPresentFields() {
   if( show_more ) showOwnMeansOfTransportFields();
 }
 
+function showCustomFieldsOnDemandHandler(id) {
+  var show_more = $("#"+id).val() == "custom";
+  var fields = "#"+id+"_custom_input";
+  showOrHideFields(show_more, fields);
+  if( show_more ) $(addToStyleQueries(fields, "input")).select();
+}
+
+function showCustomFieldsOnDemand(id) {
+  $("#"+id).bind("change", function(event) {
+    showCustomFieldsOnDemandHandler(id);
+  });
+  showCustomFieldsOnDemandHandler(id);
+}
+
+
 jQuery(function() {
   var elements = [
     "#freight_origin_side_track_available_false",
@@ -80,6 +95,10 @@ jQuery(function() {
       'click': onClickSideTrackAvailable
     });
   });
+
+  showCustomFieldsOnDemand("company_category");
+
+  $("#company_custom_category, #freight_custom_category, #loading_space_custom_category").before('<input type="checkbox" class="checkbox" disabled="disabled">');
 
   $("#freight_hazmat_true, #freight_hazmat_false").click(showHazmatFields);
   showHazmatFields();

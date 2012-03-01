@@ -96,19 +96,44 @@ class PostingsController < RemoteController
   end
 
   def show
-    show! {
-      if parent_id = params[:search_recording_id]
-        opts = {:user_id => current_user.id, :parent_id => parent_id, :result => resource}
-        @search_recording = SearchRecording.create(opts)
-      end
-      page[:title] = t("#{controller_name}.show.page_title", :pretty_id => resource.pretty_id)
-      record_action!(:read, resource)
-      @resource_url = url_for(resource)
-    }
+    if can_see?(resource)
+      show! {
+        if parent_id = params[:search_recording_id]
+          opts = {:user_id => current_user.id, :parent_id => parent_id, :result => resource}
+          @search_recording = SearchRecording.create(opts)
+        end
+        page[:title] = t("#{controller_name}.show.page_title", :pretty_id => resource.pretty_id)
+        record_action!(:read, resource)
+        @resource_url = url_for(resource)
+      }
+    else
+      permission_denied!
+    end
   end
   
   private
-  
+
+  def can_see?(posting, company = current_company)
+    return true if posting.company == company
+    if posting.company_roles.blank?
+      if posting.custom_category.blank?
+        true
+      else
+        posting.custom_category.full? == company.custom_category.full?
+      end
+    else
+      # company must have all the roles specified in the posting
+      if posting.company_roles.all? { |r| company.company_roles.include?(r) }
+        # including the custom category
+        if posting.custom_category.blank?
+          true
+        else
+          posting.custom_category.full? == company.custom_category.full?
+        end
+      end
+    end
+  end
+
   def extract_after(rows, first_row)
     result = []
     first_row_found = false
@@ -125,6 +150,7 @@ class PostingsController < RemoteController
   def filter_collection!
     # Do not show deleted postings
     self.collection = resource_class.scoped.where(:deleted => false)
+
     # Default: newest postings first
     @blocked_ids = blocked_company_ids
     self.collection = collection.where("#{controller_name}.company_id NOT IN (?)", @blocked_ids) if @blocked_ids.full?
@@ -135,6 +161,7 @@ class PostingsController < RemoteController
       # TODO: blacklisting beachten?
       self.collection = collection.where(:company_id => @company_id)
     end
+
     # Do not show postings which start dates lie in the past
     if @company == current_company && params[:invalid]
       # show invalid
@@ -142,6 +169,10 @@ class PostingsController < RemoteController
     else
       self.collection = collection.where("valid_until >= ?", Time.now)
     end
+
+    # Do not show postings that the user should not see
+    valid_ids = collection.select { |posting| can_see?(posting) }.map(&:id)
+    self.collection = collection.where(:id => valid_ids)
   end
   
   def headers_from_sheet(sheet, attributes = Uploaded::Posting::ATTRIBUTES)

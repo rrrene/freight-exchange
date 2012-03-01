@@ -22,6 +22,8 @@ class LoadingSpace < ActiveRecord::Base
   has_many :matching_recordings, :as => 'b', :order => 'result DESC', :dependent => :destroy
   searchable
 
+  has_and_belongs_to_many :company_roles, :uniq => true
+
   def contact_email
     contact_person.full?(&:email) || company.email
   end

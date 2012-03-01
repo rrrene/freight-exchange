@@ -22,7 +22,9 @@ de:
         zip: PLZ
         commercial_register_entry: "Handelsregister-Eintragung"
         vat_id: "Umsatzsteuer-Identifikationsnummer"
-      freight: 
+        company_roles: "Unternehmenskategorien:"
+        custom_category: " "
+      freight:
         contractor: "Firma Nachfrager"
         valid_until: "Inserat gültig bis"
         contact_person: Kontaktperson
@@ -77,6 +79,8 @@ de:
           goods_text: Güterbeschreibung
           transport_text: "Weitere Angaben zum Transport"
           misc_text: "Sonstige Informationen"
+        company_roles: "Unternehmenskategorien:"
+        custom_category: " "
       loading_space:
         contractor: "Firma Anbieter"
         valid_until: "Inserat gültig bis"
@@ -120,7 +124,9 @@ de:
         destination_city: "Stadt"
         destination_country: "Land"
         destination_station: "Entladebahnhof"
-      person: 
+        company_roles: "Unternehmenskategorien:"
+        custom_category: " "
+      person:
         email: E-Mail
         fax: Fax
         first_name: Vorname
@@ -159,7 +165,7 @@ de:
       messages: 
         record_invalid: "Validierung fehlgeschlagen: %{errors}"
         taken: "ist schon vergeben"
-    human_attribute_values: 
+    human_attribute_values:
       freight:
         frequency:
           once: "Einmalig"
@@ -221,7 +227,13 @@ de:
         locale: 
           de: Deutsch
           en: English
-      user_role: 
+      company_role:
+        name:
+          evu: "EVU"
+          eisenbahninspektion: "Eisenbahninspektion"
+          verlader: "Verlader"
+          custom: "sonstige"
+      user_role:
         name: 
           administrator: "[System] Administrator"
           company_admin: Führungskraft

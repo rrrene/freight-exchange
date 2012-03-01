@@ -33,6 +33,11 @@ Seed::USER_ROLES.each do |opts|
   UserRole.create(opts)
 end
 
+# Create basic company roles
+Seed::COMPANY_ROLES.each do |opts|
+  CompanyRole.create(opts)
+end
+
 if Rails.env == 'development'
   # Create some users to fill the db
   Seed::USERS.each do |opts|
@@ -41,6 +46,6 @@ if Rails.env == 'development'
   end
 end
 
-[UserRole, Station, Freight, LoadingSpace].each do |model|
+[UserRole, CompanyRole, Station, Freight, LoadingSpace].each do |model|
   puts model.count.to_s.rjust(5) + " " + model.to_s.pluralize
 end

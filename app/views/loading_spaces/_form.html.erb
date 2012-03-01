@@ -33,7 +33,12 @@
   <%= f.inputs :posting_contact do %>
     <%= f.input :contact_person, :collection => current_company.people %>
   <% end %>
-  
+
+  <%= f.inputs :company_roles do %>
+    <%= f.input :company_roles, :as => :check_boxes, :collection => CompanyRole.all.map { |r| [t("activerecord.human_attribute_values.company_role.name.#{r.name}"), r.id] } %>
+    <%= f.input :custom_category, :as => :string %>
+  <% end %>
+
   <% if @reply_to %>
     <%= f.input :reply_to_id, :as => :hidden %>
   <% end %>

@@ -16,6 +16,7 @@ class Freight < ActiveRecord::Base
   PRODUCT_STATE_CHOICES = %w(liquid gas loose packaged container)
   DESIRED_MEANS_OF_TRANSPORT_CHOICES = %w(tank_wagon tank_container custom)
   OWN_MEANS_OF_TRANSPORT_CHOICES = %w(closed_wagon container_wagon custom)
+
   belongs_to :user
   belongs_to :company
   belongs_to :reply_to, :class_name => 'LoadingSpace'
@@ -26,6 +27,8 @@ class Freight < ActiveRecord::Base
   has_many :matching_recordings, :as => 'a', :order => 'result DESC', :dependent => :destroy
   after_save :calc_matchings!
   searchable
+
+  has_and_belongs_to_many :company_roles, :uniq => true
 
   def contact_email
     contact_person.full?(&:email) || company.email

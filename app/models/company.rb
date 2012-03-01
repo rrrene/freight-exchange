@@ -3,6 +3,7 @@
 # Each Company has different types of users, e.g. admins.
 class Company < ActiveRecord::Base
   searchable
+  has_and_belongs_to_many :company_roles, :uniq => true
   has_many :users, :dependent => :destroy
   has_many :people, :through => :users
   belongs_to :contact_person, :class_name => 'Person'
@@ -63,7 +64,7 @@ class Company < ActiveRecord::Base
       "http://#{address}"
     end
   end
-  
+
   validates_presence_of :name
   validates_uniqueness_of :name
 end

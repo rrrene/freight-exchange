@@ -863,3 +863,10 @@ div.toolbar {
     height: 1%; }
   *:first-child + html .pagination {
     overflow: hidden; }
+
+#company_custom_category_input input.checkbox,
+#freight_custom_category_input input.checkbox,
+#loading_space_custom_category_input input.checkbox {
+  min-width: 0;
+  margin-right: 0.3em;
+}

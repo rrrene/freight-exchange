@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111231154726) do
+ActiveRecord::Schema.define(:version => 20120301131800) do
 
   create_table "action_recordings", :force => true do |t|
     t.string   "item_type",  :limit => 30
@@ -55,6 +55,33 @@ ActiveRecord::Schema.define(:version => 20111231154726) do
     t.integer  "contact_person_id"
     t.string   "commercial_register_entry"
     t.string   "vat_id"
+    t.string   "custom_category"
+  end
+
+  create_table "companies_company_roles", :id => false, :force => true do |t|
+    t.integer "company_id"
+    t.integer "company_role_id"
+  end
+
+  create_table "company_roles", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "company_roles_freights", :id => false, :force => true do |t|
+    t.integer "freight_id"
+    t.integer "company_role_id"
+  end
+
+  create_table "company_roles_loading_spaces", :id => false, :force => true do |t|
+    t.integer "loading_space_id"
+    t.integer "company_role_id"
+  end
+
+  create_table "company_roles_users", :id => false, :force => true do |t|
+    t.integer "company_id"
+    t.integer "company_role_id"
   end
 
   create_table "freights", :force => true do |t|
@@ -115,6 +142,7 @@ ActiveRecord::Schema.define(:version => 20111231154726) do
     t.text     "requirements_means_of_transport"
     t.text     "requirements_at_loading"
     t.text     "requirements_at_unloading"
+    t.string   "custom_category"
   end
 
   create_table "loading_spaces", :force => true do |t|
@@ -164,6 +192,7 @@ ActiveRecord::Schema.define(:version => 20111231154726) do
     t.string   "own_means_of_transport_custom"
     t.boolean  "own_means_of_transport_present",   :default => false
     t.string   "free_capacities"
+    t.string   "custom_category"
   end
 
   create_table "localized_infos", :force => true do |t|
