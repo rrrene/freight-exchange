@@ -1,18 +1,6 @@
-<% if @reply_to %>
-  <% content_for(:toolbar) do %>
-    <div class="success">
-      <%= auto_link(t("#{controller_name}.common.is_reply_to", :name => @reply_to.pretty_id)).html_safe %>
-    </div>
-  <% end %>
-<% end %>
 
 <%= semantic_form_for(resource) do |f| %>
-  <%= f.inputs :contractor_info do %>
-    <%= f.input :contractor, :as => :string %>
-    <%= f.input :valid_until, :as => :string, :input_html => { :value => I18n.l(resource.valid_until.to_date) } %>
-  <% end %>
-  
-  <%= render :partial => "postings/form_origin_and_destination", :locals => {:f => f} %>
+  <%= render :partial => "postings/shared_form", :locals => {:f => f} %>
 
   <%= f.inputs :freight_description do %>
     <%= f.input :product_name, :as => :string %>

@@ -114,7 +114,15 @@ class PostingsController < RemoteController
   private
 
   def can_see?(posting, company = current_company)
-    return true if posting.company == company
+    posting.company == company || (roles_ok?(posting, company) && reply_to_ok?(posting))
+  end
+
+  def reply_to_ok?(posting)
+    reply_to_id = posting.reply_to_id
+    reply_to_id.blank? || valid_reply_to_ids.include?(reply_to_id)
+  end
+
+  def roles_ok?(posting, company = current_company)
     if posting.company_roles.blank?
       if posting.custom_category.blank?
         true
@@ -170,6 +178,9 @@ class PostingsController < RemoteController
       self.collection = collection.where("valid_until >= ?", Time.now)
     end
 
+    # Do not show :reply_to postings that do not belong to us
+    self.collection = collection.where("company_id = ? OR reply_to_id IS NULL OR reply_to_id IN (?)", current_company.id, valid_reply_to_ids)
+
     # Do not show postings that the user should not see
     valid_ids = collection.select { |posting| can_see?(posting) }.map(&:id)
     self.collection = collection.where(:id => valid_ids)
@@ -201,6 +212,10 @@ class PostingsController < RemoteController
 
   def order_map
     super.merge(:default => :created_at)
+  end
+
+  def valid_reply_to_ids
+    current_company.send(controller_name).map(&:id)
   end
 
 end

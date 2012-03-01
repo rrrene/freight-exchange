@@ -721,7 +721,8 @@ de:
       upload_link: "Upload als Excel-Tabelle"
       search-label: "Nachfrage:"
       reply_to_link: "Mit Angebot beantworten"
-      is_reply_to: "Diese Nachfrage ist eine Antwort auf %{name}"
+      is_reply_to: "Diese Nachfrage ist eine Antwort auf das Angebot %{name}"
+      make_reply_to: "Diese Nachfrage als Antwort auf %{name} einstellen (nur der Ersteller des ursprünglichen Inserats kann dieses Inserat sehen)."
       contact_to_link: "E-Mail an Nachfrager"
       contact_to_href: "mailto:%{email}?subject=Anfrage bzgl. %{name}&body=Inserat: %{url}"
     create: 
@@ -795,6 +796,7 @@ de:
       search-label: "Angebote:"
       reply_to_link: "Mit Nachfrage beantworten"
       is_reply_to: "Dieses Angebot ist eine Antwort auf %{name}"
+      make_reply_to: "Dieses Angebot als Antwort auf %{name} einstellen (nur der Ersteller des ursprünglichen Inserats kann dieses Inserat sehen)."
       contact_to_link: "E-Mail an Anbieter"
       contact_to_href: "mailto:%{email}?subject=Anfrage bzgl. %{name}&body=Inserat: %{url}"
     create: 
