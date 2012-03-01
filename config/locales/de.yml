@@ -895,7 +895,8 @@ de:
       header: "Persönliche Angaben"
       page_title: "Person bearbeiten"
   postings: 
-    common: 
+    common:
+      station_hint: "Suche nach Nr oder Name"
       posting: 
         edit: "Inserat bearbeiten"
         goods_type: Gutart

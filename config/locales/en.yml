@@ -714,8 +714,9 @@ en:
     update: 
       header: "Personal information"
       page_title: "Edit person"
-  postings: 
-    common: 
+  postings:
+    station_hint: "Search by no. or name"
+    common:
       posting: 
         edit: "Edit this posting"
         goods_type: "Type of goods:"

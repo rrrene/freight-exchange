@@ -1,10 +1,27 @@
 
 <%= f.inputs :"#{origin_or_destination}_site_info" do %>
-  <%#= f.input :"#{origin_or_destination}_contractor", :label => t("activerecord.attributes.site_info.#{origin_or_destination}_contractor") %>
   <%= f.input :"#{origin_or_destination}_side_track_available", :as => :radio, :collection => yes_no_collection %>
 
-  <div id="<%= origin_or_destination %>_with_station">
-    <%= f.input :"#{origin_or_destination}_station", :input_html => {:title => t("activerecord.attributes.freight.#{origin_or_destination}_station"),:class => 'chosen'} %>
+  <li class="string optional" id="<%= origin_or_destination %>_with_station">
+    <% name = "#{origin_or_destination}_station" %>
+    <% field_name = resource.class.to_s.underscore + "[" + origin_or_destination + "_station_id]" %>
+    <label for="<%= name %>_query"><%= t("activerecord.attributes.freight.#{origin_or_destination}_station") %></label>
+    <input id="<%= name %>_query" type="text" data-query="/stations/autocomplete" data-dom-element-id="<%= name %>" data-field-name="<%= field_name %>">
+    <p class="inline-hints">
+      <%= t("postings.common.station_hint") %>
+    </p>
+    <div class="stations" id="<%= name %>">
+      &nbsp;
+      <% if station_id = resource[:"#{origin_or_destination}_station_id"] %>
+        <% station = Station.find(station_id) %>
+        <%= render :partial => "stations/stations", :locals => {:collection => [station], :field_name => field_name} %>
+      <% end %>
+    </div>
+  </li>
+
+  <div>
+    <%#= f.input :"#{origin_or_destination}_station", :input_html => {:title => t("activerecord.attributes.freight.#{origin_or_destination}_station"),:class => 'chosen'} %>
+
     <%#= f.input :"#{origin_or_destination}_track_number" %>
   </div>
   

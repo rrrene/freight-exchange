@@ -112,7 +112,31 @@ function popover(base_selector) {
   $(base_selector).popover({header: popover_selector + ' > .header', content: popover_selector + ' > .content'});
 }
 
+var requestStationsTimeoutId = null;
+function requestStations(ele) {
+  $.ajax({
+    url: $(ele).data("query"),
+    data: {
+      query: $(ele).val(),
+      dom_element_id: $(ele).data("dom-element-id"),
+      field_name: $(ele).data("field-name")
+    },
+    dataType: "script",
+    method: "GET"
+  });
+}
+
 jQuery(function() {
+
+  $('input[data-query]').bind("keyup", function(event) {
+    console.log(event)
+    var self = this;
+    clearTimeout(requestStationsTimeoutId);
+    requestStationsTimeoutId = setTimeout(function() {
+      requestStations(self);
+    }, 300);
+  });
+
   actionListMagic();
   bindMiniButtons();
 
@@ -132,5 +156,6 @@ jQuery(function() {
   $('.top-navigation-menu, .top-navigation-menu-link').click(function(event){
     event.stopPropagation();
   });
+
 });
 

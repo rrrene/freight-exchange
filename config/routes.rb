@@ -54,7 +54,7 @@ BlackBoard::Application.routes.draw do |map|
   resources :companies
   resources :stations do
     collection do
-      get :autocomplete_station_searchable
+      get :autocomplete
     end
   end
   resources :users

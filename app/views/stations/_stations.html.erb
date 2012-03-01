@@ -1,0 +1,10 @@
+<ol class="stations">
+  <% collection.each do |station| %>
+    <li>
+      <label>
+        <%= radio_button_tag field_name, station.id, collection.length == 1 %>
+        <%= station.full_name %>
+      </label>
+    </li>
+  <% end %>
+</ol>

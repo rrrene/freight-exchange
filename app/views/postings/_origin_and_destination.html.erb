@@ -8,6 +8,9 @@
     <h3><%= t("freights.show.#{origin_or_destination}.header") %></h3>
 
     <p>
+      <% if station = resource.send("#{origin_or_destination}_station") %>
+        <%= station.full_name %><br>
+      <% end %>
       <strong><%= resource["#{origin_or_destination}_name"] %></strong><br>
       <%= resource["#{origin_or_destination}_address"] %>
       <%= resource["#{origin_or_destination}_address2"] %><br>

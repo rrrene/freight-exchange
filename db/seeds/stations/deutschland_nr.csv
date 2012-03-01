@@ -1,0 +1,6748 @@
+numeric_id,name
+8000001,Aachen Hbf
+8000002,Aalen
+8000003,Furth i Wald(Gr)
+8000004,Altenbeken
+8000007,Alzey
+8000008,Kehl(Gr)
+8000009,Ansbach
+8000010,Aschaffenburg Hbf
+8000011,Ascheberg(Holst)
+8000012,Au(Sieg)
+8000013,Augsburg Hbf
+8000014,Aulendorf
+8000015,Babenhausen(Hess)
+8000016,Backnang
+8000017,Bad Friedrichshall-Jagstfeld
+8000019,Bad Harzburg
+8000020,Bad Hersfeld
+8000021,Bad Kreuznach
+8000022,Bad Nenndorf
+8000023,Bad Oldesloe
+8000025,Bamberg
+8000026,Basel Bad Bf
+8000027,Schwandorf
+8000028,Bayreuth Hbf
+8000029,Bebra
+8000030,Bedburg(Erft)
+8000031,Bensheim
+8000032,Schweinfurt Hbf
+8000033,Schwelm
+8000034,Betzdorf(Sieg)
+8000036,Bielefeld Hbf
+8000037,Schwerte(Ruhr)
+8000038,Bietigheim-Bissingen
+8000039,Bingen(Rhein) Hbf
+8000040,Bocholt
+8000041,Bochum Hbf
+8000042,Seckach
+8000043,Seesen
+8000044,Bonn Hbf
+8000045,Boppard Hbf
+8000046,Siegen
+8000047,Bottrop Hbf
+8000048,Brackwede
+8000049,Braunschweig Hbf
+8000050,Bremen Hbf
+8000051,Bremerhaven Hbf
+8000053,Bretten
+8000054,Brilon Wald
+8000055,Bruchsal
+8000056,Buchholz(Nordheide)
+8000057,Buchloe
+8000058,Büchen
+8000059,Bünde(Westf)
+8000060,Siershahn
+8000061,Burg-u. Nieder Gemünden
+8000062,Steinfurt-Burgsteinfurt
+8000063,Calw
+8000064,Celle
+8000065,Cölbe
+8000066,Coesfeld(Westf)
+8000067,Crailsheim
+8000068,Darmstadt Hbf
+8000069,Sigmaringen
+8000070,Delmenhorst
+8000071,Derneburg(Han)
+8000072,Simbach(Inn)
+8000073,Singen(Hohentwiel)
+8000074,Dillenburg
+8000075,Dillingen(Saar)
+8000076,Soest
+8000077,Donaueschingen
+8000078,Donauwörth
+8000079,Puttgarden(MS)
+8000080,Dortmund Hbf
+8000081,Dortmund-Dorstfeld
+8000082,Düsseldorf Flughafen
+8000083,Dülmen
+8000084,Düren
+8000085,Düsseldorf Hbf
+8000086,Duisburg Hbf
+8000087,Solingen Hbf
+8000088,Soltau(Han)
+8000089,Stade
+8000090,Eichenberg
+8000091,Steinach(b Rothenb)
+8000092,Elmshorn
+8000093,Elze(Han)
+8000094,Engers
+8000095,Straubing
+8000096,Stuttgart Hbf
+8000098,Essen Hbf
+8000099,Essen-Steele
+8000100,Euskirchen
+8000101,Eutingen im Gäu
+8000102,Finnentrop
+8000103,Flensburg
+8000104,Frankenberg(Eder)
+8000105,Frankfurt(Main)Hbf
+8000106,Frankfurt-Höchst
+8000107,Freiburg(Breisgau) Hbf
+8000108,Freilassing
+8000110,Freudenstadt Hbf
+8000111,Friedberg(Hess)
+8000112,Friedrichshafen Stadt
+8000113,Fröndenberg
+8000114,Fürth(Bay)Hbf
+8000115,Fulda
+8000116,Traunstein
+8000117,Gelnhausen
+8000118,Gelsenkirchen Hbf
+8000119,Geltendorf
+8000120,Gemünden(Main)
+8000121,Gensingen-Horrweiler
+8000122,Treuchtlingen
+8000123,Gerolstein
+8000124,Gießen
+8000125,Gladbeck West
+8000126,Riedstadt-Goddelau
+8000127,Göppingen
+8000128,Göttingen
+8000129,Treysa
+8000130,Goslar
+8000131,Graben-Neudorf
+8000132,Grävenwiesbach
+8000133,Grevenbroich
+8000134,Trier Hbf
+8000135,Troisdorf
+8000136,Groß Gerau
+8000137,Grünstadt
+8000138,Gruiten
+8000139,Günzburg
+8000140,Baunatal-Guntershausen
+8000141,Tübingen Hbf
+8000142,Hagen Hbf
+8000143,Weil am Rhein-Gartenstadt
+8000144,Türkheim(Bay)Bf
+8000145,Haltern am See
+8000146,Weil am Rhein-Pfädlistraße
+8000147,Hamburg-Harburg
+8000148,Hameln
+8000149,Hamm(Westf)
+8000150,Hanau Hbf
+8000151,Bad Bentheim(Gr)
+8000152,Hannover Hbf
+8000153,Weener(Gr)
+8000154,Türkismühle
+8000155,Heide(Holst)
+8000156,Heidelberg Hbf
+8000157,Heilbronn Hbf
+8000158,Nidderau
+8000159,Helmstedt
+8000160,Herbertingen
+8000161,Herborn(Dillkr)
+8000162,Herford
+8000163,Tuttlingen
+8000164,Herne
+8000165,Hervest-Dorsten
+8000166,Herzberg(Harz)
+8000167,Hesepe
+8000168,Uelzen
+8000169,Hildesheim Hbf
+8000170,Ulm Hbf
+8000171,Unna
+8000172,Höchst(Odenw)
+8000173,Wunsiedel-Holenbrunn
+8000174,Viersen
+8000175,Völklingen
+8000176,Homburg(Saar)Hbf
+8000177,Horb
+8000178,Horrem
+8000180,Waiblingen
+8000181,Husum
+8000182,Immendingen
+8000183,Ingolstadt Hbf
+8000185,Gifhorn
+8000186,Iserlohn
+8000187,Wallau(Lahn)
+8000189,Kaiserslautern Hbf
+8000190,Kaldenkirchen
+8000191,Karlsruhe Hbf
+8000192,Wanne-Eickel Hbf
+8000193,Kassel Hbf
+8000194,Kaufbeuren
+8000195,Kaufering
+8000196,Warburg(Westf)
+8000197,Kempten(Allgäu)Hbf
+8000198,Kettwig
+8000199,Kiel Hbf
+8000201,Kirchenlaibach
+8000203,Kißlegg
+8000204,Weiden(Oberpf)
+8000205,Kleve
+8000206,Koblenz Hbf
+8000207,Köln Hbf
+8000208,Köln-Ehrenfeld
+8000209,Köln-Mülheim
+8000210,Korbach
+8000211,Krefeld Hbf
+8000212,Krefeld-Oppum
+8000213,Kreiensen
+8000214,Kreuztal
+8000215,Lage(Lippe)
+8000216,Landau(Pfalz)Hbf
+8000217,Landshut(Bay)Hbf
+8000218,Weilburg
+8000220,Weilheim(Oberbay)
+8000221,Lauda
+8000222,Lauterbach(Hess)Nord
+8000225,Leer(Ostfriesl)
+8000226,Lehrte
+8000227,Letmathe
+8000228,Lichtenfels
+8000229,Limburg(Lahn)
+8000230,Lindau Hbf
+8000231,Wertheim
+8000233,Löhne(Westf)
+8000234,Lollar
+8000235,Ludwigsburg
+8000236,Ludwigshafen(Rh)Hbf
+8000237,Lübeck Hbf
+8000238,Lüneburg
+8000239,Lünen Hbf
+8000240,Mainz Hbf
+8000241,Mainz-Bischofsheim
+8000242,Wesel
+8000243,Malsfeld
+8000244,Mannheim Hbf
+8000245,Westerburg
+8000247,Marktredwitz
+8000248,Mayen Ost
+8000249,Memmingen
+8000250,Wiesbaden Hbf
+8000251,Witten Hbf
+8000252,Minden(Westf)
+8000253,Mönchengladbach Hbf
+8000254,Wörth(Rhein)
+8000255,Wolfenbüttel
+8000256,Rohrbach(Ilm)
+8000257,Worms Hbf
+8000258,Mühldorf(Oberbay)
+8000259,Mülheim(Ruhr)Hbf
+8000260,Würzburg Hbf
+8000261,München Hbf
+8000262,München Ost
+8000263,Münster(Westf)Hbf
+8000264,Mosbach-Neckarelz
+8000265,Neckargemünd
+8000266,Wuppertal Hbf
+8000267,Neuenmarkt-Wirsberg
+8000268,Wunstorf
+8000269,Neukirchen(b Sulzb)
+8000271,Neumünster
+8000272,Neunkirchen(Saar)Hbf
+8000273,Muldenberg Floßplatz
+8000274,Neuss Hbf
+8000275,Neustadt(Weinstr)Hbf
+8000276,Neuwied
+8000277,Nidda
+8000278,Niederlahnstein
+8000279,Nienburg(Weser)
+8000280,Nördlingen
+8000281,Frankfurt(M)Flughafen
+8000282,Nordstemmen
+8000283,Northeim(Han)
+8000284,Nürnberg Hbf
+8000285,Rödermark-Ober Roden
+8000286,Oberhausen Hbf
+8000287,Oberkotzau
+8000288,Wiesbaden-Biebrich
+8000289,Zwickau Zentrum
+8000290,Offenburg
+8000291,Oldenburg(Oldb)
+8000292,Zwickau Stadthalle
+8000294,Osnabrück Hbf
+8000295,Osterburken
+8000297,Paderborn Hbf
+8000298,Passau Hbf
+8000299,Pforzheim Hbf
+8000301,Plattling
+8000302,Plochingen
+8000303,Igel(Gr)
+8000304,Quakenbrück
+8000306,Rastatt
+8000307,Recklinghausen Hbf
+8000308,Ludwigshafen(Rhein) BASF Mitte
+8000309,Regensburg Hbf
+8000310,Remagen
+8000311,Remscheid-Lennep
+8000312,Rendsburg
+8000313,Renningen
+8000314,Reutlingen Hbf
+8000315,Rheda-Wiedenbrück
+8000316,Rheine
+8000317,Rheinhausen
+8000318,Rheydt Hbf
+8000319,Rohrbach(Saar)
+8000320,Rosenheim
+8000321,Rotenburg(Wümme)
+8000322,Rottweil
+8000323,Saarbrücken Hbf
+8000324,Boppard Süd
+8000325,Salzgitter-Ringelheim
+8000326,Schifferstadt
+8000328,Schnabelwaid
+8000329,Schwäbisch Gmünd
+8000330,Schwäbisch Hall-Hessental
+8000331,Andernach
+8000332,Frankenthal Hbf
+8000333,Hausach
+8000334,Jübek
+8000335,Leese-Stolzenau
+8000336,Leutkirch
+8000337,Marburg(Lahn)
+8000338,Mindelheim
+8000339,Mühlacker
+8000342,Weetzen
+8000343,Schöneck(Vogtl) Ferienpark
+8000344,Wittingen
+8000346,Borken(Westf)
+8000347,Glauburg-Stockheim
+8000348,Stolberg(Rheinl)Hbf
+8000349,Offenbach(Main)Hbf
+8000350,Alsfeld(Oberhess)
+8000351,Altenkirchen(Westerwald)
+8000352,Bad Gandersheim
+8000353,Balingen(Württ)
+8000354,Bassum
+8000355,Bergheim(Erft)
+8000356,Villingen-Schwenningen Eisstadion
+8000357,Bierbach
+8000358,Bochum-Langendreer
+8000359,Bodenheim
+8000360,Bürstadt
+8000362,Dieburg
+8000363,Dieringhausen
+8000364,Vienenburg
+8000365,Dombühl
+8000366,Villingen(Schwarzw)
+8000367,Duisburg-Meiderich Süd
+8000368,Wabern(Bz Kassel)
+8000369,Eberbach
+8000370,Ehrang
+8000371,Einöd(Saar)
+8000372,Enkenbach
+8000373,Eppingen
+8000374,Freinsheim
+8000375,Gau Algesheim
+8000376,Germersheim
+8000377,Weinheim(Bergstr)
+8000378,Wemmetsweiler Rathaus
+8000379,Wittlich Hbf
+8000380,Goldshöfe
+8000381,Grötzingen
+8000382,Gronau(Westf)
+8000383,Wetzlar
+8000384,Groß-Umstadt Wiebelsbach
+8000385,Gunzenhausen
+8000386,Haiger
+8000387,Hergatz
+8000388,Hilden
+8000389,Hochdorf(b Horb)
+8000390,Hochneukirch
+8000391,Holzminden
+8000392,Holzwickede
+8000393,Villingen-Schwenningen Hammerstatt
+8000400,Hungen
+8000402,Karthaus
+8000403,Aachen Süd(Gr)
+8000404,Aachen West
+8000406,Aachen-Rothe Erde
+8000409,Kempen(Niederrhein)
+8000410,Abensberg
+8000412,Achern
+8000413,Achim
+8000414,Achmer
+8000418,Adelebsen
+8000419,Adelschlag
+8000420,Adelsdorf(Mittelfr)
+8000423,Adelsheim Nord
+8000424,Adelsheim Ost
+8000427,Kirchen
+8000430,Kaarster See
+8000431,Affaltrach
+8000432,Kaarst Mitte/Holzbüttgen
+8000433,Agatharied
+8000434,Agathenburg
+8000435,Kirchhain(Bz Kassel)
+8000436,Aha
+8000437,Ahaus
+8000438,Kaarst IKEA
+8000440,Schnega
+8000441,Ahlen(Westf)
+8000442,Ahlhorn
+8000443,Ahlten
+8000445,Soltendieck
+8000446,Ahrensburg
+8000448,Ahrweiler
+8000449,Ahrweiler Markt
+8000451,Aich(Niederbay)
+8000452,Aichach
+8000453,Freiburg Messe/Universität
+8000454,Aichstetten
+8000456,Tuttlingen Nord
+8000458,Esens ZOB
+8000459,Ainring
+8000462,Münster-Albachten
+8000463,Albbruck
+8000466,Albersweiler(Pfalz)
+8000468,Albig
+8000469,Nürnberg-Herrnhütte
+8000471,Albshausen
+8000473,Albstadt-Ebingen
+8000474,Albstadt-Laufen Ort
+8000475,Albstadt-Lautlingen
+8000477,Aldekerk
+8000479,Kitzingen
+8000480,Ahrensburg-Gartenholz
+8000481,Aldingen(b Spaichingen)
+8000482,Aletshausen
+8000483,Alfeld(Leine)
+8000488,Algermissen
+8000489,Aligse
+8000491,Altenglan
+8000492,Allendorf(Dillkr)
+8000496,Allensbach
+8000498,Allersberg(Rothsee)
+8000499,Allmendingen
+8000500,Alpen
+8000501,Alpirsbach
+8000502,Alsdorf-Annapark
+8000503,Biblis
+8000504,Altdorf West
+8000505,Alsenz
+8000506,Alsheim
+8000507,Alsdorf-Busch
+8000508,Altbach
+8000509,Altdorf(b Nürnberg)
+8000511,Alte Veste
+8000512,Hamburg Alte Wöhr
+8000513,Altena(Westf)
+8000514,Altenahr
+8000515,Altenau(Bay)
+8000517,Altenbamberg
+8000518,Altenberge
+8000520,Felsberg-Altenbrunslar
+8000522,Hude
+8000524,Altenerding
+8000525,Altenfeld(Rhön)
+8000526,Altengörs
+8000530,Altenhasungen
+8000532,Lennestadt-Altenhundem
+8000533,Altenmarkt(Alz)
+8000534,Muhr a See
+8000537,Altenseelbach
+8000538,Altenstadt(Hess)
+8000539,Altenstadt(Iller)
+8000540,Altenstadt(Waldnaab)
+8000544,Altglashütten-Falkau
+8000545,Althegnenberg
+8000546,Altheim(Hess)
+8000547,Lauterecken-Grumbach
+8000553,Altmorschen
+8000555,Altötting
+8000556,Altomünster
+8000558,Alzey Süd
+8000559,Altshausen
+8000561,Altstädten(Allgäu)
+8000562,Alttann
+8000563,Lebach
+8000566,Amberg
+8000569,Münster-Amelsbüren
+8000571,Lippstadt
+8000575,Amorbach
+8000576,Ampfing
+8000577,Amstetten(Württ)
+8000578,Hannover Anderten-Misburg
+8000579,Angermund
+8000580,Angersbach
+8000582,Annweiler am Trifels
+8000584,Anrath
+8000585,Langenlonsheim
+8000586,Langwedel
+8000588,Anwanden
+8000589,Anzefahr
+8000590,Anzenkirchen
+8000591,Apach(fr)
+8000595,Nottuln-Appelhülsen
+8000596,Appenweier
+8000597,Ardey
+8000599,Arfurt(Lahn)
+8000601,Arloff
+8000602,Armsheim
+8000603,Arnbach
+8000605,Arnsberg(Westf)
+8000606,Arnschwang
+8000609,Bad Arolsen
+8000611,Arsbeck
+8000613,Arzberg(Oberfr)
+8000615,Mainz-Kastel
+8000618,Aschaffenburg Hochschule
+8000619,Aschaffenburg Süd
+8000621,Aschau(Chiemgau)
+8000623,Ascheberg(Westf)
+8000624,Aschendorf
+8000625,Asselheim
+8000627,Ashausen
+8000630,Asperg
+8000631,Mannheim-Friedrichsfeld
+8000632,Assenheim(Oberhess)
+8000633,Aßlar
+8000634,Aßling(Oberbay)
+8000635,Assmannshausen
+8000638,Attendorn
+8000640,Miltenberg
+8000643,Au im Murgtal
+8000644,Moers
+8000647,Aue-Wingeshausen
+8000649,"Auerbach(b Mosbach, Baden)"
+8000653,Aufhausen(b Erding)
+8000655,Aufhausen(Württ)
+8000657,Auggen
+8000658,Augsburg Haunstetterstraße
+8000659,Augsburg Messe
+8000660,Augsburg Morellstr.
+8000661,Augsburg-Hochzoll
+8000662,Augsburg-Oberhausen
+8000663,Monsheim
+8000664,Augustfehn
+8000667,Montabaur
+8000668,Aumenau
+8000669,Aumühle
+8000671,Auringen-Medenbach
+8000672,Außenried
+8000674,Auw an der Kyll
+8000675,Aying
+8000677,Hückelhoven-Baal
+8000681,Babstadt
+8000683,Bacharach
+8000685,Bachern
+8000686,Bachheim
+8000687,Mülheim(Ruhr)Styrum
+8000688,Neufahrn(Niederbay)
+8000689,Bad Abbach
+8000690,Bad Aibling
+8000691,Bad Bergzabern
+8000694,Bad Breisig
+8000696,Bad Aibling Kurpark
+8000697,Bad Driburg(Westf)
+8000698,Bad Dürkheim
+8000700,Bad Empfing
+8000701,Bad Ems
+8000702,Bad Ems West
+8000704,Bad Friedrichshall-Kochendorf
+8000707,Bad Griesbach(Schwarzwald)
+8000708,Bad Dürkheim-Trift
+8000710,Bad Höhenstadt
+8000711,Bad Hönningen
+8000712,Bad Homburg
+8000713,Bad Honnef(Rhein)
+8000714,Bad Kissingen
+8000715,Bad König
+8000716,Bad Kohlgrub
+8000717,Bad Kohlgrub Kurhaus
+8000718,Bad Krozingen
+8000720,Neumarkt-St Veit
+8000721,Bad Liebenzell
+8000724,Bad Mergentheim
+8000725,Bad Münder(Deister)
+8000726,Bad Münster a Stein
+8000727,Bad Münstereifel
+8000728,Bad Nauheim
+8000729,Bad Neuenahr
+8000730,Bad Neustadt(Saale)
+8000731,Bad Niedernau
+8000732,Bad Oeynhausen
+8000733,Bad Oeynhausen Süd
+8000734,Bad Peterstal
+8000735,Bad Pyrmont
+8000736,Bad Rappenau
+8000737,Bad Reichenhall
+8000738,Bad Reichenhall-Kirchberg
+8000739,Bad Sachsa
+8000740,Bad Salzdetfurth
+8000741,Bad Salzhausen
+8000742,Boppard-Bad Salzig
+8000743,Bad Salzschlirf
+8000744,Bad Salzuflen
+8000745,Bad Sassendorf
+8000746,Bad Schussenried
+8000749,Bad Schwartau
+8000750,Bad Sebastiansweiler-Belsen
+8000751,Bad Segeberg
+8000752,Bad Soden(Taunus)
+8000753,Bad Sooden-Allendorf
+8000754,Bad St Peter Süd
+8000755,Bad St Peter-Ording
+8000756,Bad Steben
+8000757,Bad Teinach-Neubulach
+8000758,Bad Tölz
+8000759,Bad Salzdetfurth Solebad
+8000760,Bad Vilbel
+8000761,Bad Vilbel Süd
+8000763,Bad Waldsee
+8000764,Bad Wildungen
+8000765,Bad Wimpfen
+8000766,Bad Wimpfen-Hohenstadt
+8000767,Bad Windsheim
+8000768,Bad Wörishofen
+8000769,Bad Wurzach
+8000770,Bad Zwischenahn
+8000771,Baden-Baden Haueneberstein
+8000772,Baddeckenstedt
+8000773,Baden(Verden)
+8000774,Baden-Baden
+8000775,Baden-Baden Rebland
+8000778,Bäumenheim
+8000779,Hamburg-Allermöhe
+8000780,Hamburg-Bahrenfeld
+8000781,Baierbrunn
+8000782,Baiersbronn Bf
+8000783,Baiersdorf
+8000784,Balbersdorf
+8000785,Baldham
+8000786,Balduinstein
+8000787,Balgheim
+8000788,Balingen Süd
+8000789,Baiersbronn Schule
+8000792,Baltersweiler
+8000793,Balve
+8000794,Bammental
+8000796,Banteln
+8000797,Bantorf
+8000800,Norden
+8000801,Bardowick
+8000802,Barbelroth
+8000804,Bargteheide
+8000805,Hamburg-Barmbek
+8000807,Barnstorf(Han)
+8000808,Barnten
+8000810,Barrien
+8000812,Barsinghausen
+8000815,Hemmoor
+8000818,Ochsenfurt
+8000821,Batzenhäusle
+8000822,Batzhausen
+8000823,Bauerbach
+8000826,Baunach
+8000827,Bavendorf
+8000828,Bayerbach
+8000830,Bayerisch Eisenstein
+8000831,Bayerisch Gmain
+8000832,Bayerwerk
+8000833,Bayreuth-St Georgen
+8000834,Bayrischzell
+8000840,Beckingen(Saar)
+8000842,Bedburg-Hau
+8000846,Beelen
+8000850,Behringersdorf
+8000851,Beienheim
+8000853,Opladen
+8000858,Beimerstetten
+8000859,Malsfeld-Beiseförth
+8000861,Bellheim Am Mühlbuckel
+8000862,Bellenberg
+8000863,Bellheim Bf
+8000864,Bad Bellingen
+8000865,Bempflingen
+8000869,Benediktbeuern
+8000870,Bengel
+8000871,Bennemühlen
+8000872,Bennigsen
+8000873,Benningen(Neckar)
+8000875,Ottweiler(Saar)
+8000876,Pirmasens Nord
+8000877,Bensheim-Auerbach
+8000879,Bad Bentheim
+8000880,Radolfzell
+8000882,Beratzhausen
+8000885,Berchtesgaden Hbf
+8000887,Recklinghausen Süd
+8000888,Bergen(Oberbay)
+8000889,Bergenweiler
+8000890,Berg(Pfalz)
+8000891,Schlüchtern
+8000892,Berghausen(b Wittgenstein)
+8000893,Berghausen(Baden)
+8000894,Berghausen(Pfalz)
+8000899,Bergisch Gladbach
+8000902,Bergtheim
+8000903,Beringen Bad Bf
+8000904,Beringhausen
+8000907,Bad Berleburg
+8000908,Hamburg Berliner Tor
+8000909,Bermatingen-Ahausen
+8000911,Bernau a Chiemsee
+8000913,Berne
+8000918,Bernried
+8000919,Bersenbrück
+8000921,Berzhahn
+8000923,Besch
+8000925,Besigheim
+8000926,Besseringen
+8000927,Bestwig
+8000928,Bettmannsäge
+8000932,Beuggen
+8000933,Beuron
+8000934,Beutelsbach
+8000935,Bad Bevensen
+8000941,Bexbach
+8000942,Biberach(Baden)
+8000943,Biberach(Riß)
+8000944,Biberach(Riß) Süd
+8000945,Bichl
+8000946,Bibelöd
+8000948,Bickenbach(Bergstr)
+8000951,Biebesheim
+8000952,Biedenkopf
+8000953,Bielefeld Ost
+8000954,Biedenkopf-Schulzentrum
+8000955,Bienenbüttel
+8000957,Bieren-Rödinghausen
+8000959,Bieringen(b Horb)
+8000961,Dortmund-Hörde
+8000962,Biessenhofen
+8000963,Bietigheim(Baden)
+8000965,Bietingen
+8000966,Bigge
+8000967,Bildstock
+8000968,Bilfingen
+8000969,Billenhausen
+8000970,Billerbeck
+8000971,Hamburg Billwerder-Moorfleet
+8000973,Binau
+8000974,Bindlach
+8000975,Bingen-Gaulsheim
+8000976,Bingen(Rhein) Stadt
+8000977,Hagen-Vorhalle
+8000978,Binolen
+8000983,Birkelbach
+8000984,Birkenau
+8000985,Birkenbringhausen
+8000986,Birkenfeld(Enz)
+8000988,Bad Birnbach
+8000989,Birresborn
+8000996,Maintal West
+8000997,Bischofswiesen
+8000998,Bischweier
+8000999,Bisingen
+8001000,Bissendorf
+8001002,Bittelbronn
+8001003,Blaibach(Oberpf)
+8001004,Blaichach(Allgäu)
+8001005,Bitzfeld
+8001006,Blankenberg(Sieg)
+8001007,Hamburg-Blankenese
+8001008,Blankenheim(Wald)
+8001009,Blankenloch
+8001013,Blaubeuren
+8001014,Blaufelden
+8001015,Blaustein
+8001017,Bleibach
+8001018,Bleichenbach(Oberh)
+8001027,Blieskastel-Lautzkirchen
+8001028,Blindheim
+8001029,Blumberg-Riedöschingen
+8001030,Blumenkamp
+8001032,Bobenheim
+8001033,Bobingen
+8001034,Bobstadt
+8001035,Bochum-Riemke
+8001038,Bochum-Dahlhausen
+8001039,Bochum-Ehrenfeld
+8001043,Bockenheim-Kindenheim
+8001045,Bockum-Hövel
+8001046,Bodelsberg
+8001047,Bodelshausen
+8001048,Bodenburg
+8001049,Bad Bodendorf
+8001050,Bodenfelde
+8001051,Bodenmais
+8001052,Bad Bodenteich
+8001054,Bodenwöhr Nord
+8001055,Böblingen
+8001056,Bödigheim
+8001057,Böhl-Iggelheim
+8001058,Böhmhof
+8001059,Böhringen-Rickelshausen
+8001061,Bönen
+8001063,Börßum
+8001065,Bösensell
+8001066,Bösperde
+8001069,Bogen
+8001071,Bohmte
+8001072,Boisheim
+8001080,Bondorf(b Herrenberg)
+8001082,Bonn-Bad Godesberg
+8001083,Bonn-Beuel
+8001084,Bonn-Duisdorf
+8001085,Bonn-Mehlem
+8001086,Bonn-Oberkassel
+8001089,Bookholzberg
+8001090,Bopfingen
+8001092,Bordesholm
+8001093,Borgeln
+8001095,Borgholzhausen
+8001096,Steinfurt-Borghorst
+8001097,Bork(Westf)
+8001098,Borken(Hess)
+8001104,Borsdorf(Hess)
+8001106,Wildeck-Bosserode
+8001107,Bottrop-Boy
+8001108,Bottrop-Vonderort
+8001110,Bous(Saar)
+8001111,Boxberg-Wölchingen
+8001112,Brachbach
+8001113,Brachelen
+8001116,Brackwede Süd
+8001118,Brake(b Bielefeld)
+8001119,Bräunlingen Bahnhof
+8001120,Brake(Unterweser)
+8001121,Brakel(Höxter)
+8001122,Bramsche
+8001123,Bramstedt(b Syke)
+8001126,Brandoberndorf
+8001128,Brandstätt
+8001129,Brannenburg
+8001130,Braubach
+8001131,Bretten-Ruit
+8001132,Leun/Braunfels
+8001134,Braunschweig-Gliesmarode
+8001137,Bredelar
+8001138,Bretten Rechberg
+8001139,Bredstedt
+8001143,Breisach
+8001144,Bretten Schulzentrum
+8001147,Breitenbrunn(Schwab)
+8001148,Breitendiel
+8001149,Breitengüßbach
+8001152,Bretten Stadtmitte
+8001153,"Breitscheidt(Altenkirchen, Ww)"
+8001155,Bremen Neustadt
+8001156,Bremen-Burg
+8001157,Bremen-Hemelingen
+8001159,Bremen-Lesum
+8001160,Bremen-Mahndorf
+8001161,Bremen-Oberneuland
+8001162,Bremen-Oslebshausen
+8001163,Bremen-Schönebeck
+8001164,Bremen-Sebaldsbrück
+8001165,Bremen-St Magnus
+8001166,Bremen-Vegesack
+8001167,Bremen-Walle
+8001168,Bremerhaven-Lehe
+8001170,Bremerhaven-Wulsdorf
+8001174,Wehr-Brennet
+8001176,Brettorf
+8001177,Bretzenheim(Nahe)
+8001178,Bretzfeld
+8001179,Krumbach(Schw)Schule
+8001180,Breyell
+8001183,Ostbevern
+8001185,Brockhöfe
+8001186,Brohl
+8001188,Lengede-Broistedt
+8001190,Brokstedt
+8001191,Lörrach-Brombach/Hauingen
+8001193,Kloster Bronnbach
+8001196,Bruchenbrücken
+8001197,Bruchsal Bildungszentrum
+8001198,Bruchhausen(b Ettlingen)
+8001199,Bruchköbel
+8001200,Bruchmühlbach-Miesau
+8001201,Bruchmühlen
+8001203,Bruckberg
+8001205,Brucken
+8001207,Bruckmühl
+8001209,Ahrbrück
+8001213,Brügge(Westf)
+8001215,Brühl
+8001221,Bubach
+8001223,Bubenreuth
+8001225,Buchbrunn-Mainstockheim
+8001226,Buchen Ost
+8001227,Buchen(Odenw)
+8001228,Buchenau(Lahn)
+8001229,Buchenau(Oberbay)
+8001231,Buchenhain
+8001234,Buchholz(Baden)
+8001235,Boppard-Buchholz
+8001236,Dreieich-Buchschlag
+8001237,Budenheim
+8001242,Büchenbach
+8001244,Büches-Düdelsheim
+8001245,Bückeburg
+8001248,Schöneck-Büdesheim
+8001249,Büdingen(Westerw)
+8001250,Büdingen(Oberhess)
+8001252,Bühl(Baden)
+8001256,Bürgeln
+8001258,Büsenbachtal
+8001261,Büttgen
+8001262,Buggingen
+8001264,Buir
+8001266,Buldern
+8001267,Bullay(DB)
+8001268,Burbach(Kr Siegen)
+8001271,Burg(Dillkr) Nord
+8001273,Burg(Dithm)
+8001274,Fehmarn-Burg
+8001276,Burgau(Schwab)
+8001277,Burgbernheim
+8001278,Burgbernheim-Wildbad
+8001279,Burgdorf
+8001283,Burghaun(Hünfeld)
+8001284,Burghausen(Oberbay)
+8001285,Burgheim
+8001287,Burgholzhausen v d H
+8001288,Burgkirchen
+8001289,Burgkunstadt
+8001290,Burglauer
+8001293,Burgsinn
+8001296,Burgstall(Murr)
+8001297,Burgthann
+8001298,Regensburg-Burgweinting
+8001301,Burhafe(Ostfriesl)
+8001308,Düsseldorf-Eller Mitte
+8001310,Buttenheim
+8001312,Butzbach
+8001315,Buxtehude
+8001316,Cadenberge
+8001317,Cadolzburg
+8001318,Calberlah
+8001319,Caldern
+8001320,Calmbach Bahnhof
+8001322,Bad Camberg
+8001323,Capelle(Westf)
+8001327,Castrop-Rauxel Hbf
+8001328,Castrop-Rauxel Süd
+8001329,Castrop-Rauxel-Merklinde
+8001330,Cham(Oberpf)
+8001331,Chamerau
+8001334,Coburg Nord
+8001335,Clarholz
+8001337,Cloppenburg
+8001338,Coburg
+8001339,Coburg-Neuses
+8001340,Cochem(Mosel)
+8001341,Contwig
+8001342,Coppenbrügge
+8001343,Coesfeld Schulzentrum
+8001347,Creidlitz
+8001348,Creußen(Oberfr)
+8001352,Cuxhaven
+8001354,Dachau Bahnhof
+8001355,Dachau Stadt
+8001357,Dahl
+8001358,Dahlbruch
+8001359,Dahlem(Eifel)
+8001360,Dahlenburg
+8001362,Dahlerbrück
+8001365,Dalheim
+8001366,Dallau
+8001372,Dannenberg Ost
+8001373,Darching
+8001375,Darmstadt Nord
+8001376,Darmstadt Ost
+8001377,Darmstadt Süd
+8001378,Darmstadt-Arheilgen
+8001379,Darmstadt-Eberstadt
+8001380,Darmstadt-Kranichstein
+8001382,Dasing
+8001384,Dattenfeld(Sieg)
+8001386,Darmstadt TU-Lichtwiese
+8001387,Dauenhof
+8001388,Daufenbach
+8001389,Dausenau
+8001390,Davensberg
+8001392,Dedenhausen
+8001393,Dedensen-Gümmer
+8001394,Dedinghausen
+8001397,Deggendorf Hbf
+8001399,Deidesheim
+8001400,Deining(Oberpf)
+8001404,Deisenhofen
+8001405,Deißlingen Mitte
+8001406,Dellfeld
+8001407,Dellfeld Ort
+8001414,Densborn
+8001415,Denzlingen
+8001416,Derkum
+8001417,Dernau
+8001418,Dernbach(Westerw)
+8001420,Detmold
+8001421,Dettelbach Bahnhof
+8001422,Dettingen Lehen
+8001424,Dettingen Freibad
+8001426,Dettingen Gsaidt
+8001427,Dettingen(Main)
+8001428,Dettingen(Teck)
+8001429,Dettum
+8001430,Deuerling
+8001432,Deuten
+8001435,Diebach
+8001438,Hamburg Diebsteich
+8001439,Diedorf(Schwab)
+8001443,Diepholz
+8001447,Dießen
+8001450,Dietersheim
+8001451,Toender(Gr)
+8001454,Dietmannsried
+8001455,Dietzenbach Mitte
+8001456,Dietzenbach Bahnhof
+8001457,Diez
+8001458,Diez Ost
+8001459,Dietzenbach-Steinberg
+8001460,Dillbrecht
+8001463,Dillingen(Donau)
+8001465,Dingden
+8001466,Dingolfing
+8001468,Dinkelscherben
+8001469,Dinslaken
+8001470,Dirmingen
+8001471,Dissen-Bad Rothenfelde
+8001472,Distelhausen
+8001474,Dittigheim
+8001476,Ditzingen
+8001479,Donaueschingen Allmendshofen
+8001480,Döggingen
+8001481,Döhlau
+8001482,Donaueschingen Aufen
+8001483,Donaueschingen Grüningen
+8001484,Dörfles-Esbach
+8001485,Donaueschingen Mitte/Siedlung
+8001486,Dörpen
+8001489,Dörverden
+8001491,Dogern
+8001492,Dollbergen
+8001493,Dollern
+8001495,Dollnstein
+8001499,Dorfen Bahnhof
+8001502,Dorfmark
+8001503,Dorfprozelten
+8001504,Dorheim(Wetterau)
+8001505,Dortmund-Huckarde
+8001506,Dormagen
+8001507,Dormagen Bayerwerk
+8001511,Groß Gerau-Dornheim
+8001512,Dornstetten
+8001514,Dortelweil
+8001515,Dortmund-Scharnhorst
+8001516,Dortmund-Lütgendortmund
+8001517,Dortmund Knappschaftskrankenhaus
+8001518,Dortmund Möllerbrücke
+8001519,Dortmund-Nette/Oestrich
+8001520,Dortmund Stadthaus
+8001521,Dortmund Tierpark
+8001522,Dortmund Signal Iduna Park
+8001523,Dortmund-Aplerbeck
+8001524,Dortmund-Aplerbeck Süd
+8001525,Dortmund-Westerfilde
+8001526,Dortmund-Asseln Mitte
+8001527,Dortmund-Barop
+8001528,Dortmund-Bövinghausen
+8001529,Dortmund-Brackel
+8001530,Dortmund-Derne
+8001531,Dortmund-Wischlingen
+8001532,Dortmund-Huckarde Nord
+8001533,Dortmund-Kirchderne
+8001534,Dortmund-Kirchhörde
+8001535,Dortmund-Körne
+8001536,Dortmund-Kruckel
+8001537,Dortmund-Kurl
+8001538,Dortmund-Löttringhausen
+8001539,Dortmund-Lütgendortmund Nord
+8001540,Dortmund-Germania
+8001541,Dortmund-Marten
+8001542,Dortmund-Marten Süd
+8001543,Dortmund-Mengede
+8001544,Dortmund-Rahm
+8001545,Dortmund-Sölde
+8001546,Dortmund-Wickede
+8001547,Dorum(Weserm)
+8001548,Dottenheim
+8001549,Dortmund-Somborn
+8001554,Dreieich-Dreieichenhain
+8001558,Drensteinfurt
+8001561,Dreye
+8001566,Duckterath
+8001567,Rodgau-Dudenhofen
+8001570,Dudweiler
+8001571,Dülken
+8001576,Dürrenbüchig
+8001578,Dürrnhaar
+8001579,Düsseldorf Friedrichstadt
+8001580,Düsseldorf Flughafen Terminal
+8001581,Düsseldorf Volksgarten
+8001582,Düsseldorf Wehrhahn
+8001583,Düsseldorf-Zoo
+8001584,Düsseldorf-Benrath
+8001585,Düsseldorf-Bilk
+8001586,Düsseldorf-Derendorf
+8001587,Düsseldorf-Eller
+8001588,Düsseldorf-Eller Süd
+8001589,Düsseldorf-Garath
+8001590,Düsseldorf-Gerresheim
+8001591,Düsseldorf-Oberbilk
+8001592,Düsseldorf-Rath
+8001593,Düsseldorf-Rath Mitte
+8001594,Düsseldorf-Reisholz
+8001595,Düsseldorf-Unterrath
+8001596,Duisburg-Schlenk
+8001597,Düsseldorf-Hamm
+8001598,Düsseldorf-Flingern
+8001599,Duisburg-Bissingheim
+8001600,Duisburg-Buchholz
+8001602,Duisburg-Großenbaum
+8001603,Düsseldorf Völklinger Str.
+8001605,Duisburg-Hochfeld Süd
+8001607,Duisburg-Meiderich Ost
+8001608,Duisburg-Obermeiderich
+8001609,Duisburg-Rahm
+8001611,Duisburg-Ruhrort
+8001612,Duisburg-Wedau
+8001614,Durach
+8001616,Durmersheim
+8001617,Dußlingen
+8001618,Dutenhofen(Wetzlar)
+8001619,Ebelsbach-Eltmann
+8001620,Ebenhausen(Unterfr)
+8001621,Ebenhausen-Schäftlarn
+8001622,Ebenhofen
+8001623,Ebensfeld
+8001627,Ebermannstadt
+8001628,Ebermergen
+8001629,Ebern
+8001632,Ebersbach(Fils)
+8001634,Ebersberg(Oberbay)
+8001636,Ebersdorf(b Coburg)
+8001638,Ebertsheim
+8001640,Ebing
+8001643,Ebringen
+8001645,Ebstorf(Uelzen)
+8001646,Echem
+8001647,Eching
+8001648,Echzell
+8001650,Echterdingen
+8001651,Eckartshausen-Ilshofen
+8001654,Eckernförde
+8001655,Eckersmühlen
+8001659,Eddersheim
+8001660,Edelfingen
+8001663,Edenkoben
+8001665,Edesheim(Pfalz)
+8001666,Ediger-Eller
+8001668,Edingen(Wetzlar)
+8001669,Edling
+8001670,Effolderbach
+8001671,Efringen-Kirchen
+8001672,Egelsbach
+8001674,Egersdorf
+8001675,Egestorf(Deister)
+8001676,Eggenfelden Mitte
+8001677,Eggenfelden
+8001678,Egglkofen
+8001679,Eggmühl
+8001680,Eggolsheim
+8001682,Eglharting
+8001683,Egling
+8001684,Ehingen(Donau)
+8001686,Ehlenbruch
+8001687,Ehlershausen
+8001688,Ehrang Ort
+8001689,Ehningen(b Böblingen)
+8001690,Ehr
+8001691,Ehringen
+8001692,Ehringhausen(Kr Lippstadt)
+8001693,Ehringshausen(Oberhess)
+8001694,Ehringshausen(Kr Wetzlar)
+8001700,Eichen(Kr Siegen)
+8001701,Nidderau-Eichen
+8001702,Eichenau(Oberbay)
+8001704,Eichenzell
+8001706,Eichhagen
+8001707,Eicholzheim
+8001708,Eichstätt Bahnhof
+8001709,Eichstätt Stadt
+8001712,Eilendorf
+8001713,Eilvese
+8001715,Eimeldingen
+8001718,Einfeld
+8001720,Einsiedlerhof
+8001725,Eisenärzt
+8001727,Eisenbach-Matzenbach
+8001728,Eisenberg(Pfalz)
+8001729,Eiserfeld(Sieg)
+8001731,Eislingen(Fils)
+8001732,Eiswoog
+8001734,Eitensheim
+8001736,Eitorf
+8001739,Hamburg Elbgaustr.
+8001741,Völksen/Eldagsen
+8001742,Elfershausen-Trimberg
+8001745,Mönchengladbach-Lürrip
+8001746,Ellental
+8001747,Ellhofen
+8001749,Ellingen(Bay)
+8001751,Ellwangen
+8001752,Ellzee
+8001754,Elpersheim
+8001760,Elsfleth
+8001762,Eltersdorf
+8001763,Eltville
+8001764,Elz(Limburg/Lahn)
+8001765,Elz(Limburg/Lahn) Süd
+8001766,Elzach
+8001767,Emden Außenhafen
+8001768,Emden Hbf
+8001770,Emmelshausen
+8001771,Emmendingen
+8001773,Emmerich
+8001774,Emmerich(Gr)
+8001775,Emmerke
+8001777,Emmerthal
+8001780,Empel-Rees
+8001781,Empelde
+8001782,Emsdetten
+8001783,Emskirchen
+8001785,Endersbach
+8001787,Bad Endorf
+8001789,Engelskirchen
+8001790,Engen
+8001792,Engertsham
+8001794,Engstlatt
+8001795,Ennepetal
+8001799,Ensdorf(Saar)
+8001801,Enspel
+8001802,Entringen
+8001803,Enzberg
+8001806,Enzisweiler
+8001808,Epe(Westf)
+8001811,Erbach(Odenw) Nord
+8001812,Eppelborn
+8001813,Eppelsheim(Rheinhess)
+8001814,Eppertshausen
+8001815,Eppstein
+8001816,Eppstein-Bremthal
+8001817,Erbach(Odenw)
+8001818,Erbach(Rheingau)
+8001819,Nistertal-Bad Marienberg
+8001820,Erbach(Württ)
+8001825,Erding
+8001826,Gießen Erdkauter Weg
+8001827,Erdmannhausen-Rielingshausen
+8001828,Bitburg-Erdorf
+8001829,Erdweg
+8001833,Ergenzingen
+8001835,Ergoldsbach
+8001836,Ergste
+8001838,Eriskirch
+8001839,Erkelenz
+8001840,Erkersreuth
+8001841,Erkrath
+8001842,Erkrath-Nord
+8001844,Erlangen
+8001845,Erlangen-Bruck
+8001848,Erlenbach(Main)
+8001851,Erndtebrück
+8001853,Ernsgaden
+8001854,Ernsthausen
+8001858,Erpel(Rhein)
+8001860,Erpolzheim
+8001861,Ersingen
+8001864,Erzhausen
+8001865,Erzingen(Baden)
+8001867,Ibbenbüren-Esch
+8001870,Eschborn
+8001871,Eschborn Süd
+8001872,Eschede
+8001874,Eschenau(b Heilbronn)
+8001875,Eschenau(Mittelfr)
+8001877,Eschenbach(b Markt Erlbach)
+8001880,Eschenlohe
+8001883,Eschhofen
+8001884,Eschwege
+8001886,Eschweiler Hbf
+8001887,Eschweiler-West
+8001888,Eschweiler Talbahnhof
+8001889,Eschweiler-Nothberg
+8001890,Esens(Ostfriesl)
+8001893,Eschweiler-Weisweiler
+8001894,Espelkamp
+8001895,Eschwege-Niederhone
+8001896,Essen Stadtwald
+8001897,Essen Süd
+8001898,Essen West
+8001899,Essen(Oldb)
+8001900,Essen-Altenessen
+8001901,Essen-Bergeborbeck
+8001902,Essen-Borbeck
+8001903,Essen-Dellwig
+8001904,Essen-Dellwig Ost
+8001905,Essen-Eiberg
+8001906,Essen-Frohnhausen
+8001907,Essen-Gerschede
+8001908,Essen-Hügel
+8001909,Essen-Zollverein Nord
+8001910,Essen-Kray Nord
+8001911,Essen-Kray Süd
+8001912,Essen-Kupferdreh
+8001913,Essen-Steele Ost
+8001914,Essen-Überruhr
+8001915,Essen-Werden
+8001919,Eßleben
+8001920,Esslingen(Neckar)
+8001921,Esslingen-Mettingen
+8001922,Vierkirchen-Esterhofen
+8001924,Etelsen
+8001925,Etterzhausen
+8001926,Ettlingen West
+8001928,Etzbach
+8001929,Etzelwang
+8001932,Etzenricht
+8001933,Eubigheim
+8001935,Euerdorf
+8001941,Eutin
+8001942,Eutingen(Baden)
+8001943,Gevelsberg-Knapp
+8001946,Eyach
+8001949,Eystrup
+8001950,Fachingen(Lahn)
+8001953,Fahrenkrug
+8001954,Fahrnau
+8001957,Fallersleben
+8001958,Bad Fallingbostel
+8001961,Farchant
+8001963,Fasanenpark
+8001964,Faulbach(Main)
+8001965,Faurndau
+8001967,Favoritepark
+8001969,Feilitzsch
+8001970,Feldafing
+8001971,Feldberg-Bärental
+8001972,Feldhausen
+8001973,Feldkirchen(b München)
+8001974,Fellbach
+8001976,Ferndorf(Siegen)
+8001977,Felde
+8001978,Feucht
+8001980,Feudingen
+8001982,Fichtenberg
+8001983,Filsen
+8001984,Filderstadt
+8001985,Finningerstraße
+8001988,Feucht Ost
+8001989,Fischbach(Nürnberg)
+8001990,Fischbach-Camphausen
+8001991,Fischbach-Weierbach
+8001992,Fischbachau
+8001995,Fischen
+8001996,Esting
+8001998,Fischhausen-Neuhaus
+8002001,Fladungen
+8002004,Boppard-Fleckertshöhe
+8002005,Flehingen
+8002007,Flensburg(Gr)
+8002010,Flieden
+8002011,Flintbek
+8002012,Flintsbach
+8002013,Flörsheim(Main)
+8002014,Flomersheim
+8002018,Föhren
+8002019,Förbau
+8002020,Förtschendorf
+8002021,Forbach(fr)
+8002022,Forbach(Schwarzw)
+8002023,Forchheim(b Karlsruhe)
+8002024,Forchheim(Oberfr)
+8002026,Fornsbach
+8002027,Forsthaus
+8002028,Forsting
+8002029,Forth
+8002030,Friedrichshafen Ost
+8002034,Frankfurt(M)Mühlberg
+8002036,Frankenstein(Pfalz)
+8002038,Frankfurt(M)Lokalbahnhof
+8002039,Frankfurt(Main)Ost
+8002040,Frankfurt am Main - Stadion
+8002041,Frankfurt(Main)Süd
+8002042,Frankfurt(Main)West
+8002043,Frankfurt-Berkersheim
+8002044,Frankfurt-Frankfurter Berg
+8002045,Frankfurt-Eschersheim
+8002046,Frankfurt-Griesheim
+8002047,Frankfurt-Louisa
+8002048,Frankfurt-Mainkur
+8002049,Frankfurt-Nied
+8002050,Frankfurt-Niederrad
+8002051,Frankfurt-Höchst Farbwerke
+8002052,Frankfurt-Rödelheim
+8002053,Frankfurt-Sindlingen
+8002054,Frankfurt-Sossenheim
+8002055,Frankfurt-Zeilsheim
+8002056,Ludwigshafen(Rhein) BASF Süd
+8002057,Frauenau
+8002058,Frankfurt(M)Ostendstraße
+8002059,Frankfurt(M)Stresemannallee
+8002063,Freden(Leine)
+8002065,Freiberg(Neckar)
+8002066,Freiburg West
+8002067,Freiburg-Herdern
+8002068,Freiburg-Littenweiler
+8002069,Freiburg-St Georgen
+8002070,Freiburg-Wiehre
+8002071,Freiburg-Zähringen
+8002073,Freienohl
+8002074,Freihalden
+8002075,Freihöls
+8002076,Freihung
+8002077,Freiburg Klinikum
+8002078,Freising
+8002080,Frellstedt
+8002083,Fremersdorf
+8002086,Fresenburg
+8002087,Freudenstadt Industriegebiet
+8002089,Freudenberg-Kirschfurt
+8002090,Freudenstadt Schulzentrum
+8002091,Freudenstadt Stadt
+8002092,Freusburg Siedlung
+8002094,Freyung Bf
+8002095,Frickhofen
+8002096,Fridingen(b Tuttlingen)
+8002097,Fridolfing
+8002099,Friedberg(Augsburg)
+8002100,Friedelhausen
+8002101,Friedensdorf(Lahn)
+8002102,Friedland(Han)
+8002103,Ludwigsau-Friedlos
+8002104,Friedrich Wilhelmshütte
+8002105,Friedberg Süd
+8002106,Hamburg Friedrichsberg
+8002108,Friedrichsdorf(Taunus)
+8002109,Friedrichsfeld(Niederrhein)
+8002110,Friedrichshafen Hafen
+8002111,Friedrichshafen-Fischbach
+8002113,Friedrichsruh
+8002114,Friedrichssegen
+8002115,Friedrichstadt
+8002116,Friedrichstal(Baden)
+8002117,Friedrichsthal(Saar)
+8002118,Friedrichsthal(b Bayreuth)
+8002120,Friedrichshafen Flughafen
+8002122,Friedrichshafen Landratsamt
+8002123,Friesenheim(Baden)
+8002126,Friedrichstal b Freudenstadt
+8002127,Frimmersdorf
+8002129,Fritzlar
+8002130,Frömern
+8002132,Friedrichsthal(Saar) Mitte
+8002133,Frommern
+8002134,Fronhausen(Lahn)
+8002137,Fürfurt
+8002141,Fürstenfeldbruck
+8002145,Fürstenwald
+8002146,Fürstenzell
+8002149,Fürth Westvorstadt
+8002150,Fürth(Odenw)
+8002152,Fürth-Burgfarrnbach
+8002153,Fürth-Dambach
+8002154,Fürth-Unterfarrnbach
+8002155,Fürth-Unterfürberg
+8002156,Füssen
+8002159,Furth i Wald
+8002161,Furth(b Deisenhofen)
+8002162,Gablingen
+8002165,Gärtringen
+8002166,Gäufelden
+8002167,Gaggenau Bf
+8002168,Gaildorf West
+8002171,Gaimersheim
+8002173,Gaißach
+8002175,Galgenschanze
+8002177,Gamburg(Tauber)
+8002179,Ganderkesee
+8002180,Garbeck
+8002182,Garbenteich
+8002184,Garching(Alz)
+8002185,Garding
+8002187,Garmisch-Partenkirchen
+8002188,Garmisch-Partenkirchen Hausberg
+8002189,Gars(Inn)
+8002191,Gau Bickelheim
+8002195,Gaubüttelbrunn
+8002197,Gausbach
+8002198,Gauting
+8002200,Geisingen-Aulfingen
+8002203,Geeste
+8002204,Geisingen-Hausen
+8002205,Geigant
+8002206,Geilenkirchen
+8002207,Geilhausen
+8002209,Geiselhöring
+8002210,Geisenbrunn
+8002211,Geisenhausen
+8002212,Geisenheim
+8002213,Geisingen-Kirchen
+8002214,Geisingen
+8002215,Geisingen-Leipferdingen
+8002217,Geislingen(Steige)West
+8002218,Geislingen(Steige)
+8002220,Geitau
+8002222,Geldern
+8002223,Gelsenkirchen Zoo
+8002224,Gelsenkirchen-Buer Nord
+8002225,Gelsenkirchen-Buer Süd
+8002226,Gelsenkirchen-Hassel
+8002227,Gelsenkirchen-Rotthausen
+8002228,Gemmingen
+8002233,Genderkingen
+8002234,Gendorf
+8002235,Gengenbach
+8002236,Felsberg-Gensungen
+8002237,Georgensgmünd
+8002238,Gennweiler
+8002239,Germersheim Mitte/Rhein
+8002240,Geradstetten
+8002241,Germersheim Süd/Nolte
+8002242,Gerhausen
+8002243,Gerlachsheim
+8002244,Gerlenhofen
+8002247,Gernlinden
+8002248,Gernsbach Bf
+8002249,Gernsheim
+8002250,Gernsbach Mitte
+8002251,Geroldshausen
+8002254,Gersfeld(Rhön)
+8002256,Gersthofen
+8002259,Gertenbach
+8002262,Geseke
+8002263,Gessertshausen
+8002265,Gettenau-Bingenheim
+8002266,Gettorf
+8002267,Gevelsberg Hbf
+8002268,Gevelsberg West
+8002269,Gießen Oswaldsgarten
+8002272,Giengen(Brenz)
+8002274,Gifhorn Stadt
+8002275,Gilching-Argelsried
+8002278,Gingen(Fils)
+8002280,Girod
+8002281,Gittelde
+8002283,Gladbeck Ost
+8002284,Gladbeck-Zweckel
+8002286,Glan-Münchweiler
+8002287,Glanzstoffwerke
+8002288,Glauburg-Glauberg
+8002290,Glesch
+8002293,Glückstadt
+8002296,Goch
+8002299,Godelheim
+8002300,Godramstein
+8002301,Göbelnrod
+8002304,Göhrde
+8002306,Gölshausen Industriegebiet
+8002307,Gölshausen
+8002312,Görschnitz
+8002315,Dreieich-Götzenhain
+8002320,Goldenstedt(Oldb)
+8002321,Goldhausen
+8002326,Gondelsheim(Baden)
+8002329,Gosberg
+8002332,Goßfelden
+8002333,Goßmannsdorf
+8002334,Gottenheim
+8002335,Gotteszell
+8002337,Gottmadingen
+8002339,Gräfelfing
+8002340,Gräfenberg
+8002341,Gräfendorf
+8002342,Gräveneck
+8002343,Grafenaschau
+8002344,Grafenau
+8002345,Graben-Neudorf Nord
+8002347,Grafing Bahnhof
+8002348,Grafing Stadt
+8002351,Grafrath
+8002358,Grebenstein
+8002365,Grenzach
+8002369,Greven
+8002370,Lennestadt-Grevenbrück
+8002373,Grießen(Baden)
+8002374,Edermünde-Grifte
+8002377,Gröbenzell
+8002378,Bad Grönenbach
+8002380,Grombach
+8002382,Bad Vilbel-Gronau
+8002383,Gronsdorf
+8002386,Groß Gerau-Dornberg
+8002388,Groß Karben
+8002389,Frechen-Königsdorf
+8002391,Groß Rohrheim
+8002393,Groß-Umstadt Mitte
+8002399,Großarmschlag
+8002400,Großauheim(Kr Hanau)
+8002402,Großbüllesheim
+8002403,Großburgwedel
+8002405,Groß Düngen
+8002409,Großen Buseck
+8002410,Großen Linden
+8002411,Großenbrode
+8002412,Großenkneten
+8002413,Großenlüder
+8002416,Großgeschaidt
+8002420,Großhelfendorf
+8002422,Großhesselohe Isartalbf
+8002424,Großkarolinenfeld
+8002425,Großkrotzenburg
+8002430,Heddesheim/Hirschberg
+8002432,Großwalbur
+8002434,Grub am Forst
+8002435,Grub(Oberbay)
+8002436,Grub(Oberpf)
+8002439,Grünberg(Oberhess)
+8002441,Grünebach Ort
+8002442,Grünebacherhütte
+8002444,Grünstadt Nord
+8002447,Grünsfeld
+8002448,Grunbach
+8002454,Koblenz-Güls
+8002457,Gündlkofen
+8002458,Günzach
+8002461,Gütersloh Hbf
+8002462,Gummersbach
+8002465,Gundelfingen(Breisgau)
+8002466,Gundelfingen(Bay)
+8002467,Gundelsdorf
+8002468,Gundelshausen
+8002470,Gundelsheim(Neckar)
+8002473,Gundersheim(Rheinhess)
+8002474,Guntersblum
+8002477,Gustorf
+8002478,Gutach(Breisgau)
+8002484,Guxhagen
+8002489,Lörrach-Haagen/Messe
+8002490,Haan
+8002491,Haar
+8002494,Hachenburg
+8002495,Hadamar
+8002498,Hähnlein-Alsbach
+8002499,Hämelerwald
+8002501,Häuserhof
+8002504,Haffkrug
+8002506,Hagelstadt
+8002507,Hagen(Han)
+8002509,Gevelsberg-Kipp
+8002512,Hagen-Heubing
+8002514,Hagen-Oberhagen
+8002515,Hagenbach
+8002517,Hagenbüchach
+8002520,Feucht-Moosbach
+8002523,Haidenaab-Göppmannsbühl
+8002524,Haiger Obertor
+8002526,Hailer-Meerholz
+8002528,Rodgau-Hainhausen
+8002529,Hainstadt(Baden)
+8002531,Hainburg Hainstadt
+8002532,Haitz-Höchst
+8002533,Halbmeil
+8002534,Hallbergmoos
+8002536,Haldern(Rheinl)
+8002537,Halen
+8002539,Halle(Westf)
+8002542,Hallstadt(b Bamberg)
+8002545,Halstenbek
+8002546,Haltingen
+8002547,Hamburg Airport
+8002548,Hamburg Dammtor
+8002549,Hamburg Hbf
+8002550,Hamburg Holstenstraße
+8002553,Hamburg-Altona
+8002554,Hamburg-Bergedorf
+8002555,Hamburg-Eidelstedt
+8002556,Hamburg-Fischbek
+8002557,Hamburg-Neugraben
+8002558,Hamburg-Rahlstedt
+8002559,Hamburg-Stellingen
+8002560,Hamburg-Wandsbek
+8002561,Hamburg-Wilhelmsburg
+8002565,Hammah
+8002567,Hammelburg
+8002568,Hammelburg Ost
+8002570,Hammerau
+8002571,Hamminkeln
+8002572,Hanau Nord
+8002573,Hanau West
+8002574,Hanau-Wilhelmsbad
+8002575,Handeloh
+8002578,Happurg
+8002580,Hannover Bismarckstr.
+8002581,Hannover-Bornum
+8002584,Hannover-Kleefeld
+8002585,Hannover-Leinhausen
+8002586,Hannover-Linden/Fischerhof
+8002587,Hanweiler(Gr)
+8002589,Hannover Flughafen
+8002592,Harblek
+8002593,Harburg(Schwab)
+8002594,Hardegsen
+8002596,Hardhof
+8002598,Haren(Ems)
+8002600,Harlesiel
+8002605,Harsdorf
+8002607,Harsum
+8002609,Hartershofen
+8002610,Harthaus
+8002612,Hartmannshof
+8002615,Hasbergen
+8002621,Haslach
+8002622,Hasloch(Main)
+8002623,Haspelmoor
+8002625,Hassel(Saar)
+8002627,Hasselborn
+8002628,Hamburg Hasselbrook
+8002630,Haßfurt
+8002632,Haßloch(Pfalz)
+8002633,Haßmersheim
+8002634,Haste
+8002635,Hattenheim
+8002637,Hattersheim(Main)
+8002638,Hattert
+8002639,Hattingen(Ruhr)
+8002640,Hattingen(R) Mitte
+8002641,Hattorf
+8002643,Hatzenport
+8002648,Hauenstein Mitte
+8002649,Hauenstein(Pfalz)
+8002651,Haupeltshofen
+8002655,Hauptstuhl
+8002656,Hausen i Tal
+8002664,Hausen(Schwab)
+8002666,Hausen-Raitbach
+8002667,Hausham
+8002670,Havixbeck
+8002671,Hebertsfelden
+8002673,Hechingen
+8002674,Hechthausen
+8002675,Heckershausen
+8002677,Hedemünden
+8002678,Hedersdorf
+8002680,Heessen
+8002681,Heidelberg-Weststadt/Südstadt
+8002682,Heggen
+8002683,Hegne
+8002684,Heidelberg Orthopädie
+8002685,Heidelberg-Altstadt
+8002686,Heidelberg-Kirchheim/Rohrbach
+8002687,Heidelberg-Pfaffengrund/Wieblingen
+8002688,Heidelsheim
+8002689,Heidenheim
+8002690,Heidenheim-Mergelstetten
+8002691,Heidenheim-Schnaitheim
+8002692,Heidesheim(Rheinh)
+8002694,Heidkrug
+8002695,Schortens-Heidmühle
+8002696,Heigenbrücken
+8002699,Heilbronn Sülmertor
+8002700,Heilbronn Trappensee
+8002703,Heiligenstatt(Obb)
+8002704,Heiligenstein(Pfalz)
+8002705,Heilsbronn
+8002707,Heimbach(Nahe)
+8002710,Heimenkirch
+8002711,Heimersheim
+8002715,Heimstetten
+8002716,Heinebach
+8002724,Heinzenhausen
+8002727,Heitersheim
+8002733,Helmbrechts
+8002734,Helmsheim
+8002737,Helpup
+8002745,Hemmerde
+8002746,Hemmersdorf(Saar)
+8002748,Hemsbach
+8002751,Henfenfeld
+8002753,Hennef(Sieg)
+8002754,Hennen
+8002757,Heppenheim(Bergstr)
+8002760,Herbertingen Ort
+8002761,Herbertshofen
+8002762,Herblingen
+8002763,Herbolzheim(Breisg)
+8002764,Herbolzheim(Jagst)
+8002766,Herbrechtingen
+8002768,Herchen
+8002769,Herdecke
+8002770,Herdorf
+8002773,Hergershausen
+8002776,Hermaringen
+8002779,Herne-Börnig
+8002782,Heroldsberg
+8002783,Heroldsberg Nord
+8002784,Herrath
+8002785,Herrenberg
+8002786,Herrenberg Zwerchweg
+8002789,Herrlingen
+8002792,Herrsching
+8002793,Hersbruck(l Pegnitz)
+8002794,Hersbruck(r Pegnitz)
+8002797,Herten(Baden)
+8002798,Herxheim am Berg
+8002800,Herzberg Schloß
+8002801,Herzebrock
+8002804,Herzogenrath-Alt-Merkstein
+8002806,Herzogenrath
+8002808,Heselbach
+8002810,Hesseln
+8002812,Hessisch Oldendorf
+8002813,Höchst Hetschbach
+8002814,Hettenhausen
+8002815,Beerfelden Hetzbach
+8002816,Herzogenrath-August-Schmidt-Platz
+8002817,Hetzerath
+8002820,Heufeld
+8002821,Heufeldmühle
+8002822,Heusenstamm
+8002824,Hiddenhausen-Schweicheln
+8002826,Hilchenbach
+8002827,Hildbrandsgrün
+8002828,Hilden Süd
+8002830,Hildesheim Ost
+8002835,Hillnhütten
+8002837,Hilpertsau
+8002838,Hilpoltstein
+8002839,Hilter
+8002841,Münster-Hiltrup
+8002843,Himmelpforten
+8002844,Himmelreich
+8002845,Himmelstadt
+8002847,Hinterweidenthal
+8002848,Hinterzarten
+8002852,Hirsau
+8002853,Hirschaid
+8002856,Hirschfelden
+8002857,Hirschhorn(Neckar)
+8002858,Hirschhorn(Pfalz)
+8002861,Boppard-Hirzenach
+8002864,Hittfeld
+8002865,Hitzacker
+8002868,Hochdahl
+8002869,Hochdahl-Millrath
+8002871,Hochhausen(Tauber)
+8002872,Hochheim(Main)
+8002873,Hamburg Hochkamp
+8002875,Hochspeyer
+8002877,Maintal Ost
+8002878,Hochstadt-Marktzeuln
+8002879,Hochstätten(Pfalz)
+8002880,Hochstetten(Nahe)
+8002881,Hochwang
+8002883,Hockenheim
+8002884,Hodenhagen
+8002886,Altenstadt-Höchst
+8002888,Höchstädt(Donau)
+8002891,Höfen(Enz) Bf
+8002892,Höfingen
+8002894,Höhenkirchen-Siegertsbrunn
+8002895,Höhmühlbach
+8002898,Höllenthal
+8002899,Höllriegelskreuth
+8002903,Wildeck-Hönebach
+8002908,Höpfling
+8002910,Hörden
+8002912,Hörlkofen
+8002914,Hörpolding
+8002915,Hörstel
+8002916,Hörstmar(Lippe)
+8002918,Hösbach
+8002919,Hösel
+8002920,Hövelhof
+8002921,Hövelriege
+8002923,Höxter Rathaus
+8002924,Hof Hbf
+8002927,Hof-Neuhof
+8002929,Hofeld
+8002930,Hofen(b Aalen)
+8002931,Hoffenheim
+8002932,Hoffnungsthal
+8002933,Hofgeismar
+8002934,Hofheim (Ried)
+8002935,Hofheim(Taunus)
+8002939,Hohegrete
+8002940,Hohenbrunn
+8002941,Hohenbudberg Bayerwerk
+8002944,Hoheneggelsen
+8002946,Hamburg Hoheneichen
+8002953,Hohenlimburg
+8002954,Hohenpeißenberg
+8002955,Hohenschäftlarn
+8002956,Hohenstadt(Mittelfr)
+8002958,Hohensülzen
+8002962,Holdorf(Oldb)
+8002967,Holm-Seppensen
+8002969,Holtensen/Linderte
+8002972,Rosendahl-Holtwick
+8002976,Holzhausen(Kr Siegen)
+8002978,Holzhausen-Heddinghausen
+8002979,Holzheim(b Neuss)
+8002980,Holzkirchen
+8002988,Honrath
+8002992,Hoppecke
+8002994,Hoppingen
+8002995,Hoppstädten(Nahe)
+8003000,Horn-Bad Meinberg
+8003001,Hornberg(Schwarzw)
+8003002,Horneburg
+8003003,Horst(Holst)
+8003008,Hoykenkamp
+8003010,Hubacker
+8003014,Hüfingen Mitte
+8003015,Hofgeismar-Hümme
+8003016,Hünfeld
+8003018,Siegen-Geisweid
+8003020,Siegen-Weidenau
+8003021,Hüttingen
+8003022,Hulb
+8003023,Hufschlag
+8003024,Huglfing
+8003025,Hugstetten
+8003030,Huntlosen
+8003032,Husby
+8003033,Huttenheim
+8003034,Huzenbach
+8003035,Ibach
+8003036,Ibbenbüren
+8003038,Ichenhausen
+8003039,Icking
+8003040,Idar-Oberstein
+8003041,Idstein(Taunus)
+8003042,Igel
+8003044,Igensdorf
+8003045,Igersheim
+8003052,Ihringen
+8003053,Fuldatal-Ihringshausen
+8003057,Illertissen
+8003058,Illesheim
+8003059,Illingen(Saar)
+8003060,Illingen(Württ)
+8003061,Immendingen Mitte
+8003062,Immenhausen
+8003063,Immenreuth
+8003064,Immensen-Arpke
+8003065,Immenstadt
+8003066,Immendingen Zimmern
+8003070,Imsweiler
+8003072,Markt Indersdorf
+8003073,Ingelbach
+8003075,Ingelheim
+8003076,Ingolstadt Nord
+8003079,Inningen
+8003080,Insheim
+8003081,Iphofen
+8003083,Ipsheim
+8003086,Irrenlohe
+8003088,Hamburg-Iserbrook
+8003090,Iserlohnerheide
+8003091,Isernhagen
+8003092,Ismaning
+8003094,Ispringen
+8003096,Isselhorst-Avenwedde
+8003098,Istein
+8003100,Ittling
+8003101,Ittlingen
+8003102,Itzehoe
+8003103,Itzelberg
+8003104,Iversheim
+8003106,Jägerhaus
+8003108,Jägersfreude
+8003111,Jagstzell
+8003122,Jettenbach
+8003123,Jettingen
+8003124,Jever
+8003125,Jockgrim Bf
+8003127,Jöhlingen
+8003129,Jossa
+8003130,Jüchen
+8003131,Rodgau-Jügesheim
+8003135,Jünkerath
+8003136,Julbach
+8003137,Hamburg Jungfernstieg
+8003141,Kaarster Bahnhof
+8003143,Kahl(Main)
+8003144,Hesseneck Kailbach
+8003146,Kainzenbad
+8003148,Kaisersesch
+8003150,Kaiserslautern Pfaffwerk
+8003151,Kaiserslautern West
+8003154,Kalchreuth
+8003155,Venlo(Gr)
+8003158,Kall
+8003160,Hürth-Kalscheuren
+8003165,Langenhagen-Kaltenweide
+8003166,Kalthof(Kr Iserlohn)
+8003168,Kamen
+8003169,Kamen-Methler
+8003170,Kamp-Bornhofen
+8003172,Kandel
+8003173,Kanzem
+8003174,Kapellen-Wevelinghoven
+8003175,Kapellen-Drusweiler
+8003179,Treis-Karden
+8003181,Karlsdorf
+8003182,Bad Karlshafen
+8003183,Karlsruhe West
+8003184,Karlsruhe-Durlach
+8003185,Karlsruhe-Hagsfeld
+8003186,Karlsruhe-Knielingen
+8003187,Karlsruhe-Mühlburg
+8003189,Karlstadt(Main)
+8003191,Karpfham
+8003196,Kassel-Harleshausen
+8003197,Kassel-Jungfernkopf
+8003198,Kassel-Kirchditmold
+8003199,Kassel-Oberzwehren
+8003200,Kassel-Wilhelmshöhe
+8003205,Kastl(Oberbay)
+8003207,Katharinenheerd
+8003208,Kating
+8003209,Katlenburg
+8003211,Kattenes
+8003212,Kattenvenne
+8003213,Katzenfurt
+8003214,Katzwang
+8003215,Katzweiler
+8003216,Kaub
+8003218,Kehl
+8003220,Kehlen
+8003222,Keitum
+8003227,Kellmünz
+8003228,Kelsterbach
+8003229,Kemnath-Neustadt
+8003230,Kempten(Allgäu)Ost
+8003232,Kennelgarten
+8003233,Kenzingen
+8003235,Kerkerbach
+8003238,Kersbach
+8003241,Kestert
+8003245,Kettwig Stausee
+8003247,Kevelaer
+8003248,Kiebingen
+8003249,Kiefersfelden
+8003252,Kierberg
+8003255,Schöneck-Kilianstädten
+8003256,Kinding(Altmühltal)
+8003257,Kindsbach
+8003262,Kirch Göns
+8003263,Kirchanschöring
+8003266,Kirchberg(Murr)
+8003267,Kirchdorf(Deister)
+8003268,Kirchehrenbach
+8003270,Kirchenlamitz Ost
+8003272,Kirchentellinsfurt
+8003275,Kirchhalling
+8003278,Kirchheim(Neckar)
+8003280,Kirchheim(Teck)
+8003282,Kirchheim(Teck)-Ötlingen
+8003283,Kirchheim(Teck)Süd
+8003284,Kirchheim(Unterfr)
+8003285,Kirchheim(Weinstr)
+8003286,Kirchhorsten
+8003287,Kirchhundem
+8003288,Kirchlengern
+8003289,Kirschbaumwasen
+8003290,Kirchseeon
+8003292,Kirchweyhe
+8003293,Kirchzarten
+8003294,Kirkel
+8003295,Kirn
+8003298,Kirnsulzbach
+8003299,Kissing
+8003302,Klais
+8003303,Klanxbüll
+8003309,Klecken
+8003310,Köln-Stammheim
+8003311,Hanau Klein-Auheim
+8003312,Hamburg Klein Flottbek
+8003313,Klein Gerau
+8003314,Kleinostheim
+8003315,Groß-Umstadt Klein-Umstadt
+8003316,Klein Winternheim-Ober Olm
+8003317,Kleinberghofen
+8003320,Köln Trimbornstr
+8003321,Kleinenbroich
+8003323,Kleinensiel
+8003324,Kleinheubach
+8003325,Kleinkems
+8003326,Kleinkötz
+8003330,Köln/Bonn Flughafen
+8003331,Kleinsteinbach
+8003332,Knittlingen-Kleinvillars
+8003334,Kleinwallstadt
+8003336,Brigachtal Klengen
+8003337,Klingenberg(Main)
+8003338,Klingenbrunn
+8003339,Brigachtal Kirchdorf
+8003340,Kloster Marienthal
+8003341,Koblenz Stadtmitte
+8003342,Klosterlechfeld
+8003343,Klosterreichenbach
+8003344,Klotten
+8003345,Friedrichshafen-Kluftern
+8003348,Knesebeck
+8003349,Knöringen-Essingen
+8003350,Kobern-Gondorf
+8003351,Koblenz-Ehrenbreitstein
+8003352,Koblenz-Lützel
+8003354,Koblenz-Moselweiß
+8003355,Kochel
+8003356,Köditz
+8003357,Köfering
+8003358,Köln Frankfurter Straße
+8003360,Köln Geldernstr./Parkgürtel
+8003361,Köln Süd
+8003362,Köln Volkhovener Weg
+8003363,Köln West
+8003364,Köln-Buchforst
+8003365,Köln-Chorweiler
+8003366,Köln-Chorweiler Nord
+8003367,Köln-Dellbrück
+8003368,Köln Messe/Deutz
+8003369,Köln-Holweide
+8003370,Köln Airport-Businesspark
+8003371,Köln-Longerich
+8003372,Köln-Nippes
+8003373,Köln-Worringen
+8003374,Köndringen
+8003375,Köln-Müngersdorf Technologiepark
+8003376,Königsbach(Baden)
+8003378,Königsbronn
+8003379,Köln Steinstraße
+8003381,Königshofen(Baden)
+8003382,Königslutter
+8003383,Köln-Weiden West
+8003385,Königsstollen
+8003386,Königswinter
+8003388,Körle
+8003392,Köln Hansaring
+8003393,Bad Kötzting
+8003394,Kövenig
+8003395,Kohlscheid
+8003397,Kolbermoor
+8003398,Kollmarsreute
+8003399,Kollnau
+8003400,Konstanz
+8003401,Konstanz-Petershausen
+8003402,Konz
+8003403,Konz Mitte
+8003404,Konstanz-Fürstenberg
+8003406,Korbach Süd
+8003407,Kordel
+8003408,Kork
+8003409,Korntal
+8003410,Hamburg Kornweg(Klein Borstel)
+8003411,Kornwestheim Pbf
+8003412,Korschenbroich
+8003413,Kothmaißling
+8003414,Kottenforst
+8003415,Kottenheim
+8003416,Konstanz-Wollmatingen
+8003420,Kraghammer
+8003424,Kredenbach
+8003426,Krefeld-Linn
+8003427,Krefeld-Uerdingen
+8003429,Kreimbach-Kaulbach
+8003430,Krempe
+8003431,Kremperheide
+8003432,Kressbronn
+8003434,Kreuz Konz
+8003436,Kreuzberg(Ahr)
+8003438,Kreuzstraße
+8003440,Kreuzweingarten
+8003442,Kriftel
+8003446,Kronach
+8003447,Kronberg(Taunus)
+8003452,Kronweiler
+8003455,Kruft
+8003457,Krumbach(Schwab)
+8003460,Krupunder
+8003461,Kuchen
+8003462,Kuchenheim
+8003467,Külte-Wetterburg
+8003469,Künsebeck
+8003470,Küntrop
+8003472,Küps
+8003474,Kiel-Hassee CITTI-PARK
+8003476,Kulmbach
+8003477,Kiel-Elmschenhagen
+8003478,Kupfermühle
+8003480,Kuppenheim
+8003481,Kusel
+8003483,Kutzenhausen
+8003484,Kyllburg
+8003485,Laaber
+8003486,Bad Laasphe
+8003487,Hannover Messe/Laatzen
+8003488,Laberweinting
+8003489,Ladenburg
+8003490,Lagerlechfeld
+8003491,Ibbenbüren-Laggenbeck
+8003493,Bad Laasphe-Niederlaasphe
+8003494,Lahr(Schwarzw)
+8003495,Laineck
+8003497,Lambrecht(Pfalz)
+8003498,Lambsheim
+8003503,Lampertheim
+8003504,Lampertsmühle-Otterbach
+8003506,Landau(Isar)
+8003508,Landau(Pfalz)West
+8003512,Landsberg(Lech)
+8003514,Landshut(Bay)Süd
+8003515,Landstuhl
+8003516,Landsweiler-Reden
+8003518,Hamburg Landungsbrücken
+8003519,Hamburg Landwehr
+8003520,Lang Göns
+8003521,Langdorf
+8003522,Langelsheim
+8003523,Langen(Hess)
+8003524,Langenargen
+8003525,Langenau(Württ)
+8003526,Langen-Flugsicherung
+8003528,Langenbach(Oberbay)
+8003529,Velbert-Langenberg
+8003532,Langenbrand
+8003533,Bad Schönborn Süd
+8003539,Langenfeld(Rhld)-Berghausen
+8003540,Langenfeld(Rhld)
+8003541,Hamburg-Langenfelde
+8003542,Langenhagen Pferdemarkt
+8003543,Langenhahn
+8003544,Langenhorn(Schlesw)
+8003545,Langenhagen Mitte
+8003548,Langenprozelten
+8003550,Langenselbold
+8003551,Langenwang(Schwab)
+8003552,Langenzenn
+8003553,Langerwehe
+8003554,Langlau
+8003558,Langsdorf(Oberhess)
+8003559,Babenhausen Langstadt
+8003560,Langweid(Lech)
+8003562,Lauchringen West
+8003563,Lathen
+8003567,Laubendorf
+8003568,Laubenheim(Nahe)
+8003569,Lauchheim
+8003571,Laudenbach(Bergstr)
+8003572,Laudenbach(Württ)
+8003573,Laudenbach am Main
+8003576,Lauenbrück
+8003577,Lauenburg(Elbe)
+8003578,Lauenförde-Beverungen
+8003580,Lauf(links Pegnitz)
+8003581,Lauf(rechts Pegnitz)
+8003582,Laufach
+8003584,Laufen(Oberbay)
+8003585,Laufenburg(Baden)
+8003586,Laufenburg(Baden)Ost
+8003587,Lauf West
+8003588,Lauffen(Neckar)
+8003589,Lauingen
+8003591,Laupheim Stadt
+8003592,Laupheim West
+8003593,Laurenburg(Lahn)
+8003594,Lautenbach(Baden)
+8003597,Lauterbourg(fr)
+8003605,Riedstadt-Wolfskehlen
+8003608,Legden
+8003609,Legelshurst
+8003611,Lehmen
+8003612,Lehnheim
+8003616,Leichlingen
+8003617,Leiferde(b Gifhorn)
+8003621,Leimstruth
+8003622,Leinfelden
+8003623,Leingarten
+8003624,Leingarten West
+8003627,Leipheim
+8003628,Leitstade
+8003630,Lembeck
+8003632,Lemförde
+8003633,Lemgo
+8003634,Lemgo-Lüttfeld
+8003635,Lemmie
+8003638,Lendringsen
+8003639,Lengenwang
+8003640,Lengerich(Westf)
+8003641,Otzberg Lengfeld
+8003643,Lenggries
+8003644,Lenglern
+8003649,Lensahn
+8003652,Leonberg
+8003655,Leopoldstal
+8003656,Leschede
+8003657,Letmathe Dechenhöhle
+8003658,Lette(Kr Coesfeld)
+8003659,Letter
+8003660,Leubsdorf(Rhein)
+8003663,Leuterschach
+8003665,Leutesdorf(Rhein)
+8003668,Leverkusen-Küppersteg
+8003669,Leverkusen-Schlebusch
+8003671,Erftstadt
+8003672,Leverkusen-Rheindorf
+8003673,Lich(Oberhess)
+8003674,Gießen Licher Str
+8003676,Lichtenthal
+8003677,Liebenau(Bz Kassel)
+8003680,Limburg Süd
+8003681,Lieblos
+8003684,"Limbach(b Homburg,Saar)"
+8003687,Limburgerhof
+8003690,Lindach
+8003692,Lindau-Aeschach
+8003696,Lindenholzhausen
+8003697,Lindern
+8003698,Altenstadt-Lindheim
+8003699,Lindhorst(Schaumb-Lippe)
+8003700,Lindwedel
+8003701,Lingen(Ems)
+8003702,Lingenfeld
+8003705,Linsburg
+8003708,Linz(Rhein)
+8003711,Lispenhausen
+8003713,Lissendorf
+8003715,Listerscheid
+8003716,Kreuztal-Littfeld
+8003720,Lochham
+8003721,Löcherberg
+8003722,Lödingsen
+8003723,Löf
+8003724,Löffingen
+8003726,Löhnberg
+8003729,Lörrach Hbf
+8003730,Lörrach-Stetten
+8003731,Lörzenbach-Fahrenbach
+8003732,Lövenich
+8003733,Löwental
+8003734,Lohgarten-Roth
+8003735,Lohhof
+8003736,Lörrach Dammstraße
+8003737,Lörrach Museum/Burghof
+8003738,Lohne(Oldb)
+8003739,Lohnweiler
+8003740,Lohr Bahnhof
+8003743,Lörrach Schwarzwaldstraße
+8003748,Lonsee
+8003749,Loppenhausen
+8003751,Lorch(Rhein)
+8003752,Lorch(Württ)
+8003753,Lorchhausen
+8003754,Lorsbach
+8003755,Lorsch
+8003758,Loßburg-Rodt
+8003759,Ludwigshafen(Rhein) Mitte
+8003760,Loxstedt
+8003762,Ludersheim
+8003763,Ludwigschorgast
+8003764,Ludwigshafen(Bodensee)
+8003765,Ludwigshafen-Mundenheim
+8003766,Ludwigshafen-Oggersheim
+8003767,Ludwigshafen-Rheingönheim
+8003768,Ludwigshöhe
+8003770,Ludwigsstadt
+8003771,Ludwigsthal
+8003772,Lübbecke(Westf)
+8003773,Lübberstedt
+8003774,Lübeck St Jürgen
+8003776,Lübeck-Kücknitz
+8003777,Lübeck-Travemünde Hafen
+8003778,Lübeck-Travemünde Strand
+8003780,Lüchtringen
+8003781,Lübeck Flughafen
+8003782,Lüdenscheid
+8003783,Lüdinghausen
+8003784,Lügde
+8003788,Lünern
+8003790,Lütter
+8003791,Lützel
+8003792,Lützelsachsen
+8003794,Luhe
+8003795,Luhe-Wildenau
+8003796,Luisenthal(Saar)
+8003798,Lunden
+8003799,Lunestedt
+8003800,Lutten
+8003804,Lutum
+8003808,Maichingen
+8003809,Maikammer-Kirrweiler
+8003810,Mainaschaff
+8003813,Mainleus
+8003814,Mainroth
+8003815,Mainz Nord
+8003816,Mainz Römisches Theater
+8003817,Mainz-Gonsenheim
+8003818,Mainz-Gustavsburg
+8003819,Mainz-Laubenheim
+8003820,Mainz-Marienborn
+8003821,Mainz-Mombach
+8003824,Maisach
+8003828,Malching(Oberbay)
+8003829,Bad Malente-Gremsmühlen
+8003830,Mallersdorf
+8003831,Malmsheim
+8003832,Malsch
+8003836,Mandern
+8003839,Manndorf
+8003841,Mannheim Rangierbahnhof
+8003842,Mannheim-Friedrichsfeld Süd
+8003843,Mannheim-Käfertal
+8003844,Mannheim-Neckarau
+8003845,Mannheim-Rheinau
+8003847,Mannheim-Seckenheim
+8003848,Mannheim-Waldhof
+8003850,Friedrichshafen-Manzell
+8003851,Marbach-Grafeneck
+8003853,Marbach(Neckar)
+8003854,Marbach West(Villingen-Schwenningen)
+8003855,Marbeck-Heiden
+8003856,Marburg Süd
+8003857,Marbach Ost (Villingen-Schwenningen)
+8003859,Maria Rain
+8003860,Maria Veen
+8003866,Marienhafe
+8003871,Markdorf(Baden)
+8003872,Markelfingen
+8003873,Markelsheim
+8003876,Markt Bibart
+8003877,Marktoberdorf Schule
+8003878,Markt Erlbach
+8003879,Markt Schwaben
+8003881,Marktbreit
+8003883,Marktl
+8003884,Marktleuthen
+8003885,Marktoberdorf
+8003887,Marktschorgast
+8003888,Marl Mitte
+8003890,Marl-Hamm
+8003891,Marl-Sinsen
+8003893,Marnheim
+8003896,Marsberg
+8003897,Marstetten-Aitrach
+8003898,Martinlamitz
+8003899,Martinstein
+8003901,Martinszell(Allgäu)
+8003903,Marxgrün
+8003905,Marzling
+8003906,Maschen
+8003909,Massen
+8003910,Massing
+8003911,Maximiliansau-Im Rüsten
+8003912,Matzing
+8003913,Maubach
+8003915,Mauer(b Heidelberg)
+8003916,Dortmund-Körne West
+8003918,Maulbronn Stadt
+8003920,Maulburg
+8003921,Mausheim
+8003922,Maxhütte-Haidhof
+8003923,Maximiliansau Eisenbahnstraße
+8003924,Mayen West
+8003925,Unna West
+8003926,Mayschoß
+8003927,Mechernich
+8003929,Meckelfeld
+8003930,Meckenbeuren
+8003931,Meckenheim(Bz Köln)
+8003932,Meckesheim
+8003936,Dortmund-Wickede West
+8003937,Meckenheim Industriepark
+8003938,Meeder
+8003939,Lennestadt-Meggen
+8003943,Mehrhoog
+8003946,Dortmund West
+8003947,Meine
+8003949,Meinersen
+8003952,Meitingen
+8003953,Melbach
+8003954,Meldorf
+8003956,Melle
+8003957,Mellendorf
+8003959,Mellrichstadt Bf
+8003961,Melsungen
+8003965,Menden(Sauerland)Süd
+8003966,Menden(Rheinl)
+8003967,Menden(Sauerland)
+8003969,Mengen
+8003970,Mengeringhausen
+8003978,Meppen
+8003979,Merching
+8003980,Merchweiler
+8003982,Mering
+8003986,Mersch(Westf)
+8003987,Merten(Sieg)
+8003988,Mertesheim
+8003989,Mertingen Bahnhof
+8003990,Merzenich
+8003991,Merzig(Saar) Stadtmitte
+8003992,Merzig(Saar)
+8003993,Meschede
+8003996,Messel
+8003998,Messinghausen
+8004000,Rheine-Mesum
+8004001,Metelen Land
+8004003,Mettenheim
+8004004,Mettlach
+8004005,Mettmann Stadtwald
+8004007,Mettmann Zentrum
+8004008,Mering-St Afra
+8004009,Metzingen(Württ)
+8004011,Michelau(Oberfr)
+8004013,Michelaubrück
+8004017,Michelstadt
+8004019,Miesbach
+8004020,Miesenheim
+8004023,Millingen(b Rheinb)
+8004024,Millingen(b Rees)
+8004026,Miltach
+8004028,Mimberg
+8004029,Salem
+8004030,Mindelaltheim
+8004032,Bad Schönborn-Kronau
+8004037,Mittel Gründau
+8004040,Mittelsinn
+8004043,Mittenwald
+8004044,Mittenwald(Gr)
+8004046,Mittergars
+8004048,Hamburg Mittlerer Landweg
+8004049,Mochenwangen
+8004050,Möckmühl
+8004053,Mögglingen(Gmünd)
+8004057,Mölln(Lauenb)
+8004060,Espenau-Mönchehof
+8004061,Mönchengladbach-Genhausen
+8004063,Mönchengladbach-Rheindahlen
+8004064,Mönchröden
+8004065,Mörfelden
+8004066,Mörlenbach
+8004067,Möhringen Rathaus
+8004068,Möhringen Bahnhof
+8004070,Mössingen
+8004071,Möttingen
+8004077,Monbach-Neuhausen
+8004078,Monreal
+8004080,Monzingen
+8004084,Moosburg
+8004090,Morlesau
+8004093,Morsum
+8004094,Mosbach(Baden)
+8004095,Mosbach West
+8004096,Moselkern
+8004099,Mudersbach
+8004100,Mücke(Hess)
+8004101,Müden(Mosel)
+8004103,Mühlacker Rößlesweg
+8004104,Mühlen(b Horb)
+8004105,Mühlen(Oldb)
+8004107,Mühlhausen(b Engen)
+8004111,Mühlheim(b Tuttlingen)
+8004112,Mühlheim(Main)
+8004115,Mühlstetten
+8004122,Mülheim(Ruhr)West
+8004124,Müllheim(Baden)
+8004125,Höchst Mümling-Grumbach
+8004126,Münchberg
+8004127,Münchehof(Harz)
+8004128,München Donnersbergerbrücke
+8004129,München Hackerbrücke
+8004130,München Harras
+8004131,München Isartor
+8004132,München Karlsplatz
+8004133,München Leienfelsstr.
+8004134,München Leuchtenbergring
+8004135,München Marienplatz
+8004136,München Rosenheimer Platz
+8004137,München Siemenswerke
+8004138,München St.Martin-Str.
+8004139,München-Untermenzing
+8004140,München-Allach
+8004141,München-Aubing
+8004142,München-Berg am Laim
+8004143,München-Daglfing
+8004144,München-Englschalking
+8004145,München-Fasanerie
+8004146,München-Fasangarten
+8004147,München-Feldmoching
+8004148,München-Giesing
+8004149,München-Johanneskirchen
+8004150,München-Karlsfeld
+8004151,München-Laim
+8004152,München-Langwied
+8004153,München-Lochhausen
+8004154,München-Mittersendling
+8004155,München-Moosach
+8004156,München-Neuaubing
+8004157,München-Obermenzing
+8004158,München-Pasing
+8004159,München-Perlach
+8004160,München-Riem
+8004161,München-Solln
+8004162,München-Trudering
+8004163,München-Westkreuz
+8004164,Münchhausen
+8004165,Münchsmünster
+8004166,Münchweiler(Rodalb)
+8004167,München Flughafen Besucherpark
+8004168,München Flughafen Terminal
+8004169,Münnerstadt
+8004171,Münster(b Dieburg)
+8004172,Münster-Sarmsheim
+8004173,Münster(W)Zentrum Nord
+8004174,Mürlenbach
+8004177,Müssen
+8004178,Muggensturm
+8004179,München Hirschgarten
+8004182,Munderkingen
+8004183,Munster(Örtze)
+8004184,Murg(Baden)
+8004185,Murnau
+8004186,Murnau Ort
+8004188,Murrhardt
+8004189,Mußbach
+8004191,Nabburg
+8004193,Nackenheim
+8004195,Nagold-Steinberg
+8004196,Nagold
+8004198,Naila
+8004199,Namborn
+8004200,Namedy
+8004204,Mammendorf
+8004206,Nassau(Lahn)
+8004207,Nassenbeuren
+8004208,Natrup-Hagen
+8004210,Nauheim(b Gr.Gerau)
+8004213,Neanderthal
+8004215,Neckarburken
+8004216,Neckargerach
+8004217,Neckargemünd Altstadt
+8004218,Neckarhausen bei Neckarsteinach
+8004219,Neckarsteinach
+8004220,Neckarsulm
+8004222,Neckarzimmern
+8004223,Neef
+8004227,Neetzendorf
+8004228,Neheim-Hüsten
+8004229,Nehren
+8004230,Dortmund-Dorstfeld Süd
+8004233,Nellmersbach
+8004235,Nendingen(b Tuttlingen)
+8004236,Nennig
+8004239,Nersingen
+8004240,Nesselwang
+8004241,Hamburg-Nettelnburg
+8004242,Nettersheim
+8004246,Neu Isenburg
+8004247,Neu Wulmstorf
+8004249,Neugilching
+8004250,Neubäu
+8004251,Neubeckum
+8004252,Neubiberg
+8004253,Neubrücke(Nahe)
+8004254,Neuburg(Donau)
+8004256,Neuburg(Kammel)
+8004257,Neuburg(Rhein)
+8004258,Neudenau
+8004260,Neudorf-Platendorf
+8004264,Neuenbürg(Enz) Süd
+8004265,Neuenbürg(Enz)
+8004266,Hamburg-Hammerbrook
+8004267,Hamburg-Harburg Rathaus
+8004268,Neuendettelsau
+8004269,Dortmund-Kley
+8004271,Neuenkirchen(Oldb)
+8004273,Neuenrade
+8004276,Neuenstein
+8004279,Neufahrn(b Freising)
+8004280,Rottweil Neufra
+8004284,Neuhaus(Pegnitz)
+8004288,Dortmund-Oespel
+8004289,Neuhausen Bad Bf
+8004295,Neuhof(Kr Fulda)
+8004297,Haunetal-Neukirchen
+8004298,Neukirchen(Inn)
+8004302,Neukloster(Kr Stade)
+8004304,Neulußheim
+8004305,Neumarkt(Oberpf)
+8004308,Neunkirch
+8004310,Neunkirchen a Sand
+8004312,Neunkirchen(Saar)-Wellesweiler
+8004313,Neunkirchen(Kr Siegen)
+8004315,Neuötting
+8004316,Neuss Rheinparkcenter
+8004317,Neuss Süd
+8004318,Neusäß
+8004319,Neuses(b Kronach)
+8004320,Neuss Am Kaiser
+8004321,Neusorg
+8004322,Neustadt am Rübenberge
+8004323,Neustadt(Aisch)Bahnhof
+8004325,Neustadt(b Coburg)
+8004326,Neustadt(Donau)
+8004327,Neustadt(Holst)
+8004328,Neustadt(Kr Marburg)
+8004331,Neustadt(Schwarzw)
+8004332,Neustadt(Waldnaab)
+8004333,Neustadt-Hohenacker
+8004335,Neuss Allerheiligen
+8004338,Neuwirtshaus(Porscheplatz)
+8004340,Velbert-Neviges
+8004343,Niebüll
+8004344,Niedaltdorf
+8004345,Nieder Flörsheim-Dalsheim
+8004348,Nieder Ohmen
+8004349,Nieder Olm
+8004350,Mühltal
+8004351,Rodgau-Nieder Roden
+8004352,Saulheim
+8004353,Nieder Wöllstadt
+8004357,Stuttgart Nürnberger Str.
+8004363,Niederbiegen
+8004364,Niederbrechen
+8004366,Niederdollendorf
+8004367,Niederdorfelden
+8004369,Niederdresselndorf
+8004373,Niedererbach
+8004376,Niederhadamar
+8004379,Niederheimbach
+8004380,Niederhöchstadt
+8004381,Niederhövels
+8004382,Niederjosbach
+8004391,Niederlindhart
+8004392,Niederlinxweiler
+8004393,Mendig
+8004395,Niedermittlau
+8004396,Niedermohr
+8004400,Niedernhausen(Taunus)
+8004401,Niederraunau
+8004402,Rodenbach(b Hanau)
+8004404,Niederroth
+8004405,Niederscheld(Dillkr)Süd
+8004406,Niederschelden
+8004407,Niederschelden Nord
+8004409,Niederselters
+8004412,Niederstetten
+8004413,Niederstotzingen
+8004415,Vellmar-Niedervellmar
+8004417,Niederwalgern
+8004418,Niederwalluf
+8004419,Dortmund Universität
+8004420,Niederweimar
+8004423,Niederwinden
+8004424,Niederzeuzheim
+8004425,Niefern
+8004426,Münster-Häger
+8004429,Frankfurt(M)Konstablerwache
+8004430,Velbert-Nierenhof
+8004432,Nierstein
+8004433,Nieukerk
+8004434,Nievenheim
+8004435,Nievern
+8004437,Niklashausen
+8004438,Nittel
+8004440,Hagen-Westerbauer
+8004441,Nörten-Hardenberg
+8004442,Nürnberg-Dürrenhof
+8004444,Nohen
+8004446,Nonnenhorn
+8004448,Nordbögge
+8004449,Norddeich
+8004451,Nordendorf
+8004452,Nordenham
+8004453,Oberwerrn
+8004455,Nordhalben Bf
+8004458,Nordheim(Württ)
+8004460,Nordholz
+8004461,Nordwalde
+8004462,Norf
+8004463,Norheim
+8004464,Norsingen
+8004466,Nortorf
+8004469,Nürnberg Nordost
+8004470,Nürnberg Ostring
+8004471,Nürnberg Ost
+8004473,Nürnberg Rothenburger Str.
+8004474,Bochum-Langendreer West
+8004476,Nürnberg-Dutzendteich
+8004477,Nürnberg-Eibach
+8004478,Nürnberg-Erlenstegen
+8004480,Nürnberg-Laufamholz
+8004481,Nürnberg-Mögeldorf
+8004483,Nürnberg-Reichelsdorf
+8004484,Nürnberg-Sandreuth
+8004485,Nürnberg-Schweinau
+8004486,Nürnberg-Stein
+8004487,Nürnberg-Steinbühl
+8004488,Nürtingen
+8004489,Neustadt-Böbig
+8004490,Nufringen
+8004491,Nürnberg-Rehhof
+8004493,Nürnberg Frankenstadion
+8004496,Oberaichen
+8004497,Ober Ramstadt
+8004499,Ober Widdersheim
+8004503,Oberammergau
+8004504,Oberasbach
+8004506,Oberau
+8004507,Oberaudorf
+8004513,Oberbettingen-Hillesheim
+8004514,Oberbillig
+8004515,Oberbimbach
+8004517,Oberboihingen
+8004518,Oberbrechen
+8004521,Oberdachstetten
+8004523,Schöneck-Oberdorfelden
+8004525,Oberelchingen
+8004526,Oberelsungen
+8004527,Obererbach
+8004528,Oberesslingen
+8004529,Oberferrieden
+8004531,Obergries
+8004532,Obergriesbach
+8004533,Oberhaid
+8004538,Dreikirchen
+8004540,Oberhausen-Holten
+8004541,Oberhausen-Osterfeld Süd
+8004542,Oberhausen-Sterkrade
+8004545,Oberkirch
+8004546,Oberkirch-Köhlersiedlung
+8004548,Oberklingensporn
+8004549,Oberkochen
+8004550,Oberlahnstein
+8004552,Lauchringen
+8004553,Oberlenningen
+8004554,Oberlindhart
+8004555,Oberlinxweiler
+8004557,Obermohr
+8004558,Obernau
+8004560,Obernburg-Elsenfeld
+8004563,Oberndorf(Neckar)
+8004564,Oberndorf(Wittgenstein)
+8004567,Obernhof(Lahn)
+8004571,Oberottmarshausen
+8004577,Oberschefflenz
+8004580,Oberschleißheim
+8004583,Obersinn
+8004584,Oberstaufen
+8004585,Oberstdorf
+8004589,Wildeck-Obersuhl
+8004592,Obertraubling
+8004593,Obertshausen(Kr Of)
+8004594,Obertsrot
+8004595,Uhldingen-Mühlhofen
+8004596,Oberursel(Taunus)
+8004597,Vellmar-Obervellmar
+8004601,Oberwesel
+8004603,Oberwinden
+8004604,Oberwinter
+8004605,Oberzell
+8004609,Ochenbruck
+8004610,Westerstede-Ocholt
+8004613,Ochtrup
+8004614,Ockenheim
+8004616,Odendorf
+8004620,Öhringen-Cappel
+8004623,Öhringen Hbf
+8004624,Öhringen West
+8004626,Oelde
+8004627,Kloster Oesede
+8004628,Oesede
+8004629,Oerlenbach
+8004630,Oerlinghausen
+8004632,Ölbronn-Dürrn
+8004633,Rödental
+8004635,Oestrich-Winkel
+8004636,Ötigheim
+8004637,Ötisheim
+8004639,Offenburg Kreisschulzentrum
+8004640,Offenbach-Waldhof
+8004642,Oeventrop
+8004643,Offenau
+8004645,Offenbach(Main)Ost
+8004647,Offenbach-Bieber
+8004652,Offensen(Kr North)
+8004653,Dreieich-Offenthal
+8004654,Offingen
+8004658,Oftersheim
+8004661,Hamburg-Ohlsdorf
+8004662,Ohlstadt
+8004664,Okarben
+8004665,Oker
+8004667,Olching
+8004668,Oldenbüttel
+8004669,Oldenburg(Holst)
+8004674,Olpe
+8004676,Olsberg
+8004677,Olsbrücken
+8004679,Oppenau
+8004680,Oppenheim
+8004681,Oppenweiler(Württ)
+8004683,Orschweier
+8004689,Osnabrück Altstadt
+8004690,Osnabrück-Sutthausen
+8004694,Meerbusch-Osterath
+8004700,Osterhofen(Nby)
+8004701,Osterhofen(Oberbay)
+8004702,Osterholz-Scharmbeck
+8004703,Ostermünchen
+8004704,Osterode am Harz Mitte
+8004705,Osterode am Harz Leege
+8004706,Osterspai
+8004709,Osterwald
+8004711,Ostheim v Rhön
+8004712,Ostheim(b Butzbach)
+8004713,Ostheim(Kr Hanau)
+8004714,Osthofen
+8004719,Hamburg-Othmarschen
+8004720,Ottbergen
+8004722,Ottenau
+8004723,Ottenhofen(Oberbay)
+8004724,Ottenhofen-Bergel
+8004725,Ottensoos
+8004726,Otterfing
+8004727,Otterndorf
+8004728,Ottersberg(Han)
+8004730,Otting
+8004731,Otting-Weilheim
+8004733,Ottobrunn
+8004735,Otze
+8004739,Overath
+8004740,Owen(Teck)
+8004741,Owschlag
+8004742,Oy-Mittelberg
+8004744,Paderborn Kasseler Tor
+8004745,Paderborn Nord
+8004746,Paffendorf
+8004747,Paindorf
+8004748,Palzem
+8004749,Pankofen
+8004750,Pansdorf
+8004751,Papenburg(Ems)
+8004753,Pappenheim
+8004755,Parsberg
+8004756,Partenstein
+8004758,Pechbrunn
+8004759,Pegnitz
+8004760,Peine
+8004761,Peiß
+8004762,Peißenberg
+8004763,Peißenberg Nord
+8004764,Peiting Nord
+8004765,Peiting Ost
+8004767,Penzberg
+8004770,Perkam
+8004771,Perl
+8004774,Petersaurach
+8004775,Petershausen(Obb)
+8004777,Petershagen-Lahde
+8004778,Pfäffingen
+8004780,Pfaffenhausen
+8004781,Pfaffenhofen(Ilm)
+8004784,Pfalzel
+8004786,Pfarrkirchen
+8004788,Pfeddersheim
+8004796,Pflaumloch
+8004799,Brötzingen Mitte
+8004801,Pforzheim-Weißenstein
+8004802,Pfraundorf(Inn)
+8004803,Pfreimd
+8004804,Pforzheim Maihälden
+8004806,Pfronten-Ried
+8004807,Pfronten-Steinach
+8004809,Pfronten-Weißbach
+8004813,Philippsburg(Baden)
+8004814,Philippsheim
+8004815,Piding
+8004819,Pinneberg
+8004820,Pinzberg
+8004822,Pirmasens Hbf
+8004826,Plaidt
+8004827,Planegg
+8004835,Pleinfeld
+8004838,Plettenberg
+8004841,Plön
+8004842,Plüderhausen
+8004845,Pocking
+8004847,Pölling
+8004848,Pönitz(Holst)
+8004849,Pösing
+8004851,Poggenhagen
+8004853,Poikam
+8004854,Poing
+8004858,Pommelsbrunn
+8004859,Pommern(Mosel)
+8004862,Hamburg-Poppenbüttel
+8004865,Poppenhausen
+8004868,Porta Westfalica
+8004869,Porz(Rhein)
+8004873,Porz-Wahn
+8004874,Possenhofen
+8004875,Postbauer-Heng
+8004878,Praest
+8004879,Preetz
+8004880,Pressath
+8004881,Pressig-Rothenkirchen
+8004882,Pretzfeld
+8004883,Preußen
+8004885,Prien a Chiemsee
+8004888,Prisdorf
+8004893,Puchheim
+8004898,Pulheim
+8004899,Pullach
+8004900,Pulling(b Freising)
+8004901,Puschendorf
+8004903,Puttgarden
+8004905,Quelle-Kupferheide
+8004907,Quadrath-Ichendorf
+8004908,Quelle
+8004909,Quierschied
+8004910,Quint
+8004913,Radbruch
+8004914,Radersdorf
+8004917,Radldorf(Niederbay)
+8004918,Raestrup-Everswinkel
+8004919,Rahden(Kr Lübbecke)
+8004920,Düsseldorf-Hellerhof
+8004922,Rain
+8004923,Raindorf
+8004924,Raisdorf
+8004925,Raisting
+8004926,Raitersaich
+8004927,Rammingen(Bay)
+8004928,Ramerberg
+8004929,Rammelsbach
+8004930,Rammingen(Württ)
+8004931,Ramsbach Birkhof
+8004932,Ramsbach Höfle
+8004933,Ramsberg
+8004935,Ramsen
+8004936,Ramsenthal
+8004938,Ramstein
+8004942,Ranstadt
+8004944,Rastatt Beinle
+8004945,Rastede
+8004948,Ratingen Ost
+8004952,Ratzeburg
+8004955,Raubling
+8004960,Raumland-Markhausen
+8004961,Raumünzach
+8004962,Raunheim
+8004965,Ravensburg
+8004966,Rebdorf-Hofmühle
+8004967,Rech
+8004968,Rechtenstein
+8004970,Rechterfeld
+8004971,Reckendorf
+8004972,Reckenfeld
+8004975,Reckweilerhof
+8004978,Rednitzhembach
+8004979,Redwitz(Rodach)
+8004981,Regen
+8004983,Regensburg-Prüfening
+8004987,Regenstauf
+8004988,Rehau
+8004993,Rehweiler
+8004994,Reichelsdorfer Keller
+8004995,Reichelsheim(Wett)
+8004997,Reichenau(Baden)
+8004999,Reichenbach(Fils)
+8005002,Reichenberg(Unterfr)
+8005003,Wehretal-Reichensachsen
+8005005,Reichenschwand
+8005007,Reichersbeuern
+8005008,Reichertshausen(Ilm)
+8005009,Reichertshofen(Obb)
+8005011,Reicholzheim
+8005013,Reihen
+8005014,Reil
+8005015,Reilsheim
+8005016,Reinbek
+8005019,Reinfeld(Holst)
+8005020,Reinheim(Odenw)
+8005026,Reisen(Hess)
+8005027,Reiskirchen(Kr Gi)
+8005028,Collenberg
+8005030,Reken
+8005031,Essen-Borbeck Süd
+8005033,Remscheid Hbf
+8005034,Remscheid-Güldenwerth
+8005035,Remscheid-Lüttringhausen
+8005037,Renchen
+8005039,Baunatal-Rengershausen
+8005044,Rentrisch
+8005045,Rentweinsdorf
+8005046,Renzendorf
+8005047,Rethen(Leine)
+8005049,Retzbach-Zellingen
+8005050,Reuth(b Erbendorf)
+8005052,Reutlingen West
+8005053,Reutlingen-Betzingen
+8005054,Reutlingen-Sondelfingen
+8005055,Rhade
+8005058,Rheinbach
+8005059,Rheinberg(Rheinl)
+8005062,Rheinbrohl
+8005064,Rheinfelden(Baden)
+8005065,Rheinhausen Ost
+8005067,Rheinsheim
+8005068,Rheinweiler
+8005069,Rheinzabern Bf
+8005070,Rhens
+8005071,Rheinzabern Rappengasse
+8005072,Rheinzabern Alte Römerstraße
+8005073,Rheydt-Odenkirchen
+8005074,Rhöndorf
+8005077,Richen(b Eppingen)
+8005080,Rickling
+8005083,Ried
+8005086,Riederau
+8005087,Riedlingen
+8005089,Riedrode
+8005090,Riegel am Kaiserstuhl
+8005091,Riehen
+8005092,Rieneck
+8005093,Riehen Niederholz
+8005094,Rieschweiler
+8005095,Rieseby
+8005096,Rieste
+8005097,Rietheim(Württ)
+8005098,Rimbach
+8005101,Ringsheim
+8005102,Rinkerode
+8005103,Rinnthal
+8005104,Rinteln
+8005105,Rippberg
+8005106,Hamburg-Rissen
+8005107,Ritterhude
+8005111,Rockenhausen
+8005112,Bad Rodach
+8005113,Rodalben
+8005116,Rodenbach(Dillkr)
+8005119,Rodenkirchen(Oldb)
+8005120,Rodheim v d Höhe
+8005121,Roding
+8005122,Rödental Mitte
+8005125,Melsungen-Röhrenfurth
+8005127,Röhrmoos
+8005131,Rönshausen
+8005133,Röslau
+8005134,Rösrath
+8005135,Röt
+8005136,Rötenbach(Baden)
+8005137,Rötgesbüttel
+8005138,Röthenbach(Allgäu)
+8005139,Röthenbach(Oberpf)
+8005140,Röthenbach(Pegnitz)
+8005141,Röthenbach-Steinberg
+8005142,Röthenbach-Seespitz
+8005143,Rösrath-Stümpen
+8005145,Rohrbach(Oberbay)
+8005146,Rohrbach(Pfalz)
+8005149,Rohrenfeld
+8005151,Roigheim
+8005152,Roisdorf
+8005153,Rolandseck
+8005154,Rollhofen
+8005156,Rodgau-Rollwald
+8005157,Rommelshausen
+8005159,Rommerskirchen
+8005160,Ronnenberg
+8005161,Ronshausen
+8005163,Rosbach v d Höhe
+8005164,Rosbach(Sieg)
+8005166,Rosenau(b Grafenau)
+8005168,Rosenberg(Baden)
+8005172,Roßbach(Pfalz)
+8005177,Roßtal
+8005178,Roßtal Wegbrücke
+8005179,Rot am See
+8005181,Rot-Malsch
+8005182,Rotenburg a.d. Fulda
+8005183,Bad Rotenfels Bf
+8005184,Rotenhain
+8005185,Roth
+8005186,Bad Rotenfels Schloss
+8005187,Bad Rotenfels Weinbrennerstraße
+8005189,Rothenbürg
+8005190,Rothenburg ob der Tauber
+8005191,Hamburg-Rothenburgsort
+8005194,Rott(Inn)
+8005197,Rottenburg(Neckar)
+8005198,Rottendorf
+8005199,Rottershausen
+8005200,Rottweil Göllsdorf
+8005201,Goldberg(Württ)
+8005202,Rottweil Saline
+8005205,Rudersdorf(Siegen)
+8005207,Hamburg Rübenkamp
+8005208,Rückersbacher Schlucht
+8005209,Rückersdorf(Mfr)
+8005213,Rüdesheim(Rhein)
+8005214,Rülzheim Freizeitzentrum
+8005217,Rülzheim Bf
+8005218,Ründeroth
+8005219,Rüsselbach
+8005220,Rüsselsheim
+8005221,Rüsselsheim Opelwerke
+8005222,Ruhpolding
+8005223,Ruhstorf
+8005225,Rumeln
+8005227,Rummenohl
+8005229,Runkel
+8005231,Rupprechtstegen
+8005236,Rutesheim
+8005238,Saal(Donau)
+8005241,Saarbrücken Ost
+8005243,Saarbrücken-Burbach
+8005245,Saarburg(Bz Trier)
+8005246,Saarhölzbach
+8005247,Saarlouis Hbf
+8005249,Saasen
+8005250,Sachsen(b Ansbach)
+8005253,Sachsenheim
+8005255,Bad Säckingen
+8005256,Sagehorn
+8005258,Salach
+8005259,Sallach
+8005260,Salmtal
+8005261,Bad Soden-Salmünster
+8005262,Salzbergen
+8005264,Einbeck Salzderhelden
+8005265,Salzgitter-Bad
+8005269,Salzgitter-Immendorf
+8005270,Salzgitter-Lebenstedt
+8005272,Duisburg Entenfang
+8005274,Salzgitter-Thiede
+8005275,Salzgitter-Watenstedt
+8005276,Salzkotten
+8005279,Sand(Niederbay)
+8005282,Sande
+8005283,Sandebeck
+8005285,Sanderbusch
+8005287,Sandkrug
+8005288,Sandwehle
+8005289,Sanssouci
+8005291,Sarnau
+8005292,Sarstedt
+8005293,Sassenroth
+8005297,Satteldorf
+8005298,Satzvey
+8005299,Sauerlach
+8005301,Bad Saulgau
+8005302,Saulgrub
+8005304,Nürnberg-Gleißhammer
+8005306,Schafbrücke
+8005311,Schaftlach
+8005312,Schalchen
+8005316,Schalksmühle
+8005317,Schallstadt
+8005319,Schameder
+8005320,Schandelah
+8005321,Scharbeutz
+8005322,Scharmede
+8005324,Bad Lauterberg im Harz Barbis
+8005327,Schechen
+8005329,Scheppach
+8005330,Scheeßel
+8005332,Scheidt(Saar)
+8005333,Schelklingen
+8005334,Schemmerberg
+8005335,Schenkenzell
+8005336,Scherfede
+8005338,Scheuerfeld(Sieg)
+8005339,Scheven
+8005340,Schieder
+8005342,Usch-Zendscheid
+8005343,Schierbrok
+8005345,Schifferstadt Süd
+8005346,Schiffweiler
+8005347,Schiltach Mitte
+8005350,Schiltach
+8005352,Schirnding
+8005353,Cheb(Gr)
+8005355,Schladen(Harz)
+8005356,Schladern(Sieg)
+8005362,Schleswig
+8005364,Schliengen
+8005365,Schlierbach(Schwalm-Eder-Kr.)
+8005366,Heidelberg-Schlierbach/Ziegelhausen
+8005367,Schliersee
+8005369,Schloß Holte
+8005370,Paderborn-Schloss Neuhaus
+8005371,Schluchsee
+8005374,Schmalnau
+8005378,Schmidtheim
+8005379,Schmiechen
+8005381,Schmiechen(Oberbay)
+8005383,Schnaittach Markt
+8005386,Schneeberg im Odenwald
+8005388,Schnelldorf
+8005389,Landsberg(L)Schule
+8005390,Schneverdingen
+8005391,Schney
+8005392,Schoden-Ockfen
+8005393,Hesseneck Schöllenbach
+8005405,Schönewörde
+8005406,Schöngeising
+8005409,Schönmünzach
+8005412,Schönwald(Oberfr)
+8005413,Schöppenstedt
+8005415,Schötmar
+8005417,Schondorf(Bay)
+8005418,Schongau
+8005419,München Heimeranplatz
+8005420,Schopfheim
+8005421,Schopfloch(b Freudenstadt)
+8005423,Schopp
+8005424,Schorndorf
+8005425,Schopfheim West
+8005431,Schrezheim
+8005432,Schrobenhausen
+8005433,Schrozberg
+8005436,Schüttorf
+8005439,Schwabach
+8005440,Schwabach-Limbach
+8005442,Schwabhausen(b Dachau)
+8005444,Schwabmünchen
+8005445,Schwabsberg
+8005449,Schwäbisch Hall
+8005451,Schwaig
+8005453,Schwaigern(Württ)
+8005454,Schwaikheim
+8005455,Schwalbach(Taunus)Limes
+8005456,Schwalbach(Taunus)Nord
+8005457,Schwarmstedt
+8005465,Schwarzenbach(b Pressath)
+8005466,Schwarzenbach(Saale)
+8005468,Schwarzenbek
+8005469,Schwarzenfeld(Opf)
+8005476,Schweich(DB)
+8005479,Schweinfurt Mitte
+8005481,Schweinfurt Stadt
+8005485,Schweinsdorf
+8005488,Schwelm West
+8005489,Schwenningen(Bay)
+8005490,Schwenningen(Neckar)
+8005494,Schwetzingen
+8005495,Schwindegg
+8005497,Schwörstadt
+8005498,Sechshelden
+8005499,Sechtem
+8005502,Seebrugg
+8005504,Seefeld-Hechendorf
+8005505,Seeg
+8005506,Seeleiten-Berggeist
+8005507,Seelze
+8005508,Seeshaupt
+8005510,Sehlem(Kr Wittlich)
+8005511,Sehnde
+8005512,Seiboldsdorf
+8005516,Selb Nord
+8005517,Selb Stadt
+8005518,Selb-Plößberg
+8005520,Selbitz
+8005522,Seligenstadt(Hess)
+8005523,Seligenstadt(b Würzburg)
+8005525,Selm
+8005526,Selm-Beifang
+8005532,Senden
+8005534,Sennelager
+8005535,Sennestadt
+8005536,Sennfeld
+8005539,Serrig
+8005540,Sersheim
+8005543,Seubersdorf
+8005544,Seulberg
+8005545,Seulbitz
+8005547,Seybothenreuth
+8005551,Siebeldingen-Birkweiler
+8005555,Siedlinghausen
+8005556,Siegburg/Bonn
+8005557,Siegelsdorf
+8005559,Siegsdorf
+8005560,Singen Landesgartenschau
+8005561,Sierksdorf
+8005562,Siersburg
+8005566,Siglingen
+8005568,Sigmaringendorf
+8005569,Silbach
+8005572,Simmelsdorf-Hüttenbach
+8005573,Simtshausen
+8005574,Sindelfingen
+8005575,Sindorf
+8005576,Singlis
+8005577,Sinn
+8005578,Sinsheim(Elsenz) Hbf
+8005580,Sinzig(Rhein)
+8005581,Sinzing
+8005582,Sipplingen
+8005583,Bad Sobernheim
+8005585,Söllingen(b Karlsr)
+8005586,Sörup
+8005587,Sinzheim
+8005588,Sinzheim Nord
+8005590,Solingen-Schaberg
+8005592,Solms
+8005593,Solnhofen
+8005594,Soltau Nord
+8005597,Solingen Grünewald
+8005598,Solingen Mitte
+8005600,Sondern
+8005601,Sondernach
+8005602,Sondernheim
+8005607,Sontheim(Schwab)
+8005608,Sontheim-Brenz
+8005609,Sonthofen
+8005610,Sontra
+8005613,Sottrum
+8005614,Soyen
+8005616,Spaichingen
+8005617,Spaichingen Mitte
+8005622,Spay
+8005623,Speele
+8005624,Speicher
+8005625,Speikern
+8005626,Speyer Nord-West
+8005628,Speyer Hbf
+8005629,Spich
+8005630,Spiegelau
+8005635,Münster-Sprakel
+8005636,Dreieich-Sprendlingen
+8005637,Sprendlingen(Rheinh)
+8005638,Springe
+8005639,St Alban
+8005640,Sprötze
+8005644,St Georgen(Schwarzw)
+8005645,St Goar
+8005646,St Goarshausen
+8005648,St Ilgen-Sandhausen
+8005649,St Ingbert
+8005652,St Koloman
+8005653,St Mang
+8005655,St Michaelisdonn
+8005656,St Ottilien
+8005658,St Thomas
+8005659,St Wendel
+8005661,Stadtallendorf
+8005662,Stadthagen
+8005663,Hamburg Stadthausbrücke
+8005665,Stadtoldendorf
+8005666,Stadtprozelten
+8005668,Staffel
+8005670,Bad Staffelstein
+8005672,Iffeldorf
+8005673,Stambach
+8005674,Stammbach
+8005675,Starnberg Nord
+8005676,Starnberg
+8005678,Staudernheim
+8005682,Stederdorf(Kr Uelzen)
+8005686,Stegenwaldhaus
+8005687,Stein(Traun)
+8005688,Steinach(Baden)
+8005689,Steinalben
+8005690,Steinau(Straße)
+8005692,Steinbach am Wald
+8005699,Steinebach
+8005700,Steinefrenz
+8005701,Steinen
+8005702,Steinhagen(Westf) Bielef. Str.
+8005703,Steinfeld(Oldb)
+8005704,Steinhagen(Westf)
+8005706,Steinheim(Main)
+8005708,Steinheim(Westf)
+8005709,Steinhöring
+8005712,Steinfurt-Grottenkamp
+8005713,Steinweiler
+8005714,Steinsfurt
+8005715,Steinwenden
+8005716,Steinwiesen Bf
+8005717,Stelle
+8005720,Sterbfritz
+8005722,Sterzhausen
+8005723,Stetten(Donau)
+8005724,Stetten am Heuchelberg
+8005725,Stetten(Schwab)
+8005726,Stetten-Beinstein
+8005731,Stift Keppel-Allenbach
+8005734,Stockau
+8005735,Stockdorf
+8005736,Stockhausen(Lahn)
+8005737,Stockheim(Oberfr)
+8005738,Stockheim(Unterfr)
+8005739,Stockstadt(Main)
+8005740,Stockstadt(Rhein)
+8005741,Stolberg-Altstadt
+8005743,Stolberg-Rathaus
+8005744,Stolberg-Schneidmühle
+8005745,Stolberg-Mühlener Bahnhof
+8005746,Stommeln
+8005747,Storzingen
+8005748,Stotzheim
+8005749,Straß-Moos
+8005750,Straßberg-Winterlingen
+8005752,Straßkirchen
+8005760,Strullendorf
+8005761,Struthütten
+8005763,Stubben
+8005764,Stühlingen
+8005766,Stuttgart Ebitzweg
+8005767,Stuttgart Nord
+8005768,Stuttgart Flughafen/Messe
+8005769,Stuttgart-Bad Cannstatt
+8005770,Stuttgart-Feuerbach
+8005771,Stuttgart-Münster
+8005772,Stuttgart-Obertürkheim
+8005773,Stuttgart-Rohr
+8005774,Stuttgart-Sommerrain
+8005775,Stuttgart-Untertürkheim
+8005776,Stuttgart-Vaihingen
+8005777,Stuttgart-Zazenhausen
+8005778,Stuttgart-Zuffenhausen
+8005779,Stuttgart-Österfeld
+8005780,Suderburg
+8005781,Suchsdorf
+8005782,Süderbrarup
+8005785,Hamburg-Sülldorf
+8005786,Sülzbach
+8005787,Sünching
+8005788,Suerhop
+8005789,Süderlügum
+8005790,Süßen
+8005791,Sulz(Neckar)
+8005792,Sülzbach Schule
+8005793,Sulzbach(Inn)
+8005794,Sulzbach(Main)
+8005795,Sulzbach(Murr)
+8005796,Sulzbach(Saar)
+8005797,Sulzbach(Saar)Altenwald
+8005798,Sulzbach(Taunus)
+8005799,Sulzbach(Taunus)Nord
+8005800,Sulzbach-Rosenberg
+8005801,Sulzbach-Rosenberg Hütte
+8005802,Sulzberg
+8005805,Sulzfeld(Baden)
+8005809,Syke
+8005810,Sylbach
+8005811,Sythen
+8005812,Taben
+8005813,Tacherting
+8005820,Tamm(Württ)
+8005823,Tannheim(Württ)
+8005824,Tapfheim
+8005825,Tarp
+8005826,Tating
+8005827,Tauberbischofsheim
+8005828,Tauberfeld
+8005831,Taufkirchen
+8005833,Teisendorf
+8005834,Telgte
+8005835,Temmels
+8005836,Teningen-Mundingen
+8005843,Thaleischweiler-Fröschen
+8005845,Thalfingen(b Ulm)
+8005852,Thann-Matzbach
+8005855,Thansüß
+8005856,Thayngen
+8005857,Theisbergstegen
+8005858,Thesdorf
+8005864,Thüngersheim
+8005865,Thür
+8005870,Hamburg-Tiefstack
+8005871,Tiengen(Hochrhein)
+8005874,Timmendorferstrand
+8005876,Titisee
+8005883,Töging(Inn)
+8005885,Tönning
+8005887,Tornesch
+8005888,Tostedt
+8005889,Traben-Trarbach
+8005890,Trabitz
+8005891,Trais-Horloff
+8005892,Trasadingen
+8005893,Traundorf
+8005894,Traunreut
+8005895,Trebgast
+8005896,Trechtingshausen
+8005901,Triangel
+8005902,Triberg
+8005903,Triefenried
+8005905,Trier Süd
+8005907,Triesdorf
+8005908,Trochtelfingen(b Bopfingen)
+8005910,Trompet
+8005911,Trossingen Bahnhof
+8005912,Trostberg
+8005916,Tübingen West
+8005917,Tübingen-Derendingen
+8005918,Tübingen-Lustnau
+8005920,Türkenfeld
+8005923,Tüßling
+8005924,Tulling
+8005925,Tuttlingen Schulen
+8005927,Tutzing
+8005928,Twiste
+8005929,Twistringen
+8005930,Ubbedissen
+8005931,Ubstadt-Weiher
+8005935,Übach-Palenberg
+8005937,Überlingen Therme
+8005940,Übersee
+8005942,Überlingen
+8005943,Überlingen-Nußdorf
+8005945,Ürzig(DB)
+8005946,Tuttlingen Gänsäcker
+8005947,Uffenheim
+8005948,Uffing a Staffelsee
+8005949,Uhingen
+8005950,Uhlerborn
+8005952,Ulm Ost
+8005954,Ulm-Donautal
+8005955,Ulm-Söflingen
+8005961,Umrathshausen Bf
+8005962,Umrathshausen Ort
+8005963,Unadingen
+8005966,Undorf
+8005967,Unfriedsdorf
+8005968,Ungedanken
+8005970,Unkel
+8005971,Unna-Königsborn
+8005972,Unnau-Korb
+8005975,Unterammergau
+8005976,Unterasbach
+8005977,Unteraschau
+8005979,Böbingen(Rems)
+8005983,Unterelchingen
+8005986,Unterföhring
+8005989,Untergriesheim
+8005990,Untergrombach
+8005991,Unterhaching
+8005993,Unterhausen(Bay)
+8005995,Unterheckenhofen
+8005997,Unterkochen
+8005998,Unterlenningen
+8006001,Unterlüß
+8006002,Unterjesingen Mitte
+8006003,Unterjesingen Sandäcker
+8006006,Germering-Unterpfaffenhofen
+8006008,Unterreichenbach
+8006016,Untersteinach(Bayr)
+8006017,Untersteinach(b Stadtsteinach)
+8006019,Untersulzbach
+8006026,Uphusum
+8006027,Bad Urach Ermstalklinik
+8006029,Bad Urach
+8006030,Urbach(b Schorndorf)
+8006031,Rödermark-Urberach
+8006032,Urft
+8006035,Urmitz
+8006036,Urmitz Rheinbrücke
+8006037,Urschalling
+8006039,Urspring
+8006041,Uslar
+8006043,Usseln
+8006048,Utting
+8006052,Vach
+8006053,Vaihingen(Enz)
+8006054,Vallendar
+8006056,Varel(Oldb)
+8006058,Vastorf
+8006059,Vaterstetten
+8006060,Vechelde
+8006061,Vechta
+8006062,Hamburg-Veddel
+8006064,Velbert Rosenhügel
+8006065,Veitshöchheim
+8006067,Velden(b Hersbruck)
+8006068,Vellmar-Osterberg/EKZ
+8006076,Verden(Aller)
+8006078,Vernawahlshausen
+8006083,Villmar
+8006084,Vilsbiburg
+8006085,Vilseck
+8006086,Vilshofen(Niederbay)
+8006089,Hannover-Vinnhorst
+8006090,Visselhövede
+8006091,Vlotho
+8006094,Vöhringen
+8006095,Vöhrum
+8006098,Voerde(Niederrhein)
+8006100,Vogelweh
+8006101,Vohburg
+8006104,Voldagsen
+8006107,Volkmarsen
+8006109,Volkringhausen
+8006112,Volpriehausen
+8006116,Vorhop
+8006117,Vormwald
+8006118,Vormwald Dorf
+8006120,Vorra(Pegnitz)
+8006125,Wachenheim(Pfalz)
+8006126,Wachenheim-Mölsheim
+8006131,Wächterhof
+8006132,Wächtersbach
+8006134,Waffenbrunn
+8006135,Wackershofen
+8006136,Waggonfabrik
+8006137,Waghäusel
+8006138,Waging
+8006139,Wahlbach(Kr Siegen)
+8006141,Waidhaus(Gr)
+8006144,Wahrenholz
+8006147,Waigolshausen
+8006148,Wakendorf
+8006154,Waldenburg(Württ)
+8006155,Waldershof
+8006156,Waldfischbach
+8006157,Waldhausen(b Schorndorf)
+8006159,Waldkirch
+8006160,Waldkirchen(Niederbay.)
+8006163,Waldmünchen
+8006164,Waldkraiburg
+8006167,Waldshut
+8006170,Walhausen(Saar)
+8006171,Walheim(Württ)
+8006172,Walkenried
+8006175,Walldorf(Hess)
+8006176,Walldürn
+8006180,Wallenrod
+8006181,Wallersdorf
+8006183,Wallertheim
+8006184,Walleshausen
+8006189,Hebertshausen
+8006190,Walpertskirchen
+8006191,Walporzheim
+8006193,Walsrode
+8006194,Essen-Horst
+8006197,Hamburg-Tonndorf
+8006198,Hamburg Wandsbeker Chaussee
+8006200,Wangen(Allgäu)
+8006203,Wannweil
+8006206,Warendorf
+8006210,Warngau
+8006212,Warthausen
+8006215,Wasenweiler
+8006217,Wasseralfingen
+8006218,Wasserburg(Bodensee)
+8006219,Wasserburg(Günz)
+8006220,Wasserburg(Inn)Bf
+8006222,Wasserliesch
+8006224,Wasserzell(b Eichst)
+8006226,Wattenscheid
+8006227,Wattenscheid-Höntrop
+8006229,Watzenborn-Steinberg
+8006232,Weckesheim
+8006233,Weddel(Braunschw)
+8006236,Wedel(Holst)
+8006237,Weener
+8006240,Weeze
+8006241,Wega
+8006243,Wegberg
+8006252,Wehr(Mosel)
+8006255,Weibhausen
+8006256,Weichering
+8006257,Weickersgrüben
+8006258,Weidenbach
+8006259,Weidenberg
+8006261,Weidenthal
+8006264,Weiding
+8006266,Weiherhammer
+8006267,Weiherhof
+8006268,Weilimdorf
+8006269,Weikersheim
+8006270,Wüsting
+8006271,Weil der Stadt
+8006272,Weil am Rhein
+8006273,Weil am Rhein Ost
+8006274,Weilbach(Unterfr)
+8006277,Weiler(Rems)
+8006279,Weilbach(Unterallg)
+8006280,Weilerswist
+8006281,Weilheim(Württ)
+8006286,Weimar(Kr Kassel)
+8006287,Weingarten(Baden)
+8006289,Weinsberg
+8006290,Weinsberg West
+8006291,Weisenbach
+8006292,Weisenheim(Sand)
+8006293,Rodgau-Weiskirchen
+8006294,Weinsberg/Ellhofen Gewerbegebiet
+8006296,Weißenau
+8006298,Weißenburg(Bay)
+8006300,Weißenohe
+8006303,Weißenthurm
+8006304,OberurselWeißkirchen/Steinbach
+8006306,Weiterstadt
+8006309,Weizern-Hopferau
+8006312,Welgesheim-Zotzenheim
+8006313,Welkers
+8006315,Wellen(Mosel)
+8006316,Wellendorf
+8006319,Hamburg-Wellingsbüttel
+8006320,Welschen Ennest
+8006321,Welschingen-Neuhausen
+8006323,Welver
+8006330,Wendisch Evern
+8006331,Wendlingen(Neckar)
+8006336,Wennigsen(Deister)
+8006339,Werdohl
+8006340,Werdorf
+8006342,Werl
+8006346,Wernau(Neckar)
+8006347,Wernberg
+8006348,Werne a d Lippe
+8006349,Wernfeld
+8006353,Wertach-Haslach
+8006354,Wertheim-Bestenheid
+8006356,Wesel Feldmark
+8006358,Wesseln
+8006359,Weßling(Oberbay)
+8006360,Westbarthausen
+8006361,Westbevern
+8006363,Westendorf
+8006366,Westerham
+8006367,Westerhausen
+8006369,Westerland(Sylt)
+8006373,Westerstetten
+8006376,Westhausen
+8006378,Westheim(Schwab)
+8006379,Westheim(Westf)
+8006380,Westheim-Langendorf
+8006383,Westönnen
+8006385,Wetter(Hessen)
+8006386,Wetter(Ruhr)
+8006389,Wickede(Ruhr)
+8006390,Wicklesgreuth
+8006391,Wickrath
+8006392,Wiebelskirchen
+8006401,Schwalmstadt-Wiera
+8006402,Wieren
+8006403,Wiesau(Oberpf)
+8006404,Wiesbaden Ost
+8006407,Wiesbaden-Erbenheim
+8006408,Wiesbaden-Igstadt
+8006409,Wiesbaden-Schierstein
+8006413,Wiesenfeld
+8006414,Wiesenfeld(b Coburg)
+8006416,Wieslensdorf
+8006417,Wiesental
+8006418,Wiesenthau
+8006421,Wiesloch-Walldorf
+8006422,Tittmoning-Wiesmühl
+8006423,Wiesmühl(Alz)
+8006426,Wiesthal
+8006430,Wilchingen-Hallau
+8006431,Bad Wildbad Bf
+8006432,Wildberg(Württ)
+8006436,Wildeshausen
+8006440,Wilferdingen-Singen
+8006441,Wilgartswiesen
+8006445,Wilhelmshaven Hbf
+8006446,Wilhelmshütte(Lahn)
+8006448,Wilhermsdorf
+8006449,Willebadessen
+8006453,Willingen
+8006454,Willmenrod
+8006455,Willmering
+8006456,Willsbach
+8006459,Wilsenroth
+8006460,Wilster
+8006461,Wiltingen(Saar)
+8006463,Wincheringen
+8006465,Nidderau-Windecken
+8006466,Windelsbleiche
+8006468,Winden(Pfalz)
+8006472,Windischeschenbach
+8006473,Windsbach
+8006475,Wingst
+8006476,Winkelhaid
+8006479,Winnenden
+8006481,Winningen(Mosel)
+8006482,Winninghausen
+8006483,Winnweiler
+8006484,Winsen(Luhe)
+8006485,Winterbach(b Schorndorf)
+8006486,Winterberg(Westf)
+8006488,Winterhausen
+8006489,Wintermoor
+8006498,Wirges
+8006499,Wirtheim
+8006501,Wissen(Sieg)
+8006503,Wissingen
+8006505,Wittbräucke
+8006508,Mannheim Handelshafen
+8006509,Mannheim-Luzenberg
+8006510,Witten-Annen Nord
+8006511,Mannheim-Neckarstadt
+8006513,Stuttgart Universität
+8006514,Essen-Holthausen
+8006516,Witterschlick
+8006517,Wittighausen
+8006520,Wittmund
+8006524,Witzenhausen Nord
+8006527,Witzwort
+8006528,Darmstadt-Wixhausen
+8006529,Wölfersheim-Södel
+8006533,Wörnitzstein
+8006534,Wörrstadt
+8006535,Wörsdorf
+8006536,Wörth(Rhein) Mozartstraße
+8006537,Wörth(Isar)
+8006538,Wörth(Main)
+8006539,Wössingen
+8006541,Wohltorf
+8006544,Wolfach
+8006545,Wolfegg
+8006546,Felsberg-Wolfershausen
+8006548,Wolfgang(Kr Hanau)
+8006549,Wolfhagen
+8006550,Wolfratshausen
+8006552,Wolfsburg Hbf
+8006554,Wolfsmünster
+8006555,Wolfstein
+8006559,Wolterdingen(Han)
+8006561,Woltwiesche
+8006567,Worms Brücke
+8006570,Wremen
+8006572,Wrist
+8006575,Wülfrath-Aprath
+8006577,Würgendorf
+8006578,Würgendorf (Ort)
+8006581,Würzbach(Saar)
+8006582,Würzburg Süd
+8006586,Würzburg-Zell
+8006588,Wüstenselbitz
+8006590,Wulfen(Westf)
+8006592,Wulften
+8006596,Wuppertal-Barmen
+8006607,Wuppertal-Langerfeld
+8006616,Wuppertal-Ronsdorf
+8006618,Wuppertal-Sonnborn
+8006619,Wuppertal-Steinbeck
+8006620,Wuppertal-Unterbarmen
+8006623,Wuppertal-Zoologischer Garten
+8006624,Wurlitz
+8006625,Wurmlingen Mitte
+8006626,Wurmlingen Nord
+8006627,Wustweiler
+8006628,Wutöschingen
+8006629,Wyhlen
+8006630,Xanten
+8006633,Zaisenhausen
+8006634,Zapfendorf
+8006635,Zeil
+8006636,Bensersiel
+8006641,Zell(Wiesental)
+8006642,Esslingen-Zell
+8006643,Bad König Zell
+8006644,Zell-Romrod
+8006646,Mainhausen Zellhausen
+8006647,Zennern
+8006648,Zeppelinheim
+8006654,Zierenberg-Rosental
+8006658,Zierenberg
+8006659,Zieverich
+8006660,Zillendorf
+8006661,Zimmern(b Seckach)
+8006662,Zimmern(Main-Tauber)
+8006663,Zimmersrode
+8006664,Zirndorf
+8006666,Zirndorf Kneippallee
+8006667,Zollhaus(Villingen-Schwenningen)
+8006669,Blumberg-Zollhaus
+8006670,Zollhaus-Petersthal
+8006671,Zorneding
+8006672,Zotzenbach
+8006673,Zuckerfabrik
+8006676,Züttlingen
+8006678,Zusenhofen
+8006679,Zuzenhausen
+8006680,Zweibrücken Hbf
+8006682,Zweibrücken-Rosengarten
+8006684,Zwiesel(Bay)
+8006685,Zwieselau
+8006686,Zwingenberg(Baden)
+8006687,Zwingenberg(Bergstr)
+8006688,Unterschleißheim
+8006690,Frankfurt(M)Galluswarte
+8006691,Frankfurt(M)Taunusanlage
+8006692,Frankfurt(M)Hauptwache
+8006696,München-Neuperlach Süd
+8006698,Stuttgart Schwabstr.
+8006699,Stuttgart Feuersee
+8006700,Stuttgart Stadtmitte
+8006704,Lübeck-Travem. Skandinavienkai
+8006705,Hamburg Reeperbahn
+8006706,Hamburg Königstr.
+8006707,Hann Münden
+8006709,Dorsten
+8006710,Bochum-Hamme
+8006711,Bochum West
+8006712,Hagen-Wehringhausen
+8006713,Leverkusen Mitte
+8006714,Solingen Vogelpark
+8006715,Schwarzenberg
+8006717,Vachendorf
+8006718,Wuppertal-Vohwinkel
+8006719,Wuppertal-Oberbarmen
+8006720,Neuharlingersiel
+8006730,Neu-Ulm
+8006733,Gaggenau Mercedes-Benz Werk
+8006741,Meersburg(Bodensee)
+8006743,Stuttgart Neckarpark (Mercedes-Benz)
+8006745,Straubing-Ost
+8006749,Hamburg-Heimfeld
+8006750,Hamburg Neuwiedenthal
+8006820,Hagnau(Bodensee)
+8006822,Immenstaad(Bodensee)
+8006833,Unteruhldingen
+8007000,Busenbach
+8007007,Ettlingen Stadt
+8007008,Etzenrot
+8007009,Marxzell
+8007010,Frauenalb-Schielberg
+8007011,Bad Herrenalb
+8007012,Reichenbach b Ettlng
+8007013,Langensteinbach
+8007014,Ittersbach Bahnhof
+8007062,Neumünster Süd AKN
+8007071,Stubersheim
+8007072,Schalkstetten
+8007073,Waldhausen(b Geislingen)
+8007074,Gussenstadt
+8007075,Gerstetten
+8007076,Biersdorf(Westerw)
+8007077,Daaden
+8007078,Alsdorf(Westerw)
+8007079,Niederdreisbach
+8007080,Schutzbach
+8007108,Unterentersbach
+8007113,Biersdorf-Ort(Ww)
+8007114,Gnarrenburg
+8007116,Nordsode
+8007119,Hüttenbusch
+8007120,Neu St Jürgen
+8007122,Worpswede
+8007133,Ubstadt Ort
+8007134,Stettfeld(Baden)
+8007135,Zeutern
+8007136,Zeutern Ost
+8007138,Odenheim
+8007140,Unteröwisheim
+8007141,Oberöwisheim
+8007142,Münzesheim
+8007143,Gochsheim(Baden)
+8007144,Bahnbrücken
+8007145,Menzingen(Baden)
+8007146,Münzesheim Ost
+8007147,Trochtelfingen ALB-GOLD
+8007153,Neuharlingersiel EDZ
+8007158,Frankfurt-Unterliederbach
+8007159,Liederbach
+8007160,Kelkheim-Münster
+8007161,Kelkheim
+8007162,Kelkheim-Hornau
+8007163,Schneidhain
+8007164,Königstein(Taunus)
+8007173,Eggenstein
+8007174,Leopoldshafen Leopoldstr.
+8007191,Schorndorf-Hammerschlag
+8007192,Haubersbronn
+8007193,Miedelsbach-Steinenberg
+8007194,Michelau(Württ)
+8007195,Schlechtbach
+8007196,Rudersberg
+8007201,Hochstetten
+8007222,Schlatt(Hohenz)
+8007223,Jungingen(Hohenz)
+8007224,Killer
+8007225,Hausen-Starzeln
+8007226,Burladingen
+8007227,Gauselfingen
+8007228,Neufra(Hohenz)
+8007229,Gammertingen
+8007230,Hettingen(Hohenz)
+8007231,Hermentingen
+8007232,Veringenstadt
+8007233,Veringendorf
+8007234,Jungnau
+8007235,Hanfertal
+8007273,Wahlstedt
+8007275,Alzenau(Unterfr)
+8007276,Kälberau
+8007277,Michelbach(Unterfr)
+8007278,Niedersteinbach
+8007279,Mömbris-Mensengesäß
+8007280,Schimborn
+8007281,Königshofen(Kahl)
+8007282,Blankenbach
+8007283,Schöllkrippen
+8007288,Jechtingen
+8007325,Münchingen
+8007326,Schwieberdingen
+8007327,Hemmingen
+8007328,Heimerdingen
+8007329,Weissach
+8007338,Zellerthal
+8007339,Grafenwiesen
+8007341,Watzelsteg
+8007342,Hohenwarth
+8007343,Arrach
+8007344,Frahelsbruck
+8007345,Lam
+8007357,Urmersbach
+8007434,Neckarbischofsheim Stadt
+8007435,Neckarbischofsheim Helmhof
+8007436,Untergimpern
+8007437,Obergimpern
+8007438,Siegelsbach
+8007439,Hüffenhardt
+8007441,Neidenstein
+8007442,Waibstadt
+8007443,Eschelbronn
+8007444,Helmstadt(Baden)
+8007445,Aglasterhausen
+8007446,Frickenhausen
+8007447,Linsenhofen
+8007448,Neuffen
+8007482,Miesenbach
+8007625,Rudersberg-Oberndorf
+8007630,Moosrain
+8007631,Gmund(Tegernsee)
+8007632,Tegernsee
+8007646,Trossingen Stadt
+8007654,Eitze Bahnhof
+8007656,Hohenaverbergen
+8007657,Armsen
+8007658,Neddenaverbergen
+8007659,Stemmen
+8007759,Helgoland(Reede)
+8007760,Wyk auf Föhr
+8007761,Wittdün(Amrum)
+8007762,Norderney
+8007763,Juist
+8007764,Borkum(Nordseebad)
+8007765,Langeoog
+8007766,Wangerooge
+8007767,Spiekeroog
+8007768,Norddeich Mole
+8007769,Dagebüll Mole
+8007774,Hörnum(Sylt)
+8007777,"Morsum, Bahnhof"
+8007778,Baltrum
+8007779,Helgoland Katamaran
+8007780,"Kampen(Sylt), Nordseeheim Klappholttal"
+8007784,Borkum Flugplatz
+8007787,Helgoland Flugplatz
+8007788,Juist Flugplatz
+8007800,Bremervörde
+8007804,Frelsdorf
+8007805,Geestenseth
+8007807,Heinschenwalde
+8007808,Hesedorf
+8007809,Mulsum-Essel
+8007810,Oerel
+8007811,Sellstedt
+8007812,Wehdel
+8007831,Apensen
+8007840,Bargstedt
+8007841,Brest-Aspe
+8007843,Harsefeld
+8007844,Kutenholz
+8007845,Ruschwedel
+8007847,Hausen(Taunus)
+8007848,Hundstadt
+8007849,Köppern
+8007850,Neu-Anspach
+8007851,Saalburg(Taunus)
+8007852,Usingen
+8007853,Wehrheim
+8007854,Wilhelmsdorf
+8007855,Korntal Gymnasium
+8007856,Wilhermsdorf Mitte
+8007857,Schaidt(Pfalz)
+8007858,Steinfeld(Pfalz)
+8007859,Kapsweyer
+8007860,Schweighofen
+8007861,Grötzingen Krappmühlenweg
+8007863,Berghausen Pfinzbrücke
+8007864,Berghausen Am Stadion
+8007866,Söllingen Reetzstr.
+8007867,Thiergarten(Hohenz)
+8007868,Lebach-Jabach
+8007892,Bremen-Aumund
+8007893,Klinikum Bremen-Nord/Beckedorf
+8007894,Bremen-Blumenthal
+8007895,Bremen Mühlenstraße
+8007896,Bremen Kreinsloger
+8007897,Bremen Turnerstraße
+8007898,Bremen-Farge
+8010001,Adorf(Vogtl)
+8010003,Altenburg
+8010004,Angermünde
+8010005,Annaberg-Buchholz Süd
+8010006,Arnsdorf(Dresden)
+8010007,Arnstadt Hbf
+8010009,Aschersleben
+8010010,Aue(Sachs)
+8010011,Auerbach(V) ob Bf
+8010012,Auerbach(V) unt Bf
+8010013,Baalberge
+8010014,Bad Blankenburg(Thüringerw)
+8010016,Bad Doberan
+8010017,Bad Freienwalde
+8010018,Bad Kleinen
+8010019,Bad Kösen
+8010020,Bad Langensalza
+8010021,Bad Salzungen
+8010022,Bad Schandau
+8010025,Basdorf
+8010026,Bautzen
+8010027,Aue(Sachs) Erzgebirgsstadion
+8010029,Beeskow
+8010031,Belzig
+8010032,Berga-Kelbra
+8010033,Bergen auf Rügen
+8010035,Berlin-Karlshorst
+8010036,Berlin-Lichtenberg
+8010040,Kürbitz
+8010041,Berlin-Schöneweide
+8010043,Bernburg
+8010045,Bertsdorf
+8010046,Beucha
+8010047,Biederitz
+8010048,Birkungen
+8010049,Bischofswerda
+8010050,Bitterfeld
+8010051,Blankenberg(Meckl)
+8010053,Blankenfelde(Teltow-Fläming)
+8010054,Blankenheim(Sangerhausen)
+8010055,Bleicherode Ost
+8010056,Blumenberg
+8010059,Borsdorf(Sachs)
+8010060,Brandenburg Hbf
+8010061,Bretleben
+8010064,Britz
+8010066,Bützow
+8010067,Bufleben
+8010069,Calau(Nl)
+8010070,Calbe(Saale) Ost
+8010071,Calbe(Saale) West
+8010072,Coswig(Dresden)
+8010073,Cottbus
+8010074,Cranzahl
+8010076,Delitzsch unt Bf
+8010077,Dessau Hbf
+8010078,Deuben(Zeitz)
+8010079,Doberlug-Kirchhain
+8010080,Döbeln Hbf
+8010081,Döllstädt
+8010084,Gnadau
+8010085,Dresden Hbf
+8010086,Magdeburg-Rothensee
+8010088,Dresden-Klotzsche
+8010089,Dresden-Neustadt
+8010092,Ebersbach(Sachs)
+8010093,Eberswalde Hbf
+8010094,Eibau
+8010095,Eilenburg
+8010096,Eilsleben(b Magdeburg)
+8010097,Eisenach
+8010099,Elsterwerda
+8010100,Elsterwerda-Biehla
+8010101,Erfurt Hbf
+8010102,Erfurt Nord
+8010103,Falkenberg(Elster)
+8010105,Eisenach Opelwerke Hp
+8010106,Falkenstein(Vogtl)
+8010108,Flöha
+8010109,Berlin-Schönefeld Flughafen
+8010110,Förtha(Eisenach)
+8010111,Forst(Lausitz)
+8010113,Frankfurt(Oder)
+8010115,Freiberg(Sachs)
+8010116,Freital-Hainsberg
+8010117,Templin Stadt
+8010118,Fröttstädt
+8010119,Frose
+8010120,Fürstenwalde(Spree)
+8010121,Geestgottberg
+8010122,Geithain
+8010123,Genthin
+8010124,Reinsdorf(Artern)
+8010125,Gera Hbf
+8010126,Gera Süd
+8010127,Gernrode(Harz)
+8010128,Flöha-Plaue
+8010129,Glauchau(Sachs)
+8010130,Glauchau-Schönbörnchen
+8010131,Görlitz
+8010133,Jena-Göschwitz
+8010134,Gößnitz
+8010136,Gotha
+8010137,Gräfenroda
+8010139,Greifswald
+8010140,Greiz
+8010141,Grevesmühlen
+8010142,Grimmenthal
+8010144,Großbothen
+8010145,Großheringen
+8010146,Großkorbetha
+8010150,Grunow(Niederlausitz)
+8010151,Güsen(b Genthin)
+8010152,Güsten
+8010153,Güstrow
+8010154,Güterglück
+8010155,Halle Messe
+8010156,Hagenow Land
+8010157,Halberstadt
+8010158,Haldensleben
+8010159,Halle(Saale)Hbf
+8010160,Halle-Neustadt
+8010161,Eilenburg Ost
+8010162,Halle-Ammendorf
+8010163,Heidenau
+8010166,Herlasgrün
+8010167,Herzberg(Mark)
+8010168,Hettstedt
+8010169,Heudeber-Danstedt
+8010170,Hockeroda
+8010171,Hosena
+8010172,Hohenwulsch
+8010173,Holthusen
+8010174,Horka
+8010175,Neuruppin Rheinsberger Tor
+8010176,Hornstorf
+8010177,Hoyerswerda
+8010178,Ilmenau
+8010179,Jatznick
+8010182,Jüterbog
+8010183,Sedlitz Ost
+8010184,Chemnitz Hbf
+8010185,Chemnitz Süd
+8010188,Karow(Meckl)
+8010189,Küstrin-Kietz
+8010191,Klostermansfeld
+8010193,Königs Wusterhausen
+8010194,Könnern
+8010195,Köthen
+8010196,Crossen a d Elster
+8010198,Kühnhausen
+8010199,Lalendorf
+8010202,Lehndorf(Altenburg)
+8010203,Leinefelde
+8010204,Klostermansfeld Randsiedlung
+8010205,Leipzig Hbf
+8010206,Leipzig-Connewitz
+8010207,Leipzig-Leutzsch
+8010208,Leipzig-Paunsdorf
+8010209,Leipzig-Plagwitz
+8010210,Lietzow(Rügen)
+8010212,Löbau(Sachs)
+8010213,Löcknitz
+8010214,Löwenberg(Mark)
+8010215,Ludwigsfelde
+8010216,Ludwigslust
+8010217,Lübben(Spreewald)
+8010220,Lübbenau(Spreewald)
+8010222,Lutherstadt Wittenberg
+8010224,Magdeburg Hbf
+8010226,Magdeburg-Neustadt
+8010227,Malchin
+8010228,Markkleeberg-Großstädteln
+8010229,Mehltheuer
+8010230,Meiningen
+8010231,Meinsdorf
+8010232,Merseburg
+8010233,Michendorf
+8010234,Mittelherwigsdorf
+8010235,Mühlhausen(Thür)
+8010236,Müncheberg(Mark)
+8010238,Narsdorf
+8010239,Nauen
+8010240,Naumburg(Saale)Hbf
+8010241,Neubrandenburg
+8010242,Neudietendorf
+8010243,Neukieritzsch
+8010244,Neumark(Sachs)
+8010245,Neuoelsnitz
+8010246,Neuruppin West
+8010248,Neustadt(Dosse)
+8010250,Neustrelitz Hbf
+8010253,Niederwiesa
+8010254,Nienhagen(Halberst)
+8010255,Berlin Ostbahnhof
+8010256,Nordhausen
+8010258,Nossen
+8010259,Oberoderwitz
+8010260,Obstfelderschmiede
+8010261,Oebisfelde
+8010264,Orlamünde
+8010266,Oschersleben(Bode)
+8010267,Parchim
+8010268,Pasewalk
+8010269,Pegau
+8010270,Strobelmühle
+8010272,Pirna
+8010273,Plaaz
+8010274,Plaue(Thür)
+8010275,Plauen(Vogtl) ob Bf
+8010277,Pockau-Lengefeld
+8010279,Potsdam Pirschheide
+8010280,Potsdam Charlottenhof
+8010281,Pratau
+8010282,Prenzlau
+8010284,Priemerburg
+8010285,Priestewitz
+8010287,Pritzwalk
+8010288,Probstzella
+8010290,Quedlinburg
+8010291,Querfurt
+8010292,Radebeul Ost
+8010293,Radebeul West
+8010296,Rathenow
+8010297,Riesa
+8010299,Röblingen am See
+8010300,Rövershagen
+8010301,Ronneburg(Thür)
+8010302,Roßlau(Elbe)
+8010303,Roßwein
+8010304,Rostock Hbf
+8010305,Rottenbach
+8010306,Rudolstadt(Thür)
+8010307,Rudolstadt-Schwarza
+8010308,Ruhland
+8010309,Saalfeld(Saale)
+8010310,Salzwedel
+8010311,Sandersleben(Anh)
+8010312,Sangerhausen
+8010315,Schmalkalden
+8010317,Schönberg(Vogtl)
+8010318,Schönebeck(Elbe)
+8010319,Schmachtenhagen
+8010321,Schönhausen(Elbe)
+8010322,Schwaan
+8010323,Schwarzenberg(Erzg)
+8010324,Schwerin Hbf
+8010325,Schwerin-Görries
+8010327,Senftenberg
+8010328,Sömmerda
+8010329,Sondershausen
+8010330,Spremberg
+8010331,St Egidien
+8010332,Staßfurt
+8010333,Steinpleis
+8010334,Stendal
+8010335,Stendal-Stadtsee
+8010336,Plauen(Vogtl)-Straßberg
+8010337,Stollberg(Sachs)
+8010338,Stralsund Hbf
+8010339,Strasburg(Uckerm)
+8010341,Strausberg
+8010342,Straußfurt
+8010343,Stumsdorf
+8010345,Suhl
+8010347,Templin
+8010348,Teterow
+8010349,Teuchern
+8010350,Themar
+8010351,Torgau
+8010352,Triptis
+8010353,Luckau-Uckro
+8010354,Unterlemnitz
+8010355,Velgast
+8010356,Vitzenburg
+8010357,Guben
+8010359,Waldheim
+8010361,Waren(Müritz)
+8010364,Wegeleben
+8010365,Weida
+8010366,Weimar
+8010367,Weischlitz
+8010368,Weißenfels
+8010370,Weißwasser(Oberlausitz)
+8010371,Werbig
+8010372,Werdau
+8010373,Werder(Havel)
+8010374,Wernigerode
+8010375,Wernshausen
+8010376,Wiesenburg(Mark)
+8010377,Potsdam Park Sanssouci
+8010378,Wilhelmshorst
+8010379,Wilkau-Haßlau
+8010380,Wilthen
+8010381,Wismar
+8010382,Wittenberge
+8010383,Wittgensdorf ob Bf
+8010384,Wittstock(Dosse)
+8010385,Wolkramshausen
+8010386,Wriezen
+8010387,Wünschendorf
+8010388,Wüstenbrand
+8010389,Wustermark
+8010390,Zeitz
+8010391,Zella-Mehlis
+8010392,Zinnowitz
+8010393,Zittau
+8010395,Zossen
+8010396,Züssow
+8010397,Zwickau(Sachs)Hbf
+8010398,Zwotental
+8010399,Fürstenberg(Havel)
+8010400,Neukirch(Lausitz)West
+8010401,Putbus
+8010403,Berlin-Charlottenburg
+8010404,Berlin-Spandau
+8010405,Berlin Wannsee
+8010406,Berlin Zoologischer Garten
+8011002,Adorf(Erzgeb)
+8011003,Ahrensfelde
+8011004,Ahrensfelde Friedhof
+8011005,Ahrensfelde Nord
+8011011,Alt Hüttendorf
+8011014,Alt Rosenthal
+8011015,Alt Schwerin
+8011016,Altdöbern
+8011017,Altefähr
+8011018,Altenbach
+8011019,Kurort Altenberg(Erzgebirge)
+8011025,Altentreptow
+8011027,Altenwillershagen
+8011028,Altersbach
+8011029,Ammern
+8011031,Althof
+8011033,Altmittweida
+8011034,Altranft
+8011038,Amsdorf
+8011042,Angern-Rogätz
+8011043,Angersdorf
+8011044,Anklam
+8011045,Annaberg-Buchholz Mitte
+8011046,Berlin-Karow
+8011047,Annaberg-Buchholz unterer Bf
+8011048,Annaburg
+8011049,Antonsthal
+8011051,Apolda
+8011053,Arensdorf(Köthen)
+8011054,Arenshausen
+8011055,Arnstadt Süd
+8011057,Auehütte
+8011058,Jena Saalbf
+8011059,Auerbach(Vogtl) Hp
+8011060,Auerstedt
+8011063,Baabe
+8011065,Bachfeld
+8011066,Bad Berka
+8011067,Bad Berka Zeughausplatz
+8011068,Bad Brambach
+8011069,Bad Doberan Goethestraße
+8011071,Bad Dürrenberg
+8011072,Bad Elster
+8011074,Bad Köstritz
+8011075,Bad Lauchstädt
+8011076,Bad Lauchstädt West
+8011077,Bad Lausick
+8011078,Bad Liebenwerda
+8011079,Bad Saarow-Pieskow
+8011084,Bad Suderode
+8011085,Bad Sulza
+8011086,Bad Sulza Nord
+8011088,Bad Wilsnack
+8011093,Bärenklau
+8011094,Bärenstein(Annaberg)
+8011096,Bärnsdorf
+8011097,Bagenz
+8011098,Bahnsdorf
+8011100,Baitz
+8011101,Vejprty(Gr)
+8011102,Berlin Gesundbrunnen
+8011103,Balgstädt
+8011106,Ballstädt(Gotha)
+8011108,Bannemin-Mölschow
+8011109,Bansin Seebad
+8011111,Barleben
+8011112,Barleber See
+8011113,Berlin Südkreuz
+8011114,Barth
+8011115,Barthmühle
+8011116,Baruth(Mark)
+8011118,Berlin Potsdamer Platz
+8011119,Bebitz
+8011121,Bechstedt-Trippstein
+8011125,Beetz-Sommerfeld
+8011131,Beilrode
+8011132,Belgershain
+8011133,Belleben
+8011138,Bennungen
+8011139,Benshausen
+8011140,Bentwisch
+8011142,Berbisdorf
+8011143,Berbisdorf Anbau
+8011144,Berga(Elster)
+8011149,Bergsdorf
+8011150,Bergwitz
+8011154,Berkenbrück
+8011160,Berlin Hbf
+8011168,Bernburg-Friedenshall
+8011169,Bernburg-Strenzfeld
+8011170,Bernburg-Waldau
+8011171,Bernsgrün
+8011172,Bernterode
+8011173,Bestensee
+8011177,Beuna(Geiseltal)
+8011178,Beuren
+8011179,Beutersitz
+8011181,Beyendorf
+8011183,Bibra
+8011184,Biendorf
+8011187,Biesenrode
+8011188,Biesenthal
+8011190,Bindfelde
+8011191,Ostseebad Binz
+8011193,Binz LB
+8011205,Blankensee(Meckl)
+8011206,Blankenstein(Saale)
+8011208,Blechhammer(Thür)
+8011210,Blönsdorf
+8011211,Blumberg(b Berlin)
+8011212,Blumenau
+8011213,Blumenhagen
+8011214,Blumenthal(Mark)
+8011215,Bobitz
+8011219,Bodenrode
+8011222,Böhlen Werke
+8011225,Bölzke
+8011226,Börnecke(Harz)
+8011228,Bösdorf(Sachs-Anh)
+8011230,Boizenburg(Elbe)
+8011238,Borkheide
+8011242,Borna(Leipzig)
+8011248,Brahlstorf
+8011250,Brand(Niederlausitz)
+8011252,Brandenburg Altstadt
+8011255,Braunsbedra
+8011256,Braunsbedra Ost
+8011257,Braunsdorf-Lichtenwalde
+8011258,Breddin
+8011260,Brehna
+8011263,Breitenbrunn(Erzg)
+8011264,Breitendorf
+8011265,Breitungen(Werra)
+8011267,Breternitz
+8011269,Briesen(Mark)
+8011270,Broderstorf
+8011271,Brück(Mark)
+8011273,Brügge(Prign)
+8011277,Brunau-Packebusch
+8011281,Buchenhorst
+8011282,Buchholz(Zauche)
+8011284,Buckow(Beeskow)
+8011286,Buddenhagen
+8011288,Büden
+8011290,Bülzig
+8011293,Burg Stargard(Meckl)
+8011294,Burg(Magdeburg)
+8011296,Burgkemnitz
+8011297,Burgstädt
+8011299,Burkhardtsdorf
+8011302,Buschow
+8011303,Burkhardtsdorf Mitte
+8011304,Buttstädt
+8011305,Cainsdorf
+8011306,Berlin Friedrichstr
+8011307,Cammin(Meckl)
+8011308,Caputh-Geltow
+8011311,Casekow
+8011312,Crossen Ort
+8011314,Chorin
+8011318,Cottbus-Sandow
+8011319,Coschen
+8011320,Cossebaude
+8011322,Coswig(Anh)
+8011324,Crawinkel
+8011325,Crimmitschau
+8011326,Crivitz
+8011331,Cunnertswalde
+8011332,Cursdorf
+8011334,Dabendorf
+8011335,Dachrieden
+8011336,Dachwig
+8011339,Dahlen(Sachs)
+8011340,Dahlewitz
+8011344,Dannenwalde(Gransee)
+8011346,Darlingerode
+8011354,Demitz-Thumitz
+8011355,Demker
+8011356,Demmin
+8011357,Dennheritz
+8011361,Dessau Süd
+8011363,Dessau-Alten
+8011364,Dessau-Mosigkau
+8011370,Deutschenbora
+8011371,Deutzen
+8011376,Dieskau
+8011378,Dietzhausen
+8011382,Dippoldiswalde
+8011383,Ditfurt
+8011385,Dittersbach
+8011386,Dittersdorf
+8011387,Doberschütz
+8011388,Dodendorf
+8011389,Döbeln Zentrum
+8011390,Döberitz
+8011397,Dörrberg
+8011398,Dohna(Sachs)
+8011399,Dresden Flughafen
+8011402,Domnitz(Saalkr)
+8011403,Domsühl
+8011405,Dorfchemnitz
+8011406,Dornburg(Saale)
+8011408,Dossow(Prign)
+8011409,Drahnsdorf
+8011414,Drebkau
+8011415,Dreileben-Drackenstedt
+8011417,Dresden Grenzstraße
+8011418,Dresden Industriegelände
+8011419,Dresden-Cotta
+8011420,Dresden-Dobritz
+8011421,Dresden-Kemnitz
+8011422,Dresden-Niedersedlitz
+8011423,Dresden-Pieschen
+8011424,Dresden-Reick
+8011425,Dresden-Stetzsch
+8011426,Dresden-Strehlen
+8011427,Dresden-Trachau
+8011428,Dresden-Zschachwitz
+8011430,Potsdam Medienstadt Babelsberg
+8011431,Dresden Freiberger Straße
+8011433,Drohndorf-Mehringen
+8011438,Ducherow
+8011442,Dütschow
+8011446,Ebersbrunn
+8011449,Eckardtsleben
+8011450,Eckartsberga(Thür)
+8011451,Edle Krone
+8011453,Effelder(Thür)
+8011455,Eggersdorf
+8011456,Eggesin
+8011458,Eich(Sachs)
+8011460,Eichstedt(Altm)
+8011462,Eickendorf
+8011464,Einsiedel Hp Gymnasium
+8011466,Einsiedel
+8011468,Eisenach West
+8011471,Eisenhüttenstadt
+8011472,Eisfeld
+8011476,Elgersburg
+8011477,Ellefeld
+8011480,Ellrich
+8011481,Elmenhorst
+8011482,Elsholz
+8011484,Elsnigk(Anh)
+8011486,Elster(Elbe)
+8011487,Elsterberg
+8011488,Elsterberg-Kunstseidenwerk
+8011489,Elxleben
+8011491,Engelsdorf
+8011492,Emleben
+8011495,Engelsdorf Werkstätten
+8011496,Erdeborn
+8011497,Erdmannsdorf-Augustusburg
+8011500,Erfurt Ost
+8011502,Erfurt-Bischleben
+8011503,Erfurt-Gispersleben
+8011505,Erla
+8011506,Erlabrunn(Erzgeb)
+8011507,Erlau(Sachs)
+8011512,Ernstthal am Rennsteig
+8011519,Ettenhausen
+8011520,Etzleben
+8011523,Rostock-Evershagen
+8011524,Fährbrücke
+8011528,Falkenau(Sachs)Hp
+8011529,Falkenau(Sachs)Süd
+8011531,Falkenberg(Mark)
+8011533,Fangschleuse
+8011536,Ferdinandshof
+8011537,Fermerswalde
+8011540,Finkenheerd
+8011541,Finkenkrug
+8011542,Finsterwalde(Niederlausitz)
+8011544,Flechtingen
+8011545,Fleetmark
+8011548,Floßmühle
+8011549,Förderstedt
+8011550,Fohrde
+8011553,Frankenberg(Sachs)
+8011554,Frankenberg(Sachs) Süd
+8011555,Frankenhain
+8011556,Frankenstein(Sachs)
+8011557,Frankfurt(Oder)-Neuberesinchen
+8011559,Frankfurt(Oder)-Rosengarten
+8011560,Frankleben
+8011563,Frauenhain
+8011564,Freckleben
+8011567,Freienorla
+8011568,Freital-Coßmannsdorf
+8011569,Freital-Deuben
+8011570,Freital-Hainsberg West
+8011571,Frenz
+8011572,Fretzdorf
+8011573,Freyburg(Unstrut)
+8011574,Friedersdorf(Königs Wusterhausen)
+8011575,Friedewald(Kr Dresden) Bad
+8011576,Friedewald(Kr Dresden)Hp
+8011578,Friedrichroda
+8011582,Friedrichsruhe(Meck)
+8011585,Friesack(Mark)
+8011586,Friesdorf
+8011587,Friesdorf Ost
+8011588,Frohburg
+8011591,Fürstenwalde Süd
+8011592,Gadebusch
+8011593,Gallin
+8011594,Gangloffsömmern
+8011596,Gardelegen
+8011597,Garftitz
+8011598,Gaschwitz
+8011599,Gatersleben
+8011602,Gebra(Hainleite)
+8011603,Gehlberg
+8011609,Geising
+8011611,Gelbensande
+8011616,Georgenthal(Thür)
+8011617,Gera Ost
+8011619,Gera-Langenberg
+8011620,Gera-Liebschwitz
+8011623,Gera-Zwötzen
+8011624,Geraberg
+8011626,Gerichshain
+8011628,Gersdorf(Görlitz)
+8011629,Gerstungen
+8011630,Gerwisch
+8011632,Giersleben
+8011636,Glashütte(Sachs)
+8011637,Glaubitz(Riesa)
+8011638,Gleisberg-Marbach
+8011641,Glöwen
+8011643,Glückauf
+8011646,Gnevkow
+8011651,Göhren(Rügen)
+8011654,Görden
+8011656,Görlitz-Weinhübel
+8011657,Görsbach
+8011662,Götz
+8011665,Goldbeck(Osterburg)
+8011667,Gollmitz(Niederlausitz)
+8011668,Golßen(Niederlausitz)
+8011671,Golzow(Eberswalde)
+8011672,Golzow(Oderbruch)
+8011673,Gommern
+8011674,Gorgast
+8011678,Gotha Ost
+8011681,Grabow(Meckl)
+8011683,Gräfenhainichen
+8011684,Gräfenroda Ort
+8011685,Gräfenstuhl-Klippmühle
+8011687,Gräfentonna
+8011689,Grambow
+8011691,Gransee
+8011694,Greifswald Süd
+8011697,Greiz-Dölau
+8011699,Greppin
+8011700,Greußen
+8011702,Grieben(Meckl)
+8011703,Griebo
+8011705,Grimma ob Bf
+8011707,Grimmen
+8011709,Grobau
+8011711,Gröbers
+8011712,Gröditz(Riesa)
+8011714,Groß Ammensleben
+8011718,Groß Brütz
+8011721,Groß Gräfendorf
+8011723,Groß Kiesow
+8011725,Groß Kreutz
+8011726,Groß Laasch
+8011727,Groß Langerwisch
+8011729,Groß Lüsewitz
+8011730,Groß Pankow
+8011731,Groß Quassow
+8011732,Groß Quenstedt
+8011734,Groß Schönebeck
+8011735,Groß Schwaß
+8011740,Großbeeren
+8011745,Großdeuben
+8011746,Großengottern
+8011749,Großenhain Cottb Bf
+8011750,Großfurra
+8011751,Großharthau
+8011752,Großkugel
+8011753,Großlehna
+8011754,Großneuhausen
+8011755,Großpösna
+8011756,Großräschen
+8011759,Großrudestedt
+8011761,Großschönau(Sachs)
+8011762,Großschwabhausen
+8011763,Großsteinberg
+8011766,Großwudicke
+8011770,Grüna(Sachs)Hp
+8011773,Grünbach(Vogtl)
+8011776,Grüneberg
+8011777,Grünhainichen-Borstendorf
+8011778,Stralsund-Grünhufe
+8011787,Gunzen
+8011788,Seelow-Gusow
+8011790,Gutenfürst
+8011791,Guthmannshausen
+8011792,Haarhausen
+8011794,Hadmersleben
+8011795,Hähnichen
+8011796,Hämerten
+8011797,Hagebök
+8011798,Hagenow Stadt
+8011799,Hagenwerder
+8011801,Hainewalde
+8011802,Hainichen
+8011805,Halbe
+8011808,Halberstadt Oststr
+8011809,Halberstadt-Spiegelsberge
+8011813,Halle-Nietleben
+8011814,Halle-Trotha
+8011815,Hammelspring
+8011817,Hammerunterwiesenthal
+8011818,Hangelsberg
+8011820,Harra
+8011821,Harra Nord
+8011822,Harras(Thür)
+8011823,Hartenstein
+8011834,Hausen(Eichsfeld)
+8011838,Hedersleben-Wedderstedt
+8011843,Heidenau Süd
+8011844,Heidenau-Großsedlitz
+8011846,Heiligendamm
+8011847,Steilküste/Wittenbeck
+8011848,Heiligengrabe
+8011849,Heilbad Heiligenstadt
+8011852,Heldrungen
+8011853,Helenesee
+8011856,Hennersdorf(Sachs)
+8011860,Heringen(Helme)
+8011862,Hermsdorf-Klosterlausnitz
+8011863,Herrensee
+8011864,Herrnburg
+8011867,Herzberg(Elster)
+8011869,Hetschburg
+8011870,Hetzdorf(Flöhatal)
+8011871,Hildburghausen
+8011878,Hirschfelde
+8011889,Hohendorf
+8011891,Hohenebra Ort
+8011892,Hohenfichte
+8011894,Hohenleipisch
+8011895,Hohenleuben
+8011900,Hohenroda
+8011901,Berlin-Hohenschönhausen
+8011904,Hohenstein-Ernstthal
+8011905,Hohenthurm
+8011908,Holdorf(Meckl)
+8011909,Holzdorf(Elster)
+8011910,Holzdorf(b Weimar)
+8011913,Leipzig-Holzhausen
+8011914,Hopfgarten(Sachs)
+8011915,Hopfgarten(Weimar)
+8011918,Hoppenwalde
+8011919,Hordorf
+8011922,Hoyerswerda-Neustadt
+8011923,Hubertushöhe
+8011924,Huckstorf
+8011925,Hüttengrund
+8011928,Hundsgrün
+8011929,Ilberstedt
+8011932,Ilmenau-Roda
+8011933,Ilsenburg
+8011934,Immelborn
+8011935,Ilmenau Pörlitzer Höhe
+8011937,Irfersgrün
+8011939,Jabel(Meckl)
+8011940,Jacobsdorf(Mark)
+8011941,Jakobsdorf(Prign)
+8011944,Jänschwalde
+8011945,Jänschwalde Ost
+8011946,Jävenitz
+8011947,Jagdschloß
+8011948,Jahnsdorf(Erzgeb)
+8011951,Jasnitz
+8011952,Jeber-Bergfrieden
+8011953,Jeeser
+8011956,Jena Paradies
+8011957,Jena West
+8011958,Jena-Zwätzen
+8011959,Jesewitz(Leipzig)
+8011960,Jessen(Elster)
+8011961,Jeßnitz(Anh)
+8011962,Joachimsthal
+8011963,Jocketa
+8011966,Joeßnitz
+8011967,Johanngeorgenstadt
+8011968,Altes Lager
+8011969,Jütrichau
+8011970,Chemnitz Kinderwaldstätte
+8011971,Chemnitz Mitte
+8011974,Chemnitz-Borna Hp
+8011975,Chemnitz Erfenschlag
+8011977,Chemnitz-Harthau
+8011978,Chemnitz-Reichenhain
+8011979,Chemnitz-Schönau
+8011980,Chemnitz-Siegmar
+8011981,Kablow
+8011983,Kämmereiforst
+8011985,Kahla(Thür)
+8011989,Kargow
+8011991,Karlsburg
+8011992,Karlshagen
+8011993,Karsdorf
+8011994,Karstädt
+8011995,Kalsow
+8011999,Katzhütte
+8012000,Kaulsdorf(Saale)
+8012002,Kavelstorf(Kr Rostock)
+8012004,Kemtau
+8012005,Kenz
+8012006,Kerkwitz
+8012007,Kiebitzhöhe
+8012009,Kirch-Jesar
+8012011,Kirchmöser
+8012012,Kirchscheidungen
+8012014,Kläden(Stendal)
+8012015,Klandorf
+8012016,Klasdorf Glashütte
+8012019,Klebitz
+8012020,Kleeth
+8012021,Klein Bünzow
+8012033,Kleinfurra
+8012034,Kleinjena
+8012037,Kleinschirma
+8012040,Klieken
+8012043,Klinge
+8012044,Klingenberg-Colmnitz
+8012045,Klingenthal
+8012046,Klitschmar
+8012047,Klitten
+8012049,Klockow(b Waren/Müritz)
+8012053,Klosterbuch
+8012054,Klosterfelde
+8012057,Klütz(Meckl)
+8012059,Knautnaundorf
+8012061,Kodersdorf
+8012064,Kölleda
+8012065,Kölpinsee
+8012066,Königsborn
+8012072,Königstein(Sächs Schw)
+8012075,Könitz(Thür)
+8012080,Kötzschau
+8012083,Kolkwitz
+8012084,Kolkwitz Süd
+8012086,Koserow
+8012088,Kraftsdorf
+8012089,Kraftwerk Finkenheerd
+8012092,Kranichfeld
+8012093,Kratzeburg
+8012096,Kremmen
+8012097,Krensitz
+8012098,Kretscham-Rothensehma
+8012105,Krippen
+8012107,Krölpa-Ranis
+8012108,Kröpelin
+8012109,Kronskamp
+8012110,Krottorf
+8012114,Krumpa
+8012115,Kubschütz
+8012117,Kühren
+8012120,Kuhbier
+8012127,Kummerow(Stralsund)
+8012129,Kummersdorf(Storkow)
+8012131,Kurort Jonsdorf
+8012132,Kurort Jonsdorf Hst
+8012134,Kurort Oberwiesenthal
+8012135,Kurort Oybin
+8012136,Kurort Oybin-Niederdorf
+8012138,Kurort Rathen
+8012141,Kyhna
+8012142,Kyritz
+8012143,Laage(Meckl)
+8012144,Laaske
+8012145,Lampertswalde
+8012146,Lancken
+8012147,Landsberg(b. Halle/Saale)
+8012148,Landsberg(b. Halle/Saale) Süd
+8012150,Langebrück(Sachs)
+8012155,Langendorf
+8012156,Langeneichstädt
+8012159,Langenorla Ost
+8012160,Langenorla West
+8012161,Langenstein
+8012162,Langenweddingen
+8012167,Laucha(Unstrut)
+8012169,Lauchhammer
+8012170,Lauenstein(Sachs)
+8012171,Lauscha(Thür)
+8012175,Lauta(Nl)
+8012176,Lauter(Sachs)
+8012177,Lauterbach Mole
+8012178,Lauterbach-Steinbach
+8012180,Legefeld
+8012181,Leipzig Olbrichtstraße
+8012183,Leipzig/Halle Flughafen
+8012185,Leipzig Ost
+8012188,Leipzig-Gohlis
+8012190,Leipzig-Heiterblick
+8012192,Leipzig-Knauthain
+8012193,Leipzig-Möckern
+8012194,Leipzig-Stötteritz
+8012195,Leipzig-Thekla
+8012197,Leipzig-Wahren
+8012198,Leisnig
+8012199,Leißling
+8012201,Lengefeld-Rauenstein
+8012203,Lengenfeld(Vogtl)
+8012204,Leipzig Slevogtstraße
+8012205,Letschin
+8012207,Leubingen
+8012208,Leubsdorf(Sachs)
+8012211,Leuna Werke Nord
+8012212,Leuna Werke Süd
+8012213,Leutenberg
+8012215,Leuthen(Cottbus)
+8012221,Rostock-Lichtenhagen
+8012222,Lichtenhain(a d Bergbahn)
+8012223,Lichtenstein(Sachs)
+8012224,Lichtentanne(Sachs)
+8012225,Lichtentanne(Thür)
+8012226,Liebenthal(Prignitz)
+8012228,Leipzig-Liebertwolkwitz
+8012231,Limbach(Vogtl)
+8012232,Limmritz(Sachs)
+8012233,Linda(Elster)
+8012237,Lindenberg(Mark)
+8012239,Lindow(Mark)
+8012241,Lobstädt
+8012242,Loburg
+8012245,Lößnitz ob Bf
+8012246,Lößnitz unt Bf
+8012247,Lößnitzgrund
+8012252,Loitsch-Hohenleuben
+8012255,Lottschesee
+8012257,Lubolz
+8012259,Luckenau
+8012260,Luckenwalde
+8012262,Lüblow(Meckl)
+8012263,Lübs(Magdeburg)
+8012264,Lübstorf
+8012265,Lübz
+8012268,Lüdersdorf(Meckl)
+8012269,Lüssow(Meckl)
+8012271,Rostock-Lütten Klein
+8012274,Lützow
+8012277,Luisenthal(Thür)
+8012279,Lutherstadt Eisleben
+8012280,Lutherstadt Wittenb. Altstadt
+8012281,Lutherstadt Wittenberg West
+8012282,Lutherstadt Wittenb-Piesteritz
+8012284,Machern(Sachs)
+8012285,Leipzig-Lützschena
+8012287,Magdeburg Südost
+8012289,Magdeburg-Eichenweiler
+8012291,Magdeburg-Salbke
+8012292,Magdeburg Sudenburg
+8012295,Mahlwinkel
+8012296,Malchow(Meckl)
+8012298,Malter
+8012300,Mansfeld(Südharz)
+8012301,Marienberg(Sachs)
+8012302,Marienborn
+8012305,Marke
+8012308,Markkleeberg
+8012311,Markranstädt
+8012312,Marksuhl
+8012314,Marlishausen
+8012315,Marquardt
+8012316,Martensdorf
+8012317,Martinroda
+8012320,Mechterstädt
+8012321,Dorf Mecklenburg
+8012322,Medewitz(Mark)
+8012323,Meerane
+8012324,Meinersdorf(Erzgeb)
+8012326,Meißen
+8012327,Meißen Triebischtal
+8012328,Meitzendorf
+8012329,Melchow
+8012330,Mellenbach-Glasbach
+8012332,Mellingen(Thür)
+8012333,Mengersgereuth-Hämmern
+8012334,Mengersgereuth-Hämmern Ost
+8012338,Merseburg Elisabethhöhe
+8012339,Merseburg Bergmannsring
+8012341,Cottbus-Merzdorf
+8012342,Meßdorf
+8012343,Leipzig Völkerschlachtdenkmal
+8012344,Leipzig Miltitzer Allee
+8012346,Meuselbach-Schwarzmühle
+8012348,Meyenburg
+8012350,Mierendorf
+8012351,Mieste
+8012352,Miesterhorst
+8012354,Miltern
+8012355,Leipzig-Miltitz
+8012356,Miltitz-Roitzschen
+8012358,Miltzow
+8012359,Milzau
+8012361,Mirow
+8012362,Mistorf
+8012366,Mitteloelsnitz
+8012367,Mittelschmalkalden
+8012369,Mittweida
+8012370,Mixdorf
+8012371,Mockrehna
+8012372,Möckern(Magdeburg)
+8012373,Mögelin
+8012375,Leipzig-Mölkau
+8012376,Mölln(Meckl)
+8012377,Mönchhagen
+8012378,Möringen(Altm)
+8012381,Möser
+8012384,Moidentin
+8012387,Moritzburg
+8012388,Mosel
+8012390,Mücheln(Geiseltal)
+8012391,Mücka
+8012392,Mücheln(Geiseltal) Stadt
+8012393,Mühlanger
+8012400,Müllrose
+8012401,München(Bad Berka)
+8012408,Muldenhütten
+8012409,Muldenstein
+8012410,Nachterstedt-Hoym
+8012413,Nassenheide
+8012414,Nauendorf(Saalkr)
+8012415,Naumburg(Saale)Ost
+8012416,Naunhof
+8012417,Nebra
+8012418,Nechlin
+8012421,Neetzka
+8012423,Neinstedt
+8012424,Nemsdorf-Göhrendorf
+8012425,Nennhausen
+8012426,Nennigmühle
+8012428,Netzeband
+8012430,Netzschkau
+8012436,Neu Wokern
+8012438,Neubukow
+8012440,Artern
+8012442,Neudorf(Erzgeb)
+8012443,Neue Schenke
+8012445,Teichland
+8012452,Neuhaus-Igelshieb
+8012454,Neugersdorf
+8012456,Neuhausen(Cottbus)
+8012458,Neuhof(b Zossen)
+8012460,Neukirch(Lausitz)Ost
+8012462,Neukirchen-Klaffenbach
+8012463,Neukirchen-Wyhra
+8012465,Neumühle(Elster)
+8012467,Neundorf(Anh)
+8012468,Neunhofen
+8012469,Neupetershain
+8012470,Neusalza-Spremberg
+8012471,Neusörnewitz
+8012472,Neustadt(Orla)
+8012474,Neustadt-Glewe
+8012475,Neutrebbin
+8012478,Leipzig Messe
+8012479,Neuzelle
+8012482,Niederau
+8012483,Niederbobritzsch
+8012485,Niederfinow
+8012487,Niedergörsdorf
+8012489,Niederlehme
+8012490,Niederndodeleben
+8012491,Niederoderwitz
+8012492,Gernrode-Niederorschel
+8012493,Niederpöllnitz
+8012494,Niedersachswerfen
+8012496,Niederschlag
+8012498,Niederschmalkalden
+8012499,Niederzwönitz
+8012500,Niederspier
+8012501,Niederstriegis
+8012502,Niedertrebra
+8012503,Niederwartha
+8012504,Niederwillingen
+8012505,Niederwürschnitz
+8012506,Niemberg
+8012507,Nienburg(Saale)
+8012509,Nöbdenitz
+8012511,Nohra(Weimar)
+8012512,Nohra(Wipper)
+8012516,Nordhausen-Salza
+8012517,Nossentin
+8012523,Nünchritz
+8012524,Obergrunstedt
+8012525,Oberhof(Thür)
+8012526,Oberholz
+8012527,Oberlauscha
+8012528,Oberlichtenau
+8012530,Oberoderwitz Oberdorf
+8012532,Oberröblingen
+8012533,Oberrohn
+8012534,Oberrothenbach
+8012537,Obersdorf
+8012540,Obervogelgesang
+8012541,Oberweimar
+8012542,Oberweißbach-Deesbach
+8012546,Ochtmersleben
+8012549,Oderin
+8012550,Oederan
+8012551,Oegeln
+8012552,Oehna
+8012553,Oelsnitz(Erzgeb)
+8012554,Oelsnitz(Vogtl)
+8012555,Oertzenhof
+8012557,Ohrdruf
+8012558,Olbernhau
+8012559,Olbernhau-Grünthal
+8012560,Olbersdorf Niederdorf
+8012561,Olbersdorf Oberdorf
+8012562,Olbersleben-Ellersleben
+8012563,Oppurg
+8012565,Ortrand
+8012567,Oßmannstedt
+8012568,Osterburg
+8012570,Osternienburg
+8012571,Olbernhau West
+8012572,Osterweddingen
+8012576,Ostrau
+8012582,Rostock-Torfbrücke
+8012583,Graal-Müritz
+8012584,Graal-Müritz Koppelweg
+8012585,Ostseebad Kühlungsborn Mitte
+8012586,Ostseebad Kühlungsborn Ost
+8012587,Ostseebad Kühlungsborn West
+8012593,Ottendorf(Mittweida)
+8012597,Otterwisch
+8012599,Ovelgünne
+8012603,Papendorf
+8012604,Papiermühle(Stadtr)
+8012605,Kunersdorf
+8012609,Parkentin
+8012610,Pasewalk Ost
+8012611,Passow(Uckermark)
+8012612,Passow(Meckl)
+8012614,Paulinenaue
+8012615,Paulinzella
+8012616,Pausa
+8012617,Peenemünde
+8012619,Peißen
+8012621,Peitz Ost
+8012622,Perleberg
+8012623,Petergrube
+8012625,Petersdorf(Meckl)
+8012627,Petershagen(Uckerm)
+8012628,Petershain
+8012629,Petersroda
+8012630,Petriroda
+8012633,Pfaffenhain
+8012634,Philippshagen
+8012636,Pillgram
+8012637,Pinnow(Uckermark)
+8012639,Pirk
+8012643,Plate(Meckl)
+8012646,Plauen(Vogtl)West
+8012647,Plauen(V)Zellwolle
+8012650,Plessa
+8012651,Plüschow
+8012654,Pölchow
+8012655,Pöllwitz
+8012656,Pönitz(Leipzig)
+8012657,Pößneck ob Bf
+8012658,Pößneck unt Bf
+8012660,Pommritz
+8012661,Ponitz
+8012663,Porstendorf
+8012665,Posewald
+8012666,Potsdam Hbf
+8012668,Premnitz Nord
+8012669,Premnitz Zentrum
+8012673,Pretzier(Altm)
+8012675,Prittitz
+8012676,Pritzerbe
+8012677,Pritzier
+8012678,Prödel
+8012679,Prösen
+8012680,Prösen West
+8012681,Prösen Ost
+8012682,Profen
+8012683,Prora
+8012684,Prora Ost
+8012687,Putlitz
+8012688,Putzkau
+8012690,Quedlinburg-Quarmbeck
+8012692,Quittelsdorf
+8012694,Rabenau
+8012697,Rackwitz(Leipzig)
+8012698,Raddusch
+8012699,Radeberg
+8012701,Radebeul-Zitzschewig
+8012702,Radeburg
+8012703,Wustrau-Radensleben
+8012704,Radis
+8012705,Rätzlingen
+8012707,Raguhn
+8012710,Rakow
+8012711,Rambin(Rügen)
+8012713,Rangsdorf
+8012716,Rastow
+8012723,Rauenstein(Thür)
+8012724,Raun
+8012729,Reddelich
+8012731,Regis-Breitingen
+8012733,Potsdam-Rehbrücke
+8012734,Rehfeld(Falkenberg)
+8012735,Rehfelde
+8012737,Rehna
+8012738,Reichenbach(Oberlausitz)
+8012739,Reichenbach(Vogtl) ob Bf
+8012740,Reifland-Wünschendorf
+8012742,Reinhardsbrunn-Friedrichroda
+8012750,Rentwertshausen
+8012751,Rentzschmühle
+8012756,Reurieth
+8012757,Reußen
+8012758,Reuterstadt Stavenhagen
+8012759,Reuth(Plauen)
+8012760,Rheinsberg(Mark)
+8012762,Ribnitz-Damgarten Ost
+8012763,Ribnitz-Damgarten West
+8012766,Riestedt
+8012767,Rietschen
+8012769,Ringleben-Gebesee
+8012770,Ritschenhausen
+8012775,Rodewisch
+8012777,Rodleben
+8012781,Rödlitz-Hohndorf
+8012785,Roggentin
+8012787,Rohr(Thür)
+8012788,Roitzsch(Bitterf)
+8012792,Rosenwinkel
+8012796,Roßla
+8012800,Rostock-Hinrichsdorfer Str.
+8012801,Rostock Parkstraße
+8012802,Rostock Seehafen Nord
+8012803,Rostock-Bramow
+8012804,Rostock-Dierkow
+8012805,Rostock Holbeinplatz
+8012806,Rostock-Kassebohm
+8012807,Rostock-Marienehe
+8012808,Rostock Toitenwinkel
+8012811,Rothenstein(Saale)
+8012813,Rottleberode
+8012816,Rückersdorf
+8012817,Leipzig-Rückmarsdorf
+8012819,Rüdnitz
+8012821,Ruhlsdorf-Zerpenschleuse
+8012823,Ruppertsgrün
+8012824,Ruthenbeck
+8012826,Sättelstädt
+8012827,Saatel
+8012830,Sachsendorf(Calbe)
+8012831,Sachsenhausen(Nordb)
+8012832,Sagard
+8012835,Samtens
+8012839,Sandförde
+8012840,Sandhagen(b Bad Dob)
+8012841,Sanitz(b Rostock)
+8012842,Sarnow
+8012843,Sassnitz
+8012851,Schafstädt
+8012852,Schalkau
+8012853,Scharfenstein
+8012854,Schalkau Mitte
+8012855,Wendisch-Rietz
+8012856,Scharstorf
+8012862,Schierstedt
+8012863,Schkeuditz West
+8012864,Schirgiswalde-Kirschau
+8012865,Schkeuditz
+8012867,Schkopau
+8012869,Görlitz-Rauschwalde
+8012870,Schleife
+8012873,Bad Schlema
+8012881,Schmalkalden-Fachhochschule
+8012888,Schmilka-Hirschmühle
+8012889,Schmölln(Thür)
+8012890,Schmölln(Ol)
+8012892,Schmollensee
+8012895,Schneeberg(Mark)
+8012897,Luckaitztal
+8012898,Schöna
+8012899,Schönau(Hörsel)
+8012902,Schönberg(Meckl)
+8012903,Schönborn(Doberl)
+8012907,Schönebeck-Salzelmen
+8012908,Schöneck(Vogtl)
+8012910,Schönerlinde
+8012914,Schönfließ(Mark) Dorf
+8012918,Schönow(Angerm)
+8012919,Schönstedt
+8012923,Schönwalde(Spreewald)
+8012927,Schüptitz
+8012929,Schwallungen
+8012933,Schwanheide
+8012934,Schwante
+8012937,Schwarzburg
+8012938,Schwarzenberg Hp
+8012939,Schwarzenberg-Neuwelt
+8012940,Schwerin Mitte
+8012941,Schwarzheide Ost
+8012942,Schwarzkollm
+8012943,Schwedt(Oder)
+8012944,Schwedt(Oder)Mitte
+8012946,Schweikershain
+8012947,Schweinsburg-Culten
+8012949,Schwenzin
+8012951,Schwerin Süd
+8012953,Schwerin-Lankow
+8012954,Schwerin-Warnitz
+8012957,Caputh Schwielowsee
+8012960,Schwerin-Margaretenhof
+8012961,Seebach(Mühlhaus)
+8012962,Seebad Ahlbeck
+8012963,Seebad Heringsdorf
+8012965,Seebergen
+8012966,Seefeld(Mark)
+8012967,Seehausen(Altm)
+8012968,Seehausen(Uckermark)
+8012973,Seelow(Mark)
+8012974,Seelvitz
+8012975,Seerhausen
+8012976,Sehma
+8012977,Seifersdorf
+8012979,Seifhennersdorf
+8012981,Seitschen
+8012983,Sellin(Rügen) Ost
+8012984,Seltendorf
+8012986,Serams
+8012988,Siebenbrunn
+8012993,Silberhausen
+8012996,Silberstraße
+8012998,Singen(Thür)
+8013000,Sitzendorf-Unterweißbach
+8013002,Sohl
+8013003,Sohland
+8013004,Sollstedt
+8013005,Solpke
+8013008,Sonneberg(Thür)Hbf
+8013009,Sonneberg(Thür)Nord
+8013010,Sonneberg(Thür)Ost
+8013011,Sonneberg(Thür)West
+8013015,Spechtritz
+8013017,Sponholz
+8013018,Spornitz
+8013021,Berlin-Staaken
+8013022,Stadt Wehlen(Sachs)
+8013023,Stadtilm
+8013025,Stadtroda
+8013029,Stauchitz
+8013033,Steina
+8013034,Steinach(Thür)
+8013036,Steinach(Thür)Süd
+8013037,Steinbach-Hallenberg
+8013039,Steinfeld(Stendal)
+8013040,Steinhausen-Neuburg
+8013046,Stendal Vorbf
+8013047,Stenn
+8013051,Sternfeld
+8013056,Stolberg(Harz)
+8013058,Storkow(Mark)
+8013061,Stotternheim
+8013062,Stralsund Rügendamm
+8013064,Strausberg Nord
+8013069,Strohkirchen
+8013072,Subzin-Liessow
+8013073,Sülstorf
+8013074,Sülzenbrücken
+8013077,Suhl-Heinrichs
+8013079,Sukow(b Schwerin)
+8013080,Syrau
+8013083,Tangerhütte
+8013084,Tangermünde
+8013085,Tangermünde West
+8013087,Tanndorf
+8013089,Tannroda
+8013090,Tantow
+8013092,Taubenheim(Spree)
+8013093,Taucha(Leipzig)
+8013095,Tautenhain
+8013097,Teicha
+8013100,Teltow
+8013104,Teschenhagen
+8013105,Teschow
+8013106,Tessin
+8013109,Groß Köris
+8013110,Teutschenthal
+8013111,Teutschenthal Ost
+8013112,Thale Hbf
+8013113,Thalheim(Erzgeb)
+8013114,Tharandt
+8013115,Theißen
+8013116,Thermalbad Wiesenbad
+8013118,Thießen
+8013123,Thyrow
+8013124,Tiefenau
+8013125,Thale Musestieg
+8013129,Töppeln
+8013131,Torgelow
+8013132,Trassenheide
+8013133,Trassenmoor
+8013135,Traun
+8013137,Trebbin
+8013138,Treben-Lehma
+8013140,Trebitz(Könnern)
+8013141,Trebnitz(Mark)
+8013144,Treuen
+8013145,Treuenbrietzen
+8013146,Treuenbrietzen Süd
+8013150,Triebes
+8013152,Tromsdorf
+8013156,Ueckermünde Stadthafen
+8013158,Uchtspringe
+8013159,Uder
+8013160,Uebigau
+8013161,Ückeritz
+8013162,Ueckermünde
+8013163,Uftrungen
+8013164,Uhlstädt
+8013165,Uhsmannsdorf
+8013171,Unterloquitz
+8013172,Untermaßfeld
+8013173,Unterneudorf
+8013174,Unterwellenborn
+8013175,Unterwiesenthal
+8013177,Utzedel
+8013179,Vachdorf
+8013180,Vahldorf
+8013182,Vatterode
+8013183,Vehlefanz
+8013184,Veilsdorf
+8013185,Velten(Mark)
+8013186,Ventschow
+8013188,Vetschau
+8013190,Vierenstraße
+8013191,Viernau
+8013192,Vieselbach
+8013194,Vinzelberg
+8013198,Vogelsang(Gransee)
+8013201,Voigtsgrün
+8013202,Voigtstedt
+8013205,Wahlitz
+8013210,Walddrehna
+8013212,Waldkirchen(Erzgeb)
+8013215,Walldorf(Werra)
+8013217,Wallhausen(Helme)
+8013220,Wallwitz(Saalkr)
+8013221,Walschleben
+8013222,Walsleben
+8013223,Waltershausen
+8013224,Waltershausen Schnepfenthal
+8013226,Wandersleben
+8013227,Wandlitz
+8013228,Wandlitzsee
+8013230,Wansleben am See
+8013232,Warenshof
+8013235,Warmbad
+8013236,Warnemünde
+8013237,Warnemünde Werft
+8013238,Warnitz(Uckermark)
+8013240,Wangen(Unstrut)
+8013244,Wasserthaleben
+8013245,Wasungen
+8013248,Wefensleben
+8013250,Wegenstedt
+8013251,Weida Mitte
+8013253,Weickersdorf(Sachs)
+8013254,Weida Altstadt
+8013256,Weimar Berkaer Bf
+8013258,Weisen
+8013259,Weißandt-Gölzau
+8013261,Weißenfels West
+8013263,Weißes Roß
+8013266,Weimar West
+8013267,Weinböhla Hp
+8013271,Wellen(Magdeburg)
+8013272,Wellmitz
+8013275,Lutherstadt Wittenberg-Labetz
+8013278,Wensickendorf
+8013279,Joachimsthal Kaiserbahnhof
+8013280,Werdau Nord
+8013285,Werneuchen
+8013286,Wernigerode Elmowerk
+8013291,Werther
+8013293,Wesenberg
+8013295,Westewitz-Hochweitzschen
+8013297,Wetterzeube
+8013305,Wiesenau
+8013307,Wiesenburg(Sachs)
+8013310,Wiesa(Erzgeb)
+8013311,Zschopau Ost
+8013312,Wilischthal
+8013313,Wilmersdorf(Angerm)
+8013315,Wingerode
+8013318,Wipperdorf
+8013319,Wippra
+8013322,Wittenhagen
+8013324,Wittgensdorf Mitte
+8013328,Witzschdorf
+8013329,Wölfershausen
+8013333,Woffleben
+8013334,Wolfsgefärth
+8013335,Wolfen(Bitterfeld)
+8013336,Wolferode
+8013339,Wolgast
+8013340,Wolgast Hafen
+8013341,Wolgaster Fähre
+8013343,Wolkenstein
+8013344,Wolmirstedt
+8013345,Woltersdorf/Nuthe-Urstromtal
+8013346,Woltersdorf(Magdeb)
+8013348,Wülknitz
+8013349,Wünschendorf Nord
+8013350,Wünsdorf-Waldstadt
+8013352,Wüstenfelde
+8013354,Schwerin-Wüstmark
+8013357,Wulfen(Anh)
+8013360,Wurzbach(Thür)
+8013361,Wurzen
+8013362,Bennewitz
+8013363,Wusterhausen(Dosse) NE
+8013365,Wusterwitz
+8013366,Wutha
+8013367,Wutike
+8013368,Zabeltitz
+8013370,Zachun
+8013371,Zahna
+8013373,Zarrendorf
+8013375,Zeddenick(Sachs-A)
+8013376,Zeesen
+8013377,Zehdenick(Mark)
+8013378,Zehdenick-Neuhof
+8013381,Zeithain
+8013383,Zella-Mehlis West
+8013385,Zempin
+8013387,Zeppernick(Magdeb)
+8013389,Zerbst
+8013392,Zernsdorf
+8013393,Zerrenthin
+8013396,Zeulenroda unt Bf
+8013398,Zeutsch
+8013402,Zielitz
+8013403,Ziepel
+8013406,Ziltendorf
+8013410,Zittau Hp
+8013411,Zittau Süd
+8013412,Zittau Vorstadt
+8013413,Zoblitz
+8013414,Zöberitz
+8013415,Zöblitz-Pobershau
+8013418,Zörnigall
+8013423,Zschachenmühle
+8013424,Zschaitz
+8013425,Zscherben
+8013427,Zschopau
+8013428,Zschortau
+8013429,Zühlsdorf
+8013432,Stapelburg
+8013433,Zwickau-Pölbitz
+8013434,Zwickau-Schedewitz
+8013435,Zwönitz
+8013436,Zwota-Zechenbach
+8013437,Zwota
+8013439,Blankenburg(Harz)
+8013444,Dresden Mitte
+8013445,Freital-Potschappel
+8013447,Groß Dalzig
+8013448,Halle-Silberhöhe
+8013450,Chemnitz-Hilbersdorf
+8013452,Bad Lobenstein
+8013455,Magdeburg Herrenkrug
+8013456,Magdeburg-Buckau
+8013459,Niederdorf(Erzgeb)
+8013461,Oschatz
+8013463,Plauen(V) unt Bf
+8013465,Schönebeck-Felgeleben
+8013467,Beelitz-Heilstätten
+8013468,Beelitz Stadt
+8013470,Bernau(b Berlin)
+8013471,Böhlen(Leipzig)
+8013472,Brieselang
+8013473,Buna Werke
+8013474,Camburg(Saale)
+8013475,Dresden-Friedrichstadt
+8013476,Dresden-Plauen
+8013477,Erkner
+8013479,Falkensee
+8013480,Ferch-Lienewitz
+8013481,Golm
+8013483,Hennigsdorf(Berlin)
+8013485,Magdeburg SKET Industriepark
+8013486,Muldenberg
+8013487,Oranienburg
+8013489,Priort
+8013490,Radebeul-Naundorf
+8013492,Seddin
+8013493,Niesky
+8013537,Teufelsmühle
+8013539,Beuchow
+8013547,Hörschel Hp
+8013548,Herleshausen Hp
+8017000,Albrechtshaus
+8017001,Alexisbad
+8017002,Benneckenstein
+8017003,Birkenmoor
+8017004,Brocken
+8017005,Drahtzug
+8017006,Drei Annen Hohne
+8017007,Eisfelder Talmühle
+8017008,Elend
+8017009,Friedrichshöhe
+8017011,Güntersberge
+8017012,Harzgerode
+8017013,Hasselfelde
+8017014,Ilfeld
+8017015,Mägdesprung
+8017016,Netzkater
+8017017,Niedersachswerfen Ost
+8017018,Nordhausen-Altentor
+8017019,Nordhausen-Krimderode
+8017020,Nordhausen Nord
+8017021,Osterteich
+8017022,Schierke
+8017023,Silberhütte NE
+8017024,Sorge
+8017025,Steinerne Renne
+8017026,Sternhaus-Haferfeld
+8017027,Sternhaus-Ramberg
+8017028,Stiege
+8017029,Straßberg(Harz)
+8017030,Tiefenbachmühle
+8017032,Wernigerode-Hasserode
+8017033,Wernigerode-Kirchstraße
+8017034,Wernigerode Westerntor
+8017040,Sophienhof
+8017041,Griesen(Oberbay)
+8017042,Untergrainau
+8017189,Kraslice(Grenze)
+8017345,Lauterbach(Rügen)
+8017346,Falkenhagen Gewerbepark Prignitz
+8017347,Pritzwalk West
+8017400,Chemnitz Alt Chemnitz Center
+8017401,Chemnitz Riemenschneiderstraße
+8017402,Chemnitz Erdmannsdorfer Straße
+8017403,Chemnitz Gustav-Freytag-Straße
+8017404,Lichtenstein Ernst-Schneller-Siedlung
+8017405,Lichtenstein Gewerbegebiet
+8017406,Lichtenstein Hartensteiner Straße
+8017407,Chemnitz Moritzhof
+8017408,Oelsnitz Bahnhofstraße
+8017409,Chemnitz Rösslerstraße
+8017410,Chemnitz Roter Turm
+8017411,Chemnitz Werner-Seelenbinder-Straße
+8017412,Chemnitz Schillerplatz
+8017413,Chemnitz Schneeberger Straße
+8017414,Chemnitz Schule Altchemnitz
+8017415,Stollberg Schlachthofstraße
+8017416,Chemnitz Theaterplatz
+8017417,Chemnitz Treffurthstraße
+8017418,Chemnitz Uhlestraße
+8017419,Chemnitz Zentralhaltestelle
+8017420,Chemnitz-Altchemnitz
+8017421,Klaffenbach Hp
+8017422,Hohndorf Mitte
+8029356,Endingen(Württ)
+8029357,Erzingen(Württ)
+8029358,Dotternhausen-Dormettingen
+8029359,Schömberg(b Rottweil)
+8030918,"Westerland(Sylt), DB AutoZug SyltShuttle"
+8050774,Baden-Baden Bahnhof
+8070002,Birkenstein
+8070003,Frankfurt(M) Flughafen Fernbf
+8070004,Frankfurt(M) Flughafen Regionalbf
+8070005,Heidenheim Voithwerk
+8070006,Flensburg-Weiche
+8070008,Bruchsal Tunnelstr.
+8070009,Bruchsal Schlachthof
+8070010,Heidelsheim Nord
+8070011,Gondelsheim Schloßstadion
+8070012,Diedelsheim
+8070018,Kalenborn(Westerw)
+8070019,Kasbach
+8070020,Hummelberg
+8070021,Kasbach Brauerei Steffens
+8070022,Burladingen West
+8070023,Basdahl Kluste
+8070025,St Augustin Markt
+8070026,Bonn Heussallee/Museumsmeile
+8070027,Bonn-Ramersdorf
+8070028,Bonn-Oberkassel Süd/Römlinghoven
+8070029,Königswinter Fähre
+8070035,List(Sylt)
+8070036,Gnarrenburg Nord
+8070041,Liederbach-Süd
+8070073,Bad Honnef Stadtbahn
+8070074,"Königswinter, Clem.-August-Str."
+8070075,Bonn Konrad-Adenauer-Platz
+8070076,Hangelar Mitte
+8070078,Haubersbronn Mitte
+8070079,Rudersberg Nord
+8070086,Hannover Karl-Wiechert-Allee
+8070088,Mühlheim(Main)-Dietesheim
+8070090,Offenbach(Main) Marktplatz
+8070091,Offenbach(Main) Ledermuseum
+8070092,Offenbach(Main) Kaiserlei
+8070093,Bretten Kupferhälde
+8070096,Albsheim(Eis)
+8070097,Sinsheim Museum/Arena
+8070098,Ubstadt Uhlandstr.
+8070099,Odenheim West
+8070107,Bonn Stadthaus
+8070112,Friedrichshafen Fähre
+8070146,Hamburg-Sternschanze
+8070156,Schwaigern Ost
+8070157,Leingarten Ost
+8070158,Böckingen West
+8070159,Böckingen Sonnenbrunnen
+8070160,Hohenwarth Campingplatz
+8070164,Kahl Kopp/Heide
+8070165,Michelbach(Unterfr) Herrnmühle
+8070166,Mömbris-Strötzbach
+8070170,Durmersheim Nord
+8070171,Heilbronn Bahnhofsvorplatz
+8070172,Heilbronn Harmonie
+8070173,Heilbronn Rathaus
+8070174,Heilbronn Neckar-Turm/K.-S.-Pl
+8070176,Bremerhaven Flugplatz
+8070177,Emden Flugplatz
+8070178,Norddeich Flugplatz
+8070179,Wössingen Ost
+8070180,Husum Bahnhof
+8070182,Nordstrand(b Husum)
+8070193,München Hbf Arnulfstraße
+8070195,Bonn Bertha-von-Suttner-Platz
+8070196,Bonn Juridicum
+8070214,Ostersode
+8070219,Hütten
+8070220,Münchingen Rührberg
+8070230,Lindau Hafen
+8070231,Bonn-Bad Godesberg Stadthalle
+8070237,Helgoland(Südhafen)
+8070252,Albisheim(Pfrimm)
+8070253,Harxheim-Zell
+8070257,Göllheim-Dreisen
+8070258,Sellin(Rügen) West
+8070261,Westerland(Sylt) Johann-Möller-Platz
+8070262,"Westerland(Sylt), Alte Post"
+8070263,"Westerland(Sylt), Waldstraße"
+8070264,"Westerland(Sylt), Lerchenweg"
+8070272,"Limburg(Lahn),Bahnhof/Südseite"
+8070273,"Limburg Süd, ICE-Bahnhof"
+8070274,Brötzingen Sandweg
+8070275,Brötzingen Wohnlichstraße
+8070276,Neuenbürg(Enz) Freibad
+8070277,Rotenbach(Enz)
+8070278,Neuenbürg(Enz) Eyachbrücke
+8070279,Höfen(Enz) Nord
+8070280,Calmbach Süd
+8070281,Bad Wildbad Nord
+8070282,Bad Wildbad Uhlandplatz
+8070283,Bad Wildbad Kurpark
+8070309,Bad Imnau
+8070314,Bad Tönisstein
+8070319,Behringersmühle
+8070323,Binzen
+8070338,Brohl(Brohltalbahn)
+8070342,Burgbrohl
+8070343,Burggaillenreuth
+8070349,Deinste
+8070352,Dinkelsbühl Bf
+8070356,Dornum(Ostfriesl)
+8070368,Engeln
+8070369,Epfenhofen
+8070382,Gammertingen Europastraße
+8070392,Fremdingen Bf
+8070394,Fützen
+8070397,Gasseldorf
+8070400,Gomadingen
+8070401,Gößweinstein
+8070412,Hage KOF
+8070414,Haidkapelle
+8070415,Haigerloch
+8070419,Hammerstein
+8070425,Haselünne EFH
+8070437,Herzlake EFH
+8070450,Kandern
+8070456,Kleinengstingen
+8070458,Kohlstetten
+8070467,Lausheim-Blumegg
+8070474,Löningen EFH
+8070480,Mägerkingen
+8070481,Marbach(b Münsingen)
+8070483,Marienheide
+8070493,Muggendorf
+8070494,Mühringen
+8070495,Münsingen
+8070501,Niederzissen
+8070503,Norden KOF
+8070507,Oberzissen
+8070508,Oettingen(Bay)
+8070509,Offenhausen
+8070520,Rangendingen
+8070524,Rümmingen
+8070548,Stetten (b. Haigerloch)
+8070550,Streitberg
+8070557,Trochtelfingen(Hohenz)
+8070561,Viechtach
+8070567,Wassertrüdingen
+8070569,Weizen
+8070578,Wittlingen
+8070579,Wollbach(Baden)
+8070591,Altingen(Württ)
+8070599,Gumpenried-Asbach
+8070601,Feuchtwangen Bf
+8070604,Gültstein
+8070620,Wilburgstetten Bf
+8070628,Ostrach Bahnhof
+8070630,Pfullendorf
+8070664,Ruhmannsfelden
+8070665,Patersdorf
+8070666,Teisnach
+8070667,Böbrach
+8070668,Nußberg-Schönau
+8070669,Gstadt(Wanderbahn)
+8070670,Schnitzmühle
+8070678,Metzingen-Neuhausen
+8070679,Dettingen-Mitte
+8070680,Bad Urach Wasserfall
+8070704,Aachen Schanz
+8070715,Wedel-Schulau Wilkomm Höft
+8070716,Nürnberg Flughafen
+8070717,Nürnberg Hohe Marter
+8070718,Nürnberg Opernhaus
+8070719,Nürnberg Rennweg
+8070720,Nürnberg Schoppershof
+8070721,Nürnberg St.Leonhard
+8070722,Nürnberg Wöhrder Wiese
+8070723,Nürnberg-Plärrer Richtung Hbf.
+8070724,Nürnberg-Plärrer
+8070725,Nürnberg Hbf(U-Bahn)
+8070726,Nürnberg-Nordostbf. (U-Bahn)
+8070727,Nürnberg Rathenauplatz
+8070728,Nürnberg Röthenbach
+8070729,Nürnberg Rothenburger Str.(U-Bahn)
+8070730,Nürnberg-Schweinau(U-Bahn)
+8070731,Nürnberg Ziegelstein
+8070732,Nordhausen Hesseröder Straße
+8070733,Nordhausen Ricarda-Huch-Straße
+8070734,Mesch Neue Mühle
+8070738,Bonn Bundesrechnungshof/Auswärtiges Amt
+8070739,Bonn Museum Koenig
+8070740,Bonn West
+8070741,Bonn Brühler Str.
+8070742,"Bonn-Gronau, Dt. Telekom / Pl. d. V. Nat."
+8070743,"Bonn-Gronau, Dt. Telekom / Ollenhauerstr."
+8070744,Bonn-Hochkreuz Rheinaue
+8070745,Bonn-Beuel Rathaus
+8070746,Bonn Obere Wilhelmstr.
+8070748,"Bonn-Vilich-Rheindorf, Adelheidisstr."
+8070749,Bonn-Vilich-Müldorf
+8070750,Bonn-Vilich
+8070751,"Bonn-Limperich, Küdinghoven"
+8070752,Bonn-Limperich
+8070753,Bonn-Oberkassel Nord
+8070754,Bonn-Oberkassel Mitte
+8070755,"Bonn-Plittersdorf, Wurzerstr."
+8070756,Bonn-Bad Godesberg Plittersdorfer Str.
+8070757,Bonn Hochkreuz/Deutsches Museum Bonn
+8070758,Bonn Max-Löbner-Str./Friesdorf
+8070759,Bonn Robert-Schuman-Platz
+8070760,Königswinter-Oberdollendorf Nord
+8070761,Königswinter-Oberdollendorf
+8070762,Königswinter Denkmal
+8070763,Königswinter-Longenburg
+8070764,Hangelar West
+8070765,Hangelar Ost
+8070766,St Augustin Ort
+8070767,St Augustin Kloster
+8070768,St Augustin-Mülldorf
+8070769,Bonn Universität/Markt
+8070770,Bad Honnef Am Spitzenbach
+8070771,Bonn-Limperich Nord
+8070772,"Bonn-Ramersdorf, Schießbergweg"
+8070776,Ilfeld Neanderklinik
+8070777,Nordhausen Bahnhofsplatz
+8070786,München Flughafen Terminal 1
+8070787,München Flughafen Terminal 2
+8070791,Heilbronn Finanzamt
+8070792,Heilbronn Friedensplatz
+8070793,Heilbronn Pfühlpark
+8070800,Neßmersiel
+8070801,Halfing
+8070802,Amerang
+8070803,Obing
+8070804,Mauthaus
+8070805,Dürrenwaid Bahnhof
+8070806,Fischhaus
+8070807,Kalteneck
+8070809,Fürsteneck
+8070810,Röhrnbach
+8070811,Schierling
+8070812,Langquaid(b Eggmühl)
+8070813,Luttum
+8070816,Krauschwitz Ort
+8070817,Mertendorf Ort
+8070818,Stößen Zeitzer Straße
+8070819,Wethau Mitte
+8070832,Mücka Schule
+8070833,Niesky Ödernitzer Straße
+8070834,Uhyst Gaststätte
+8070835,Lohsa Ziegelteich
+8070845,Limbach(Vogtl) Markt
+8070846,Ostritz Stadt Dresden
+8070847,Hirschfelde Markt
+8070852,Görlitz-Weinhübel Joh.-R.-Becher-Straße
+8070856,Eisenheim
+8070857,Escherndorf
+8070858,Prosselsheim
+8070859,Seligenstadt Mainschleifenbahn
+8070860,Volkach-Astheim
+8070862,Lambrecht(Pfalz) Post
+8070863,Neidenfels Glatz
+8070865,Söllingen Kapellenstraße
+8070866,Eggingen
+8070879,Westerende
+8070880,Radolfzell Fähre
+8070886,Werdum Feuerwehr
+8070887,Neidenfels Spinnerei
+8070902,Schurzfell
+8070903,"Rielasingen, Schnaidholz"
+8070904,"Rielasingen, Ramsener Str."
+8070932,Netzschkau Markt
+8070935,Heiligengrabe Feuerwehr
+8070974,Schmiechen Albbahn
+8070999,Bräunlingen Industriegebiet
+8071001,Gemmingen West
+8071002,Schwaigern(Württ) West
+8071003,Leingarten Mitte
+8071014,"Konstanz, Konzilstraße"
+8071032,"Konstanz, Marktstätte"
+8071082,Bonn-Bad Godesberg Bahnhof
+8071139,Bredstedt Bahnhof
+8071174,Chemnitz Friedrichstraße
+8071186,Heidelsheim Marktplatz
+8071189,Rastatt Bahnhof Ost
+8071259,Büsum (Hafen)
+8071261,"Konstanz, Sternenplatz"
+8071284,Nürnberg Hbf (Bahnhofvorplatz Hauptausgang)
+8071352,Cuxhaven(Fährhafen)
+8071353,Cuxhaven(Alte Liebe)
+8071489,"Konstanz, Schweizer Bahnhof"
+8071495,Schweppenburg-Heilbrunnen
+8071497,Ruit Knittlinger Straße
+8071512,Gondelsheim Graf-Douglas-Straße
+8071584,"Konstanz, Zähringerplatz"
+8071642,Zwönitz Gymnasium
+8071651,Brenk
+8071736,Gondelsheim Marktplatz
+8071745,Heidelsheim Schwimmbad
+8071823,Ölbronn Hindenburgstraße
+8071906,Weiler (Brohltal)
+8072132,Aindorf
+8072198,Leisnig Bf
+8072211,Schömberg Stausee
+8072764,Pittenhart
+8073049,Sternberg(Meckl)ZOB
+8073368,Köln Messe/Deutz Gl.11-12
+8073400,Konstanz Hafen
+8073410,Zielitz Ort
+8073432,Kressbronn Hafen
+8073524,Langenargen Hafen
+8074343,Niebüll neg
+8074446,Nonnenhorn Hafen
+8074703,Pritzwalk Hainholz
+8075074,Rhöndorf Bahnhof
+8075556,Siegburg Bahnhof
+8075937,Überlingen Hafen
+8075938,Köln KD
+8075939,Porz(Rhein) KD
+8075940,Wesseling KD
+8075941,Bonn KD
+8075942,Bonn-Bad Godesb. KD
+8075944,Bad Honnef(Rhein) KD
+8075945,Unkel KD
+8075946,Remagen KD
+8075947,Linz(Rhein) KD
+8075948,Bad Breisig KD
+8075949,Bad Hönningen KD
+8075950,Andernach KD
+8075951,Neuwied KD
+8075952,Koblenz KD
+8075953,Niederlahnstein KD
+8075954,Oberlahnstein KD
+8075955,Rhens KD
+8075956,Braubach KD
+8075957,Boppard KD
+8075958,Kamp-Bornhofen KD
+8075959,Bad Salzig KD
+8075960,St Goarshausen KD
+8075961,St Goar KD
+8075962,Oberwesel KD
+8075963,Kaub KD
+8075964,Bacharach KD
+8075965,Lorch(Rhein) KD
+8075967,Assmannshausen KD
+8075968,Bingen(Rhein) KD
+8075969,Rüdesheim(Rhein) KD
+8075970,Eltville KD
+8075971,Wiesbaden-Biebr. KD
+8075972,Mainz KD
+8075976,Koblenz Moselweiß Anleger
+8075977,Winningen(Mosel) KD
+8075978,Kobern-Gondorf SF
+8075979,Alken KD
+8075980,Brodenbach KD
+8075981,Moselkern KD
+8075982,Treis SF
+8075983,Cochem(Mosel) KD
+8076172,Harlesiel Anleger
+8076218,Wasserburg Hafen
+8076720,Neuharlingersiel Anleger
+8077108,München Flughafen Terminal MVV
+8077274,Alzenau Nord
+8077275,Alzenau Burg
+8077434,Neckarbischofsheim Nord
+8077708,"München Flugh. Besucherpark, Bahnhof"
+8077770,Dagebüll Kirche
+8077771,Haselbrunn
+8077772,Nenzingen
+8077773,Stahringen
+8077774,Stockach NE
+8077775,Wahlwies
+8079001,Hallig Hooge
+8079002,Hallig Langeneß
+8079003,Schlüttsiel
+8079004,Pellworm
+8079006,Bad Schachen
+8079007,Mainau(Bodensee)
+8079008,Dingelsdorf
+8079011,Büsingen
+8079012,Gaienhofen
+8079013,Hemmenhofen
+8079014,Öhningen
+8079015,Wangen(Bodensee)
+8079018,Linkenheim Rathaus
+8079021,Maasbüll(b Niebüll)
+8079022,Deezbüll
+8079035,Karlsruhe Marktplatz (Kaiserstraße)
+8079041,Karlsruhe Bahnhofsvorplatz
+8079042,Hochstetten Grenzstraße
+8079045,Karlsruhe Albtalbf
+8079046,Karlsruhe Marktplatz (Pyramide)
+8079047,Karlsruhe-Neureut Kirchfeld
+8079048,Spielberg
+8079056,Tuttlingen Zentrum
+8079057,Grötzingen Oberausstraße
+8079058,Jöhlingen West
+8079059,Rinklingen
+8079060,Bretten Wannenweg
+8079069,Oldentrup
+8079073,"Singen(Htw), Bahnhof"
+8079074,"Rielasingen, Kirche"
+8079075,Amstetten(W) Lokalbahn
+8079077,Eppingen West
+8079078,Oberderdingen-Flehingen Industrie
+8079080,Bruchweiler
+8079081,Dahn Süd
+8079083,Nohfelden
+8079084,Ahlbeck Grenze
+8079085,Dahn
+8079087,Bundenthal-Rumbach
+8079088,Hinterweidenthal Ort
+8079089,Albstadt-Ebingen West
+8079090,Ersingen West
+8079092,Äpfingen
+8079093,Ochsenhausen
+8079094,Reinstetten
+8079095,Hannover-Nordstadt
+8079096,Hohegeiß
+8079097,Hannover-Ledeburg
+8079098,Barabein
+8079099,Herrlishöfen
+8079100,Sulmingen
+8079101,Wennedach
+8079115,Borkum Reede
+8079118,Busenberg-Schindhard
+8079119,Maselheim
+8079125,Karlsruhe Durlacher Tor
+8079126,Karlsruhe Entenfang
+8079128,Karlsruhe-Kniel. Rheinbergstr.
+8079132,Insel Reichenau
+8079133,Jöhstadt
+8079134,Jöhstadt Schlössel
+8079135,Jöhstadt Loreleifelsen
+8079136,Schmalzgrube
+8079137,Steinbach (bei Jöhstadt)
+8079138,Schmalzgrube Forellenhof
+8079139,Steinbach(b Jöhstadt) Stolln
+8079140,Köln-Blumenberg
+8079141,Wörth(Rhein) Bürgerpark
+8079142,Wörth(Rhein) Bienwaldhalle
+8079143,Wörth(Rhein) Alte Bahnmeisterei
+8079144,Karlsruhe Mühlburger Tor
+8079146,Neidenfels
+8079147,Hinterweidenthal Ost
+8079149,Unteröwisheim M.-Luther-Str.
+8079151,Dreieich-Weibelfeld
+8079152,Vatteröder Teich
+8079153,"Hörnum, Mitte"
+8079154,"Hörnum, Nord"
+8079155,"Hörnum, Steintal"
+8079156,"Kampen, Dikstieg"
+8079157,"Kampen, Süd"
+8079158,"Keitum, Kirche"
+8079160,"List, Schule"
+8079161,List(Sylt) Alte Bahnhofstraße
+8079162,"List, Am Brünk"
+8079163,"List(Sylt), Dünenstraße"
+8079164,"List, Mellhörn"
+8079165,"List, Süderhörn"
+8079166,"Morsum, Skellinghörn"
+8079167,Möskental
+8079169,Norddörfer Schule
+8079171,"Rantum, Campingplatz"
+8079172,"Rantum, Nord"
+8079173,"Rantum, Seeheim"
+8079174,"Rantum, Süd"
+8079175,"Samoa, FKK-Strand"
+8079176,Schauinsland
+8079177,"Sylt-Ost, Sportanlage"
+8079178,"Tinnum, Gemeindehaus"
+8079179,"Tinnum, Königskamp"
+8079180,"Tinnum, Siedlung"
+8079181,"Wassertal, Sansibar"
+8079182,"Wenningstedt, Hauptstraße/Friesenhof"
+8079183,Wenningstedt(Sylt) Siedlung
+8079185,Westerland(Sylt) Campingplatz
+8079186,Westerland(Sylt) FKK-Strand
+8079189,Westerland(Sylt) Marinesiedlung
+8079191,Westerland(Sylt) Norderstraße
+8079192,Westerland(Sylt) Stadtmitte
+8079193,"Westerland, ZOB"
+8079194,"List, Mövengrund"
+8079211,Wörth(Rhein) Rathaus
+8079212,Wörth(Rhein) Badallee
+8079213,Wörth(Rhein) Badepark
+8079216,"Keitum, Bahnhof"
+8079217,"Grenzach, Grenzacher Horn"
+8079218,"Grenzach, Im Rippel"
+8079219,"Grenzach, Hornrain"
+8079220,Grenzach Bärenfelsstraße
+8079221,"Grenzach, Seidenweg"
+8079222,"Grenzach, Sparkasse"
+8079223,"Singen (Htw), F. Ebert-Platz"
+8079224,"Wyhlen, Schulzentrum"
+8079225,"Wyhlen, Hutmattenstraße"
+8079226,"Wyhlen, Hebelschule"
+8079227,"Wyhlen, Engeltal"
+8079228,"Wyhlen, Siedlung"
+8079229,Haltingen Zentrum
+8079230,Haltingen Bahnhof
+8079231,Haltingen Markgräflerstr.
+8079232,Haltingen Weinbergstraße
+8079233,Weil am Rhein Berliner Platz
+8079234,Weil am Rhein Friedhof
+8079235,Weil am Rhein Grün 99/Laguna
+8079236,Weil am Rhein Läublinpark
+8079237,Weil am Rhein Marktstraße
+8079238,Steinbach(b Jöhstadt) Wildbach
+8079239,Weil am Rhein Otterbach Zoll
+8079240,Weil am Rhein Rathaus
+8079241,Weil am Rhein Turmstraße
+8079242,Weil am Rhein Vitra
+8079246,"Singen (Htw), Heidenbühl"
+8079312,Brüel(Meckl) Markt
+8079313,Krassow
+8079314,Kritzow Gewerbegebiet B192 Hornstorf
+8079316,Neukloster(Mckl) ZOB
+8079318,Reinstorf Mitte
+8079320,Tempzin Abzw
+8079321,Weitendorf (b Brüel)
+8079324,Wismar ZOB
+8079325,Warin Post
+8079326,Zurow Schule
+8079604,Tessin West
+8079605,Herzhorn
+8079606,Helbra
+8079616,Singen Industriegeb.
+8079617,Zeutern Sportplatz
+8079629,Rostock Thierfelder Str.
+8079631,Heilbr.-Böckingen Berufsschulzentrum
+8079632,Frankfurt(Main)Messe
+8079709,"Singen (Htw), Rielasinger-Str."
+8079795,"Singen (Htw), Markuskirche"
+8079808,"Rielasingen, Zoll"
+8079823,"Rielasingen, Mühle"
+8079989,"Singen (Htw), Julius-Bührer-St"
+8080040,Albrechtshof
+8080060,Augustusburg Bergstation
+8080061,Erdmannsdorf Talstation
+8080070,Potsdam-Babelsberg
+8080100,Bergfelde(b Berlin)
+8080132,Gronau(Westf)Gr
+8080170,Birkengrund
+8080190,Birkenwerder(b Berlin)
+8080200,Borgsdorf
+8080260,Dallgow-Döberitz
+8080280,Delitzsch ob Bf
+8080340,Eichwalde
+8080370,Elstal
+8080440,Fredersdorf(b Berlin)
+8080450,Teltow Stadt
+8080460,Genshagener Heide
+8080530,Potsdam Griebnitzsee
+8080560,Halle Dessauer Brücke
+8080570,Halle Rosengarten
+8080580,Halle Steintorbrücke
+8080590,Halle Südstadt
+8080600,Halle Wohnstadt Nord
+8080610,Halle Zoo
+8080620,Halle Zscherbener Straße
+8080630,Halle(W) Gerry-Weber-Stadion
+8080660,Magdeburg Hasselbachplatz
+8080680,Strausberg-Hegermühle
+8080710,Hohen Neuendorf West
+8080720,Hohen Neuendorf(b Berlin)
+8080750,Hoppegarten(Mark)
+8080810,Kloster(Hiddensee)
+8080830,Leipzig Anger-Crottendorf
+8080840,Leipzig Coppiplatz
+8080850,Leipzig Grünauer Allee
+8080860,Leipzig Karlsruher Str
+8080870,Leipzig Industriegelände West
+8080890,Leipzig-Lindenau
+8080900,Leipzig-Marienbrunn
+8080930,Leipzig-Sellerhausen
+8080940,Leipzig Allee-Center
+8080970,Mahlow
+8080980,Mühlenbeck-Mönchmühle
+8080984,Todtnau
+8080990,Ilfeld Schreiberwiese
+8080991,Niedersachswerfen Ilfelder Straße
+8080992,Niedersachswerfen Herkulesmarkt
+8080998,Ilfeld Bad
+8081010,Neuendorf(Hiddensee)
+8081011,Schaprode
+8081012,Stralsund Hafen
+8081014,Sassnitz-Mukran Fährhafen
+8081020,Neuenhagen(b.Berlin)
+8081085,Bad Doberan Stadtmitte
+8081100,Ostseebad Ahrenshoop Mitte
+8081110,Ostseebad Dierhagen(Darß)
+8081120,"Ostseebad Prerow, Hafenstraße"
+8081130,"Ostseebad Wustrow, Mitte"
+8081140,"Ostseebad Zingst, Zentrum"
+8081150,Petershagen Nord
+8081210,Röntgental
+8081220,Saarmund
+8081260,Schönebeck Süd
+8081270,Schönebeck-Frohse
+8081290,Schönfließ(b Oranienburg)
+8081300,Schönwalde(Barnim)
+8081420,Strausberg Stadt
+8081470,Vitte(Hiddensee)
+8081530,Wieck(Darß)
+8081534,"Born(Darß), Waldschänke"
+8081535,Boltenhagen
+8081540,Wildau
+8081560,Zepernick(Bernau)
+8081580,Zeuthen
+8081586,Seegefeld
+8081688,Cottbus-Willmersdorf Nord
+8081722,Lehnitz
+8082058,Baddeckenstedt Bf
+8082487,Braunlage ZOB
+8082673,Hechingen Landesbahn
+8083368,Köln Messe/Deutz Gl. 9-10
+8084043,Niebüll Bahnhof
+8084066,Kirchweidach
+8084067,Maximiliansau West
+8084068,Maxau
+8084070,Griefstedt
+8084074,Neustift(b Passau)
+8084075,Bad Füssing
+8084076,"Rantum, Mitte"
+8084077,Diekjen-Deel
+8084078,Puan Klent(Sylt)
+8084079,"Hörnum, Hafen"
+8084099,Archsum
+8084100,Braderup(Wenningstedt)
+8084101,"Keitum, Schnittis Eck"
+8084102,"Kampen, Mitte"
+8084103,"List, Fähre"
+8084104,"Munkmarsch, Hafen"
+8084105,"Morsum, Kleinmorsum"
+8084106,"Keitum, Parkplatz West"
+8084107,"Tinnum, Mitte"
+8084108,"Wenningstedt, Mitte"
+8084109,Straßberg-Glasebach
+8084119,"Kampen(Sylt), Hamburger Kinderheim"
+8084124,Vogelkoje(Sylt)
+8084125,Westerheide-Blidsel
+8084126,"Westerland(Sylt),Nordseeklinik"
+8084133,Tinnum(Sylt) Einkaufszentrum
+8084134,Tinnum(Sylt) Neuapostolische Kirche
+8084152,Westerland(Sylt) Wenningstedter Weg
+8084684,Tinnum(Sylt) Culemeyerstraße
+8084905,"Westerland(Sylt),DRK"
+8085001,Bruchsal Schloßgarten
+8085002,Bruchsal Stegwiesen
+8085003,Ubstadt Salzbrunnenstr
+8085005,Böblingen Danziger Str
+8085006,Böblingen Südbf
+8085007,Böblingen Heusteigstr
+8085008,Böblingen Zimmerschlag
+8085009,Holzgerlingen Nord
+8085010,Holzgerlingen Bf
+8085011,Holzgerlingen Buch
+8085012,Weil im Schönbuch Troppel
+8085013,Weil im Schönbuch Röte
+8085014,Weil im Schönbuch Untere Halde
+8085015,Dettenhausen
+8085311,"Niebüll, DB AutoZug SyltShuttle"
+8087020,Vechta-Stoppelmarkt
+8087022,Künzelsau Bf
+8087025,Ahlbeck Ostseetherme
+8087026,Heringsdorf Neuhof
+8087027,Stubbenfelde
+8087039,Attendorn-Hohen Hagen
+8087060,Ludwigshafen(Rhein) BASF Nord
+8087061,Hörselgau
+8087062,Münchweiler(Alsenz)
+8087063,Kronberg Süd
+8087064,Oberursel-Stierstadt
+8087065,Wehrden
+8087067,Weingarten Berg
+8087080,Maulbronn West
+8087081,Neuhaus am Rennweg
+8089000,Berlin-Schulzendorf
+8089001,Berlin Alexanderplatz
+8089002,Berlin Anhalter Bf
+8089003,Berlin Attilastr.
+8089004,Berlin Baumschulenweg
+8089005,Berlin Bellevue
+8089006,Berlin Betriebsbf Rummelsburg
+8089007,Berlin Betriebsbf Schöneweide
+8089008,Berlin Bornholmer Str.
+8089009,Berlin Botanischer Garten
+8089010,Berlin Buckower Chaussee
+8089011,Berlin Greifswalder Str
+8089012,Berlin Feuerbachstr.
+8089013,Berlin Frankfurter Allee
+8089014,Berlin Gehrenseestr.
+8089015,Berlin Gesundbrunnen(S)
+8089016,Berlin Grünbergallee
+8089017,Berlin Hackescher Markt
+8089018,Berlin Humboldthain
+8089019,Berlin Jannowitzbrücke
+8089020,Berlin Landsberger Allee
+8089021,Berlin Hbf (S-Bahn)
+8089022,Berlin Mehrower Allee
+8089023,Berlin Mexikoplatz
+8089024,Berlin Nordbahnhof
+8089025,Berlin-Heiligensee
+8089026,Berlin Nöldnerplatz
+8089027,Berlin Oranienburger Str.
+8089028,Berlin Ostkreuz
+8089030,Berlin Plänterwald
+8089031,Berlin Poelchaustr.
+8089032,Berlin Potsdamer Platz (S)
+8089033,Berlin Prenzlauer Allee
+8089034,Berlin Priesterweg
+8089035,Berlin Raoul-Wallenberg-Str.
+8089036,Berlin Rathaus Steglitz
+8089037,Berlin Savignyplatz
+8089038,Berlin Schichauweg
+8089039,Berlin Schönhauser Allee
+8089040,Berlin Springpfuhl
+8089041,Berlin Storkower Str
+8089042,Berlin Sundgauer Str
+8089043,Berlin Treptower Park
+8089044,Berlin Brandenburger Tor
+8089045,Berlin Warschauer Straße
+8089047,Berlin Westkreuz
+8089048,Berlin Wollankstraße
+8089049,Berlin Wuhletal
+8089050,Berlin Yorckstr.(S2)
+8089051,Berlin Yorckstr.(S1)
+8089052,Berlin-Adlershof
+8089053,Berlin-Stresow
+8089054,Berlin-Altglienicke
+8089055,Berlin-Biesdorf
+8089056,Berlin-Blankenburg
+8089057,Berlin-Buch
+8089058,Berlin-Friedenau
+8089059,Berlin-Friedrichsfelde Ost
+8089060,Berlin-Friedrichshagen
+8089061,Berlin-Frohnau
+8089062,Berlin-Grunewald
+8089063,Berlin-Grünau
+8089064,Berlin-Hermsdorf
+8089065,Berlin-Hirschgarten
+8089068,Berlin-Kaulsdorf
+8089069,Berlin-Köpenick
+8089070,Berlin-Lichtenrade
+8089071,Berlin-Lichterfelde West
+8089072,Berlin-Mahlsdorf
+8089073,Berlin Südkreuz (S)
+8089074,Berlin-Marienfelde
+8089075,Berlin-Marzahn
+8089077,Berlin-Neukölln
+8089078,Berlin-Nikolassee
+8089079,Berlin-Oberspree
+8089080,Berlin-Pankow
+8089081,Berlin-Pankow-Heinersdorf
+8089082,Berlin-Rahnsdorf
+8089084,Berlin-Rummelsburg
+8089085,Berlin-Schlachtensee
+8089087,Berlin-Schönholz
+8089088,Berlin-Spindlersfeld
+8089089,Berlin-Tegel (S)
+8089090,Berlin-Tempelhof
+8089091,Berlin-Tiergarten
+8089092,Berlin-Waidmannslust
+8089093,Berlin-Wartenberg
+8089094,Berlin-Wilhelmshagen
+8089095,Berlin-Wilhelmsruh
+8089096,Berlin-Wittenau (Wilhelmsruher Damm)
+8089097,Berlin-Wuhlheide
+8089098,Berlin-Zehlendorf
+8089099,Bernau-Friedenstal
+8089100,Berlin Jungfernheide
+8089101,Berlin Eichborndamm
+8089102,Berlin Karl-Bonhoeffer-Klinik
+8089103,Berlin Alt-Reinickendorf
+8089104,Berlin Köllnische Heide
+8089105,Berlin Hermannstraße
+8089106,Berlin Innsbrucker Platz
+8089107,Berlin Bundesplatz
+8089108,Berlin Hohenzollerndamm
+8089109,Berlin-Halensee
+8089110,Berlin Messe Nord/ICC (Witzleben)
+8089111,Berlin Westend
+8089112,Berlin Heidelberger Platz
+8089113,Berlin-Lichterfelde Ost
+8089114,Berlin-Lankwitz
+8089115,Berlin Südende
+8089116,Berlin Westhafen
+8089118,Berlin Beusselstraße
+8089119,Neuenburg(Baden)
+8089120,Herzogenrath(Gr)
+8089122,Forst(Gr)
+8089123,Grambow(Gr)
+8089124,Frankfurt(Oder)(Gr)
+8089126,Schöna(Gr)
+8089127,Tantow(Gr)
+8089129,Zittau(Gr)
+8089131,Berlin-Wedding
+8089147,Sassnitz Fährhafen
+8089222,Wolfsburg Busbf
+8089251,Bad Neustadt(Saale) Busbahnhof
+8089327,Berlin Sonnenallee
+8089328,Berlin Messe Süd (Eichkamp)
+8089329,Berlin Heerstraße
+8089330,Berlin Olympiastadion
+8089331,Berlin-Pichelsberg
+8089382,Waldenburg-Hohebuch
+8089472,Berlin-Lichterfelde Süd
+8089473,Berlin Osdorfer Straße
+8089474,Berlin-Schöneberg
+8089537,Berlin Julius-Leber-Brücke
+8090001,Ittersbach Rathaus
+8090020,Nürtingen-Vorstadt
+8090021,Nürtingen-Roßdorf
+8090022,Frickenhausen Kelterstraße
+8096001,DELITZSCH
+8096002,HELGOLAND
+8096003,BERLIN
+8096004,JENA
+8096005,PLAUEN
+8096006,SALZGITTER
+8096007,PÖßNECK
+8096008,LEIPZIG
+8096009,HAMBURG
+8096010,ELSTERWERDA-
+8096011,HIDDENSEE
+8096012,HANNOVER MESSE
+8096014,DÜSSELDORF FLUGHAFEN (DUS)
+8096016,GROß GERAU-
+8096017,HERSBRUCK(PEGNITZ)
+8096018,LAUF(PEGNITZ)
+8096019,SCHWAIG(B NÜRNBERG)
+8096021,FRANKFURT(MAIN)
+8096022,KÖLN
+8096023,KASSEL
+8096030,Berlin Flughafen Tegel
+8096031,BAD ABBACH ORT
+8098044,Bonn Hbf (tief)
+8098096,Stuttgart Hbf (tief)
+8098105,Frankfurt Hbf (tief)
+8098147,Hamburg-Harburg(S)
+8098160,Berlin Hbf (tief)
+8098193,Kassel Hbf (tief)
+8098261,München Hbf Gl.27-36
+8098262,München Hbf Gl.5-10
+8098263,München Hbf (tief)
+8098348,Stolberg(Rheinl)Hbf Gl.27
+8098549,Hamburg Hbf (S-Bahn)
+8098553,Hamburg-Altona(S)
+8098555,Bensersiel NE
+8099503,Hildesheim Gbf
+8099506,Stolberg(Rheinl)Gbf

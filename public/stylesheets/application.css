@@ -799,9 +799,21 @@ div.toolbar {
   right: 0;
 }
 
-#origin_with_station label,
-#destination_with_station label {
-  display: none;
+#origin_with_station .stations label,
+#destination_with_station .stations label {
+  /*display: block;*/
+  font-weight: normal;
+  float: none;
+  width: 100%;
+  padding-left: 160px;
+  max-width: 270px;
+}
+
+#origin_with_station .stations input,
+#destination_with_station .stations input {
+  float: none;
+  width: auto;
+  min-width: 0;
 }
 
 

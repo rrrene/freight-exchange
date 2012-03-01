@@ -1,10 +1,10 @@
 require File.join(File.dirname(__FILE__), 'seed_data') 
 
 [Station].each do |model|
-  Dir["#{Rails.root}/db/seeds/#{model.to_s.tableize}*.csv"].each do |f|
-    puts f
+  Dir["#{Rails.root}/db/seeds/#{model.to_s.tableize}/*.csv"].each do |f|
+    puts "Opening: #{File.basename(f)}"
     @read_headers = false
-    FasterCSV.foreach(f, :col_sep => ";") do |row|
+    FasterCSV.foreach(f) do |row|
       resource = model.new
       if @read_headers
         row.each_with_index do |value, index|
@@ -14,11 +14,12 @@ require File.join(File.dirname(__FILE__), 'seed_data')
       else
         @headers = row
         @read_headers = true
-        puts "headers: #{@headers}"
+        puts "headers: #{@headers.inspect}"
       end
 
       begin
         resource.save
+        print "."
       rescue
         warn resource.inspect
       end
