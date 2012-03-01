@@ -7,12 +7,10 @@
         <%= link_to t('common.footer.contact_link'), contact_path %>
       </div>
       <div class="float_right">
-        <% if logged_in? %>
-          <span><%= t("common.navi.select_locale") %></span>
-          <% available_locales.each do |locale| %>
-            <%= link_to_unless(I18n.locale == locale, t("common.navi.locale_#{locale}"), params.merge(:locale => locale)) %>
-            <%= "|" unless locale == available_locales.last %>
-          <% end %>
+        <span><%= t("common.navi.select_locale") %></span>
+        <% available_locales.each do |locale| %>
+          <%= link_to_unless(I18n.locale == locale, t("common.navi.locale_#{locale}"), params.merge(:locale => locale)) %>
+          <%= "|" unless locale == available_locales.last %>
         <% end %>
       </div>
     </div>
