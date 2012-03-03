@@ -69,7 +69,7 @@ module ApplicationHelper
   #     # => '<a href="http://www.example.org/">www.example.org</a>'
   def contact_info(object, attr)
     if %w(phone fax).include?(attr)
-      phone_number(object.__send__(attr))
+      content_tag :span, phone_number(object.__send__(attr))
     elsif %w(email website).include?(attr)
       auto_link(object.__send__(attr).to_s).html_safe
     else
@@ -172,7 +172,7 @@ module ApplicationHelper
     raise "only supports 1 key: link_to_filter" if p.size > 1
     key = p.keys.first
     active = !!params[key]
-    link_to text, p.reverse_merge(params), opts.reverse_merge(:class => "filter #{key} #{active ? :active : nil}".strip)    
+    link_to text, p.reverse_merge(params), opts.merge(:class => "filter #{opts[:class]} #{key} #{active ? :active : nil}".strip)
   end
   
   # Returns a link back to the last visited page with a localized caption.

@@ -9,14 +9,14 @@
     <table>
       <thead>
         <tr>
-          <th colspan="2"><b><%= company.name %></b></th>
+          <th colspan="2"><b><%= link_to company.name, company, :class => "company" %></b></th>
         </tr>
       </thead>
       <% %w(address address2 zip city country phone fax email website).each do |attr| %>
         <% if company[attr].full? %>
           <tr>
             <th><%= Company.human_attribute_name(attr) %></th>
-            <td><%= contact_info(company, attr) %></td>
+            <td class="contact_<%= attr %>"><%= contact_info(company, attr) %></td>
           </tr>
         <% end %>
       <% end %>

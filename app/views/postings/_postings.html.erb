@@ -16,7 +16,7 @@
   <tbody>
     <% collection.each do |ar| %>
       <tr class="<%= posting_html_classes(ar) %>">
-        <td class="pretty_id"><%= link_to ar.pretty_id, ar %></td>
+        <td class="pretty_id"><%= link_to ar.pretty_id, ar, :class => ar.class.to_s.underscore %></td>
         <td class="origin_date"><%= l(ar.valid_until, :format => :date) if ar.valid_until.present? %></td>
         <% %w(origin destination).each do |origin_or_destination| %>
           <td class="<%= origin_or_destination %>_name">

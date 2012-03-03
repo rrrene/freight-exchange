@@ -27,7 +27,7 @@
     <tbody>
       <% collection.each do |ar| %>
         <tr class="">
-          <td class="name"><%= link_to ar.name, ar %></td>
+          <td class="name"><%= link_to ar.name, ar, :class => ar.class.to_s.underscore %></td>
           <td class="zip"><%= ar.zip %></td>
           <td class="city"><%= ar.city %></td>
           <td class="country"><%= ar.country %></td>

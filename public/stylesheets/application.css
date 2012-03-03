@@ -880,3 +880,36 @@ div.toolbar {
   min-width: 0;
   margin-right: 0.3em;
 }
+
+a.loading_space,
+a.freight,
+a.company {
+  padding-left: 18px;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+}
+
+a.freight {
+  background-image: url(/images/icons/box.png);
+}
+a.loading_space {
+  background-image: url(/images/icons/lorry.png);
+}
+a.company {
+  background-image: url(/images/icons/building.png);
+}
+
+td.contact_phone span {
+  padding-left: 18px;
+  background: url(/images/icons/phone.png) no-repeat;
+}
+
+td.contact_email a {
+  padding-left: 18px;
+  background: url(/images/icons/email.png) no-repeat;
+}
+
+td.contact_website a {
+  padding-left: 18px;
+  background: url(/images/icons/link.png) no-repeat;
+}
