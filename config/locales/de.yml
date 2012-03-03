@@ -238,9 +238,9 @@ de:
       user_role:
         name: 
           administrator: "[System] Administrator"
-          company_admin: Führungskraft
-          company_employee: "Regulärer Mitarbeiter"
-          company_intern: Praktikant
+          company_admin: "Geschäftsführer/Vorstandsmitglied"
+          company_employee: "Disponent"
+          company_intern: "sonstiger Mitarbeiter"
           marketing: "[System] Marketing Mitarbeiter"
           support: "[System] Support Mitarbeiter"
     models: 
