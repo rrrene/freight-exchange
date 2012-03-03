@@ -380,6 +380,14 @@ table.stats small {
   color: #333;
 }
 
+table.postings tr.white_listed td {
+  background-color: #cdffc2 !important;
+}
+table.postings tr.white_listed td.company_name a {
+  color: #1b8a17 !important;
+  font-weight: bold!important;
+}
+
 table.postings tr.highlight td {
   background-color: #ffa!important;
 }
