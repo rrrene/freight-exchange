@@ -973,7 +973,11 @@ de:
       intro: "Sie können sich nun einloggen (auch ohne Registrierung) oder einen eigenen Account erstellen:"
     server-error: 
       page_title: Vorgang abgebrochen
-  search: 
+  search:
+    options:
+      link: "Optionen"
+      case_sensitive: "Groß-/Kleinschreibung"
+      whole_words: "Ganzes Wort"
     advanced: 
       display_form_link: "Suche modifizieren"
       page_title: "Erweiterte Suche"
