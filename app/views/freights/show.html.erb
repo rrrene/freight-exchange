@@ -71,7 +71,7 @@
   <%= render_person_info(resource.contact_person) if resource.contact_person %>
   <%= render_company_info(resource.company) %>
 
-  <div class="box search_results_box">
+  <div class="box search_results_box" style="display:none">
     <h3><%= t "search.common.results.header" %></h3>
     <% if matching_results.full? %>
       <ul class="search_results action_list">
