@@ -123,4 +123,8 @@ jQuery(function() {
   var selector = "#freight_own_means_of_transport_present_true, #freight_own_means_of_transport_present_false, #loading_space_own_means_of_transport_present_true, #loading_space_own_means_of_transport_present_false";
   $(selector).click(showOwnMeansOfTransportPresentFields);
   showOwnMeansOfTransportPresentFields();
+
+  $('#advanced-search-controls input[type="checkbox"]').bind("change", function(event) {
+      if( $('#q').val() != "" ) $(this).parents('form').submit();
+  });
 });

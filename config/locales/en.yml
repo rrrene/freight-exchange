@@ -775,8 +775,12 @@ en:
       header: Welcome
       intro: "You can now login (no sign-up necessary) or create your personal account."
       page_title: "Welcome to the software prototype of an online freight exchange!"
-  search: 
-    advanced: 
+  search:
+    options:
+      link: "Show more options"
+      case_sensitive: "Case sensitive"
+      whole_words: "Whole words"
+    advanced:
       destination: 
         fields: 
           address: Street

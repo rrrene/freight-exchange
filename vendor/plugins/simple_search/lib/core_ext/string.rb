@@ -6,9 +6,8 @@ class String
   # Replaces european accents and umlauts with their simple counterparts
   # and downcases the result.
   # ä -> a, ç -> c, etc.
-  #   "René Föhring".simplify #=> "rene fohring"
+  #   "René Föhring".simplify #=> "Rene Fohring"
   def simplify
-    downcase.
     gsub(/(à|À|á|Á|â|Â|ã|ä|Ä|å|æ)/, 'a').
     gsub(/(ç)/, 'c').
     gsub(/(è|È|é|É|ê|Ê|ë)/, 'e').

@@ -77,7 +77,17 @@ class RemoteController < ApplicationController
   
   def perform_search!
     if @q = params[:q].full?
-      @simple_searches = SimpleSearch.arel_for(@q, :models => [resource_class])
+      @simple_searches = SimpleSearch.arel_for(@q, :models => [resource_class]).all
+      @simple_searches = @simple_searches.select { |search|
+        selected = true
+        if params[:case_sensitive]
+          selected &&= !!search.text.index(@q.simplify)
+        end
+        if params[:whole_words]
+          selected &&= search.text =~ /\b#@q\b/im
+        end
+        selected
+      }
       @resource_ids = @simple_searches.map(&:item_id)
       self.collection = collection.where(:id => @resource_ids)
     end

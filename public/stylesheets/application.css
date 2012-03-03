@@ -271,14 +271,16 @@ div.header div#search_form .input-wrapper input#q:focus {
 }
 
 div.header div#search_form .advanced-search-wrapper {
-  display: none;
   font-size: 11px;
   text-align: right;
 }
-div.header div#search_form .advanced-search-wrapper a {
+div.header div#search_form .advanced-search-wrapper a,
+div.header div#search_form .advanced-search-wrapper label {
   font-size: 11px;
+  line-height: 14px;
   font-weight: normal;
   color: #aaa;
+  cursor: pointer;
 }
 div.header div#search_form .advanced-search-wrapper a:hover {
   color: inherit;

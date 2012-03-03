@@ -46,6 +46,10 @@ module SearchHelper
     content = text_field_tag(name, nil, :size => 50)
     wrap_search_input(field, content, opts)
   end
+
+  def show_search_options?
+    params[:q].full?
+  end
   
   def yes_no_collection 
     [[t("common.choice_yes"), true], [t("common.choice_no"), false]]
