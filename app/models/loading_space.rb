@@ -14,7 +14,9 @@ class LoadingSpace < ActiveRecord::Base
   OWN_MEANS_OF_TRANSPORT_CHOICES = %w(closed_wagon container_wagon custom)
   belongs_to :user
   belongs_to :company
+
   belongs_to :reply_to, :class_name => 'Freight'
+  belongs_to :parent, :class_name => 'LoadingSpace'
 
   belongs_to :origin_station, :class_name => 'Station'
   belongs_to :destination_station, :class_name => 'Station'

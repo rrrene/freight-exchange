@@ -17,6 +17,9 @@ class PostingsController < RemoteController
       parent.localized_infos.each do |li|
         resource.localized_infos.build(li.attributes)
       end
+      if resource.company != current_company
+        resource.parent = parent
+      end
     elsif reply_to_id = params[:reply_to_id]
       klass = resource_class == Freight ? LoadingSpace : Freight
       @reply_to = klass.find(reply_to_id)
@@ -158,7 +161,7 @@ class PostingsController < RemoteController
   
   def filter_collection!
     # Do not show deleted postings
-    self.collection = resource_class.scoped.where(:deleted => false)
+    self.collection = resource_class.scoped.where(:deleted => false).where("parent_id is NULL")
 
     # Default: newest postings first
     @blocked_ids = blocked_company_ids

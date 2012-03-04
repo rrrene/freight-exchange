@@ -44,8 +44,8 @@ class NotificationBuilder
       @created_objects ||= begin
         company = user.company
         [
-          ::Freight.where(:deleted => false),
-          ::LoadingSpace.where(:deleted => false),
+          ::Freight.where(:deleted => false).where("parent_id is NULL"),
+          ::LoadingSpace.where(:deleted => false).where("parent_id is NULL"),
           ::Review.where('approved_by_id IS NULL')
         ].map do |model|
           model.where('company_id != ? AND updated_at > ?', company.id, timestamp).all

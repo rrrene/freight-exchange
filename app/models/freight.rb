@@ -19,7 +19,9 @@ class Freight < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :company
+
   belongs_to :reply_to, :class_name => 'LoadingSpace'
+  belongs_to :parent, :class_name => 'Freight'
 
   belongs_to :origin_station, :class_name => 'Station'
   belongs_to :destination_station, :class_name => 'Station'

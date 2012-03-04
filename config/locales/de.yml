@@ -831,6 +831,7 @@ de:
       make_reply_to: "Dieses Angebot als Antwort auf %{name} einstellen (nur der Ersteller des ursprünglichen Inserats kann dieses Inserat sehen)."
       contact_to_link: "E-Mail an Anbieter"
       contact_to_href: "mailto:%{email}?subject=Anfrage bzgl. %{name}&body=Inserat: %{url}"
+      negotiate_link: "Inserat verhandeln"
     create: 
       page_title: "Neues Inserat"
     edit:

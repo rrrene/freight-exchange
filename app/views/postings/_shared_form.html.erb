@@ -1,8 +1,10 @@
 
 <%= f.inputs :contractor_info do %>
+  <%= f.input :parent_id, :as => :hidden %>
+  
   <%= f.input :contractor, :as => :string %>
   <%= f.input :valid_until, :as => :string, :input_html => { :value => I18n.l(resource.valid_until.to_date) } %>
-
+  
   <% if resource.reply_to %>
     <div class="success">
       <input type="checkbox" name="<%= resource.class.to_s.underscore %>[reply_to_id]" value="<%= resource.reply_to_id %>" checked="<%= resource.reply_to.full? ? :checked : nil %>">

@@ -32,7 +32,7 @@ module App
     method_options %w(site -s) => DEFAULT_SITE
     def postings
       existing = [Freight, LoadingSpace].inject(0) do |sum, model|
-        sum += model.where(:deleted => false).where('valid_until > ?', Time.now).count
+        sum += model.where(:deleted => false).where("parent_id is NULL").where('valid_until > ?', Time.now).count
       end
       (existing...options[:number].to_i).to_a.each do |i|
         run_bot options

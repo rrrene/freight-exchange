@@ -31,7 +31,7 @@ module App
     def postings
       company = ::Demo::Company.instance
       existing = [company.freights, company.loading_spaces].inject(0) do |sum, model|
-        sum += model.where(:deleted => false).where('valid_until > ?', Time.now).count
+        sum += model.where(:deleted => false).where("parent_id is NULL").where('valid_until > ?', Time.now).count
       end
       how_many = options[:number].to_i - existing
       ::Demo::Company.create_postings(how_many) if how_many > 0
