@@ -102,13 +102,24 @@ class PostingsController < RemoteController
   def show
     if can_see?(resource)
       show! {
-        if parent_id = params[:search_recording_id]
-          opts = {:user_id => current_user.id, :parent_id => parent_id, :result => resource}
+        if recording_parent_id = params[:search_recording_id]
+          opts = {:user_id => current_user.id, :parent_id => recording_parent_id, :result => resource}
           @search_recording = SearchRecording.create(opts)
         end
         page[:title] = t("#{controller_name}.show.page_title", :pretty_id => resource.pretty_id)
         record_action!(:read, resource)
         @resource_url = url_for(resource)
+
+        if resource.parent
+          @parents = []
+          current_resource = resource
+          while current_resource.parent
+            diff = current_resource.attributes.diff(current_resource.parent.attributes)
+            @parents << diff
+            current_resource = current_resource.parent
+          end
+          @parents.reverse!
+        end
       }
     else
       permission_denied!

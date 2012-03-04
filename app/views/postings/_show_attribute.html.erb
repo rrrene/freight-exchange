@@ -1,4 +1,8 @@
 <div class="">
+  <% if parent_values.compact.full? %>
+    <%= debug parent_values %>
+  <% end %>
+
   <div class="attribute<%= ' dependent_attribute' if dependent %>">
     <div class="name"><%= name.full? || "&nbsp;".html_safe %></div>
     <div class="value"><%= value %></div>
