@@ -913,3 +913,7 @@ td.contact_website a {
   padding-left: 18px;
   background: url(/images/icons/link.png) no-repeat;
 }
+
+div.notification_condition_set {
+  border: 1px solid #eee;
+}

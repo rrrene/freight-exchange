@@ -6,6 +6,7 @@
     <%= link_btn_unless_current t("notifications.common.reviews"), notifications_path(:item_type => 'Review') %>
   </div>
   <div class="float_right">
+    <%= link_btn t("notifications.common.settings"), {:controller => 'notification_condition_sets', :action => 'index'} %>
     <%= link_btn t("notifications.common.mark_all_as_read"), {:controller => 'notification_items', :action => 'mark_all_as_read'}, :method => :post %>
   </div>
 <% end %>

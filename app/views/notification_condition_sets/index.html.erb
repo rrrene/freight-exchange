@@ -1,0 +1,23 @@
+<% content_for(:toolbar) do %>
+  <%= link_btn t(".create_link_loading_space"), {:controller => 'notification_condition_sets', :action => 'create', :notification_condition_set => {:resource_type => LoadingSpace}}, :method => :post %>
+  <%= link_btn t(".create_link_freight"), {:controller => 'notification_condition_sets', :action => 'create', :notification_condition_set => {:resource_type => Freight}}, :method => :post %>
+<% end %>
+<p>
+  <%= t(".intro") %>
+</p>
+
+<% collection.each do |set| %>
+  <div class="notification_condition_set">
+    <h3><%= set.human_attribute_value :resource_type %></h3>
+    <div class="notification_condition">
+      <%= render :partial => "notification_conditions/form", :locals => {:set => set} %>
+    </div>
+    
+    <% set.notification_conditions.each do |condition| %>
+      <h4><%= "- and -" %></h4>
+      <div class="notification_condition">
+        <%= render :partial => "notification_conditions/show", :locals => {:set => set, :resource => condition} %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

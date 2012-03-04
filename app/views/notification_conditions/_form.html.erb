@@ -1,0 +1,9 @@
+<%= semantic_form_for(NotificationCondition.new) do |f| %>
+  <input type="hidden" name="notification_condition[notification_condition_set_id]" value="<%= set.id %>">
+  <%= f.inputs :new_condition do %>
+    <%= f.input :attribute_name, :collection => collection_choices(NotificationCondition, :attribute_name), :as => :select %>
+    <%= f.input :qualifier, :collection => collection_choices(NotificationCondition, :qualifier), :as => :select %>
+    <%=  f.input :value, :as => :string %>
+    <%= f.submit %>
+  <% end %>
+<% end %>

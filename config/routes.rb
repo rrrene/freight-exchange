@@ -1,4 +1,8 @@
 BlackBoard::Application.routes.draw do |map|
+  resources :notification_conditions
+
+  resources :notification_condition_sets
+
   resources :notifications
   resources :notification_items do
     collection do

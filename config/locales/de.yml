@@ -5,7 +5,11 @@ de:
     next_label: "Nächste &#8594;"
     page-gap: "..."
   activerecord: 
-    attributes: 
+    attributes:
+      notification_condition:
+        attribute_name: "Feld"
+        qualifier: "Vergleich"
+        value: "Wert"
       company: 
         address: Adresse
         address2: "-"
@@ -243,6 +247,18 @@ de:
           company_intern: "sonstiger Mitarbeiter"
           marketing: "[System] Marketing Mitarbeiter"
           support: "[System] Support Mitarbeiter"
+      notification_condition_set:
+        resource_type:
+          LoadingSpace: "Angebot"
+          Freight: "Nachfrage"
+      notification_condition:
+        attribute_name:
+          company_id: "Inserierendes Unternehmen"
+          origin_city: "Beladeort"
+          destination_city: "Entladeort"
+          frequency: "Frequenz"
+        qualifier:
+          equal: "ist"
     models: 
       freight: Ladung
       loading_space: Laderaum
@@ -1145,6 +1161,7 @@ de:
       freights: Nachfragen
       reviews: Bewertungen
       mark_all_as_read: "Alle als 'gelesen' markieren"
+      settings: "Einstellungen"
     index:
       page_title: "Neu & interessant"
     show:
@@ -1152,3 +1169,7 @@ de:
       header: Benachrichtigungen
       intro: Hier sehen Sie für Sie möglicherweise interessante Inserate und neue Bewertungen zu ihrem Unternehmen.
       no_notifications: "Keine Benachrichtigungen vorhanden."
+  notification_condition_sets:
+    index:
+      page_title: "Einstellungen für Benachrichtigungen"
+      intro: Hier können Sie Ihre Einstellungen für Benachrichtigungen ändern.
