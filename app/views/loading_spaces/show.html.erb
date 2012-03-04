@@ -1,28 +1,34 @@
-<div class="box">
-  <h3><%= t('loading_spaces.show.header') %></h3>
+<% content_for(:toolbar) do %>
+  <% if resource.company == current_company %>
+    <div class="float_left">
+      <%= link_btn t('loading_spaces.common.template_link'), new_resource_url(:parent_id => resource.id), :icon => 'reply' %>
+    </div>
+    <div class="float_right">
+      <%= link_btn t("loading_spaces.common.edit_link"), edit_loading_space_path(@loading_space), :icon => 'edit' %>
+      <%= link_btn t("loading_spaces.common.delete_link"), loading_space_path(@loading_space), :method => :delete, :confirm => t('common.confirm'), :class => 'destroy' %>
+    </div>
+  <% else %>
+    <%= link_btn t('loading_spaces.common.reply_to_link'), new_freight_path(:reply_to_id => resource.id), :icon => 'reply' %>
+    <% if resource.contact_email.full? %>
+      <%= link_btn t('loading_spaces.common.contact_to_link'), t('loading_spaces.common.contact_to_href', :email => resource.contact_email, :name => resource.pretty_id, :url => @resource_url), :icon => 'next' %>
+    <% end %>
+  <% end %>
+<% end %>
 
+<div class="box">
   <% if resource.reply_to.full? %>
     <div class="success">
       <%= auto_link(t("loading_spaces.show.is_reply_to", :name => resource.reply_to.pretty_id)).html_safe %>
     </div>
   <% end %>
-  
-  <% content_for(:toolbar) do %>
-    <% if resource.company == current_company %>
-      <div class="float_left">
-        <%= link_btn t('loading_spaces.common.template_link'), new_resource_url(:parent_id => resource.id), :icon => 'reply' %>
-      </div>
-      <div class="float_right">
-        <%= link_btn t("loading_spaces.common.edit_link"), edit_loading_space_path(@loading_space), :icon => 'edit' %>
-        <%= link_btn t("loading_spaces.common.delete_link"), loading_space_path(@loading_space), :method => :delete, :confirm => t('common.confirm'), :class => 'destroy' %>
-      </div>
-    <% else %>
-      <%= link_btn t('loading_spaces.common.reply_to_link'), new_freight_path(:reply_to_id => resource.id), :icon => 'reply' %>
-      <% if resource.contact_email.full? %>
-        <%= link_btn t('loading_spaces.common.contact_to_link'), t('loading_spaces.common.contact_to_href', :email => resource.contact_email, :name => resource.pretty_id, :url => @resource_url), :icon => 'next' %>
-      <% end %>
-    <% end %>
-  <% end %>
+
+  <h3><%= resource_class.human_attribute_name(:contractor) %>: <%= resource.contractor %></h3>
+  <div>
+    <%= resource_class.human_attribute_name(:valid_until) %>
+    <%= l resource.valid_until %>
+  </div>
+
+  <hr>
 
   <%= render :partial => "postings/origin_and_destination" %>
   
@@ -41,6 +47,7 @@
       <th><%= resource_class.human_attribute_name(:transport_type) %></th>
       <td><%= @loading_space.human_attribute_value(:transport_type) %></td>
     </tr>
+    <!--
     <tr>
       <th><%= resource_class.human_attribute_name(:transport_text) %></th>
       <td><%= localized_info(@loading_space, :transport_text) %></td>
@@ -49,6 +56,7 @@
       <th><%= resource_class.human_attribute_name(:misc_text) %></th>
       <td><%= localized_info(@loading_space, :misc_text) %></td>
     </tr>
+    -->
   </table>
 </div>
 
