@@ -34,31 +34,27 @@
   <%= render :partial => "postings/origin_and_destination" %>
   
   <h3><%= t("loading_spaces.show.transport_description") %></h3>
-  <table>
-    <tr>
-      <th><%= resource_class.human_attribute_name(:weight) %></th>
-      <td><%= @loading_space.weight %></td>
-    </tr>
-    <tr>
-      <th><%= resource_class.human_attribute_name(:hazmat) %></th>
-      <td><%= yes_no @loading_space.hazmat %></td>
-    </tr>
-    
-    <tr>
-      <th><%= resource_class.human_attribute_name(:transport_type) %></th>
-      <td><%= @loading_space.human_attribute_value(:transport_type) %></td>
-    </tr>
-    <!--
-    <tr>
-      <th><%= resource_class.human_attribute_name(:transport_text) %></th>
-      <td><%= localized_info(@loading_space, :transport_text) %></td>
-    </tr>
-    <tr>
-      <th><%= resource_class.human_attribute_name(:misc_text) %></th>
-      <td><%= localized_info(@loading_space, :misc_text) %></td>
-    </tr>
-    -->
-  </table>
+
+  <%= render :partial => "postings/frequency" %>
+
+  <%= posting_attribute :free_capacities, :humanize => true %>
+
+  <%= posting_attribute :own_means_of_transport_present %>
+  <% if resource.own_means_of_transport_present? %>
+    <%= posting_attribute :own_means_of_transport, :humanize => true, :dependent => true %>
+    <%= posting_attribute :own_means_of_transport_custom, :dependent => true if resource.own_means_of_transport == "custom" %>
+  <% end %>
+
+  <!--
+  <tr>
+    <th><%= resource_class.human_attribute_name(:transport_text) %></th>
+    <td><%= localized_info(@loading_space, :transport_text) %></td>
+  </tr>
+  <tr>
+    <th><%= resource_class.human_attribute_name(:misc_text) %></th>
+    <td><%= localized_info(@loading_space, :misc_text) %></td>
+  </tr>
+  -->
 </div>
 
 <div class="box search_results_box" style="display:none">

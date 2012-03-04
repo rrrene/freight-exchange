@@ -226,6 +226,13 @@ de:
           train: Zug
           wagon: Wagen
           slots: "KV-Stellplätze"
+        own_means_of_transport_present:
+          true: "Ja"
+          false: "Nein"
+        own_means_of_transport:
+          closed_wagon: gedeckte Wagen
+          container_wagon: Containertragwagen
+          custom: "sonstige"
       person: 
         gender: 
           female: Frau

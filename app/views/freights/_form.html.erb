@@ -15,7 +15,7 @@
   <% end %>
 
   <%= f.inputs :transport_timeframe do %>
-    <%= render :partial => "postings/frequency", :locals => {:f => f} %>
+    <%= render :partial => "postings/frequency_form", :locals => {:f => f} %>
 
     <%= f.input :transport_weight, :as => :string %>
 

@@ -2,7 +2,7 @@
   <%= render :partial => "postings/shared_form", :locals => {:f => f} %>
 
   <%= f.inputs :transport_timeframe do %>
-    <%= render :partial => "postings/frequency", :locals => {:f => f} %>
+    <%= render :partial => "postings/frequency_form", :locals => {:f => f} %>
 
     <%= f.input :free_capacities, :collection => collection_choices(resource.class, :free_capacities), :as => :select %>
     
