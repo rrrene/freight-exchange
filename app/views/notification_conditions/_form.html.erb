@@ -1,6 +1,6 @@
 <% klass = "NotificationCondition#{set.resource_type}".constantize %>
 
-<%= semantic_form_for(klass.new) do |f| %>
+<%= semantic_form_for(@notification_condition || klass.new) do |f| %>
   <input type="hidden" name="<%= klass.to_s.underscore %>[notification_condition_set_id]" value="<%= set.id %>">
   <%= f.inputs :new_condition do %>
     <%= f.input :attribute_name, :collection => attribute_name_choices(klass, set.resource_type.constantize), :as => :select %>

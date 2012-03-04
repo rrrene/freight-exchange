@@ -10,7 +10,15 @@
 
   <% collection.each do |set| %>
     <div class="notification_condition_set">
-      <h3><%= set.human_attribute_value :resource_type %></h3>
+      <h3>
+        <div class="float_left">
+          <%= set.human_attribute_value :resource_type %>
+        </div>
+        <div class="float_right">
+          <%= link_to t(".delete_set"), set, :method => :delete, :confirm => t(".delete_set_confirm"), :class => "severe" %>
+        </div>
+        <%= clear_both %>
+      </h3>
 
       <% set.notification_conditions.each do |condition| %>
         <div class="notification_condition">
@@ -22,7 +30,7 @@
         <div id="<%= dom_id(set) %>_new" style="display: none">
           <%= render :partial => "notification_conditions/form", :locals => {:set => set} %>
         </div>
-        <%=  link_to_function t(".add_new_condition"), "$('##{dom_id(set)}_new').show(); $(this).remove()" %>
+        <%=  link_to_function t(".add_new_condition"), "$('##{dom_id(set)}_new').show(); $(this).remove()", :class => "add" %>
       </div>
     </div>
   <% end %>

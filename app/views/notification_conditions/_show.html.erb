@@ -1,5 +1,12 @@
-<%= resource.human_attribute_value :attribute_name %>
+<div class="float_left">
+  <%= resource.human_attribute_value :attribute_name %>
 
-<%= resource.human_attribute_value :qualifier %>
+  <%= resource.human_attribute_value :qualifier %>
 
-<%= set.resource_type.constantize.human_attribute_value(resource.attribute_name, resource.value, :default => "").full? || resource.value %>
+  <%= set.resource_type.constantize.human_attribute_value(resource.attribute_name, resource.value, :default => "").full? || resource.value %>
+</div>
+<div class="float_right">
+  <%= link_to t("notification_condition_sets.index.edit_condition"), {:controller => "notification_conditions", :action => "edit", :id => resource} %>
+  <%= link_to t("notification_condition_sets.index.delete_condition"), resource, :method => :delete, :confirm => t("notification_condition_sets.index.delete_condition_confirm"), :class => "severe" %>
+</div>
+<%= clear_both %>

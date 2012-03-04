@@ -477,8 +477,10 @@ a.cancel:visited,
 a.delete,
 a.delete:hover,
 a.delete:visited {
-  color: #f00;
-  text-decoration: underline;
+  color: #d00!important;
+  text-decoration: underline!important;
+  font-weight: normal!important;
+  text-transform: none!important;
 }
 
 fieldset ol li.error {
@@ -916,11 +918,32 @@ td.contact_website a {
 
 div.notification_condition_set {
   border: 1px solid #eee;
+  border-top-color: #ddd;
+  border-left-color: #ddd;
   padding: 10px;
+  margin-bottom: 20px;
+}
+
+div.notification_condition_set a {
+  font-weight: normal;
+}
+
+div.notification_condition_set div.notification_condition a {
+  text-decoration: underline;
+  font-size: 11px;
+}
+
+div.notification_condition_set a.add {
+  font-weight: bold;
+  display: block;
+  padding: 10px;
+  margin: -10px;
 }
 
 div.notification_condition_set div.notification_condition {
   border: 1px solid #eee;
+  border-right-color: #ddd;
+  border-bottom-color: #ddd;
   background: whiteSmoke;
   padding: 10px;
   margin-top: 10px;
@@ -928,4 +951,13 @@ div.notification_condition_set div.notification_condition {
 
 div.notification_condition_set div.notification_condition fieldset {
   margin-top: 0;
+}
+
+form.notification_condition_freight fieldset ol li {
+  display: block;
+  float: left;
+  margin-right: 10px;
+}
+form.notification_condition_freight fieldset ol li label {
+  display: none;
 }

@@ -256,7 +256,10 @@ de:
           origin_city: "Beladeort"
           destination_city: "Entladeort"
           frequency: "Frequenz"
-          product_state: "Produktart"
+
+          product_name: "Produktname"
+          product_state: "Gutart"
+          hazmat: "Gefahrengut"
         qualifier:
           equal: "ist"
       notification_condition_loading_space:
@@ -264,6 +267,7 @@ de:
           origin_city: "Beladeort"
           destination_city: "Entladeort"
           frequency: "Frequenz"
+
           own_means_of_transport: "Eigene Transportmittel vorhanden?"
         qualifier:
           equal: "ist"
@@ -1184,6 +1188,11 @@ de:
       add_new_condition: "Bedingung hinzufügen..."
       create_link_loading_space: "Neue Regel für Angebote"
       create_link_freight: "Neue Regel für Nachfragen"
+      delete_set: "Regel löschen"
+      delete_set_confirm: "Regel wirklich löschen?"
+      delete_condition: "Entfernen"
+      delete_condition_confirm: "Bedingung wirklich entfernen?"
+      edit_condition: "Ändern"
   notification_conditions:
     new:
-      submit: "Regel erstellen"
+      submit: "Regel speichern"

@@ -86,6 +86,29 @@ function showCustomFieldsOnDemand(id) {
   showCustomFieldsOnDemandHandler(id);
 }
 
+function changeConditionAttributeName(event) {
+  console.log("change attribute name:", $(this).val())
+  var resourceKey = $(this).attr('id').replace("_attribute_name", "");
+  var originalInput = $(this).parents('form').find('[id$="_value"]')[0];
+  var oldInput = $(this).parents('form').find('[name*="value"]')[0];
+
+  console.log(resourceKey, originalInput, oldInput)
+
+  var optional_id = "#" + $(this).attr('id') + "_" + $(this).val();
+  if( $(optional_id).length > 0 ) {
+    var replacementInput = $(optional_id).find('input, select').first().clone();
+    if( oldInput != originalInput ) $(oldInput).remove();
+    $(originalInput).attr("name", "");
+    $(originalInput).hide();
+    $(originalInput).after(replacementInput);
+  } else {
+    console.log("remove old input?", originalInput != oldInput)
+    if( oldInput != originalInput ) $(oldInput).remove();
+    $(originalInput).attr("name", resourceKey+"[value]");
+    $(originalInput).show();
+  }
+}
+
 
 jQuery(function() {
   var elements = [
@@ -129,26 +152,9 @@ jQuery(function() {
   });
 
 
-  $('#notification_condition_freight_attribute_name, #notification_condition_loading_space_attribute_name').bind("change", function(event) {
-    console.log("change attribute name:", $(this).val())
-    var resourceKey = $(this).attr('id').replace("_attribute_name", "");
-    var originalInput = $(this).parents('form').find('[id$="_value"]')[0];
-    var oldInput = $(this).parents('form').find('[name*="value"]')[0];
-
-    console.log(resourceKey, originalInput, oldInput)
-
-    var optional_id = "#" + $(this).attr('id') + "_" + $(this).val();
-    if( $(optional_id).length > 0 ) {
-      var replacementInput = $(optional_id).find('input, select').first().clone();
-      if( oldInput != originalInput ) $(oldInput).remove();
-      $(originalInput).attr("name", "");
-      $(originalInput).hide();
-      $(originalInput).after(replacementInput);
-    } else {
-      console.log("remove old input?", originalInput != oldInput)
-      if( oldInput != originalInput ) $(oldInput).remove();
-      $(originalInput).attr("name", resourceKey+"[value]");
-      $(originalInput).show();
-    }
+  $('#notification_condition_freight_attribute_name, #notification_condition_loading_space_attribute_name').bind("change", changeConditionAttributeName);
+  $('#notification_condition_freight_attribute_name, #notification_condition_loading_space_attribute_name').each(function(index) {
+    changeConditionAttributeName.apply(this);
   });
+
 });
