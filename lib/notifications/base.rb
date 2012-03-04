@@ -1,36 +1,42 @@
 class NotificationBuilder
   class Base
     attr_accessor :user, :object
+
     def initialize(_user, _object)
       self.user, self.object = _user, _object
     end
+
     def add_object_to_users_notification?
-      false
+      meets_users_conditions?
+    end
+
+    def meets_users_conditions?
+      type = self.class.to_s.split('::').last
+      sets = user.notification_condition_sets.where(:resource_type => type)
+      !!sets.detect { |set| meets_condition_set?(set) }
+    end
+
+    def meets_condition_set?(set)
+      conditions = set.notification_conditions
+      conditions.full? && conditions.all? { |c| meets_condition?(c) }
+    end
+
+    def meets_condition?(condition)
+      if object.respond_to?(condition.attribute_name)
+        value = object.send(condition.attribute_name)
+        if condition.qualifier == "equal"
+          value == condition.value
+        else
+          raise "Unknown qualifier: #{condition.qualifier}"
+        end
+      end
     end
   end
 
   class Freight < Base
-    MATCHING_MINIMUM = 0.1
-
-    def add_object_to_users_notification?
-      chain = MatchingRecording.scoped
-      chain = chain.where(:b_type => 'LoadingSpace', :b_id => user.company.loading_space_ids)
-      chain = chain.where(:a_type => 'Freight', :a_id => object.id)
-      chain = chain.where('result >= ?', MATCHING_MINIMUM)
-      chain.count > 0
-    end
   end
 
   class LoadingSpace < Base
-    MATCHING_MINIMUM = 0.1
-
-    def add_object_to_users_notification?
-      chain = MatchingRecording.scoped
-      chain = chain.where(:a_type => 'LoadingSpace', :a_id => user.company.loading_space_ids)
-      chain = chain.where(:b_type => 'Freight', :b_id => object.id)
-      chain = chain.where('result >= ?', MATCHING_MINIMUM)
-      chain.count > 0
-    end
   end
 
   class Review < Base

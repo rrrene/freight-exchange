@@ -16,6 +16,7 @@ class User < ActiveRecord::Base
   has_many :search_recordings
   has_many :notifications, :order => "created_at DESC", :dependent => :destroy
   has_many :notification_items, :order => "notification_items.created_at DESC", :dependent => :destroy
+  has_many :notification_condition_sets, :order => "created_at DESC", :dependent => :destroy
   before_create :generate_api_key
   after_save { |user| user.company.full?(&:ensure_admin) }
   after_destroy { |user| user.company.full?(&:ensure_admin) }
