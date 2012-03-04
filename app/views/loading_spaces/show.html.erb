@@ -32,10 +32,12 @@
   <hr>
 
   <%= render :partial => "postings/origin_and_destination" %>
-  
-  <h3><%= t("loading_spaces.show.transport_description") %></h3>
+
+  <hr>
 
   <%= render :partial => "postings/frequency" %>
+
+  <h3><%= t("loading_spaces.show.transport_description") %></h3>
 
   <%= posting_attribute :free_capacities, :humanize => true %>
 
