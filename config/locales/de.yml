@@ -1181,3 +1181,9 @@ de:
     index:
       page_title: "Einstellungen für Benachrichtigungen"
       intro: Hier können Sie Ihre Einstellungen für Benachrichtigungen ändern.
+      add_new_condition: "Bedingung hinzufügen..."
+      create_link_loading_space: "Neue Regel für Angebote"
+      create_link_freight: "Neue Regel für Nachfragen"
+  notification_conditions:
+    new:
+      submit: "Regel erstellen"

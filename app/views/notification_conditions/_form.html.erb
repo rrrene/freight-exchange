@@ -6,7 +6,7 @@
     <%= f.input :attribute_name, :collection => attribute_name_choices(klass, set.resource_type.constantize), :as => :select %>
     <%= f.input :qualifier, :collection => collection_choices(klass, :qualifier), :as => :select %>
     <%=  f.input :value, :as => :string %>
-    <%= f.submit %>
+    <%= f.submit t("notification_conditions.new.submit") %>
   <% end %>
 <% end %>
 

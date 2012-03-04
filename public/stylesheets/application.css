@@ -916,4 +916,16 @@ td.contact_website a {
 
 div.notification_condition_set {
   border: 1px solid #eee;
+  padding: 10px;
+}
+
+div.notification_condition_set div.notification_condition {
+  border: 1px solid #eee;
+  background: whiteSmoke;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+div.notification_condition_set div.notification_condition fieldset {
+  margin-top: 0;
 }
