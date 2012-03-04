@@ -1,12 +1,11 @@
 <% content_for(:toolbar) do %>
   <div class="float_left">
-    <%= link_btn_unless params[:item_type].blank?, t("notifications.common.overview"), notifications_path %>
+    <%= link_btn_unless controller?(:notifications) && params[:item_type].blank?, t("notifications.common.overview"), notifications_path %>
     <%= link_btn_unless_current t("notifications.common.freights"), notifications_path(:item_type => 'Freight') %>
     <%= link_btn_unless_current t("notifications.common.loading_spaces"), notifications_path(:item_type => 'LoadingSpace') %>
     <%= link_btn_unless_current t("notifications.common.reviews"), notifications_path(:item_type => 'Review') %>
   </div>
   <div class="float_right">
-    <%= link_btn t("notifications.common.settings"), {:controller => 'notification_condition_sets', :action => 'index'} %>
-    <%= link_btn t("notifications.common.mark_all_as_read"), {:controller => 'notification_items', :action => 'mark_all_as_read'}, :method => :post %>
+    <%= link_btn_unless_current t("notifications.common.settings"), {:controller => 'notification_condition_sets', :action => 'index'} %>
   </div>
 <% end %>

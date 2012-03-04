@@ -7,6 +7,9 @@
   <p>
     <%= t('notifications.show.intro') %>
   </p>
+  <p>
+    <%= link_btn t("notifications.common.mark_all_as_read"), {:controller => 'notification_items', :action => 'mark_all_as_read'}, :method => :post %>
+  </p>
   <% if collection = @notification_items %>
     <ul class="action_list notifications">
       <% collection.each do |ar| %>

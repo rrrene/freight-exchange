@@ -1,11 +1,13 @@
-<% content_for(:toolbar) do %>
-  <%= link_btn t(".create_link_loading_space"), {:controller => 'notification_condition_sets', :action => 'create', :notification_condition_set => {:resource_type => LoadingSpace}}, :method => :post %>
-  <%= link_btn t(".create_link_freight"), {:controller => 'notification_condition_sets', :action => 'create', :notification_condition_set => {:resource_type => Freight}}, :method => :post %>
-<% end %>
+<%= partial :toolbar_notifications %>
 
 <div class="box">
   <p>
     <%= t(".intro") %>
+  </p>
+
+  <p>
+    <%= link_btn t(".create_link_loading_space"), {:controller => 'notification_condition_sets', :action => 'create', :notification_condition_set => {:resource_type => LoadingSpace}}, :method => :post %>
+    <%= link_btn t(".create_link_freight"), {:controller => 'notification_condition_sets', :action => 'create', :notification_condition_set => {:resource_type => Freight}}, :method => :post %>
   </p>
 
   <% collection.each do |set| %>
