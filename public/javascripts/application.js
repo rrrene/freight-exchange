@@ -157,5 +157,18 @@ jQuery(function() {
     event.stopPropagation();
   });
 
+  $('.history_step').hover(
+    function(event) {
+      var klass = $(this).attr('class').split(" ");
+      var all = $('.'+klass[klass.length-1]);
+      all.addClass("hovered");
+    },
+    function(event) {
+      var klass = $(this).attr('class').split(" ");
+      var all = $('.'+klass[klass.length-1]);
+      all.removeClass("hovered");
+    }
+  );
+
 });
 

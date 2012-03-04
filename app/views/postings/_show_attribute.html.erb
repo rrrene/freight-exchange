@@ -1,11 +1,20 @@
 <div class="">
-  <% if parent_values.compact.full? %>
-    <%= debug parent_values %>
-  <% end %>
-
+  
   <div class="attribute<%= ' dependent_attribute' if dependent %>">
     <div class="name"><%= name.full? || "&nbsp;".html_safe %></div>
-    <div class="value"><%= value %></div>
+    <div class="value">
+      <% if history %>
+        <% history.each do |opts| %>
+          <div class="history_step history_step_<%= @history.index(opts[:item]) %>">
+            <b><%= l opts[:item].updated_at %></b>
+            <%= opts[:item].user.name %>:<br>
+            <%= opts[:after]  %>
+          </div>
+        <% end %>
+      <% else  %>
+        <%= value %>
+      <% end %>
+    </div>
     <%= clear_both %>
   </div>
 </div>

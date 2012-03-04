@@ -44,13 +44,13 @@ class PostingsController < RemoteController
       resource.localized_infos.build
     end
   end
-  
+
   def create
     self.resource = resource_class.new(params[resource_key])
     resource.user, resource.company = current_user, current_company
     create!
   end
-  
+
   def index
     super do
       @uploaded = params[:uploaded]
@@ -65,7 +65,7 @@ class PostingsController < RemoteController
       end
     end
   end
-  
+
   def update
     self.resource = resource_class.find(params[:id])
     resource.localized_infos = params[resource_key].delete(:localized_infos)
@@ -114,18 +114,19 @@ class PostingsController < RemoteController
           @parents = []
           current_resource = resource
           while current_resource.parent
-            diff = current_resource.attributes.diff(current_resource.parent.attributes)
-            @parents << diff
+            @parents << current_resource.parent
             current_resource = current_resource.parent
           end
-          @parents.reverse!
+        end
+        if @parents.full?
+          @history = ([resource] + @parents).reverse
         end
       }
     else
       permission_denied!
     end
   end
-  
+
   private
 
   def can_see?(posting, company = current_company)
@@ -169,7 +170,7 @@ class PostingsController < RemoteController
     end
     result
   end
-  
+
   def filter_collection!
     # Do not show deleted postings
     self.collection = resource_class.scoped.where(:deleted => false).where("parent_id is NULL")
