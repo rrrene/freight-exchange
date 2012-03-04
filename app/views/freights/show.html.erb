@@ -31,47 +31,54 @@
   <hr>
 
   <%= render :partial => "postings/origin_and_destination" %>
-  
-  <h3><%= t("freights.show.transport_description") %></h3>
-  <table>
-    <% %w(product_name product_state).each do |attrib| %>
-      <%= partial :show_row, :locals => {:attrib => attrib} %>
-    <% end %>
-    <tr>
-      <th><%= Freight.human_attribute_name(:hazmat) %></th>
-      <td><%= yes_no resource.hazmat %></td>
-    </tr>
-    <% if resource.hazmat? %>
-      <tr>
-        <th><%= Freight.human_attribute_name(:hazmat_class) %></th>
-        <td><%= resource.hazmat_class %></td>
-      </tr>
-      <tr>
-        <th><%= Freight.human_attribute_name(:un_no) %></th>
-        <td><%= resource.un_no %></td>
-      </tr>
-    <% end %>
 
-    <% %w(total_weight frequency first_transport_at transport_weight desired_means_of_transport own_means_of_transport desired_proposal_type).each do |attrib| %>
-      <%= partial :show_row, :locals => {:attrib => attrib} %>
-    <% end %>
-    
-    <!--
-    <tr>
-      <th><%= Freight.human_attribute_name(:goods_text) %></th>
-      <td><%= localized_info(@freight, :goods_text) %></td>
-    </tr>
-    <tr>
-      <th><%#= Freight.human_attribute_name(:transport_text) %></th>
-      <td><%= localized_info(@freight, :transport_text) %></td>
-    </tr>
-  
-    <tr>
-      <th><%#= Freight.human_attribute_name(:misc_text) %></th>
-      <td><%= localized_info(@freight, :misc_text) %></td>
-    </tr>
-      -->
-  </table>
+  <%= render :partial => "postings/frequency" %>
+
+  <h3><%= t("freights.show.transport_description") %></h3>
+
+  <%= posting_attribute :product_name %>
+  <%= posting_attribute :product_state, :humanize => true %>
+
+  <%= posting_attribute :hazmat %>
+  <% if resource.hazmat? %>
+    <%= posting_attribute :hazmat_class, :dependent => true %>
+    <%= posting_attribute :un_no, :dependent => true %>
+  <% end  %>
+
+  <%= posting_attribute :total_weight %>
+  <%= posting_attribute :transport_weight %>
+
+  <%= posting_attribute :desired_means_of_transport, :humanize => true %>
+  <%= posting_attribute :desired_means_of_transport_custom, :dependent => true if resource.desired_means_of_transport == "custom" %>
+
+  <%= posting_attribute :own_means_of_transport_present %>
+  <% if resource.own_means_of_transport_present? %>
+    <%= posting_attribute :own_means_of_transport, :humanize => true, :dependent => true %>
+    <%= posting_attribute :own_means_of_transport_custom, :dependent => true if resource.own_means_of_transport == "custom" %>
+  <% else %>
+    <%= posting_attribute :requirements_means_of_transport, :dependent => true %>
+  <% end %>
+
+  <%= posting_attribute :requirements_at_loading %>
+  <%= posting_attribute :requirements_at_unloading %>
+
+  <%= posting_attribute :desired_proposal_type, :humanize => true %>
+
+  <!--
+  <tr>
+    <th><%= Freight.human_attribute_name(:goods_text) %></th>
+    <td><%= localized_info(@freight, :goods_text) %></td>
+  </tr>
+  <tr>
+    <th><%#= Freight.human_attribute_name(:transport_text) %></th>
+    <td><%= localized_info(@freight, :transport_text) %></td>
+  </tr>
+
+  <tr>
+    <th><%#= Freight.human_attribute_name(:misc_text) %></th>
+    <td><%= localized_info(@freight, :misc_text) %></td>
+  </tr>
+    -->
 </div>
 
 

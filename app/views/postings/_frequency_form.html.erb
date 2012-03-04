@@ -1,0 +1,4 @@
+
+<%= f.input :frequency, :collection => collection_choices(resource_class, :frequency), :as => :select %>
+<%= f.input :first_transport_at, :as => :string, :input_html => { :value => resource.first_transport_at ? I18n.l(resource.first_transport_at.to_date) : nil } %>
+<%= f.input :last_transport_at, :as => :string, :input_html => { :value => resource.last_transport_at ? I18n.l(resource.last_transport_at.to_date) : nil } %>

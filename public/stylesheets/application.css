@@ -961,3 +961,24 @@ form.notification_condition_freight fieldset ol li {
 form.notification_condition_freight fieldset ol li label {
   display: none;
 }
+
+div.attribute {
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid #eee;
+}
+
+div.attribute div.name {
+  float: left;
+  width: 280px;
+}
+div.attribute div.value {
+  float: left;
+  width: 280px;
+}
+
+div.dependent_attribute div.name {
+  padding-left: 20px;
+  border-left: 2px solid #ddd;
+  width: 260px;
+}
