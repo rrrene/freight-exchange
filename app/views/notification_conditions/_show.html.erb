@@ -2,4 +2,4 @@
 
 <%= resource.human_attribute_value :qualifier %>
 
-<%= resource.value %>
+<%= set.resource_type.constantize.human_attribute_value(resource.attribute_name, resource.value, :default => "").full? || resource.value %>

@@ -1,9 +1,47 @@
-<%= semantic_form_for(NotificationCondition.new) do |f| %>
-  <input type="hidden" name="notification_condition[notification_condition_set_id]" value="<%= set.id %>">
+<% klass = "NotificationCondition#{set.resource_type}".constantize %>
+
+<%= semantic_form_for(klass.new) do |f| %>
+  <input type="hidden" name="<%= klass.to_s.underscore %>[notification_condition_set_id]" value="<%= set.id %>">
   <%= f.inputs :new_condition do %>
-    <%= f.input :attribute_name, :collection => collection_choices(NotificationCondition, :attribute_name), :as => :select %>
-    <%= f.input :qualifier, :collection => collection_choices(NotificationCondition, :qualifier), :as => :select %>
+    <%= f.input :attribute_name, :collection => attribute_name_choices(klass, set.resource_type.constantize), :as => :select %>
+    <%= f.input :qualifier, :collection => collection_choices(klass, :qualifier), :as => :select %>
     <%=  f.input :value, :as => :string %>
     <%= f.submit %>
   <% end %>
 <% end %>
+
+<div style="display: none">
+  <!-- Freight -->
+  <div id="notification_condition_freight_attribute_name_hazmat">
+    <select name="notification_condition_freight[value]">
+      <%=  options_for_select yes_no_collection %>
+    </select>
+  </div>
+
+  <div id="notification_condition_freight_attribute_name_frequency">
+    <select name="notification_condition_freight[value]">
+      <%=  options_for_select collection_choices(Freight, :frequency) %>
+    </select>
+  </div>
+
+  <div id="notification_condition_freight_attribute_name_product_state">
+    <select name="notification_condition_freight[value]">
+      <%=  options_for_select collection_choices(Freight, :product_state) %>
+    </select>
+  </div>
+
+
+  <!-- LoadingSpace -->
+  <div id="notification_condition_loading_space_attribute_name_own_means_of_transport">
+    <select name="notification_condition_loading_space[value]">
+      <%=  options_for_select yes_no_collection %>
+    </select>
+  </div>
+
+  <div id="notification_condition_loading_space_attribute_name_frequency">
+    <select name="notification_condition_loading_space[value]">
+      <%=  options_for_select collection_choices(LoadingSpace, :frequency) %>
+    </select>
+  </div>
+
+</div>

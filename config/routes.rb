@@ -1,4 +1,8 @@
 BlackBoard::Application.routes.draw do |map|
+  resources :notification_condition_loading_spaces
+
+  resources :notification_condition_freights
+
   resources :notification_conditions
 
   resources :notification_condition_sets

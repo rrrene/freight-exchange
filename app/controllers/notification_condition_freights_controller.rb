@@ -1,0 +1,2 @@
+class NotificationConditionFreightsController < NotificationConditionsController
+end

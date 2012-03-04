@@ -3,6 +3,8 @@ class CreateNotificationConditions < ActiveRecord::Migration
     create_table :notification_conditions do |t|
       t.integer :notification_condition_set_id
 
+      t.string :type
+
       t.string :attribute_name
       t.string :qualifier, :default => "equal"
       t.string :value

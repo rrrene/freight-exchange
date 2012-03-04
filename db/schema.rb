@@ -222,6 +222,7 @@ ActiveRecord::Schema.define(:version => 20120304120234) do
 
   create_table "notification_conditions", :force => true do |t|
     t.integer  "notification_condition_set_id"
+    t.string   "type"
     t.string   "attribute_name"
     t.string   "qualifier",                     :default => "equal"
     t.string   "value"

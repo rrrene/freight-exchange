@@ -251,12 +251,20 @@ de:
         resource_type:
           LoadingSpace: "Angebot"
           Freight: "Nachfrage"
-      notification_condition:
+      notification_condition_freight:
         attribute_name:
-          company_id: "Inserierendes Unternehmen"
           origin_city: "Beladeort"
           destination_city: "Entladeort"
           frequency: "Frequenz"
+          product_state: "Produktart"
+        qualifier:
+          equal: "ist"
+      notification_condition_loading_space:
+        attribute_name:
+          origin_city: "Beladeort"
+          destination_city: "Entladeort"
+          frequency: "Frequenz"
+          own_means_of_transport: "Eigene Transportmittel vorhanden?"
         qualifier:
           equal: "ist"
     models: 

@@ -1,0 +1,2 @@
+class NotificationConditionLoadingSpacesController < NotificationConditionsController
+end
