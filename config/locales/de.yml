@@ -469,6 +469,8 @@ de:
         page_title: "Monitoring"
         header: "Statistiken"
         intro: "Hier sehen Sie Daten, die Aufschluss über die Aktivität innerhalb der Online-Frachtenbörse geben sollen."
+        new_postings_graph: "Neue Inserate pro Tag"
+        new_companies_graph: "Neue Anbieter pro Tag"
   common: 
     choice_no: Nein
     choice_yes: Ja

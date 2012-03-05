@@ -9,17 +9,21 @@ models.each { |model| all[model] = model.to_s.classify.constantize.all }
 
 puts '', '', "=" * 70, '', ''
 
-(1..7).each do |days_back|
-  recordings_for_this_day = (75 + rand * 50).to_i
+(1..183).each do |days_back|
+  recordings_for_this_day = (25 + rand * 100).to_i
   recordings_for_this_day.times do
-    action = %w(create update destroy).rand
+    action = %w(create create create update destroy read read read).rand
     model = models.rand
     user = all[:user].rand
-    opts = {:action => action, 
-        :item_type => model.to_s.classify, :item_id => all[model].rand.id,
+    item = all[model].rand
+    if item.full?
+      opts = {:action => action,
+        :item_type => model.to_s.classify, :item_id => item.id,
         :user_id => user.id, :company_id => user.company.id,
         :created_at => Time.new - days_back * 87600 + rand * 87600
       }
-    pp ActionRecording.create(opts)
+      ActionRecording.create(opts)
+    end
   end
+  puts days_back
 end
