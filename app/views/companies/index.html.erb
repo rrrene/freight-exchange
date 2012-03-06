@@ -26,11 +26,11 @@
     </thead>
     <tbody>
       <% collection.each do |ar| %>
-        <tr class="">
-          <td class="name"><%= link_to ar.name, ar, :class => ar.class.to_s.underscore %></td>
-          <td class="zip"><%= ar.zip %></td>
-          <td class="city"><%= ar.city %></td>
-          <td class="country"><%= ar.country %></td>
+        <tr class="<%= 'white_listed' if white_listed?(ar) %><%= ' black_listed' if black_listed?(ar) %>">
+          <td class="company_name"><%= link_to ar.name, ar, :class => ar.class.to_s.underscore %></td>
+          <td class="company_zip"><%= ar.zip %></td>
+          <td class="company_city"><%= ar.city %></td>
+          <td class="company_country"><%= ar.country %></td>
         </tr>
       <% end %>
     </tbody>

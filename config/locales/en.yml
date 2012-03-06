@@ -618,7 +618,9 @@ en:
     upload: 
       excel_template_link: "or download the sample excel file..."
       header: "Upload postings"
-      intro: "You can create multiple postings at once by uploading an excel spreadsheet:"
+      intro: "You can create multiple postings at once by uploading an excel spreadsheet."
+      intro2: "You can <a href='/inserate.xls'>download a sample excel file</a> (in german)."
+      intro3: "Choose the file on your computer:"
       page_title: "Upload postings"
       submit: "Upload postings"
   helpers: 

@@ -1,14 +1,22 @@
 <div class="box">
   <p>
-    <%= t(".intro")%>
+    <%= t(".intro").html_safe %>
+  </p>
+  <p>
+    <%= t(".intro2").html_safe %>
+  </p>
+  <p>
+    <%= t(".intro3").html_safe %>
   </p>
   <%= form_tag({}, :multipart => true) do %>
-    <p>
-      <%= file_field_tag :data %>
-    </p>
-    <p>
-      <%= submit_tag t(".submit") %> <%= link_to t(".excel_template_link"), "/inserate.xls" %>
-    </p>
+    <fieldset>
+      <p>
+        <%= file_field_tag :data %>
+      </p>
+      <p>
+        <%= submit_tag t(".submit") %>
+      </p>
+    </fieldset>
   <% end %>
   <p>
     
