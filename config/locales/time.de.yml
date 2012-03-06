@@ -182,11 +182,6 @@ de:
     precision:
       format:
         delimiter: ''
-  support:
-    array:
-      last_word_connector: ! ' und '
-      two_words_connector: ! ' und '
-      words_connector: ! ', '
   time:
     am: vormittags
     formats:
@@ -194,6 +189,11 @@ de:
       long: ! '%A, %d. %B %Y, %H:%M Uhr'
       short: ! '%d. %B, %H:%M Uhr'
     pm: nachmittags
+  support:
+    array:
+      last_word_connector: ! ' und '
+      two_words_connector: ! ' und '
+      words_connector: ! ', '
   # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
   activemodel:
     errors:
