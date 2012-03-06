@@ -3,20 +3,88 @@
   <p>
     <%= t("admin.monitoring.index.intro") %>
   </p>
-  <table>
-    <thead>
-      <th>Klasse</th>
-      <th>Objekte in System</th>
-      <th>Gültig</th>
-      <th>Tonnage</th>
-    </thead>
-    <% [Freight, LoadingSpace].each do |model| %>
-      <tr>
-        <td><%= model %></td>
-        <td><%= model.count %></td>
-        <td><%= model.where("valid_until > ?", Time.new).count %></td>
-        <td><%= model.sum(:total_weight) if model.new.respond_to?(:total_weight) %></td>
-      </tr>
-    <% end %>
-  </table>
+  <% content_for(:toolbar) do %>
+    <div class="graph-caption"><%= t(".new_postings_graph") %></div>
+    <div id="hero-graph"></div>
+  <% end %>
+  <script type="text/javascript">
+
+    // quarterly data, custom colors, skinny lines
+    Morris.Line({
+      element: 'hero-graph',
+      data: [
+        <% @creates.each do |opts| %>
+        {'day': '<%= opts[:day] %>', 'freights': <%= opts[:freights] %>, 'loading_spaces': <%= opts[:loading_spaces] %>},
+        <% end %>
+        {}
+      ],
+      xkey: 'day',
+      ykeys: ['freights', 'loading_spaces'],
+      labels: ['<%= Freight.human_name %>', '<%= LoadingSpace.human_name %>'],
+      lineColors: ['#4183C4','#6BA028'],
+      lineWidth: 2
+    });
+    $(function() {
+      $("#content, #sidebar").css("padding-top", 350)
+      $("#hero-graph").css("margin-top", -350)
+    })
+  </script>
+
+  <%= pie_chart_for_records ActionRecording, :attribute => :item_type, :size => "620x310" %>
+  
+  <div class="graph-caption"><%= t(".new_companies_graph") %></div>
+  <div id="company-graph"></div>
+  <script type="text/javascript">
+
+    // quarterly data, custom colors, skinny lines
+    Morris.Line({
+      element: 'company-graph',
+      data: [
+        <% @creates.each do |opts| %>
+        {'day': '<%= opts[:day] %>', 'companies': <%= opts[:companies] %>, 'users': <%= opts[:users] %>},
+        <% end %>
+        {}
+      ],
+      xkey: 'day',
+      ykeys: ['companies', 'users'],
+      labels: ['<%= Company.human_name %>', '<%= User.human_name %>'],
+      lineColors: ['#6941C4','#CCCCFF'],
+      lineWidth: 2
+    });
+    $(function() {
+      $("#content, #sidebar").css("padding-top", 350)
+      $("#hero-graph").css("margin-top", -350)
+    })
+  </script>
 </div>
+
+<% content_for(:sidebar) do %>
+  <div class="box">
+    <h3><%= t("admin.common.stats.last_week.action_recordings") %></h3>
+    <%= chart_for_records ActionRecording %>
+  </div>
+
+  <h3 class="info"><%= t("admin.common.stats.last_week.action_recordings_item_types") %></h3>
+  <div class="box">
+    <%= pie_chart_for_records ActionRecording, :attribute => :item_type %>
+  </div>
+
+  <% %w(create update destroy).each do |action| %>
+    <h3 class="info"><%= t("admin.common.stats.last_week.action_recordings_#{action}") %></h3>
+    <div class="box">
+      <%= chart_for_records ActionRecording.where(['action = ?', action]) %>
+    </div>
+  <% end %>
+
+  <h3 class="info"><%= t("admin.common.stats.last_week.action_recordings_actions") %></h3>
+  <div class="box">
+    <%= pie_chart_for_records ActionRecording, :attribute => :action %>
+  </div>
+
+  <% GeneralObserver::USER_EDITABLE_MODELS.each do |item_type| %>
+    <h3 class="info"><%= t("admin.common.stats.last_week.action_recordings_#{item_type}") %></h3>
+    <div class="box">
+      <%= chart_for_records ActionRecording.where(['item_type = ?', item_type.to_s.classify]) %>
+    </div>
+  <% end %>
+<% end %>

@@ -469,6 +469,8 @@ de:
         page_title: "Monitoring"
         header: "Statistiken"
         intro: "Hier sehen Sie Daten, die Aufschluss über die Aktivität innerhalb der Online-Frachtenbörse geben sollen."
+        new_postings_graph: "Neue Inserate pro Tag"
+        new_companies_graph: "Neue Anbieter pro Tag"
   common: 
     choice_no: Nein
     choice_yes: Ja
@@ -548,7 +550,7 @@ de:
           city: "Stadt"
           country: "Land"
       all_companies: "Alle Unternehmen"
-      white_listed_companies: "Favorisierte Unternehmen"
+      white_listed_companies: "Hervorgehobene Unternehmen"
       black_listed_companies: "Ignorierte Unternehmen"
       filter_by_name: "Von A bis Z"
       filter_by_created_at: "Neuste zuerst"
@@ -657,7 +659,7 @@ de:
       new_link: "Neue Nachfrage"
       required_field_hint: "Die mit einem (*) gekennzeichneten Felder sind Pflichtfelder:"
       template_link: "Als Vorlage"
-      upload_link: "Upload als Excel-Tabelle"
+      upload_link: "Massen-Upload per Excel-Tabelle"
       search-label: "Nachfrage:"
       reply_to_link: "Mit Angebot beantworten"
       is_reply_to: "Diese Nachfrage ist eine Antwort auf das Angebot %{name}"
@@ -698,7 +700,7 @@ de:
       all_freights: "Nachfragen"
     new:
       header: "Neues Inserat"
-      page_title: "Inserat erstellen"
+      page_title: "Neues Inserat"
     show: 
       page_title: "Inserat %{pretty_id}"
       destination: 
@@ -715,9 +717,11 @@ de:
     upload: 
       header: "Inserate hochladen"
       page_title: "Inserate hochladen"
-      intro: "Hier können Sie mehrere Inserate gleichzeitig als Excel-Tabelle hochladen:"
+      intro: "Hier können Sie mehrere Inserate für die Nachfrage nach Laderaum gleichzeitig als Excel-Tabelle hochladen."
+      intro2: "Als Vorlage können Sie eine <a href='/inserate.xls'>Beispiel-Datei herunterladen</a>."
+      intro3: "Wählen Sie einfach die entsprechende Datei auf Ihrem Computer aus: (und drücken anschließend auf 'Inserate hochladen')"
       submit: "Inserate hochladen"
-      excel_template_link: "oder Beispiel-Excel herunterladen..."
+      excel_template_link: "Jetzt Beispiel-Excel herunterladen..."
   helpers: 
     select: 
       prompt: "Bitte wählen"
@@ -1083,8 +1087,8 @@ de:
       no_notifications: "Keine Benachrichtigungen vorhanden."
   notification_condition_sets:
     index:
-      page_title: "Einstellungen für Benachrichtigungen"
-      intro: Hier können Sie Ihre Einstellungen für Benachrichtigungen ändern.
+      page_title: "Regeln für Benachrichtigungen"
+      intro: "Hier können Sie Regeln für Benachrichtigungen hinzufügen, verändern und entfernen."
       add_new_condition: "Bedingung hinzufügen..."
       create_link_loading_space: "Neue Regel für Angebote"
       create_link_freight: "Neue Regel für Nachfragen"

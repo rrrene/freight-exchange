@@ -380,10 +380,10 @@ table.stats small {
   color: #333;
 }
 
-table.postings tr.white_listed td {
+table tr.white_listed td {
   background-color: #cdffc2 !important;
 }
-table.postings tr.white_listed td.company_name a {
+table tr.white_listed td.company_name a {
   color: #1b8a17 !important;
   font-weight: bold!important;
 }
@@ -1005,3 +1005,8 @@ div.history_step_10 { background-color: #CCCCFF; }
 div.history_step_11 { background-color: #DDDDDD; }
 div.history_step_12 { background-color: #C0C0C0; }
 div.history_step_13 { background-color: #969696; }
+
+div.graph-caption {
+  text-align: center;
+  font-weight: bold;
+}
