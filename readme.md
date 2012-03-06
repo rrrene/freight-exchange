@@ -6,9 +6,7 @@ This is the source code for a european rail transport online spot exchange. It i
 Setup
 -----
 
-To set up this prototype, a basic knowledge and understanding of web development and rails applications is required. The Ruby on Rails framework and many helpful links can be found under
-
-http://rubyonrails.org
+To set up this prototype, a basic knowledge and understanding of web development and rails applications is required. The Ruby on Rails framework and many helpful links can be found under http://rubyonrails.org
 
 NOTE: The prototype has only been tested with ruby-1.8.7, therefore use of rvm is heavily recommended (.rvmrc file is present).
 
