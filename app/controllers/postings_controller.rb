@@ -208,21 +208,17 @@ class PostingsController < RemoteController
   
   def perform_search!
     super
-    if @origin_city = params[:origin_city].full?
-      # TODO: perform lookup via SQL
-      matched_ids = collection.select { |posting| posting.origin_city == @origin_city }.map(&:id)
-      self.collection = collection.where(:id => matched_ids)
+    %w(origin_city destination_city).each do |field|
+      if value = params[field].full?
+        # TODO: perform ID lookup via SQL
+        matched_ids = collection.where(field => value).map(&:id)
+        self.collection = collection.where(:id => matched_ids)
+      end
     end
-    if @destination_city = params[:destination_city].full?
-      # TODO: perform lookup via SQL
-      matched_ids = collection.select { |posting| posting.destination_city == @destination_city }.map(&:id)
-      self.collection = collection.where(:id => matched_ids)
-    end
-    if @origin_station_id = params[:origin_station_id].full?
-      self.collection = collection.where(:origin_station_id => @origin_station_id)
-    end
-    if @destination_station_id = params[:destination_station_id].full?
-      self.collection = collection.where(:destination_station_id => @destination_station_id)
+    %w(origin_station_id destination_station_id).each do |field|
+      if value = params[field].full?
+        self.collection = collection.where(field => value)
+      end
     end
     %w(origin_zip destination_zip).each do |field|
       if value = params[field].full?
