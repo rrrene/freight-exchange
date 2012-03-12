@@ -224,6 +224,11 @@ class PostingsController < RemoteController
     if @destination_station_id = params[:destination_station_id].full?
       self.collection = collection.where(:destination_station_id => @destination_station_id)
     end
+    %w(origin_zip destination_zip).each do |field|
+      if value = params[field].full?
+        self.collection = collection.where("#{field} LIKE ?", "#{value}%")
+      end
+    end
   end
 
   def order_map
