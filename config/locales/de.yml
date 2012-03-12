@@ -682,6 +682,8 @@ de:
       just_uploaded: "Die markierten Nachfragen wurden per Excel hochgeladen und ins System eingestellt:"
       from_origin_city: "Nur Nachfragen aus '%{city}'"
       to_destination_city: "Nur Nachfragen nach '%{city}'"
+      filter_origin_zip: "Nach Belade-PLZ filtern"
+      filter_destination_zip: "Nach Entlade-PLZ filtern"
       show_company: "Profil von %{company}"
       table: 
         headers: 
@@ -757,6 +759,8 @@ de:
       intro: "Hier sehen Sie alle Angebote."
       from_origin_city: "Nur Angebote aus '%{city}'"
       to_destination_city: "Nur Angebote nach '%{city}'"
+      filter_origin_zip: "Nach Belade-PLZ filtern"
+      filter_destination_zip: "Nach Entlade-PLZ filtern"
       table: 
         headers: 
           date: Datum

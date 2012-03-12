@@ -11,6 +11,19 @@
   <div class="float_left">
     <%#= link_btn_unless_current t("freights.index.all_freights"), params.merge(:controller => :freights) %>
     <%#= link_btn_unless_current t("loading_spaces.index.all_loading_spaces"), params.merge(:controller => :loading_spaces) %>
+    <% %w(origin_zip destination_zip).each do |field| %>
+      <div class="float_left posting_zip_filter">
+        <%= link_btn t("#{controller_name}.index.filter_#{field}"), "#", :onclick => "$('#filter_#{field}').show().find('input').focus();" %>
+        <div class="form_wrapper" id="filter_<%= field %>"<%= ' style="display:none;"'.html_safe if params[field].blank? %>>
+          <%= form_tag({}, :method => :get) do %>
+            <% posting_filter_keys_without(field).each do |filter| %>
+              <%= hidden_field_tag filter, params[filter] %>
+            <% end %>
+            <%= text_field_tag field, params[field], :size => 5 %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
   </div>
   <div class="float_right">
     <% if @origin_city %>

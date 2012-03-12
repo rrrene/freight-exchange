@@ -171,7 +171,7 @@ module ApplicationHelper
   def link_to_filter(text, p = {}, opts = {})
     raise "only supports 1 key: link_to_filter" if p.size > 1
     key = p.keys.first
-    active = !!params[key]
+    active = !!params[key].full?
     link_to text, p.reverse_merge(params), opts.merge(:class => "filter #{opts[:class]} #{key} #{active ? :active : nil}".strip)
   end
   
