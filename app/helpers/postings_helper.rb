@@ -25,6 +25,11 @@ module PostingsHelper
     end
   end
 
+  def posting_filter_keys_without(field)
+    all = %w(origin_zip destination_zip origin_city destination_city origin_station_id destination_station_id)
+    all - [field]
+  end
+
   def attribute_history(attribute, opts = {})
     return nil if @history.blank?
     current = nil
