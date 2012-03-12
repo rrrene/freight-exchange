@@ -218,7 +218,14 @@ en:
         locale: 
           de: German
           en: English
-      user_role: 
+      company_role:
+        name:
+          evu: "Eisenbahnverkehrsunternehmen"
+          spedition: "Speditions-/Transportunternehmen"
+          kombiniert: "Operateure im Kombinierten Verkehr"
+          verlader: "verladende Unternehmen"
+          custom: "sonstige"
+      user_role:
         name: 
           administrator: "[System] Administrator"
           company_admin: Executive
