@@ -753,7 +753,6 @@ ul.notifications li.unread {
 div.toolbar {
   margin-left: 16px;
   width: 920px;
-  position: absolute;
   margin-top: -20px;
 }
 

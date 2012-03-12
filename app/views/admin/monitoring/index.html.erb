@@ -3,10 +3,12 @@
   <p>
     <%= t("admin.monitoring.index.intro") %>
   </p>
+
   <% content_for(:toolbar) do %>
     <div class="graph-caption"><%= t(".new_postings_graph") %></div>
     <div id="hero-graph"></div>
   <% end %>
+
   <script type="text/javascript">
 
     // quarterly data, custom colors, skinny lines
@@ -24,10 +26,6 @@
       lineColors: ['#4183C4','#6BA028'],
       lineWidth: 2
     });
-    $(function() {
-      $("#content, #sidebar").css("padding-top", 350)
-      $("#hero-graph").css("margin-top", -350)
-    })
   </script>
 
   <%= pie_chart_for_records ActionRecording, :attribute => :item_type, :size => "620x310" %>
@@ -51,10 +49,6 @@
       lineColors: ['#6941C4','#CCCCFF'],
       lineWidth: 2
     });
-    $(function() {
-      $("#content, #sidebar").css("padding-top", 350)
-      $("#hero-graph").css("margin-top", -350)
-    })
   </script>
 </div>
 
