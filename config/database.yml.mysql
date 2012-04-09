@@ -3,7 +3,7 @@ development:
   encoding: utf8
   database: code24
   username: root
-  password: ????
+  password:
   host: localhost
 
 test:
@@ -11,7 +11,7 @@ test:
   encoding: utf8
   database: code24_test
   username: root
-  password: ????
+  password:
   host: localhost
 
 production: development
