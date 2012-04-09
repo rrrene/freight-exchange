@@ -4,3 +4,5 @@ rvm:
 before_script:
   - cp config/database.yml.mysql config/database.yml
   - mysql -e 'create database code24_test'
+script:
+  - RAILS_ENV=test bundle exec rake --trace db:migrate test
