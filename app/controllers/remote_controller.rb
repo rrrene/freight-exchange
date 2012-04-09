@@ -84,7 +84,7 @@ class RemoteController < ApplicationController
           selected &&= !!search.text.index(@q.simplify)
         end
         if params[:whole_words]
-          selected &&= search.text =~ /\b#@q\b/im
+          selected &&= search.text =~ /(^|\s)#@q($|\s)/im
         end
         selected
       }

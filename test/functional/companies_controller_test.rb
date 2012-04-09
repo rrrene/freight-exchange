@@ -34,13 +34,7 @@ class CompaniesControllerTest < ActionController::TestCase
       get :edit, :id => user.company
     end
   end
-  
-  test "should NOT get #edit with role :company_admin" do
-    assert_permission_denied(company_employee_user) do |user|
-      get :edit, :id => user.company
-    end
-  end
-  
+
   # ===== DOES NOT WORK PROPERLY (YET) =====
   
   test "should require role :company_admin for #edit" do
