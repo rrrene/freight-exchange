@@ -6,3 +6,6 @@ before_script:
   - mysql -e 'create database code24_test'
 script:
   - RAILS_ENV=test bundle exec rake --trace db:migrate test
+notifications:
+  email:
+    - rf@bamaru.de
