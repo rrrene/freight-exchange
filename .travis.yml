@@ -1,4 +1,6 @@
 language: ruby
 rvm:
   - 1.8.7
-before_script: cp config/database.yml.mysql config/database.yml
+before_script:
+  - cp config/database.yml.mysql config/database.yml
+  - mysql -e 'create database code24_test'
