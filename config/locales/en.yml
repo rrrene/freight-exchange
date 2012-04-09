@@ -1,15 +1,16 @@
---- 
-en:
+---
+en: 
   time:
     formats:
       date: "%m/%d/%Y"
-  activerecord: 
+  activerecord:
     attributes: 
       company: 
         address: Address
         address2: "-"
         city: City
         commercial_register_entry: "Commercial register entry"
+        company_roles: "Company categories:"
         contact_person: "Contact Person"
         country: Country
         email: E-Mail
@@ -22,6 +23,7 @@ en:
         website: Web
         zip: ZIP
       freight: 
+        company_roles: "Company categories:"
         contact_person: "Contact Person"
         contractor: Contractor
         desired_means_of_transport: "Desired means of transport"
@@ -41,6 +43,7 @@ en:
         goods_text: "Kind of goods"
         hazmat: "Harzardous material"
         hazmat_class: "Hazmat classification (RID)"
+        last_transport_at: "Available until:"
         loading_meter: "Loading meter"
         localized_infos: 
           goods_text: "Freight description"
@@ -76,6 +79,7 @@ en:
         valid_until: "Posting valid until"
         wagons_provided_by: "Wagons provided by"
       loading_space: 
+        company_roles: "Company categories:"
         contact_person: "Contact Person"
         contractor: Contractor
         desired_proposal_type: "Desired proposal type"
@@ -93,6 +97,7 @@ en:
         free_capacities: "Free capacities"
         frequency: Frequency
         hazmat: "Harzardous material"
+        last_transport_at: "Available until:"
         loading_meter: "Loading meter"
         localized_infos: 
           goods_text: "Type of Goods"
@@ -117,6 +122,10 @@ en:
         valid_until: "Posting valid until"
         wagons_provided_by: "Wagons provided by"
         weight: "Weight (in t)"
+      notification_condition: 
+        attribute_name: Attribute
+        qualifier: Qualifier
+        value: Value
       person: 
         email: E-Mail
         fax: Fax
@@ -152,11 +161,14 @@ en:
         password_confirmation: "Password (again)"
         posting_type: "Will be posting"
         user_roles: "User Roles"
-    errors: 
-      messages: 
-        record_invalid: "Validation failed: %{errors}"
-        taken: "has already been taken"
     human_attribute_values: 
+      company_role: 
+        name: 
+          custom: sonstige
+          evu: Eisenbahnverkehrsunternehmen
+          kombiniert: "Operateure im Kombinierten Verkehr"
+          spedition: Speditions-/Transportunternehmen
+          verlader: "verladende Unternehmen"
       freight: 
         desired_means_of_transport: 
           custom: other
@@ -205,12 +217,43 @@ en:
           once: Once
           weekly: Weekly
           yearly: Yearly
+        own_means_of_transport: 
+          closed_wagon: "Closed wagon"
+          container_wagon: "Container wagon"
+          custom: other
+        own_means_of_transport_present: 
+          ? "false"
+          : "No"
+          ? "true"
+          : "Yes"
         transport_type: 
           block_train: "Block train"
           intermodal_transport: "Intermodal transport"
           single_wagon: "Single wagon"
           train_set: "Train set"
           unknown: "-- unknown --"
+      notification_condition_freight: 
+        attribute_name: 
+          destination_city: "Destination city"
+          frequency: Frequency
+          hazmat: Hazmat
+          origin_city: "Origin city"
+          product_name: "Product name"
+          product_state: "Product state"
+        qualifier: 
+          equal: is
+      notification_condition_loading_space: 
+        attribute_name: 
+          destination_city: "Destination city"
+          frequency: Frequency
+          origin_city: "Origin city"
+          own_means_of_transport: "Own means of transport present?"
+        qualifier: 
+          equal: is
+      notification_condition_set: 
+        resource_type: 
+          Freight: Freight
+          LoadingSpace: "Loading Space"
       person: 
         gender: 
           female: Mrs.
@@ -218,13 +261,6 @@ en:
         locale: 
           de: German
           en: English
-      company_role:
-        name:
-          evu: "Eisenbahnverkehrsunternehmen"
-          spedition: "Speditions-/Transportunternehmen"
-          kombiniert: "Operateure im Kombinierten Verkehr"
-          verlader: "verladende Unternehmen"
-          custom: "sonstige"
       user_role:
         name: 
           administrator: "[System] Administrator"
@@ -234,9 +270,12 @@ en:
           marketing: "[System] Marketing staff"
           support: "[System] Support staff"
     models: 
+      company: Company
       freight: Freight
       loading_space: "Loading Space"
+      person: Person
       station: Station
+      user: User
   admin: 
     action_recordings: 
       index: 
@@ -286,6 +325,7 @@ en:
         back_to_app: "Back to Frontend"
         companies: Companies
         home: Administration
+        monitoring: Monitoring
         search_recordings: Searches
         setup: Setup
         stations: Stations
@@ -343,6 +383,13 @@ en:
         users_intro: "Here you can see all users in this company."
       update: 
         page_title: "Edit company"
+    monitoring: 
+      index: 
+        header: Statistics
+        intro: "Here you can the activity inside the spot exchange system."
+        new_companies_graph: "New companies per day"
+        new_postings_graph: "New postings per day"
+        page_title: Monitoring
     people: 
       edit: 
         edit_user_link: "Edit User"
@@ -531,9 +578,11 @@ en:
     hints: 
       freight: 
         first_transport_at: (MM/DD/YYYY)
+        last_transport_at: "(Format: DD.MM.YYYY)"
         valid_until: (MM/DD/YYYY)
       loading_space: 
         first_transport_at: (MM/DD/YYYY)
+        last_transport_at: "(Format: DD.MM.YYYY)"
         valid_until: (MM/DD/YYYY)
       user: 
         email: "Enter your e-mail address here"
@@ -568,6 +617,7 @@ en:
       contact_to_link: "Contact company"
       edit_link: "Edit this posting"
       is_reply_to: "This demand is a reply to offer %{name}"
+      make_reply_to: "This freight has been created as a reply to %{name} (only the creator of the original loading space posting can see this reply)."
       new_link: "Create freight"
       reply_to_link: "Reply with offer"
       required_field_hint: "The fields with an asterix (*) are mandatory:"
@@ -582,6 +632,8 @@ en:
       page_title: "Edit freight posting"
     index: 
       all_freights: Freights
+      filter_destination_zip: "Filter by destination ZIP"
+      filter_origin_zip: "Filter by origin ZIP"
       from_origin_city: "Only show demands originating from '%{city}'"
       header: "All freight postings"
       header_query: "All demands for '%{query}'"
@@ -644,6 +696,8 @@ en:
       delete_link: "Delete this posting"
       edit_link: "Edit this posting"
       is_reply_to: "This offer is a reply to the demand %{name}"
+      make_reply_to: "This loading space has been created as a reply to %{name} (only the creator of the original freight posting can see this reply)."
+      negotiate_link: Negotiate
       new_link: "Create loading space"
       reply_to_link: "Reply with demand"
       required_field_hint: "The fields with an asterix (*) are mandatory:"
@@ -656,6 +710,8 @@ en:
       page_title: "Edit loading space posting"
     index: 
       all_loading_spaces: "Loading spaces"
+      filter_destination_zip: "Filter by destination ZIP"
+      filter_origin_zip: "Filter by origin ZIP"
       from_origin_city: "Only show offers originating from '%{city}'"
       header: "All loading space postings"
       header_query: "All offers for '%{query}'"
@@ -694,6 +750,21 @@ en:
     update: 
       header: "Edit loading space posting"
       page_title: "Edit loading space posting"
+  notification_condition_sets: 
+    index: 
+      add_new_condition: "Add condition..."
+      create_link_freight: "New condition for loading spaces"
+      create_link_loading_space: "New condition for freights"
+      delete_condition: Delete
+      delete_condition_confirm: "Really delete?"
+      delete_set: "Delete condition"
+      delete_set_confirm: "Really delete condition?"
+      edit_condition: Edit
+      intro: "You can edit, create and delete conditions for notifications."
+      page_title: "Notification settings"
+  notification_conditions: 
+    new: 
+      submit: "Save condition"
   notifications: 
     common: 
       freights: Demands
@@ -701,6 +772,7 @@ en:
       mark_all_as_read: "Mark all as 'read'"
       overview: Overview
       reviews: Reviews
+      settings: "Notification settings"
     index: 
       page_title: "New & interesting"
     show: 
@@ -726,9 +798,8 @@ en:
     update: 
       header: "Personal information"
       page_title: "Edit person"
-  postings:
-    station_hint: "Search by no. or name"
-    common:
+  postings: 
+    common: 
       posting: 
         edit: "Edit this posting"
         goods_type: "Type of goods:"
@@ -736,6 +807,7 @@ en:
         misc: "Additional information:"
         wagon_type: "Type of wagon:"
         weight: "Weight (kg):"
+      station_hint: "Search by number or name"
     show: 
       page_title: "Posting details"
   recordings: 
@@ -780,16 +852,14 @@ en:
       page_title: About
     index: 
       page_title: Welcome
+    server-error: 
+      page_title: "An error occured."
     welcome: 
       header: Welcome
       intro: "You can now login (no sign-up necessary) or create your personal account."
       page_title: "Welcome to the software prototype of an online freight exchange!"
-  search:
-    options:
-      link: "Show more options"
-      case_sensitive: "Case sensitive"
-      whole_words: "Whole words"
-    advanced:
+  search: 
+    advanced: 
       destination: 
         fields: 
           address: Street
@@ -855,6 +925,10 @@ en:
       no_query: "Please type in a search query above."
       no_results: "There are no results."
       page_title: Search
+    options: 
+      case_sensitive: "Case sensitive"
+      link: "Show more options"
+      whole_words: "Whole words"
   setup: 
     demo_company: 
       company_present: "There is a demo company. Click the profile in the sidebar to view their profile or the link below to destroy it:"
@@ -948,3 +1022,7 @@ en:
       page_title: "Overview: Users"
     new: 
       page_title: "New User"
+  will_paginate: 
+    next_label: "Next &amp;#8594;"
+    page-gap: "..."
+    previous_label: "&amp;#8592; Previous"
