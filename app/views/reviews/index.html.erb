@@ -31,5 +31,5 @@
       </li>
     <% end %>
   </ul>
-  <%= will_paginate collection %>
+  <%= will_paginate(collection).to_s.html_safe %>
 </div>

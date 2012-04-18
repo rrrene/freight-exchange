@@ -16,7 +16,7 @@
         <li class="<%= ar.item_type.underscore %><%= ' unread' if @unread.include?(ar) %>"><%= partial ar.item_type.underscore, :locals => {:notification_item => ar} %></li>
       <% end %>
     </ul>
-    <%= will_paginate collection %>
+    <%= will_paginate(collection).to_s.html_safe %>
   <% else %>
     <%= t("notifications.show.no_notifications") %>
   <% end %>
