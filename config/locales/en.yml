@@ -38,7 +38,7 @@ en:
         destination_side_track_available: "Sidetrack available?"
         destination_station: "Unloading station"
         destination_zip: ZIP
-        first_transport_at: Date
+        first_transport_at: First transport at
         frequency: Frequency
         goods_text: "Kind of goods"
         hazmat: "Harzardous material"
@@ -93,7 +93,7 @@ en:
         destination_side_track_available: "Sidetrack available?"
         destination_station: "Unloading station"
         destination_zip: ZIP
-        first_transport_at: Date
+        first_transport_at: First transport at
         free_capacities: "Free capacities"
         frequency: Frequency
         hazmat: "Harzardous material"
@@ -646,7 +646,7 @@ en:
         headers: 
           company: Company
           destination_name: Destination
-          frequency: Timeframe
+          frequency: Frequency
           id: "Numeric ID"
           options: Options
           origin_name: Origin
@@ -1026,3 +1026,14 @@ en:
     next_label: "Next &amp;#8594;"
     page-gap: "..."
     previous_label: "&amp;#8592; Previous"
+  date:
+    formats:
+      default: ! '%d.%m.%Y'
+      long: ! '%e. %B %Y'
+      short: ! '%e. %b'
+  time:
+    formats:
+      default: ! '%m/%d/%Y %H:%M'
+      date: ! '%m/%d/%Y'
+      long: ! '%A, %d. %B %Y, %H:%M'
+      short: ! '%d. %B, %H:%M'
