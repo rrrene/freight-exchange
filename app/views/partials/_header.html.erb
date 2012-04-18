@@ -4,7 +4,7 @@
   <div class="container" id="header">
     <div class="span-24 last" id="first-header">
       <div class="float_left">
-        <%= link_to image_tag('logo.png'), root_url, :id => 'logo'  %>
+        <%= link_to image_tag("logo-#{I18n.locale}.png"), root_url, :id => 'logo'  %>
       </div>
       <% if logged_in? %>
         <div class="float_left">
