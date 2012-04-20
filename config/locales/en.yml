@@ -479,6 +479,7 @@ en:
     footer: 
       contact_link: Contact
       imprint_link: Imprint
+      copyright_notice: "&copy; %{year} René Föhring – Institute of Production and Industrial Information Management, University of Duisburg-Essen"
     link_back: Back
     navi: 
       backend: Backend

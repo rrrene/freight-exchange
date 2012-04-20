@@ -528,6 +528,7 @@ de:
     footer:
       imprint_link: "Impressum"
       contact_link: "Kontakt"
+      copyright_notice: "&copy; %{year} René Föhring – Institut für Produktion und Industrielles Informationsmanagement, Universität Duisburg-Essen"
   companies:
     common:
       search-label: "Unternehmen:"
