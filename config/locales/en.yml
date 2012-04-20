@@ -254,8 +254,8 @@ en:
           equal: is
       notification_condition_set: 
         resource_type: 
-          Freight: Freight
-          LoadingSpace: "Loading Space"
+          Freight: "Set for transport request"
+          LoadingSpace: "Set for transport offer"
       person: 
         gender: 
           female: Mrs.
@@ -273,8 +273,8 @@ en:
           support: "[System] Support staff"
     models: 
       company: Company
-      freight: Freight
-      loading_space: "Loading Space"
+      freight: "Transport request"
+      loading_space: "Transport offer"
       person: Person
       station: Station
       user: User
@@ -342,9 +342,9 @@ en:
           action_recordings_company: "Actions on companies per day (past week)"
           action_recordings_create: "Create actions per day (past week)"
           action_recordings_destroy: "Destroy actions per day (past week)"
-          action_recordings_freight: "Actions on freights per day (past week)"
+          action_recordings_freight: "Actions on transport requests per day (past week)"
           action_recordings_item_types: "Actions (overall)"
-          action_recordings_loading_space: "Actions on loading spaces per day (past week)"
+          action_recordings_loading_space: "Actions on transport offers per day (past week)"
           action_recordings_person: "Actions on people per day (past week)"
           action_recordings_review: "Actions on reviews per day (past week)"
           action_recordings_update: "Update actions per day (past week)"
@@ -472,8 +472,8 @@ en:
     choice_yes: "Yes"
     choose: "-- Choose --"
     confirm: "Are you sure?"
-    create_new_freight: "Create a new freight"
-    create_new_loading_space: "Create a new loading space"
+    create_new_freight: "Create transport request"
+    create_new_loading_space: "Create transport offer"
     create_new_review: "Write a review!"
     deleted_object: "-- deleted object --"
     footer: 
@@ -484,15 +484,15 @@ en:
       backend: Backend
       companies: Companies
       dashboard: Dashboard
-      freights: Freights
-      loading_spaces: "Loading Spaces"
+      freights: "Transport request"
+      loading_spaces: "Transport offers"
       locale_de: Deutsch
       locale_en: English
       login: Login
       logout: Logout
-      my_company: "My Company Profile"
-      my_freights: "My Freights"
-      my_loading_spaces: "My Loading Spaces"
+      my_company: "My company profile"
+      my_freights: "My transport requests"
+      my_loading_spaces: "My transport offers"
       my_person: "My profile"
       my_profile: "Company profile"
       my_reviews: "My Reviews"
@@ -516,18 +516,18 @@ en:
         header: "Contact information"
         please_edit_notice: "Please add more information to your personal profile."
         show: "View profile"
-    website_title: "Freight Exchange 2010"
+    website_title: "CODE24 Spot Exchange"
     white_list_company: "Subscribe to company"
     white_listed_company: "Subscribed to company"
   companies: 
     common: 
-      freights: Demands
+      freights: "Transport requests"
       invalid_postings_link: "Invalid postings"
-      loading_spaces: Offers
+      loading_spaces: "Transport offers"
       people: People
       profile: Profile
       reviews: Reviews
-      search-label: "Company:"
+      search-label: "Company"
     create: 
       page_title: "Create your company"
     dashboard: 
@@ -618,32 +618,32 @@ en:
       contact_to_href: "mailto:%{email}?subject=Re: %{name}&body=Posting: %{url}"
       contact_to_link: "Contact company"
       edit_link: "Edit this posting"
-      is_reply_to: "This demand is a reply to offer %{name}"
-      make_reply_to: "This freight has been created as a reply to %{name} (only the creator of the original loading space posting can see this reply)."
-      new_link: "Create freight"
-      reply_to_link: "Reply with offer"
+      is_reply_to: "This transport request is a reply to the transport offer %{name}"
+      make_reply_to: "This transport request has been created as a reply to %{name} (only the creator of the original transport offer can see this reply)."
+      new_link: "Create transport request"
+      reply_to_link: "Reply with transport offer"
       required_field_hint: "The fields with an asterix (*) are mandatory:"
-      search-label: "Demand:"
+      search-label: "Transport request:"
       template_link: "Use as template"
       upload_link: "Upload via excel"
     create: 
-      header: "New freight posting"
-      page_title: "New freight posting"
+      header: "New transport request"
+      page_title: "New transport request"
     edit: 
-      header: "Edit freight posting"
-      page_title: "Edit freight posting"
+      header: "Edit transport request"
+      page_title: "Edit transport request"
     index: 
-      all_freights: Freights
+      all_freights: "Transport requests"
       filter_destination_zip: "Filter by destination ZIP"
       filter_origin_zip: "Filter by origin ZIP"
-      from_origin_city: "Only show demands originating from '%{city}'"
-      header: "All freight postings"
-      header_query: "All demands for '%{query}'"
-      intro: "Here you can see all the freight postings."
-      just_uploaded: "The highlighted postings have been uploaded and saved to the freight exchange:"
-      page_title: "All freight postings"
+      from_origin_city: "Only show transport requests originating from '%{city}'"
+      header: "All transport requests"
+      header_query: "All transport requests for '%{query}'"
+      intro: "Here you can see all the transport requests."
+      just_uploaded: "The highlighted postings have been uploaded and saved to the spot exchange:"
+      page_title: "All transport requests"
       show_company: "Company profile: %{company}"
-      switch_to_loading_spaces: "Switch to offers"
+      switch_to_loading_spaces: "Switch to transport offers"
       table: 
         headers: 
           company: Company
@@ -659,23 +659,23 @@ en:
           delete: Delete
           edit: Edit
           template: "Use as template"
-      to_destination_city: "Only show demands destined to '%{city}'"
+      to_destination_city: "Only show transport requests destined to '%{city}'"
     new: 
-      header: "New freight posting"
-      page_title: "New freight posting"
+      header: "New transport request"
+      page_title: "New transport request"
     show: 
       destination: 
         header: "Unloading site"
-      header: "Freight posting"
-      is_reply_to: "This demand is a reply to the offer %{name}"
+      header: "Transport request"
+      is_reply_to: "This transport request is a reply to the transport offer %{name}"
       no_side_track_available: "No sidetrack available."
       origin: 
         header: "Loading site"
-      page_title: "Freight posting"
+      page_title: "Transport request"
       transport_description: "Transport description"
     update: 
-      header: "Edit freight posting"
-      page_title: "Edit freight posting"
+      header: "Edit transport request"
+      page_title: "Edit transport request"
     upload: 
       excel_template_link: "or download the sample excel file..."
       header: "Upload postings"
@@ -697,29 +697,29 @@ en:
       contact_to_link: "Contact company"
       delete_link: "Delete this posting"
       edit_link: "Edit this posting"
-      is_reply_to: "This offer is a reply to the demand %{name}"
-      make_reply_to: "This loading space has been created as a reply to %{name} (only the creator of the original freight posting can see this reply)."
+      is_reply_to: "This transport offer is a reply to the transport request %{name}"
+      make_reply_to: "This transport offer has been created as a reply to %{name} (only the creator of the original transport request can see this reply)."
       negotiate_link: Negotiate
-      new_link: "Create loading space"
-      reply_to_link: "Reply with demand"
+      new_link: "Create transport offer"
+      reply_to_link: "Reply with transport request"
       required_field_hint: "The fields with an asterix (*) are mandatory:"
-      search-label: "Offers:"
+      search-label: "Transport offers:"
       template_link: "Use as template"
     create: 
-      page_title: "New loading space posting"
+      page_title: "New transport offer"
     edit: 
-      header: "Edit loading space posting"
-      page_title: "Edit loading space posting"
+      header: "Edit transport offer"
+      page_title: "Edit transport offer"
     index: 
-      all_loading_spaces: "Loading spaces"
+      all_loading_spaces: "Transport offers"
       filter_destination_zip: "Filter by destination ZIP"
       filter_origin_zip: "Filter by origin ZIP"
-      from_origin_city: "Only show offers originating from '%{city}'"
-      header: "All loading space postings"
-      header_query: "All offers for '%{query}'"
-      intro: "Here you can see all the loading space postings."
-      page_title: "All loading space postings"
-      switch_to_freights: "Switch to demands"
+      from_origin_city: "Only show transport offers originating from '%{city}'"
+      header: "All transport offers"
+      header_query: "All transport offers for '%{query}'"
+      intro: "Here you can see all the transport offers."
+      page_title: "All transport offers"
+      switch_to_freights: "Switch to transport requests"
       table: 
         headers: 
           company: Company
@@ -736,27 +736,27 @@ en:
           delete: Delete
           edit: Edit
           template: "Use as template"
-      to_destination_city: "Only show offers destined to '%{city}'"
+      to_destination_city: "Only show transport offers destined to '%{city}'"
     new: 
-      header: "New loading space posting"
-      page_title: "New loading space posting"
+      header: "New transport offer"
+      page_title: "New transport offer"
     show: 
       destination: 
         header: "Unloading site"
-      header: "Loading space posting"
-      is_reply_to: "This offer is a reply to demand: %{name}"
+      header: "Transport offer"
+      is_reply_to: "This transport offer is a reply to the transport request %{name}"
       origin: 
         header: "Loading site"
-      page_title: "Loading space posting"
+      page_title: "Transport offer"
       transport_description: "Transport description"
     update: 
-      header: "Edit loading space posting"
-      page_title: "Edit loading space posting"
+      header: "Edit transport offer"
+      page_title: "Edit transport offer"
   notification_condition_sets: 
     index: 
       add_new_condition: "Add condition..."
-      create_link_freight: "New condition for freights"
-      create_link_loading_space: "New condition for loading spaces"
+      create_link_freight: "New condition for transport requests"
+      create_link_loading_space: "New condition for transport offers"
       delete_condition: Delete
       delete_condition_confirm: "Really delete?"
       delete_set: "Delete condition"
@@ -769,8 +769,8 @@ en:
       submit: "Save condition"
   notifications: 
     common: 
-      freights: Demands
-      loading_spaces: Offers
+      freights: "Transport requests"
+      loading_spaces: "Transport offers"
       mark_all_as_read: "Mark all as 'read'"
       overview: Overview
       reviews: Reviews
@@ -859,7 +859,7 @@ en:
     welcome: 
       header: Welcome
       intro: "You can now login (no sign-up necessary) or create your personal account."
-      page_title: "Welcome to the software prototype of an online freight exchange!"
+      page_title: "Welcome to the software prototype of an online rail transport spot exchange!"
   search: 
     advanced: 
       destination: 
@@ -935,9 +935,9 @@ en:
     demo_company: 
       company_present: "There is a demo company. Click the profile in the sidebar to view their profile or the link below to destroy it:"
       create_demo_company_link: "Create demo company"
-      create_freights_link: "Create freight postings in demo company"
+      create_freights_link: "Create transport requests in demo company"
       destroy_demo_company_link: "Destroy demo company"
-      freights_present: "%{count} freight postings present."
+      freights_present: "%{count} transport requests present."
       header: "Create or reset the demo company"
       intro: "Administrate your demo company."
       no_company_present: "There is no demo company at this moment. Click this link to create one:"
@@ -968,12 +968,12 @@ en:
     common: 
       search-label: "Stations:"
     index: 
-      freights_destination: "Demands destined to here"
-      freights_origin: "Demands originating from here"
+      freights_destination: "Transport requests destined to here"
+      freights_origin: "Transport requests originating from here"
       header: "All stations"
       intro: "Here you can see all stations."
-      loading_spaces_destination: "Offers destined to here"
-      loading_spaces_origin: "Offers originating from here"
+      loading_spaces_destination: "Transport offers destined to here"
+      loading_spaces_origin: "Transport offers originating from here"
       page_title: Stations
   support: 
     array: 
@@ -986,7 +986,7 @@ en:
       reset_your_password: "Use this link to change your password:"
       subject: "Forgot password"
     notification: 
-      body: "There are new notifications in your online freight exchange account."
+      body: "There are new notifications in your online rail transport spot exchange account."
       subject: "New notifications"
   user_sessions: 
     create: 
