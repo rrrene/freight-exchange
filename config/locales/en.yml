@@ -484,7 +484,7 @@ en:
       backend: Backend
       companies: Companies
       dashboard: Dashboard
-      freights: "Transport request"
+      freights: "Transport requests"
       loading_spaces: "Transport offers"
       locale_de: Deutsch
       locale_en: English
