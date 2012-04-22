@@ -17,7 +17,7 @@
         <% if person[attr].full? %>
           <tr>
             <th><%= Person.human_attribute_name(attr) %></th>
-            <td><%= contact_info(person, attr)%></td>
+            <td class="contact_<%= attr %>"><%= contact_info(person, attr)%></td>
           </tr>
         <% end %>
       <% end %>
