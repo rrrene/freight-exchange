@@ -2,9 +2,9 @@
   <thead>
     <tr>
       <th><%= t('freights.index.table.headers.id') %></th>
-      <th><%= t('freights.index.table.headers.valid_until') %></th>
       <th><%= t('freights.index.table.headers.origin_name') %></th>
       <th><%= t('freights.index.table.headers.destination_name') %></th>
+      <th><%= t('freights.index.table.headers.first_transport_at') %></th>
       <th><%= t('freights.index.table.headers.frequency') %></th>
       <% if action_name != "index" && collection.any? { |ar| ar.company == current_company } %>
         <th class="options"><%= t('freights.index.table.headers.options') %></th>
@@ -17,7 +17,6 @@
     <% collection.each do |ar| %>
       <tr class="<%= posting_html_classes(ar) %>">
         <td class="pretty_id"><%= link_to ar.pretty_id, ar, :class => ar.class.to_s.underscore %></td>
-        <td class="origin_date"><%= l(ar.valid_until, :format => :date) if ar.valid_until.present? %></td>
         <% %w(origin destination).each do |origin_or_destination| %>
           <td class="<%= origin_or_destination %>_name">
             <% if city = ar.__send__("#{origin_or_destination}_city").full? %>
@@ -30,7 +29,8 @@
             <% end %>
           </td>
         <% end %>
-        <td class="total_weight numeric"><%= ar.human_attribute_value(:frequency) %></td>
+        <td class="first_transport_at"><%= l(ar.first_transport_at, :format => :date) if ar.first_transport_at.present? %></td>
+        <td class="numeric"><%= ar.human_attribute_value(:frequency) %></td>
         <% if action_name != "index" && ar.company == current_company %>
           <td class="options">
             <%= link_btn t('freights.index.table.options.template'), new_resource_url(:parent_id => ar.id), :icon => :reply %>

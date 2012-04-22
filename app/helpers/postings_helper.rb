@@ -49,8 +49,11 @@ module PostingsHelper
     if opts[:humanize]
       value = resource_class.human_attribute_value(attribute, value)
     end
-    if opts[:localize] || value.is_a?(Time)
+    if opts[:localize]
       value = l(value)
+    end
+    if value.is_a?(Time)
+      value = l(value, :format => :date)
     end
     if [true, false].include?(value)
       value = value ? t("common.choice_yes") : t("common.choice_no")

@@ -26,7 +26,7 @@
   <h3><%= resource_class.human_attribute_name(:contractor) %>: <%= resource.contractor %></h3>
   <div>
     <%= resource_class.human_attribute_name(:valid_until) %>
-    <%= l resource.valid_until %>
+    <%= l resource.valid_until, :format => :date %>
   </div>
 
   <hr>

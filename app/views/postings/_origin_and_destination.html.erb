@@ -19,7 +19,7 @@
       <%= resource["#{origin_or_destination}_country"] %>
     </p>
 
-    <% if resource["#{origin_or_destination}_side_track_available"] %>
+    <% if resource["#{origin_or_destination}_side_track_available"] && resource["#{origin_or_destination}_track_number"].present? %>
       <strong><%= SiteInfo.human_attribute_name(:track_number) %></strong>
       <%= resource["#{origin_or_destination}_track_number"] %>
     <% else %>
