@@ -164,11 +164,11 @@ en:
     human_attribute_values: 
       company_role: 
         name: 
-          custom: sonstige
-          evu: Eisenbahnverkehrsunternehmen
-          kombiniert: "Operateure im Kombinierten Verkehr"
-          spedition: Speditions-/Transportunternehmen
-          verlader: "verladende Unternehmen"
+          custom: other
+          evu: "Railway undertakings"
+          kombiniert: "Operators of combined cargo"
+          spedition: "Forwarding agents"
+          verlader: "Loading agents"
       freight: 
         desired_means_of_transport: 
           custom: other
@@ -177,7 +177,7 @@ en:
         desired_proposal_type: 
           package_price: "package price"
           ton_price: "price per ton"
-          unknown: unknown
+          unknown: other
         frequency: 
           monthly: monthly
           once: once
