@@ -1,4 +1,4 @@
-CODE24 Prototype for an Online Rail Transport Spot Exchange
+Prototype for an Online Rail Transport Spot Exchange
 ==========================================================
 
 This is the source code for an european online rail transport spot exchange. It is a regular Rails Web Application and a first prototype, developed by René Föhring during his research at the University of Duisburg-Essen. The prototype was originally developed as part of the CODE24 project.
