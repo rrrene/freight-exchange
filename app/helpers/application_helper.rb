@@ -222,6 +222,10 @@ module ApplicationHelper
   def navi_to_unless_current(text, opts = {}, html_opts = {})
     navi_to_unless(current_page?(opts), text, opts, html_opts)
   end
+
+  def obsolete(&block)
+    # does nothing
+  end
   
   # REturns <tt>true</tt>, if only some attributes are not blank for the given ActiveRecord object.
   def only_some_attributes_filled?(ar)

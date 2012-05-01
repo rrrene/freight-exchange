@@ -4,7 +4,10 @@
     <%= f.input :email %>
   <% end %>
   
-  <%= f.inputs :change_password do %>
+  <%= f.inputs action_name == "edit" ? :change_password : :set_password do %>
+    <p>
+      <%= t("users.#{action_name}.password_hint") %>
+    </p>
     <%= f.input :password %>
     <%= f.input :password_confirmation %>
   <% end %>
