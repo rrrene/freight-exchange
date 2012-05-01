@@ -29,8 +29,11 @@
     <%= f.input :commercial_register_entry %>
     <%= f.input :vat_id %>
   <% end %>
-  <%= f.inputs :company_misc do %>
-    <%= localized_info_fields f, :misc_text %>
+
+  <% obsolete do %>
+    <%= f.inputs :company_misc do %>
+      <%= localized_info_fields f, :misc_text %>
+    <% end %>
   <% end %>
 
   <%= f.buttons %>

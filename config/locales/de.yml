@@ -11,8 +11,8 @@ de:
         qualifier: "Vergleich"
         value: "Wert"
       company: 
-        address: Adresse
-        address2: "-"
+        address: "Straße"
+        address2: "(fortgesetzt)"
         city: Stadt
         contact_person: Kontaktperson
         country: Land
@@ -20,7 +20,7 @@ de:
         fax: Fax
         localized_infos: 
           misc_text: "Fakten, Meilensteine, Erfolge, ..."
-        name: Name
+        name: Unternehmensname
         phone: Telefon
         website: Internet
         zip: PLZ
@@ -29,13 +29,13 @@ de:
         company_roles: "Unternehmenskategorien:"
         custom_category: " "
       freight:
-        contractor: "Firma Nachfrager"
+        contractor: "Unternehmen mit einer Transportnachfrage"
         valid_until: "Inserat gültig bis"
         contact_person: Kontaktperson
-        desired_proposal_type: "Angebot gewünscht als"
+        desired_proposal_type: "Angebot erbeten mit Angabe von"
         destination_date: Bis
         frequency: Frequenz
-        hazmat: Gefahrengut
+        hazmat: "Gefahrengüter"
         loading_meter: Lademeter
         goods_text: "Gutart"
         misc_text: "z.B. Lademaß- überschreitungen, Umschlag oder Vor-/Nachlauf, Verzollung, Verwiegung etc."
@@ -46,11 +46,11 @@ de:
         transport_weight: "Gewicht pro Transport"
         transports_per_year: "Transporte pro Jahr"
         wagons_provided_by: "Wagen werden gestellt von"
-        total_weight: "Gesamtgewicht (in t)"
+        total_weight: "Gesamtgewicht (in Tonnen)"
         first_transport_at: "Verfügbar ab"
         last_transport_at: "Verfügbar bis"
-        product_name: "Produktname"
-        product_state: "Gutart"
+        product_name: "Frachtbezeichnung"
+        product_state: "Güterart"
         hazmat_class: "Gefahrgutklasse (RID)"
         un_no: "UN-Nr."
         nhm_no: "NHM-Nr."
@@ -60,21 +60,21 @@ de:
         own_means_of_transport: Wagentyp
         own_means_of_transport_custom: "Bitte angeben:"
         requirements_means_of_transport: "Anforderungen an Transportmittel(-einheit)"
-        requirements_at_loading: "Anforderung Beladung des Wagens"
-        requirements_at_unloading: "Anforderung Entladung des Wagens"
+        requirements_at_loading: "Anforderung Beladung des Transportmittels (Güterwagens)"
+        requirements_at_unloading: "Anforderung Entladung des Transportmittels (Güterwagens)"
         origin_side_track_available: "Gleisanschluss vorhanden?"
-        origin_contractor: "Firma"
+        origin_contractor: "Unternehmensname"
         origin_name: "Name"
-        origin_address: "Strasse"
+        origin_address: "Straße"
         origin_address2: "(fortgesetzt)"
         origin_zip: "PLZ"
         origin_city: "Stadt"
         origin_country: "Land"
         origin_station: "Beladebahnhof"
         destination_side_track_available: "Gleisanschluss vorhanden?"
-        destination_contractor: "Firma"
+        destination_contractor: "Unternehmensname"
         destination_name: "Name"
-        destination_address: "Strasse"
+        destination_address: "Straße"
         destination_address2: "(fortgesetzt)"
         destination_zip: "PLZ"
         destination_city: "Stadt"
@@ -87,7 +87,7 @@ de:
         company_roles: "Unternehmenskategorien:"
         custom_category: " "
       loading_space:
-        contractor: "Firma Anbieter"
+        contractor: "Unternehmen mit einem Transportangebot"
         valid_until: "Inserat gültig bis"
         contact_person: Kontaktperson
         desired_proposal_type: "Angebot gewünscht als"
@@ -107,24 +107,24 @@ de:
         transport_weight: "Gewicht pro Transport"
         transports_per_year: "Transporte pro Jahr"
         wagons_provided_by: "Wagen werden gestellt von"
-        weight: "Gesamtgewicht (in t)"
+        weight: "Gesamtgewicht (in Tonnen)"
         own_means_of_transport_present: Eigene Transportmittel vorhanden?
         own_means_of_transport: Wagentyp
         own_means_of_transport_custom: ""
         free_capacities: "Freie Transportkapazitäten"
         origin_side_track_available: "Gleisanschluss vorhanden?"
-        origin_contractor: "Firma"
+        origin_contractor: "Unternehmensname"
         origin_name: "Name"
-        origin_address: "Strasse"
+        origin_address: "Straße"
         origin_address2: "(fortgesetzt)"
         origin_zip: "PLZ"
         origin_city: "Stadt"
         origin_country: "Land"
         origin_station: "Beladebahnhof"
         destination_side_track_available: "Gleisanschluss vorhanden?"
-        destination_contractor: "Firma"
+        destination_contractor: "Unternehmensname"
         destination_name: "Name"
-        destination_address: "Strasse"
+        destination_address: "Straße"
         destination_address2: "(fortgesetzt)"
         destination_zip: "PLZ"
         destination_city: "Stadt"
@@ -150,9 +150,9 @@ de:
         address_template_label: "Adressvorlage benutzen:"
         city: Stadt
         country: Land
-        destination_contractor: "Firma Empfänger"
+        destination_contractor: "Unternehmensname Empfänger"
         name: Bahnhof
-        origin_contractor: "Firma Versender"
+        origin_contractor: "Unternehmensname Versender"
         side_track_available: "Gleisanschluss vorhanden"
         track_number: Gleisnr.
         zip: PLZ
@@ -163,7 +163,7 @@ de:
         password_confirmation: "Passwort wiederholen"
         posting_type: "Art der Inserate"
         user_roles: Berechtigungen
-        notify_by_email: "Zusätzlich per E-Mail über neue Inserate etc. benachrichtigen"
+        notify_by_email: "Ich möchte per E-Mail über neue Inserate benachrichtigt werden."
       station:
         name: Name
         numeric_id: Nummer
@@ -174,15 +174,15 @@ de:
     human_attribute_values:
       freight:
         frequency:
-          once: "Einmalig"
-          weekly: "Wöchentlich"
-          monthly: "Monatlich"
-          yearly: "Jährlich"
+          once: "einmalig"
+          weekly: "wöchentlich"
+          monthly: "monatlich"
+          yearly: "jährlich"
         product_state:
-          liquid: "Flüssig"
-          gas: "Gasförmig"
-          loose: "Lose"
-          packaged: "Verpackt"
+          liquid: "flüssig"
+          gas: "gasförmig"
+          loose: "lose"
+          packaged: "verpackt"
           container: "Container"
         desired_means_of_transport: 
           tank_wagon: Kesselwagen
@@ -193,9 +193,9 @@ de:
           container_wagon: Containertragwagen
           custom: "sonstige"
         desired_proposal_type: 
-          package_price: Preis je Transporteinheit
-          ton_price: Preis je Tonne
-          unknown: "nicht bekannt"
+          package_price: "Preis je Transporteinheit"
+          ton_price: "Preis je Tonne"
+          unknown: "Preisangabe nicht erforderlich, kann später außerbörslich geklärt werden"
         paying_freight: 
           receiver: Empfänger
           sender: Versender
@@ -218,10 +218,10 @@ de:
           intermodal_transport: "Kombinierter Verkehr"
           unknown: "-- nicht bekannt --"
         frequency:
-          once: "Einmalig"
-          weekly: "Wöchentlich"
-          monthly: "Monatlich"
-          yearly: "Jährlich"
+          once: "einmalig"
+          weekly: "wöchentlich"
+          monthly: "monatlich"
+          yearly: "jährlich"
         free_capacities:
           train: Zug
           wagon: Wagen
@@ -280,7 +280,7 @@ de:
         qualifier:
           equal: "ist"
     models: 
-      freight: Ladung
+      freight: Fracht
       loading_space: Laderaum
       station: Bahnhof
       person: Person
@@ -305,7 +305,7 @@ de:
           language: "Gibt an, welche Standardsprache für die Applikation eingestellt wurde."
           name: "Gibt an, welcher Name für die Applikation in E-Mails etc. verwendet wird."
           reviews: 
-            highlight_above: "Gibt an, wieviele freigeschaltete Rezensionen eine Firma braucht, um in den Suchergebnissen hervorgehoben zu werden."
+            highlight_above: "Gibt an, wieviele freigeschaltete Rezensionen ein Unternehmen braucht, um in den Suchergebnissen hervorgehoben zu werden."
           support_email: "Gibt an, an welche E-Mail das Feedback der Benutzer gesendet wird."
       create: 
         page_title: "Neue Konfigurationsvariable erstellen"
@@ -334,7 +334,7 @@ de:
         action_recordings: Aktionen
         app_configs: Einstellungen
         back_to_app: "Zurück zum Frontend"
-        companies: Firmen
+        companies: Unternehmenen
         home: Administration
         search_recordings: Suchen
         setup: Systemassistent
@@ -347,17 +347,17 @@ de:
         last_week: 
           action_recordings: "Benutzeraktionen pro Tag (letzte 7 Tage)"
           action_recordings_actions: "Benutzeraktionen (insgesamt)"
-          action_recordings_company: "Aktionen auf Firmen (letzte 7 Tage)"
+          action_recordings_company: "Aktionen auf Unternehmen (letzte 7 Tage)"
           action_recordings_create: "'Create' Aktionen pro Tag (letzte 7 Tage)"
           action_recordings_destroy: "'Destroy' Aktionen pro Tag (letzte 7 Tage)"
-          action_recordings_freight: "Aktionen auf Ladung (letzte 7 Tage)"
+          action_recordings_freight: "Aktionen auf Fracht (letzte 7 Tage)"
           action_recordings_item_types: "Benutzeraktionen nach Typ (insgesamt)"
           action_recordings_loading_space: "Aktionen auf Laderaum (letzte 7 Tage)"
           action_recordings_person: "Aktionen auf Personen (letzte 7 Tage)"
           action_recordings_review: "Aktionen auf Bewertungen (letzte 7 Tage)"
           action_recordings_update: "'Update' Aktionen pro Tag (letzte 7 Tage)"
           action_recordings_user: "Aktionen auf Benutzer (letzte 7 Tage)"
-          created_companies: "Neue Firmen pro Tag (letzte 7 Tage)"
+          created_companies: "Neue Unternehmen pro Tag (letzte 7 Tage)"
           created_users: "Neue Benutzer pro Tag (letzte 7 Tage)"
           search_recordings: "Suchanfragen pro Tag (letzte 7 Tage)"
           search_recordings_for_keyword: "Suchanfragen, die '%{keyword}' beinhalteten (letzte 7 Tage)"
@@ -371,28 +371,28 @@ de:
       common:
         search-label: Unternehmen
       create: 
-        page_title: "Firma erstellen"
+        page_title: "Unternehmen erstellen"
       dashboard: 
         page_title: Startseite
         recordings: 
           header: Aktionen
       edit: 
-        header: "Firma Informationen"
-        page_title: "Firma bearbeiten"
+        header: "Unternehmen Informationen"
+        page_title: "Unternehmen bearbeiten"
       index: 
-        header: Firmen
-        intro: "Hier sehen Sie alle Firmen im System."
-        page_title: Firmen
+        header: Unternehmen
+        intro: "Hier sehen Sie alle Unternehmen im System."
+        page_title: Unternehmen
       new: 
-        header: "Firma erstellen"
+        header: "Unternehmen erstellen"
         intro: "-"
-        page_title: "Firma erstellen"
+        page_title: "Unternehmen erstellen"
       show: 
-        page_title: Firma
-        users_header: "Benutzer in dieser Firma"
-        users_intro: "Hier sehen Sie alle Benutzer dieser Firma."
+        page_title: Unternehmen
+        users_header: "Benutzer in diesem Unternehmen"
+        users_intro: "Hier sehen Sie alle Benutzer dieses Unternehmens."
       update: 
-        page_title: "Firma bearbeiten"
+        page_title: "Unternehmen bearbeiten"
     people:
       edit: 
         edit_user_link: "Benutzer bearbeiten"
@@ -475,13 +475,12 @@ de:
   common: 
     choice_no: Nein
     choice_yes: Ja
-    choose: "-- Wählen --"
+    choose: "-- Bitte wählen --"
     confirm: "Sind Sie sicher?"
-    create_new_freight: "Neue Ladung erstellen"
-    create_new_loading_space: "Neuen Laderaum erstellen"
     create_new_review: "Bewertung schreiben!"
     deleted_object: "---gelöschtes Objekt---"
     link_back: Zurück
+    required_field_hint: "Die mit einem (*) gekennzeichneten Felder sind Pflichtfelder."
     navi: 
       backend: Administration
       companies: "Unternehmen"
@@ -494,24 +493,24 @@ de:
       locale_en: English
       login: Anmelden
       logout: Abmelden
-      my_company: "Firmenprofil"
+      my_company: "Unternehmensprofil"
       my_person: "Mein Profil"
       my_profile: "Unternehmensprofil"
       my_reviews: Bewertungen
-      my_user: "Mein Passwort etc. ändern"
+      my_user: "Mein Passwort etc. bearbeiten"
       notifications: "Neuigkeiten:"
       people: Benutzer
       register: Registrieren
       my_reviews: Bewertungen
-      select_locale: "Sprache wählen:"
+      select_locale: "Sprache wechseln:"
       settings: "Verwaltung"
       stations: "Bahnhöfe"
     sidebar: 
       advanced_search_link: "Erweiterte Suche"
       company_information: 
         edit: Bearbeiten
-        header: Firmenprofil
-        please_edit_notice: "Bitte füllen Sie ihr Firmenprofil aus."
+        header: Unternehmensprofil
+        please_edit_notice: "Bitte füllen Sie ihr Unternehmensprofil aus."
         show: Anzeigen
         postings: Inserate anzeigen
       person_information: 
@@ -521,7 +520,7 @@ de:
         show: Anzeigen
     website_title: "Freight Exchange 2010"
     black_list_company: "Inserate ignorieren"
-    black_list_company_confirm: "Wollen Sie wirklich zukünftig alle Inserate dieser Firma ignorieren?"
+    black_list_company_confirm: "Wollen Sie wirklich zukünftig alle Inserate dieses Unternehmens ignorieren?"
     black_listed_company: "Inserate werden ignoriert"
     white_list_company: "Inserate hervorheben"
     white_listed_company: "Inserate werden hervorgehoben"
@@ -532,15 +531,14 @@ de:
   companies:
     common:
       search-label: "Unternehmen:"
-      profile: Firmenprofil
+      profile: Unternehmensprofil
       people: Benutzer
       reviews: Bewertungen
       loading_spaces: "Angebote"
       freights: "Nachfragen"
       invalid_postings_link: "Abgelaufene Inserate"
     create: 
-      page_title: "Ihre Firma registrieren"
-
+      page_title: "Neues Unternehmen anlegen"
     index:
       page_title: "Branchenbuch"
       header: "Unternehmen"
@@ -558,25 +556,25 @@ de:
       filter_by_created_at: "Neuste zuerst"
     dashboard:
       header: Newsfeed
-      intro: "Hier sehen Sie alle Aktionen der Benutzer Ihrer Firma."
+      intro: "Hier sehen Sie alle Aktionen der Benutzer Ihres Unternehmens."
       page_title: Startseite
-      sidebar_company_info_title: "Dies ist die InfoCard zu Ihrer Firma:"
+      sidebar_company_info_title: "Dies ist die InfoCard zu Ihres Unternehmens:"
       sidebar_person_info_title: "Dies ist die InfoCard zu Ihrer Person:"
     edit: 
-      header: Firmenprofil
-      page_title: "Firma bearbeiten"
+      header: Unternehmensprofil
+      page_title: "Unternehmen bearbeiten"
     new: 
-      header: "Ihre Firma registrieren"
-      intro: "Erstellen Sie Ihr Konto in einer Minute!"
-      page_title: "Ihre Firma registrieren"
+      header: "Neues Unternehmen anlegen"
+      intro: "Erstellen Sie Ihr Unternehmenskonto in weniger als einer Minute!"
+      page_title: "Neues Unternehmen anlegen"
     show: 
-      edit_company_link: "Firmenprofil bearbeiten"
+      edit_company_link: "Unternehmensprofil bearbeiten"
       header_misc_text: "Wir über uns:"
       header_people: "Wer wir sind:"
       header_reviews: "Was andere über uns sagen:"
       page_title: "%{name}"
     update: 
-      page_title: "Firma bearbeiten"
+      page_title: "Unternehmen bearbeiten"
   contact: 
     index: 
       header: "Kontaktieren Sie unsere Support-Mitarbeiter"
@@ -622,8 +620,8 @@ de:
     hints: 
       user: 
         email: "Bitte geben Sie Ihre E-Mail-Adresse an."
-        login: "Wählen Sie einen Benutzernamen, mit dem Sie sich im System anmelden."
-        password: "Wählen Sie Ihr Passwort."
+        login: "Bitte wählen Sie einen Benutzernamen, mit dem Sie sich im System anmelden."
+        password: "Bitte wählen Sie Ihr Passwort (mind. 4 Zeichen, alle Zeichen erlaubt)."
         password_confirmation: "Bitte wiederholen Sie Ihr Passwort."
       freight:
         valid_until: "(Format: TT.MM.JJJJ)"
@@ -644,11 +642,11 @@ de:
       company_misc: "Weitere Informationen"
       company_name: Name
       credentials: Anmeldeinformationen
-      destination_site_info: "Entladestelle für Ladung:"
-      for_company: Firma
+      destination_site_info: "Entladestelle für Fracht:"
+      for_company: Unternehmen
       freight_description: "Frachtbeschreibung:"
       misc_text: "Sonstige Informationen:"
-      origin_site_info: "Beladestelle für Ladung:"
+      origin_site_info: "Beladestelle für Fracht:"
       person_name: "Persönliche Angaben"
       contractor_info: "Basisdaten:"
       timeframe: "Transportzeitraum:"
@@ -658,8 +656,8 @@ de:
   freights: 
     common: 
       edit_link: "Inserat bearbeiten"
-      new_link: "Neue Nachfrage"
-      required_field_hint: "Die mit einem (*) gekennzeichneten Felder sind Pflichtfelder:"
+      new_link: "Neue Transportnachfrage"
+      required_field_hint: "Die mit einem (*) gekennzeichneten Felder sind Pflichtfelder."
       template_link: "Als Vorlage"
       upload_link: "Massen-Upload per Excel-Tabelle"
       search-label: "Nachfrage:"
@@ -668,13 +666,14 @@ de:
       make_reply_to: "Diese Nachfrage als Antwort auf %{name} einstellen (nur der Ersteller des ursprünglichen Inserats kann dieses Inserat sehen)."
       contact_to_link: "E-Mail an Nachfrager"
       contact_to_href: "mailto:%{email}?subject=Anfrage bzgl. %{name}&body=Inserat: %{url}"
-    create: 
-      header: "Neues Inserat"
-      page_title: "Neues Inserat"
+    create:
+      header: "Neues Inserat für eine Transportnachfrage erstellen"
+      page_title: "Neues Inserat für eine Transportnachfrage erstellen"
     edit: 
-      header: "Inserat bearbeiten"
-      page_title: "Inserat bearbeiten"
-    index:   
+      header: "Inserat für eine Transportnachfrage bearbeiten"
+      page_title: "Inserat für eine Transportnachfrage bearbeiten"
+      submit: "Inserat für eine Transportnachfrage speichern"
+    index:
       page_title: "Nachfragen"
       switch_to_loading_spaces: "Zu Angeboten wechseln"
       header: "Alle Nachfragen"
@@ -703,27 +702,28 @@ de:
           template: "Als Vorlage"
       all_freights: "Nachfragen"
     new:
-      header: "Neues Inserat"
-      page_title: "Neues Inserat"
-    show: 
+      header: "Neues Inserat für eine Transportnachfrage erstellen"
+      page_title: "Neues Inserat für eine Transportnachfrage erstellen"
+      submit: "Inserat für eine Transportnachfrage erstellen"
+    show:
       page_title: "Inserat %{pretty_id}"
       destination: 
-        header: "Entladestelle für Ladung"
-      header: Inserat
+        header: "Entladestelle für Fracht"
+      header: "Inserat für eine Transportnachfrage"
       origin: 
-        header: "Beladestelle für Ladung"
-      transport_description: Ladungsbeschreibung
+        header: "Beladestelle für Fracht"
+      transport_description: Frachtbeschreibung
       no_side_track_available: "Kein Gleisanschluss vorhanden."
       is_reply_to: "Diese Nachfrage ist eine Antwort auf das Angebot %{name}"
     update: 
-      header: "Inserat bearbeiten"
-      page_title: "Inserat bearbeiten"
-    upload: 
+      header: "Inserat für eine Transportnachfrage bearbeiten"
+      page_title: "Inserat für eine Transportnachfrage bearbeiten"
+    upload:
       header: "Inserate hochladen"
       page_title: "Inserate hochladen"
       intro: "Hier können Sie mehrere Inserate für die Nachfrage nach Laderaum gleichzeitig als Excel-Tabelle hochladen."
       intro2: "Als Vorlage können Sie eine <a href='/inserate.xls'>Beispiel-Datei herunterladen</a>."
-      intro3: "Wählen Sie einfach die entsprechende Datei auf Ihrem Computer aus: (und drücken anschließend auf 'Inserate hochladen')"
+      intro3: "Bitte wählen Sie einfach die entsprechende Datei auf Ihrem Computer aus: (und drücken anschließend auf 'Inserate hochladen')"
       submit: "Inserate hochladen"
       excel_template_link: "Jetzt Beispiel-Excel herunterladen..."
   helpers: 
@@ -737,8 +737,8 @@ de:
     common: 
       delete_link: "Inserat löschen"
       edit_link: Bearbeiten
-      new_link: "Neues Angebot"
-      required_field_hint: "Die mit einem (*) gekennzeichneten Felder sind Pflichtfelder:"
+      new_link: "Neues Transportangebot"
+      required_field_hint: "Die mit einem (*) gekennzeichneten Felder sind Pflichtfelder."
       template_link: "Als Vorlage"
       search-label: "Angebote:"
       reply_to_link: "Mit Nachfrage beantworten"
@@ -748,11 +748,13 @@ de:
       contact_to_href: "mailto:%{email}?subject=Anfrage bzgl. %{name}&body=Inserat: %{url}"
       negotiate_link: "Inserat verhandeln"
     create: 
-      page_title: "Neues Inserat"
+      header: "Neues Inserat für ein Transportangebot erstellen"
+      page_title: "Neues Inserat für ein Transportangebot erstellen"
     edit:
-      header: "Inserat bearbeiten"
-      page_title: "Inserat bearbeiten"
-    index: 
+      header: "Inserat für ein Transportangebot bearbeiten"
+      page_title: "Inserat für ein Transportangebot bearbeiten"
+      submit: "Inserat für ein Transportangebot speichern"
+    index:
       page_title: "Angebote"
       switch_to_freights: "Zu Nachfragen wechseln"
       header: "Alle Angebote"
@@ -780,20 +782,21 @@ de:
           template: "Als Vorlage"
       all_loading_spaces: "Angebote"
     new: 
-      header: "Neues Inserat"
-      page_title: "Neues Inserat"
-    show: 
+      header: "Neues Inserat für ein Transportangebot erstellen"
+      page_title: "Neues Inserat für ein Transportangebot erstellen"
+      submit: "Inserat für ein Transportangebot erstellen"
+    show:
       page_title: "Inserat %{pretty_id}"
       destination: 
-        header: "Endladestelle für Ladung"
-      header: Laderaum-Angebot
+        header: "Endladestelle für Fracht"
+      header: "Inserat für ein Transportangebot"
       origin: 
-        header: "Beladestelle für Ladung"
+        header: "Beladestelle für Fracht"
       transport_description: Laderaumbeschreibung
       is_reply_to: "Dieses Angebot ist eine Antwort auf die Nachfrage %{name}"
     update: 
-      header: "Inserat bearbeiten"
-      page_title: "Inserat bearbeiten"
+      header: "Inserat für ein Transportangebot bearbeiten"
+      page_title: "Inserat für ein Transportangebot bearbeiten"
   number: 
     currency: 
       format: 
@@ -852,7 +855,7 @@ de:
       page_title: "Person bearbeiten"
     index: 
       header: "Alle Benutzer"
-      intro: "Hier sehen Sie alle Benutzer Ihrer Firma."
+      intro: "Hier sehen Sie alle Benutzer Ihres Unternehmens."
       page_title: "Überblick: Benutzer"
     show: 
       page_title: "%{name}"
@@ -868,7 +871,7 @@ de:
         loading_meter: Lademeter
         misc: "Additional information:"
         wagon_type: "Welche Wagen sollen verwendet werden (ggf. Alternativen)?"
-        weight: "Gesamtgewicht in t"
+        weight: "Gesamtgewicht (in Tonnen)"
     show: 
       page_title: "Inserat - Detailansicht"
   recordings: 
@@ -938,7 +941,7 @@ de:
           city: Stadt
           country: Land
           name: Bahnhof
-          contractor: "Firma Versender"
+          contractor: "Unternehmen Versender"
           side_track_available: "Gleisanschluss vorhanden"
           track_number: Gleisnr.
           zip: PLZ
@@ -951,14 +954,14 @@ de:
           address_template_label: "Adressvorlage benutzen:"
           city: Stadt
           country: Land
-          contractor: "Firma Empfänger"
+          contractor: "Unternehmen Empfänger"
           name: Bahnhof
           side_track_available: "Gleisanschluss vorhanden"
           track_number: Gleisnr.
           zip: PLZ
           # these do not belong to destination - see search_helper why they are required here
           contact_person: Kontaktperson
-          desired_proposal_type: "Angebot gewünscht als"
+          desired_proposal_type: "Angebot erbeten mit Angabe von"
           destination_date: Bis
           hazmat: Gefahrengut
           loading_meter: Lademeter
@@ -971,7 +974,7 @@ de:
           transport_weight: "Gewicht pro Transport"
           transports_per_year: "Transporte pro Jahr"
           wagons_provided_by: "Wagen werden gestellt von"
-          weight: "Gesamtgewicht (in t)"
+          weight: "Gesamtgewicht (in Tonnen)"
         
       keyword_is: ""
       keyword_contains: enthält
@@ -983,7 +986,7 @@ de:
         header: Suchergebnisse
       sidebar: 
         company_results: 
-          header: "Gefundene Firmen:"
+          header: "Gefundene Unternehmen:"
         station_results: 
           header: "Gefundene Bahnhöfe:"
       subtext_results: 
@@ -995,15 +998,15 @@ de:
       page_title: Suche
   setup: 
     demo_company: 
-      company_present: "Es existiert eine Demo-Firma. Klicken Sie auf das Profil in der Seitenleiste oder löschen Sie sie mit dem folgenden Link:"
-      create_demo_company_link: "Demo-Firma erstellen"
+      company_present: "Es existiert ein Demo-Unternehmen. Klicken Sie auf das Profil in der Seitenleiste oder löschen Sie sie mit dem folgenden Link:"
+      create_demo_company_link: "Demo-Unternehmen erstellen"
       create_freights_link: "Weitere Inserate erzeugen"
-      destroy_demo_company_link: "Demo-Firma löschen"
-      freights_present: "%{count} Inserate in Demo-Firma."
-      header: "Demo-Firma erstellen oder löschen"
-      intro: "Verwalten Sie Ihre Demo-Firma."
-      no_company_present: "Es existiert im Moment keine Demo-Firma. Erstellen Sie eine mit folgendem Link:"
-      page_title: Demo-Firma
+      destroy_demo_company_link: "Demo-Unternehmen löschen"
+      freights_present: "%{count} Inserate in Demo-Unternehmen."
+      header: "Demo-Unternehmen erstellen oder löschen"
+      intro: "Verwalten Sie Ihr Demo-Unternehmen."
+      no_company_present: "Es existiert im Moment kein Demo-Unternehmen. Erstellen Sie eine mit folgendem Link:"
+      page_title: Demo-Unternehmen
     index: 
       admin_user: 
         edit_link: "Ihren Admin-Benutzer bearbeiten"
@@ -1014,9 +1017,9 @@ de:
         intro: "Sie können die Einstellungen der Applikation ändern:"
         link: "Einstellungen öffnen"
       demo_company: 
-        create_link: "Demo-Firma verwalten"
-        header: Demo-Firma
-        intro: "Sie können die erzeugte Demo-Firma erzeugen/löschen:"
+        create_link: "Demo-Unternehmen verwalten"
+        header: Demo-Unternehmen
+        intro: "Sie können die erzeugte Demo-Unternehmen erzeugen/löschen:"
       page_title: Willkommen!
       tolk: 
         dump_all_link: "Tolk ins System laden!"
@@ -1067,15 +1070,20 @@ de:
       new_link: "Weiteren Benutzer anlegen"
     create: 
       page_title: "Neuer Benutzer"
-    edit: 
+    update:
+      page_title: "Account bearbeiten"
+      password_hint: "Sie können optional Ihr Passwort ändern. Sollten Sie ein neues Passwort setzen wollen, so geben Sie es bitte im Folgenden zweimal übereinstimmend ein."
+    edit:
       header: "Account bearbeiten"
       page_title: "Account bearbeiten"
+      password_hint: "Sie können optional Ihr Passwort ändern. Sollten Sie ein neues Passwort setzen wollen, so geben Sie es bitte im Folgenden zweimal übereinstimmend ein."
     index: 
       header: "Alle Benutzer"
-      intro: "Hier sehen Sie alle Benutzer ihrer Firma."
+      intro: "Hier sehen Sie alle Benutzer ihres Unternehmens."
       page_title: "Alle Benutzer"
     new: 
       page_title: "Neuer Benutzer"
+      password_hint: ""
   notifications:
     common:
       overview: Überblick
@@ -1094,7 +1102,7 @@ de:
   notification_condition_sets:
     index:
       page_title: "Regeln für Benachrichtigungen"
-      intro: "Hier können Sie Regeln für Benachrichtigungen hinzufügen, verändern und entfernen."
+      intro: "Hier können Sie Regeln für Benachrichtigungen hinzufügen, bearbeiten und entfernen."
       add_new_condition: "Bedingung hinzufügen..."
       create_link_loading_space: "Neue Regel für Angebote"
       create_link_freight: "Neue Regel für Nachfragen"
@@ -1102,7 +1110,9 @@ de:
       delete_set_confirm: "Regel wirklich löschen?"
       delete_condition: "Entfernen"
       delete_condition_confirm: "Bedingung wirklich entfernen?"
-      edit_condition: "Ändern"
+      edit_condition: "Bearbeiten"
   notification_conditions:
+    edit:
+      page_title: "Regel bearbeiten"
     new:
       submit: "Regel speichern"

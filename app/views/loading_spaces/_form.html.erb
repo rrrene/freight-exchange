@@ -25,5 +25,7 @@
     <%= f.input :custom_category, :as => :string %>
   <% end %>
 
-  <%= f.buttons %>
+  <% f.buttons do %>
+    <%= f.commit_button :label => t("#{controller_name}.#{action_name == 'new' ? 'new' : 'edit' }.submit") %>
+  <% end %>
 <% end %>

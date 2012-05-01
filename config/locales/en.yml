@@ -472,8 +472,6 @@ en:
     choice_yes: "Yes"
     choose: "-- Choose --"
     confirm: "Are you sure?"
-    create_new_freight: "Create transport request"
-    create_new_loading_space: "Create transport offer"
     create_new_review: "Write a review!"
     deleted_object: "-- deleted object --"
     footer: 
