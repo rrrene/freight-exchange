@@ -50,6 +50,7 @@ de:
         total_weight: "Gesamtgewicht (in Tonnen)"
         first_transport_at: "Verfügbar ab"
         last_transport_at: "Verfügbar bis"
+        transport_count: "Häufigkeit für wiederholte Transporte"
         product_name: "Frachtbezeichnung"
         product_state: "Güterart"
         hazmat_class: "Gefahrgutklasse (RID)"
@@ -97,6 +98,7 @@ de:
         frequency: Frequenz
         first_transport_at: "Verfügbar ab"
         last_transport_at: "Verfügbar bis"
+        transport_count: "Häufigkeit für wiederholte Transporte"
         hazmat: Gefahrengut
         loading_meter: Lademeter
         localized_infos: 
@@ -177,6 +179,7 @@ de:
       freight:
         frequency:
           once: "einmalig"
+          daily: "täglich"
           weekly: "wöchentlich"
           monthly: "monatlich"
           yearly: "jährlich"
@@ -221,6 +224,7 @@ de:
           unknown: "-- nicht bekannt --"
         frequency:
           once: "einmalig"
+          daily: "täglich"
           weekly: "wöchentlich"
           monthly: "monatlich"
           yearly: "jährlich"
@@ -630,11 +634,13 @@ de:
         valid_until: "(Format: TT.MM.JJJJ)"
         first_transport_at: "(Format: TT.MM.JJJJ)"
         last_transport_at: "(Format: TT.MM.JJJJ)"
+        transport_count: "(innerhalb des angegebenen Intervals, also bspw. pro Woche)"
       loading_space:
         valid_from: "(Format: TT.MM.JJJJ)"
         valid_until: "(Format: TT.MM.JJJJ)"
         first_transport_at: "(Format: TT.MM.JJJJ)"
         last_transport_at: "(Format: TT.MM.JJJJ)"
+        transport_count: "(innerhalb des angegebenen Intervals, also bspw. pro Woche)"
     localized_info_locale_selector: "Sprache:"
     titles: 
       change_password: "Passwort ändern (optional)"
