@@ -84,6 +84,8 @@ form.formtastic li.more_info label {
   width: 211px;
   padding-left: 1%;
 }
+#freight_valid_from,
+#loading_space_valid_from,
 #freight_valid_until,
 #loading_space_valid_until,
 #freight_contractor,

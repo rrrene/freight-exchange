@@ -32,6 +32,7 @@ class PostingsController < RemoteController
     else
       self.resource = resource_class.new
       resource.contractor = current_company.name if resource.respond_to?(:contractor)
+      resource.valid_from = Time.zone.now.midnight if resource.respond_to?(:valid_from)
       resource.valid_until = Time.zone.now.midnight + 1.week if resource.respond_to?(:valid_until)
       resource.first_transport_at = Time.zone.now.midnight + 1.week if resource.respond_to?(:first_transport_at)
       resource.last_transport_at = Time.zone.now.midnight + 5.week if resource.respond_to?(:last_transport_at)
@@ -188,9 +189,9 @@ class PostingsController < RemoteController
 
     # Do not show invalid postings unless requested for own company
     if params[:invalid] && @company == current_company
-      self.collection = collection.where("valid_until < ?", Time.now)
+      self.collection = collection.where("valid_from > ? OR valid_until < ?", Time.now, Time.now)
     else
-      self.collection = collection.where("valid_until >= ?", Time.now)
+      self.collection = collection.where("valid_from < ? AND valid_until >= ?", Time.now, Time.now)
     end
 
     # Do not show :reply_to postings that do not belong to the current company

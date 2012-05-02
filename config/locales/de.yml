@@ -30,6 +30,7 @@ de:
         custom_category: " "
       freight:
         contractor: "Unternehmen mit einer Transportnachfrage"
+        valid_from: "Inserat gültig ab"
         valid_until: "Inserat gültig bis"
         contact_person: Kontaktperson
         desired_proposal_type: "Angebot erbeten mit Angabe von"
@@ -88,6 +89,7 @@ de:
         custom_category: " "
       loading_space:
         contractor: "Unternehmen mit einem Transportangebot"
+        valid_from: "Inserat gültig ab"
         valid_until: "Inserat gültig bis"
         contact_person: Kontaktperson
         desired_proposal_type: "Angebot gewünscht als"
@@ -536,7 +538,7 @@ de:
       reviews: Bewertungen
       loading_spaces: "Angebote"
       freights: "Nachfragen"
-      invalid_postings_link: "Abgelaufene Inserate"
+      invalid_postings_link: "Abgelaufene & zukünftige Inserate"
     create: 
       page_title: "Neues Unternehmen anlegen"
     index:
@@ -624,10 +626,12 @@ de:
         password: "Bitte wählen Sie Ihr Passwort (mind. 4 Zeichen, alle Zeichen erlaubt)."
         password_confirmation: "Bitte wiederholen Sie Ihr Passwort."
       freight:
+        valid_from: "(Format: TT.MM.JJJJ)"
         valid_until: "(Format: TT.MM.JJJJ)"
         first_transport_at: "(Format: TT.MM.JJJJ)"
         last_transport_at: "(Format: TT.MM.JJJJ)"
       loading_space:
+        valid_from: "(Format: TT.MM.JJJJ)"
         valid_until: "(Format: TT.MM.JJJJ)"
         first_transport_at: "(Format: TT.MM.JJJJ)"
         last_transport_at: "(Format: TT.MM.JJJJ)"
