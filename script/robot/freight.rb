@@ -14,7 +14,8 @@ module Robot
       all = ["Butadien", "Ethanol", "Natriumnitrit", "Kohle", "Nahrungsmittel", "Textilien", "Kunststoffe", "Holz", "Papier", "Metalle", "Maschinen", "Kraftwagen", "Möbel", "Druckerzeugnisse", "Kokereierzeugnisse", "Glas", "Keramik", "Chemische Erzeugnisse", "Erze"]
       all.sort_by { rand }.first
     }
-    
+
+    f.valid_from { Time.now }
     f.valid_until { Time.now + 150.days + (rand * 365.days).to_i }
     f.first_transport_at { Time.now + 150.days + (rand * 365.days).to_i }
 
