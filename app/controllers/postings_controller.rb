@@ -90,7 +90,12 @@ class PostingsController < RemoteController
       end
       klass = Freight
       @collection = @posting_attributes.map do |posting|
-        record = klass.new(posting.attributes.reverse_merge(:contractor => current_company.name, :desired_means_of_transport => 'custom'))
+        defaults = {
+          :contractor => current_company.name, 
+          :valid_from => Time.now,
+          :desired_means_of_transport => 'custom',
+        }
+        record = klass.new(posting.attributes.reverse_merge(defaults))
         record.user = current_user
         record.company = current_company
         record
