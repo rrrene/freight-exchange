@@ -729,12 +729,13 @@ de:
       header: "Inserat für eine Transportnachfrage bearbeiten"
       page_title: "Inserat für eine Transportnachfrage bearbeiten"
     upload:
-      header: "Inserate hochladen"
-      page_title: "Inserate hochladen"
-      intro: "Hier können Sie mehrere Inserate für die Nachfrage nach Laderaum gleichzeitig als Excel-Tabelle hochladen."
-      intro2: "Als Vorlage können Sie eine <a href='/inserate.xls'>Beispiel-Datei herunterladen</a>."
-      intro3: "Bitte wählen Sie einfach die entsprechende Datei auf Ihrem Computer aus: (und drücken anschließend auf 'Inserate hochladen')"
-      submit: "Inserate hochladen"
+      header: "Neue Inserate für Transportnachfragen hochladen"
+      back: "Zurück zur manuellen Eingabe"
+      page_title: "Neue Inserate für Transportnachfragen hochladen"
+      intro: "Hier können Sie mehrere Inserate für Transportnachfragen gleichzeitig als Excel-Tabelle hochladen."
+      intro2: "Als Vorlage können Sie eine <a href='/inserate-transportnachfragen.xls'>Beispiel-Datei herunterladen</a>."
+      intro3: "Bitte wählen Sie einfach die entsprechende Datei auf Ihrem Computer aus: (und drücken anschließend auf 'Neue Inserate für Transportnachfragen hochladen')"
+      submit: "Neue Inserate für Transportnachfragen hochladen"
       excel_template_link: "Jetzt Beispiel-Excel herunterladen..."
   helpers: 
     select: 
