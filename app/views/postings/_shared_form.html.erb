@@ -3,6 +3,7 @@
   <%= f.input :parent_id, :as => :hidden %>
   
   <%= f.input :contractor, :as => :string %>
+  <%= f.input :valid_from, :as => :string, :input_html => { :value => I18n.l(resource.valid_from.to_date) } %>
   <%= f.input :valid_until, :as => :string, :input_html => { :value => I18n.l(resource.valid_until.to_date) } %>
   
   <% if resource.reply_to %>

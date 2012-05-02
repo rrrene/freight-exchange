@@ -122,6 +122,7 @@ class Freight < ActiveRecord::Base
   
   validates_presence_of :contractor
   validates_presence_of :product_name
+  validates_presence_of :valid_from
   validates_presence_of :valid_until
   
   validates_presence_of :total_weight

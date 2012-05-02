@@ -42,12 +42,15 @@ function showFrequencyFields() {
   if( val == "" ) {
     showOrHideFields(false, "#freight_first_transport_at_input, #loading_space_first_transport_at_input");
     showOrHideFields(false, "#freight_last_transport_at_input, #loading_space_last_transport_at_input");
+    showOrHideFields(false, "#freight_transport_count_input, #loading_space_transport_count_input");
   } else if( val == "once" ) {
     showOrHideFields(true, "#freight_first_transport_at_input, #loading_space_first_transport_at_input");
     showOrHideFields(false, "#freight_last_transport_at_input, #loading_space_last_transport_at_input");
+    showOrHideFields(false, "#freight_transport_count_input, #loading_space_transport_count_input");
   } else {
     showOrHideFields(true, "#freight_first_transport_at_input, #loading_space_first_transport_at_input");
     showOrHideFields(true, "#freight_last_transport_at_input, #loading_space_last_transport_at_input");
+    showOrHideFields(true, "#freight_transport_count_input, #loading_space_transport_count_input");
   }
 }
 

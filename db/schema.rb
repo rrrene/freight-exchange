@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120304170038) do
+ActiveRecord::Schema.define(:version => 20120502124731) do
 
   create_table "action_recordings", :force => true do |t|
     t.string   "item_type",  :limit => 30
@@ -79,11 +79,6 @@ ActiveRecord::Schema.define(:version => 20120304170038) do
     t.integer "company_role_id"
   end
 
-  create_table "company_roles_users", :id => false, :force => true do |t|
-    t.integer "company_id"
-    t.integer "company_role_id"
-  end
-
   create_table "freights", :force => true do |t|
     t.integer  "user_id"
     t.integer  "company_id"
@@ -145,6 +140,8 @@ ActiveRecord::Schema.define(:version => 20120304170038) do
     t.string   "custom_category"
     t.datetime "last_transport_at"
     t.integer  "parent_id"
+    t.datetime "valid_from"
+    t.integer  "transport_count",                   :default => 1
   end
 
   create_table "loading_spaces", :force => true do |t|
@@ -197,6 +194,8 @@ ActiveRecord::Schema.define(:version => 20120304170038) do
     t.string   "custom_category"
     t.datetime "last_transport_at"
     t.integer  "parent_id"
+    t.datetime "valid_from"
+    t.integer  "transport_count",                  :default => 1
   end
 
   create_table "localized_infos", :force => true do |t|

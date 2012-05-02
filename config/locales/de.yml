@@ -30,6 +30,7 @@ de:
         custom_category: " "
       freight:
         contractor: "Unternehmen mit einer Transportnachfrage"
+        valid_from: "Inserat gültig ab"
         valid_until: "Inserat gültig bis"
         contact_person: Kontaktperson
         desired_proposal_type: "Angebot erbeten mit Angabe von"
@@ -49,6 +50,7 @@ de:
         total_weight: "Gesamtgewicht (in Tonnen)"
         first_transport_at: "Verfügbar ab"
         last_transport_at: "Verfügbar bis"
+        transport_count: "Häufigkeit für wiederholte Transporte"
         product_name: "Frachtbezeichnung"
         product_state: "Güterart"
         hazmat_class: "Gefahrgutklasse (RID)"
@@ -88,6 +90,7 @@ de:
         custom_category: " "
       loading_space:
         contractor: "Unternehmen mit einem Transportangebot"
+        valid_from: "Inserat gültig ab"
         valid_until: "Inserat gültig bis"
         contact_person: Kontaktperson
         desired_proposal_type: "Angebot gewünscht als"
@@ -95,6 +98,7 @@ de:
         frequency: Frequenz
         first_transport_at: "Verfügbar ab"
         last_transport_at: "Verfügbar bis"
+        transport_count: "Häufigkeit für wiederholte Transporte"
         hazmat: Gefahrengut
         loading_meter: Lademeter
         localized_infos: 
@@ -175,6 +179,7 @@ de:
       freight:
         frequency:
           once: "einmalig"
+          daily: "täglich"
           weekly: "wöchentlich"
           monthly: "monatlich"
           yearly: "jährlich"
@@ -219,6 +224,7 @@ de:
           unknown: "-- nicht bekannt --"
         frequency:
           once: "einmalig"
+          daily: "täglich"
           weekly: "wöchentlich"
           monthly: "monatlich"
           yearly: "jährlich"
@@ -536,7 +542,7 @@ de:
       reviews: Bewertungen
       loading_spaces: "Angebote"
       freights: "Nachfragen"
-      invalid_postings_link: "Abgelaufene Inserate"
+      invalid_postings_link: "Abgelaufene & zukünftige Inserate"
     create: 
       page_title: "Neues Unternehmen anlegen"
     index:
@@ -624,13 +630,17 @@ de:
         password: "Bitte wählen Sie Ihr Passwort (mind. 4 Zeichen, alle Zeichen erlaubt)."
         password_confirmation: "Bitte wiederholen Sie Ihr Passwort."
       freight:
+        valid_from: "(Format: TT.MM.JJJJ)"
         valid_until: "(Format: TT.MM.JJJJ)"
         first_transport_at: "(Format: TT.MM.JJJJ)"
         last_transport_at: "(Format: TT.MM.JJJJ)"
+        transport_count: "(innerhalb des angegebenen Intervals, also bspw. pro Woche)"
       loading_space:
+        valid_from: "(Format: TT.MM.JJJJ)"
         valid_until: "(Format: TT.MM.JJJJ)"
         first_transport_at: "(Format: TT.MM.JJJJ)"
         last_transport_at: "(Format: TT.MM.JJJJ)"
+        transport_count: "(innerhalb des angegebenen Intervals, also bspw. pro Woche)"
     localized_info_locale_selector: "Sprache:"
     titles: 
       change_password: "Passwort ändern (optional)"
@@ -719,12 +729,13 @@ de:
       header: "Inserat für eine Transportnachfrage bearbeiten"
       page_title: "Inserat für eine Transportnachfrage bearbeiten"
     upload:
-      header: "Inserate hochladen"
-      page_title: "Inserate hochladen"
-      intro: "Hier können Sie mehrere Inserate für die Nachfrage nach Laderaum gleichzeitig als Excel-Tabelle hochladen."
-      intro2: "Als Vorlage können Sie eine <a href='/inserate.xls'>Beispiel-Datei herunterladen</a>."
-      intro3: "Bitte wählen Sie einfach die entsprechende Datei auf Ihrem Computer aus: (und drücken anschließend auf 'Inserate hochladen')"
-      submit: "Inserate hochladen"
+      header: "Neue Inserate für Transportnachfragen hochladen"
+      back: "Zurück zur manuellen Eingabe"
+      page_title: "Neue Inserate für Transportnachfragen hochladen"
+      intro: "Hier können Sie mehrere Inserate für Transportnachfragen gleichzeitig als Excel-Tabelle hochladen."
+      intro2: "Als Vorlage können Sie eine <a href='/inserate-transportnachfragen.xls'>Beispiel-Datei herunterladen</a>."
+      intro3: "Bitte wählen Sie einfach die entsprechende Datei auf Ihrem Computer aus: (und drücken anschließend auf 'Neue Inserate für Transportnachfragen hochladen')"
+      submit: "Neue Inserate für Transportnachfragen hochladen"
       excel_template_link: "Jetzt Beispiel-Excel herunterladen..."
   helpers: 
     select: 

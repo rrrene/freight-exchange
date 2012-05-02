@@ -1,3 +1,9 @@
+<% content_for(:toolbar) do %>
+  <div class="float_left">
+    <%= link_btn t('.back').html_safe, {:action => "new"}, :icon => 'prev' %>
+  </div>
+<% end %>
+
 <div class="box">
   <p>
     <%= t(".intro").html_safe %>

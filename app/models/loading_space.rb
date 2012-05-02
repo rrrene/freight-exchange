@@ -87,6 +87,7 @@ class LoadingSpace < ActiveRecord::Base
   
   
   validates_presence_of :contractor
+  validates_presence_of :valid_from
   validates_presence_of :valid_until
   
   validates_inclusion_of :frequency, :in => FREQUENCY_CHOICES

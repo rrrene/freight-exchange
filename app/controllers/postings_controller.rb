@@ -32,6 +32,7 @@ class PostingsController < RemoteController
     else
       self.resource = resource_class.new
       resource.contractor = current_company.name if resource.respond_to?(:contractor)
+      resource.valid_from = Time.zone.now.midnight if resource.respond_to?(:valid_from)
       resource.valid_until = Time.zone.now.midnight + 1.week if resource.respond_to?(:valid_until)
       resource.first_transport_at = Time.zone.now.midnight + 1.week if resource.respond_to?(:first_transport_at)
       resource.last_transport_at = Time.zone.now.midnight + 5.week if resource.respond_to?(:last_transport_at)
@@ -89,7 +90,12 @@ class PostingsController < RemoteController
       end
       klass = Freight
       @collection = @posting_attributes.map do |posting|
-        record = klass.new(posting.attributes.reverse_merge(:contractor => current_company.name, :desired_means_of_transport => 'custom'))
+        defaults = {
+          :contractor => current_company.name, 
+          :valid_from => Time.now,
+          :desired_means_of_transport => 'custom',
+        }
+        record = klass.new(posting.attributes.reverse_merge(defaults))
         record.user = current_user
         record.company = current_company
         record
@@ -186,15 +192,14 @@ class PostingsController < RemoteController
       self.collection = collection.where(:company_id => @company_id)
     end
 
-    # Do not show postings which start dates lie in the past
-    if @company == current_company && params[:invalid]
-      # show invalid
-        self.collection = collection.where("valid_until < ?", Time.now)
+    # Do not show invalid postings unless requested for own company
+    if params[:invalid] && @company == current_company
+      self.collection = collection.where("valid_from > ? OR valid_until < ?", Time.now, Time.now)
     else
-      self.collection = collection.where("valid_until >= ?", Time.now)
+      self.collection = collection.where("valid_from < ? AND valid_until >= ?", Time.now, Time.now)
     end
 
-    # Do not show :reply_to postings that do not belong to us
+    # Do not show :reply_to postings that do not belong to the current company
     self.collection = collection.where("company_id = ? OR reply_to_id IS NULL OR reply_to_id IN (?)", current_company.id, valid_reply_to_ids)
 
     # Do not show postings that the user should not see
