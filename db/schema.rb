@@ -79,11 +79,6 @@ ActiveRecord::Schema.define(:version => 20120304170038) do
     t.integer "company_role_id"
   end
 
-  create_table "company_roles_users", :id => false, :force => true do |t|
-    t.integer "company_id"
-    t.integer "company_role_id"
-  end
-
   create_table "freights", :force => true do |t|
     t.integer  "user_id"
     t.integer  "company_id"

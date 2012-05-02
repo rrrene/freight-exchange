@@ -186,15 +186,14 @@ class PostingsController < RemoteController
       self.collection = collection.where(:company_id => @company_id)
     end
 
-    # Do not show postings which start dates lie in the past
-    if @company == current_company && params[:invalid]
-      # show invalid
-        self.collection = collection.where("valid_until < ?", Time.now)
+    # Do not show invalid postings unless requested for own company
+    if params[:invalid] && @company == current_company
+      self.collection = collection.where("valid_until < ?", Time.now)
     else
       self.collection = collection.where("valid_until >= ?", Time.now)
     end
 
-    # Do not show :reply_to postings that do not belong to us
+    # Do not show :reply_to postings that do not belong to the current company
     self.collection = collection.where("company_id = ? OR reply_to_id IS NULL OR reply_to_id IN (?)", current_company.id, valid_reply_to_ids)
 
     # Do not show postings that the user should not see
