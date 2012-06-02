@@ -2,16 +2,17 @@
   <%= render :partial => "postings/shared_form", :locals => {:f => f} %>
 
   <%= f.inputs :transport_timeframe do %>
-    <%= f.input :free_capacities, :collection => collection_choices(resource.class, :free_capacities), :as => :select %>
-    
     <%#= localized_info_field f, :transport_text %>
     
     <%#= localized_info_field f, :misc_text %>
     
-    <%= f.input :own_means_of_transport_present, :as => :radio, :collection => yes_no_collection %>
+    <%= f.input :own_means_of_transport_present, :as => :radio, :collection => own_means_of_transport_present_choices %>
+
     <%= f.input :own_means_of_transport, :collection => collection_choices(Freight, :own_means_of_transport), :include_blank => true %>
     <%= f.input :own_means_of_transport_custom, :as => :string %>
-    
+
+    <%= f.input :free_capacities, :collection => collection_choices(resource.class, :free_capacities), :as => :select %>
+
   <% end %>
 
   <%= f.inputs :misc_text, :class => "inputs misc_info" do %>

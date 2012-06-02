@@ -16,6 +16,7 @@ class Freight < ActiveRecord::Base
   PRODUCT_STATE_CHOICES = %w(liquid gas loose packaged container)
   DESIRED_MEANS_OF_TRANSPORT_CHOICES = (0..9).to_a.map { |x| "wagon_#{x}" } + %w(custom)
   OWN_MEANS_OF_TRANSPORT_CHOICES = DESIRED_MEANS_OF_TRANSPORT_CHOICES
+  OWN_MEANS_OF_TRANSPORT_PRESENT_CHOICES = [true, false]
 
   belongs_to :user
   belongs_to :company

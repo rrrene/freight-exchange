@@ -207,6 +207,9 @@ en:
           closed_wagon: "closed wagon"
           container_wagon: "container wagon"
           custom: other
+        own_means_of_transport_present:
+          choice_true: "Yes"
+          choice_false: "No"
         paying_freight: 
           receiver: receiver
           sender: sender
@@ -252,10 +255,8 @@ en:
           container_wagon: "container wagon"
           custom: other
         own_means_of_transport_present: 
-          ? "false"
-          : "no"
-          ? "true"
-          : "yes"
+          choice_true: "Yes"
+          choice_false: "No"
         transport_type: 
           block_train: "block train"
           intermodal_transport: "intermodal transport"

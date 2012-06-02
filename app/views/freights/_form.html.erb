@@ -16,7 +16,7 @@
   <% end %>
 
   <%= f.inputs :transport_timeframe do %>
-    <%= f.input :own_means_of_transport_present, :as => :radio, :collection => yes_no_collection %>
+    <%= f.input :own_means_of_transport_present, :as => :radio, :collection => own_means_of_transport_present_choices %>
 
     <%= f.input :desired_means_of_transport, :collection => collection_choices(Freight, :desired_means_of_transport), :include_blank => false %>
     <%= f.input :desired_means_of_transport_custom, :as => :string %>

@@ -68,7 +68,7 @@ function addToStyleQueries(original_query, additional_query) {
 
 function showOwnMeansOfTransportPresentFields() {
   var own_means_present = $("#freight_own_means_of_transport_present_true, #loading_space_own_means_of_transport_present_true").attr("checked");
-  var show_own_means_present = "#freight_own_means_of_transport_input, #freight_own_means_of_transport_custom_input, #loading_space_own_means_of_transport_input, #loading_space_own_means_of_transport_custom_input";
+  var show_own_means_present = "#freight_own_means_of_transport_input, #freight_own_means_of_transport_custom_input, #loading_space_free_capacities_input, #loading_space_own_means_of_transport_input, #loading_space_own_means_of_transport_custom_input";
   var show_own_means_not_present = "#freight_requirements_means_of_transport_input, #freight_desired_means_of_transport_input";
   showOrHideFields(own_means_present, show_own_means_present);
   showOrHideFields(!own_means_present, show_own_means_not_present);

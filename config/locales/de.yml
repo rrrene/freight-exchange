@@ -58,8 +58,8 @@ de:
         nhm_no: "NHM-Nr."
         desired_means_of_transport: Gewünschte Transportmittel
         desired_means_of_transport_custom: ""
-        own_means_of_transport_present: Eigene Transportmittel vorhanden?
-        own_means_of_transport: Wagentyp
+        own_means_of_transport_present: "Transportmittel gewünscht?"
+        own_means_of_transport: "Vorhandene Transportmittel"
         own_means_of_transport_custom: "Bitte angeben:"
         requirements_means_of_transport: "Anforderungen an Transportmittel(-einheit)"
         requirements_at_loading: "Anforderung Beladung des Transportmittels (Güterwagens)"
@@ -112,7 +112,7 @@ de:
         transports_per_year: "Transporte pro Jahr"
         wagons_provided_by: "Wagen werden gestellt von"
         weight: "Gesamtgewicht (in Tonnen)"
-        own_means_of_transport_present: Eigene Transportmittel vorhanden?
+        own_means_of_transport_present: "Angebot umfasst:"
         own_means_of_transport: Wagentyp
         own_means_of_transport_custom: ""
         free_capacities: "Freie Transportkapazitäten"
@@ -203,6 +203,9 @@ de:
           tank_wagon: Kesselwagen
           tank_container: Tankcontainer
           custom: "sonstige"
+        own_means_of_transport_present:
+          choice_true: "Nein, nur Traktion gewünscht (Transportmittel vorhanden)"
+          choice_false: "Ja"
         own_means_of_transport:
           wagon_0: Offene Wagen
           wagon_1: Gedeckte Wagen
@@ -253,8 +256,8 @@ de:
           wagon: Wagen
           slots: "KV-Stellplätze"
         own_means_of_transport_present:
-          true: "Ja"
-          false: "Nein"
+          choice_true: "Traktion und Güterwagen"
+          choice_false: "reine Traktion (nur Lokomotiven)"
         own_means_of_transport:
           wagon_0: Offene Wagen
           wagon_1: Gedeckte Wagen

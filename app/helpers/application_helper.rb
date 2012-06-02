@@ -52,7 +52,7 @@ module ApplicationHelper
   def collection_choices(model, attribute_name, const = nil)
     const ||= "#{model}::#{attribute_name.to_s.upcase}_CHOICES".constantize
     const.map { |value| 
-      [model.human_attribute_value(attribute_name, value), value] 
+      [model.human_attribute_value(attribute_name, value), value]
     }
   end
   
@@ -275,6 +275,10 @@ module ApplicationHelper
   
   def yes_no_collection
     [true, false].map { |b| [yes_no(b), b] }
+  end
+
+  def own_means_of_transport_present_choices
+    [true, false].map { |b| [t("activerecord.human_attribute_values.#{resource_class.to_s.underscore}.own_means_of_transport_present.choice_"+b.to_s), b] }.reverse
   end
   
 end

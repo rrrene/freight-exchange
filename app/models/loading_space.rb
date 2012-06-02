@@ -12,6 +12,7 @@ class LoadingSpace < ActiveRecord::Base
   FREQUENCY_CHOICES = %w(once weekly monthly yearly)
   FREE_CAPACITIES_CHOICES = %w(train wagon slots)
   OWN_MEANS_OF_TRANSPORT_CHOICES = Freight::OWN_MEANS_OF_TRANSPORT_CHOICES
+  OWN_MEANS_OF_TRANSPORT_PRESENT_CHOICES = Freight::OWN_MEANS_OF_TRANSPORT_PRESENT_CHOICES
 
   belongs_to :user
   belongs_to :company
