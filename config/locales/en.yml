@@ -610,7 +610,8 @@ en:
       origin_site_info: "Loading site:"
       person_name: "Personal information"
       timeframe: "Time frame:"
-      transport_timeframe: "Timeframe and Transports"
+      transport_timeframe: "Transports"
+      frequency: "Timeframe"
       transport_type: "Transport description:"
   freights: 
     common: 

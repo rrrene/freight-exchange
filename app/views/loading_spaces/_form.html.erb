@@ -2,8 +2,6 @@
   <%= render :partial => "postings/shared_form", :locals => {:f => f} %>
 
   <%= f.inputs :transport_timeframe do %>
-    <%= render :partial => "postings/frequency_form", :locals => {:f => f} %>
-
     <%= f.input :free_capacities, :collection => collection_choices(resource.class, :free_capacities), :as => :select %>
     
     <%#= localized_info_field f, :transport_text %>
@@ -16,7 +14,7 @@
     
   <% end %>
 
-  <%= f.inputs :posting_contact do %>
+  <%= f.inputs :misc_text, :class => "inputs misc_info" do %>
     <%= f.input :contact_person, :collection => current_company.people %>
   <% end %>
 

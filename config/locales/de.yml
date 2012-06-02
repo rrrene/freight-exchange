@@ -660,7 +660,8 @@ de:
       person_name: "Persönliche Angaben"
       contractor_info: "Basisdaten:"
       timeframe: "Transportzeitraum:"
-      transport_timeframe: "Zeitraum und Transporte"
+      transport_timeframe: "Transportdaten"
+      timeframe: "Zeitraum"
       freight_classification: "Klassifikation"
       transport_type: "Frachtbeschreibung:"
   freights: 

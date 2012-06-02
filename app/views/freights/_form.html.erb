@@ -15,8 +15,6 @@
   <% end %>
 
   <%= f.inputs :transport_timeframe do %>
-    <%= render :partial => "postings/frequency_form", :locals => {:f => f} %>
-
     <%= f.input :transport_weight, :as => :string %>
 
     <%#= localized_info_fields f, :goods_text %>
@@ -38,10 +36,10 @@
     <%#= f.input :wagons_provided_by, :collection => collection_choices(Freight, :wagons_provided_by), :as => :radio %>
     <%#= f.input :paying_freight, :collection => collection_choices(Freight, :paying_freight), :as => :select, :include_blank => false %>
     
-    <%= f.input :desired_proposal_type, :collection => collection_choices(Freight, :desired_proposal_type), :as => :radio %>
   <% end %>
 
-  <%= f.inputs :misc_text do %>
+  <%= f.inputs :misc_text, :class => "inputs misc_info" do %>
+    <%= f.input :desired_proposal_type, :collection => collection_choices(Freight, :desired_proposal_type), :as => :radio %>
     <%#= localized_info_fields f, :misc_text %>
     <%= f.input :contact_person, :collection => current_company.people %>
   <% end %>
