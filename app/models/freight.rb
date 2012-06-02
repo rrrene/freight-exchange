@@ -14,8 +14,8 @@ class Freight < ActiveRecord::Base
   PAYING_FREIGHT_CHOICES = %w(unknown sender receiver)
   FREQUENCY_CHOICES = %w(once weekly monthly yearly)
   PRODUCT_STATE_CHOICES = %w(liquid gas loose packaged container)
-  DESIRED_MEANS_OF_TRANSPORT_CHOICES = %w(tank_wagon tank_container custom)
-  OWN_MEANS_OF_TRANSPORT_CHOICES = %w(closed_wagon container_wagon custom)
+  DESIRED_MEANS_OF_TRANSPORT_CHOICES = (0..9).to_a.map { |x| "wagon_#{x}" } + %w(custom)
+  OWN_MEANS_OF_TRANSPORT_CHOICES = DESIRED_MEANS_OF_TRANSPORT_CHOICES
 
   belongs_to :user
   belongs_to :company

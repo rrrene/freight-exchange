@@ -170,7 +170,17 @@ en:
           spedition: "Forwarding agents"
           verlader: "Loading agents"
       freight: 
-        desired_means_of_transport: 
+        desired_means_of_transport:
+          wagon_0: Offene Wagen
+          wagon_1: Gedeckte Wagen
+          wagon_2: Wagen mit Temperaturbeeinflussung
+          wagon_3: Flachwagen mit 2 Radsätzen
+          wagon_4: Flachwagen mit unabhängigen Radsätzen
+          wagon_5: Gemischte Offen-Flachwagen
+          wagon_6: Drehgestell-Flachwagen
+          wagon_7: Wagen mit öffnungsfähigem Dach
+          wagon_8: Sonderwagen
+          wagon_9: Kesselwagen
           custom: other
           tank_container: "tank container"
           tank_wagon: "tank wagon"
@@ -183,7 +193,17 @@ en:
           once: once
           weekly: weekly
           yearly: yearly
-        own_means_of_transport: 
+        own_means_of_transport:
+          wagon_0: Offene Wagen
+          wagon_1: Gedeckte Wagen
+          wagon_2: Wagen mit Temperaturbeeinflussung
+          wagon_3: Flachwagen mit 2 Radsätzen
+          wagon_4: Flachwagen mit unabhängigen Radsätzen
+          wagon_5: Gemischte Offen-Flachwagen
+          wagon_6: Drehgestell-Flachwagen
+          wagon_7: Wagen mit öffnungsfähigem Dach
+          wagon_8: Sonderwagen
+          wagon_9: Kesselwagen
           closed_wagon: "closed wagon"
           container_wagon: "container wagon"
           custom: other
@@ -217,7 +237,17 @@ en:
           once: once
           weekly: weekly
           yearly: yearly
-        own_means_of_transport: 
+        own_means_of_transport:
+          wagon_0: Offene Wagen
+          wagon_1: Gedeckte Wagen
+          wagon_2: Wagen mit Temperaturbeeinflussung
+          wagon_3: Flachwagen mit 2 Radsätzen
+          wagon_4: Flachwagen mit unabhängigen Radsätzen
+          wagon_5: Gemischte Offen-Flachwagen
+          wagon_6: Drehgestell-Flachwagen
+          wagon_7: Wagen mit öffnungsfähigem Dach
+          wagon_8: Sonderwagen
+          wagon_9: Kesselwagen
           closed_wagon: "closed wagon"
           container_wagon: "container wagon"
           custom: other
@@ -632,7 +662,8 @@ en:
     edit: 
       header: "Edit transport request"
       page_title: "Edit transport request"
-    index: 
+      submit: "Save posting"
+    index:
       all_freights: "Transport requests"
       filter_destination_zip: "Filter by destination ZIP"
       filter_origin_zip: "Filter by origin ZIP"
@@ -663,7 +694,8 @@ en:
     new: 
       header: "New transport request"
       page_title: "New transport request"
-    show: 
+      submit: "Create posting"
+    show:
       destination: 
         header: "Unloading site"
       header: "Transport request"
@@ -710,7 +742,8 @@ en:
     edit: 
       header: "Edit transport offer"
       page_title: "Edit transport offer"
-    index: 
+      submit: "Save posting"
+    index:
       all_loading_spaces: "Transport offers"
       filter_destination_zip: "Filter by destination ZIP"
       filter_origin_zip: "Filter by origin ZIP"
@@ -740,6 +773,7 @@ en:
     new: 
       header: "New transport offer"
       page_title: "New transport offer"
+      submit: "Create posting"
     show: 
       destination: 
         header: "Unloading site"
