@@ -34,6 +34,6 @@ module Robot
     f.free_capacities { %w(train wagon slots).random }
     
     f.own_means_of_transport_present { rand < 0.5 }
-    f.own_means_of_transport { %w(closed_wagon container_wagon).random }
+    f.own_means_of_transport { ::LoadingSpace::OWN_MEANS_OF_TRANSPORT_CHOICES.random }
   end
 end
