@@ -12,22 +12,23 @@
     <%= f.input :nhm_no, :as => :string %>
     
     <%= f.input :total_weight, :as => :string %>
+    <%= f.input :transport_weight, :as => :string %>
   <% end %>
 
   <%= f.inputs :transport_timeframe do %>
-    <%= f.input :transport_weight, :as => :string %>
+    <%= f.input :own_means_of_transport_present, :as => :radio, :collection => yes_no_collection %>
 
-    <%#= localized_info_fields f, :goods_text %>
-    
-    <%#= f.input :transport_type, :collection => collection_choices(Freight, :transport_type), :include_blank => false %>
-    <%#= localized_info_fields f, :transport_text %>
     <%= f.input :desired_means_of_transport, :collection => collection_choices(Freight, :desired_means_of_transport), :include_blank => false %>
     <%= f.input :desired_means_of_transport_custom, :as => :string %>
-    
-    <%= f.input :own_means_of_transport_present, :as => :radio, :collection => yes_no_collection %>
+
     <%= f.input :own_means_of_transport, :collection => collection_choices(Freight, :own_means_of_transport), :include_blank => true %>
     <%= f.input :own_means_of_transport_custom, :as => :string %>
-    
+
+    <%#= localized_info_fields f, :goods_text %>
+
+    <%#= f.input :transport_type, :collection => collection_choices(Freight, :transport_type), :include_blank => false %>
+    <%#= localized_info_fields f, :transport_text %>
+
     <%= f.input :requirements_means_of_transport, :as => :text, :input_html => {:rows => ""} %>
 
     <%= f.input :requirements_at_loading, :as => :text %>
