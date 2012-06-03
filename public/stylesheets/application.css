@@ -1026,7 +1026,7 @@ div.graph-caption {
   padding-top: 8px;
   border-radius: 3px;
 }
-.posting_zip_filter div.form_wrapper input {
+.posting_zip_filter div.form_wrapper input.text {
   border: none;
   width: 50%;
 }

@@ -41,7 +41,7 @@
 
   <%= posting_attribute :free_capacities, :humanize => true %>
 
-  <%= posting_attribute :own_means_of_transport_present %>
+  <%= posting_attribute :own_means_of_transport_present, :value => resource.own_means_of_transport_present ? "choice_true" : "choice_false", :humanize => true %>
   <% if resource.own_means_of_transport_present? %>
     <%= posting_attribute :own_means_of_transport, :humanize => true, :dependent => true %>
     <%= posting_attribute :own_means_of_transport_custom, :dependent => true if resource.own_means_of_transport == "custom" %>

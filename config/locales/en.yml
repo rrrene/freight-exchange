@@ -666,6 +666,7 @@ en:
       submit: "Save posting"
     index:
       all_freights: "Transport requests"
+      filter_own_means_of_transport_present: "Filter by own means of transport present"
       filter_destination_zip: "Filter by destination ZIP"
       filter_origin_zip: "Filter by origin ZIP"
       from_origin_city: "Only show transport requests originating from '%{city}'"
@@ -746,6 +747,7 @@ en:
       submit: "Save posting"
     index:
       all_loading_spaces: "Transport offers"
+      filter_own_means_of_transport_present: "Filter by own means of transport present"
       filter_destination_zip: "Filter by destination ZIP"
       filter_origin_zip: "Filter by origin ZIP"
       from_origin_city: "Only show transport offers originating from '%{city}'"
@@ -845,6 +847,10 @@ en:
         wagon_type: "Type of wagon:"
         weight: "Weight (kg):"
       station_hint: "Search by number or name"
+      filter_own_means_of_transport_present:
+        default: "Any"
+        traction: "No"
+        transport: "Yes"
     show: 
       page_title: "Posting details"
   recordings: 

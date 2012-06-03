@@ -46,6 +46,9 @@ module PostingsHelper
 
   def value_for_attribute(attribute, opts = {}, value = nil)
     value ||= resource.send(attribute)
+    if opts[:value]
+      value = opts[:value]
+    end
     if opts[:humanize]
       value = resource_class.human_attribute_value(attribute, value)
     end

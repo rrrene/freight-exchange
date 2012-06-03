@@ -11,15 +11,32 @@
   <div class="float_left">
     <%#= link_btn_unless_current t("freights.index.all_freights"), params.merge(:controller => :freights) %>
     <%#= link_btn_unless_current t("loading_spaces.index.all_loading_spaces"), params.merge(:controller => :loading_spaces) %>
+
+    <% if controller?(:loading_spaces) %>
+      <div class="float_left posting_zip_filter">
+        <%= link_btn t("#{controller_name}.index.filter_own_means_of_transport_present"), "#", :onclick => "$('#filter_own_means_of_transport').toggle();" %>
+        <div class="form_wrapper" id="filter_own_means_of_transport"<%= ' style="display:none;"'.html_safe if params[:own_means_of_transport_present].blank? %>>
+          <%= form_tag({}, :method => :get) do %>
+            <% posting_filter_keys_without("own_means_of_transport_present").each do |filter| %>
+              <%= hidden_field_tag filter, params[filter] %>
+            <% end %>
+            <%= select_tag :own_means_of_transport_present, options_for_filter_own_means_of_transport_present %>
+            <%= submit_tag ">" %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+
     <% %w(origin_zip destination_zip).each do |field| %>
       <div class="float_left posting_zip_filter">
-        <%= link_btn t("#{controller_name}.index.filter_#{field}"), "#", :onclick => "$('#filter_#{field}').show().find('input').focus();" %>
+        <%= link_btn t("#{controller_name}.index.filter_#{field}"), "#", :onclick => "$('#filter_#{field}').toggle().find('input.text').focus();" %>
         <div class="form_wrapper" id="filter_<%= field %>"<%= ' style="display:none;"'.html_safe if params[field].blank? %>>
           <%= form_tag({}, :method => :get) do %>
             <% posting_filter_keys_without(field).each do |filter| %>
               <%= hidden_field_tag filter, params[filter] %>
             <% end %>
-            <%= text_field_tag field, params[field], :size => 5 %>
+            <%= text_field_tag field, params[field], :size => 5, :class => "text" %>
+            <%= submit_tag ">" %>
           <% end %>
         </div>
       </div>

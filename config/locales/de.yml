@@ -726,6 +726,7 @@ de:
       just_uploaded: "Die markierten Nachfragen wurden per Excel hochgeladen und ins System eingestellt:"
       from_origin_city: "Nur Nachfragen aus '%{city}'"
       to_destination_city: "Nur Nachfragen nach '%{city}'"
+      filter_own_means_of_transport_present: "Nach Art filtern"
       filter_origin_zip: "Nach Belade-PLZ filtern"
       filter_destination_zip: "Nach Entlade-PLZ filtern"
       show_company: "Profil von %{company}"
@@ -734,6 +735,7 @@ de:
           valid_until: "Gültig bis"
           origin_name: "Startort (Bf)"
           frequency: Zeitraum
+          first_transport_at: "Ab Datum"
           destination_name: "Zielort (Bf)"
           options: Optionen
           id: "Nummer"
@@ -807,6 +809,7 @@ de:
       intro: "Hier sehen Sie alle Angebote."
       from_origin_city: "Nur Angebote aus '%{city}'"
       to_destination_city: "Nur Angebote nach '%{city}'"
+      filter_own_means_of_transport_present: "Nach Traktion und Transportmitteln filtern"
       filter_origin_zip: "Nach Belade-PLZ filtern"
       filter_destination_zip: "Nach Entlade-PLZ filtern"
       table: 
@@ -917,6 +920,10 @@ de:
         misc: "Additional information:"
         wagon_type: "Welche Wagen sollen verwendet werden (ggf. Alternativen)?"
         weight: "Gesamtgewicht (in Tonnen)"
+      filter_own_means_of_transport_present:
+        default: "Alle"
+        traction: "Reine Traktion"
+        transport: "Traktion + Güterwagen"
     show: 
       page_title: "Inserat - Detailansicht"
   recordings: 

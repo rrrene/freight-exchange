@@ -263,6 +263,14 @@ module ApplicationHelper
   def render_person_info(person)
     partial :sidebar_person_info, :locals => {:person => person}
   end
+
+  def options_for_filter_own_means_of_transport_present
+    arr = []
+    arr << [t("postings.common.filter_own_means_of_transport_present.default"), nil]
+    arr << [t("postings.common.filter_own_means_of_transport_present.traction"), "traction"]
+    arr << [t("postings.common.filter_own_means_of_transport_present.transport"), "transport"]
+    options_for_select arr, params[:own_means_of_transport_present]
+  end
   
   # Renders a text next to a badge.
   def text_with_badge(snippet, count)
