@@ -57,7 +57,7 @@ de:
         un_no: "UN-Nr."
         nhm_no: "NHM-Nr."
         desired_means_of_transport: Gewünschte Transportmittel
-        desired_means_of_transport_custom: ""
+        desired_means_of_transport_custom: "Bitte angeben:"
         own_means_of_transport_present: "Transportmittel gewünscht?"
         own_means_of_transport: "Vorhandene Transportmittel"
         own_means_of_transport_custom: "Bitte angeben:"
@@ -783,7 +783,7 @@ de:
   loading_spaces: 
     common: 
       delete_link: "Inserat löschen"
-      edit_link: Bearbeiten
+      edit_link: "Inserat bearbeiten"
       new_link: "Neues Transportangebot"
       required_field_hint: "Die mit einem (*) gekennzeichneten Felder sind Pflichtfelder."
       template_link: "Als Vorlage"

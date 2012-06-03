@@ -50,14 +50,14 @@
   <%= posting_attribute :total_weight %>
   <%= posting_attribute :transport_weight %>
 
-  <%= posting_attribute :desired_means_of_transport, :humanize => true %>
-  <%= posting_attribute :desired_means_of_transport_custom, :dependent => true if resource.desired_means_of_transport == "custom" %>
-
   <%= posting_attribute :own_means_of_transport_present, :value => resource.own_means_of_transport_present ? "choice_true" : "choice_false", :humanize => true %>
   <% if resource.own_means_of_transport_present? %>
     <%= posting_attribute :own_means_of_transport, :humanize => true, :dependent => true %>
     <%= posting_attribute :own_means_of_transport_custom, :dependent => true if resource.own_means_of_transport == "custom" %>
   <% else %>
+    <%= posting_attribute :desired_means_of_transport, :humanize => true, :dependent => true %>
+    <%= posting_attribute :desired_means_of_transport_custom, :dependent => true if resource.desired_means_of_transport == "custom" %>
+
     <%= posting_attribute :requirements_means_of_transport, :dependent => true %>
   <% end %>
 

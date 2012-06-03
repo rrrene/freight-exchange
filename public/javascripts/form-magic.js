@@ -74,6 +74,7 @@ function showOwnMeansOfTransportPresentFields() {
   showOrHideFields(!own_means_present, show_own_means_not_present);
   if( own_means_present ) {
     showOwnMeansOfTransportFields();
+    $("#freight_desired_means_of_transport_custom_input, #loading_space_desired_means_of_transport_custom_input").hide();
   } else {
     showDesiredMeansOfTransportFields();
   }
