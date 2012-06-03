@@ -319,11 +319,11 @@ de:
         qualifier:
           equal: "ist"
     models: 
-      freight: Fracht
-      loading_space: Laderaum
+      freight: "Nachfrage"
+      loading_space: "Angebot"
       station: Bahnhof
       person: Person
-      company: Anbieter
+      company: Unternehmen
       user: Benutzer
   admin:
     action_recordings:
@@ -510,7 +510,7 @@ de:
         header: "Statistiken"
         intro: "Hier sehen Sie Daten, die Aufschluss über die Aktivität innerhalb der Online-Frachtenbörse geben sollen."
         new_postings_graph: "Neue Inserate pro Tag"
-        new_companies_graph: "Neue Anbieter pro Tag"
+        new_companies_graph: "Neue Unternehmen pro Tag"
   common: 
     choice_no: Nein
     choice_yes: Ja

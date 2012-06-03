@@ -37,7 +37,34 @@ module App
       ::Demo::Company.create_postings(how_many) if how_many > 0
       stats
     end
-    
+
+    desc "monitoring", "ensure there are monitoring results for the past N days"
+    method_options %w(number -n) => 31
+    def monitoring
+      how_many = options[:number].to_i
+      models = GeneralObserver::OBSERVED_MODELS
+      all = {}
+      models.each { |model| all[model] = model.to_s.classify.constantize.all }
+      (1..how_many).each do |days_back|
+        recordings_for_this_day = (25 + rand * 100).to_i
+        recordings_for_this_day.times do
+          action = %w(create create create update destroy read read read).rand
+          model = models.rand
+          user = all[:user].rand
+          item = all[model].rand
+          if item.full?
+            opts = {:action => action,
+                    :item_type => model.to_s.classify, :item_id => item.id,
+                    :user_id => user.id, :company_id => user.company.id,
+                    :created_at => Time.new - days_back * 87600 + rand * 87600
+            }
+            ActionRecording.create(opts)
+          end
+        end
+        puts "#{days_back}/#{how_many}"
+      end
+    end
+
     desc "stats", "shows the demo company's stats"
     def stats
       company = ::Demo::Company.instance

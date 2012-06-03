@@ -2,12 +2,14 @@
   <div id="top-navigation">
     <div class="navigation-left">
       <ul class="navigation">
-          <li><%= link_to t("admin.common.navi.setup"), setup_path %></li>
-          <li><%= link_to t("admin.common.navi.action_recordings"), admin_action_recordings_path %></li>
-          <li><%= link_to t("admin.common.navi.search_recordings"), admin_search_recordings_path %></li>
-          <li><%= link_to t("admin.common.navi.monitoring"), admin_monitoring_path %></li>
-          <li><%= link_to t("admin.common.navi.companies"), admin_companies_path %></li>
-          <li><%= link_to t("admin.common.navi.users"), admin_users_path %></li>
+          <li><%= navi_to_unless controller?(:setup), t("admin.common.navi.setup"), setup_path %></li>
+          <% if false %>
+            <li><%= navi_to_unless controller?(:action_recordings), t("admin.common.navi.action_recordings"), admin_action_recordings_path %></li>
+            <li><%= navi_to_unless controller?(:search_recordings), t("admin.common.navi.search_recordings"), admin_search_recordings_path %></li>
+          <% end  %>
+          <li><%= navi_to_unless controller?(:monitoring), t("admin.common.navi.monitoring"), admin_monitoring_path %></li>
+          <li><%= navi_to_unless controller?(:companies), t("admin.common.navi.companies"), admin_companies_path %></li>
+          <li><%= navi_to_unless controller?(:users), t("admin.common.navi.users"), admin_users_path %></li>
       </ul>
     </div>
     <div class="navigation-right">
