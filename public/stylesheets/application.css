@@ -910,6 +910,11 @@ td.contact_phone span {
   background: url(/images/icons/phone.png) no-repeat;
 }
 
+td.contact_fax span {
+  padding-left: 18px;
+  background: url(/images/icons/printer.png) no-repeat;
+}
+
 td.contact_email a {
   padding-left: 18px;
   background: url(/images/icons/email.png) no-repeat;
