@@ -6,8 +6,10 @@
       <% if history %>
         <% history.each do |opts| %>
           <div class="history_step history_step_<%= @history.index(opts[:item]) %>">
-            <b><%= l opts[:item].updated_at %></b>
-            <%= opts[:item].user.name %>:<br>
+            <div class="history_step_info">
+              <b><%= l opts[:item].updated_at %></b>
+              <%= opts[:item].user.name %>:
+            </div>
             <%= opts[:after]  %>
           </div>
         <% end %>
