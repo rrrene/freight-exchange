@@ -653,6 +653,7 @@ en:
       make_reply_to: "This transport request has been created as a reply to %{name} (only the creator of the original transport offer can see this reply)."
       new_link: "Create transport request"
       negotiate_link: "Negotiate"
+      negotiated_name: "New negotiation step"
       reply_to_link: "Reply with transport offer"
       required_field_hint: "The fields with an asterix (*) are mandatory:"
       search-label: "Transport request:"
@@ -735,7 +736,8 @@ en:
       edit_link: "Edit this posting"
       is_reply_to: "This transport offer is a reply to the transport request %{name}"
       make_reply_to: "This transport offer has been created as a reply to %{name} (only the creator of the original transport request can see this reply)."
-      negotiate_link: Negotiate
+      negotiate_link: "Negotiate"
+      negotiated_name: "New negotiation step"
       new_link: "Create transport offer"
       reply_to_link: "Reply with transport request"
       required_field_hint: "The fields with an asterix (*) are mandatory:"

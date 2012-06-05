@@ -26,6 +26,8 @@ class LoadingSpace < ActiveRecord::Base
   has_many :matching_recordings, :as => 'b', :order => 'result DESC', :dependent => :destroy
   searchable
 
+  after_save :create_notification
+
   has_and_belongs_to_many :company_roles, :uniq => true
 
   def contact_email
@@ -42,11 +44,15 @@ class LoadingSpace < ActiveRecord::Base
     matching_recordings.limit(limit).map(&:a)
   end
   alias matching_objects matching_freights
-  
+
   def name # :nodoc:
-    "#{origin_name} - #{destination_name}"
+    if parent.full?
+      I18n.t("loading_spaces.common.negotiated_name")
+    else
+      "#{origin_name} - #{destination_name}"
+    end
   end
-  
+
   def pretty_prefix
     '#A'
   end
@@ -82,7 +88,13 @@ class LoadingSpace < ActiveRecord::Base
       human_attribute_value(attr, :locale => lang, :default => '').full?
     }.compact
   end
-  
+
+  def create_notification
+    if p = self.parent.full?
+      Notification.create_for(p.company, self)
+    end
+  end
+
   validates_presence_of :user_id
   validates_presence_of :company_id
   

@@ -108,12 +108,6 @@ class PostingsController < RemoteController
   def show
     if can_see?(resource)
       show! {
-        # TODO: find newest child here (otherwise this leads to multiple redirects for more than one child)
-        if child = resource_class.where(:parent_id => resource.id).first
-          redirect_to child
-          return
-        end
-
         if recording_parent_id = params[:search_recording_id]
           opts = {:user_id => current_user.id, :parent_id => recording_parent_id, :result => resource}
           @search_recording = SearchRecording.create(opts)

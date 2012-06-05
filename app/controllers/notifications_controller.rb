@@ -2,7 +2,7 @@ class NotificationsController < ApplicationController
   login_required
   
   def index
-    set_notification
+    show
     render :action => :show
   end
   

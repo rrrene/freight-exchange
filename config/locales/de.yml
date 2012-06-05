@@ -706,6 +706,7 @@ de:
       upload_link: "Massen-Upload per Excel-Tabelle"
       search-label: "Nachfrage:"
       negotiate_link: "Inserat verhandeln"
+      negotiated_name: "Neuer Verhandlungsschritt"
       reply_to_link: "Mit Angebot beantworten"
       is_reply_to: "Diese Nachfrage ist eine Antwort auf das Angebot %{name}"
       make_reply_to: "Diese Nachfrage als Antwort auf %{name} einstellen (nur der Ersteller des ursprünglichen Inserats kann dieses Inserat sehen)."
@@ -796,6 +797,7 @@ de:
       contact_to_link: "E-Mail an Anbieter"
       contact_to_href: "mailto:%{email}?subject=Anfrage bzgl. %{name}&body=Inserat: %{url}"
       negotiate_link: "Inserat verhandeln"
+      negotiated_name: "Neuer Verhandlungsschritt"
     create: 
       header: "Neues Inserat für ein Transportangebot erstellen"
       page_title: "Neues Inserat für ein Transportangebot erstellen"
