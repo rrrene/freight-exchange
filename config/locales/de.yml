@@ -762,6 +762,7 @@ de:
       transport_description: Frachtbeschreibung
       no_side_track_available: "Kein Gleisanschluss vorhanden."
       is_reply_to: "Diese Nachfrage ist eine Antwort auf das Angebot %{name}"
+      is_in_negotiation: "Diese Nachfrage wird verhandelt. Die Verhandlungsschritte sind mit verschiedenen Farben hinterlegt."
     update: 
       header: "Inserat für eine Transportnachfrage bearbeiten"
       page_title: "Inserat für eine Transportnachfrage bearbeiten"
@@ -842,6 +843,7 @@ de:
       origin: 
         header: "Beladestelle für Fracht"
       transport_description: Laderaumbeschreibung
+      is_in_negotiation: "Dieses Angebot wird verhandelt. Die Verhandlungsschritte sind mit verschiedenen Farben hinterlegt."
       is_reply_to: "Dieses Angebot ist eine Antwort auf die Nachfrage %{name}"
     update: 
       header: "Inserat für ein Transportangebot bearbeiten"

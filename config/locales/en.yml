@@ -703,6 +703,7 @@ en:
         header: "Unloading site"
       header: "Transport request"
       is_reply_to: "This transport request is a reply to the transport offer %{name}"
+      is_in_negotiation: "This transport request is in negotiation. The different steps are shown in distinct colors."
       no_side_track_available: "No sidetrack available."
       origin: 
         header: "Loading site"
@@ -783,7 +784,8 @@ en:
         header: "Unloading site"
       header: "Transport offer"
       is_reply_to: "This transport offer is a reply to the transport request %{name}"
-      origin: 
+      is_in_negotiation: "This transport offer is in negotiation. The different steps are shown in distinct colors."
+      origin:
         header: "Loading site"
       page_title: "Transport offer"
       transport_description: "Transport description"

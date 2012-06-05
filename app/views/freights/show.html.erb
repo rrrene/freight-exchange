@@ -23,6 +23,12 @@
     </div>
   <% end %>
 
+  <% if resource.parent_id.full? %>
+    <div class="notice">
+      <%= t("freights.show.is_in_negotiation") %>
+    </div>
+  <% end %>
+
   <h3><%= resource_class.human_attribute_name(:contractor) %>: <%= resource.contractor %></h3>
   <div>
     <%= resource_class.human_attribute_name(:valid_until) %>
