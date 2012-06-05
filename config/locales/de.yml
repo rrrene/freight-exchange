@@ -705,6 +705,7 @@ de:
       template_link: "Als Vorlage"
       upload_link: "Massen-Upload per Excel-Tabelle"
       search-label: "Nachfrage:"
+      negotiate_link: "Inserat verhandeln"
       reply_to_link: "Mit Angebot beantworten"
       is_reply_to: "Diese Nachfrage ist eine Antwort auf das Angebot %{name}"
       make_reply_to: "Diese Nachfrage als Antwort auf %{name} einstellen (nur der Ersteller des ursprünglichen Inserats kann dieses Inserat sehen)."

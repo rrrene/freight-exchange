@@ -8,6 +8,7 @@
       <%= link_btn t("loading_spaces.common.delete_link"), freight_path(resource), :method => :delete, :confirm => t('common.confirm'), :class => 'destroy' %>
     </div>
   <% else %>
+    <%= link_btn t('freights.common.negotiate_link'), new_freight_path(:parent_id => resource.id), :icon => 'reply' %>
     <%= link_btn t('freights.common.reply_to_link'), new_loading_space_path(:reply_to_id => resource.id), :icon => 'reply' %>
     <% if resource.contact_email.full? %>
       <%= link_btn t('freights.common.contact_to_link'), t('freights.common.contact_to_href', :email => resource.contact_email, :name => resource.pretty_id, :url => @resource_url), :icon => 'next' %>
