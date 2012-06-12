@@ -40,7 +40,11 @@ class ApplicationController < ActionController::Base
         return controller_name
       end
     end
-    'freights'
+    if self.is_a?(Admin::BaseController) or self.is_a?(SetupController)
+      'companies'
+    else
+      'freights'
+    end
   end
 
   # Returns the i18n catalog path for the current controller.
