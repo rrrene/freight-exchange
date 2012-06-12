@@ -2,21 +2,20 @@
   <%= render :partial => "postings/shared_form", :locals => {:f => f} %>
 
   <%= f.inputs :transport_timeframe do %>
-    <%= render :partial => "postings/frequency_form", :locals => {:f => f} %>
-
-    <%= f.input :free_capacities, :collection => collection_choices(resource.class, :free_capacities), :as => :select %>
-    
     <%#= localized_info_field f, :transport_text %>
     
     <%#= localized_info_field f, :misc_text %>
     
-    <%= f.input :own_means_of_transport_present, :as => :radio, :collection => yes_no_collection %>
+    <%= f.input :own_means_of_transport_present, :as => :radio, :collection => own_means_of_transport_present_choices %>
+
     <%= f.input :own_means_of_transport, :collection => collection_choices(Freight, :own_means_of_transport), :include_blank => true %>
     <%= f.input :own_means_of_transport_custom, :as => :string %>
-    
+
+    <%= f.input :free_capacities, :collection => collection_choices(resource.class, :free_capacities), :as => :select %>
+
   <% end %>
 
-  <%= f.inputs :posting_contact do %>
+  <%= f.inputs :misc_text, :class => "inputs misc_info" do %>
     <%= f.input :contact_person, :collection => current_company.people %>
   <% end %>
 
@@ -25,7 +24,7 @@
     <%= f.input :custom_category, :as => :string %>
   <% end %>
 
-  <% f.buttons do %>
+  <%= f.buttons do %>
     <%= f.commit_button :label => t("#{controller_name}.#{action_name == 'new' ? 'new' : 'edit' }.submit") %>
   <% end %>
 <% end %>

@@ -11,7 +11,8 @@ class LoadingSpace < ActiveRecord::Base
   TRANSPORT_TYPE_CHOICES = ::Freight::TRANSPORT_TYPE_CHOICES
   FREQUENCY_CHOICES = %w(once weekly monthly yearly)
   FREE_CAPACITIES_CHOICES = %w(train wagon slots)
-  OWN_MEANS_OF_TRANSPORT_CHOICES = %w(closed_wagon container_wagon custom)
+  OWN_MEANS_OF_TRANSPORT_CHOICES = Freight::OWN_MEANS_OF_TRANSPORT_CHOICES
+  OWN_MEANS_OF_TRANSPORT_PRESENT_CHOICES = Freight::OWN_MEANS_OF_TRANSPORT_PRESENT_CHOICES
 
   belongs_to :user
   belongs_to :company
@@ -24,6 +25,8 @@ class LoadingSpace < ActiveRecord::Base
   belongs_to :contact_person, :class_name => 'Person'
   has_many :matching_recordings, :as => 'b', :order => 'result DESC', :dependent => :destroy
   searchable
+
+  after_save :create_notification
 
   has_and_belongs_to_many :company_roles, :uniq => true
 
@@ -41,11 +44,15 @@ class LoadingSpace < ActiveRecord::Base
     matching_recordings.limit(limit).map(&:a)
   end
   alias matching_objects matching_freights
-  
+
   def name # :nodoc:
-    "#{origin_name} - #{destination_name}"
+    if parent.full?
+      I18n.t("loading_spaces.common.negotiated_name")
+    else
+      "#{origin_name} - #{destination_name}"
+    end
   end
-  
+
   def pretty_prefix
     '#A'
   end
@@ -81,7 +88,13 @@ class LoadingSpace < ActiveRecord::Base
       human_attribute_value(attr, :locale => lang, :default => '').full?
     }.compact
   end
-  
+
+  def create_notification
+    if p = self.parent.full?
+      Notification.create_for(p.company, self)
+    end
+  end
+
   validates_presence_of :user_id
   validates_presence_of :company_id
   

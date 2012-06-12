@@ -170,7 +170,17 @@ en:
           spedition: "Forwarding agents"
           verlader: "Loading agents"
       freight: 
-        desired_means_of_transport: 
+        desired_means_of_transport:
+          wagon_0: Offene Wagen
+          wagon_1: Gedeckte Wagen
+          wagon_2: Wagen mit Temperaturbeeinflussung
+          wagon_3: Flachwagen mit 2 Radsätzen
+          wagon_4: Flachwagen mit unabhängigen Radsätzen
+          wagon_5: Gemischte Offen-Flachwagen
+          wagon_6: Drehgestell-Flachwagen
+          wagon_7: Wagen mit öffnungsfähigem Dach
+          wagon_8: Sonderwagen
+          wagon_9: Kesselwagen
           custom: other
           tank_container: "tank container"
           tank_wagon: "tank wagon"
@@ -183,10 +193,23 @@ en:
           once: once
           weekly: weekly
           yearly: yearly
-        own_means_of_transport: 
+        own_means_of_transport:
+          wagon_0: Offene Wagen
+          wagon_1: Gedeckte Wagen
+          wagon_2: Wagen mit Temperaturbeeinflussung
+          wagon_3: Flachwagen mit 2 Radsätzen
+          wagon_4: Flachwagen mit unabhängigen Radsätzen
+          wagon_5: Gemischte Offen-Flachwagen
+          wagon_6: Drehgestell-Flachwagen
+          wagon_7: Wagen mit öffnungsfähigem Dach
+          wagon_8: Sonderwagen
+          wagon_9: Kesselwagen
           closed_wagon: "closed wagon"
           container_wagon: "container wagon"
           custom: other
+        own_means_of_transport_present:
+          choice_true: "Yes"
+          choice_false: "No"
         paying_freight: 
           receiver: receiver
           sender: sender
@@ -217,15 +240,23 @@ en:
           once: once
           weekly: weekly
           yearly: yearly
-        own_means_of_transport: 
+        own_means_of_transport:
+          wagon_0: Offene Wagen
+          wagon_1: Gedeckte Wagen
+          wagon_2: Wagen mit Temperaturbeeinflussung
+          wagon_3: Flachwagen mit 2 Radsätzen
+          wagon_4: Flachwagen mit unabhängigen Radsätzen
+          wagon_5: Gemischte Offen-Flachwagen
+          wagon_6: Drehgestell-Flachwagen
+          wagon_7: Wagen mit öffnungsfähigem Dach
+          wagon_8: Sonderwagen
+          wagon_9: Kesselwagen
           closed_wagon: "closed wagon"
           container_wagon: "container wagon"
           custom: other
         own_means_of_transport_present: 
-          ? "false"
-          : "no"
-          ? "true"
-          : "yes"
+          choice_true: "Yes"
+          choice_false: "No"
         transport_type: 
           block_train: "block train"
           intermodal_transport: "intermodal transport"
@@ -610,7 +641,8 @@ en:
       origin_site_info: "Loading site:"
       person_name: "Personal information"
       timeframe: "Time frame:"
-      transport_timeframe: "Timeframe and Transports"
+      transport_timeframe: "Transports"
+      frequency: "Timeframe"
       transport_type: "Transport description:"
   freights: 
     common: 
@@ -620,6 +652,8 @@ en:
       is_reply_to: "This transport request is a reply to the transport offer %{name}"
       make_reply_to: "This transport request has been created as a reply to %{name} (only the creator of the original transport offer can see this reply)."
       new_link: "Create transport request"
+      negotiate_link: "Negotiate"
+      negotiated_name: "New negotiation step"
       reply_to_link: "Reply with transport offer"
       required_field_hint: "The fields with an asterix (*) are mandatory:"
       search-label: "Transport request:"
@@ -631,8 +665,10 @@ en:
     edit: 
       header: "Edit transport request"
       page_title: "Edit transport request"
-    index: 
+      submit: "Save posting"
+    index:
       all_freights: "Transport requests"
+      filter_own_means_of_transport_present: "Filter by own means of transport present"
       filter_destination_zip: "Filter by destination ZIP"
       filter_origin_zip: "Filter by origin ZIP"
       from_origin_city: "Only show transport requests originating from '%{city}'"
@@ -662,11 +698,13 @@ en:
     new: 
       header: "New transport request"
       page_title: "New transport request"
-    show: 
+      submit: "Create posting"
+    show:
       destination: 
         header: "Unloading site"
       header: "Transport request"
       is_reply_to: "This transport request is a reply to the transport offer %{name}"
+      is_in_negotiation: "This transport request is in negotiation. The different steps are shown in distinct colors."
       no_side_track_available: "No sidetrack available."
       origin: 
         header: "Loading site"
@@ -698,7 +736,8 @@ en:
       edit_link: "Edit this posting"
       is_reply_to: "This transport offer is a reply to the transport request %{name}"
       make_reply_to: "This transport offer has been created as a reply to %{name} (only the creator of the original transport request can see this reply)."
-      negotiate_link: Negotiate
+      negotiate_link: "Negotiate"
+      negotiated_name: "New negotiation step"
       new_link: "Create transport offer"
       reply_to_link: "Reply with transport request"
       required_field_hint: "The fields with an asterix (*) are mandatory:"
@@ -709,8 +748,10 @@ en:
     edit: 
       header: "Edit transport offer"
       page_title: "Edit transport offer"
-    index: 
+      submit: "Save posting"
+    index:
       all_loading_spaces: "Transport offers"
+      filter_own_means_of_transport_present: "Filter by own means of transport present"
       filter_destination_zip: "Filter by destination ZIP"
       filter_origin_zip: "Filter by origin ZIP"
       from_origin_city: "Only show transport offers originating from '%{city}'"
@@ -739,12 +780,14 @@ en:
     new: 
       header: "New transport offer"
       page_title: "New transport offer"
+      submit: "Create posting"
     show: 
       destination: 
         header: "Unloading site"
       header: "Transport offer"
       is_reply_to: "This transport offer is a reply to the transport request %{name}"
-      origin: 
+      is_in_negotiation: "This transport offer is in negotiation. The different steps are shown in distinct colors."
+      origin:
         header: "Loading site"
       page_title: "Transport offer"
       transport_description: "Transport description"
@@ -809,6 +852,10 @@ en:
         wagon_type: "Type of wagon:"
         weight: "Weight (kg):"
       station_hint: "Search by number or name"
+      filter_own_means_of_transport_present:
+        default: "Any"
+        traction: "No"
+        transport: "Yes"
     show: 
       page_title: "Posting details"
   recordings: 

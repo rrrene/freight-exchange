@@ -12,24 +12,23 @@
     <%= f.input :nhm_no, :as => :string %>
     
     <%= f.input :total_weight, :as => :string %>
+    <%= f.input :transport_weight, :as => :string %>
   <% end %>
 
   <%= f.inputs :transport_timeframe do %>
-    <%= render :partial => "postings/frequency_form", :locals => {:f => f} %>
+    <%= f.input :own_means_of_transport_present, :as => :radio, :collection => own_means_of_transport_present_choices %>
 
-    <%= f.input :transport_weight, :as => :string %>
-
-    <%#= localized_info_fields f, :goods_text %>
-    
-    <%#= f.input :transport_type, :collection => collection_choices(Freight, :transport_type), :include_blank => false %>
-    <%#= localized_info_fields f, :transport_text %>
     <%= f.input :desired_means_of_transport, :collection => collection_choices(Freight, :desired_means_of_transport), :include_blank => false %>
     <%= f.input :desired_means_of_transport_custom, :as => :string %>
-    
-    <%= f.input :own_means_of_transport_present, :as => :radio, :collection => yes_no_collection %>
+
     <%= f.input :own_means_of_transport, :collection => collection_choices(Freight, :own_means_of_transport), :include_blank => true %>
     <%= f.input :own_means_of_transport_custom, :as => :string %>
-    
+
+    <%#= localized_info_fields f, :goods_text %>
+
+    <%#= f.input :transport_type, :collection => collection_choices(Freight, :transport_type), :include_blank => false %>
+    <%#= localized_info_fields f, :transport_text %>
+
     <%= f.input :requirements_means_of_transport, :as => :text, :input_html => {:rows => ""} %>
 
     <%= f.input :requirements_at_loading, :as => :text %>
@@ -38,10 +37,10 @@
     <%#= f.input :wagons_provided_by, :collection => collection_choices(Freight, :wagons_provided_by), :as => :radio %>
     <%#= f.input :paying_freight, :collection => collection_choices(Freight, :paying_freight), :as => :select, :include_blank => false %>
     
-    <%= f.input :desired_proposal_type, :collection => collection_choices(Freight, :desired_proposal_type), :as => :radio %>
   <% end %>
 
-  <%= f.inputs :misc_text do %>
+  <%= f.inputs :misc_text, :class => "inputs misc_info" do %>
+    <%= f.input :desired_proposal_type, :collection => collection_choices(Freight, :desired_proposal_type), :as => :radio %>
     <%#= localized_info_fields f, :misc_text %>
     <%= f.input :contact_person, :collection => current_company.people %>
   <% end %>
@@ -51,7 +50,7 @@
     <%= f.input :custom_category, :as => :string %>
   <% end %>
 
-  <% f.buttons do %>
+  <%= f.buttons do %>
     <%= f.commit_button :label => t("#{controller_name}.#{action_name == 'new' ? 'new' : 'edit' }.submit") %>
   <% end %>
 <% end %>

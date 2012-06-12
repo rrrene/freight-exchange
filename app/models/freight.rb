@@ -14,8 +14,9 @@ class Freight < ActiveRecord::Base
   PAYING_FREIGHT_CHOICES = %w(unknown sender receiver)
   FREQUENCY_CHOICES = %w(once weekly monthly yearly)
   PRODUCT_STATE_CHOICES = %w(liquid gas loose packaged container)
-  DESIRED_MEANS_OF_TRANSPORT_CHOICES = %w(tank_wagon tank_container custom)
-  OWN_MEANS_OF_TRANSPORT_CHOICES = %w(closed_wagon container_wagon custom)
+  DESIRED_MEANS_OF_TRANSPORT_CHOICES = (0..9).to_a.map { |x| "wagon_#{x}" } + %w(custom)
+  OWN_MEANS_OF_TRANSPORT_CHOICES = DESIRED_MEANS_OF_TRANSPORT_CHOICES
+  OWN_MEANS_OF_TRANSPORT_PRESENT_CHOICES = [true, false]
 
   belongs_to :user
   belongs_to :company
@@ -27,7 +28,10 @@ class Freight < ActiveRecord::Base
   belongs_to :destination_station, :class_name => 'Station'
   belongs_to :contact_person, :class_name => 'Person'
   has_many :matching_recordings, :as => 'a', :order => 'result DESC', :dependent => :destroy
+
   after_save :calc_matchings!
+  after_save :create_notification
+
   searchable
 
   has_and_belongs_to_many :company_roles, :uniq => true
@@ -62,7 +66,11 @@ class Freight < ActiveRecord::Base
   alias matching_objects matching_loading_spaces
   
   def name # :nodoc:
-    "#{origin_name} - #{destination_name}"
+    if parent.full?
+      I18n.t("freights.common.negotiated_name")
+    else
+      "#{origin_name} - #{destination_name}"
+    end
   end
   
   def pretty_prefix
@@ -110,6 +118,12 @@ class Freight < ActiveRecord::Base
     values.flatten.map { |attr| 
       human_attribute_value(attr, :locale => lang, :default => '').full?
     }.compact
+  end
+
+  def create_notification
+    if p = self.parent.full?
+      Notification.create_for(p.company, self)
+    end
   end
   
   validates_presence_of :user_id

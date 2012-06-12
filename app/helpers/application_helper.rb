@@ -52,7 +52,7 @@ module ApplicationHelper
   def collection_choices(model, attribute_name, const = nil)
     const ||= "#{model}::#{attribute_name.to_s.upcase}_CHOICES".constantize
     const.map { |value| 
-      [model.human_attribute_value(attribute_name, value), value] 
+      [model.human_attribute_value(attribute_name, value), value]
     }
   end
   
@@ -263,6 +263,14 @@ module ApplicationHelper
   def render_person_info(person)
     partial :sidebar_person_info, :locals => {:person => person}
   end
+
+  def options_for_filter_own_means_of_transport_present
+    arr = []
+    arr << [t("postings.common.filter_own_means_of_transport_present.default"), nil]
+    arr << [t("postings.common.filter_own_means_of_transport_present.traction"), "traction"]
+    arr << [t("postings.common.filter_own_means_of_transport_present.transport"), "transport"]
+    options_for_select arr, params[:own_means_of_transport_present]
+  end
   
   # Renders a text next to a badge.
   def text_with_badge(snippet, count)
@@ -275,6 +283,10 @@ module ApplicationHelper
   
   def yes_no_collection
     [true, false].map { |b| [yes_no(b), b] }
+  end
+
+  def own_means_of_transport_present_choices
+    [true, false].map { |b| [t("activerecord.human_attribute_values.#{resource_class.to_s.underscore}.own_means_of_transport_present.choice_"+b.to_s), b] }.reverse
   end
   
 end

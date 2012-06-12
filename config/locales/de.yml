@@ -57,9 +57,9 @@ de:
         un_no: "UN-Nr."
         nhm_no: "NHM-Nr."
         desired_means_of_transport: Gewünschte Transportmittel
-        desired_means_of_transport_custom: ""
-        own_means_of_transport_present: Eigene Transportmittel vorhanden?
-        own_means_of_transport: Wagentyp
+        desired_means_of_transport_custom: "Bitte angeben:"
+        own_means_of_transport_present: "Transportmittel gewünscht?"
+        own_means_of_transport: "Vorhandene Transportmittel"
         own_means_of_transport_custom: "Bitte angeben:"
         requirements_means_of_transport: "Anforderungen an Transportmittel(-einheit)"
         requirements_at_loading: "Anforderung Beladung des Transportmittels (Güterwagens)"
@@ -112,7 +112,7 @@ de:
         transports_per_year: "Transporte pro Jahr"
         wagons_provided_by: "Wagen werden gestellt von"
         weight: "Gesamtgewicht (in Tonnen)"
-        own_means_of_transport_present: Eigene Transportmittel vorhanden?
+        own_means_of_transport_present: "Angebot umfasst:"
         own_means_of_transport: Wagentyp
         own_means_of_transport_custom: ""
         free_capacities: "Freie Transportkapazitäten"
@@ -189,11 +189,34 @@ de:
           loose: "lose"
           packaged: "verpackt"
           container: "Container"
-        desired_means_of_transport: 
+        desired_means_of_transport:
+          wagon_0: Offene Wagen
+          wagon_1: Gedeckte Wagen
+          wagon_2: Wagen mit Temperaturbeeinflussung
+          wagon_3: Flachwagen mit 2 Radsätzen
+          wagon_4: Flachwagen mit unabhängigen Radsätzen
+          wagon_5: Gemischte Offen-Flachwagen
+          wagon_6: Drehgestell-Flachwagen
+          wagon_7: Wagen mit öffnungsfähigem Dach
+          wagon_8: Sonderwagen
+          wagon_9: Kesselwagen
           tank_wagon: Kesselwagen
           tank_container: Tankcontainer
           custom: "sonstige"
-        own_means_of_transport: 
+        own_means_of_transport_present:
+          choice_true: "Nein, nur Traktion gewünscht (Transportmittel vorhanden)"
+          choice_false: "Ja"
+        own_means_of_transport:
+          wagon_0: Offene Wagen
+          wagon_1: Gedeckte Wagen
+          wagon_2: Wagen mit Temperaturbeeinflussung
+          wagon_3: Flachwagen mit 2 Radsätzen
+          wagon_4: Flachwagen mit unabhängigen Radsätzen
+          wagon_5: Gemischte Offen-Flachwagen
+          wagon_6: Drehgestell-Flachwagen
+          wagon_7: Wagen mit öffnungsfähigem Dach
+          wagon_8: Sonderwagen
+          wagon_9: Kesselwagen
           closed_wagon: gedeckte Wagen
           container_wagon: Containertragwagen
           custom: "sonstige"
@@ -233,9 +256,19 @@ de:
           wagon: Wagen
           slots: "KV-Stellplätze"
         own_means_of_transport_present:
-          true: "Ja"
-          false: "Nein"
+          choice_true: "Traktion und Güterwagen"
+          choice_false: "reine Traktion (nur Lokomotiven)"
         own_means_of_transport:
+          wagon_0: Offene Wagen
+          wagon_1: Gedeckte Wagen
+          wagon_2: Wagen mit Temperaturbeeinflussung
+          wagon_3: Flachwagen mit 2 Radsätzen
+          wagon_4: Flachwagen mit unabhängigen Radsätzen
+          wagon_5: Gemischte Offen-Flachwagen
+          wagon_6: Drehgestell-Flachwagen
+          wagon_7: Wagen mit öffnungsfähigem Dach
+          wagon_8: Sonderwagen
+          wagon_9: Kesselwagen
           closed_wagon: gedeckte Wagen
           container_wagon: Containertragwagen
           custom: "sonstige"
@@ -286,11 +319,11 @@ de:
         qualifier:
           equal: "ist"
     models: 
-      freight: Fracht
-      loading_space: Laderaum
+      freight: "Nachfrage"
+      loading_space: "Angebot"
       station: Bahnhof
       person: Person
-      company: Anbieter
+      company: Unternehmen
       user: Benutzer
   admin:
     action_recordings:
@@ -477,7 +510,7 @@ de:
         header: "Statistiken"
         intro: "Hier sehen Sie Daten, die Aufschluss über die Aktivität innerhalb der Online-Frachtenbörse geben sollen."
         new_postings_graph: "Neue Inserate pro Tag"
-        new_companies_graph: "Neue Anbieter pro Tag"
+        new_companies_graph: "Neue Unternehmen pro Tag"
   common: 
     choice_no: Nein
     choice_yes: Ja
@@ -660,7 +693,8 @@ de:
       person_name: "Persönliche Angaben"
       contractor_info: "Basisdaten:"
       timeframe: "Transportzeitraum:"
-      transport_timeframe: "Zeitraum und Transporte"
+      transport_timeframe: "Transportdaten"
+      timeframe: "Zeitraum"
       freight_classification: "Klassifikation"
       transport_type: "Frachtbeschreibung:"
   freights: 
@@ -671,6 +705,8 @@ de:
       template_link: "Als Vorlage"
       upload_link: "Massen-Upload per Excel-Tabelle"
       search-label: "Nachfrage:"
+      negotiate_link: "Inserat verhandeln"
+      negotiated_name: "Neuer Verhandlungsschritt"
       reply_to_link: "Mit Angebot beantworten"
       is_reply_to: "Diese Nachfrage ist eine Antwort auf das Angebot %{name}"
       make_reply_to: "Diese Nachfrage als Antwort auf %{name} einstellen (nur der Ersteller des ursprünglichen Inserats kann dieses Inserat sehen)."
@@ -692,6 +728,7 @@ de:
       just_uploaded: "Die markierten Nachfragen wurden per Excel hochgeladen und ins System eingestellt:"
       from_origin_city: "Nur Nachfragen aus '%{city}'"
       to_destination_city: "Nur Nachfragen nach '%{city}'"
+      filter_own_means_of_transport_present: "Nach Art filtern"
       filter_origin_zip: "Nach Belade-PLZ filtern"
       filter_destination_zip: "Nach Entlade-PLZ filtern"
       show_company: "Profil von %{company}"
@@ -700,6 +737,7 @@ de:
           valid_until: "Gültig bis"
           origin_name: "Startort (Bf)"
           frequency: Zeitraum
+          first_transport_at: "Ab Datum"
           destination_name: "Zielort (Bf)"
           options: Optionen
           id: "Nummer"
@@ -725,6 +763,7 @@ de:
       transport_description: Frachtbeschreibung
       no_side_track_available: "Kein Gleisanschluss vorhanden."
       is_reply_to: "Diese Nachfrage ist eine Antwort auf das Angebot %{name}"
+      is_in_negotiation: "Diese Nachfrage wird verhandelt. Die Verhandlungsschritte sind mit verschiedenen Farben hinterlegt."
     update: 
       header: "Inserat für eine Transportnachfrage bearbeiten"
       page_title: "Inserat für eine Transportnachfrage bearbeiten"
@@ -747,7 +786,7 @@ de:
   loading_spaces: 
     common: 
       delete_link: "Inserat löschen"
-      edit_link: Bearbeiten
+      edit_link: "Inserat bearbeiten"
       new_link: "Neues Transportangebot"
       required_field_hint: "Die mit einem (*) gekennzeichneten Felder sind Pflichtfelder."
       template_link: "Als Vorlage"
@@ -758,6 +797,7 @@ de:
       contact_to_link: "E-Mail an Anbieter"
       contact_to_href: "mailto:%{email}?subject=Anfrage bzgl. %{name}&body=Inserat: %{url}"
       negotiate_link: "Inserat verhandeln"
+      negotiated_name: "Neuer Verhandlungsschritt"
     create: 
       header: "Neues Inserat für ein Transportangebot erstellen"
       page_title: "Neues Inserat für ein Transportangebot erstellen"
@@ -773,6 +813,7 @@ de:
       intro: "Hier sehen Sie alle Angebote."
       from_origin_city: "Nur Angebote aus '%{city}'"
       to_destination_city: "Nur Angebote nach '%{city}'"
+      filter_own_means_of_transport_present: "Nach Traktion und Transportmitteln filtern"
       filter_origin_zip: "Nach Belade-PLZ filtern"
       filter_destination_zip: "Nach Entlade-PLZ filtern"
       table: 
@@ -804,6 +845,7 @@ de:
       origin: 
         header: "Beladestelle für Fracht"
       transport_description: Laderaumbeschreibung
+      is_in_negotiation: "Dieses Angebot wird verhandelt. Die Verhandlungsschritte sind mit verschiedenen Farben hinterlegt."
       is_reply_to: "Dieses Angebot ist eine Antwort auf die Nachfrage %{name}"
     update: 
       header: "Inserat für ein Transportangebot bearbeiten"
@@ -883,6 +925,10 @@ de:
         misc: "Additional information:"
         wagon_type: "Welche Wagen sollen verwendet werden (ggf. Alternativen)?"
         weight: "Gesamtgewicht (in Tonnen)"
+      filter_own_means_of_transport_present:
+        default: "Alle"
+        traction: "Reine Traktion"
+        transport: "Traktion + Güterwagen"
     show: 
       page_title: "Inserat - Detailansicht"
   recordings: 

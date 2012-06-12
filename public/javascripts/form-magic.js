@@ -67,12 +67,17 @@ function addToStyleQueries(original_query, additional_query) {
 }
 
 function showOwnMeansOfTransportPresentFields() {
-  var show_more = $("#freight_own_means_of_transport_present_true, #loading_space_own_means_of_transport_present_true").attr("checked");
-  var show_more_fields = "#freight_own_means_of_transport_input, #freight_own_means_of_transport_custom_input, #loading_space_own_means_of_transport_input, #loading_space_own_means_of_transport_custom_input";
-  var show_less_fields = "#freight_requirements_means_of_transport_input";
-  showOrHideFields(show_more, show_more_fields);
-  showOrHideFields(!show_more, show_less_fields);
-  if( show_more ) showOwnMeansOfTransportFields();
+  var own_means_present = $("#freight_own_means_of_transport_present_true, #loading_space_own_means_of_transport_present_true").attr("checked");
+  var show_own_means_present = "#freight_own_means_of_transport_input, #freight_own_means_of_transport_custom_input, #loading_space_free_capacities_input, #loading_space_own_means_of_transport_input, #loading_space_own_means_of_transport_custom_input";
+  var show_own_means_not_present = "#freight_requirements_means_of_transport_input, #freight_desired_means_of_transport_input";
+  showOrHideFields(own_means_present, show_own_means_present);
+  showOrHideFields(!own_means_present, show_own_means_not_present);
+  if( own_means_present ) {
+    showOwnMeansOfTransportFields();
+    $("#freight_desired_means_of_transport_custom_input, #loading_space_desired_means_of_transport_custom_input").hide();
+  } else {
+    showDesiredMeansOfTransportFields();
+  }
 }
 
 function showCustomFieldsOnDemandHandler(id) {

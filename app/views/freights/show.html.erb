@@ -8,6 +8,7 @@
       <%= link_btn t("loading_spaces.common.delete_link"), freight_path(resource), :method => :delete, :confirm => t('common.confirm'), :class => 'destroy' %>
     </div>
   <% else %>
+    <%= link_btn t('freights.common.negotiate_link'), new_freight_path(:parent_id => resource.id), :icon => 'reply' %>
     <%= link_btn t('freights.common.reply_to_link'), new_loading_space_path(:reply_to_id => resource.id), :icon => 'reply' %>
     <% if resource.contact_email.full? %>
       <%= link_btn t('freights.common.contact_to_link'), t('freights.common.contact_to_href', :email => resource.contact_email, :name => resource.pretty_id, :url => @resource_url), :icon => 'next' %>
@@ -19,6 +20,12 @@
   <% if resource.reply_to.full? %>
     <div class="success">
       <%= auto_link(t("freights.show.is_reply_to", :name => resource.reply_to.pretty_id)).html_safe %>
+    </div>
+  <% end %>
+
+  <% if resource.parent_id.full? %>
+    <div class="notice">
+      <%= t("freights.show.is_in_negotiation") %>
     </div>
   <% end %>
 
@@ -50,14 +57,14 @@
   <%= posting_attribute :total_weight %>
   <%= posting_attribute :transport_weight %>
 
-  <%= posting_attribute :desired_means_of_transport, :humanize => true %>
-  <%= posting_attribute :desired_means_of_transport_custom, :dependent => true if resource.desired_means_of_transport == "custom" %>
-
-  <%= posting_attribute :own_means_of_transport_present %>
+  <%= posting_attribute :own_means_of_transport_present, :value => resource.own_means_of_transport_present ? "choice_true" : "choice_false", :humanize => true %>
   <% if resource.own_means_of_transport_present? %>
     <%= posting_attribute :own_means_of_transport, :humanize => true, :dependent => true %>
     <%= posting_attribute :own_means_of_transport_custom, :dependent => true if resource.own_means_of_transport == "custom" %>
   <% else %>
+    <%= posting_attribute :desired_means_of_transport, :humanize => true, :dependent => true %>
+    <%= posting_attribute :desired_means_of_transport_custom, :dependent => true if resource.desired_means_of_transport == "custom" %>
+
     <%= posting_attribute :requirements_means_of_transport, :dependent => true %>
   <% end %>
 

@@ -46,14 +46,19 @@ module PostingsHelper
 
   def value_for_attribute(attribute, opts = {}, value = nil)
     value ||= resource.send(attribute)
-    if opts[:humanize]
-      value = resource_class.human_attribute_value(attribute, value)
+    if opts[:value]
+      value = opts[:value]
     end
-    if opts[:localize]
-      value = l(value)
-    end
-    if value.is_a?(Time)
-      value = l(value, :format => :date)
+    if value.full?
+      if opts[:humanize]
+        value = resource_class.human_attribute_value(attribute, value)
+      end
+      if opts[:localize]
+        value = l(value)
+      end
+      if value.is_a?(Time)
+        value = l(value, :format => :date)
+      end
     end
     if [true, false].include?(value)
       value = value ? t("common.choice_yes") : t("common.choice_no")

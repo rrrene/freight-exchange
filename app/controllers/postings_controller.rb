@@ -230,6 +230,10 @@ class PostingsController < RemoteController
         self.collection = collection.where("#{field} LIKE ?", "#{value}%")
       end
     end
+    if value = params[:own_means_of_transport_present].full?
+      # TODO: "transport" in this case means +true+, this should be handled in a more concise way
+      self.collection = collection.where(:own_means_of_transport_present => value == "transport")
+    end
   end
 
   def order_map

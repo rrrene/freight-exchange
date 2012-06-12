@@ -103,7 +103,7 @@ module ActiveRecord
     #     # => 'Single Wagon'
     def self.human_attribute_value(attribute_name, value, i18n_opts = {})
       arr = [:activerecord, :human_attribute_values, 
-              self.to_s.underscore, attribute_name, value]
+              self.to_s.underscore, attribute_name, value.to_s]
       I18n.t(arr * '.', i18n_opts)
     end
 

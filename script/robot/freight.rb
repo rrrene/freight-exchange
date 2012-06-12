@@ -42,10 +42,10 @@ module Robot
     f.hazmat { false }
     f.product_state { %w(liquid gas loose packaged container).random }
     f.frequency { %w(once weekly monthly yearly).random }
-    f.desired_means_of_transport { %w(tank_wagon tank_container).random }
+    f.desired_means_of_transport { ::Freight::DESIRED_MEANS_OF_TRANSPORT_CHOICES.random }
     
     f.own_means_of_transport_present { rand < 0.5 }
-    f.own_means_of_transport { %w(closed_wagon container_wagon).random }
+    f.own_means_of_transport { ::Freight::OWN_MEANS_OF_TRANSPORT_CHOICES.random }
     
     f.wagons_provided_by { %w(client railway).random }
     f.desired_proposal_type { %w(ton_price package_price).random }

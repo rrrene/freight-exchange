@@ -22,5 +22,17 @@ class Notification < ActiveRecord::Base
     end
   end
 
+  def self.create_for(company, resource)
+    company.users.each do |user|
+      create_for_user user, resource
+    end
+  end
+
+  def self.create_for_user(user, resource)
+    n = Notification.create(:user => user)
+    n << resource
+    n.close!
+  end
+
   validates_associated :user
 end
