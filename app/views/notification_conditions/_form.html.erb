@@ -3,7 +3,7 @@
 <%= semantic_form_for(@notification_condition || klass.new) do |f| %>
   <input type="hidden" name="<%= klass.to_s.underscore %>[notification_condition_set_id]" value="<%= set.id %>">
   <%= f.inputs :new_condition do %>
-    <%= f.input :attribute_name, :collection => attribute_name_choices(klass, set.resource_type.constantize), :as => :select %>
+    <%= f.input :attribute_name, :collection => attribute_name_choices(klass), :as => :select %>
     <%= f.input :qualifier, :collection => collection_choices(klass, :qualifier), :as => :select %>
     <%=  f.input :value, :as => :string %>
     <%= f.submit t("notification_conditions.new.submit") %>

@@ -962,12 +962,14 @@ div.notification_condition_set div.notification_condition fieldset {
   margin-top: 0;
 }
 
-form.notification_condition_freight fieldset ol li {
+form.notification_condition_freight fieldset ol li,
+form.notification_condition_loading_space fieldset ol li {
   display: block;
   float: left;
   margin-right: 10px;
 }
-form.notification_condition_freight fieldset ol li label {
+form.notification_condition_freight fieldset ol li label,
+form.notification_condition_loading_space fieldset ol li label {
   display: none;
 }
 

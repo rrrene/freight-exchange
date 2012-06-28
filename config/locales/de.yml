@@ -303,10 +303,12 @@ de:
           origin_city: "Beladeort"
           destination_city: "Entladeort"
           frequency: "Frequenz"
-
+          first_transport_at: "Verfügbar ab:"
           product_name: "Produktname"
           product_state: "Gutart"
           hazmat: "Gefahrengut"
+          nhm_no: "NHM-Nr."
+          total_weight: "Gesamtgewicht"
         qualifier:
           equal: "ist"
       notification_condition_loading_space:
@@ -314,7 +316,7 @@ de:
           origin_city: "Beladeort"
           destination_city: "Entladeort"
           frequency: "Frequenz"
-
+          first_transport_at: "Verfügbar ab:"
           own_means_of_transport: "Eigene Transportmittel vorhanden?"
         qualifier:
           equal: "ist"
