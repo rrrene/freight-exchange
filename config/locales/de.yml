@@ -937,7 +937,12 @@ de:
     create: "%{user} <strong>erstellte</strong> %{object_class}: %{object_link}"
     destroy: "%{user} <strong>löschte</strong> %{object_class}: %{object_link}"
     update: "%{user} <strong>bearbeitete</strong> %{object_class}: %{object_link}"
-  reviews: 
+    read: "%{user} betrachtete %{object_class}: %{object_link}"
+    demo_login: "%{user} hat sich eingeloggt (per Demo-Login)."
+    login: "%{user} hat sich eingeloggt."
+    logout: "%{user} hat sich ausgeloggt."
+    password_r: "%{user} - \"Passwort vergessen\" benutzt."
+  reviews:
     index: 
       filter_all: "Alle Bewertungen"
       filter_approved: "Veröffentlichte Bewertungen"
