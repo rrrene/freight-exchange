@@ -104,8 +104,7 @@ class LoadingSpace < ActiveRecord::Base
   validates_presence_of :valid_until
   
   validates_inclusion_of :frequency, :in => FREQUENCY_CHOICES
-  validates_inclusion_of :free_capacities, :in => FREE_CAPACITIES_CHOICES
-  
+
   validates_inclusion_of :own_means_of_transport_present, :in => [true, false]
   validates_inclusion_of :own_means_of_transport, :in => OWN_MEANS_OF_TRANSPORT_CHOICES, :if => :own_means_of_transport_present
 end
