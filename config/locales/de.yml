@@ -942,8 +942,9 @@ de:
     login: "%{user} hat sich eingeloggt."
     logout: "%{user} hat sich ausgeloggt."
     password_r: "%{user} - \"Passwort vergessen\" benutzt."
+    reset_pass: "%{user} - \"Passwort vergessen\" benutzt."
   reviews:
-    index: 
+    index:
       filter_all: "Alle Bewertungen"
       filter_approved: "Veröffentlichte Bewertungen"
       filter_unapproved: "Unveröffentlichte Bewertungen"
