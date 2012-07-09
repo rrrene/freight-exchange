@@ -954,8 +954,8 @@ de:
     demo_login: "%{user} hat sich eingeloggt (per Demo-Login)."
     login: "%{user} hat sich eingeloggt."
     logout: "%{user} hat sich ausgeloggt."
-    password_r: "%{user} - \"Passwort vergessen\" benutzt."
-    reset_pass: "%{user} - \"Passwort vergessen\" benutzt."
+    password_r: "%{user} hat per \"Passwort vergessen\" ein neues Passwort beantragt."
+    reset_pass: "%{user} hat Passwort erfolgreich zurückgesetzt."
   reviews:
     index:
       filter_all: "Alle Bewertungen"
