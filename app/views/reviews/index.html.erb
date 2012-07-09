@@ -7,7 +7,7 @@
 
 <div class="box">
   <h3>
-    <% if params[:filter] %>
+    <% if params[:filter].present? %>
       <%= t("reviews.index.header_#{params[:filter]}") %>
     <% else %>
       <%= t("reviews.index.header") %>
