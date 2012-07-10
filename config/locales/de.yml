@@ -348,7 +348,7 @@ de:
             complete_percentage: "Gibt an, wieviele Kontaktinformationen angegeben werden müssen, damit ein Profil als 'vollständig' gilt."
           demo_mode: "Gibt an, ob die Applikation im Demo-Modus betrieben wird."
           domain: "Gibt an, unter welcher Domain die Applikation läuft."
-          just_set_up: "Gibt an, ob die Applikation grade frisch aufgesetzt wurde."
+          just_set_up: "Gibt an, ob die Applikation soeben frisch aufgesetzt wurde."
           language: "Gibt an, welche Standardsprache für die Applikation eingestellt wurde."
           name: "Gibt an, welcher Name für die Applikation in E-Mails etc. verwendet wird."
           reviews: 
@@ -1086,7 +1086,7 @@ de:
       admin_user: 
         edit_link: "Ihren Admin-Benutzer bearbeiten"
         header: Admin-Benutzer
-        intro: "Die Applikation hat grade Ihren Admin-Benutzer erzeugt. Sie können Ihren Admin-Benutzer anpassen, indem Sie folgenden Link verwenden:"
+        intro: "Die Applikation hat soeben Ihren Admin-Benutzer erzeugt. Sie können Ihren Admin-Benutzer anpassen, indem Sie folgenden Link verwenden:"
       app_configs: 
         header: Einstellungen
         intro: "Sie können die Einstellungen der Applikation ändern:"
