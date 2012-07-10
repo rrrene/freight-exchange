@@ -167,6 +167,7 @@ de:
         password_confirmation: "Passwort wiederholen"
         posting_type: "Art der Inserate"
         user_roles: Berechtigungen
+        company: Unternehmen
         notify_by_email: "Ich möchte per E-Mail über neue Inserate benachrichtigt werden."
       station:
         name: Name
