@@ -171,6 +171,12 @@ de:
       station:
         name: Name
         numeric_id: Nummer
+        address: Straße
+        address2: "(fortgesetzt)"
+        city: Stadt
+        country: Land
+        zip: PLZ
+
     errors: 
       messages: 
         record_invalid: "Validierung fehlgeschlagen: %{errors}"
@@ -484,6 +490,10 @@ de:
       edit: 
         page_title: "Benutzerrolle bearbeiten"
       index: 
+        table:
+          headers:
+            user_count: "Anzahl Benutzer"
+            user_percentage: "Prozentual"
         header: "Alle Benutzerrollen"
         intro: "Hier sehen Sie alle Benutzerrollen."
         page_title: "Alle Benutzerrollen"
@@ -1084,14 +1094,14 @@ de:
       demo_company: 
         create_link: "Demo-Unternehmen verwalten"
         header: Demo-Unternehmen
-        intro: "Sie können die erzeugte Demo-Unternehmen erzeugen/löschen:"
+        intro: "Sie können das erzeugte Demo-Unternehmen erzeugen/löschen:"
       page_title: Willkommen!
       tolk: 
         dump_all_link: "Tolk ins System laden!"
         header: Übersetzungen
         import_link: "Sekundärsprachen in Tolk laden!"
         intro: "Sie können das 'Tolk'-Übersetzungsinterface aufrufen:"
-        intro_rake_tasks: "Sie können auch die 'tolk'-rake Tasks ausführen:"
+        intro_rake_tasks: "Sie können auch die 'Tolk'-rake Tasks ausführen:"
         open_link: "Tolk öffnen"
         sync_link: "Englische Sprache in Tolk laden!"
   support: 

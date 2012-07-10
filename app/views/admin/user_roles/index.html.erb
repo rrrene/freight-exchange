@@ -14,7 +14,7 @@
       <tr>
         <th>id</th>
         <% attributes.each do |attr| %>
-          <th><%= attr.humanize %></th>
+          <th><%= t(".table.headers.#{attr}") %></th>
         <% end %>
       </tr>
     </thead>
