@@ -176,6 +176,9 @@ de:
         city: Stadt
         country: Land
         zip: PLZ
+      app_config:
+        name: Name
+        value: Wert
 
     errors: 
       messages: 
