@@ -9,11 +9,7 @@
     <%= f.input :password %>
     <%= f.input :password_confirmation %>
   <% end %>
-  
-  <%= f.inputs :posting do %>
-    <%= f.input :posting_type, :collection => [[t("activerecord.models.freight"), "Freight"], [t("activerecord.models.loading_space"), "LoadingSpace"]], :include_blank => false %>
-  <% end %>
-  
+
   <%= f.inputs :posting do %>
     <%= f.input :company %>
   <% end %>
