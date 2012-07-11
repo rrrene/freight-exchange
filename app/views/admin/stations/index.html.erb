@@ -23,11 +23,11 @@
       <tbody>
         <% collection.each do |ar| %>
           <tr>
-            <td><%= link_to ar.id, admin_company_path(ar) %></td>
+            <td><%= link_to ar.id, :action => 'edit', :id => ar %></td>
             <% attributes.each do |attr| %>
               <td class="<%= attr %>">
                 <% if %w(name).include?(attr) %>
-                  <%= link_to(ar[attr], :action => 'edit', :id => 'ar') %>
+                  <%= link_to(ar[attr], :action => 'edit', :id => ar) %>
                 <% else %>
                   <%= contact_info(ar, attr) %>
                 <% end %>
