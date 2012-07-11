@@ -486,6 +486,8 @@ de:
         page_title: "Neuen Bahnhof erstellen"
       update: 
         page_title: "Bahnhof bearbeiten"
+      show:
+        page_title: "Bahnhof: %{name}"
     user_roles:
       common:
         search-label: "Benutzerrolle:"
