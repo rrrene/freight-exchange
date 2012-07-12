@@ -8,7 +8,7 @@
           <div class="history_step history_step_<%= @history.index(opts[:item]) %>">
             <div class="history_step_info">
               <b><%= l opts[:item].updated_at %></b>
-              <%= opts[:item].user.name %>:
+              <%= opts[:item].try(:user).try(:name) %>:
             </div>
             <%= opts[:after]  %>
           </div>
