@@ -73,7 +73,9 @@ module App
       %w(users loading_spaces freights).each do |assoc|
         logger.info "#{assoc.classify.pluralize}: ".ljust(20) + company.__send__(assoc).count.to_s
       end
-      logger.info "Notifications/user: ".ljust(20) + company.users.first.unread_notification_items.count.to_s
+      user = company.users.first
+      count = user ? user.unread_notification_items.count : nil
+      logger.info "Notifications/user: ".ljust(20) + count.to_s
     end
     
     private
