@@ -337,6 +337,7 @@ de:
       person: Person
       company: Unternehmen
       user: Benutzer
+      review: Bewertung
   admin:
     action_recordings:
       search-label: Aktionen

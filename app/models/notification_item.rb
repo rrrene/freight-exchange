@@ -1,5 +1,5 @@
 class NotificationItem < ActiveRecord::Base
-  ITEM_TYPE_CHOICES = %w(Freight LoadingSpace)
+  ITEM_TYPE_CHOICES = %w(Freight LoadingSpace Review)
   belongs_to :notification
   belongs_to :user
   belongs_to :item, :polymorphic => true
