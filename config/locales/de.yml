@@ -616,7 +616,7 @@ de:
       header: Newsfeed
       intro: "Hier sehen Sie alle Aktionen der Benutzer Ihres Unternehmens."
       page_title: Startseite
-      sidebar_company_info_title: "Dies ist die InfoCard zu Ihres Unternehmens:"
+      sidebar_company_info_title: "Dies ist die InfoCard zu Ihrem Unternehmen:"
       sidebar_person_info_title: "Dies ist die InfoCard zu Ihrer Person:"
     edit: 
       header: Unternehmensprofil
