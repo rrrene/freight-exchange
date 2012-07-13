@@ -2,7 +2,8 @@
 
 <%= posting_attribute :first_transport_at, :dependent => true %>
 
-<%= posting_attribute :last_transport_at, :dependent => true %>
+<% if resource.frequency != "once" %>
+  <%= posting_attribute :last_transport_at, :dependent => true %>
 
-<%= posting_attribute :transport_count, :dependent => true %>
-
+  <%= posting_attribute :transport_count, :dependent => true %>
+<% end %>
