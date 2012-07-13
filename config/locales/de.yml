@@ -1152,6 +1152,7 @@ de:
       new_link: "Weiteren Benutzer anlegen"
     create: 
       page_title: "Neuer Benutzer"
+      password_hint: ""
     update:
       page_title: "Account bearbeiten"
       password_hint: "Sie können optional Ihr Passwort ändern. Sollten Sie ein neues Passwort setzen wollen, so geben Sie es bitte im Folgenden zweimal übereinstimmend ein."
@@ -1165,6 +1166,9 @@ de:
       page_title: "Alle Benutzer"
     new: 
       page_title: "Neuer Benutzer"
+      password_hint: ""
+    show:
+      page_title: ""
       password_hint: ""
   notifications:
     common:
