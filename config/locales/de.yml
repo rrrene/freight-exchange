@@ -180,6 +180,9 @@ de:
       app_config:
         name: Name
         value: Wert
+      review:
+        author_company: "Unternehmen"
+        author_user: "Benutzer"
 
     errors: 
       messages: 
