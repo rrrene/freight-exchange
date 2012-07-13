@@ -180,6 +180,9 @@ de:
       app_config:
         name: Name
         value: Wert
+      review:
+        author_company: "Unternehmen"
+        author_user: "Benutzer"
 
     errors: 
       messages: 
@@ -337,6 +340,7 @@ de:
       person: Person
       company: Unternehmen
       user: Benutzer
+      review: Bewertung
   admin:
     action_recordings:
       search-label: Aktionen
@@ -615,7 +619,7 @@ de:
       header: Newsfeed
       intro: "Hier sehen Sie alle Aktionen der Benutzer Ihres Unternehmens."
       page_title: Startseite
-      sidebar_company_info_title: "Dies ist die InfoCard zu Ihres Unternehmens:"
+      sidebar_company_info_title: "Dies ist die InfoCard zu Ihrem Unternehmen:"
       sidebar_person_info_title: "Dies ist die InfoCard zu Ihrer Person:"
     edit: 
       header: Unternehmensprofil
@@ -1151,6 +1155,7 @@ de:
       new_link: "Weiteren Benutzer anlegen"
     create: 
       page_title: "Neuer Benutzer"
+      password_hint: ""
     update:
       page_title: "Account bearbeiten"
       password_hint: "Sie können optional Ihr Passwort ändern. Sollten Sie ein neues Passwort setzen wollen, so geben Sie es bitte im Folgenden zweimal übereinstimmend ein."
@@ -1164,6 +1169,9 @@ de:
       page_title: "Alle Benutzer"
     new: 
       page_title: "Neuer Benutzer"
+      password_hint: ""
+    show:
+      page_title: ""
       password_hint: ""
   notifications:
     common:

@@ -75,7 +75,7 @@ module Demo
         company ||= ::Company.create(factory_attributes)
       end
       
-      def setup(options)
+      def setup(options = {})
         company = create
         create_postings(options[:postings].to_i)
         company

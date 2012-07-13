@@ -1,1 +1,4 @@
-<%= auto_link review.pretty_id %>
+<% if item = notification_item.item %>
+  <%= item.author_user.try(:name) %>:
+  <%= link_to truncate(item.text), notification_item %>
+<% end %>

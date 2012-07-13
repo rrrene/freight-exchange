@@ -42,7 +42,7 @@
   </div>
 <% end %>
 
-<% if reviews = @company.approved_reviews %>
+<% if reviews = @company.approved_reviews.presence %>
   <h2><%= t("companies.show.header_reviews") %></h2>
   <% reviews.each do |review| %>
     <div class="box">
