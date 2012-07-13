@@ -9,7 +9,7 @@ class Review < ActiveRecord::Base
   belongs_to :company
   searchable
 
-  after_save :create_notification
+  after_create :create_notification
   
   # Returns <tt>true</tt>, if the review has been approved by a user.
   def approved?
