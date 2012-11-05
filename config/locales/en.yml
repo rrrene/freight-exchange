@@ -39,6 +39,8 @@ en:
         destination_station: "Unloading station"
         destination_zip: ZIP
         first_transport_at: "First transport at"
+        last_transport_at: "First transport at"
+        transport_count: "Frequency for repeated transports"
         frequency: Frequency
         goods_text: "Kind of goods"
         hazmat: "Harzardous material"
@@ -609,13 +611,15 @@ en:
       update: "Save changes"
     hints: 
       freight: 
-        first_transport_at: (MM/DD/YYYY)
-        last_transport_at: "(Format: DD.MM.YYYY)"
-        valid_until: (MM/DD/YYYY)
+        first_transport_at: "(Format: MM/DD/YYYY)"
+        last_transport_at: "(Format: MM/DD/YYYY)"
+        valid_until: "(Format: MM/DD/YYYY)"
+        transport_count: "(within the provided timeframe, e.g. per week)"
       loading_space: 
-        first_transport_at: (MM/DD/YYYY)
-        last_transport_at: "(Format: DD.MM.YYYY)"
-        valid_until: (MM/DD/YYYY)
+        first_transport_at: "(Format: MM/DD/YYYY)"
+        last_transport_at: "(Format: MM/DD/YYYY)"
+        valid_until: "(Format: MM/DD/YYYY)"
+        transport_count: "(within the provided timeframe, e.g. per week)"
       user: 
         email: "Enter your e-mail address here"
         login: "Choose a username to log in to the service"
@@ -684,6 +688,7 @@ en:
           company: Company
           destination_name: Destination
           frequency: Frequency
+          first_transport_at: "First transport"
           id: "Numeric ID"
           options: Options
           origin_name: Origin
@@ -766,6 +771,7 @@ en:
           date: Date
           destination: Destination
           destination_name: "Destination (Station)"
+          first_transport_at: "First transport"
           frequency: Frequency
           options: Options
           origin: Origin
