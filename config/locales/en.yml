@@ -27,6 +27,7 @@ en:
         contact_person: "Contact Person"
         contractor: Contractor
         desired_means_of_transport: "Desired means of transport"
+        desired_means_of_transport_custom: ""
         desired_proposal_type: "Desired proposal type"
         destination_address: Street
         destination_address2: (continued)
@@ -64,7 +65,7 @@ en:
         origin_station: "Loading station"
         origin_zip: ZIP
         own_means_of_transport: "Type of wagon"
-        own_means_of_transport_custom: "Please insert:"
+        own_means_of_transport_custom: ""
         own_means_of_transport_present: "Own means of transport present?"
         paying_freight: "Freight paid by"
         product_name: "Product name"
@@ -78,6 +79,7 @@ en:
         transport_weight: "Weight per transport (in t)"
         transports_per_year: "Transports per year"
         un_no: UN-No.
+        valid_from: "Posting valid from"
         valid_until: "Posting valid until"
         wagons_provided_by: "Wagons provided by"
       loading_space: 
@@ -613,11 +615,13 @@ en:
       freight: 
         first_transport_at: "(Format: MM/DD/YYYY)"
         last_transport_at: "(Format: MM/DD/YYYY)"
+        valid_from: "(Format: MM/DD/YYYY)"
         valid_until: "(Format: MM/DD/YYYY)"
         transport_count: "(within the provided timeframe, e.g. per week)"
       loading_space: 
         first_transport_at: "(Format: MM/DD/YYYY)"
         last_transport_at: "(Format: MM/DD/YYYY)"
+        valid_from: "(Format: MM/DD/YYYY)"
         valid_until: "(Format: MM/DD/YYYY)"
         transport_count: "(within the provided timeframe, e.g. per week)"
       user: 
